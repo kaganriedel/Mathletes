@@ -10,4 +10,7 @@
 
 @interface MathViewController : UIViewController
 
+@property (strong, nonatomic) IBOutlet UILabel *operationLabel;
+@property NSString *operationType;
+
 @end

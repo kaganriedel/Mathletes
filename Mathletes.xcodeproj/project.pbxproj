@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6D6EEFFEF0B94C0883934CFA /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 11D82320CD96410092541D1A /* libPods.a */; };
 		6D891EA418A582EC0002B915 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D891EA318A582EC0002B915 /* Foundation.framework */; };
 		6D891EA618A582EC0002B915 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D891EA518A582EC0002B915 /* CoreGraphics.framework */; };
 		6D891EA818A582EC0002B915 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D891EA718A582EC0002B915 /* UIKit.framework */; };
@@ -21,6 +22,9 @@
 		6D891EC518A582EC0002B915 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D891EA718A582EC0002B915 /* UIKit.framework */; };
 		6D891ECD18A582EC0002B915 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6D891ECB18A582EC0002B915 /* InfoPlist.strings */; };
 		6D891ECF18A582EC0002B915 /* MathletesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D891ECE18A582EC0002B915 /* MathletesTests.m */; };
+		6D891EDA18A5B3CB0002B915 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D891ED918A5B3CB0002B915 /* ProfileViewController.m */; };
+		6D891EDC18A5B88F0002B915 /* murray320x320.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6D891EDB18A5B88F0002B915 /* murray320x320.jpg */; };
+		6D891EDF18A5BF6B0002B915 /* ChooseOperationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D891EDE18A5BF6B0002B915 /* ChooseOperationsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0FBAD299D6F34B0D8960E650 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		11D82320CD96410092541D1A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D891EA018A582EC0002B915 /* Mathletes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mathletes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D891EA318A582EC0002B915 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6D891EA518A582EC0002B915 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -53,6 +59,11 @@
 		6D891ECA18A582EC0002B915 /* MathletesTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MathletesTests-Info.plist"; sourceTree = "<group>"; };
 		6D891ECC18A582EC0002B915 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6D891ECE18A582EC0002B915 /* MathletesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MathletesTests.m; sourceTree = "<group>"; };
+		6D891ED818A5B3CB0002B915 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		6D891ED918A5B3CB0002B915 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		6D891EDB18A5B88F0002B915 /* murray320x320.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = murray320x320.jpg; sourceTree = "<group>"; };
+		6D891EDD18A5BF6B0002B915 /* ChooseOperationsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseOperationsViewController.h; sourceTree = "<group>"; };
+		6D891EDE18A5BF6B0002B915 /* ChooseOperationsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseOperationsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +74,7 @@
 				6D891EA618A582EC0002B915 /* CoreGraphics.framework in Frameworks */,
 				6D891EA818A582EC0002B915 /* UIKit.framework in Frameworks */,
 				6D891EA418A582EC0002B915 /* Foundation.framework in Frameworks */,
+				6D6EEFFEF0B94C0883934CFA /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,6 +98,7 @@
 				6D891EC818A582EC0002B915 /* MathletesTests */,
 				6D891EA218A582EC0002B915 /* Frameworks */,
 				6D891EA118A582EC0002B915 /* Products */,
+				0FBAD299D6F34B0D8960E650 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -105,6 +118,7 @@
 				6D891EA518A582EC0002B915 /* CoreGraphics.framework */,
 				6D891EA718A582EC0002B915 /* UIKit.framework */,
 				6D891EC218A582EC0002B915 /* XCTest.framework */,
+				11D82320CD96410092541D1A /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -115,9 +129,14 @@
 				6D891EB218A582EC0002B915 /* AppDelegate.h */,
 				6D891EB318A582EC0002B915 /* AppDelegate.m */,
 				6D891EB518A582EC0002B915 /* Main.storyboard */,
+				6D891ED818A5B3CB0002B915 /* ProfileViewController.h */,
+				6D891ED918A5B3CB0002B915 /* ProfileViewController.m */,
+				6D891EDD18A5BF6B0002B915 /* ChooseOperationsViewController.h */,
+				6D891EDE18A5BF6B0002B915 /* ChooseOperationsViewController.m */,
 				6D891EB818A582EC0002B915 /* MathViewController.h */,
 				6D891EB918A582EC0002B915 /* MathViewController.m */,
 				6D891EBB18A582EC0002B915 /* Images.xcassets */,
+				6D891EDB18A5B88F0002B915 /* murray320x320.jpg */,
 				6D891EAA18A582EC0002B915 /* Supporting Files */,
 			);
 			path = Mathletes;
@@ -159,9 +178,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6D891ED218A582EC0002B915 /* Build configuration list for PBXNativeTarget "Mathletes" */;
 			buildPhases = (
+				1595FEC60BC346138DC7B6EA /* Check Pods Manifest.lock */,
 				6D891E9C18A582EC0002B915 /* Sources */,
 				6D891E9D18A582EC0002B915 /* Frameworks */,
 				6D891E9E18A582EC0002B915 /* Resources */,
+				75F250F0AF484BD9930E6C54 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -230,6 +251,7 @@
 			files = (
 				6D891EBC18A582EC0002B915 /* Images.xcassets in Resources */,
 				6D891EAE18A582EC0002B915 /* InfoPlist.strings in Resources */,
+				6D891EDC18A5B88F0002B915 /* murray320x320.jpg in Resources */,
 				6D891EB718A582EC0002B915 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -244,6 +266,39 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1595FEC60BC346138DC7B6EA /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		75F250F0AF484BD9930E6C54 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		6D891E9C18A582EC0002B915 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -251,6 +306,8 @@
 			files = (
 				6D891EBA18A582EC0002B915 /* MathViewController.m in Sources */,
 				6D891EB418A582EC0002B915 /* AppDelegate.m in Sources */,
+				6D891EDF18A5BF6B0002B915 /* ChooseOperationsViewController.m in Sources */,
+				6D891EDA18A5B3CB0002B915 /* ProfileViewController.m in Sources */,
 				6D891EB018A582EC0002B915 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -375,6 +432,7 @@
 		};
 		6D891ED318A582EC0002B915 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0FBAD299D6F34B0D8960E650 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -388,6 +446,7 @@
 		};
 		6D891ED418A582EC0002B915 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0FBAD299D6F34B0D8960E650 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -460,6 +519,7 @@
 				6D891ED418A582EC0002B915 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6D891ED518A582EC0002B915 /* Build configuration list for PBXNativeTarget "MathletesTests" */ = {
 			isa = XCConfigurationList;
@@ -468,6 +528,7 @@
 				6D891ED718A582EC0002B915 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

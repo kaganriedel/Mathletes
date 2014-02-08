@@ -12,7 +12,6 @@
 {
     __weak IBOutlet UILabel *var1Label;
     __weak IBOutlet UILabel *var2Label;
-    __weak IBOutlet UILabel *operationLabel;
     __weak IBOutlet UIButton *goButton;
     __weak IBOutlet UIButton *newButton;
     __weak IBOutlet UILabel *feedbackLabel;
@@ -26,19 +25,16 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
     
-}
-
--(void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
+    _operationLabel.text = _operationType;
     
-    [operationLabel setText:[NSString stringWithFormat:@"-"]];
     [self newMathProblem];
     
     newButton.alpha = 0.0;
+
+    
 }
+
 
 
 -(void)newMathProblem
@@ -46,7 +42,7 @@
     int highestRange = 101;
     int divisionModifier = 0;
     
-    if ([operationLabel.text isEqualToString:@"/"])
+    if ([_operationLabel.text isEqualToString:@"/"])
     {
         divisionModifier = 1;
     }
@@ -56,13 +52,13 @@
     NSLog(@"var1: %i var2: %i", var1Label.text.intValue, var2Label.text.intValue);
 
     
-    if (([operationLabel.text isEqualToString:@"-"] || [operationLabel.text isEqualToString:@"/"]) && var1Label.text.intValue < var2Label.text.intValue)
+    if (([_operationLabel.text isEqualToString:@"-"] || [_operationLabel.text isEqualToString:@"/"]) && var1Label.text.intValue < var2Label.text.intValue)
     {
         NSString *tempString = var2Label.text;
         var2Label.text = var1Label.text;
         var1Label.text = tempString;
     }
-    if ([operationLabel.text isEqualToString:@"/"] && var1Label.text.intValue % var2Label.text.intValue != 0.0)
+    if ([_operationLabel.text isEqualToString:@"/"] && var1Label.text.intValue % var2Label.text.intValue != 0.0)
     {
         [self newMathProblem];
     }
@@ -93,7 +89,7 @@
 
 - (IBAction)onGoButtonPressed:(id)sender
 {
-    if ([operationLabel.text isEqualToString:@"x"])
+    if ([_operationLabel.text isEqualToString:@"x"])
     {
         if (answerTextField.text.intValue == var1Label.text.intValue * var2Label.text.intValue)
         {
@@ -105,7 +101,7 @@
             [self wrongAnswer];
         }
     }
-    else if ([operationLabel.text isEqualToString:@"/"])
+    else if ([_operationLabel.text isEqualToString:@"/"])
     {
         if (answerTextField.text.intValue == var1Label.text.intValue / var2Label.text.intValue)
         {
@@ -118,7 +114,7 @@
 
         }
     }
-   else if ([operationLabel.text isEqualToString:@"+"])
+   else if ([_operationLabel.text isEqualToString:@"+"])
     {
         if (answerTextField.text.intValue == var1Label.text.intValue + var2Label.text.intValue)
         {
@@ -131,7 +127,7 @@
 
         }
     }
-    else if ([operationLabel.text isEqualToString:@"-"])
+    else if ([_operationLabel.text isEqualToString:@"-"])
     {
         if (answerTextField.text.intValue == var1Label.text.intValue - var2Label.text.intValue)
         {
