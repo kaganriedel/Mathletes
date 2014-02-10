@@ -16,6 +16,7 @@
     __weak IBOutlet UIButton *newButton;
     __weak IBOutlet UILabel *feedbackLabel;
     __weak IBOutlet UITextField *answerTextField;
+    __weak IBOutlet UILabel *timerLabel;
 }
 
 @end

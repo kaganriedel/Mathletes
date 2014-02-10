@@ -195,6 +195,13 @@
                                     <action selector="onNewButtonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="p3s-Xo-vCp"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="6" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XEZ-KW-vfG">
+                                <rect key="frame" x="135" y="218" width="12" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -205,6 +212,7 @@
                         <outlet property="goButton" destination="4t2-yu-pDO" id="wbd-T2-bGU"/>
                         <outlet property="newButton" destination="75g-hP-4CW" id="N7Z-C9-JBk"/>
                         <outlet property="operationLabel" destination="mPZ-ID-guH" id="Gb9-ca-rZ4"/>
+                        <outlet property="timerLabel" destination="XEZ-KW-vfG" id="rON-p2-Uqh"/>
                         <outlet property="var1Label" destination="1ES-DV-m4B" id="KcW-IF-NTd"/>
                         <outlet property="var2Label" destination="mSx-Gs-MD8" id="iMd-AS-w2q"/>
                     </connections>
