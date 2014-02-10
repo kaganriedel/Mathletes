@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6D18826218A943DF003DCA92 /* StickersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D18826118A943DF003DCA92 /* StickersViewController.m */; };
+		6D18826518A94458003DCA92 /* StickerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D18826418A94458003DCA92 /* StickerCell.m */; };
+		6D18826718A946B4003DCA92 /* kitten50x50.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6D18826618A946B4003DCA92 /* kitten50x50.jpg */; };
+		6D18826918A94F64003DCA92 /* puppy160x160.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6D18826818A94F64003DCA92 /* puppy160x160.jpg */; };
+		6D18826B18A9811D003DCA92 /* Star.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D18826A18A9811D003DCA92 /* Star.png */; };
+		6D18826D18A98123003DCA92 /* tiger.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6D18826C18A98123003DCA92 /* tiger.jpg */; };
+		6D18826F18A98129003DCA92 /* ThumbsUpButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D18826E18A98129003DCA92 /* ThumbsUpButton.png */; };
+		6D18827118A9812F003DCA92 /* lion.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6D18827018A9812F003DCA92 /* lion.jpg */; };
+		6D18827318A98145003DCA92 /* bear.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6D18827218A98145003DCA92 /* bear.jpg */; };
+		6D18827618A99D54003DCA92 /* Achievement.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D18827518A99D54003DCA92 /* Achievement.m */; };
 		6D6EEFFEF0B94C0883934CFA /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 11D82320CD96410092541D1A /* libPods.a */; };
 		6D891EA418A582EC0002B915 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D891EA318A582EC0002B915 /* Foundation.framework */; };
 		6D891EA618A582EC0002B915 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D891EA518A582EC0002B915 /* CoreGraphics.framework */; };
@@ -40,6 +50,19 @@
 /* Begin PBXFileReference section */
 		0FBAD299D6F34B0D8960E650 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		11D82320CD96410092541D1A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D18826018A943DF003DCA92 /* StickersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StickersViewController.h; sourceTree = "<group>"; };
+		6D18826118A943DF003DCA92 /* StickersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StickersViewController.m; sourceTree = "<group>"; };
+		6D18826318A94458003DCA92 /* StickerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StickerCell.h; sourceTree = "<group>"; };
+		6D18826418A94458003DCA92 /* StickerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StickerCell.m; sourceTree = "<group>"; };
+		6D18826618A946B4003DCA92 /* kitten50x50.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = kitten50x50.jpg; sourceTree = "<group>"; };
+		6D18826818A94F64003DCA92 /* puppy160x160.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = puppy160x160.jpg; sourceTree = "<group>"; };
+		6D18826A18A9811D003DCA92 /* Star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Star.png; sourceTree = "<group>"; };
+		6D18826C18A98123003DCA92 /* tiger.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tiger.jpg; sourceTree = "<group>"; };
+		6D18826E18A98129003DCA92 /* ThumbsUpButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ThumbsUpButton.png; sourceTree = "<group>"; };
+		6D18827018A9812F003DCA92 /* lion.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = lion.jpg; sourceTree = "<group>"; };
+		6D18827218A98145003DCA92 /* bear.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bear.jpg; sourceTree = "<group>"; };
+		6D18827418A99D54003DCA92 /* Achievement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Achievement.h; sourceTree = "<group>"; };
+		6D18827518A99D54003DCA92 /* Achievement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Achievement.m; sourceTree = "<group>"; };
 		6D891EA018A582EC0002B915 /* Mathletes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mathletes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D891EA318A582EC0002B915 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6D891EA518A582EC0002B915 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -135,8 +158,21 @@
 				6D891EDE18A5BF6B0002B915 /* ChooseOperationsViewController.m */,
 				6D891EB818A582EC0002B915 /* MathViewController.h */,
 				6D891EB918A582EC0002B915 /* MathViewController.m */,
+				6D18826018A943DF003DCA92 /* StickersViewController.h */,
+				6D18826118A943DF003DCA92 /* StickersViewController.m */,
+				6D18826318A94458003DCA92 /* StickerCell.h */,
+				6D18826418A94458003DCA92 /* StickerCell.m */,
+				6D18827418A99D54003DCA92 /* Achievement.h */,
+				6D18827518A99D54003DCA92 /* Achievement.m */,
 				6D891EBB18A582EC0002B915 /* Images.xcassets */,
 				6D891EDB18A5B88F0002B915 /* murray320x320.jpg */,
+				6D18826818A94F64003DCA92 /* puppy160x160.jpg */,
+				6D18826E18A98129003DCA92 /* ThumbsUpButton.png */,
+				6D18827018A9812F003DCA92 /* lion.jpg */,
+				6D18827218A98145003DCA92 /* bear.jpg */,
+				6D18826C18A98123003DCA92 /* tiger.jpg */,
+				6D18826A18A9811D003DCA92 /* Star.png */,
+				6D18826618A946B4003DCA92 /* kitten50x50.jpg */,
 				6D891EAA18A582EC0002B915 /* Supporting Files */,
 			);
 			path = Mathletes;
@@ -250,9 +286,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				6D891EBC18A582EC0002B915 /* Images.xcassets in Resources */,
+				6D18827118A9812F003DCA92 /* lion.jpg in Resources */,
+				6D18826B18A9811D003DCA92 /* Star.png in Resources */,
+				6D18826718A946B4003DCA92 /* kitten50x50.jpg in Resources */,
+				6D18826D18A98123003DCA92 /* tiger.jpg in Resources */,
 				6D891EAE18A582EC0002B915 /* InfoPlist.strings in Resources */,
 				6D891EDC18A5B88F0002B915 /* murray320x320.jpg in Resources */,
+				6D18826F18A98129003DCA92 /* ThumbsUpButton.png in Resources */,
+				6D18827318A98145003DCA92 /* bear.jpg in Resources */,
 				6D891EB718A582EC0002B915 /* Main.storyboard in Resources */,
+				6D18826918A94F64003DCA92 /* puppy160x160.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,9 +348,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				6D891EBA18A582EC0002B915 /* MathViewController.m in Sources */,
+				6D18827618A99D54003DCA92 /* Achievement.m in Sources */,
+				6D18826218A943DF003DCA92 /* StickersViewController.m in Sources */,
 				6D891EB418A582EC0002B915 /* AppDelegate.m in Sources */,
 				6D891EDF18A5BF6B0002B915 /* ChooseOperationsViewController.m in Sources */,
 				6D891EDA18A5B3CB0002B915 /* ProfileViewController.m in Sources */,
+				6D18826518A94458003DCA92 /* StickerCell.m in Sources */,
 				6D891EB018A582EC0002B915 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

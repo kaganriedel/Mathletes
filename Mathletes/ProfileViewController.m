@@ -21,15 +21,11 @@
 @implementation ProfileViewController
 
 
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 
-    userNameLabel.text = [PFUser currentUser].username;
-    NSString *cappedFirstChar = [[userNameLabel.text substringToIndex:1] uppercaseString];
-    NSString *cappedString = [userNameLabel.text stringByReplacingCharactersInRange:NSMakeRange(0, 1) withString:cappedFirstChar];
-    self.navigationItem.title = cappedString;
+    [self setTitle];
 }
 
 -(void) viewDidAppear:(BOOL)animated
@@ -43,14 +39,37 @@
 {
     [signUpController dismissViewControllerAnimated:YES completion:^{
         [self dismissViewControllerAnimated:YES completion:nil];
+        
+        //when a new user signs up set all the counts to 0
+        NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+        
+        [userDefaults setInteger:0 forKey:@"lionCount"];
+        [userDefaults setInteger:0 forKey:@"kittenCount"];
+        [userDefaults setInteger:0 forKey:@"starCount"];
+        [userDefaults setInteger:0 forKey:@"puppyCount"];
+        [userDefaults setInteger:0 forKey:@"tigerCount"];
+        [userDefaults setInteger:0 forKey:@"moonCount"];
+        [userDefaults setInteger:0 forKey:@"giraffeCount"];
+        [userDefaults setInteger:0 forKey:@"sunCount"];
+        
+        [userDefaults synchronize];
     }];
     
     //receive their first sticker and set it to their profile pic
 }
 
+-(void)setTitle
+{
+    userNameLabel.text = [PFUser currentUser].username;
+    NSString *cappedFirstChar = [[userNameLabel.text substringToIndex:1] uppercaseString];
+    NSString *cappedString = [userNameLabel.text stringByReplacingCharactersInRange:NSMakeRange(0, 1) withString:cappedFirstChar];
+    self.navigationItem.title = cappedString;
+}
+
 -(void)logInViewController:(PFLogInViewController *)logInController didLogInUser:(PFUser *)user
 {
     [logInController dismissViewControllerAnimated:YES completion:nil];
+    [self setTitle];
 }
 
 - (IBAction)onLogOut:(id)sender

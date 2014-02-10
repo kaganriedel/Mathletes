@@ -80,6 +80,44 @@
     feedbackLabel.text = @"Correct!";
     newButton.alpha = 1.0;
     goButton.alpha = 0.0;
+    
+    [self giveSticker];
+}
+
+-(void)giveSticker
+{
+    int randomSticker = arc4random()%100;
+    NSLog(@"%i",randomSticker);
+    
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    
+    if (randomSticker < 20)
+    {
+        [userDefaults setInteger:[userDefaults integerForKey:@"lionCount"] +1 forKey:@"lionCount"];
+        NSLog(@"1st count +1");
+    }
+    else if (randomSticker < 40)
+    {
+        [userDefaults setInteger:[userDefaults integerForKey:@"kittenCount"] +1 forKey:@"kittenCount"];
+        NSLog(@"2nd count +1");
+    }
+    else if (randomSticker < 60)
+    {
+        [userDefaults setInteger:[userDefaults integerForKey:@"starCount"] +1 forKey:@"starCount"];
+        NSLog(@"3rd count +1");
+    }
+    else if (randomSticker < 80)
+    {
+        [userDefaults setInteger:[userDefaults integerForKey:@"puppyCount"] +1 forKey:@"puppyCount"];
+        NSLog(@"4th count +1");
+    }
+    else if (randomSticker <= 100)
+    {
+        [userDefaults setInteger:[userDefaults integerForKey:@"tigerCount"] +1 forKey:@"tigerCount"];
+        NSLog(@"5th count +1");
+    }
+
+    [userDefaults synchronize];
 }
 
 -(void)wrongAnswer
