@@ -46,7 +46,7 @@
 -(void)timerFired:(NSTimer *)timer
 {
     countDown++;
-    
+    //Sonam smells bad :)
     
     if (countDown ==0) {
         [self.countDownTimer invalidate];
