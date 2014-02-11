@@ -30,24 +30,54 @@
 {
     
     int yDirection = 100;
+    int subChange = 0;
     
+    //i is horizontal, j is vertical, x&yDirection is spacing
     for (int j = 0; j < 10; j++)
     {
         int xDirection = 5;
+        int subtractionValue = 0;
         
         for (int i = 0; i < 10 ; i++)
         {
             UILabel *gridLabel = [[UILabel alloc] initWithFrame:CGRectMake(xDirection, yDirection, 30, 30)];
             [self.view addSubview:gridLabel];
-            gridLabel.backgroundColor = [UIColor colorWithRed:(0/255.0) green:(156.0/255.0) blue:(227/255.0) alpha:1];
-            [gridLabel setTextColor:[UIColor whiteColor]];
+            [gridLabel setTextColor:[UIColor blackColor]];
             [gridLabel setTextAlignment:NSTextAlignmentCenter];
             [gridLabel setFont: [UIFont fontWithName:@"Arial" size:13.0]];
-            [gridLabel setText:[NSString stringWithFormat:@"%d%@%d",i,_operand, j]];
+            
+            //setting values
+            if ([_operand isEqual:@"-"])
+            {
+                for (int k = subtractionValue; k < 10; k++)
+                {
+                    [gridLabel setText:[NSString stringWithFormat:@"%d%@%d",i+subtractionValue+subChange,_operand, j]];
+                }
+            }
+            else if ([_operand isEqual:@"+"])
+            {
+               [gridLabel setText:[NSString stringWithFormat:@"%d%@%d",i,_operand, j]];
+            }
+            
+            //background color
+            if (i + j <= 10)
+            {
+                gridLabel.backgroundColor = [UIColor greenColor];
+            }
+            else if (i + j <= 14)
+            {
+                gridLabel.backgroundColor = [UIColor colorWithRed:(255.0/255.0) green:(239/255.0) blue:(0/255.0) alpha:1];
+
+            }
+            else if (i + j <= 18)
+            {
+                gridLabel.backgroundColor = [UIColor colorWithRed:(0/255.0) green:(156.0/255.0) blue:(227/255.0) alpha:1];
+            }
+            
             xDirection += 31;
             
         }
-        
+        subChange++;
         yDirection += 31;
     }
 }
