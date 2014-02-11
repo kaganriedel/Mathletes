@@ -46,7 +46,6 @@
 -(StickerCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     StickerCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"StickerCell" forIndexPath:indexPath];
-//    PFObject *sticker = stickers[indexPath.row];
     cell.imageView.image = [UIImage imageNamed:stickers[indexPath.row]];
     
     NSNumber *stickerCount = userStickers[indexPath.row];

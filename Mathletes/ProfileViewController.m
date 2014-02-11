@@ -8,7 +8,6 @@
 
 #import "ProfileViewController.h"
 #import "Parse/Parse.h"
-#import "Achievement.h"
 
 @interface ProfileViewController () <PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate>
 {
@@ -27,7 +26,6 @@
     [super viewDidLoad];
 
     [self setTitle];
-    [self loadAllAchievements];
 }
 
 -(void) viewDidAppear:(BOOL)animated
@@ -91,37 +89,7 @@
     }
 }
 
--(void)loadAllAchievements
-{
-    Achievement *achievement = [Achievement new];
-    achievement.name = @"Added up";
-    achievement.description = @"You completed your first addition problem!";
-    achievement.isAchieved = NO;
-    
-    achievement = [Achievement new];
-    achievement.name = @"Subracted!";
-    achievement.description = @"You did your first subtraction problem!";
-    achievement.isAchieved = NO;
-    
-    achievement = [Achievement new];
-    achievement.name = @"5 adds";
-    achievement.description = @"You completed 5 addition problems!";
-    achievement.isAchieved = NO;
 
-    
-    achievement = [Achievement new];
-    achievement.name = @"5 subtracts";
-    achievement.description = @"You completed 5 subtraction problems!";
-    achievement.isAchieved = NO;
-
-    
-    achievement = [Achievement new];
-    achievement.name = @"Keep going!";
-    achievement.description = @"You completed 10 total problems!";
-    achievement.isAchieved = NO;
-
-
-}
 
 
 @end

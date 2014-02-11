@@ -10,4 +10,14 @@
 
 @implementation Achievement
 
+-(id)initWithName:(NSString *)name Description:(NSString *)description
+{
+    self = [super init];
+    self.name = name;
+    self.description = description;
+    self.isAchieved = NO;
+    
+    return self;
+}
+
 @end

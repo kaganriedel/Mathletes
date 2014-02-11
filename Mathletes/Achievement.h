@@ -14,4 +14,6 @@
 @property NSString *description;
 @property BOOL isAchieved;
 
+-(id)initWithName:(NSString *)name Description:(NSString *)description;
+
 @end
