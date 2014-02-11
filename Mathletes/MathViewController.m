@@ -17,7 +17,11 @@
     __weak IBOutlet UILabel *feedbackLabel;
     __weak IBOutlet UITextField *answerTextField;
     __weak IBOutlet UILabel *timerLabel;
+    NSInteger countDown;
+    
 }
+
+@property (nonatomic, strong) NSTimer *countDownTimer;
 
 @end
 
@@ -33,6 +37,21 @@
     
     newButton.alpha = 0.0;
 
+    self.countDownTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(timerFired:) userInfo:nil repeats:YES];
+    
+    
+
+}
+
+-(void)timerFired:(NSTimer *)timer
+{
+    countDown++;
+    
+    
+    if (countDown ==0) {
+        [self.countDownTimer invalidate];
+    }
+    
     
 }
 
