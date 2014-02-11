@@ -17,7 +17,6 @@
     __weak IBOutlet UILabel *feedbackLabel;
     __weak IBOutlet UITextField *answerTextField;
     NSInteger countDown;
-    
 }
 
 @property (nonatomic, strong) NSTimer *countDownTimer;
@@ -61,9 +60,15 @@
 
 -(void)newMathProblem
 {
-    int highestRange = 101;
+    int highestRange = 10;
     int divisionModifier = 0;
     
+    [var1Label setText:[NSString stringWithFormat:@"%i", arc4random()%(highestRange-divisionModifier)+divisionModifier]];
+    [var2Label setText:[NSString stringWithFormat:@"%i", arc4random()%(highestRange-divisionModifier)+divisionModifier]];
+    NSLog(@"var1: %i var2: %i", var1Label.text.intValue, var2Label.text.intValue);
+    
+    
+    /*
     if ([_operationLabel.text isEqualToString:@"/"])
     {
         divisionModifier = 1;
@@ -84,6 +89,8 @@
     {
         [self newMathProblem];
     }
+    
+    */
 }
 
 - (IBAction)onNewButtonPressed:(id)sender

@@ -10,4 +10,8 @@
 
 @interface FlashCard : NSObject
 
+@property int addend1, addend2;
+@property int cardValue;
+@property NSDictionary *difficultyDictionary;
+
 @end
