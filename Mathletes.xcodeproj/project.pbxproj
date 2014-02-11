@@ -35,6 +35,7 @@
 		6D891EDA18A5B3CB0002B915 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D891ED918A5B3CB0002B915 /* ProfileViewController.m */; };
 		6D891EDC18A5B88F0002B915 /* murray320x320.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6D891EDB18A5B88F0002B915 /* murray320x320.jpg */; };
 		6D891EDF18A5BF6B0002B915 /* ChooseOperationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D891EDE18A5BF6B0002B915 /* ChooseOperationsViewController.m */; };
+		C987E0DF18A9AC70007CEC36 /* GridViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C987E0DE18A9AC70007CEC36 /* GridViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +88,8 @@
 		6D891EDB18A5B88F0002B915 /* murray320x320.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = murray320x320.jpg; sourceTree = "<group>"; };
 		6D891EDD18A5BF6B0002B915 /* ChooseOperationsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseOperationsViewController.h; sourceTree = "<group>"; };
 		6D891EDE18A5BF6B0002B915 /* ChooseOperationsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseOperationsViewController.m; sourceTree = "<group>"; };
+		C987E0DD18A9AC70007CEC36 /* GridViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GridViewController.h; sourceTree = "<group>"; };
+		C987E0DE18A9AC70007CEC36 /* GridViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GridViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +163,8 @@
 				6D891EB918A582EC0002B915 /* MathViewController.m */,
 				6D18826018A943DF003DCA92 /* StickersViewController.h */,
 				6D18826118A943DF003DCA92 /* StickersViewController.m */,
+				C987E0DD18A9AC70007CEC36 /* GridViewController.h */,
+				C987E0DE18A9AC70007CEC36 /* GridViewController.m */,
 				6D18826318A94458003DCA92 /* StickerCell.h */,
 				6D18826418A94458003DCA92 /* StickerCell.m */,
 				6D18827418A99D54003DCA92 /* Achievement.h */,
@@ -348,6 +353,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6D891EBA18A582EC0002B915 /* MathViewController.m in Sources */,
+				C987E0DF18A9AC70007CEC36 /* GridViewController.m in Sources */,
 				6D18827618A99D54003DCA92 /* Achievement.m in Sources */,
 				6D18826218A943DF003DCA92 /* StickersViewController.m in Sources */,
 				6D891EB418A582EC0002B915 /* AppDelegate.m in Sources */,
