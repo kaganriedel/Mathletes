@@ -46,7 +46,7 @@
 -(void)timerFired:(NSTimer *)timer
 {
     countDown++;
-    
+//    happy birthday kagan
     
     if (countDown ==0) {
         [self.countDownTimer invalidate];
