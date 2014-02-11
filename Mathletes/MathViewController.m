@@ -54,14 +54,11 @@
     
 }
 
--(void)stupidMethod
-{
-    
-}
+
 
 -(void)newMathProblem
 {
-    int highestRange = 101;
+    int highestRange = 11;
     int divisionModifier = 0;
     
     if ([_operationLabel.text isEqualToString:@"/"])
@@ -102,7 +99,34 @@
     newButton.alpha = 1.0;
     goButton.alpha = 0.0;
     
+    [self updateAchievements];
     [self giveSticker];
+}
+
+-(void)updateAchievements
+{
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    if ([_operationLabel.text isEqualToString:@"+"])
+    {
+        [userDefaults setInteger:[userDefaults integerForKey:@"totalAdds"] +1 forKey:@"totalAdds"];
+        NSLog(@"totalAdds = %i", [userDefaults integerForKey:@"totalAdds"]);
+    }
+    else if ([_operationLabel.text isEqualToString:@"-"])
+    {
+        [userDefaults setInteger:[userDefaults integerForKey:@"totalSubs"] +1 forKey:@"totalSubs"];
+        NSLog(@"totalSubs = %i", [userDefaults integerForKey:@"totalSubs"]);
+    }
+    else if ([_operationLabel.text isEqualToString:@"x"])
+    {
+        [userDefaults setInteger:[userDefaults integerForKey:@"totalMults"] +1 forKey:@"totalMults"];
+        NSLog(@"totalMults = %i", [userDefaults integerForKey:@"totalMults"]);
+    }
+    else if ([_operationLabel.text isEqualToString:@"/"])
+    {
+        [userDefaults setInteger:[userDefaults integerForKey:@"totalDivides"] +1 forKey:@"totalDivides"];
+        NSLog(@"totalDivides = %i", [userDefaults integerForKey:@"totalDivides"]);
+    }
+
 }
 
 -(void)giveSticker
@@ -140,6 +164,7 @@
 
     [userDefaults synchronize];
 }
+
 
 -(void)wrongAnswer
 {
