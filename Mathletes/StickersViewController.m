@@ -39,32 +39,6 @@
                      @([userDefaults integerForKey:@"moonCount"]),
                      @([userDefaults integerForKey:@"giraffeCount"]),
                      @([userDefaults integerForKey:@"sunCount"]),];
-    
-
-
-//    userStickers = @[
-    
-//    PFUser *user = [PFUser currentUser];
-//    [user fetchIfNeededInBackgroundWithBlock:nil];
-    
-
-    
-//    PFObject *sticker = [PFObject objectWithClassName:@"Sticker"];
-//    [sticker setObject:user forKey:@"user"];
-//    [sticker setObject:@"puppy160x160.jpg" forKey:@"image"];
-//    [sticker saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-//        if (!error)
-//        {
-//            NSLog(@"Saved");
-//        }
-//        else
-//        {
-//            NSLog(@"Error: %@ %@", error, [error userInfo]);
-//        }
-//    }]
-    
-
-    
 }
 
 

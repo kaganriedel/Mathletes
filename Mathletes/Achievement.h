@@ -12,5 +12,6 @@
 
 @property NSString *name;
 @property NSString *description;
+@property BOOL isAchieved;
 
 @end

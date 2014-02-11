@@ -46,10 +46,13 @@
 -(void)timerFired:(NSTimer *)timer
 {
     countDown++;
+<<<<<<< HEAD
+    //Sonam smells bad :)
+=======
 //    happy birthday kagan
+>>>>>>> 761e1e80b4385de2bb6332b0ddbe7ffad5283791
     
-    if (countDown ==0)
-    {
+    if (countDown ==0) {
         [self.countDownTimer invalidate];
     }
     
