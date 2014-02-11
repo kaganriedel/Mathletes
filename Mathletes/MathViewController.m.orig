@@ -16,6 +16,7 @@
     __weak IBOutlet UIButton *newButton;
     __weak IBOutlet UILabel *feedbackLabel;
     __weak IBOutlet UITextField *answerTextField;
+    __weak IBOutlet UILabel *timerLabel;
     NSInteger countDown;
     
 }
@@ -45,10 +46,14 @@
 -(void)timerFired:(NSTimer *)timer
 {
     countDown++;
-
-    if (countDown ==20) {
+<<<<<<< HEAD
+    //Sonam smells bad :)
+=======
+//    happy birthday kagan
+>>>>>>> 761e1e80b4385de2bb6332b0ddbe7ffad5283791
+    
+    if (countDown ==0) {
         [self.countDownTimer invalidate];
-        
     }
     
     

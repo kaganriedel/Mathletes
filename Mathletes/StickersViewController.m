@@ -39,32 +39,6 @@
                      @([userDefaults integerForKey:@"moonCount"]),
                      @([userDefaults integerForKey:@"giraffeCount"]),
                      @([userDefaults integerForKey:@"sunCount"]),];
-    
-
-
-//    userStickers = @[
-    
-//    PFUser *user = [PFUser currentUser];
-//    [user fetchIfNeededInBackgroundWithBlock:nil];
-    
-
-    
-//    PFObject *sticker = [PFObject objectWithClassName:@"Sticker"];
-//    [sticker setObject:user forKey:@"user"];
-//    [sticker setObject:@"puppy160x160.jpg" forKey:@"image"];
-//    [sticker saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-//        if (!error)
-//        {
-//            NSLog(@"Saved");
-//        }
-//        else
-//        {
-//            NSLog(@"Error: %@ %@", error, [error userInfo]);
-//        }
-//    }]
-    
-
-    
 }
 
 
@@ -72,7 +46,6 @@
 -(StickerCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     StickerCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"StickerCell" forIndexPath:indexPath];
-//    PFObject *sticker = stickers[indexPath.row];
     cell.imageView.image = [UIImage imageNamed:stickers[indexPath.row]];
     
     NSNumber *stickerCount = userStickers[indexPath.row];
