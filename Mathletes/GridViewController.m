@@ -7,6 +7,7 @@
 //
 
 #import "GridViewController.h"
+#import "MathViewController.h"
 
 @interface GridViewController ()
 
