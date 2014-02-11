@@ -36,7 +36,10 @@
     
 }
 
-
+-(void)stupidMethod
+{
+    
+}
 
 -(void)newMathProblem
 {

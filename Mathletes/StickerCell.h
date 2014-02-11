@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Sticker.h"
 
 @interface StickerCell : UICollectionViewCell
 
