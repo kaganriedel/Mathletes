@@ -49,9 +49,10 @@
     if (countDown ==20) {
         [self.countDownTimer invalidate];
         
+        
+        
+        
     }
-    
-    
 }
 
 
