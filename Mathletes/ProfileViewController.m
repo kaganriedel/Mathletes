@@ -52,6 +52,11 @@
         [userDefaults setInteger:0 forKey:@"giraffeCount"];
         [userDefaults setInteger:0 forKey:@"sunCount"];
         
+        [userDefaults setInteger:0 forKey:@"totalAdds"];
+        [userDefaults setInteger:0 forKey:@"totalSubs"];
+        [userDefaults setInteger:0 forKey:@"totalMults"];
+        [userDefaults setInteger:0 forKey:@"totalDivides"];
+        
         [userDefaults synchronize];
     }];
     

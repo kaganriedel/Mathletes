@@ -51,7 +51,7 @@
     NSNumber *stickerCount = userStickers[indexPath.row];
     if (stickerCount.integerValue == 0)
     {
-        cell.imageView.alpha = 0.3;
+        cell.imageView.alpha = 0.2;
     }
     
     cell.countLabel.text = [NSString stringWithFormat:@"x%@", stickerCount];
