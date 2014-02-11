@@ -12,8 +12,9 @@
 
 @property NSString *name;
 @property NSString *description;
+@property NSString *message;
 @property BOOL isAchieved;
 
--(id)initWithName:(NSString *)name Description:(NSString *)description;
+-(id)initWithName:(NSString *)name Description:(NSString *)description Message:(NSString *)message;
 
 @end

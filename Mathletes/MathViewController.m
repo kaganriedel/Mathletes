@@ -17,6 +17,9 @@
     __weak IBOutlet UILabel *feedbackLabel;
     __weak IBOutlet UITextField *answerTextField;
     NSInteger countDown;
+    
+    NSUserDefaults *userDefaults;
+
 }
 
 @property (nonatomic, strong) NSTimer *countDownTimer;
@@ -29,6 +32,8 @@
 {
     [super viewDidLoad];
     
+    userDefaults = [NSUserDefaults standardUserDefaults];
+
     _operationLabel.text = _operationType;
     
     [self newMathProblem];
@@ -41,10 +46,17 @@
 
 }
 
+-(void)startTimer
+{
+    countDown = 0;
+    self.countDownTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(timerFired:) userInfo:nil repeats:YES];
+    
+}
+
 -(void)timerFired:(NSTimer *)timer
 {
     countDown++;
-
+    
     if (countDown ==5)
     {
         [self.countDownTimer invalidate];
@@ -71,15 +83,6 @@
     
 }
 
--(void)startTimer
-{
-    countDown = 0;
-    self.countDownTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(timerFired:) userInfo:nil repeats:YES];
-    
-}
-
-
-
 -(void)newMathProblem
 {
     int highestRange = 11;
@@ -90,7 +93,7 @@
     NSLog(@"var1: %i var2: %i", var1Label.text.intValue, var2Label.text.intValue);
     
     
-    /*
+    
     if ([_operationLabel.text isEqualToString:@"/"])
     {
         divisionModifier = 1;
@@ -135,7 +138,6 @@
 
 -(void)updateAchievements
 {
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     if ([_operationLabel.text isEqualToString:@"+"])
     {
         [userDefaults setInteger:[userDefaults integerForKey:@"totalAdds"] +1 forKey:@"totalAdds"];
@@ -164,7 +166,7 @@
     int randomSticker = arc4random()%100;
     NSLog(@"%i",randomSticker);
     
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    userDefaults = [NSUserDefaults standardUserDefaults];
     
     if (randomSticker < 20)
     {
@@ -252,7 +254,6 @@
         {
             feedbackLabel.text = [NSString stringWithFormat: @"The correct answer is %i", var1Label.text.intValue - var2Label.text.intValue];
             [self wrongAnswer];
-
         }
     }
 }
