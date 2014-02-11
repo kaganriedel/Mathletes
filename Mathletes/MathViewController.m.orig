@@ -8,7 +8,7 @@
 
 #import "MathViewController.h"
 
-@interface MathViewController ()
+@interface MathViewController () <UIAlertViewDelegate>
 {
     __weak IBOutlet UILabel *var1Label;
     __weak IBOutlet UILabel *var2Label;
@@ -16,7 +16,6 @@
     __weak IBOutlet UIButton *newButton;
     __weak IBOutlet UILabel *feedbackLabel;
     __weak IBOutlet UITextField *answerTextField;
-    __weak IBOutlet UILabel *timerLabel;
     NSInteger countDown;
     
 }
@@ -36,8 +35,8 @@
     [self newMathProblem];
     
     newButton.alpha = 0.0;
-
-    self.countDownTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(timerFired:) userInfo:nil repeats:YES];
+    [self startTimer];
+    
     
     
 
@@ -46,27 +45,56 @@
 -(void)timerFired:(NSTimer *)timer
 {
     countDown++;
-<<<<<<< HEAD
-    //Sonam smells bad :)
-=======
-//    happy birthday kagan
->>>>>>> 761e1e80b4385de2bb6332b0ddbe7ffad5283791
-    
-    if (countDown ==0) {
+
+    if (countDown ==5)
+    {
         [self.countDownTimer invalidate];
+<<<<<<< HEAD
+        
+        
+        
+        
     }
-    
+}
+
+
+=======
+        [self showMessage];
+    }
     
 }
 
--(void)stupidMethod
+- (void)showMessage
 {
+    UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Time is UP!"
+                                                      message:@"Oops! Next problem"
+                                                     delegate:self
+                                            cancelButtonTitle:@"OK"
+                                            otherButtonTitles:nil];
+    
+    [message show];
+}
+
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    [self newMathProblem];
+    [self startTimer];
     
 }
+>>>>>>> 8658a480c042acd598dd4f0d9269f886b4005361
+
+-(void)startTimer
+{
+    countDown = 0;
+    self.countDownTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(timerFired:) userInfo:nil repeats:YES];
+    
+}
+
+
 
 -(void)newMathProblem
 {
-    int highestRange = 101;
+    int highestRange = 11;
     int divisionModifier = 0;
     
     if ([_operationLabel.text isEqualToString:@"/"])
@@ -107,7 +135,34 @@
     newButton.alpha = 1.0;
     goButton.alpha = 0.0;
     
+    [self updateAchievements];
     [self giveSticker];
+}
+
+-(void)updateAchievements
+{
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    if ([_operationLabel.text isEqualToString:@"+"])
+    {
+        [userDefaults setInteger:[userDefaults integerForKey:@"totalAdds"] +1 forKey:@"totalAdds"];
+        NSLog(@"totalAdds = %i", [userDefaults integerForKey:@"totalAdds"]);
+    }
+    else if ([_operationLabel.text isEqualToString:@"-"])
+    {
+        [userDefaults setInteger:[userDefaults integerForKey:@"totalSubs"] +1 forKey:@"totalSubs"];
+        NSLog(@"totalSubs = %i", [userDefaults integerForKey:@"totalSubs"]);
+    }
+    else if ([_operationLabel.text isEqualToString:@"x"])
+    {
+        [userDefaults setInteger:[userDefaults integerForKey:@"totalMults"] +1 forKey:@"totalMults"];
+        NSLog(@"totalMults = %i", [userDefaults integerForKey:@"totalMults"]);
+    }
+    else if ([_operationLabel.text isEqualToString:@"/"])
+    {
+        [userDefaults setInteger:[userDefaults integerForKey:@"totalDivides"] +1 forKey:@"totalDivides"];
+        NSLog(@"totalDivides = %i", [userDefaults integerForKey:@"totalDivides"]);
+    }
+
 }
 
 -(void)giveSticker
@@ -145,6 +200,7 @@
 
     [userDefaults synchronize];
 }
+
 
 -(void)wrongAnswer
 {

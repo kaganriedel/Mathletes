@@ -8,7 +8,7 @@
 
 #import "MathViewController.h"
 
-@interface MathViewController ()
+@interface MathViewController () <UIAlertViewDelegate>
 {
     __weak IBOutlet UILabel *var1Label;
     __weak IBOutlet UILabel *var2Label;
@@ -35,8 +35,8 @@
     [self newMathProblem];
     
     newButton.alpha = 0.0;
-
-    self.countDownTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(timerFired:) userInfo:nil repeats:YES];
+    [self startTimer];
+    
     
     
 
@@ -46,13 +46,37 @@
 {
     countDown++;
 
-    if (countDown ==20) {
+    if (countDown ==5)
+    {
         [self.countDownTimer invalidate];
-        
-        
-        
-        
+        [self showMessage];
     }
+    
+}
+
+- (void)showMessage
+{
+    UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Time is UP!"
+                                                      message:@"Oops! Next problem"
+                                                     delegate:self
+                                            cancelButtonTitle:@"OK"
+                                            otherButtonTitles:nil];
+    
+    [message show];
+}
+
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    [self newMathProblem];
+    [self startTimer];
+    
+}
+
+-(void)startTimer
+{
+    countDown = 0;
+    self.countDownTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(timerFired:) userInfo:nil repeats:YES];
+    
 }
 
 
