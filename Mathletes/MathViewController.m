@@ -40,10 +40,11 @@
     
     newButton.alpha = 0.0;
     [self startTimer];
-    
-    
-    
+}
 
+-(void)viewDidDisappear:(BOOL)animated
+{
+    [self.countDownTimer invalidate];
 }
 
 -(void)startTimer
@@ -120,6 +121,7 @@
 {
     answerTextField.text = nil;
     [self newMathProblem];
+    [self startTimer];
     feedbackLabel.text = nil;
     newButton.alpha = 0.0;
     goButton.alpha = 1.0;
@@ -132,8 +134,10 @@
     newButton.alpha = 1.0;
     goButton.alpha = 0.0;
     
+    [self.countDownTimer invalidate];
     [self updateAchievements];
     [self giveSticker];
+
 }
 
 -(void)updateAchievements
@@ -142,6 +146,12 @@
     {
         [userDefaults setInteger:[userDefaults integerForKey:@"totalAdds"] +1 forKey:@"totalAdds"];
         NSLog(@"totalAdds = %i", [userDefaults integerForKey:@"totalAdds"]);
+        [userDefaults synchronize];
+        if ([userDefaults integerForKey:@"totalAdds"] > 0)
+        {
+            [userDefaults setBool:YES forKey:@"Added Up!"];
+            [userDefaults synchronize];
+        }
     }
     else if ([_operationLabel.text isEqualToString:@"-"])
     {
@@ -160,6 +170,14 @@
     }
 
 }
+
+/*
+ achievements = @[[[Achievement alloc] initWithName:@"Added Up!" Description:@"Complete 1 addition problem" Message:@"You completed your first addition problem!"],
+ [[Achievement alloc] initWithName:@"Subtracted!" Description:@"Complete 1 subtraction problem" Message:@"You completed your first subtraction problem!"],
+ [[Achievement alloc] initWithName:@"5 Adds!" Description:@"Complete 5 addition problems" Message:@"You completed 5 addition problems!"],
+ [[Achievement alloc] initWithName:@"5 Subtracts!" Description:@"Complete 5 subtraction problems" Message:@"You completed 5 subtraction problems!"],
+ [[Achievement alloc] initWithName:@"Keep It Up!" Description:@"Complete 10 total math problems" Message:@"You completed 10 total problems!"]];
+ */
 
 -(void)giveSticker
 {
