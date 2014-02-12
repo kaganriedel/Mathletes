@@ -200,6 +200,7 @@
 				6D18827418A99D54003DCA92 /* Achievement.h */,
 				6D18827518A99D54003DCA92 /* Achievement.m */,
 				6D891EBB18A582EC0002B915 /* Images.xcassets */,
+				6D1BE7D518A9BBCE0079102A /* Images */,
 				6D891EAA18A582EC0002B915 /* Supporting Files */,
 			);
 			path = Mathletes;
@@ -208,7 +209,6 @@
 		6D891EAA18A582EC0002B915 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				6D1BE7D518A9BBCE0079102A /* Images */,
 				6D891EAB18A582EC0002B915 /* Mathletes-Info.plist */,
 				6D891EAC18A582EC0002B915 /* InfoPlist.strings */,
 				6D891EAF18A582EC0002B915 /* main.m */,

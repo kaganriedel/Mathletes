@@ -8,6 +8,20 @@
 
 #import "MathViewController.h"
 
+@interface NSUserDefaults (mathletes)
+@end
+@implementation NSUserDefaults (mathletes)
+
+- (int)incrementKey:(NSString *)key
+{
+    int value = [self integerForKey:key] + 1;
+    [self setInteger:value forKey:key];
+    return value;
+}
+
+@end
+
+
 @interface MathViewController () <UIAlertViewDelegate>
 {
     __weak IBOutlet UILabel *var1Label;
@@ -16,7 +30,10 @@
     __weak IBOutlet UIButton *newButton;
     __weak IBOutlet UILabel *feedbackLabel;
     __weak IBOutlet UITextField *answerTextField;
+    
     NSInteger countDown;
+    
+    NSUserDefaults *userDefaults;
 }
 
 @property (nonatomic, strong) NSTimer *countDownTimer;
@@ -29,46 +46,19 @@
 {
     [super viewDidLoad];
     
+    userDefaults = [NSUserDefaults standardUserDefaults];
+
     _operationLabel.text = _operationType;
     
     [self newMathProblem];
     
     newButton.alpha = 0.0;
     [self startTimer];
-    
-    
-    
-
 }
 
--(void)timerFired:(NSTimer *)timer
+-(void)viewDidDisappear:(BOOL)animated
 {
-    countDown++;
-
-    if (countDown ==5)
-    {
-        [self.countDownTimer invalidate];
-        [self showMessage];
-    }
-    
-}
-
-- (void)showMessage
-{
-    UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Time is UP!"
-                                                      message:@"Oops! Next problem"
-                                                     delegate:self
-                                            cancelButtonTitle:@"OK"
-                                            otherButtonTitles:nil];
-    
-    [message show];
-}
-
--(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
-{
-    [self newMathProblem];
-    [self startTimer];
-    
+    [self.countDownTimer invalidate];
 }
 
 -(void)startTimer
@@ -78,7 +68,33 @@
     
 }
 
+-(void)timerFired:(NSTimer *)timer
+{
+    countDown ++;
+    
+    if (countDown == 5)
+    {
+        [self.countDownTimer invalidate];
+        [self showMessage];
+    }
+}
 
+- (void)showMessage
+{
+    UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Time Is Up!"
+                                                      message:@"Oops! Next problem"
+                                                     delegate:self
+                                            cancelButtonTitle:@"Next"
+                                            otherButtonTitles:nil];
+    
+    [message show];
+}
+
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    [self newMathProblem];
+    [self startTimer];
+}
 
 -(void)newMathProblem
 {
@@ -88,7 +104,6 @@
     [var1Label setText:[NSString stringWithFormat:@"%i", arc4random()%(highestRange-divisionModifier)+divisionModifier]];
     [var2Label setText:[NSString stringWithFormat:@"%i", arc4random()%(highestRange-divisionModifier)+divisionModifier]];
     NSLog(@"var1: %i var2: %i", var1Label.text.intValue, var2Label.text.intValue);
-    
     
     if ([_operationLabel.text isEqualToString:@"/"])
     {
@@ -116,6 +131,7 @@
 {
     answerTextField.text = nil;
     [self newMathProblem];
+    [self startTimer];
     feedbackLabel.text = nil;
     newButton.alpha = 0.0;
     goButton.alpha = 1.0;
@@ -128,66 +144,74 @@
     newButton.alpha = 1.0;
     goButton.alpha = 0.0;
     
+    [self.countDownTimer invalidate];
     [self updateAchievements];
     [self giveSticker];
+
 }
 
 -(void)updateAchievements
 {
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     if ([_operationLabel.text isEqualToString:@"+"])
     {
-        [userDefaults setInteger:[userDefaults integerForKey:@"totalAdds"] +1 forKey:@"totalAdds"];
-        NSLog(@"totalAdds = %i", [userDefaults integerForKey:@"totalAdds"]);
+        int newTotalAdds = [userDefaults incrementKey:@"totalAdds"];
+        if (newTotalAdds > 0)
+        {
+            [userDefaults setBool:YES forKey:@"Added Up!"];
+        }
     }
     else if ([_operationLabel.text isEqualToString:@"-"])
     {
-        [userDefaults setInteger:[userDefaults integerForKey:@"totalSubs"] +1 forKey:@"totalSubs"];
-        NSLog(@"totalSubs = %i", [userDefaults integerForKey:@"totalSubs"]);
+        [userDefaults incrementKey:@"totalSubs"];
     }
     else if ([_operationLabel.text isEqualToString:@"x"])
     {
-        [userDefaults setInteger:[userDefaults integerForKey:@"totalMults"] +1 forKey:@"totalMults"];
-        NSLog(@"totalMults = %i", [userDefaults integerForKey:@"totalMults"]);
+        [userDefaults incrementKey:@"totalMults"];
     }
     else if ([_operationLabel.text isEqualToString:@"/"])
     {
-        [userDefaults setInteger:[userDefaults integerForKey:@"totalDivides"] +1 forKey:@"totalDivides"];
-        NSLog(@"totalDivides = %i", [userDefaults integerForKey:@"totalDivides"]);
+        [userDefaults incrementKey:@"totalDivides"];
     }
-
+    [userDefaults synchronize];
 }
+
+/*
+ achievements = @[[[Achievement alloc] initWithName:@"Added Up!" Description:@"Complete 1 addition problem" Message:@"You completed your first addition problem!"],
+ [[Achievement alloc] initWithName:@"Subtracted!" Description:@"Complete 1 subtraction problem" Message:@"You completed your first subtraction problem!"],
+ [[Achievement alloc] initWithName:@"5 Adds!" Description:@"Complete 5 addition problems" Message:@"You completed 5 addition problems!"],
+ [[Achievement alloc] initWithName:@"5 Subtracts!" Description:@"Complete 5 subtraction problems" Message:@"You completed 5 subtraction problems!"],
+ [[Achievement alloc] initWithName:@"Keep It Up!" Description:@"Complete 10 total math problems" Message:@"You completed 10 total problems!"]];
+ */
 
 -(void)giveSticker
 {
     int randomSticker = arc4random()%100;
     NSLog(@"%i",randomSticker);
     
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     
     if (randomSticker < 20)
     {
-        [userDefaults setInteger:[userDefaults integerForKey:@"lionCount"] +1 forKey:@"lionCount"];
+        [userDefaults incrementKey:@"lionCount"];
         NSLog(@"1st count +1");
     }
     else if (randomSticker < 40)
     {
-        [userDefaults setInteger:[userDefaults integerForKey:@"kittenCount"] +1 forKey:@"kittenCount"];
+        [userDefaults incrementKey:@"kittenCount"];
         NSLog(@"2nd count +1");
     }
     else if (randomSticker < 60)
     {
-        [userDefaults setInteger:[userDefaults integerForKey:@"starCount"] +1 forKey:@"starCount"];
+        [userDefaults incrementKey:@"starCount"];
         NSLog(@"3rd count +1");
     }
     else if (randomSticker < 80)
     {
-        [userDefaults setInteger:[userDefaults integerForKey:@"puppyCount"] +1 forKey:@"puppyCount"];
+        [userDefaults incrementKey:@"puppyCount"];
         NSLog(@"4th count +1");
     }
     else if (randomSticker <= 100)
     {
-        [userDefaults setInteger:[userDefaults integerForKey:@"tigerCount"] +1 forKey:@"tigerCount"];
+        [userDefaults incrementKey:@"tigerCount"];
         NSLog(@"5th count +1");
     }
 
@@ -199,63 +223,65 @@
 {
     goButton.alpha = 0.0;
     newButton.alpha = 1.0;
+    [self.countDownTimer invalidate];
 }
 
 - (IBAction)onGoButtonPressed:(id)sender
 {
-    if ([_operationLabel.text isEqualToString:@"x"])
+    if (![answerTextField.text isEqualToString:@""])
     {
-        if (answerTextField.text.intValue == var1Label.text.intValue * var2Label.text.intValue)
+        if ([_operationLabel.text isEqualToString:@"x"])
         {
-            [self correctAnswer];
+            if (answerTextField.text.intValue == var1Label.text.intValue * var2Label.text.intValue)
+            {
+                [self correctAnswer];
+            }
+            else
+            {
+                feedbackLabel.text = [NSString stringWithFormat: @"The correct answer is %i", var1Label.text.intValue * var2Label.text.intValue];
+                [self wrongAnswer];
+            }
         }
-        else
+        else if ([_operationLabel.text isEqualToString:@"/"])
         {
-            feedbackLabel.text = [NSString stringWithFormat: @"The correct answer is %i", var1Label.text.intValue * var2Label.text.intValue];
-            [self wrongAnswer];
+            if (answerTextField.text.intValue == var1Label.text.intValue / var2Label.text.intValue)
+            {
+                [self correctAnswer];
+            }
+            else
+            {
+                feedbackLabel.text = [NSString stringWithFormat: @"The correct answer is %i", var1Label.text.intValue / var2Label.text.intValue];
+                [self wrongAnswer];
+                
+            }
         }
-    }
-    else if ([_operationLabel.text isEqualToString:@"/"])
-    {
-        if (answerTextField.text.intValue == var1Label.text.intValue / var2Label.text.intValue)
+        else if ([_operationLabel.text isEqualToString:@"+"])
         {
-            [self correctAnswer];
+            if (answerTextField.text.intValue == var1Label.text.intValue + var2Label.text.intValue)
+            {
+                [self correctAnswer];
+            }
+            else
+            {
+                feedbackLabel.text = [NSString stringWithFormat: @"The correct answer is %i", var1Label.text.intValue + var2Label.text.intValue];
+                [self wrongAnswer];
+                
+            }
         }
-        else
+        else if ([_operationLabel.text isEqualToString:@"-"])
         {
-            feedbackLabel.text = [NSString stringWithFormat: @"The correct answer is %i", var1Label.text.intValue / var2Label.text.intValue];
-            [self wrongAnswer];
-
-        }
-    }
-   else if ([_operationLabel.text isEqualToString:@"+"])
-    {
-        if (answerTextField.text.intValue == var1Label.text.intValue + var2Label.text.intValue)
-        {
-            [self correctAnswer];
-        }
-        else
-        {
-            feedbackLabel.text = [NSString stringWithFormat: @"The correct answer is %i", var1Label.text.intValue + var2Label.text.intValue];
-            [self wrongAnswer];
-
-        }
-    }
-    else if ([_operationLabel.text isEqualToString:@"-"])
-    {
-        if (answerTextField.text.intValue == var1Label.text.intValue - var2Label.text.intValue)
-        {
-            [self correctAnswer];
-        }
-        else
-        {
-            feedbackLabel.text = [NSString stringWithFormat: @"The correct answer is %i", var1Label.text.intValue - var2Label.text.intValue];
-            [self wrongAnswer];
-
+            if (answerTextField.text.intValue == var1Label.text.intValue - var2Label.text.intValue)
+            {
+                [self correctAnswer];
+            }
+            else
+            {
+                feedbackLabel.text = [NSString stringWithFormat: @"The correct answer is %i", var1Label.text.intValue - var2Label.text.intValue];
+                [self wrongAnswer];
+            }
         }
     }
 }
-
 
 
 @end

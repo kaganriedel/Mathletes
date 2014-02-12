@@ -10,12 +10,22 @@
 
 @implementation Achievement
 
--(id)initWithName:(NSString *)name Description:(NSString *)description
+-(id)initWithName:(NSString *)name Description:(NSString *)description Message:(NSString *)message
 {
     self = [super init];
     self.name = name;
     self.description = description;
-    self.isAchieved = NO;
+    self.message = message;
+    
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    if ([userDefaults boolForKey:name])
+    {
+        self.isAchieved = YES;
+    }
+    else
+    {
+        self.isAchieved = NO;
+    }
     
     return self;
 }
