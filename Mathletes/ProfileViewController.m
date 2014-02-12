@@ -33,35 +33,16 @@
     [super viewDidAppear:animated];
     
     [self checkForLoggedInUserAnimated:animated];
+    
+
 }
 
 -(void)signUpViewController:(PFSignUpViewController *)signUpController didSignUpUser:(PFUser *)user
 {
+    [self setTitle];
+
     [signUpController dismissViewControllerAnimated:YES completion:^{
         [self dismissViewControllerAnimated:YES completion:nil];
-        
-        //when a new user signs up set all the counts to 0
-        NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-        
-        [userDefaults setInteger:0 forKey:@"lionCount"];
-        [userDefaults setInteger:0 forKey:@"kittenCount"];
-        [userDefaults setInteger:0 forKey:@"starCount"];
-        [userDefaults setInteger:0 forKey:@"puppyCount"];
-        [userDefaults setInteger:0 forKey:@"tigerCount"];
-        [userDefaults setInteger:0 forKey:@"moonCount"];
-        [userDefaults setInteger:0 forKey:@"giraffeCount"];
-        [userDefaults setInteger:0 forKey:@"sunCount"];
-        
-        [userDefaults setInteger:0 forKey:@"totalAdds"];
-        [userDefaults setInteger:0 forKey:@"totalFastAdds"];
-        [userDefaults setInteger:0 forKey:@"totalSubs"];
-        [userDefaults setInteger:0 forKey:@"totalFastSubs"];
-        [userDefaults setInteger:0 forKey:@"totalMults"];
-        [userDefaults setInteger:0 forKey:@"totalFastMults"];
-        [userDefaults setInteger:0 forKey:@"totalDivides"];
-        [userDefaults setInteger:0 forKey:@"totalFastDivides"];
-
-        [userDefaults synchronize];
     }];
     
     //receive their first sticker and set it to their profile pic
@@ -84,8 +65,14 @@
 - (IBAction)onLogOut:(id)sender
 {
     [PFUser logOut];
+    
+    [[NSUserDefaults standardUserDefaults] removePersistentDomainForName:[NSBundle mainBundle].bundleIdentifier];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    
     [self checkForLoggedInUserAnimated:YES];
 }
+
+
 
 -(void)checkForLoggedInUserAnimated:(BOOL)animated
 {

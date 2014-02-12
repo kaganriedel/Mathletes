@@ -140,7 +140,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="StickerCell" id="qH2-9H-mDV" customClass="StickerCell">
-                                        <rect key="frame" x="5" y="69" width="73.75" height="73.75"/>
+                                        <rect key="frame" x="5" y="69" width="74" height="74"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="74" height="74"/>
@@ -418,6 +418,24 @@
                                     <action selector="onGoButtonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="xag-O6-vkh"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Syf-75-kya">
+                                <rect key="frame" x="14" y="74" width="50" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Star.png" translatesAutoresizingMaskIntoConstraints="NO" id="kOa-ng-8pL">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="New Achievement!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="62" translatesAutoresizingMaskIntoConstraints="NO" id="Eb7-en-F7F">
+                                        <rect key="frame" x="-6" y="50" width="62" height="20"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="8"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -426,6 +444,7 @@
                         <outlet property="answerTextField" destination="wb7-5U-yj6" id="Wm2-Bx-vIr"/>
                         <outlet property="feedbackLabel" destination="hBD-H4-eh8" id="BVV-0z-t9J"/>
                         <outlet property="goButton" destination="4t2-yu-pDO" id="wbd-T2-bGU"/>
+                        <outlet property="newAchievementView" destination="Syf-75-kya" id="wRW-Gc-tl9"/>
                         <outlet property="newButton" destination="75g-hP-4CW" id="N7Z-C9-JBk"/>
                         <outlet property="operationLabel" destination="mPZ-ID-guH" id="Gb9-ca-rZ4"/>
                         <outlet property="var1Label" destination="1ES-DV-m4B" id="KcW-IF-NTd"/>
@@ -456,6 +475,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Star.png" width="50" height="50"/>
         <image name="murray320x320.jpg" width="320" height="320"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

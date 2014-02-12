@@ -30,6 +30,7 @@
     __weak IBOutlet UIButton *newButton;
     __weak IBOutlet UILabel *feedbackLabel;
     __weak IBOutlet UITextField *answerTextField;
+    __weak IBOutlet UIView *newAchievementView;
     
     NSInteger countDown;
     NSTimer *countDownTimer;
@@ -49,10 +50,10 @@
     userDefaults = [NSUserDefaults standardUserDefaults];
 
     _operationLabel.text = _operationType;
+    newButton.alpha = 0.0;
+    newAchievementView.alpha = 0.0;
     
     [self newMathProblem];
-    
-    newButton.alpha = 0.0;
     [self startTimer];
 }
 
@@ -65,7 +66,6 @@
 {
     countDown = 0;
     countDownTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(timerFired:) userInfo:nil repeats:YES];
-    
 }
 
 -(void)timerFired:(NSTimer *)timer
@@ -73,7 +73,6 @@
     countDown ++;
     NSLog(@"%i",countDown);
 
-    
     if (countDown == 10)
     {
         [countDownTimer invalidate];
@@ -83,12 +82,7 @@
 
 - (void)showMessage
 {
-    UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Time Is Up!"
-                                                      message:@"Oops! Next problem"
-                                                     delegate:self
-                                            cancelButtonTitle:@"Next"
-                                            otherButtonTitles:nil];
-    
+    UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Time Is Up!" message:@"Oops! Next problem" delegate:self cancelButtonTitle:@"Next" otherButtonTitles:nil];
     [message show];
 }
 
@@ -102,7 +96,6 @@
 {
     feedbackLabel.text = nil;
     answerTextField.text = nil;
-
 
     int highestRange = 11;
     int divisionModifier = 0;
@@ -148,7 +141,6 @@
     
     [countDownTimer invalidate];
     [self updateAchievements];
-
 }
 
 -(void)updateAchievements
@@ -158,57 +150,69 @@
         int newTotalAdds = [userDefaults incrementKey:@"totalAdds"];
         NSLog(@"newTotalAdds is: %i", newTotalAdds);
 
-        if (newTotalAdds >= 1)
+        if (newTotalAdds >= 1200)
         {
-            [userDefaults setBool:YES forKey:@"Add It Up!"];
+            [userDefaults setBool:YES forKey:@"Add It Up x1200!"];
         }
-        if (newTotalAdds >= 20)
+        else if (newTotalAdds >= 1100)
         {
-            [userDefaults setBool:YES forKey:@"Add It Up x20!"];
+            [userDefaults setBool:YES forKey:@"Add It Up x1100!"];
         }
-        if (newTotalAdds >= 50)
+        else if (newTotalAdds >= 1000)
         {
-            [userDefaults setBool:YES forKey:@"Add It Up x50!"];
+            [userDefaults setBool:YES forKey:@"Add It Up x1000!"];
         }
-        if (newTotalAdds >= 100)
-        {
-            [userDefaults setBool:YES forKey:@"Add It Up x100!"];
-        }
-        if (newTotalAdds >= 200)
-        {
-            [userDefaults setBool:YES forKey:@"Add It Up x200!"];
-        }
-        if (newTotalAdds >= 300)
-        {
-            [userDefaults setBool:YES forKey:@"Add It Up x300!"];
-        }
-        if (newTotalAdds >= 400)
-        {
-            [userDefaults setBool:YES forKey:@"Add It Up x400!"];
-        }
-        if (newTotalAdds >= 500)
-        {
-            [userDefaults setBool:YES forKey:@"Add It Up x500!"];
-        }
-        if (newTotalAdds >= 600)
-        {
-            [userDefaults setBool:YES forKey:@"Add It Up x600!"];
-        }
-        if (newTotalAdds >= 700)
-        {
-            [userDefaults setBool:YES forKey:@"Add It Up x700!"];
-        }
-        if (newTotalAdds >= 800)
-        {
-            [userDefaults setBool:YES forKey:@"Add It Up x800!"];
-        }
-        if (newTotalAdds >= 900)
+        else if (newTotalAdds >= 900)
         {
             [userDefaults setBool:YES forKey:@"Add It Up x900!"];
         }
-        if (newTotalAdds >= 1000)
+        else if (newTotalAdds >= 800)
         {
-            [userDefaults setBool:YES forKey:@"Add It Up x1000!"];
+            [userDefaults setBool:YES forKey:@"Add It Up x800!"];
+        }
+        else if (newTotalAdds >= 700)
+        {
+            [userDefaults setBool:YES forKey:@"Add It Up x700!"];
+        }
+        else if (newTotalAdds >= 600)
+        {
+            [userDefaults setBool:YES forKey:@"Add It Up x600!"];
+        }
+        else if (newTotalAdds >= 500)
+        {
+            [userDefaults setBool:YES forKey:@"Add It Up x500!"];
+        }
+        else if (newTotalAdds >= 400)
+        {
+            [userDefaults setBool:YES forKey:@"Add It Up x400!"];
+        }
+        else if (newTotalAdds >= 300)
+        {
+            [userDefaults setBool:YES forKey:@"Add It Up x300!"];
+        }
+        else if (newTotalAdds >= 200)
+        {
+            [userDefaults setBool:YES forKey:@"Add It Up x200!"];
+        }
+        else if (newTotalAdds >= 100)
+        {
+            [userDefaults setBool:YES forKey:@"Add It Up x100!"];
+        }
+        else if (newTotalAdds >= 50)
+        {
+            [userDefaults setBool:YES forKey:@"Add It Up x50!"];
+        }
+        else if (newTotalAdds >= 20)
+        {
+            [userDefaults setBool:YES forKey:@"Add It Up x20!"];
+        }
+        else if (newTotalAdds >= 1)
+        {
+            if (![userDefaults boolForKey:@"Add It Up!"])
+            {
+                [userDefaults setBool:YES forKey:@"Add It Up!"];
+                [self giveSticker];
+            }
         }
         
         if (countDown <= 6)
@@ -260,9 +264,23 @@
             {
                 [userDefaults setBool:YES forKey:@"Adding At 500 Miles Per Hour!"];
             }
+            if (newTotalFastAdds >= 550)
+            {
+                [userDefaults setBool:YES forKey:@"Adding At 550 Miles Per Hour!"];
+            }
+            if (newTotalFastAdds >= 600)
+            {
+                [userDefaults setBool:YES forKey:@"Adding At 600 Miles Per Hour!"];
+            }
+            if (newTotalFastAdds >= 650)
+            {
+                [userDefaults setBool:YES forKey:@"Adding At 650 Miles Per Hour!"];
+            }
+            if (newTotalFastAdds >= 700)
+            {
+                [userDefaults setBool:YES forKey:@"Adding At 700 Miles Per Hour!"];
+            }
         }
-
-        
     }
     else if ([_operationLabel.text isEqualToString:@"-"])
     {
@@ -320,58 +338,82 @@
         {
             [userDefaults setBool:YES forKey:@"Take It Away x1000!"];
         }
-        
+        if (newTotalSubs >= 1100)
+        {
+            [userDefaults setBool:YES forKey:@"Take It Away x1100!"];
+        }
+        if (newTotalSubs >= 1200)
+        {
+            [userDefaults setBool:YES forKey:@"Take It Away x1200!"];
+        }
+
         if (countDown <= 6)
         {
             int newTotalFastSubs = [userDefaults incrementKey:@"totalFastSubs"];
             NSLog(@"Total Fast Subs: %i",newTotalFastSubs);
             if (newTotalFastSubs >= 25)
             {
-                [userDefaults setBool:YES forKey:@"Subtracting At 25 Miles Per Hour!"];
+                [userDefaults setBool:YES forKey:@"Subtracting At 25 \nMiles Per Hour!"];
             }
             if (newTotalFastSubs >= 50)
             {
-                [userDefaults setBool:YES forKey:@"Subtracting At 50 Miles Per Hour!"];
+                [userDefaults setBool:YES forKey:@"Subtracting At 50 \nMiles Per Hour!"];
             }
             if (newTotalFastSubs >= 100)
             {
-                [userDefaults setBool:YES forKey:@"Subtracting At 100 Miles Per Hour!"];
+                [userDefaults setBool:YES forKey:@"Subtracting At 100 \nMiles Per Hour!"];
             }
             if (newTotalFastSubs >= 150)
             {
-                [userDefaults setBool:YES forKey:@"Subtracting At 150 Miles Per Hour!"];
+                [userDefaults setBool:YES forKey:@"Subtracting At 150 \nMiles Per Hour!"];
             }
             if (newTotalFastSubs >= 200)
             {
-                [userDefaults setBool:YES forKey:@"Subtracting At 200 Miles Per Hour!"];
+                [userDefaults setBool:YES forKey:@"Subtracting At 200 \nMiles Per Hour!"];
             }
             if (newTotalFastSubs >= 250)
             {
-                [userDefaults setBool:YES forKey:@"Subtracting At 250 Miles Per Hour!"];
+                [userDefaults setBool:YES forKey:@"Subtracting At 250 \nMiles Per Hour!"];
             }
             if (newTotalFastSubs >= 300)
             {
-                [userDefaults setBool:YES forKey:@"Subtracting At 300 Miles Per Hour!"];
+                [userDefaults setBool:YES forKey:@"Subtracting At 300 \nMiles Per Hour!"];
             }
             if (newTotalFastSubs >= 350)
             {
-                [userDefaults setBool:YES forKey:@"Subtracting At 350 Miles Per Hour!"];
+                [userDefaults setBool:YES forKey:@"Subtracting At 350 \nMiles Per Hour!"];
             }
             if (newTotalFastSubs >= 400)
             {
-                [userDefaults setBool:YES forKey:@"Subtracting At 400 Miles Per Hour!"];
+                [userDefaults setBool:YES forKey:@"Subtracting At 400 \nMiles Per Hour!"];
             }
             if (newTotalFastSubs >= 450)
             {
-                [userDefaults setBool:YES forKey:@"Subtracting At 450 Miles Per Hour!"];
+                [userDefaults setBool:YES forKey:@"Subtracting At 450 \nMiles Per Hour!"];
             }
             if (newTotalFastSubs >= 500)
             {
-                [userDefaults setBool:YES forKey:@"Subtracting At 500 Miles Per Hour!"];
+                [userDefaults setBool:YES forKey:@"Subtracting At 500 \nMiles Per Hour!"];
+            }
+            if (newTotalFastSubs >= 550)
+            {
+                [userDefaults setBool:YES forKey:@"Subtracting At 550 \nMiles Per Hour!"];
+            }
+            if (newTotalFastSubs >= 600)
+            {
+                [userDefaults setBool:YES forKey:@"Subtracting At 600 \nMiles Per Hour!"];
+            }
+            if (newTotalFastSubs >= 650)
+            {
+                [userDefaults setBool:YES forKey:@"Subtracting At 650 \nMiles Per Hour!"];
+            }
+            if (newTotalFastSubs >= 700)
+            {
+                [userDefaults setBool:YES forKey:@"Subtracting At 700 \nMiles Per Hour!"];
             }
         }
-        
     }
+    
     else if ([_operationLabel.text isEqualToString:@"x"])
     {
         [userDefaults incrementKey:@"totalMults"];
@@ -426,12 +468,24 @@
     {
         [userDefaults setBool:YES forKey:@"Keep It Up x1000!"];
     }
-    
-    
+    if (totalMathProblems >= 1100)
+    {
+        [userDefaults setBool:YES forKey:@"Keep It Up x1100!"];
+    }
+    if (totalMathProblems >= 1200)
+    {
+        [userDefaults setBool:YES forKey:@"Keep It Up x1200!"];
+    }
+    if (totalMathProblems >= 1300)
+    {
+        [userDefaults setBool:YES forKey:@"Keep It Up x1300!"];
+    }
+    if (totalMathProblems >= 1400)
+    {
+        [userDefaults setBool:YES forKey:@"Keep It Up x1400!"];
+    }
     [userDefaults synchronize];
 }
-
-
 
 -(void)giveSticker
 {
@@ -513,7 +567,6 @@
             {
                 feedbackLabel.text = [NSString stringWithFormat: @"The correct answer is %i", var1Label.text.intValue / var2Label.text.intValue];
                 [self wrongAnswer];
-                
             }
         }
         else if ([_operationLabel.text isEqualToString:@"+"])
@@ -526,7 +579,6 @@
             {
                 feedbackLabel.text = [NSString stringWithFormat: @"The correct answer is %i", var1Label.text.intValue + var2Label.text.intValue];
                 [self wrongAnswer];
-                
             }
         }
         else if ([_operationLabel.text isEqualToString:@"-"])
