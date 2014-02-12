@@ -124,9 +124,10 @@
     _addend2 = arc4random()%10;
     
     NSString *numberString = [NSString new];
-    //numberString = [@"%i%i",_addend1,_addend2];
+    numberString = [NSString stringWithFormat:@"%i%i",_addend1,_addend2];
 
-    NSLog(@"var1: %i var2: %i", _addend1, _addend2);
+    NSLog(@"%@", numberString);
+    
     /*
     [var1Label setText:[NSString stringWithFormat:@"%i", arc4random()%(highestRange-divisionModifier)+divisionModifier]];
     [var2Label setText:[NSString stringWithFormat:@"%i", arc4random()%(highestRange-divisionModifier)+divisionModifier]];

@@ -90,7 +90,6 @@
     NSLog(@"var1: %i var2: %i", var1Label.text.intValue, var2Label.text.intValue);
     
     
-    /*
     if ([_operationLabel.text isEqualToString:@"/"])
     {
         divisionModifier = 1;
