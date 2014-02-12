@@ -53,10 +53,14 @@
         [userDefaults setInteger:0 forKey:@"sunCount"];
         
         [userDefaults setInteger:0 forKey:@"totalAdds"];
+        [userDefaults setInteger:0 forKey:@"totalFastAdds"];
         [userDefaults setInteger:0 forKey:@"totalSubs"];
+        [userDefaults setInteger:0 forKey:@"totalFastSubs"];
         [userDefaults setInteger:0 forKey:@"totalMults"];
+        [userDefaults setInteger:0 forKey:@"totalFastMults"];
         [userDefaults setInteger:0 forKey:@"totalDivides"];
-        
+        [userDefaults setInteger:0 forKey:@"totalFastDivides"];
+
         [userDefaults synchronize];
     }];
     
