@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		27B54DD918AD44270068E68A /* boy.png in Resources */ = {isa = PBXBuildFile; fileRef = 27B54DD818AD44270068E68A /* boy.png */; };
 		6D17BD5318AC1CFE009A7416 /* AchievementHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D17BD5218AC1CFE009A7416 /* AchievementHeader.m */; };
 		6D18826218A943DF003DCA92 /* StickersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D18826118A943DF003DCA92 /* StickersViewController.m */; };
 		6D18826518A94458003DCA92 /* StickerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D18826418A94458003DCA92 /* StickerCell.m */; };
@@ -55,6 +56,7 @@
 /* Begin PBXFileReference section */
 		0FBAD299D6F34B0D8960E650 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		11D82320CD96410092541D1A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		27B54DD818AD44270068E68A /* boy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = boy.png; sourceTree = "<group>"; };
 		6D17BD5118AC1CFE009A7416 /* AchievementHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AchievementHeader.h; sourceTree = "<group>"; };
 		6D17BD5218AC1CFE009A7416 /* AchievementHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AchievementHeader.m; sourceTree = "<group>"; };
 		6D18826018A943DF003DCA92 /* StickersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StickersViewController.h; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 		6D1BE7D518A9BBCE0079102A /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				27B54DD818AD44270068E68A /* boy.png */,
 				6D891EDB18A5B88F0002B915 /* murray320x320.jpg */,
 				6D18826818A94F64003DCA92 /* puppy160x160.jpg */,
 				6D18826E18A98129003DCA92 /* ThumbsUpButton.png */,
@@ -318,6 +321,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27B54DD918AD44270068E68A /* boy.png in Resources */,
 				6D891EBC18A582EC0002B915 /* Images.xcassets in Resources */,
 				6D18827118A9812F003DCA92 /* lion.jpg in Resources */,
 				6D18826B18A9811D003DCA92 /* Star.png in Resources */,
