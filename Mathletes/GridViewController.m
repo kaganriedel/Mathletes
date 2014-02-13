@@ -9,7 +9,7 @@
 #import "GridViewController.h"
 #import "MathViewController.h"
 
-@interface GridViewController ()
+@interface GridViewController () <UITabBarDelegate>
 
 @property (weak, nonatomic) IBOutlet UITabBar *operandTabBar;
 @property (weak, nonatomic) IBOutlet UITabBarItem *additionTabBarItem;
@@ -25,7 +25,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
     
+    self.title = _additionTabBarItem.title;
     [_operandTabBar setSelectedItem:_operandTabBar.items[0]];
     _operand = @"+";
     [self createGrid];
@@ -81,7 +83,6 @@
             }
             
             xDirection += 31;
-            
         }
         subChange++;
         yDirection += 31;

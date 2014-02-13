@@ -33,8 +33,6 @@
     [super viewDidAppear:animated];
     
     [self checkForLoggedInUserAnimated:animated];
-    
-
 }
 
 -(void)signUpViewController:(PFSignUpViewController *)signUpController didSignUpUser:(PFUser *)user
