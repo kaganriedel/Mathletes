@@ -58,8 +58,9 @@
     [self newMathProblem];
     [self startTimer];
     
-    goButton.layer.cornerRadius = 12;
-    newButton.layer.cornerRadius = 12;
+    goButton.layer.cornerRadius = 10;
+    newButton.layer.cornerRadius = 10;
+
     
 }
 
