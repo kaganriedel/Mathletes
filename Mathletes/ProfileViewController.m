@@ -24,10 +24,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    self.navigationController.navigationBar.barTintColor = [UIColor whiteColor];
 
     [self setTitle];
 }
-
 -(void) viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
@@ -48,9 +53,9 @@
 
 -(void)setTitle
 {
-    userNameLabel.text = [PFUser currentUser].username;
-    NSString *cappedFirstChar = [[userNameLabel.text substringToIndex:1] uppercaseString];
-    NSString *cappedString = [userNameLabel.text stringByReplacingCharactersInRange:NSMakeRange(0, 1) withString:cappedFirstChar];
+    NSString *username = [PFUser currentUser].username;
+    NSString *cappedFirstChar = [[username substringToIndex:1] uppercaseString];
+    NSString *cappedString = [username stringByReplacingCharactersInRange:NSMakeRange(0, 1) withString:cappedFirstChar];
     self.navigationItem.title = cappedString;
 }
 

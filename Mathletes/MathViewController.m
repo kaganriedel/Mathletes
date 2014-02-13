@@ -47,6 +47,8 @@
 {
     [super viewDidLoad];
     
+//    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:151.0/255.0 green:244.0/255.0 blue:101.0/255.0 alpha:1.0];
+    
     userDefaults = [NSUserDefaults standardUserDefaults];
 
     _operationLabel.text = _operationType;

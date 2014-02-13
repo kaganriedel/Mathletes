@@ -30,6 +30,7 @@
     [super viewDidLoad];
     
     userDefaults = [NSUserDefaults standardUserDefaults];
+//    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:242.0/255.0 green:71.0/255.0 blue:80.0/255.0 alpha:1.0];
     
     [self loadAllAchievements];
     

@@ -26,6 +26,7 @@
 {
     [super viewDidLoad];
 
+//    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:124.0/255.0 green:194.0/255.0 blue:250.0/255.0 alpha:1.0];
     
     self.title = _additionTabBarItem.title;
     [_operandTabBar setSelectedItem:_operandTabBar.items[0]];
