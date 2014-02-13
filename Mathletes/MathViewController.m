@@ -64,6 +64,11 @@
     [countDownTimer invalidate];
 }
 
+- (IBAction)onBackButtonPressed:(id)sender
+{
+    [self.navigationController popToRootViewControllerAnimated:YES];
+}
+
 -(void)startTimer
 {
     countDown = 0;
@@ -132,7 +137,6 @@
     [self startTimer];
     newButton.alpha = 0.0;
     goButton.alpha = 1.0;
-    
 }
 
 -(void)correctAnswer

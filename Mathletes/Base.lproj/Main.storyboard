@@ -143,11 +143,11 @@
                                         <rect key="frame" x="5" y="69" width="73.75" height="73.75"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="73.75" height="73.75"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="74" height="74"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Duy-nR-h9k">
-                                                    <rect key="frame" x="0.0" y="0.0" width="74.5" height="74.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </imageView>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="x12" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="29n-LO-bUg">
@@ -433,7 +433,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Math!" id="dIV-aK-zKn"/>
+                    <navigationItem key="navigationItem" title="Math!" id="dIV-aK-zKn">
+                        <barButtonItem key="leftBarButtonItem" title="Profile" id="ZQS-Kt-HfO">
+                            <connections>
+                                <action selector="onBackButtonPressed:" destination="vXZ-lx-hvc" id="3or-fr-nOK"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="answerTextField" destination="wb7-5U-yj6" id="Wm2-Bx-vIr"/>
                         <outlet property="feedbackLabel" destination="hBD-H4-eh8" id="BVV-0z-t9J"/>
