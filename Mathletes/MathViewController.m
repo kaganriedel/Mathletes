@@ -55,6 +55,10 @@
     
     [self newMathProblem];
     [self startTimer];
+    
+    goButton.layer.cornerRadius = 12;
+    newButton.layer.cornerRadius = 12;
+    
 }
 
 -(void)viewWillDisappear:(BOOL)animated
