@@ -25,6 +25,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [_operandTabBar setSelectedItem:_operandTabBar.items[0]];
+    _operand = @"+";
+    [self createGrid];
 }
 
 - (void)createGrid
