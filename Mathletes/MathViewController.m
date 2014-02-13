@@ -152,67 +152,63 @@
 
         if (newTotalAdds >= 1200)
         {
-            [userDefaults setBool:YES forKey:@"Add It Up x1200!"];
+            [self checkForAchievement:@"Add It Up x1200!"];
         }
         else if (newTotalAdds >= 1100)
         {
-            [userDefaults setBool:YES forKey:@"Add It Up x1100!"];
+            [self checkForAchievement:@"Add It Up x1100!"];
         }
         else if (newTotalAdds >= 1000)
         {
-            [userDefaults setBool:YES forKey:@"Add It Up x1000!"];
+            [self checkForAchievement:@"Add It Up x1000!"];
         }
         else if (newTotalAdds >= 900)
         {
-            [userDefaults setBool:YES forKey:@"Add It Up x900!"];
+            [self checkForAchievement:@"Add It Up x900!"];
         }
         else if (newTotalAdds >= 800)
         {
-            [userDefaults setBool:YES forKey:@"Add It Up x800!"];
+            [self checkForAchievement:@"Add It Up x800!"];
         }
         else if (newTotalAdds >= 700)
         {
-            [userDefaults setBool:YES forKey:@"Add It Up x700!"];
+            [self checkForAchievement:@"Add It Up x700!"];
         }
         else if (newTotalAdds >= 600)
         {
-            [userDefaults setBool:YES forKey:@"Add It Up x600!"];
+            [self checkForAchievement:@"Add It Up x600!"];
         }
         else if (newTotalAdds >= 500)
         {
-            [userDefaults setBool:YES forKey:@"Add It Up x500!"];
+            [self checkForAchievement:@"Add It Up x500!"];
         }
         else if (newTotalAdds >= 400)
         {
-            [userDefaults setBool:YES forKey:@"Add It Up x400!"];
+            [self checkForAchievement:@"Add It Up x400!"];
         }
         else if (newTotalAdds >= 300)
         {
-            [userDefaults setBool:YES forKey:@"Add It Up x300!"];
+            [self checkForAchievement:@"Add It Up x300!"];
         }
         else if (newTotalAdds >= 200)
         {
-            [userDefaults setBool:YES forKey:@"Add It Up x200!"];
+            [self checkForAchievement:@"Add It Up x200!"];
         }
         else if (newTotalAdds >= 100)
         {
-            [userDefaults setBool:YES forKey:@"Add It Up x100!"];
+            [self checkForAchievement:@"Add It Up x100!"];
         }
         else if (newTotalAdds >= 50)
         {
-            [userDefaults setBool:YES forKey:@"Add It Up x50!"];
+            [self checkForAchievement:@"Add It Up x50!"];
         }
         else if (newTotalAdds >= 20)
         {
-            [userDefaults setBool:YES forKey:@"Add It Up x20!"];
+            [self checkForAchievement:@"Add It Up x20!"];
         }
         else if (newTotalAdds >= 1)
         {
-            if (![userDefaults boolForKey:@"Add It Up!"])
-            {
-                [userDefaults setBool:YES forKey:@"Add It Up!"];
-                [self giveSticker];
-            }
+            [self checkForAchievement:@"Add It Up!"];
         }
         
         if (countDown <= 6)
@@ -220,131 +216,132 @@
             int newTotalFastAdds = [userDefaults incrementKey:@"totalFastAdds"];
             NSLog(@"Total Fast Adds: %i",newTotalFastAdds);
             
-            if (newTotalFastAdds >= 25)
-            {
-                [userDefaults setBool:YES forKey:@"Adding At 25 Miles Per Hour!"];
-            }
-            if (newTotalFastAdds >= 50)
-            {
-                [userDefaults setBool:YES forKey:@"Adding At 50 Miles Per Hour!"];
-            }
-            if (newTotalFastAdds >= 100)
-            {
-                [userDefaults setBool:YES forKey:@"Adding At 100 Miles Per Hour!"];
-            }
-            if (newTotalFastAdds >= 150)
-            {
-                [userDefaults setBool:YES forKey:@"Adding At 150 Miles Per Hour!"];
-            }
-            if (newTotalFastAdds >= 200)
-            {
-                [userDefaults setBool:YES forKey:@"Adding At 200 Miles Per Hour!"];
-            }
-            if (newTotalFastAdds >= 250)
-            {
-                [userDefaults setBool:YES forKey:@"Adding At 250 Miles Per Hour!"];
-            }
-            if (newTotalFastAdds >= 300)
-            {
-                [userDefaults setBool:YES forKey:@"Adding At 300 Miles Per Hour!"];
-            }
-            if (newTotalFastAdds >= 350)
-            {
-                [userDefaults setBool:YES forKey:@"Adding At 350 Miles Per Hour!"];
-            }
-            if (newTotalFastAdds >= 400)
-            {
-                [userDefaults setBool:YES forKey:@"Adding At 400 Miles Per Hour!"];
-            }
-            if (newTotalFastAdds >= 450)
-            {
-                [userDefaults setBool:YES forKey:@"Adding At 450 Miles Per Hour!"];
-            }
-            if (newTotalFastAdds >= 500)
-            {
-                [userDefaults setBool:YES forKey:@"Adding At 500 Miles Per Hour!"];
-            }
-            if (newTotalFastAdds >= 550)
-            {
-                [userDefaults setBool:YES forKey:@"Adding At 550 Miles Per Hour!"];
-            }
-            if (newTotalFastAdds >= 600)
-            {
-                [userDefaults setBool:YES forKey:@"Adding At 600 Miles Per Hour!"];
-            }
-            if (newTotalFastAdds >= 650)
-            {
-                [userDefaults setBool:YES forKey:@"Adding At 650 Miles Per Hour!"];
-            }
             if (newTotalFastAdds >= 700)
             {
-                [userDefaults setBool:YES forKey:@"Adding At 700 Miles Per Hour!"];
+                [self checkForAchievement:@"Adding At 700 Miles Per Hour!"];
             }
+            else if (newTotalFastAdds >= 650)
+            {
+                [self checkForAchievement:@"Adding At 650 Miles Per Hour!"];
+            }
+            else if (newTotalFastAdds >= 600)
+            {
+                [self checkForAchievement:@"Adding At 600 Miles Per Hour!"];
+            }
+            else if (newTotalFastAdds >= 550)
+            {
+                [self checkForAchievement:@"Adding At 500 Miles Per Hour!"];
+            }
+            else if (newTotalFastAdds >= 500)
+            {
+                [self checkForAchievement:@"Adding At 500 Miles Per Hour!"];
+            }
+            else if (newTotalFastAdds >= 450)
+            {
+                [self checkForAchievement:@"Adding At 450 Miles Per Hour!"];
+            }
+            else if (newTotalFastAdds >= 400)
+            {
+                [self checkForAchievement:@"Adding At 400 Miles Per Hour!"];
+            }
+            else if (newTotalFastAdds >= 350)
+            {
+                [self checkForAchievement:@"Adding At 350 Miles Per Hour!"];
+            }
+            else if (newTotalFastAdds >= 300)
+            {
+                [self checkForAchievement:@"Adding At 300 Miles Per Hour!"];
+            }
+            else if (newTotalFastAdds >= 250)
+            {
+                [self checkForAchievement:@"Adding At 250 Miles Per Hour!"];
+            }
+            else if (newTotalFastAdds >= 200)
+            {
+                [self checkForAchievement:@"Adding At 200 Miles Per Hour!"];
+            }
+            else if (newTotalFastAdds >= 150)
+            {
+                [self checkForAchievement:@"Adding At 150 Miles Per Hour!"];
+            }
+            else if (newTotalFastAdds >= 100)
+            {
+                [self checkForAchievement:@"Adding At 100 Miles Per Hour!"];
+            }
+            else if (newTotalFastAdds >= 50)
+            {
+                [self checkForAchievement:@"Adding At 50 Miles Per Hour!"];
+            }
+            else if (newTotalFastAdds >= 25)
+            {
+                [self checkForAchievement:@"Adding At 25 Miles Per Hour!"];
+            }           
         }
     }
+    
     else if ([_operationLabel.text isEqualToString:@"-"])
     {
         int newTotalSubs = [userDefaults incrementKey:@"totalSubs"];
         NSLog(@"newTotalSubs is: %i", newTotalSubs);
         if (newTotalSubs >= 1)
         {
-            [userDefaults setBool:YES forKey:@"Take It Away!"];
+            [self checkForAchievement:@"Take It Away!"];
         }
         if (newTotalSubs >= 20)
         {
-            [userDefaults setBool:YES forKey:@"Take It Away x20!"];
+            [self checkForAchievement:@"Take It Away x20!"];
         }
         if (newTotalSubs >= 50)
         {
-            [userDefaults setBool:YES forKey:@"Take It Away x50!"];
+            [self checkForAchievement:@"Take It Away x50!"];
         }
         if (newTotalSubs >= 100)
         {
-            [userDefaults setBool:YES forKey:@"Take It Away x100!"];
+            [self checkForAchievement:@"Take It Away x100!"];
         }
         if (newTotalSubs >= 200)
         {
-            [userDefaults setBool:YES forKey:@"Take It Away x200!"];
+            [self checkForAchievement:@"Take It Away x200!"];
         }
         if (newTotalSubs >= 300)
         {
-            [userDefaults setBool:YES forKey:@"Take It Away x300!"];
+            [self checkForAchievement:@"Take It Away x300!"];
         }
         if (newTotalSubs >= 400)
         {
-            [userDefaults setBool:YES forKey:@"Take It Away x400!"];
+            [self checkForAchievement:@"Take It Away x400!"];
         }
         if (newTotalSubs >= 500)
         {
-            [userDefaults setBool:YES forKey:@"Take It Away x500!"];
+            [self checkForAchievement:@"Take It Away x500!"];
         }
         if (newTotalSubs >= 600)
         {
-            [userDefaults setBool:YES forKey:@"Take It Away x600!"];
+            [self checkForAchievement:@"Take It Away x600!"];
         }
         if (newTotalSubs >= 700)
         {
-            [userDefaults setBool:YES forKey:@"Take It Away x700!"];
+            [self checkForAchievement:@"Take It Away x700!"];
         }
         if (newTotalSubs >= 800)
         {
-            [userDefaults setBool:YES forKey:@"Take It Away x800!"];
+            [self checkForAchievement:@"Take It Away x800!"];
         }
         if (newTotalSubs >= 900)
         {
-            [userDefaults setBool:YES forKey:@"Take It Away x900!"];
+            [self checkForAchievement:@"Take It Away x900!"];
         }
         if (newTotalSubs >= 1000)
         {
-            [userDefaults setBool:YES forKey:@"Take It Away x1000!"];
+            [self checkForAchievement:@"Take It Away x1000!"];
         }
         if (newTotalSubs >= 1100)
         {
-            [userDefaults setBool:YES forKey:@"Take It Away x1100!"];
+            [self checkForAchievement:@"Take It Away 1100!"];
         }
         if (newTotalSubs >= 1200)
         {
-            [userDefaults setBool:YES forKey:@"Take It Away x1200!"];
+            [self checkForAchievement:@"Take It Away x1200!"];
         }
 
         if (countDown <= 6)
@@ -353,63 +350,63 @@
             NSLog(@"Total Fast Subs: %i",newTotalFastSubs);
             if (newTotalFastSubs >= 25)
             {
-                [userDefaults setBool:YES forKey:@"Subtracting At 25 \nMiles Per Hour!"];
+                [self checkForAchievement:@"Subtracting At 25 \nMiles Per Hour!"];
             }
             if (newTotalFastSubs >= 50)
             {
-                [userDefaults setBool:YES forKey:@"Subtracting At 50 \nMiles Per Hour!"];
+                [self checkForAchievement:@"Subtracting At 50 \nMiles Per Hour!"];
             }
             if (newTotalFastSubs >= 100)
             {
-                [userDefaults setBool:YES forKey:@"Subtracting At 100 \nMiles Per Hour!"];
+                [self checkForAchievement:@"Subtracting At 100 \nMiles Per Hour!"];
             }
             if (newTotalFastSubs >= 150)
             {
-                [userDefaults setBool:YES forKey:@"Subtracting At 150 \nMiles Per Hour!"];
+                [self checkForAchievement:@"Subtracting At 150 \nMiles Per Hour!"];
             }
             if (newTotalFastSubs >= 200)
             {
-                [userDefaults setBool:YES forKey:@"Subtracting At 200 \nMiles Per Hour!"];
+                [self checkForAchievement:@"Subtracting At 200 \nMiles Per Hour!"];
             }
             if (newTotalFastSubs >= 250)
             {
-                [userDefaults setBool:YES forKey:@"Subtracting At 250 \nMiles Per Hour!"];
+                [self checkForAchievement:@"Subtracting At 250 \nMiles Per Hour!"];
             }
             if (newTotalFastSubs >= 300)
             {
-                [userDefaults setBool:YES forKey:@"Subtracting At 300 \nMiles Per Hour!"];
+                [self checkForAchievement:@"Subtracting At 300 \nMiles Per Hour!"];
             }
             if (newTotalFastSubs >= 350)
             {
-                [userDefaults setBool:YES forKey:@"Subtracting At 350 \nMiles Per Hour!"];
+                [self checkForAchievement:@"Subtracting At 350 \nMiles Per Hour!"];
             }
             if (newTotalFastSubs >= 400)
             {
-                [userDefaults setBool:YES forKey:@"Subtracting At 400 \nMiles Per Hour!"];
+                [self checkForAchievement:@"Subtracting At 400 \nMiles Per Hour!"];
             }
             if (newTotalFastSubs >= 450)
             {
-                [userDefaults setBool:YES forKey:@"Subtracting At 450 \nMiles Per Hour!"];
+                [self checkForAchievement:@"Subtracting At 450 \nMiles Per Hour!"];
             }
             if (newTotalFastSubs >= 500)
             {
-                [userDefaults setBool:YES forKey:@"Subtracting At 500 \nMiles Per Hour!"];
+                [self checkForAchievement:@"Subtracting At 500 \nMiles Per Hour!"];
             }
             if (newTotalFastSubs >= 550)
             {
-                [userDefaults setBool:YES forKey:@"Subtracting At 550 \nMiles Per Hour!"];
+                [self checkForAchievement:@"Subtracting At 550 \nMiles Per Hour!"];
             }
             if (newTotalFastSubs >= 600)
             {
-                [userDefaults setBool:YES forKey:@"Subtracting At 600 \nMiles Per Hour!"];
+                [self checkForAchievement:@"Subtracting At 600 \nMiles Per Hour!"];
             }
             if (newTotalFastSubs >= 650)
             {
-                [userDefaults setBool:YES forKey:@"Subtracting At 650 \nMiles Per Hour!"];
+                [self checkForAchievement:@"Subtracting At 650 \nMiles Per Hour!"];
             }
             if (newTotalFastSubs >= 700)
             {
-                [userDefaults setBool:YES forKey:@"Subtracting At 700 \nMiles Per Hour!"];
+                [self checkForAchievement:@"Subtracting At 700 \nMiles Per Hour!"];
             }
         }
     }
@@ -426,65 +423,74 @@
     int totalMathProblems = [userDefaults integerForKey:@"totalAdds"] + [userDefaults integerForKey:@"totalSubs"];
     if (totalMathProblems >= 10)
     {
-        [userDefaults setBool:YES forKey:@"Keep It Up!"];
+        [self checkForAchievement:@"Keep It Up!"];
     }
     if (totalMathProblems >= 100)
     {
-        [userDefaults setBool:YES forKey:@"Keep It Up x100!"];
+        [self checkForAchievement:@"Keep It Up x100!"];
     }
     if (totalMathProblems >= 200)
     {
-        [userDefaults setBool:YES forKey:@"Keep It Up x200!"];
+        [self checkForAchievement:@"Keep It Up x200!"];
     }
     if (totalMathProblems >= 300)
     {
-        [userDefaults setBool:YES forKey:@"Keep It Up x300!"];
+        [self checkForAchievement:@"Keep It Up x300!"];
     }
     if (totalMathProblems >= 400)
     {
-        [userDefaults setBool:YES forKey:@"Keep It Up x400!"];
+        [self checkForAchievement:@"Keep It Up x400!"];
     }
     if (totalMathProblems >= 500)
     {
-        [userDefaults setBool:YES forKey:@"Keep It Up x500!"];
+        [self checkForAchievement:@"Keep It Up x500!"];
     }
     if (totalMathProblems >= 600)
     {
-        [userDefaults setBool:YES forKey:@"Keep It Up x600!"];
+        [self checkForAchievement:@"Keep It Up x600!"];
     }
     if (totalMathProblems >= 700)
     {
-        [userDefaults setBool:YES forKey:@"Keep It Up x700!"];
+        [self checkForAchievement:@"Keep It Up x700!"];
     }
     if (totalMathProblems >= 800)
     {
-        [userDefaults setBool:YES forKey:@"Keep It Up x800!"];
+        [self checkForAchievement:@"Keep It Up x800!"];
     }
     if (totalMathProblems >= 900)
     {
-        [userDefaults setBool:YES forKey:@"Keep It Up x900!"];
+        [self checkForAchievement:@"Keep It Up x900!"];
     }
     if (totalMathProblems >= 1000)
     {
-        [userDefaults setBool:YES forKey:@"Keep It Up x1000!"];
+        [self checkForAchievement:@"Keep It Up x1000!"];
     }
     if (totalMathProblems >= 1100)
     {
-        [userDefaults setBool:YES forKey:@"Keep It Up x1100!"];
+        [self checkForAchievement:@"Keep It Up x1100!"];
     }
     if (totalMathProblems >= 1200)
     {
-        [userDefaults setBool:YES forKey:@"Keep It Up x1200!"];
+        [self checkForAchievement:@"Keep It Up x1200!"];
     }
     if (totalMathProblems >= 1300)
     {
-        [userDefaults setBool:YES forKey:@"Keep It Up x1300!"];
+        [self checkForAchievement:@"Keep It Up x1300!"];
     }
     if (totalMathProblems >= 1400)
     {
-        [userDefaults setBool:YES forKey:@"Keep It Up x1400!"];
+        [self checkForAchievement:@"Keep It Up x1400!"];
     }
     [userDefaults synchronize];
+}
+
+-(void)checkForAchievement:(NSString *)key
+{
+    if (![userDefaults boolForKey:key])
+    {
+        [userDefaults setBool:YES forKey:key];
+        [self giveSticker];
+    }
 }
 
 -(void)giveSticker
@@ -531,6 +537,7 @@
     }
     
     [userDefaults synchronize];
+
 }
 
 
