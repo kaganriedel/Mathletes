@@ -11,8 +11,8 @@
 
 @interface ProfileViewController () <PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate>
 {
-    __weak IBOutlet UIImageView *profileImageView;
     __weak IBOutlet UILabel *userNameLabel;
+    __weak IBOutlet UIButton *profileImageButton;
     
 }
 
@@ -24,6 +24,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.navigationController.navigationBar.backgroundColor = [UIColor whiteColor];
+   
+    profileImageButton.layer.cornerRadius = 25;
+    [profileImageButton setBackgroundImage:[UIImage imageNamed:@"boy.png"] forState:UIControlStateNormal];
     
 }
 
@@ -42,8 +47,6 @@
 
 -(void)signUpViewController:(PFSignUpViewController *)signUpController didSignUpUser:(PFUser *)user
 {
-    [self setTitle];
-
     [signUpController dismissViewControllerAnimated:YES completion:^{
         [self dismissViewControllerAnimated:YES completion:nil];
     }];
@@ -56,13 +59,13 @@
     NSString *username = [PFUser currentUser].username;
     NSString *cappedFirstChar = [[username substringToIndex:1] uppercaseString];
     NSString *cappedString = [username stringByReplacingCharactersInRange:NSMakeRange(0, 1) withString:cappedFirstChar];
-    self.navigationItem.title = cappedString;
+    userNameLabel.text = cappedString;
 }
 
 -(void)logInViewController:(PFLogInViewController *)logInController didLogInUser:(PFUser *)user
 {
     [logInController dismissViewControllerAnimated:YES completion:nil];
-    [self setTitle];
+    
 }
 
 - (IBAction)onLogOut:(id)sender

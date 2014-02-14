@@ -32,7 +32,7 @@
     __weak IBOutlet UITextField *answerTextField;
     __weak IBOutlet UIView *newAchievementView;
     
-    NSInteger countDown;
+    int countDown;
     NSTimer *countDownTimer;
     
     NSUserDefaults *userDefaults;
@@ -85,7 +85,7 @@
 -(void)timerFired:(NSTimer *)timer
 {
     countDown ++;
-    NSLog(@"%i",countDown);
+    NSLog(@"%i", countDown);
 
     if (countDown == 10)
     {
