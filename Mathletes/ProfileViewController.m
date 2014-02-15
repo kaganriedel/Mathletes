@@ -13,7 +13,7 @@
 {
     __weak IBOutlet UILabel *userNameLabel;
     __weak IBOutlet UIButton *profileImageButton;
-    
+    NSUserDefaults *userDefaults;
 }
 
 @end
@@ -25,6 +25,16 @@
 {
     [super viewDidLoad];
     
+    userDefaults = [NSUserDefaults standardUserDefaults];
+    
+    NSLog(@"time since dailyMathStartDate: %f", [[NSDate date] timeIntervalSinceDate:[userDefaults objectForKey:@"dailyMathStartDate"]]);
+    //if its been more than a day since the last reset of dailyMath, reset it
+    if ([[NSDate date] timeIntervalSinceDate:[userDefaults objectForKey:@"dailyMathStartDate"]] >= 86400.0)
+    {
+        [userDefaults setInteger:0 forKey:@"dailyMath"];
+    }
+    NSLog(@"dailyMath is: %i", [userDefaults integerForKey:@"dailyMath"]);
+
     self.navigationController.navigationBar.backgroundColor = [UIColor whiteColor];
    
     profileImageButton.layer.cornerRadius = 25;
@@ -72,8 +82,8 @@
 {
     [PFUser logOut];
     
-    [[NSUserDefaults standardUserDefaults] removePersistentDomainForName:[NSBundle mainBundle].bundleIdentifier];
-    [[NSUserDefaults standardUserDefaults] synchronize];
+    [userDefaults removePersistentDomainForName:[NSBundle mainBundle].bundleIdentifier];
+    [userDefaults synchronize];
     
     [self checkForLoggedInUserAnimated:YES];
 }

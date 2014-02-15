@@ -157,6 +157,34 @@
 
 -(void)updateAchievements
 {
+    if ([userDefaults integerForKey:@"dailyMath"] == 0)
+    {
+        [userDefaults setObject:[NSDate date] forKey:@"dailyMathStartDate"];
+    }
+    
+    int newDailyMath = [userDefaults incrementKey:@"dailyMath"];
+    NSLog(@"newDailyMath is: %i", newDailyMath);
+    if (newDailyMath >= 50)
+    {
+        [self checkForAchievement:@"Daily Math!"];
+    }
+    else if (newDailyMath >= 40)
+    {
+        [self checkForAchievement:@"Daily Math!"];
+    }
+    else if (newDailyMath >= 30)
+    {
+        [self checkForAchievement:@"Daily Math!"];
+    }
+    else if (newDailyMath >= 20)
+    {
+        [self checkForAchievement:@"Daily Math!"];
+    }
+    else if (newDailyMath >= 10)
+    {
+        [self checkForAchievement:@"Daily Math!"];
+    }
+    
     if ([_operationLabel.text isEqualToString:@"+"])
     {
         int newTotalAdds = [userDefaults incrementKey:@"totalAdds"];
