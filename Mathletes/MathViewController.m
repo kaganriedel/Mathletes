@@ -30,7 +30,8 @@
     __weak IBOutlet UIButton *newButton;
     __weak IBOutlet UILabel *feedbackLabel;
     __weak IBOutlet UITextField *answerTextField;
-    __weak IBOutlet UIView *newAchievementView;
+    __weak IBOutlet UIView *newStickerView;
+    __weak IBOutlet UIImageView *stickerImageView;
     
     int countDown;
     NSTimer *countDownTimer;
@@ -53,13 +54,16 @@
 
     _operationLabel.text = _operationType;
     newButton.alpha = 0.0;
-    newAchievementView.alpha = 0.0;
+    newStickerView.alpha = 0.0;
     
     [self newMathProblem];
     [self startTimer];
     
-    goButton.layer.cornerRadius = 10;
-    newButton.layer.cornerRadius = 10;
+    goButton.layer.cornerRadius = 10.0;
+    newButton.layer.cornerRadius = 10.0;
+    stickerImageView.clipsToBounds = YES;
+    stickerImageView.layer.cornerRadius = 25.0;
+    
 
     
 }
@@ -166,19 +170,19 @@
     NSLog(@"newDailyMath is: %i", newDailyMath);
     if (newDailyMath >= 50)
     {
-        [self checkForAchievement:@"Daily Math!"];
+        [self checkForAchievement:@"Daily Math x50!"];
     }
     else if (newDailyMath >= 40)
     {
-        [self checkForAchievement:@"Daily Math!"];
+        [self checkForAchievement:@"Daily Math x40!"];
     }
     else if (newDailyMath >= 30)
     {
-        [self checkForAchievement:@"Daily Math!"];
+        [self checkForAchievement:@"Daily Math x30!"];
     }
     else if (newDailyMath >= 20)
     {
-        [self checkForAchievement:@"Daily Math!"];
+        [self checkForAchievement:@"Daily Math x20!"];
     }
     else if (newDailyMath >= 10)
     {
@@ -534,50 +538,60 @@
 
 -(void)giveSticker
 {
-    newAchievementView.alpha = 1.0;
-    [UIView animateWithDuration:4.0 animations:^{
-        newAchievementView.alpha = 0.0;
-    }];
+    
     int randomSticker = arc4random()%100;
     
     if (randomSticker < 20)
     {
         [userDefaults incrementKey:@"lionCount"];
+        stickerImageView.image = [UIImage imageNamed:@"murray320x320.jpg"];
         NSLog(@"1st count +1");
     }
     else if (randomSticker < 40)
     {
         [userDefaults incrementKey:@"kittenCount"];
+        stickerImageView.image = [UIImage imageNamed:@"puppy160x160.jpg"];
         NSLog(@"2nd count +1");
     }
     else if (randomSticker < 60)
     {
         [userDefaults incrementKey:@"starCount"];
+        stickerImageView.image = [UIImage imageNamed:@"kitten50x50.jpg"];
         NSLog(@"3rd count +1");
     }
     else if (randomSticker < 70)
     {
         [userDefaults incrementKey:@"puppyCount"];
+        stickerImageView.image = [UIImage imageNamed:@"ThumbsUpButton.png"];
         NSLog(@"4th count +1");
     }
     else if (randomSticker < 80)
     {
         [userDefaults incrementKey:@"tigerCount"];
+        stickerImageView.image = [UIImage imageNamed:@"lion.jpg"];
         NSLog(@"5th count +1");
     }
     else if (randomSticker < 90)
     {
         [userDefaults incrementKey:@"moonCount"];
+        stickerImageView.image = [UIImage imageNamed:@"bear.jpg"];
         NSLog(@"6th count +1");
     }else if (randomSticker < 95)
     {
         [userDefaults incrementKey:@"giraffeCount"];
+        stickerImageView.image = [UIImage imageNamed:@"tiger.jpg"];
         NSLog(@"7th count +1");
     }else if (randomSticker <= 100)
     {
         [userDefaults incrementKey:@"sunCount"];
+        stickerImageView.image = [UIImage imageNamed:@"Star.png"];
         NSLog(@"8th count +1");
     }
+    
+    newStickerView.alpha = 1.0;
+    [UIView animateWithDuration:4.0 animations:^{
+        newStickerView.alpha = 0.0;
+    }];
     
     [userDefaults synchronize];
 

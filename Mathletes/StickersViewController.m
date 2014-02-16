@@ -49,7 +49,7 @@
 {
     StickerCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"StickerCell" forIndexPath:indexPath];
     cell.imageView.image = [UIImage imageNamed:stickers[indexPath.row]];
-    cell.layer.cornerRadius = 37.5;
+    cell.imageView.layer.cornerRadius = 37.5;
     
     NSNumber *stickerCount = userStickers[indexPath.row];
     if (stickerCount.integerValue == 0)

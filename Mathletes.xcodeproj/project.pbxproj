@@ -21,6 +21,8 @@
 		6D18827618A99D54003DCA92 /* Achievement.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D18827518A99D54003DCA92 /* Achievement.m */; };
 		6D1BE7D818A9C2750079102A /* AchievementsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D1BE7D718A9C2750079102A /* AchievementsViewController.m */; };
 		6D1BE7DB18A9C2FB0079102A /* AchievementCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D1BE7DA18A9C2FB0079102A /* AchievementCell.m */; };
+		6D5C8C3718B13F5E00E63D1A /* ChooseStickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D5C8C3618B13F5E00E63D1A /* ChooseStickerViewController.m */; };
+		6D5C8C3A18B1417900E63D1A /* ChooseStickerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D5C8C3918B1417900E63D1A /* ChooseStickerCell.m */; };
 		6D6EEFFEF0B94C0883934CFA /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 11D82320CD96410092541D1A /* libPods.a */; };
 		6D891EA418A582EC0002B915 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D891EA318A582EC0002B915 /* Foundation.framework */; };
 		6D891EA618A582EC0002B915 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D891EA518A582EC0002B915 /* CoreGraphics.framework */; };
@@ -76,6 +78,10 @@
 		6D1BE7D718A9C2750079102A /* AchievementsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AchievementsViewController.m; sourceTree = "<group>"; };
 		6D1BE7D918A9C2FB0079102A /* AchievementCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AchievementCell.h; sourceTree = "<group>"; };
 		6D1BE7DA18A9C2FB0079102A /* AchievementCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AchievementCell.m; sourceTree = "<group>"; };
+		6D5C8C3518B13F5E00E63D1A /* ChooseStickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseStickerViewController.h; sourceTree = "<group>"; };
+		6D5C8C3618B13F5E00E63D1A /* ChooseStickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseStickerViewController.m; sourceTree = "<group>"; };
+		6D5C8C3818B1417900E63D1A /* ChooseStickerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseStickerCell.h; sourceTree = "<group>"; };
+		6D5C8C3918B1417900E63D1A /* ChooseStickerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseStickerCell.m; sourceTree = "<group>"; };
 		6D891EA018A582EC0002B915 /* Mathletes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mathletes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D891EA318A582EC0002B915 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6D891EA518A582EC0002B915 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -187,16 +193,20 @@
 				6D891EB318A582EC0002B915 /* AppDelegate.m */,
 				6D891ED818A5B3CB0002B915 /* ProfileViewController.h */,
 				6D891ED918A5B3CB0002B915 /* ProfileViewController.m */,
-				6D891EDD18A5BF6B0002B915 /* ChooseOperationsViewController.h */,
-				6D891EDE18A5BF6B0002B915 /* ChooseOperationsViewController.m */,
+				6D5C8C3518B13F5E00E63D1A /* ChooseStickerViewController.h */,
+				6D5C8C3618B13F5E00E63D1A /* ChooseStickerViewController.m */,
+				6D5C8C3818B1417900E63D1A /* ChooseStickerCell.h */,
+				6D5C8C3918B1417900E63D1A /* ChooseStickerCell.m */,
 				6D891EB818A582EC0002B915 /* MathViewController.h */,
 				6D891EB918A582EC0002B915 /* MathViewController.m */,
+				6D891EDD18A5BF6B0002B915 /* ChooseOperationsViewController.h */,
+				6D891EDE18A5BF6B0002B915 /* ChooseOperationsViewController.m */,
 				C987E0DD18A9AC70007CEC36 /* GridViewController.h */,
 				C987E0DE18A9AC70007CEC36 /* GridViewController.m */,
-				6D18826018A943DF003DCA92 /* StickersViewController.h */,
-				6D18826118A943DF003DCA92 /* StickersViewController.m */,
 				C950F2E418AA906A00AC33C6 /* FlashCard.h */,
 				C950F2E518AA906A00AC33C6 /* FlashCard.m */,
+				6D18826018A943DF003DCA92 /* StickersViewController.h */,
+				6D18826118A943DF003DCA92 /* StickersViewController.m */,
 				6D18826318A94458003DCA92 /* StickerCell.h */,
 				6D18826418A94458003DCA92 /* StickerCell.m */,
 				6D1BE7D618A9C2750079102A /* AchievementsViewController.h */,
@@ -397,6 +407,8 @@
 				6D1BE7DB18A9C2FB0079102A /* AchievementCell.m in Sources */,
 				6D18826518A94458003DCA92 /* StickerCell.m in Sources */,
 				6D891EB018A582EC0002B915 /* main.m in Sources */,
+				6D5C8C3718B13F5E00E63D1A /* ChooseStickerViewController.m in Sources */,
+				6D5C8C3A18B1417900E63D1A /* ChooseStickerCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

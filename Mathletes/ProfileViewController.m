@@ -11,9 +11,10 @@
 
 @interface ProfileViewController () <PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate>
 {
-    __weak IBOutlet UILabel *userNameLabel;
-    __weak IBOutlet UIButton *profileImageButton;
     NSUserDefaults *userDefaults;
+
+    __weak IBOutlet UIButton *profileButton;
+    __weak IBOutlet UIImageView *profileImageView;
 }
 
 @end
@@ -37,14 +38,20 @@
 
     self.navigationController.navigationBar.backgroundColor = [UIColor whiteColor];
    
-    profileImageButton.layer.cornerRadius = 25;
-    [profileImageButton setBackgroundImage:[UIImage imageNamed:@"boy.png"] forState:UIControlStateNormal];
-    
+    profileImageView.layer.cornerRadius = 25;
 }
 
 -(void)viewWillAppear:(BOOL)animated
 {
     self.navigationController.navigationBar.barTintColor = [UIColor whiteColor];
+    if ([userDefaults objectForKey:@"profileImage"])
+    {
+        profileImageView.image = [UIImage imageNamed:[userDefaults objectForKey:@"profileImage"]];
+    }
+    else
+    {
+    profileImageView.image = [UIImage imageNamed:@"boy.png"];
+    }
 
     [self setTitle];
 }
@@ -69,7 +76,7 @@
     NSString *username = [PFUser currentUser].username;
     NSString *cappedFirstChar = [[username substringToIndex:1] uppercaseString];
     NSString *cappedString = [username stringByReplacingCharactersInRange:NSMakeRange(0, 1) withString:cappedFirstChar];
-    userNameLabel.text = cappedString;
+    [profileButton setTitle:cappedString forState:UIControlStateNormal];
 }
 
 -(void)logInViewController:(PFLogInViewController *)logInController didLogInUser:(PFUser *)user

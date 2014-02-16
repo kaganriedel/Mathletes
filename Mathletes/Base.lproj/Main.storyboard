@@ -40,7 +40,63 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="40B-b0-UxD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1690" y="-1214"/>
+            <point key="canvasLocation" x="1691" y="-1092"/>
+        </scene>
+        <!--Choose Sticker View Controller - Pick Your Favorite Sticker-->
+        <scene sceneID="KbX-kN-MBq">
+            <objects>
+                <viewController id="CcH-S0-D7r" customClass="ChooseStickerViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="PKD-Oh-rQk"/>
+                        <viewControllerLayoutGuide type="bottom" id="ZXX-zd-Q3m"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5GE-j6-d8q">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="wTk-dm-ycL">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="5" id="PHb-p2-Gzs">
+                                    <size key="itemSize" width="73.75" height="73.75"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="5" minY="5" maxX="5" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ChooseStickerCell" id="KdF-3a-gig" customClass="ChooseStickerCell">
+                                        <rect key="frame" x="5" y="5" width="74" height="74"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="74" height="74"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mea-QJ-Xr3">
+                                                    <rect key="frame" x="0.0" y="0.0" width="74" height="74"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <connections>
+                                            <outlet property="imageView" destination="Mea-QJ-Xr3" id="1gB-gc-TZa"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="CcH-S0-D7r" id="9El-1J-De3"/>
+                                    <outlet property="delegate" destination="CcH-S0-D7r" id="YzM-wM-5PF"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Pick Your Favorite Sticker" id="aNp-KT-cug"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CUz-ac-gJq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1691" y="-2500"/>
         </scene>
         <!--Choose Operations View Controller-->
         <scene sceneID="NnO-pp-laE">
@@ -114,7 +170,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xdd-LE-G2I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1691" y="-1974"/>
+            <point key="canvasLocation" x="1691" y="-1810"/>
         </scene>
         <!--Stickers View Controller - Sticker Collection-->
         <scene sceneID="aKB-lc-mMS">
@@ -139,21 +195,21 @@
                                     <inset key="sectionInset" minX="5" minY="5" maxX="5" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="StickerCell" id="qH2-9H-mDV" customClass="StickerCell">
-                                        <rect key="frame" x="5" y="5" width="73.75" height="73.75"/>
+                                    <collectionViewCell autoresizesSubviews="NO" opaque="NO" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="StickerCell" id="qH2-9H-mDV" customClass="StickerCell">
+                                        <rect key="frame" x="5" y="5" width="74" height="74"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="74" height="74"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Duy-nR-h9k">
-                                                    <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Duy-nR-h9k">
+                                                    <rect key="frame" x="0.0" y="-1" width="74.5" height="74.5"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </imageView>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="x12" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="29n-LO-bUg">
-                                                    <rect key="frame" x="30" y="53" width="24" height="21"/>
+                                                    <rect key="frame" x="55" y="58" width="24" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -180,7 +236,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Noa-1F-OaV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1691" y="-251"/>
+            <point key="canvasLocation" x="1691" y="-393"/>
         </scene>
         <!--Profile View Controller - Mathletes-->
         <scene sceneID="Idg-lW-e7A">
@@ -245,25 +301,24 @@
                                     <segue destination="2XE-Rq-gwh" kind="push" id="9PB-gk-7O5"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Username" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MHj-3H-qKu">
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qE6-9w-tRR">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="35"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qE6-9w-tRR">
-                                <rect key="frame" x="10" y="25" width="50" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <state key="normal">
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="35"/>
+                                <state key="normal" title="Username">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="CcH-S0-D7r" kind="push" id="Kpg-0Y-8F5"/>
+                                </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gd1-ga-abd">
+                                <rect key="frame" x="6" y="25" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" title="Mathletes" id="201-MH-2Ii">
@@ -274,8 +329,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="profileImageButton" destination="qE6-9w-tRR" id="p5t-de-jle"/>
-                        <outlet property="userNameLabel" destination="MHj-3H-qKu" id="xfX-0a-1jG"/>
+                        <outlet property="profileButton" destination="qE6-9w-tRR" id="w7Z-LO-YTf"/>
+                        <outlet property="profileImageView" destination="Gd1-ga-abd" id="XHS-Gk-Br8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XKV-2o-bak" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -353,7 +408,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wAh-MA-V1Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1691" y="477"/>
+            <point key="canvasLocation" x="1691" y="299"/>
         </scene>
         <!--Math View Controller - Math!-->
         <scene sceneID="ufC-wZ-h7g">
@@ -430,10 +485,10 @@
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="New Achievement!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="62" translatesAutoresizingMaskIntoConstraints="NO" id="Eb7-en-F7F">
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="New Sticker!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="62" translatesAutoresizingMaskIntoConstraints="NO" id="Eb7-en-F7F">
                                         <rect key="frame" x="-6" y="50" width="62" height="23"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="8"/>
+                                        <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="9"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -454,16 +509,17 @@
                         <outlet property="answerTextField" destination="wb7-5U-yj6" id="Wm2-Bx-vIr"/>
                         <outlet property="feedbackLabel" destination="hBD-H4-eh8" id="BVV-0z-t9J"/>
                         <outlet property="goButton" destination="4t2-yu-pDO" id="wbd-T2-bGU"/>
-                        <outlet property="newAchievementView" destination="Syf-75-kya" id="wRW-Gc-tl9"/>
                         <outlet property="newButton" destination="75g-hP-4CW" id="N7Z-C9-JBk"/>
+                        <outlet property="newStickerView" destination="Syf-75-kya" id="dFC-10-EYs"/>
                         <outlet property="operationLabel" destination="mPZ-ID-guH" id="Gb9-ca-rZ4"/>
+                        <outlet property="stickerImageView" destination="kOa-ng-8pL" id="x2Y-Vf-8jq"/>
                         <outlet property="var1Label" destination="1ES-DV-m4B" id="KcW-IF-NTd"/>
                         <outlet property="var2Label" destination="mSx-Gs-MD8" id="iMd-AS-w2q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2200" y="-1974"/>
+            <point key="canvasLocation" x="2200" y="-1810"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Arg-PY-Vk1">
