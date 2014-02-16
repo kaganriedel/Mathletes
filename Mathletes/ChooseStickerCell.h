@@ -10,4 +10,8 @@
 
 @interface ChooseStickerCell : UICollectionViewCell
 
+@property NSString *imageName;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+
+
 @end
