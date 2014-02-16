@@ -12,5 +12,7 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UILabel *countLabel;
+@property NSNumber *count;
+@property NSString *stickerImageName;
 
 @end

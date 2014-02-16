@@ -10,4 +10,7 @@
 
 @interface StickerDetailViewController : UIViewController
 
+@property NSString *stickerImageName;
+@property NSNumber *count;
+
 @end

@@ -67,7 +67,7 @@
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    ChooseStickerCell *cell = [collectionView cellForItemAtIndexPath:indexPath];
+    ChooseStickerCell *cell = (ChooseStickerCell*)[collectionView cellForItemAtIndexPath:indexPath];
     [userDefaults setObject:cell.imageName forKey:@"profileImage"];
     [userDefaults synchronize];
     [self.navigationController popViewControllerAnimated:YES];

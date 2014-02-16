@@ -8,6 +8,7 @@
 
 #import "StickersViewController.h"
 #import "StickerCell.h"
+#import "StickerDetailViewController.h"
 #import "Parse/Parse.h"
 
 @interface StickersViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
@@ -43,21 +44,38 @@
                      @([userDefaults integerForKey:@"sunCount"]),];
 }
 
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    [self performSegueWithIdentifier:@"StickerSegue" sender:indexPath];
+}
 
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"StickerSegue"])
+    {
+        NSIndexPath *indexPath = sender;
+        StickerCell *cell = (StickerCell*)[stickerCollectionView cellForItemAtIndexPath:indexPath];
+        
+        StickerDetailViewController *vc = segue.destinationViewController;
+        vc.stickerImageName = cell.stickerImageName;
+        vc.count = cell.count;
+    }
+}
 
 -(StickerCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     StickerCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"StickerCell" forIndexPath:indexPath];
     cell.imageView.image = [UIImage imageNamed:stickers[indexPath.row]];
     cell.imageView.layer.cornerRadius = 37.5;
+    cell.stickerImageName = stickers[indexPath.row];
     
-    NSNumber *stickerCount = userStickers[indexPath.row];
-    if (stickerCount.integerValue == 0)
+    cell.count = userStickers[indexPath.row];
+    if (cell.count.integerValue == 0)
     {
         cell.imageView.alpha = 0.2;
     }
     
-    cell.countLabel.text = [NSString stringWithFormat:@"x%@", stickerCount];
+    cell.countLabel.text = [NSString stringWithFormat:@"x%@", cell.count];
     
     return cell;
 }

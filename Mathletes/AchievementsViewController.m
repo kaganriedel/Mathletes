@@ -162,7 +162,7 @@
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    AchievementCell *cell = [collectionView cellForItemAtIndexPath:indexPath];
+    AchievementCell *cell = (AchievementCell*)[collectionView cellForItemAtIndexPath:indexPath];
     
     cell.achievement = achievements[indexPath.section][indexPath.row];
     
