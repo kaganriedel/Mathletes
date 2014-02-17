@@ -22,6 +22,8 @@
 		6D1BE7D818A9C2750079102A /* AchievementsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D1BE7D718A9C2750079102A /* AchievementsViewController.m */; };
 		6D1BE7DB18A9C2FB0079102A /* AchievementCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D1BE7DA18A9C2FB0079102A /* AchievementCell.m */; };
 		6D383D3818B26D83007F2116 /* TradeWallCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D383D3718B26D83007F2116 /* TradeWallCell.m */; };
+		6D383D3B18B27587007F2116 /* MakeTradeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D383D3A18B27587007F2116 /* MakeTradeViewController.m */; };
+		6D383D3E18B27C2D007F2116 /* MakeTradeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D383D3D18B27C2D007F2116 /* MakeTradeCell.m */; };
 		6D5C8C3718B13F5E00E63D1A /* ChooseStickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D5C8C3618B13F5E00E63D1A /* ChooseStickerViewController.m */; };
 		6D5C8C3A18B1417900E63D1A /* ChooseStickerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D5C8C3918B1417900E63D1A /* ChooseStickerCell.m */; };
 		6D6EEFFEF0B94C0883934CFA /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 11D82320CD96410092541D1A /* libPods.a */; };
@@ -83,6 +85,10 @@
 		6D1BE7DA18A9C2FB0079102A /* AchievementCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AchievementCell.m; sourceTree = "<group>"; };
 		6D383D3618B26D83007F2116 /* TradeWallCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TradeWallCell.h; sourceTree = "<group>"; };
 		6D383D3718B26D83007F2116 /* TradeWallCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TradeWallCell.m; sourceTree = "<group>"; };
+		6D383D3918B27587007F2116 /* MakeTradeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MakeTradeViewController.h; sourceTree = "<group>"; };
+		6D383D3A18B27587007F2116 /* MakeTradeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MakeTradeViewController.m; sourceTree = "<group>"; };
+		6D383D3C18B27C2D007F2116 /* MakeTradeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MakeTradeCell.h; sourceTree = "<group>"; };
+		6D383D3D18B27C2D007F2116 /* MakeTradeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MakeTradeCell.m; sourceTree = "<group>"; };
 		6D5C8C3518B13F5E00E63D1A /* ChooseStickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseStickerViewController.h; sourceTree = "<group>"; };
 		6D5C8C3618B13F5E00E63D1A /* ChooseStickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseStickerViewController.m; sourceTree = "<group>"; };
 		6D5C8C3818B1417900E63D1A /* ChooseStickerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseStickerCell.h; sourceTree = "<group>"; };
@@ -222,6 +228,10 @@
 				6D99FF7218B16D5400CE0EFF /* TradeWallViewController.m */,
 				6D383D3618B26D83007F2116 /* TradeWallCell.h */,
 				6D383D3718B26D83007F2116 /* TradeWallCell.m */,
+				6D383D3918B27587007F2116 /* MakeTradeViewController.h */,
+				6D383D3A18B27587007F2116 /* MakeTradeViewController.m */,
+				6D383D3C18B27C2D007F2116 /* MakeTradeCell.h */,
+				6D383D3D18B27C2D007F2116 /* MakeTradeCell.m */,
 				6D99FF7418B16D6400CE0EFF /* StickerDetailViewController.h */,
 				6D99FF7518B16D6400CE0EFF /* StickerDetailViewController.m */,
 				6D1BE7D618A9C2750079102A /* AchievementsViewController.h */,
@@ -413,6 +423,7 @@
 				C987E0DF18A9AC70007CEC36 /* GridViewController.m in Sources */,
 				C950F2E618AA906A00AC33C6 /* FlashCard.m in Sources */,
 				6D99FF7318B16D5400CE0EFF /* TradeWallViewController.m in Sources */,
+				6D383D3E18B27C2D007F2116 /* MakeTradeCell.m in Sources */,
 				6D1BE7D818A9C2750079102A /* AchievementsViewController.m in Sources */,
 				6D18827618A99D54003DCA92 /* Achievement.m in Sources */,
 				6D18826218A943DF003DCA92 /* StickersViewController.m in Sources */,
@@ -420,6 +431,7 @@
 				6D17BD5318AC1CFE009A7416 /* AchievementHeader.m in Sources */,
 				6D891EB418A582EC0002B915 /* AppDelegate.m in Sources */,
 				6D383D3818B26D83007F2116 /* TradeWallCell.m in Sources */,
+				6D383D3B18B27587007F2116 /* MakeTradeViewController.m in Sources */,
 				6D891EDF18A5BF6B0002B915 /* ChooseOperationsViewController.m in Sources */,
 				6D891EDA18A5B3CB0002B915 /* ProfileViewController.m in Sources */,
 				6D1BE7DB18A9C2FB0079102A /* AchievementCell.m in Sources */,
