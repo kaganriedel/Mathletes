@@ -61,11 +61,11 @@
                                         <rect key="frame" x="5" y="5" width="74" height="74"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="73.75" height="73.75"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="74" height="74"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="Mea-QJ-Xr3">
-                                                    <rect key="frame" x="0.0" y="0.0" width="72.5" height="72.5"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="Mea-QJ-Xr3">
+                                                    <rect key="frame" x="1" y="2" width="70" height="70"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </imageView>
                                             </subviews>
@@ -187,7 +187,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="Duy-nR-h9k">
-                                                    <rect key="frame" x="-1" y="-2.5" width="74" height="75.5"/>
+                                                    <rect key="frame" x="2" y="2" width="70" height="70"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </imageView>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="x12" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="29n-LO-bUg">
@@ -229,7 +229,7 @@
             </objects>
             <point key="canvasLocation" x="1691" y="-393"/>
         </scene>
-        <!--Make Trade View Controller-->
+        <!--Make Trade View Controller - Make a Trade-->
         <scene sceneID="5ei-EU-t2l">
             <objects>
                 <viewController id="Pfw-OS-5b7" customClass="MakeTradeViewController" sceneMemberID="viewController">
@@ -242,21 +242,21 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="checkmark" indentationWidth="10" reuseIdentifier="GiveCell" id="Ylh-Uz-gmk" customClass="MakeTradeCell">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="GiveCell" id="Ylh-Uz-gmk" customClass="MakeTradeCell">
                                         <rect key="frame" x="0.0" y="22" width="160" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ylh-Uz-gmk" id="ifv-gJ-aLf">
-                                            <rect key="frame" x="0.0" y="0.0" width="121" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="160" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="oGi-ix-YxY">
-                                                    <rect key="frame" x="40" y="2" width="40" height="40"/>
+                                                    <rect key="frame" x="60" y="2" width="40" height="40"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="imageView" destination="oGi-ix-YxY" id="mZR-1x-dXx"/>
+                                            <outlet property="stickerImageView" destination="oGi-ix-YxY" id="ndE-Xd-wGj"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -270,21 +270,21 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="checkmark" indentationWidth="10" reuseIdentifier="GetCell" id="9Ka-BK-Hla" customClass="MakeTradeCell">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="GetCell" id="9Ka-BK-Hla" customClass="MakeTradeCell">
                                         <rect key="frame" x="0.0" y="22" width="160" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9Ka-BK-Hla" id="v4o-Pi-0Ug">
-                                            <rect key="frame" x="0.0" y="0.0" width="121" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="160" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="byM-xU-Pnf">
-                                                    <rect key="frame" x="40" y="2" width="40" height="40"/>
+                                                    <rect key="frame" x="60" y="2" width="40" height="40"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="imageView" destination="byM-xU-Pnf" id="5yd-Na-Tfl"/>
+                                            <outlet property="stickerImageView" destination="byM-xU-Pnf" id="WBq-M3-tRY"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -296,7 +296,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="ui0-Iu-nAq"/>
+                    <navigationItem key="navigationItem" title="Make a Trade" id="ui0-Iu-nAq">
+                        <barButtonItem key="rightBarButtonItem" title="Item" systemItem="done" id="3iD-Pv-Est">
+                            <connections>
+                                <action selector="onDoneButtonPressed:" destination="Pfw-OS-5b7" id="MIB-u5-0XD"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="getTableView" destination="E5T-dp-I5E" id="G3M-Vh-QdG"/>
                         <outlet property="giveTableView" destination="8D2-WK-luz" id="TaA-1F-CMz"/>
