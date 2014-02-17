@@ -7,8 +7,9 @@
 //
 
 #import "TradeWallViewController.h"
+#import "TradeWallCell.h"
 
-@interface TradeWallViewController ()
+@interface TradeWallViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @end
 
@@ -19,9 +20,20 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
 }
 
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    TradeWallCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TradeCell"];
+    
+    
+    return cell;
+}
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 0;
+}
 
 
 @end

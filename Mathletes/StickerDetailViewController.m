@@ -11,9 +11,9 @@
 @interface StickerDetailViewController ()
 {
     __weak IBOutlet UIImageView *stickerImageView;
-    __weak IBOutlet UILabel *locationLabel;
     __weak IBOutlet UILabel *countLabel;
     __weak IBOutlet UILabel *detailLabel;
+    __weak IBOutlet UILabel *rarityLabel;
     
 }
 
@@ -34,8 +34,10 @@
     NSString *stickerName = [[_stickerImageName stringByReplacingOccurrencesOfString:@".jpg" withString:@""]stringByReplacingOccurrencesOfString:@".png" withString:@""];
     if ([stickerName isEqualToString:@"lion"])
     {
-        locationLabel.text = @"Lions live in Africa";
-        detailLabel.text = @"Lions are badass and can run really fast MPH";
+        self.navigationItem.title = @"Lion";
+        rarityLabel.text = @"This sticker is hard to find!";
+        detailLabel.text = @"Lions are found in Africa. They are badass and can run really fast MPH. They're really really cool.";
+        [detailLabel sizeToFit];
     }
     
 }

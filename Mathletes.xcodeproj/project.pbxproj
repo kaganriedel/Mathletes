@@ -21,6 +21,7 @@
 		6D18827618A99D54003DCA92 /* Achievement.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D18827518A99D54003DCA92 /* Achievement.m */; };
 		6D1BE7D818A9C2750079102A /* AchievementsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D1BE7D718A9C2750079102A /* AchievementsViewController.m */; };
 		6D1BE7DB18A9C2FB0079102A /* AchievementCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D1BE7DA18A9C2FB0079102A /* AchievementCell.m */; };
+		6D383D3818B26D83007F2116 /* TradeWallCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D383D3718B26D83007F2116 /* TradeWallCell.m */; };
 		6D5C8C3718B13F5E00E63D1A /* ChooseStickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D5C8C3618B13F5E00E63D1A /* ChooseStickerViewController.m */; };
 		6D5C8C3A18B1417900E63D1A /* ChooseStickerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D5C8C3918B1417900E63D1A /* ChooseStickerCell.m */; };
 		6D6EEFFEF0B94C0883934CFA /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 11D82320CD96410092541D1A /* libPods.a */; };
@@ -80,6 +81,8 @@
 		6D1BE7D718A9C2750079102A /* AchievementsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AchievementsViewController.m; sourceTree = "<group>"; };
 		6D1BE7D918A9C2FB0079102A /* AchievementCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AchievementCell.h; sourceTree = "<group>"; };
 		6D1BE7DA18A9C2FB0079102A /* AchievementCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AchievementCell.m; sourceTree = "<group>"; };
+		6D383D3618B26D83007F2116 /* TradeWallCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TradeWallCell.h; sourceTree = "<group>"; };
+		6D383D3718B26D83007F2116 /* TradeWallCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TradeWallCell.m; sourceTree = "<group>"; };
 		6D5C8C3518B13F5E00E63D1A /* ChooseStickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseStickerViewController.h; sourceTree = "<group>"; };
 		6D5C8C3618B13F5E00E63D1A /* ChooseStickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseStickerViewController.m; sourceTree = "<group>"; };
 		6D5C8C3818B1417900E63D1A /* ChooseStickerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseStickerCell.h; sourceTree = "<group>"; };
@@ -217,6 +220,8 @@
 				6D18826418A94458003DCA92 /* StickerCell.m */,
 				6D99FF7118B16D5400CE0EFF /* TradeWallViewController.h */,
 				6D99FF7218B16D5400CE0EFF /* TradeWallViewController.m */,
+				6D383D3618B26D83007F2116 /* TradeWallCell.h */,
+				6D383D3718B26D83007F2116 /* TradeWallCell.m */,
 				6D99FF7418B16D6400CE0EFF /* StickerDetailViewController.h */,
 				6D99FF7518B16D6400CE0EFF /* StickerDetailViewController.m */,
 				6D1BE7D618A9C2750079102A /* AchievementsViewController.h */,
@@ -414,6 +419,7 @@
 				6D99FF7618B16D6400CE0EFF /* StickerDetailViewController.m in Sources */,
 				6D17BD5318AC1CFE009A7416 /* AchievementHeader.m in Sources */,
 				6D891EB418A582EC0002B915 /* AppDelegate.m in Sources */,
+				6D383D3818B26D83007F2116 /* TradeWallCell.m in Sources */,
 				6D891EDF18A5BF6B0002B915 /* ChooseOperationsViewController.m in Sources */,
 				6D891EDA18A5B3CB0002B915 /* ProfileViewController.m in Sources */,
 				6D1BE7DB18A9C2FB0079102A /* AchievementCell.m in Sources */,
