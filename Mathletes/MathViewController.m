@@ -32,6 +32,19 @@
     __weak IBOutlet UITextField *answerTextField;
     __weak IBOutlet UIView *newStickerView;
     __weak IBOutlet UIImageView *stickerImageView;
+    __weak IBOutlet UILabel *inputLabel;
+    __weak IBOutlet UIButton *oneButton;
+    __weak IBOutlet UIButton *twoButton;
+    __weak IBOutlet UIButton *threeButton;
+    __weak IBOutlet UIButton *fourButton;
+    __weak IBOutlet UIButton *fiveButton;
+    __weak IBOutlet UIButton *sixButton;
+    __weak IBOutlet UIButton *sevenButton;
+    __weak IBOutlet UIButton *eightButton;
+    __weak IBOutlet UIButton *nineButton;
+    __weak IBOutlet UIButton *zeroButton;
+    __weak IBOutlet UIButton *backSpaceButton;
+    
     
     int countDown;
     NSTimer *countDownTimer;
@@ -59,8 +72,12 @@
     [self newMathProblem];
     [self startTimer];
     
-    goButton.layer.cornerRadius = 10.0;
-    newButton.layer.cornerRadius = 10.0;
+    goButton.layer.cornerRadius = 25.0;
+    newButton.layer.cornerRadius = 25.0;
+    backSpaceButton.layer.cornerRadius = 25.0;
+    zeroButton.layer.cornerRadius = 25.0;
+    oneButton.layer.cornerRadius = 25.0;
+    
     stickerImageView.clipsToBounds = YES;
     stickerImageView.layer.cornerRadius = 25.0;
     
@@ -604,6 +621,66 @@
     newButton.alpha = 1.0;
     newButton.backgroundColor = [UIColor redColor];
 }
+
+- (IBAction)onOneButtonPressed:(id)sender
+{
+    
+}
+
+- (IBAction)onTwoButtonPressed:(id)sender
+{
+    
+}
+
+- (IBAction)onThreeButtonPressed:(id)sender
+{
+    
+}
+
+- (IBAction)onFourButtonPressed:(id)sender
+{
+    
+}
+
+- (IBAction)onFiveButtonPressed:(id)sender
+{
+    
+}
+
+- (IBAction)onSixButtonPressed:(id)sender
+{
+    
+}
+
+- (IBAction)onSevenButtonPressed:(id)sender
+{
+    
+}
+
+- (IBAction)onEightButtonPressed:(id)sender
+{
+    
+}
+
+- (IBAction)onNineButtonPressed:(id)sender
+{
+    
+}
+
+- (IBAction)onZeroButtonPressed:(id)sender
+{
+    
+}
+
+- (IBAction)onBackSpaceButtonPressed:(id)sender
+{
+    
+}
+
+
+
+
+
 
 - (IBAction)onGoButtonPressed:(id)sender
 {
