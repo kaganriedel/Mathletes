@@ -14,6 +14,8 @@
     NSUserDefaults *userDefaults;
     
     NSMutableArray *userStickers;
+    NSArray *allStickers;
+    
     __weak IBOutlet UITableView *giveTableView;
     __weak IBOutlet UITableView *getTableView;
 }
@@ -65,12 +67,14 @@
     {
         [userStickers addObject:@"Star.png"];
     }
+    
+    allStickers = @[@"murray320x320.jpg", @"puppy160x160.jpg", @"kitten50x50.jpg", @"ThumbsUpButton.png", @"lion.jpg", @"bear.jpg", @"tiger.jpg", @"Star.png"];
 
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (tableView == tableView)
+    if (tableView == giveTableView)
     {
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"GiveCell"];
         cell.imageView.image = [UIImage imageNamed:userStickers[indexPath.row]];
@@ -79,10 +83,10 @@
         
         return cell;
     }
-    else if (tableView == tableView)
+    else if (tableView == getTableView)
     {
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"GetCell"];
-        cell.imageView.image = [UIImage imageNamed:userStickers[indexPath.row]];
+        cell.imageView.image = [UIImage imageNamed:allStickers[indexPath.row]];
         cell.imageView.clipsToBounds = YES;
         cell.imageView.layer.cornerRadius = 20.0;
         
@@ -95,7 +99,14 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 0;
+    if (tableView == giveTableView)
+    {
+        return userStickers.count;
+    }
+    else
+    {
+        return allStickers.count;
+    }
 }
 
 

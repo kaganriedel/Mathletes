@@ -16,7 +16,6 @@
     [Parse setApplicationId:@"vb9F56CN5rn2vlHTkSdLaK9FUxq8FPm4il591nrD"
                   clientKey:@"AsI9RBBeUBTBu6P62bowMXM0pXptMEj4OEukYKOq"];
     // Override point for customization after application launch.
-    NSLog(@"a");
     return YES;
 }
 							
