@@ -14,6 +14,8 @@
     NSUserDefaults *userDefaults;
     
     NSMutableArray *userStickers;
+    __weak IBOutlet UITableView *giveTableView;
+    __weak IBOutlet UITableView *getTableView;
 }
 
 @end

@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface MakeTradeCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+
 
 @end

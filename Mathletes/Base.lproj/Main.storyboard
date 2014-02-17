@@ -58,7 +58,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ChooseStickerCell" id="KdF-3a-gig" customClass="ChooseStickerCell">
-                                        <rect key="frame" x="5" y="5" width="73.75" height="73.75"/>
+                                        <rect key="frame" x="5" y="5" width="74" height="74"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="73.75" height="73.75"/>
@@ -180,14 +180,14 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell autoresizesSubviews="NO" opaque="NO" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="StickerCell" id="qH2-9H-mDV" customClass="StickerCell">
-                                        <rect key="frame" x="5" y="5" width="73.75" height="73.75"/>
+                                        <rect key="frame" x="5" y="5" width="74" height="74"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="74" height="74"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="Duy-nR-h9k">
-                                                    <rect key="frame" x="0.0" y="-1" width="75" height="75"/>
+                                                    <rect key="frame" x="-0.5" y="-1.5" width="74.5" height="75"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </imageView>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="x12" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="29n-LO-bUg">
@@ -228,6 +228,83 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Noa-1F-OaV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1691" y="-393"/>
+        </scene>
+        <!--Make Trade View Controller-->
+        <scene sceneID="5ei-EU-t2l">
+            <objects>
+                <viewController id="Pfw-OS-5b7" customClass="MakeTradeViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="E2z-U3-qwR">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="8D2-WK-luz">
+                                <rect key="frame" x="0.0" y="0.0" width="160" height="504"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="checkmark" indentationWidth="10" reuseIdentifier="GiveCell" id="Ylh-Uz-gmk" customClass="MakeTradeCell">
+                                        <rect key="frame" x="0.0" y="22" width="160" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ylh-Uz-gmk" id="ifv-gJ-aLf">
+                                            <rect key="frame" x="0.0" y="0.0" width="121" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="oGi-ix-YxY">
+                                                    <rect key="frame" x="40" y="2" width="40" height="40"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                </imageView>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="imageView" destination="oGi-ix-YxY" id="mZR-1x-dXx"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Pfw-OS-5b7" id="YNJ-Y8-imM"/>
+                                    <outlet property="delegate" destination="Pfw-OS-5b7" id="MZt-f0-NEc"/>
+                                </connections>
+                            </tableView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="E5T-dp-I5E">
+                                <rect key="frame" x="160" y="0.0" width="160" height="504"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="checkmark" indentationWidth="10" reuseIdentifier="GetCell" id="9Ka-BK-Hla" customClass="MakeTradeCell">
+                                        <rect key="frame" x="0.0" y="22" width="160" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9Ka-BK-Hla" id="v4o-Pi-0Ug">
+                                            <rect key="frame" x="0.0" y="0.0" width="121" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="byM-xU-Pnf">
+                                                    <rect key="frame" x="40" y="2" width="40" height="40"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                </imageView>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="imageView" destination="byM-xU-Pnf" id="5yd-Na-Tfl"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Pfw-OS-5b7" id="gBR-aG-xPE"/>
+                                    <outlet property="delegate" destination="Pfw-OS-5b7" id="CRh-NO-ncs"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="ui0-Iu-nAq"/>
+                    <connections>
+                        <outlet property="getTableView" destination="E5T-dp-I5E" id="G3M-Vh-QdG"/>
+                        <outlet property="giveTableView" destination="8D2-WK-luz" id="TaA-1F-CMz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yby-5i-lJJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2689" y="-771"/>
         </scene>
         <!--Trade Wall View Controller - The Trade Wall-->
         <scene sceneID="rdJ-eU-sxH">
@@ -281,7 +358,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="The Trade Wall" id="vfm-XO-bUP">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="8hm-hS-WfQ"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="8hm-hS-WfQ">
+                            <connections>
+                                <segue destination="Pfw-OS-5b7" kind="push" id="NIG-f0-czl"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rKo-6b-rd7" userLabel="First Responder" sceneMemberID="firstResponder"/>
