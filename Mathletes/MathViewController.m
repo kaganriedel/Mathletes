@@ -77,9 +77,17 @@
     backSpaceButton.layer.cornerRadius = 25.0;
     zeroButton.layer.cornerRadius = 25.0;
     oneButton.layer.cornerRadius = 25.0;
-    
+    twoButton.layer.cornerRadius = 25.0;
+    threeButton.layer.cornerRadius = 25.0;
+    fourButton.layer.cornerRadius = 25.0;
+    fiveButton.layer.cornerRadius = 25.0;
+    sixButton.layer.cornerRadius = 25.0;
+    sevenButton.layer.cornerRadius = 25.0;
+    eightButton.layer.cornerRadius = 25.0;
+    nineButton.layer.cornerRadius = 25.0;
     stickerImageView.clipsToBounds = YES;
     stickerImageView.layer.cornerRadius = 25.0;
+    inputLabel.layer.borderWidth = 5;
     
 
     
@@ -130,7 +138,7 @@
 -(void)newMathProblem
 {
     feedbackLabel.text = nil;
-    answerTextField.text = nil;
+    inputLabel.text = @"";
 
     int highestRange = 11;
     int divisionModifier = 0;
@@ -624,57 +632,57 @@
 
 - (IBAction)onOneButtonPressed:(id)sender
 {
-    
+    inputLabel.text = [inputLabel.text stringByAppendingString:@"1"];
 }
 
 - (IBAction)onTwoButtonPressed:(id)sender
 {
-    
+    inputLabel.text = [inputLabel.text stringByAppendingString:@"2"];
 }
 
 - (IBAction)onThreeButtonPressed:(id)sender
 {
-    
+   inputLabel.text = [inputLabel.text stringByAppendingString:@"3"];
 }
 
 - (IBAction)onFourButtonPressed:(id)sender
 {
-    
+    inputLabel.text = [inputLabel.text stringByAppendingString:@"4"];
 }
 
 - (IBAction)onFiveButtonPressed:(id)sender
 {
-    
+    inputLabel.text = [inputLabel.text stringByAppendingString:@"5"];
 }
 
 - (IBAction)onSixButtonPressed:(id)sender
 {
-    
+    inputLabel.text =[inputLabel.text stringByAppendingString:@"6"];
 }
 
 - (IBAction)onSevenButtonPressed:(id)sender
 {
-    
+  inputLabel.text = [inputLabel.text stringByAppendingString:@"7"];
 }
 
 - (IBAction)onEightButtonPressed:(id)sender
 {
-    
+   inputLabel.text = [inputLabel.text stringByAppendingString:@"8"];
 }
 
 - (IBAction)onNineButtonPressed:(id)sender
 {
-    
+   inputLabel.text = [inputLabel.text stringByAppendingString:@"9"];
 }
 
 - (IBAction)onZeroButtonPressed:(id)sender
 {
-    
+    inputLabel.text = [inputLabel.text stringByAppendingString:@"0"];
 }
 
 - (IBAction)onBackSpaceButtonPressed:(id)sender
 {
-    
+    inputLabel.text = [inputLabel.text substringToIndex:inputLabel.text.length-(inputLabel.text.length>0)];
 }
 
 
@@ -684,13 +692,13 @@
 
 - (IBAction)onGoButtonPressed:(id)sender
 {
-    if (![answerTextField.text isEqualToString:@""])
+    if (![inputLabel.text isEqualToString:@""])
     {
         [countDownTimer invalidate];
 
         if ([_operationLabel.text isEqualToString:@"x"])
         {
-            if (answerTextField.text.intValue == var1Label.text.intValue * var2Label.text.intValue)
+            if (inputLabel.text.intValue == var1Label.text.intValue * var2Label.text.intValue)
             {
                 [self correctAnswer];
             }
@@ -702,7 +710,7 @@
         }
         else if ([_operationLabel.text isEqualToString:@"/"])
         {
-            if (answerTextField.text.intValue == var1Label.text.intValue / var2Label.text.intValue)
+            if (inputLabel.text.intValue == var1Label.text.intValue / var2Label.text.intValue)
             {
                 [self correctAnswer];
             }
@@ -714,7 +722,7 @@
         }
         else if ([_operationLabel.text isEqualToString:@"+"])
         {
-            if (answerTextField.text.intValue == var1Label.text.intValue + var2Label.text.intValue)
+            if (inputLabel.text.intValue == var1Label.text.intValue + var2Label.text.intValue)
             {
                 [self correctAnswer];
             }
@@ -726,7 +734,7 @@
         }
         else if ([_operationLabel.text isEqualToString:@"-"])
         {
-            if (answerTextField.text.intValue == var1Label.text.intValue - var2Label.text.intValue)
+            if (inputLabel.text.intValue == var1Label.text.intValue - var2Label.text.intValue)
             {
                 [self correctAnswer];
             }
