@@ -72,23 +72,28 @@
 
 }
 
+- (IBAction)onDoneButtonPressed:(id)sender
+{
+
+}
+
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (tableView == giveTableView)
     {
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"GiveCell"];
-        cell.imageView.image = [UIImage imageNamed:userStickers[indexPath.row]];
-        cell.imageView.clipsToBounds = YES;
-        cell.imageView.layer.cornerRadius = 20.0;
+        MakeTradeCell *cell = [tableView dequeueReusableCellWithIdentifier:@"GiveCell"];
+        cell.stickerImageView.image = [UIImage imageNamed:userStickers[indexPath.row]];
+        cell.stickerImageView.clipsToBounds = YES;
+        cell.stickerImageView.layer.cornerRadius = 20.0;
         
         return cell;
     }
     else if (tableView == getTableView)
     {
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"GetCell"];
-        cell.imageView.image = [UIImage imageNamed:allStickers[indexPath.row]];
-        cell.imageView.clipsToBounds = YES;
-        cell.imageView.layer.cornerRadius = 20.0;
+        MakeTradeCell *cell = [tableView dequeueReusableCellWithIdentifier:@"GetCell"];
+        cell.stickerImageView.image = [UIImage imageNamed:allStickers[indexPath.row]];
+        cell.stickerImageView.clipsToBounds = YES;
+        cell.stickerImageView.layer.cornerRadius = 20.0;
         
         return cell;
     }

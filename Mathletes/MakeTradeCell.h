@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface MakeTradeCell : UITableViewCell
-@property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
+@property (weak, nonatomic) IBOutlet UIImageView *stickerImageView;
 
 @end
