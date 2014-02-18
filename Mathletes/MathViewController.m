@@ -7,6 +7,7 @@
 //
 
 #import "MathViewController.h"
+#import "MathProblem.h"
 
 @interface NSUserDefaults (mathletes)
 @end
@@ -33,6 +34,14 @@
     __weak IBOutlet UIView *newStickerView;
     __weak IBOutlet UIImageView *stickerImageView;
     
+    NSMutableArray *mathProblems;
+    NSInteger difficulty;
+    NSInteger userArrayKey;
+    NSInteger firstNonZeroKey;
+    int keyAddend;
+    NSInteger numkey;
+    NSString *newkey;
+    
     int countDown;
     NSTimer *countDownTimer;
     
@@ -49,6 +58,9 @@
     [super viewDidLoad];
     
 //    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:151.0/255.0 green:244.0/255.0 blue:101.0/255.0 alpha:1.0];
+    [self cardDifficulty];
+    
+    _userArray = mathProblems;
     
     userDefaults = [NSUserDefaults standardUserDefaults];
 
@@ -110,6 +122,117 @@
     [self startTimer];
 }
 
+-(void)sortingArray
+{
+    NSMutableArray *sortingArray = [NSMutableArray new];
+    
+    for (MathProblem *mp in _userArray)
+    {
+        [sortingArray addObject:(mp)];
+    }
+    
+    NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"equationDifficulty" ascending:YES];
+    _userArray = [sortingArray sortedArrayUsingDescriptors:[NSArray arrayWithObject:sortDescriptor]];
+    
+    
+    for (int i = 0; i < 100; i++)
+    {
+        MathProblem *mp2 = _userArray[i];
+        if (mp2.equationDifficulty > 0)
+        {
+            firstNonZeroKey = i;
+            NSLog(@"%i", firstNonZeroKey);
+            break;
+        }
+    }
+    
+    for (int i = 0; i < _userArray.count; i++)
+    {
+        MathProblem *problem = _userArray[i];
+        NSLog(@"%i %ld",problem.mathProblemValue, (long)problem.equationDifficulty);
+    }
+    
+}
+
+-(void)setNewKey
+{
+    newkey = [NSString stringWithFormat:@"%i%i",_addend1,_addend2];
+    
+    numkey = newkey.intValue;
+    
+    [_userArray enumerateObjectsUsingBlock:^(MathProblem *problem, NSUInteger idx, BOOL *stop)
+     {
+         if (numkey == problem.mathProblemValue)
+         {
+             difficulty = problem.equationDifficulty;
+             userArrayKey = idx;
+         }
+     }];
+}
+
+-(void)newMathProblem
+{
+    [self sortingArray];
+    
+    //original random value
+    _addend1 = arc4random()%10;
+    _addend2 = arc4random()%10;
+    
+    [self setNewKey];
+    
+    //setting pool of possible problems
+    keyAddend = 40;
+    
+    if (firstNonZeroKey > 35)
+    {
+        keyAddend = 30;
+        
+        if (firstNonZeroKey > 50)
+        {
+            keyAddend = 25;
+            
+            if (firstNonZeroKey > 80)
+            {
+                keyAddend = 100 - firstNonZeroKey;
+                
+            }
+        }
+    }
+    
+    //rechoosing problem if proficiency is reached
+    if (userArrayKey < firstNonZeroKey || userArrayKey > (firstNonZeroKey + keyAddend))
+    {
+        //allowing for old problems when there is a pool < 20
+        if (firstNonZeroKey > 80)
+        {
+            int chanceOfOldProblem = arc4random()%4;
+            
+            if (chanceOfOldProblem == 0)
+            {
+                _addend1 = arc4random()%4 + 4;
+                _addend2 = arc4random()%4 + 4;
+                
+                [self setNewKey];
+            }
+            else
+            {
+                [self newMathProblem];
+            }
+        }
+        else
+        {
+            [self newMathProblem];
+        }
+    }
+    
+    
+    [var1Label setText:[NSString stringWithFormat:@"%i", _addend1]];
+    [var2Label setText:[NSString stringWithFormat:@"%i", _addend2]];
+    
+}
+
+
+/*
 -(void)newMathProblem
 {
     feedbackLabel.text = nil;
@@ -141,6 +264,8 @@
         [self newMathProblem];
     }
 }
+*/
+
 
 - (IBAction)onNewButtonPressed:(id)sender
 {
@@ -157,7 +282,122 @@
     newButton.alpha = 1.0;
     newButton.backgroundColor = [UIColor yellowColor];
     [self updateAchievements];
+    
+    MathProblem *problem = _userArray[userArrayKey];
+    NSInteger proficiencyChange = problem.equationDifficulty;
+    
+    if (problem.equationDifficulty > 0)
+    {
+        proficiencyChange -= 1;
+    }
 }
+
+-(void)cardDifficulty
+{
+    mathProblems = @[         [[MathProblem alloc]initWithDifficulty:2 forProblem:0],
+                              [[MathProblem alloc]initWithDifficulty:2 forProblem:1],
+                              [[MathProblem alloc]initWithDifficulty:2 forProblem:10],
+                              [[MathProblem alloc]initWithDifficulty:2 forProblem:11],
+                              [[MathProblem alloc]initWithDifficulty:2 forProblem:2],
+                              [[MathProblem alloc]initWithDifficulty:2 forProblem:20],
+                              [[MathProblem alloc]initWithDifficulty:2 forProblem:21],
+                              [[MathProblem alloc]initWithDifficulty:2 forProblem:12],
+                              [[MathProblem alloc]initWithDifficulty:2 forProblem:3],
+                              [[MathProblem alloc]initWithDifficulty:2 forProblem:30],
+                              [[MathProblem alloc]initWithDifficulty:2 forProblem:31],
+                              [[MathProblem alloc]initWithDifficulty:2 forProblem:13],
+                              [[MathProblem alloc]initWithDifficulty:2 forProblem:4],
+                              [[MathProblem alloc]initWithDifficulty:2 forProblem:40],
+                              [[MathProblem alloc]initWithDifficulty:2 forProblem:41],
+                              [[MathProblem alloc]initWithDifficulty:2 forProblem:14],
+                              [[MathProblem alloc]initWithDifficulty:2 forProblem:5],
+                              [[MathProblem alloc]initWithDifficulty:2 forProblem:50],
+                              [[MathProblem alloc]initWithDifficulty:2 forProblem:51],
+                              [[MathProblem alloc]initWithDifficulty:2 forProblem:15],
+                              [[MathProblem alloc]initWithDifficulty:2 forProblem:22],
+                              [[MathProblem alloc]initWithDifficulty:2 forProblem:23],
+                              [[MathProblem alloc]initWithDifficulty:2 forProblem:32],
+                              [[MathProblem alloc]initWithDifficulty:2 forProblem:6],
+                              [[MathProblem alloc]initWithDifficulty:2 forProblem:60],
+                              [[MathProblem alloc]initWithDifficulty:2 forProblem:61],
+                              [[MathProblem alloc]initWithDifficulty:2 forProblem:16],
+                              [[MathProblem alloc]initWithDifficulty:2 forProblem:7],
+                              [[MathProblem alloc]initWithDifficulty:2 forProblem:70],
+                              [[MathProblem alloc]initWithDifficulty:2 forProblem:71],
+                              [[MathProblem alloc]initWithDifficulty:2 forProblem:17],
+                              [[MathProblem alloc]initWithDifficulty:2 forProblem:8],
+                              [[MathProblem alloc]initWithDifficulty:2 forProblem:80],
+                              [[MathProblem alloc]initWithDifficulty:2 forProblem:81],
+                              [[MathProblem alloc]initWithDifficulty:2 forProblem:18],
+                              [[MathProblem alloc]initWithDifficulty:2 forProblem:9],
+                              [[MathProblem alloc]initWithDifficulty:2 forProblem:90],
+                              [[MathProblem alloc]initWithDifficulty:2 forProblem:91],
+                              [[MathProblem alloc]initWithDifficulty:2 forProblem:19],
+                              [[MathProblem alloc]initWithDifficulty:2 forProblem:33],
+                              [[MathProblem alloc]initWithDifficulty:2 forProblem:24],
+                              [[MathProblem alloc]initWithDifficulty:2 forProblem:42],
+                              [[MathProblem alloc]initWithDifficulty:2 forProblem:25],
+                              [[MathProblem alloc]initWithDifficulty:2 forProblem:52],
+                              [[MathProblem alloc]initWithDifficulty:2 forProblem:26],
+                              [[MathProblem alloc]initWithDifficulty:2 forProblem:62],
+                              [[MathProblem alloc]initWithDifficulty:4 forProblem:27],
+                              [[MathProblem alloc]initWithDifficulty:4 forProblem:72],
+                              [[MathProblem alloc]initWithDifficulty:4 forProblem:28],
+                              [[MathProblem alloc]initWithDifficulty:4 forProblem:82],
+                              [[MathProblem alloc]initWithDifficulty:4 forProblem:29],
+                              [[MathProblem alloc]initWithDifficulty:4 forProblem:92],
+                              [[MathProblem alloc]initWithDifficulty:2 forProblem:34],
+                              [[MathProblem alloc]initWithDifficulty:2 forProblem:43],
+                              [[MathProblem alloc]initWithDifficulty:4 forProblem:35],
+                              [[MathProblem alloc]initWithDifficulty:4 forProblem:53],
+                              [[MathProblem alloc]initWithDifficulty:4 forProblem:36],
+                              [[MathProblem alloc]initWithDifficulty:4 forProblem:63],
+                              [[MathProblem alloc]initWithDifficulty:4 forProblem:37],
+                              [[MathProblem alloc]initWithDifficulty:4 forProblem:73],
+                              [[MathProblem alloc]initWithDifficulty:6 forProblem:38],
+                              [[MathProblem alloc]initWithDifficulty:6 forProblem:83],
+                              [[MathProblem alloc]initWithDifficulty:6 forProblem:39],
+                              [[MathProblem alloc]initWithDifficulty:6 forProblem:93],
+                              [[MathProblem alloc]initWithDifficulty:4 forProblem:44],
+                              [[MathProblem alloc]initWithDifficulty:4 forProblem:54],
+                              [[MathProblem alloc]initWithDifficulty:4 forProblem:45],
+                              [[MathProblem alloc]initWithDifficulty:4 forProblem:55],
+                              [[MathProblem alloc]initWithDifficulty:4 forProblem:46],
+                              [[MathProblem alloc]initWithDifficulty:4 forProblem:64],
+                              [[MathProblem alloc]initWithDifficulty:6 forProblem:47],
+                              [[MathProblem alloc]initWithDifficulty:6 forProblem:74],
+                              [[MathProblem alloc]initWithDifficulty:6 forProblem:48],
+                              [[MathProblem alloc]initWithDifficulty:6 forProblem:84],
+                              [[MathProblem alloc]initWithDifficulty:6 forProblem:49],
+                              [[MathProblem alloc]initWithDifficulty:6 forProblem:94],
+                              [[MathProblem alloc]initWithDifficulty:6 forProblem:56],
+                              [[MathProblem alloc]initWithDifficulty:6 forProblem:65],
+                              [[MathProblem alloc]initWithDifficulty:6 forProblem:66],
+                              [[MathProblem alloc]initWithDifficulty:6 forProblem:57],
+                              [[MathProblem alloc]initWithDifficulty:6 forProblem:75],
+                              [[MathProblem alloc]initWithDifficulty:8 forProblem:58],
+                              [[MathProblem alloc]initWithDifficulty:8 forProblem:85],
+                              [[MathProblem alloc]initWithDifficulty:8 forProblem:59],
+                              [[MathProblem alloc]initWithDifficulty:8 forProblem:95],
+                              [[MathProblem alloc]initWithDifficulty:8 forProblem:67],
+                              [[MathProblem alloc]initWithDifficulty:8 forProblem:76],
+                              [[MathProblem alloc]initWithDifficulty:8 forProblem:68],
+                              [[MathProblem alloc]initWithDifficulty:8 forProblem:86],
+                              [[MathProblem alloc]initWithDifficulty:8 forProblem:69],
+                              [[MathProblem alloc]initWithDifficulty:8 forProblem:96],
+                              [[MathProblem alloc]initWithDifficulty:8 forProblem:77],
+                              [[MathProblem alloc]initWithDifficulty:8 forProblem:88],
+                              [[MathProblem alloc]initWithDifficulty:8 forProblem:99],
+                              [[MathProblem alloc]initWithDifficulty:8 forProblem:78],
+                              [[MathProblem alloc]initWithDifficulty:8 forProblem:79],
+                              [[MathProblem alloc]initWithDifficulty:8 forProblem:87],
+                              [[MathProblem alloc]initWithDifficulty:8 forProblem:89],
+                              [[MathProblem alloc]initWithDifficulty:8 forProblem:97],
+                              [[MathProblem alloc]initWithDifficulty:8 forProblem:98]
+                              ].mutableCopy;
+}
+
+
 
 -(void)updateAchievements
 {

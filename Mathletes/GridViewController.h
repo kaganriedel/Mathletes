@@ -10,4 +10,6 @@
 
 @interface GridViewController : UIViewController
 
+@property NSMutableArray *gridArray;
+
 @end

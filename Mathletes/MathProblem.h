@@ -8,10 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
-@interface FlashCard : NSObject
+@interface MathProblem : NSObject
 
-@property int addend1, addend2;
-@property int cardValue;
-@property NSDictionary *difficultyDictionary;
+@property NSInteger mathProblemValue;
+@property NSInteger equationDifficulty;
+@property BOOL haveAttemptedEquation;
+
+-(id)initWithDifficulty:(NSInteger) difficulty forProblem:(NSInteger) problem;
 
 @end

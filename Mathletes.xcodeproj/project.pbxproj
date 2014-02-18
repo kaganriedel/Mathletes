@@ -46,7 +46,7 @@
 		6D891EDF18A5BF6B0002B915 /* ChooseOperationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D891EDE18A5BF6B0002B915 /* ChooseOperationsViewController.m */; };
 		6D99FF7318B16D5400CE0EFF /* TradeWallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D99FF7218B16D5400CE0EFF /* TradeWallViewController.m */; };
 		6D99FF7618B16D6400CE0EFF /* StickerDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D99FF7518B16D6400CE0EFF /* StickerDetailViewController.m */; };
-		C950F2E618AA906A00AC33C6 /* FlashCard.m in Sources */ = {isa = PBXBuildFile; fileRef = C950F2E518AA906A00AC33C6 /* FlashCard.m */; };
+		C950F2E618AA906A00AC33C6 /* MathProblem.m in Sources */ = {isa = PBXBuildFile; fileRef = C950F2E518AA906A00AC33C6 /* MathProblem.m */; };
 		C987E0DF18A9AC70007CEC36 /* GridViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C987E0DE18A9AC70007CEC36 /* GridViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -121,8 +121,8 @@
 		6D99FF7218B16D5400CE0EFF /* TradeWallViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TradeWallViewController.m; sourceTree = "<group>"; };
 		6D99FF7418B16D6400CE0EFF /* StickerDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StickerDetailViewController.h; sourceTree = "<group>"; };
 		6D99FF7518B16D6400CE0EFF /* StickerDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StickerDetailViewController.m; sourceTree = "<group>"; };
-		C950F2E418AA906A00AC33C6 /* FlashCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlashCard.h; sourceTree = "<group>"; };
-		C950F2E518AA906A00AC33C6 /* FlashCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlashCard.m; sourceTree = "<group>"; };
+		C950F2E418AA906A00AC33C6 /* MathProblem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MathProblem.h; sourceTree = "<group>"; };
+		C950F2E518AA906A00AC33C6 /* MathProblem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MathProblem.m; sourceTree = "<group>"; };
 		C987E0DD18A9AC70007CEC36 /* GridViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GridViewController.h; sourceTree = "<group>"; };
 		C987E0DE18A9AC70007CEC36 /* GridViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GridViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -218,8 +218,8 @@
 				6D891EDE18A5BF6B0002B915 /* ChooseOperationsViewController.m */,
 				C987E0DD18A9AC70007CEC36 /* GridViewController.h */,
 				C987E0DE18A9AC70007CEC36 /* GridViewController.m */,
-				C950F2E418AA906A00AC33C6 /* FlashCard.h */,
-				C950F2E518AA906A00AC33C6 /* FlashCard.m */,
+				C950F2E418AA906A00AC33C6 /* MathProblem.h */,
+				C950F2E518AA906A00AC33C6 /* MathProblem.m */,
 				6D18826018A943DF003DCA92 /* StickersViewController.h */,
 				6D18826118A943DF003DCA92 /* StickersViewController.m */,
 				6D18826318A94458003DCA92 /* StickerCell.h */,
@@ -421,7 +421,7 @@
 			files = (
 				6D891EBA18A582EC0002B915 /* MathViewController.m in Sources */,
 				C987E0DF18A9AC70007CEC36 /* GridViewController.m in Sources */,
-				C950F2E618AA906A00AC33C6 /* FlashCard.m in Sources */,
+				C950F2E618AA906A00AC33C6 /* MathProblem.m in Sources */,
 				6D99FF7318B16D5400CE0EFF /* TradeWallViewController.m in Sources */,
 				6D383D3E18B27C2D007F2116 /* MakeTradeCell.m in Sources */,
 				6D1BE7D818A9C2750079102A /* AchievementsViewController.m in Sources */,
