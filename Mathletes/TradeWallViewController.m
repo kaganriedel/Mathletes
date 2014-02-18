@@ -63,12 +63,13 @@
     
     PFObject *trade = trades[indexPath.row];
     
-    NSString *giveString = [trade objectForKey:@"give"];
+    //"give" and "get" are reversed here because what someone offers to "give/get" is the opposite of what the other person accepts to "give/get"
+    NSString *giveString = [trade objectForKey:@"get"];
     cell.giveImageView.image = [UIImage imageNamed:[giveString stringByAppendingString:@".png"]];
     cell.giveImageView.layer.cornerRadius = 35.0;
     cell.give = giveString;
 
-    NSString *getString = [trade objectForKey:@"get"];
+    NSString *getString = [trade objectForKey:@"give"];
     cell.getImageView.image = [UIImage imageNamed:[getString stringByAppendingString:@".png"]];
     cell.getImageView.layer.cornerRadius = 35.0;
     cell.get = getString;

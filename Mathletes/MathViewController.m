@@ -340,7 +340,7 @@
 
 -(void)correctAnswer
 {
-
+    inputLabel.text = @"";
     feedbackView.alpha = 1.0;
     feedbackView.backgroundColor = [UIColor colorWithRed:151.0/255.0 green:244.0/255.0 blue:101.0/255.0 alpha:1.0];
     if (countDown <= 6)
