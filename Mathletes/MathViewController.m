@@ -29,8 +29,6 @@
     __weak IBOutlet UILabel *var2Label;
     __weak IBOutlet UIButton *goButton;
     __weak IBOutlet UIButton *newButton;
-    __weak IBOutlet UILabel *feedbackLabel;
-    __weak IBOutlet UITextField *answerTextField;
     __weak IBOutlet UIView *newStickerView;
     __weak IBOutlet UIImageView *stickerImageView;
     __weak IBOutlet UILabel *inputLabel;
@@ -45,7 +43,9 @@
     __weak IBOutlet UIButton *nineButton;
     __weak IBOutlet UIButton *zeroButton;
     __weak IBOutlet UIButton *backSpaceButton;
-    
+    __weak IBOutlet UILabel *feedbackLabel;
+    __weak IBOutlet UIImageView *feedbackImageView;
+    __weak IBOutlet UIView *feedbackView;
     
     NSMutableArray *mathProblems;
     NSInteger difficulty;
@@ -57,6 +57,7 @@
     
     int countDown;
     NSTimer *countDownTimer;
+    NSTimer *correctAnswerTimer;
     
     NSUserDefaults *userDefaults;
 }
@@ -79,7 +80,7 @@
 
     _operationLabel.text = _operationType;
     newButton.alpha = 0.0;
-    newStickerView.alpha = 0.0;
+    feedbackView.alpha = 0.0;
     
     [self newMathProblem];
     [self startTimer];
@@ -167,25 +168,14 @@
     countDown ++;
     NSLog(@"%i", countDown);
 
-    if (countDown == 15)
+    if (countDown == 10)
     {
         [countDownTimer invalidate];
-        [self addProficiencyForWrongAnswer];
-        [self showMessage];
+        feedbackLabel.text = @"Sorry! Time is up!";
+        [self wrongAnswer];
     }
 }
 
-- (void)showMessage
-{
-    UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Time Is Up!" message:@"Oops! Next problem" delegate:self cancelButtonTitle:@"Next" otherButtonTitles:nil];
-    [message show];
-}
-
--(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
-{
-    [self newMathProblem];
-    [self startTimer];
-}
 
 -(void)sortingArray
 {
@@ -237,8 +227,12 @@
 
 -(void)newMathProblem
 {
+    newStickerView.alpha = 0.0;
+    newButton.alpha = 0.0;
+    goButton.alpha = 1.0;
     feedbackLabel.text = nil;
     inputLabel.text = @"";
+    feedbackView.alpha = 0.0;
     
     [self sortingArray];
     
@@ -339,17 +333,24 @@
 {
     [self newMathProblem];
     [self startTimer];
-    newButton.alpha = 0.0;
-    goButton.alpha = 1.0;
 }
 
 -(void)correctAnswer
 {
+
+    feedbackView.alpha = 1.0;
+    feedbackView.backgroundColor = [UIColor colorWithRed:151.0/255.0 green:244.0/255.0 blue:101.0/255.0 alpha:1.0];
+    if (countDown <= 6)
+    {
+        //set imageview to smiley face
+    }
+    else
+    {
+        //feedbackImageView.image = [UIImage set imageview to check mark
+    }
+    
+    
     feedbackLabel.text = @"Correct!";
-    feedbackLabel.textColor = [UIColor colorWithRed:151.0/255.0 green:244.0/255.0 blue:101.0/255.0 alpha:1.0];
-    goButton.alpha = 0.0;
-    newButton.alpha = 1.0;
-    newButton.backgroundColor = [UIColor colorWithRed:151.0/255.0 green:244.0/255.0 blue:101.0/255.0 alpha:1.0];
     [self updateAchievements];
     
     MathProblem *problem = _userArray[userArrayKey];
@@ -362,14 +363,24 @@
     
     problem.equationDifficulty = proficiencyChange;
     problem.haveAttemptedEquation = YES;
+    correctAnswerTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(correctAnswerTimerFired:) userInfo:nil repeats:NO];
+}
+
+-(void)correctAnswerTimerFired:(NSTimer *)timer
+{
+    [self newMathProblem];
+    [self startTimer];
 }
 
 -(void)wrongAnswer
 {
     goButton.alpha = 0.0;
     newButton.alpha = 1.0;
-    newButton.backgroundColor = [UIColor redColor];
-    feedbackLabel.textColor = [UIColor redColor];
+
+    feedbackView.alpha = 1.0;
+    feedbackView.backgroundColor = [UIColor redColor];
+    
+    //feedbackImageView.image = [UIImage set imageview to frowny face
     
     [self addProficiencyForWrongAnswer];
 }
@@ -924,9 +935,6 @@
     }
     
     newStickerView.alpha = 1.0;
-    [UIView animateWithDuration:4.0 animations:^{
-        newStickerView.alpha = 0.0;
-    }];
     
     [userDefaults synchronize];
 
