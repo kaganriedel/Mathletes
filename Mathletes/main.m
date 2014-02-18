@@ -16,3 +16,26 @@ int main(int argc, char * argv[])
         return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
     }
 }
+
+
+//interface is in Prefix.pch
+@implementation NSUserDefaults (mathletes)
+
+- (int)incrementKey:(NSString *)key
+{
+    int value = [self integerForKey:key] + 1;
+    [self setInteger:value forKey:key];
+    return value;
+}
+
+- (int)decrementKey:(NSString *)key
+{
+    int value = [self integerForKey:key] - 1;
+    if (value >= 0)
+    {
+        [self setInteger:value forKey:key];
+    }
+    return value;
+}
+
+@end

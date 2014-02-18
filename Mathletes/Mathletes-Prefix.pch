@@ -13,4 +13,11 @@
 #ifdef __OBJC__
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
+
+//implementation is in main.m
+@interface NSUserDefaults (mathletes)
+- (int)incrementKey:(NSString *)key;
+- (int)decrementKey:(NSString *)key;
+@end
+
 #endif

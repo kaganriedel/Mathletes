@@ -99,7 +99,12 @@
         MakeTradeCell *getCell = (MakeTradeCell*)[getTableView cellForRowAtIndexPath:getTableCheckedIndexPath];
         NSDictionary *dictionary = @{@"give": giveCell.sticker, @"get": getCell.sticker, @"user": [PFUser currentUser]};
         PFObject *trade = [PFObject objectWithClassName:@"Trade" dictionary:dictionary];
-        [trade saveInBackground];
+        [trade saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+            if (succeeded)
+            {
+                [userDefaults decrementKey:@""];
+            }
+        }];
         [self.navigationController popViewControllerAnimated:YES];
     }
 }
