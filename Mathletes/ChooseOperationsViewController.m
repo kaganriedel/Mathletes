@@ -32,6 +32,7 @@
     {
         
         mathVC.operationType = @"+";
+        
     }
     else if ([segue.identifier isEqualToString:@"SubtractionSegue"])
     {
