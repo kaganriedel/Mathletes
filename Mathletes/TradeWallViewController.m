@@ -13,7 +13,7 @@
 @interface TradeWallViewController () <UITableViewDataSource, UITableViewDelegate, UIAlertViewDelegate>
 {
     NSUserDefaults *userDefaults;
-    NSArray *trades;
+    NSMutableArray *trades;
     __weak IBOutlet UITableView *tradeTableView;
 }
 
@@ -37,7 +37,7 @@
     PFQuery *query = [PFQuery queryWithClassName:@"Trade"];
     [query orderByDescending:@"createdAt"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        trades = objects;
+        trades = objects.mutableCopy;
         [tradeTableView reloadData];
     }];
 }
@@ -45,15 +45,62 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     TradeWallCell *cell = (TradeWallCell*)[tableView cellForRowAtIndexPath:indexPath];
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Trade" message:[NSString stringWithFormat:@"Do you want to accept this trade?\nGive 1 %@ sticker.\nGet 1 %@ sticker.", cell.give, cell.get] delegate:self cancelButtonTitle:@"No Thanks" otherButtonTitles:@"Accept Trade", nil];
-    [alert show];
+    
+    PFUser *user = [cell.trade objectForKey:@"user"];
+    if ([user.objectId isEqualToString:[PFUser currentUser].objectId])
+    {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Cancel Trade?" message:@"Do you want to cancel this trade?" delegate:self cancelButtonTitle:@"No Thanks" otherButtonTitles:@"Yes, Cancel It", nil];
+        alert.tag = 0;
+        [alert show];
+    }
+    else
+    {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Trade" message:[NSString stringWithFormat:@"Do you want to accept this trade?\nGive 1 %@ sticker.\nGet 1 %@ sticker.", [cell.trade objectForKey:@"get"], [cell.trade objectForKey:@"give"]] delegate:self cancelButtonTitle:@"No Thanks" otherButtonTitles:@"Accept Trade", nil];
+        alert.tag = 1;
+        [alert show];
+    }
 }
 
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    if (buttonIndex == 1)
+    if (alertView.tag == 0)
     {
-        //make the trade happen
+        if (buttonIndex == 0)
+        {
+            //deselect the tableviewcell
+        }
+        if (buttonIndex == 1)
+        {
+            NSIndexPath *selectedIndexPath = [tradeTableView indexPathForSelectedRow];
+            TradeWallCell *cell = (TradeWallCell*)[tradeTableView cellForRowAtIndexPath:selectedIndexPath];
+            PFObject *trade = cell.trade;
+            [trade deleteEventually];
+            [trades removeObjectAtIndex:selectedIndexPath.row];
+            [tradeTableView deleteRowsAtIndexPaths:@[selectedIndexPath] withRowAnimation:UITableViewRowAnimationLeft];
+            [userDefaults incrementKey:[NSString stringWithFormat:@"%@Count", [trade objectForKey:@"give"]]];
+            [trade saveInBackground];
+        }
+    }
+    if (alertView.tag == 1)
+    {
+  
+        if (buttonIndex == 0)
+        {
+            //deselect the tableviewcell
+        }
+        if (buttonIndex == 1)
+        {
+            NSIndexPath *selectedIndexPath = [tradeTableView indexPathForSelectedRow];
+            TradeWallCell *cell = (TradeWallCell*)[tradeTableView cellForRowAtIndexPath:selectedIndexPath];
+            PFObject *trade = cell.trade;
+            [trade deleteEventually];
+            [trades removeObjectAtIndex:selectedIndexPath.row];
+            [tradeTableView deleteRowsAtIndexPaths:@[selectedIndexPath] withRowAnimation:UITableViewRowAnimationLeft];
+            [userDefaults incrementKey:[NSString stringWithFormat:@"%@Count", [trade objectForKey:@"get"]]];
+            [trade saveInBackground];
+            
+            //make the trade happen
+        }
     }
 }
 
@@ -61,17 +108,24 @@
 {
     TradeWallCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TradeCell"];
     
-    PFObject *trade = trades[indexPath.row];
+    cell.trade = trades[indexPath.row];
     
-    NSString *giveString = [trade objectForKey:@"give"];
-    cell.giveImageView.image = [UIImage imageNamed:[giveString stringByAppendingString:@".png"]];
+    //the order of "give" and "get" are reversed here because what someone offers to "give/get" is the opposite of what the other person accepts to "give/get"
+    PFUser *user = [cell.trade objectForKey:@"user"];
+    if ([user.objectId isEqualToString:[PFUser currentUser].objectId])
+    {
+        cell.myTradeLabel.alpha = 1.0;
+    }
+    else
+    {
+        cell.myTradeLabel.alpha = 0.0;
+    }
+    
+    cell.giveImageView.image = [UIImage imageNamed:[[cell.trade objectForKey:@"get"] stringByAppendingString:@".png"]];
     cell.giveImageView.layer.cornerRadius = 35.0;
-    cell.give = giveString;
 
-    NSString *getString = [trade objectForKey:@"get"];
-    cell.getImageView.image = [UIImage imageNamed:[getString stringByAppendingString:@".png"]];
+    cell.getImageView.image = [UIImage imageNamed:[[cell.trade objectForKey:@"give"] stringByAppendingString:@".png"]];
     cell.getImageView.layer.cornerRadius = 35.0;
-    cell.get = getString;
     
     return cell;
 }

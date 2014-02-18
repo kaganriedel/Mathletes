@@ -51,15 +51,15 @@
     {
         [userStickers addObject:@"tiger.png"];
     }
-    if ([userDefaults integerForKey:@"moonCount"] > 0)
+    if ([userDefaults integerForKey:@"murrayCount"] > 0)
     {
         [userStickers addObject:@"murray.png"];
     }
-    if ([userDefaults integerForKey:@"giraffeCount"] > 0)
+    if ([userDefaults integerForKey:@"bearCount"] > 0)
     {
         [userStickers addObject:@"bear.png"];
     }
-    if ([userDefaults integerForKey:@"sunCount"] > 0)
+    if ([userDefaults integerForKey:@"pizzaCount"] > 0)
     {
         [userStickers addObject:@"pizza.png"];
     }
