@@ -97,7 +97,7 @@
     {
         MakeTradeCell *giveCell = (MakeTradeCell*)[giveTableView cellForRowAtIndexPath:giveTableCheckedIndexPath];
         MakeTradeCell *getCell = (MakeTradeCell*)[getTableView cellForRowAtIndexPath:getTableCheckedIndexPath];
-        NSDictionary *dictionary = @{@"give": giveCell.sticker, @"get": getCell.sticker};
+        NSDictionary *dictionary = @{@"give": giveCell.sticker, @"get": getCell.sticker, @"user": [PFUser currentUser]};
         PFObject *trade = [PFObject objectWithClassName:@"Trade" dictionary:dictionary];
         [trade saveInBackground];
         [self.navigationController popViewControllerAnimated:YES];
@@ -151,7 +151,7 @@
         MakeTradeCell *cell = [tableView dequeueReusableCellWithIdentifier:@"GiveCell"];
         cell.stickerImageView.image = [UIImage imageNamed:userStickers[indexPath.row]];
         cell.stickerImageView.clipsToBounds = YES;
-        cell.stickerImageView.layer.cornerRadius = 20.0;
+        cell.stickerImageView.layer.cornerRadius = 35.0;
         NSString *imageString = userStickers[indexPath.row];
         cell.sticker = [imageString stringByReplacingOccurrencesOfString:@".png" withString:@""];
         
@@ -162,7 +162,7 @@
         MakeTradeCell *cell = [tableView dequeueReusableCellWithIdentifier:@"GetCell"];
         cell.stickerImageView.image = [UIImage imageNamed:allStickers[indexPath.row]];
         cell.stickerImageView.clipsToBounds = YES;
-        cell.stickerImageView.layer.cornerRadius = 20.0;
+        cell.stickerImageView.layer.cornerRadius = 35.0;
         NSString *imageString = allStickers[indexPath.row];
         cell.sticker = [imageString stringByReplacingOccurrencesOfString:@".png" withString:@""];
         
