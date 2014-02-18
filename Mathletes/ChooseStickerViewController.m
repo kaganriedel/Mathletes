@@ -33,35 +33,35 @@
     //check to see which stickers the user has collected and display the ones they have
     if ([userDefaults integerForKey:@"lionCount"] > 0)
     {
-        [userStickers addObject:@"murray320x320.jpg"];
+        [userStickers addObject:@"lion.png"];
     }
     if ([userDefaults integerForKey:@"kittenCount"] > 0)
     {
-        [userStickers addObject:@"puppy160x160.jpg"];
+        [userStickers addObject:@"kitten.png"];
     }
     if ([userDefaults integerForKey:@"starCount"] > 0)
     {
-        [userStickers addObject:@"kitten50x50.jpg"];
+        [userStickers addObject:@"star.png"];
     }
     if ([userDefaults integerForKey:@"puppyCount"] > 0)
     {
-        [userStickers addObject:@"ThumbsUpButton.png"];
+        [userStickers addObject:@"puppy.png"];
     }
     if ([userDefaults integerForKey:@"tigerCount"] > 0)
     {
-        [userStickers addObject:@"lion.jpg"];
+        [userStickers addObject:@"tiger.png"];
     }
     if ([userDefaults integerForKey:@"moonCount"] > 0)
     {
-        [userStickers addObject:@"bear.jpg"];
+        [userStickers addObject:@"murray.png"];
     }
     if ([userDefaults integerForKey:@"giraffeCount"] > 0)
     {
-        [userStickers addObject:@"tiger.jpg"];
+        [userStickers addObject:@"bear.png"];
     }
     if ([userDefaults integerForKey:@"sunCount"] > 0)
     {
-        [userStickers addObject:@"Star.png"];
+        [userStickers addObject:@"pizza.png"];
     }
 }
 
@@ -76,9 +76,10 @@
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     ChooseStickerCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"ChooseStickerCell" forIndexPath:indexPath];
-    cell.layer.cornerRadius = 37.0;
     cell.imageView.image = [UIImage imageNamed:userStickers[indexPath.row]];
     cell.imageName = userStickers[indexPath.row];
+    cell.imageView.layer.cornerRadius = 35.0;
+
     
     return cell;
 }

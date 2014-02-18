@@ -10,15 +10,6 @@
 
 @implementation TradeWallCell
 
--(id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
-{
-    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-    
-    _imageView1.layer.cornerRadius = 20.0;
-    _imageView2.layer.cornerRadius = 20.0;
-
-    return self;
-}
 
 
 @end

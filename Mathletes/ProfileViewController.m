@@ -33,6 +33,11 @@
     if ([[NSDate date] timeIntervalSinceDate:[userDefaults objectForKey:@"dailyMathStartDate"]] >= 86400.0)
     {
         [userDefaults setInteger:0 forKey:@"dailyMath"];
+        [userDefaults setBool:NO forKey:@"dailyMath!"];
+        [userDefaults setBool:NO forKey:@"dailyMath x20!"];
+        [userDefaults setBool:NO forKey:@"dailyMath x30!"];
+        [userDefaults setBool:NO forKey:@"dailyMath x40!"];
+        [userDefaults setBool:NO forKey:@"dailyMath x50!"];
     }
     NSLog(@"dailyMath is: %i", [userDefaults integerForKey:@"dailyMath"]);
 

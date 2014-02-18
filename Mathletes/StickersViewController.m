@@ -30,7 +30,8 @@
     
 //    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:250.0/255.0 green:228.0/255.0 blue:66.0/255.0 alpha:1.0];
     
-    stickers = @[@"murray320x320.jpg",@"puppy160x160.jpg",@"kitten50x50.jpg", @"ThumbsUpButton.png", @"lion.jpg", @"bear.jpg", @"tiger.jpg", @"Star.png"];
+    
+    stickers = @[@"lion.png",@"kitten.png",@"star.png", @"puppy.png", @"tiger.png", @"murray.png", @"bear.png", @"pizza.png"];
     
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     
@@ -66,7 +67,7 @@
 {
     StickerCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"StickerCell" forIndexPath:indexPath];
     cell.imageView.image = [UIImage imageNamed:stickers[indexPath.row]];
-    cell.imageView.layer.cornerRadius = 37.5;
+    cell.imageView.layer.cornerRadius = 35.0;
     cell.stickerImageName = stickers[indexPath.row];
     
     cell.count = userStickers[indexPath.row];

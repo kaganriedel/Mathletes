@@ -33,6 +33,19 @@
     __weak IBOutlet UITextField *answerTextField;
     __weak IBOutlet UIView *newStickerView;
     __weak IBOutlet UIImageView *stickerImageView;
+    __weak IBOutlet UILabel *inputLabel;
+    __weak IBOutlet UIButton *oneButton;
+    __weak IBOutlet UIButton *twoButton;
+    __weak IBOutlet UIButton *threeButton;
+    __weak IBOutlet UIButton *fourButton;
+    __weak IBOutlet UIButton *fiveButton;
+    __weak IBOutlet UIButton *sixButton;
+    __weak IBOutlet UIButton *sevenButton;
+    __weak IBOutlet UIButton *eightButton;
+    __weak IBOutlet UIButton *nineButton;
+    __weak IBOutlet UIButton *zeroButton;
+    __weak IBOutlet UIButton *backSpaceButton;
+    
     
     NSMutableArray *mathProblems;
     NSInteger difficulty;
@@ -71,10 +84,61 @@
     [self newMathProblem];
     [self startTimer];
     
-    goButton.layer.cornerRadius = 10.0;
-    newButton.layer.cornerRadius = 10.0;
+    goButton.layer.cornerRadius = 35.0;
+    goButton.layer.borderWidth = 1.5;
+    goButton.layer.borderColor = [UIColor colorWithRed:184.0/255.0 green:184.0/255.0 blue:184.0/255.0 alpha:1].CGColor;
+    
+    newButton.layer.cornerRadius = 35.0;
+    newButton.layer.borderWidth = 1.5;
+    newButton.layer.borderColor = [UIColor colorWithRed:184.0/255.0 green:184.0/255.0 blue:184.0/255.0 alpha:1].CGColor;
+    
+    backSpaceButton.layer.cornerRadius = 35.0;
+    backSpaceButton.layer.borderWidth = 1.5;
+    backSpaceButton.layer.borderColor = [UIColor colorWithRed:184.0/255.0 green:184.0/255.0 blue:184.0/255.0 alpha:1].CGColor;
+    
+    zeroButton.layer.cornerRadius = 35.0;
+    zeroButton.layer.borderWidth = 1.5;
+    zeroButton.layer.borderColor = [UIColor colorWithRed:184.0/255.0 green:184.0/255.0 blue:184.0/255.0 alpha:1].CGColor;
+    
+    oneButton.layer.cornerRadius = 35.0;
+    oneButton.layer.borderWidth = 1.5;
+    oneButton.layer.borderColor = [UIColor colorWithRed:184.0/255.0 green:184.0/255.0 blue:184.0/255.0 alpha:1].CGColor;
+    
+    twoButton.layer.cornerRadius = 35.0;
+    twoButton.layer.borderWidth = 1.5;
+    twoButton.layer.borderColor = [UIColor colorWithRed:184.0/255.0 green:184.0/255.0 blue:184.0/255.0 alpha:1].CGColor;
+    
+    threeButton.layer.cornerRadius = 35.0;
+    threeButton.layer.borderWidth = 1.5;
+    threeButton.layer.borderColor = [UIColor colorWithRed:184.0/255.0 green:184.0/255.0 blue:184.0/255.0 alpha:1].CGColor;
+    
+    fourButton.layer.cornerRadius = 35.0;
+    fourButton.layer.borderWidth = 1.5;
+    fourButton.layer.borderColor = [UIColor colorWithRed:184.0/255.0 green:184.0/255.0 blue:184.0/255.0 alpha:1].CGColor;
+    
+    fiveButton.layer.cornerRadius = 35.0;
+    fiveButton.layer.borderWidth = 1.5;
+    fiveButton.layer.borderColor = [UIColor colorWithRed:184.0/255.0 green:184.0/255.0 blue:184.0/255.0 alpha:1].CGColor;
+    
+    sixButton.layer.cornerRadius = 35.0;
+    sixButton.layer.borderWidth = 1.5;
+    sixButton.layer.borderColor = [UIColor colorWithRed:184.0/255.0 green:184.0/255.0 blue:184.0/255.0 alpha:1].CGColor;
+    
+    sevenButton.layer.cornerRadius = 35.0;
+    sevenButton.layer.borderWidth = 1.5;
+    sevenButton.layer.borderColor = [UIColor colorWithRed:184.0/255.0 green:184.0/255.0 blue:184.0/255.0 alpha:1].CGColor;
+    
+    eightButton.layer.cornerRadius = 35.0;
+    eightButton.layer.borderWidth = 1.5;
+    eightButton.layer.borderColor = [UIColor colorWithRed:184.0/255.0 green:184.0/255.0 blue:184.0/255.0 alpha:1].CGColor;
+    
+    nineButton.layer.cornerRadius = 35.0;
+    nineButton.layer.borderWidth = 1.5;
+    nineButton.layer.borderColor = [UIColor colorWithRed:184.0/255.0 green:184.0/255.0 blue:184.0/255.0 alpha:1].CGColor;
+    
     stickerImageView.clipsToBounds = YES;
-    stickerImageView.layer.cornerRadius = 25.0;
+    stickerImageView.layer.cornerRadius = 30.0;
+
     
 
     
@@ -236,7 +300,7 @@
 -(void)newMathProblem
 {
     feedbackLabel.text = nil;
-    answerTextField.text = nil;
+    inputLabel.text = @"";
 
     int highestRange = 11;
     int divisionModifier = 0;
@@ -278,9 +342,10 @@
 -(void)correctAnswer
 {
     feedbackLabel.text = @"Correct!";
+    feedbackLabel.textColor = [UIColor colorWithRed:151.0/255.0 green:244.0/255.0 blue:101.0/255.0 alpha:1.0];
     goButton.alpha = 0.0;
     newButton.alpha = 1.0;
-    newButton.backgroundColor = [UIColor yellowColor];
+    newButton.backgroundColor = [UIColor colorWithRed:151.0/255.0 green:244.0/255.0 blue:101.0/255.0 alpha:1.0];
     [self updateAchievements];
     
     MathProblem *problem = _userArray[userArrayKey];
@@ -397,7 +462,13 @@
                               ].mutableCopy;
 }
 
-
+-(void)wrongAnswer
+{
+    goButton.alpha = 0.0;
+    newButton.alpha = 1.0;
+    newButton.backgroundColor = [UIColor redColor];
+    feedbackLabel.textColor = [UIColor redColor];
+}
 
 -(void)updateAchievements
 {
@@ -784,47 +855,47 @@
     if (randomSticker < 20)
     {
         [userDefaults incrementKey:@"lionCount"];
-        stickerImageView.image = [UIImage imageNamed:@"murray320x320.jpg"];
+        stickerImageView.image = [UIImage imageNamed:@"lion.png"];
         NSLog(@"1st count +1");
     }
     else if (randomSticker < 40)
     {
         [userDefaults incrementKey:@"kittenCount"];
-        stickerImageView.image = [UIImage imageNamed:@"puppy160x160.jpg"];
+        stickerImageView.image = [UIImage imageNamed:@"kitten.png"];
         NSLog(@"2nd count +1");
     }
     else if (randomSticker < 60)
     {
         [userDefaults incrementKey:@"starCount"];
-        stickerImageView.image = [UIImage imageNamed:@"kitten50x50.jpg"];
+        stickerImageView.image = [UIImage imageNamed:@"star.png"];
         NSLog(@"3rd count +1");
     }
     else if (randomSticker < 70)
     {
         [userDefaults incrementKey:@"puppyCount"];
-        stickerImageView.image = [UIImage imageNamed:@"ThumbsUpButton.png"];
+        stickerImageView.image = [UIImage imageNamed:@"puppy.png"];
         NSLog(@"4th count +1");
     }
     else if (randomSticker < 80)
     {
         [userDefaults incrementKey:@"tigerCount"];
-        stickerImageView.image = [UIImage imageNamed:@"lion.jpg"];
+        stickerImageView.image = [UIImage imageNamed:@"tiger.png"];
         NSLog(@"5th count +1");
     }
     else if (randomSticker < 90)
     {
         [userDefaults incrementKey:@"moonCount"];
-        stickerImageView.image = [UIImage imageNamed:@"bear.jpg"];
+        stickerImageView.image = [UIImage imageNamed:@"murray.png"];
         NSLog(@"6th count +1");
     }else if (randomSticker < 95)
     {
         [userDefaults incrementKey:@"giraffeCount"];
-        stickerImageView.image = [UIImage imageNamed:@"tiger.jpg"];
+        stickerImageView.image = [UIImage imageNamed:@"bear.png"];
         NSLog(@"7th count +1");
     }else if (randomSticker <= 100)
     {
         [userDefaults incrementKey:@"sunCount"];
-        stickerImageView.image = [UIImage imageNamed:@"Star.png"];
+        stickerImageView.image = [UIImage imageNamed:@"pizza.png"];
         NSLog(@"8th count +1");
     }
     
@@ -838,22 +909,77 @@
 }
 
 
--(void)wrongAnswer
+
+
+- (IBAction)onOneButtonPressed:(id)sender
 {
-    goButton.alpha = 0.0;
-    newButton.alpha = 1.0;
-    newButton.backgroundColor = [UIColor redColor];
+    inputLabel.text = [inputLabel.text stringByAppendingString:@"1"];
 }
+
+- (IBAction)onTwoButtonPressed:(id)sender
+{
+    inputLabel.text = [inputLabel.text stringByAppendingString:@"2"];
+}
+
+- (IBAction)onThreeButtonPressed:(id)sender
+{
+   inputLabel.text = [inputLabel.text stringByAppendingString:@"3"];
+}
+
+- (IBAction)onFourButtonPressed:(id)sender
+{
+    inputLabel.text = [inputLabel.text stringByAppendingString:@"4"];
+}
+
+- (IBAction)onFiveButtonPressed:(id)sender
+{
+    inputLabel.text = [inputLabel.text stringByAppendingString:@"5"];
+}
+
+- (IBAction)onSixButtonPressed:(id)sender
+{
+    inputLabel.text =[inputLabel.text stringByAppendingString:@"6"];
+}
+
+- (IBAction)onSevenButtonPressed:(id)sender
+{
+  inputLabel.text = [inputLabel.text stringByAppendingString:@"7"];
+}
+
+- (IBAction)onEightButtonPressed:(id)sender
+{
+   inputLabel.text = [inputLabel.text stringByAppendingString:@"8"];
+}
+
+- (IBAction)onNineButtonPressed:(id)sender
+{
+   inputLabel.text = [inputLabel.text stringByAppendingString:@"9"];
+}
+
+- (IBAction)onZeroButtonPressed:(id)sender
+{
+    inputLabel.text = [inputLabel.text stringByAppendingString:@"0"];
+}
+
+- (IBAction)onBackSpaceButtonPressed:(id)sender
+{
+    inputLabel.text = [inputLabel.text substringToIndex:inputLabel.text.length-(inputLabel.text.length>0)];
+}
+
+
+
+
+
 
 - (IBAction)onGoButtonPressed:(id)sender
 {
-    if (![answerTextField.text isEqualToString:@""])
+    if (![inputLabel.text isEqualToString:@""])
     {
         [countDownTimer invalidate];
 
         if ([_operationLabel.text isEqualToString:@"x"])
         {
-            if (answerTextField.text.intValue == var1Label.text.intValue * var2Label.text.intValue)
+            if (inputLabel.text.intValue == var1Label.text.intValue * var2Label.text.intValue)
             {
                 [self correctAnswer];
             }
@@ -865,7 +991,7 @@
         }
         else if ([_operationLabel.text isEqualToString:@"/"])
         {
-            if (answerTextField.text.intValue == var1Label.text.intValue / var2Label.text.intValue)
+            if (inputLabel.text.intValue == var1Label.text.intValue / var2Label.text.intValue)
             {
                 [self correctAnswer];
             }
@@ -877,7 +1003,7 @@
         }
         else if ([_operationLabel.text isEqualToString:@"+"])
         {
-            if (answerTextField.text.intValue == var1Label.text.intValue + var2Label.text.intValue)
+            if (inputLabel.text.intValue == var1Label.text.intValue + var2Label.text.intValue)
             {
                 [self correctAnswer];
             }
@@ -889,7 +1015,7 @@
         }
         else if ([_operationLabel.text isEqualToString:@"-"])
         {
-            if (answerTextField.text.intValue == var1Label.text.intValue - var2Label.text.intValue)
+            if (inputLabel.text.intValue == var1Label.text.intValue - var2Label.text.intValue)
             {
                 [self correctAnswer];
             }

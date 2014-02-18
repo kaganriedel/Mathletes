@@ -31,14 +31,25 @@
     stickerImageView.layer.cornerRadius = 80.0;
     countLabel.text = [NSString stringWithFormat:@"x%@", _count];
     
-    NSString *stickerName = [[_stickerImageName stringByReplacingOccurrencesOfString:@".jpg" withString:@""]stringByReplacingOccurrencesOfString:@".png" withString:@""];
+    NSString *stickerName = [_stickerImageName stringByReplacingOccurrencesOfString:@".png" withString:@""];
+    
+    NSString *cappedFirstChar = [[stickerName substringToIndex:1] uppercaseString];
+    NSString *cappedString = [stickerName stringByReplacingCharactersInRange:NSMakeRange(0, 1) withString:cappedFirstChar];
+    self.navigationItem.title = cappedString;
+    
     if ([stickerName isEqualToString:@"lion"])
     {
-        self.navigationItem.title = @"Lion";
         rarityLabel.text = @"This sticker is hard to find!";
         detailLabel.text = @"Lions are found in Africa. They are badass and can run really fast MPH. They're really really cool.";
-        [detailLabel sizeToFit];
     }
+    else if ([stickerName isEqualToString:@"puppy"])
+    {
+        rarityLabel.text = @"This sticker is easy to find!";
+        detailLabel.text = @"Puppies are totes adorbs. They cuddle at a rate of 50 cuddles per hour and can slobber all over your face faster than a humming bird flaps its wings!";
+    }
+
+    
+    [detailLabel sizeToFit];
     
 }
 
