@@ -72,22 +72,61 @@
     [self newMathProblem];
     [self startTimer];
     
-    goButton.layer.cornerRadius = 25.0;
-    newButton.layer.cornerRadius = 25.0;
-    backSpaceButton.layer.cornerRadius = 25.0;
-    zeroButton.layer.cornerRadius = 25.0;
-    oneButton.layer.cornerRadius = 25.0;
-    twoButton.layer.cornerRadius = 25.0;
-    threeButton.layer.cornerRadius = 25.0;
-    fourButton.layer.cornerRadius = 25.0;
-    fiveButton.layer.cornerRadius = 25.0;
-    sixButton.layer.cornerRadius = 25.0;
-    sevenButton.layer.cornerRadius = 25.0;
-    eightButton.layer.cornerRadius = 25.0;
-    nineButton.layer.cornerRadius = 25.0;
+    goButton.layer.cornerRadius = 35.0;
+    goButton.layer.borderWidth = 1.5;
+    goButton.layer.borderColor = [UIColor colorWithRed:184.0/255.0 green:184.0/255.0 blue:184.0/255.0 alpha:1].CGColor;
+    
+    newButton.layer.cornerRadius = 35.0;
+    newButton.layer.borderWidth = 1.5;
+    newButton.layer.borderColor = [UIColor colorWithRed:184.0/255.0 green:184.0/255.0 blue:184.0/255.0 alpha:1].CGColor;
+    
+    backSpaceButton.layer.cornerRadius = 35.0;
+    backSpaceButton.layer.borderWidth = 1.5;
+    backSpaceButton.layer.borderColor = [UIColor colorWithRed:184.0/255.0 green:184.0/255.0 blue:184.0/255.0 alpha:1].CGColor;
+    
+    zeroButton.layer.cornerRadius = 35.0;
+    zeroButton.layer.borderWidth = 1.5;
+    zeroButton.layer.borderColor = [UIColor colorWithRed:184.0/255.0 green:184.0/255.0 blue:184.0/255.0 alpha:1].CGColor;
+    
+    oneButton.layer.cornerRadius = 35.0;
+    oneButton.layer.borderWidth = 1.5;
+    oneButton.layer.borderColor = [UIColor colorWithRed:184.0/255.0 green:184.0/255.0 blue:184.0/255.0 alpha:1].CGColor;
+    
+    twoButton.layer.cornerRadius = 35.0;
+    twoButton.layer.borderWidth = 1.5;
+    twoButton.layer.borderColor = [UIColor colorWithRed:184.0/255.0 green:184.0/255.0 blue:184.0/255.0 alpha:1].CGColor;
+    
+    threeButton.layer.cornerRadius = 35.0;
+    threeButton.layer.borderWidth = 1.5;
+    threeButton.layer.borderColor = [UIColor colorWithRed:184.0/255.0 green:184.0/255.0 blue:184.0/255.0 alpha:1].CGColor;
+    
+    fourButton.layer.cornerRadius = 35.0;
+    fourButton.layer.borderWidth = 1.5;
+    fourButton.layer.borderColor = [UIColor colorWithRed:184.0/255.0 green:184.0/255.0 blue:184.0/255.0 alpha:1].CGColor;
+    
+    fiveButton.layer.cornerRadius = 35.0;
+    fiveButton.layer.borderWidth = 1.5;
+    fiveButton.layer.borderColor = [UIColor colorWithRed:184.0/255.0 green:184.0/255.0 blue:184.0/255.0 alpha:1].CGColor;
+    
+    sixButton.layer.cornerRadius = 35.0;
+    sixButton.layer.borderWidth = 1.5;
+    sixButton.layer.borderColor = [UIColor colorWithRed:184.0/255.0 green:184.0/255.0 blue:184.0/255.0 alpha:1].CGColor;
+    
+    sevenButton.layer.cornerRadius = 35.0;
+    sevenButton.layer.borderWidth = 1.5;
+    sevenButton.layer.borderColor = [UIColor colorWithRed:184.0/255.0 green:184.0/255.0 blue:184.0/255.0 alpha:1].CGColor;
+    
+    eightButton.layer.cornerRadius = 35.0;
+    eightButton.layer.borderWidth = 1.5;
+    eightButton.layer.borderColor = [UIColor colorWithRed:184.0/255.0 green:184.0/255.0 blue:184.0/255.0 alpha:1].CGColor;
+    
+    nineButton.layer.cornerRadius = 35.0;
+    nineButton.layer.borderWidth = 1.5;
+    nineButton.layer.borderColor = [UIColor colorWithRed:184.0/255.0 green:184.0/255.0 blue:184.0/255.0 alpha:1].CGColor;
+    
     stickerImageView.clipsToBounds = YES;
-    stickerImageView.layer.cornerRadius = 25.0;
-    inputLabel.layer.borderWidth = 5;
+    stickerImageView.layer.cornerRadius = 30.0;
+
     
 
     
@@ -178,10 +217,19 @@
 -(void)correctAnswer
 {
     feedbackLabel.text = @"Correct!";
+    feedbackLabel.textColor = [UIColor colorWithRed:151.0/255.0 green:244.0/255.0 blue:101.0/255.0 alpha:1.0];
     goButton.alpha = 0.0;
     newButton.alpha = 1.0;
-    newButton.backgroundColor = [UIColor yellowColor];
+    newButton.backgroundColor = [UIColor colorWithRed:151.0/255.0 green:244.0/255.0 blue:101.0/255.0 alpha:1.0];
     [self updateAchievements];
+}
+
+-(void)wrongAnswer
+{
+    goButton.alpha = 0.0;
+    newButton.alpha = 1.0;
+    newButton.backgroundColor = [UIColor redColor];
+    feedbackLabel.textColor = [UIColor redColor];
 }
 
 -(void)updateAchievements
@@ -623,12 +671,7 @@
 }
 
 
--(void)wrongAnswer
-{
-    goButton.alpha = 0.0;
-    newButton.alpha = 1.0;
-    newButton.backgroundColor = [UIColor redColor];
-}
+
 
 - (IBAction)onOneButtonPressed:(id)sender
 {
