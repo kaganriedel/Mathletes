@@ -58,8 +58,24 @@
 {
     [super viewDidLoad];
     
-//    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:151.0/255.0 green:244.0/255.0 blue:101.0/255.0 alpha:1.0];
     [self cardDifficulty];
+
+    if ([_operationType isEqualToString:@"+"])
+    {
+        self.navigationItem.title = @"Addition";
+    }
+    else if ([_operationType isEqualToString:@"-"])
+    {
+        self.navigationItem.title = @"Subtraction";
+    }
+    else if ([_operationType isEqualToString:@"x"])
+    {
+        self.navigationItem.title = @"Multiplication";
+    }
+    else if ([_operationType isEqualToString:@"/"])
+    {
+        self.navigationItem.title = @"Division";
+    }
     
     _userArray = mathProblems;
     
@@ -906,17 +922,17 @@
     }
     else if (randomSticker < 90)
     {
-        [userDefaults incrementKey:@"moonCount"];
+        [userDefaults incrementKey:@"murrayCount"];
         stickerImageView.image = [UIImage imageNamed:@"murray.png"];
         NSLog(@"6th count +1");
     }else if (randomSticker < 95)
     {
-        [userDefaults incrementKey:@"giraffeCount"];
+        [userDefaults incrementKey:@"bearCount"];
         stickerImageView.image = [UIImage imageNamed:@"bear.png"];
         NSLog(@"7th count +1");
     }else if (randomSticker <= 100)
     {
-        [userDefaults incrementKey:@"sunCount"];
+        [userDefaults incrementKey:@"pizzaCount"];
         stickerImageView.image = [UIImage imageNamed:@"pizza.png"];
         NSLog(@"8th count +1");
     }

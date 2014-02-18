@@ -40,9 +40,9 @@
                      @([userDefaults integerForKey:@"starCount"]),
                      @([userDefaults integerForKey:@"puppyCount"]),
                      @([userDefaults integerForKey:@"tigerCount"]),
-                     @([userDefaults integerForKey:@"moonCount"]),
-                     @([userDefaults integerForKey:@"giraffeCount"]),
-                     @([userDefaults integerForKey:@"sunCount"]),];
+                     @([userDefaults integerForKey:@"murrayCount"]),
+                     @([userDefaults integerForKey:@"bearCount"]),
+                     @([userDefaults integerForKey:@"pizzaCount"]),];
 }
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
