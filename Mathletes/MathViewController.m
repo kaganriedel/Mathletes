@@ -154,9 +154,10 @@
     countDown ++;
     NSLog(@"%i", countDown);
 
-    if (countDown == 10)
+    if (countDown == 15)
     {
         [countDownTimer invalidate];
+        [self addProficiencyForWrongAnswer];
         [self showMessage];
     }
 }
@@ -192,7 +193,7 @@
         if (mp2.equationDifficulty > 0)
         {
             firstNonZeroKey = i;
-            NSLog(@"%i", firstNonZeroKey);
+            NSLog(@"%li", (long)firstNonZeroKey);
             break;
         }
     }
@@ -200,7 +201,7 @@
     for (int i = 0; i < _userArray.count; i++)
     {
         MathProblem *problem = _userArray[i];
-        NSLog(@"%i %ld",problem.mathProblemValue, (long)problem.equationDifficulty);
+        NSLog(@"%li %ld",(long)problem.mathProblemValue, (long)problem.equationDifficulty);
     }
     
 }
@@ -223,6 +224,9 @@
 
 -(void)newMathProblem
 {
+    feedbackLabel.text = nil;
+    inputLabel.text = @"";
+    
     [self sortingArray];
     
     //original random value
@@ -338,11 +342,39 @@
     MathProblem *problem = _userArray[userArrayKey];
     NSInteger proficiencyChange = problem.equationDifficulty;
     
-    if (problem.equationDifficulty > 0)
+    if (problem.equationDifficulty > 0 && countDown <= 6)
     {
         proficiencyChange -= 1;
     }
+    
+    problem.equationDifficulty = proficiencyChange;
+    problem.haveAttemptedEquation = YES;
 }
+
+-(void)wrongAnswer
+{
+    goButton.alpha = 0.0;
+    newButton.alpha = 1.0;
+    newButton.backgroundColor = [UIColor redColor];
+    feedbackLabel.textColor = [UIColor redColor];
+    
+    [self addProficiencyForWrongAnswer];
+}
+
+-(void)addProficiencyForWrongAnswer
+{
+    MathProblem *problem = _userArray[userArrayKey];
+    NSInteger proficiencyChange = problem.equationDifficulty;
+    
+    if (problem.equationDifficulty < 10)
+    {
+        proficiencyChange += 1;
+    }
+    
+    problem.equationDifficulty = proficiencyChange;
+    problem.haveAttemptedEquation = YES;
+}
+
 
 -(void)cardDifficulty
 {
@@ -447,14 +479,6 @@
                               [[MathProblem alloc]initWithDifficulty:8 forProblem:97],
                               [[MathProblem alloc]initWithDifficulty:8 forProblem:98]
                               ].mutableCopy;
-}
-
--(void)wrongAnswer
-{
-    goButton.alpha = 0.0;
-    newButton.alpha = 1.0;
-    newButton.backgroundColor = [UIColor redColor];
-    feedbackLabel.textColor = [UIColor redColor];
 }
 
 -(void)updateAchievements
