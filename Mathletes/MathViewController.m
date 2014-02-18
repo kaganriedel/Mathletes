@@ -9,19 +9,6 @@
 #import "MathViewController.h"
 #import "MathProblem.h"
 
-@interface NSUserDefaults (mathletes)
-@end
-@implementation NSUserDefaults (mathletes)
-
-- (int)incrementKey:(NSString *)key
-{
-    int value = [self integerForKey:key] + 1;
-    [self setInteger:value forKey:key];
-    return value;
-}
-
-@end
-
 
 @interface MathViewController () <UIAlertViewDelegate>
 {
