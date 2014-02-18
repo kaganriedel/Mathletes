@@ -10,7 +10,7 @@
 #import "MakeTradeCell.h"
 #import "Parse/Parse.h"
 
-@interface MakeTradeViewController () <UITableViewDelegate, UITableViewDataSource>
+@interface MakeTradeViewController () <UITableViewDelegate, UITableViewDataSource, UIAlertViewDelegate>
 {
     NSUserDefaults *userDefaults;
     
@@ -72,8 +72,6 @@
     {
         [userStickers addObject:@"pizza.png"];
     }
-
-
     
     allStickers = @[@"lion.png", @"kitten.png", @"star.png", @"puppy.png", @"tiger.png", @"murray.png", @"bear.png", @"pizza.png"];
 
@@ -83,16 +81,26 @@
 {
     if (getTableCheckedIndexPath && giveTableCheckedIndexPath)
     {
-        MakeTradeCell *giveCell = (MakeTradeCell*)[giveTableView cellForRowAtIndexPath:giveTableCheckedIndexPath];
-        MakeTradeCell *getCell = (MakeTradeCell*)[getTableView cellForRowAtIndexPath:getTableCheckedIndexPath];
-        NSDictionary *dictionary = @{@"give": giveCell.sticker, @"get": getCell.sticker};
-        PFObject *trade = [PFObject objectWithClassName:@"Trade" dictionary:dictionary];
-        [trade saveInBackground];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Complete Trade" message:@"Are you sure you want to make this trade?" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Yes", nil];
+        [alert show];
     }
     else
     {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Oops!" message:@"Make sure to pick 1 sticker to trade and 1 sticker to get." delegate:nil cancelButtonTitle:@"OK!" otherButtonTitles: nil];
         [alert show];
+    }
+}
+
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 1)
+    {
+        MakeTradeCell *giveCell = (MakeTradeCell*)[giveTableView cellForRowAtIndexPath:giveTableCheckedIndexPath];
+        MakeTradeCell *getCell = (MakeTradeCell*)[getTableView cellForRowAtIndexPath:getTableCheckedIndexPath];
+        NSDictionary *dictionary = @{@"give": giveCell.sticker, @"get": getCell.sticker};
+        PFObject *trade = [PFObject objectWithClassName:@"Trade" dictionary:dictionary];
+        [trade saveInBackground];
+        [self.navigationController popViewControllerAnimated:YES];
     }
 }
 

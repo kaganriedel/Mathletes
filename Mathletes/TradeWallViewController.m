@@ -13,6 +13,7 @@
 @interface TradeWallViewController () <UITableViewDataSource, UITableViewDelegate>
 {
     NSArray *trades;
+    __weak IBOutlet UITableView *tradeTableView;
 }
 
 @end
@@ -31,8 +32,10 @@
     [super viewDidAppear:animated];
     
     PFQuery *query = [PFQuery queryWithClassName:@"Trade"];
+    [query orderByDescending:@"createdAt"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         trades = objects;
+        [tradeTableView reloadData];
     }];
 }
 
@@ -45,6 +48,8 @@
     NSString *getString = [trade objectForKey:@"get"];
     cell.imageView1.image = [UIImage imageNamed:[giveString stringByAppendingString:@".png"]];
     cell.imageView2.image = [UIImage imageNamed:[getString stringByAppendingString:@".png"]];
+    cell.imageView1.layer.cornerRadius = 20.0;
+    cell.imageView2.layer.cornerRadius = 20.0;
     
     return cell;
 }

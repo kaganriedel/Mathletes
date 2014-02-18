@@ -8,10 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		27B54DD918AD44270068E68A /* boy.png in Resources */ = {isa = PBXBuildFile; fileRef = 27B54DD818AD44270068E68A /* boy.png */; };
+		6D010FB118B3075D0095B0E7 /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D010FB018B3075D0095B0E7 /* star.png */; };
 		6D17BD5318AC1CFE009A7416 /* AchievementHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D17BD5218AC1CFE009A7416 /* AchievementHeader.m */; };
 		6D18826218A943DF003DCA92 /* StickersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D18826118A943DF003DCA92 /* StickersViewController.m */; };
 		6D18826518A94458003DCA92 /* StickerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D18826418A94458003DCA92 /* StickerCell.m */; };
-		6D18826B18A9811D003DCA92 /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D18826A18A9811D003DCA92 /* star.png */; };
 		6D18827618A99D54003DCA92 /* Achievement.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D18827518A99D54003DCA92 /* Achievement.m */; };
 		6D1BE7D818A9C2750079102A /* AchievementsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D1BE7D718A9C2750079102A /* AchievementsViewController.m */; };
 		6D1BE7DB18A9C2FB0079102A /* AchievementCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D1BE7DA18A9C2FB0079102A /* AchievementCell.m */; };
@@ -64,13 +64,13 @@
 		0FBAD299D6F34B0D8960E650 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		11D82320CD96410092541D1A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		27B54DD818AD44270068E68A /* boy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = boy.png; sourceTree = "<group>"; };
+		6D010FB018B3075D0095B0E7 /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
 		6D17BD5118AC1CFE009A7416 /* AchievementHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AchievementHeader.h; sourceTree = "<group>"; };
 		6D17BD5218AC1CFE009A7416 /* AchievementHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AchievementHeader.m; sourceTree = "<group>"; };
 		6D18826018A943DF003DCA92 /* StickersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StickersViewController.h; sourceTree = "<group>"; };
 		6D18826118A943DF003DCA92 /* StickersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StickersViewController.m; sourceTree = "<group>"; };
 		6D18826318A94458003DCA92 /* StickerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StickerCell.h; sourceTree = "<group>"; };
 		6D18826418A94458003DCA92 /* StickerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StickerCell.m; sourceTree = "<group>"; };
-		6D18826A18A9811D003DCA92 /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
 		6D18827418A99D54003DCA92 /* Achievement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Achievement.h; sourceTree = "<group>"; };
 		6D18827518A99D54003DCA92 /* Achievement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Achievement.m; sourceTree = "<group>"; };
 		6D1BE7D618A9C2750079102A /* AchievementsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AchievementsViewController.h; sourceTree = "<group>"; };
@@ -163,7 +163,7 @@
 				6DB5ACCD18B2E5D00098A72D /* bear.png */,
 				6DB5ACCE18B2E5D00098A72D /* pizza.png */,
 				27B54DD818AD44270068E68A /* boy.png */,
-				6D18826A18A9811D003DCA92 /* star.png */,
+				6D010FB018B3075D0095B0E7 /* star.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -361,10 +361,10 @@
 				6D891EBC18A582EC0002B915 /* Images.xcassets in Resources */,
 				6DB5ACD118B2E5D00098A72D /* puppy.png in Resources */,
 				6DB5ACCF18B2E5D00098A72D /* kitten.png in Resources */,
+				6D010FB118B3075D0095B0E7 /* star.png in Resources */,
 				6DB5ACD018B2E5D00098A72D /* tiger.png in Resources */,
 				6DB5ACD518B2E5D00098A72D /* pizza.png in Resources */,
 				6DB5ACD218B2E5D00098A72D /* murray.png in Resources */,
-				6D18826B18A9811D003DCA92 /* star.png in Resources */,
 				6DB5ACD418B2E5D00098A72D /* bear.png in Resources */,
 				6D891EAE18A582EC0002B915 /* InfoPlist.strings in Resources */,
 				6D891EB718A582EC0002B915 /* Main.storyboard in Resources */,

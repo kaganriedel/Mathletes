@@ -135,7 +135,7 @@
     
     cell.achievement = achievements[indexPath.section][indexPath.row];
     
-    cell.imageView.image = [UIImage imageNamed:@"Star.png"];
+    cell.imageView.image = [UIImage imageNamed:@"star.png"];
     if (cell.achievement.isAchieved == YES)
     {
         cell.imageView.alpha = 1.0;
