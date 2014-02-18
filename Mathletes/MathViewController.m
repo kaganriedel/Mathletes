@@ -350,7 +350,7 @@
     
     problem.equationDifficulty = proficiencyChange;
     problem.haveAttemptedEquation = YES;
-    correctAnswerTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(correctAnswerTimerFired:) userInfo:nil repeats:NO];
+    correctAnswerTimer = [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(correctAnswerTimerFired:) userInfo:nil repeats:NO];
 }
 
 -(void)correctAnswerTimerFired:(NSTimer *)timer
