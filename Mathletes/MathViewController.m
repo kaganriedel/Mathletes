@@ -221,63 +221,98 @@
     inputLabel.text = @"";
     feedbackView.alpha = 0.0;
     
-    [self sortingArray];
-    
-    //original random value
-    _addend1 = arc4random()%10;
-    _addend2 = arc4random()%10;
-    
-    [self setNewKey];
-    
-    //setting pool of possible problems
-    keyAddend = 40;
-    
-    if (firstNonZeroKey > 35)
+    if ([_operationLabel.text isEqualToString:@"+"])
     {
-        keyAddend = 30;
+        [self sortingArray];
         
-        if (firstNonZeroKey > 50)
+        //original random value
+        _addend1 = arc4random()%10;
+        _addend2 = arc4random()%10;
+        
+        [self setNewKey];
+        
+        //setting pool of possible problems
+        keyAddend = 40;
+        
+        if (firstNonZeroKey > 35)
         {
-            keyAddend = 25;
+            keyAddend = 30;
             
-            if (firstNonZeroKey > 80)
+            if (firstNonZeroKey > 50)
             {
-                keyAddend = 100 - firstNonZeroKey;
+                keyAddend = 25;
                 
+                if (firstNonZeroKey > 80)
+                {
+                    keyAddend = 100 - firstNonZeroKey;
+                    
+                }
             }
         }
-    }
-    
-    //rechoosing problem if proficiency is reached
-    if (userArrayKey < firstNonZeroKey || userArrayKey > (firstNonZeroKey + keyAddend))
-    {
-        //allowing for old problems when there is a pool < 20
-        if (firstNonZeroKey > 80)
+        
+        
+        //rechoosing problem if proficiency is reached
+        if (userArrayKey < firstNonZeroKey || userArrayKey > (firstNonZeroKey + keyAddend))
         {
-            int chanceOfOldProblem = arc4random()%4;
-            
-            if (chanceOfOldProblem == 0)
+            //allowing for old problems when there is a pool < 20
+            if (firstNonZeroKey > 80)
             {
-                _addend1 = arc4random()%4 + 4;
-                _addend2 = arc4random()%4 + 4;
+                int chanceOfOldProblem = arc4random()%4;
                 
-                [self setNewKey];
+                if (chanceOfOldProblem == 0)
+                {
+                    _addend1 = arc4random()%4 + 4;
+                    _addend2 = arc4random()%4 + 4;
+                    
+                    [self setNewKey];
+                }
+                else
+                {
+                    [self newMathProblem];
+                }
             }
             else
             {
                 [self newMathProblem];
             }
         }
-        else
+        
+        
+        [var1Label setText:[NSString stringWithFormat:@"%i", _addend1]];
+        [var2Label setText:[NSString stringWithFormat:@"%i", _addend2]];
+    }
+    else
+    {
+        feedbackLabel.text = nil;
+        inputLabel.text = @"";
+        
+        int highestRange = 10;
+        int divisionModifier = 0;
+        
+        [var1Label setText:[NSString stringWithFormat:@"%i", arc4random()%(highestRange-divisionModifier)+divisionModifier]];
+        [var2Label setText:[NSString stringWithFormat:@"%i", arc4random()%(highestRange-divisionModifier)+divisionModifier]];
+        
+        if ([_operationLabel.text isEqualToString:@"/"])
+        {
+            divisionModifier = 1;
+        }
+        
+        [var1Label setText:[NSString stringWithFormat:@"%i", arc4random()%(highestRange-divisionModifier)+divisionModifier]];
+        [var2Label setText:[NSString stringWithFormat:@"%i", arc4random()%(highestRange-divisionModifier)+divisionModifier]];
+        
+        
+        if (([_operationLabel.text isEqualToString:@"-"] || [_operationLabel.text isEqualToString:@"/"]) && var1Label.text.intValue < var2Label.text.intValue)
+        {
+            NSString *tempString = var2Label.text;
+            var2Label.text = var1Label.text;
+            var1Label.text = tempString;
+        }
+        if ([_operationLabel.text isEqualToString:@"/"] && var1Label.text.intValue % var2Label.text.intValue != 0.0)
         {
             [self newMathProblem];
         }
+
     }
-    
-    
-    [var1Label setText:[NSString stringWithFormat:@"%i", _addend1]];
-    [var2Label setText:[NSString stringWithFormat:@"%i", _addend2]];
-    
 }
 
 
