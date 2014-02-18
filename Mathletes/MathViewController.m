@@ -167,9 +167,10 @@
     countDown ++;
     NSLog(@"%i", countDown);
 
-    if (countDown == 10)
+    if (countDown == 15)
     {
         [countDownTimer invalidate];
+        [self addProficiencyForWrongAnswer];
         [self showMessage];
     }
 }
@@ -354,7 +355,7 @@
     MathProblem *problem = _userArray[userArrayKey];
     NSInteger proficiencyChange = problem.equationDifficulty;
     
-    if (problem.equationDifficulty > 0)
+    if (problem.equationDifficulty > 0 && countDown <= 6)
     {
         proficiencyChange -= 1;
     }
@@ -370,6 +371,11 @@
     newButton.backgroundColor = [UIColor redColor];
     feedbackLabel.textColor = [UIColor redColor];
     
+    [self addProficiencyForWrongAnswer];
+}
+
+-(void)addProficiencyForWrongAnswer
+{
     MathProblem *problem = _userArray[userArrayKey];
     NSInteger proficiencyChange = problem.equationDifficulty;
     
