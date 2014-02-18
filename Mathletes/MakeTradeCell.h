@@ -11,5 +11,6 @@
 @interface MakeTradeCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UIImageView *stickerImageView;
+@property NSString *sticker;
 
 @end
