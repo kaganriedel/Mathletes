@@ -7,11 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Parse/Parse.h"
 
 @interface TradeWallCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *giveImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *getImageView;
-@property NSString *give;
-@property NSString *get;
+@property (weak, nonatomic) IBOutlet UILabel *myTradeLabel;
+@property PFObject *trade;
 
 @end

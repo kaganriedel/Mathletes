@@ -85,6 +85,10 @@
     {
         cell.imageView.alpha = 0.2;
     }
+    else
+    {
+        cell.imageView.alpha = 1.0;
+    }
     
     cell.countLabel.text = [NSString stringWithFormat:@"x%@", cell.count];
     
