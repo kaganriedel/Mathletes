@@ -8,6 +8,7 @@
 
 #import "MathViewController.h"
 #import "MathProblem.h"
+#import "CMNavBarNotificationView/CMNavBarNotificationView.h"
 
 
 @interface MathViewController () <UIAlertViewDelegate>
@@ -16,8 +17,6 @@
     __weak IBOutlet UILabel *var2Label;
     __weak IBOutlet UIButton *goButton;
     __weak IBOutlet UIButton *newButton;
-    __weak IBOutlet UIView *newStickerView;
-    __weak IBOutlet UIImageView *stickerImageView;
     __weak IBOutlet UILabel *inputLabel;
     __weak IBOutlet UIButton *oneButton;
     __weak IBOutlet UIButton *twoButton;
@@ -161,8 +160,7 @@
     nineButton.layer.borderWidth = 1.5;
     nineButton.layer.borderColor = [UIColor colorWithRed:184.0/255.0 green:184.0/255.0 blue:184.0/255.0 alpha:1].CGColor;
     
-    stickerImageView.clipsToBounds = YES;
-    stickerImageView.layer.cornerRadius = 30.0;
+
     
 }
 
@@ -248,7 +246,6 @@
 
 -(void)newMathProblem
 {
-    newStickerView.alpha = 0.0;
     newButton.alpha = 0.0;
     goButton.alpha = 1.0;
     feedbackLabel.text = nil;
@@ -940,57 +937,61 @@
 
 -(void)giveSticker
 {
+    UIImage *notificationImage;
     
     int randomSticker = arc4random()%100;
     
     if (randomSticker < 20)
     {
         [userDefaults incrementKey:@"lionCount"];
-        stickerImageView.image = [UIImage imageNamed:@"lion.png"];
+        notificationImage = [UIImage imageNamed:@"lion.png"];
         NSLog(@"1st count +1");
     }
     else if (randomSticker < 40)
     {
         [userDefaults incrementKey:@"kittenCount"];
-        stickerImageView.image = [UIImage imageNamed:@"kitten.png"];
+        notificationImage = [UIImage imageNamed:@"kitten.png"];
         NSLog(@"2nd count +1");
     }
     else if (randomSticker < 60)
     {
         [userDefaults incrementKey:@"starCount"];
-        stickerImageView.image = [UIImage imageNamed:@"star.png"];
+        notificationImage = [UIImage imageNamed:@"star.png"];
         NSLog(@"3rd count +1");
     }
     else if (randomSticker < 70)
     {
         [userDefaults incrementKey:@"puppyCount"];
-        stickerImageView.image = [UIImage imageNamed:@"puppy.png"];
+        notificationImage = [UIImage imageNamed:@"puppy.png"];
         NSLog(@"4th count +1");
     }
     else if (randomSticker < 80)
     {
         [userDefaults incrementKey:@"tigerCount"];
-        stickerImageView.image = [UIImage imageNamed:@"tiger.png"];
+        notificationImage = [UIImage imageNamed:@"tiger.png"];
         NSLog(@"5th count +1");
     }
     else if (randomSticker < 90)
     {
         [userDefaults incrementKey:@"murrayCount"];
-        stickerImageView.image = [UIImage imageNamed:@"murray.png"];
+        notificationImage = [UIImage imageNamed:@"murray.png"];
         NSLog(@"6th count +1");
     }else if (randomSticker < 95)
     {
         [userDefaults incrementKey:@"bearCount"];
-        stickerImageView.image = [UIImage imageNamed:@"bear.png"];
+        notificationImage= [UIImage imageNamed:@"bear.png"];
         NSLog(@"7th count +1");
     }else if (randomSticker <= 100)
     {
         [userDefaults incrementKey:@"pizzaCount"];
-        stickerImageView.image = [UIImage imageNamed:@"pizza.png"];
+        notificationImage = [UIImage imageNamed:@"pizza.png"];
         NSLog(@"8th count +1");
     }
     
-    newStickerView.alpha = 1.0;
+    [CMNavBarNotificationView notifyWithText:@"You got a new sticker!"
+                                      detail:nil
+                                       image:notificationImage
+                                 andDuration:2.0];
     
     [userDefaults synchronize];
 
@@ -1053,11 +1054,6 @@
 {
     inputLabel.text = [inputLabel.text substringToIndex:inputLabel.text.length-(inputLabel.text.length>0)];
 }
-
-
-
-
-
 
 - (IBAction)onGoButtonPressed:(id)sender
 {
