@@ -58,9 +58,7 @@
 {
     [super viewDidLoad];
     [self buildView];
-    
-    [self cardDifficulty];
-    
+
 
     if ([_operationType isEqualToString:@"+"])
     {
@@ -419,6 +417,11 @@
     
     problem.equationDifficulty = proficiencyChange;
     problem.haveAttemptedEquation = YES;
+    [_userArray enumerateObjectsUsingBlock:^(MathProblem *obj, NSUInteger idx, BOOL *stop)
+     {
+         [obj saveInBackground];
+     }];
+    
     correctAnswerTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(correctAnswerTimerFired:) userInfo:nil repeats:NO];
 }
 
@@ -453,6 +456,11 @@
     
     problem.equationDifficulty = proficiencyChange;
     problem.haveAttemptedEquation = YES;
+    
+    [_userArray enumerateObjectsUsingBlock:^(MathProblem *obj, NSUInteger idx, BOOL *stop)
+     {
+         [obj saveInBackground];
+     }];
 }
 
 

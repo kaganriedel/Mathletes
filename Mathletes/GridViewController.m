@@ -61,14 +61,14 @@
 -(void)createGrid
 {
     
-    int yDirection = 100;
+    int yDirection = 10;
     int subChange = 0;
     
     //i is horizontal, j is vertical, x&yDirection is spacing
     for (int j = 0; j < 10; j++)
     {
         int xDirection = 5;
-        
+        int subtractionValue = 0;
         
         for (int i = 0; i < 10; i++)
         {
@@ -80,20 +80,30 @@
             
             //set values
             
-            [gridLabel setText:[NSString stringWithFormat:@"%d+%d",i, j]];
-            
-            NSString *newkey = [NSString stringWithFormat:@"%d%d",i, j];
-            NSInteger numkey = newkey.intValue;
-            
-            [_gridArray enumerateObjectsUsingBlock:^(MathProblem *problem, NSUInteger idx, BOOL *stop)
-             {
-                 if (numkey == problem.mathProblemValue)
+            if ([_operand isEqual:@"-"])
+            {
+                for (int k = subtractionValue; k < 10; k++)
+                {
+                    [gridLabel setText:[NSString stringWithFormat:@"%d%@%d",i+subtractionValue+subChange,_operand, j]];
+                }
+            }
+            else if ([_operand isEqual:@"+"])
+            {
+                [gridLabel setText:[NSString stringWithFormat:@"%d%@%d",i,_operand, j]];
+                
+                NSString *newkey = [NSString stringWithFormat:@"%d%d",i, j];
+                NSInteger numkey = newkey.intValue;
+                
+                [_gridArray enumerateObjectsUsingBlock:^(MathProblem *problem, NSUInteger idx, BOOL *stop)
                  {
-                     difficulty = problem.equationDifficulty;
-                     key = idx;
-                 }
-             }];
-            
+                     if (numkey == problem.mathProblemValue)
+                     {
+                         difficulty = problem.equationDifficulty;
+                         key = idx;
+                     }
+                 }];
+                
+            }
             
             MathProblem *mp = _gridArray[key];
             difficulty = mp.equationDifficulty;
@@ -122,7 +132,20 @@
     }
 }
 
-
+-(void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item
+{
+    self.title = item.title;
+    if (item == _additionTabBarItem)
+    {
+        _operand = @"+";
+    }
+    else if (item == _subtractionTabBarItem)
+    {
+        _operand = @"-";
+    }
+    
+    [self createGrid];
+}
 
 /*
 - (void)createGrid
@@ -180,21 +203,9 @@
         yDirection += 31;
     }
 }
-
--(void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item
-{
-    self.title = item.title;
-    if (item == _additionTabBarItem)
-    {
-        _operand = @"+";
-    }
-    else if (item == _subtractionTabBarItem)
-    {
-        _operand = @"-";
-    }
-    
-    [self createGrid];
-}
 */
+
+
+
 
 @end
