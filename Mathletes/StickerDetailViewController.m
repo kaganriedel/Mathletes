@@ -47,7 +47,15 @@
         rarityLabel.text = @"This sticker is easy to find!";
         detailLabel.text = @"Puppies are totes adorbs. They cuddle at a rate of 50 cuddles per hour and can slobber all over your face faster than a humming bird flaps its wings!";
     }
+//    else if ([stickerName isEqualToString:@"puppy"])
+//    {
+//        rarityLabel.text = @"This sticker is easy to find!";
+//        detailLabel.text = @"Puppies are totes adorbs. They cuddle at a rate of 50 cuddles per hour and can slobber all over your face faster than a humming bird flaps its wings!";
+//    }
 
+    
+    
+    
     
     [detailLabel sizeToFit];
     
