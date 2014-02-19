@@ -41,9 +41,6 @@
 		6D99FF7618B16D6400CE0EFF /* StickerDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D99FF7518B16D6400CE0EFF /* StickerDetailViewController.m */; };
 		6DA5778118B42F15004B10F7 /* campfire@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DA5778018B42F15004B10F7 /* campfire@2x.png */; };
 		6DA5778318B42F21004B10F7 /* puppy@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DA5778218B42F21004B10F7 /* puppy@2x.png */; };
-		6DA5778B18B4336F004B10F7 /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DA5778518B4336F004B10F7 /* libTestFlight.a */; };
-		6DA5778C18B4336F004B10F7 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 6DA5778618B4336F004B10F7 /* README.md */; };
-		6DA5778D18B4336F004B10F7 /* release_notes.md in Resources */ = {isa = PBXBuildFile; fileRef = 6DA5778718B4336F004B10F7 /* release_notes.md */; };
 		6DA5778F18B43425004B10F7 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DA5778E18B43425004B10F7 /* libz.dylib */; };
 		6DB5ACCF18B2E5D00098A72D /* kitten@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DB5ACC818B2E5D00098A72D /* kitten@2x.png */; };
 		6DB5ACD018B2E5D00098A72D /* tiger@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DB5ACC918B2E5D00098A72D /* tiger@2x.png */; };
@@ -121,12 +118,6 @@
 		6D99FF7518B16D6400CE0EFF /* StickerDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StickerDetailViewController.m; sourceTree = "<group>"; };
 		6DA5778018B42F15004B10F7 /* campfire@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "campfire@2x.png"; sourceTree = "<group>"; };
 		6DA5778218B42F21004B10F7 /* puppy@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "puppy@2x.png"; sourceTree = "<group>"; };
-		6DA5778518B4336F004B10F7 /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTestFlight.a; sourceTree = "<group>"; };
-		6DA5778618B4336F004B10F7 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
-		6DA5778718B4336F004B10F7 /* release_notes.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = release_notes.md; sourceTree = "<group>"; };
-		6DA5778818B4336F004B10F7 /* TestFlight+AsyncLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TestFlight+AsyncLogging.h"; sourceTree = "<group>"; };
-		6DA5778918B4336F004B10F7 /* TestFlight+ManualSessions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TestFlight+ManualSessions.h"; sourceTree = "<group>"; };
-		6DA5778A18B4336F004B10F7 /* TestFlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestFlight.h; sourceTree = "<group>"; };
 		6DA5778E18B43425004B10F7 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		6DB5ACC818B2E5D00098A72D /* kitten@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "kitten@2x.png"; sourceTree = "<group>"; };
 		6DB5ACC918B2E5D00098A72D /* tiger@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tiger@2x.png"; sourceTree = "<group>"; };
@@ -146,7 +137,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				6DA5778F18B43425004B10F7 /* libz.dylib in Frameworks */,
-				6DA5778B18B4336F004B10F7 /* libTestFlight.a in Frameworks */,
 				6D891EA618A582EC0002B915 /* CoreGraphics.framework in Frameworks */,
 				6D891EA818A582EC0002B915 /* UIKit.framework in Frameworks */,
 				6D891EA418A582EC0002B915 /* Foundation.framework in Frameworks */,
@@ -190,7 +180,6 @@
 				6D891EA918A582EC0002B915 /* Mathletes */,
 				6D891EC818A582EC0002B915 /* MathletesTests */,
 				6D891EA218A582EC0002B915 /* Frameworks */,
-				6DA5778418B4336F004B10F7 /* TestFlightSDK2 */,
 				6D891EA118A582EC0002B915 /* Products */,
 				0FBAD299D6F34B0D8960E650 /* Pods.xcconfig */,
 			);
@@ -296,20 +285,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		6DA5778418B4336F004B10F7 /* TestFlightSDK2 */ = {
-			isa = PBXGroup;
-			children = (
-				6DA5778518B4336F004B10F7 /* libTestFlight.a */,
-				6DA5778618B4336F004B10F7 /* README.md */,
-				6DA5778718B4336F004B10F7 /* release_notes.md */,
-				6DA5778818B4336F004B10F7 /* TestFlight+AsyncLogging.h */,
-				6DA5778918B4336F004B10F7 /* TestFlight+ManualSessions.h */,
-				6DA5778A18B4336F004B10F7 /* TestFlight.h */,
-			);
-			name = TestFlightSDK2;
-			path = Mathletes/TestFlightSDK2;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -397,9 +372,7 @@
 				6DB5ACD018B2E5D00098A72D /* tiger@2x.png in Resources */,
 				6DB5ACD518B2E5D00098A72D /* pizza@2x.png in Resources */,
 				6DB5ACD218B2E5D00098A72D /* murray@2x.png in Resources */,
-				6DA5778D18B4336F004B10F7 /* release_notes.md in Resources */,
 				6DA5778318B42F21004B10F7 /* puppy@2x.png in Resources */,
-				6DA5778C18B4336F004B10F7 /* README.md in Resources */,
 				6DB5ACD418B2E5D00098A72D /* bear@2x.png in Resources */,
 				6D891EAE18A582EC0002B915 /* InfoPlist.strings in Resources */,
 				6D891EB718A582EC0002B915 /* Main.storyboard in Resources */,
