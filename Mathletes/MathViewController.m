@@ -57,10 +57,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    [self buildView];
     
     [self cardDifficulty];
-    [self buildView];
+    
 
     if ([_operationType isEqualToString:@"+"])
     {
@@ -89,8 +89,10 @@
              MathProblem *problem = _userArray[i];
              NSLog(@"%i %ld",problem.mathProblemValue, (long)problem.equationDifficulty);
              
+             
          }
-         
+         [self newMathProblem];
+         [self startTimer];
      }];
     
 
@@ -105,8 +107,7 @@
     newButton.alpha = 0.0;
     feedbackView.alpha = 0.0;
     
-    [self newMathProblem];
-    [self startTimer];
+
     
     goButton.layer.cornerRadius = 35.0;
     goButton.layer.borderWidth = 1.5;
