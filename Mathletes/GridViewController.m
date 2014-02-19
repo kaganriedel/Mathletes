@@ -33,6 +33,25 @@
 
 //    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:124.0/255.0 green:194.0/255.0 blue:250.0/255.0 alpha:1.0];
     
+    PFQuery *query = [PFQuery queryWithClassName:@"MathProblem"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
+     {
+         _gridArray = (NSMutableArray *)objects;
+         
+         for (int i = 0; i < _gridArray.count; i++)
+         {
+             MathProblem *problem = _gridArray[i];
+             NSLog(@"%i %ld",problem.mathProblemValue, (long)problem.equationDifficulty);
+         }
+         
+         [self buildView];
+     }];
+    
+    
+}
+
+-(void)buildView
+{
     self.title = _additionTabBarItem.title;
     [_operandTabBar setSelectedItem:_operandTabBar.items[0]];
     _operand = @"+";

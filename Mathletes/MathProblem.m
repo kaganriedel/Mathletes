@@ -7,9 +7,19 @@
 //
 
 #import "MathProblem.h"
+#import <Parse/PFObject+Subclass.h>
 
 @implementation MathProblem
 
+@dynamic displayName;
+@dynamic mathProblemValue;
+@dynamic equationDifficulty;
+@dynamic haveAttemptedEquation;
+
++ (NSString *)parseClassName
+{
+    return @"MathProblem";
+}
 
 -(id)initWithDifficulty:(NSInteger) difficulty forProblem:(NSInteger) problem
 {

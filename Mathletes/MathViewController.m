@@ -77,8 +77,25 @@
         self.navigationItem.title = @"Division";
     }
     
-    _userArray = mathProblems;
+    PFQuery *query = [PFQuery queryWithClassName:@"MathProblem"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
+     {
+         _userArray = (NSMutableArray *)objects;
+         
+         for (int i = 0; i < _userArray.count; i++)
+         {
+             MathProblem *problem = _userArray[i];
+             NSLog(@"%i %ld",problem.mathProblemValue, (long)problem.equationDifficulty);
+         }
+         
+         [self buildView];
+     }];
     
+    
+}
+
+- (void)buildView
+{
     userDefaults = [NSUserDefaults standardUserDefaults];
 
     _operationLabel.text = _operationType;
@@ -193,7 +210,7 @@
     _userArray = [sortingArray sortedArrayUsingDescriptors:[NSArray arrayWithObject:sortDescriptor]];
     
     
-    for (int i = 0; i < 100; i++)
+    for (int i = 0; i < _userArray.count; i++)
     {
         MathProblem *mp2 = _userArray[i];
         if (mp2.equationDifficulty > 0)
