@@ -63,7 +63,7 @@
 
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    if (alertView.tag == 0)
+    if (alertView.tag == 0) //deleting a trade
     {
         if (buttonIndex == 0)
         {
@@ -81,7 +81,7 @@
             [trade saveInBackground];
         }
     }
-    if (alertView.tag == 1)
+    if (alertView.tag == 1) //accepting a trade
     {
   
         if (buttonIndex == 0)
@@ -93,13 +93,22 @@
             NSIndexPath *selectedIndexPath = [tradeTableView indexPathForSelectedRow];
             TradeWallCell *cell = (TradeWallCell*)[tradeTableView cellForRowAtIndexPath:selectedIndexPath];
             PFObject *trade = cell.trade;
-            [trade deleteEventually];
-            [trades removeObjectAtIndex:selectedIndexPath.row];
-            [tradeTableView deleteRowsAtIndexPaths:@[selectedIndexPath] withRowAnimation:UITableViewRowAnimationLeft];
-            [userDefaults incrementKey:[NSString stringWithFormat:@"%@Count", [trade objectForKey:@"get"]]];
-            [trade saveInBackground];
-            
-            //make the trade happen
+            if ([userDefaults integerForKey:[NSString stringWithFormat:@"%@Count", [trade objectForKey:@"get"]]] <= 0)
+            {
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Sorry!" message:[NSString stringWithFormat:@"Sorry! You don't have any %@ stickers to trade.", [trade objectForKey:@"get"]] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+                [alert show];
+            }
+            else
+            {
+                [trade deleteEventually];
+                [trades removeObjectAtIndex:selectedIndexPath.row];
+                [tradeTableView deleteRowsAtIndexPaths:@[selectedIndexPath] withRowAnimation:UITableViewRowAnimationLeft];
+                [userDefaults incrementKey:[NSString stringWithFormat:@"%@Count", [trade objectForKey:@"give"]]];
+                [userDefaults decrementKey:[NSString stringWithFormat:@"%@Count", [trade objectForKey:@"get"]]];
+                [trade saveInBackground];
+                
+                //make the trade happen
+            }
         }
     }
 }
