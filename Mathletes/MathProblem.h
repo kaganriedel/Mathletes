@@ -7,9 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <Parse/Parse.h>
 
-@interface MathProblem : NSObject
+@interface MathProblem : PFObject <PFSubclassing>
 
++ (NSString *)parseClassName;
+
+@property (retain)NSString *displayName;
 @property NSInteger mathProblemValue;
 @property NSInteger equationDifficulty;
 @property BOOL haveAttemptedEquation;

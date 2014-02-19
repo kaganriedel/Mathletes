@@ -9,11 +9,14 @@
 #import "AppDelegate.h"
 #import "Parse/Parse.h"
 #import "TestFlight.h"
+#import "MathProblem.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [MathProblem registerSubclass];
+    
     [Parse setApplicationId:@"vb9F56CN5rn2vlHTkSdLaK9FUxq8FPm4il591nrD"
                   clientKey:@"AsI9RBBeUBTBu6P62bowMXM0pXptMEj4OEukYKOq"];
 
