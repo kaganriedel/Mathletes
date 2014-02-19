@@ -39,14 +39,15 @@
 		6D891EDF18A5BF6B0002B915 /* ChooseOperationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D891EDE18A5BF6B0002B915 /* ChooseOperationsViewController.m */; };
 		6D99FF7318B16D5400CE0EFF /* TradeWallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D99FF7218B16D5400CE0EFF /* TradeWallViewController.m */; };
 		6D99FF7618B16D6400CE0EFF /* StickerDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D99FF7518B16D6400CE0EFF /* StickerDetailViewController.m */; };
-		C950F2E618AA906A00AC33C6 /* MathProblem.m in Sources */ = {isa = PBXBuildFile; fileRef = C950F2E518AA906A00AC33C6 /* MathProblem.m */; };
+		6DA5778118B42F15004B10F7 /* campfire@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DA5778018B42F15004B10F7 /* campfire@2x.png */; };
+		6DA5778318B42F21004B10F7 /* puppy@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DA5778218B42F21004B10F7 /* puppy@2x.png */; };
 		6DB5ACCF18B2E5D00098A72D /* kitten@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DB5ACC818B2E5D00098A72D /* kitten@2x.png */; };
 		6DB5ACD018B2E5D00098A72D /* tiger@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DB5ACC918B2E5D00098A72D /* tiger@2x.png */; };
-		6DB5ACD118B2E5D00098A72D /* puppy@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DB5ACCA18B2E5D00098A72D /* puppy@2x.png */; };
 		6DB5ACD218B2E5D00098A72D /* murray@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DB5ACCB18B2E5D00098A72D /* murray@2x.png */; };
 		6DB5ACD318B2E5D00098A72D /* lion@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DB5ACCC18B2E5D00098A72D /* lion@2x.png */; };
 		6DB5ACD418B2E5D00098A72D /* bear@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DB5ACCD18B2E5D00098A72D /* bear@2x.png */; };
 		6DB5ACD518B2E5D00098A72D /* pizza@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DB5ACCE18B2E5D00098A72D /* pizza@2x.png */; };
+		C950F2E618AA906A00AC33C6 /* MathProblem.m in Sources */ = {isa = PBXBuildFile; fileRef = C950F2E518AA906A00AC33C6 /* MathProblem.m */; };
 		C987E0DF18A9AC70007CEC36 /* GridViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C987E0DE18A9AC70007CEC36 /* GridViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -114,15 +115,16 @@
 		6D99FF7218B16D5400CE0EFF /* TradeWallViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TradeWallViewController.m; sourceTree = "<group>"; };
 		6D99FF7418B16D6400CE0EFF /* StickerDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StickerDetailViewController.h; sourceTree = "<group>"; };
 		6D99FF7518B16D6400CE0EFF /* StickerDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StickerDetailViewController.m; sourceTree = "<group>"; };
-		C950F2E418AA906A00AC33C6 /* MathProblem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MathProblem.h; sourceTree = "<group>"; };
-		C950F2E518AA906A00AC33C6 /* MathProblem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MathProblem.m; sourceTree = "<group>"; };
+		6DA5778018B42F15004B10F7 /* campfire@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "campfire@2x.png"; sourceTree = "<group>"; };
+		6DA5778218B42F21004B10F7 /* puppy@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "puppy@2x.png"; sourceTree = "<group>"; };
 		6DB5ACC818B2E5D00098A72D /* kitten@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "kitten@2x.png"; sourceTree = "<group>"; };
 		6DB5ACC918B2E5D00098A72D /* tiger@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tiger@2x.png"; sourceTree = "<group>"; };
-		6DB5ACCA18B2E5D00098A72D /* puppy@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "puppy@2x.png"; sourceTree = "<group>"; };
 		6DB5ACCB18B2E5D00098A72D /* murray@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "murray@2x.png"; sourceTree = "<group>"; };
 		6DB5ACCC18B2E5D00098A72D /* lion@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lion@2x.png"; sourceTree = "<group>"; };
 		6DB5ACCD18B2E5D00098A72D /* bear@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bear@2x.png"; sourceTree = "<group>"; };
 		6DB5ACCE18B2E5D00098A72D /* pizza@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pizza@2x.png"; sourceTree = "<group>"; };
+		C950F2E418AA906A00AC33C6 /* MathProblem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MathProblem.h; sourceTree = "<group>"; };
+		C950F2E518AA906A00AC33C6 /* MathProblem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MathProblem.m; sourceTree = "<group>"; };
 		C987E0DD18A9AC70007CEC36 /* GridViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GridViewController.h; sourceTree = "<group>"; };
 		C987E0DE18A9AC70007CEC36 /* GridViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GridViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -155,9 +157,10 @@
 		6D1BE7D518A9BBCE0079102A /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				6DA5778018B42F15004B10F7 /* campfire@2x.png */,
+				6DA5778218B42F21004B10F7 /* puppy@2x.png */,
 				6DB5ACC818B2E5D00098A72D /* kitten@2x.png */,
 				6DB5ACC918B2E5D00098A72D /* tiger@2x.png */,
-				6DB5ACCA18B2E5D00098A72D /* puppy@2x.png */,
 				6DB5ACCB18B2E5D00098A72D /* murray@2x.png */,
 				6DB5ACCC18B2E5D00098A72D /* lion@2x.png */,
 				6DB5ACCD18B2E5D00098A72D /* bear@2x.png */,
@@ -357,14 +360,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				27B54DD918AD44270068E68A /* boy@2x.png in Resources */,
+				6DA5778118B42F15004B10F7 /* campfire@2x.png in Resources */,
 				6DB5ACD318B2E5D00098A72D /* lion@2x.png in Resources */,
 				6D891EBC18A582EC0002B915 /* Images.xcassets in Resources */,
-				6DB5ACD118B2E5D00098A72D /* puppy@2x.png in Resources */,
 				6DB5ACCF18B2E5D00098A72D /* kitten@2x.png in Resources */,
 				6D010FB118B3075D0095B0E7 /* star@2x.png in Resources */,
 				6DB5ACD018B2E5D00098A72D /* tiger@2x.png in Resources */,
 				6DB5ACD518B2E5D00098A72D /* pizza@2x.png in Resources */,
 				6DB5ACD218B2E5D00098A72D /* murray@2x.png in Resources */,
+				6DA5778318B42F21004B10F7 /* puppy@2x.png in Resources */,
 				6DB5ACD418B2E5D00098A72D /* bear@2x.png in Resources */,
 				6D891EAE18A582EC0002B915 /* InfoPlist.strings in Resources */,
 				6D891EB718A582EC0002B915 /* Main.storyboard in Resources */,
