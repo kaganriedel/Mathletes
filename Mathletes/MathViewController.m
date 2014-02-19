@@ -58,9 +58,9 @@
 {
     [super viewDidLoad];
     
-    feedbackView.alpha = 0.0;
     
     [self cardDifficulty];
+    [self buildView];
 
     if ([_operationType isEqualToString:@"+"])
     {
@@ -88,10 +88,11 @@
          {
              MathProblem *problem = _userArray[i];
              NSLog(@"%i %ld",problem.mathProblemValue, (long)problem.equationDifficulty);
+             
          }
          
      }];
-    [self buildView];
+    
 
     
 }

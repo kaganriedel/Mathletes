@@ -12,9 +12,13 @@
 
 @interface TradeWallViewController () <UITableViewDataSource, UITableViewDelegate, UIAlertViewDelegate>
 {
+    __weak IBOutlet UITableView *tradeTableView;
+    __weak IBOutlet UISegmentedControl *tradeSegmentedControl;
+
     NSUserDefaults *userDefaults;
     NSMutableArray *trades;
-    __weak IBOutlet UITableView *tradeTableView;
+    NSTimer *timer;
+
 }
 
 @end
@@ -34,12 +38,49 @@
 {
     [super viewDidAppear:animated];
     
+    [self reloadTrades];
+    
+    timer = [NSTimer scheduledTimerWithTimeInterval:15.0 target:self selector:@selector(timerFired) userInfo:nil repeats:YES];
+}
+
+-(void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [timer invalidate];
+}
+
+-(void)timerFired
+{
+    [self reloadTrades];
+}
+
+-(void)reloadTrades
+{
     PFQuery *query = [PFQuery queryWithClassName:@"Trade"];
+    if (tradeSegmentedControl.selectedSegmentIndex == 1)
+    {
+        [query whereKey:@"user" equalTo:[PFUser currentUser]];
+    }
+    else
+    {
+        [query whereKey:@"user" notEqualTo:[PFUser currentUser]];
+    }
     [query orderByDescending:@"createdAt"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        trades = objects.mutableCopy;
-        [tradeTableView reloadData];
+        if (!error)
+        {
+            trades = objects.mutableCopy;
+            [tradeTableView reloadData];
+        }
+        if (error)
+        {
+            NSLog(@"Error: %@", error);
+        }
     }];
+}
+- (IBAction)segmentChanged:(UISegmentedControl *)segmentedControl
+{
+    [self reloadTrades];
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -67,7 +108,7 @@
     {
         if (buttonIndex == 0)
         {
-            //deselect the tableviewcell
+            [tradeTableView deselectRowAtIndexPath:[tradeTableView indexPathForSelectedRow] animated:YES];
         }
         if (buttonIndex == 1)
         {
@@ -86,7 +127,7 @@
   
         if (buttonIndex == 0)
         {
-            //deselect the tableviewcell
+            [tradeTableView deselectRowAtIndexPath:[tradeTableView indexPathForSelectedRow] animated:YES];
         }
         if (buttonIndex == 1)
         {
@@ -97,6 +138,7 @@
             {
                 UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Sorry!" message:[NSString stringWithFormat:@"Sorry! You don't have any %@ stickers to trade.", [trade objectForKey:@"get"]] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
                 [alert show];
+                [tradeTableView deselectRowAtIndexPath:[tradeTableView indexPathForSelectedRow] animated:YES];
             }
             else
             {
@@ -130,10 +172,18 @@
         cell.myTradeLabel.alpha = 0.0;
     }
     
-    cell.giveImageView.image = [UIImage imageNamed:[[cell.trade objectForKey:@"get"] stringByAppendingString:@".png"]];
+    if (tradeSegmentedControl.selectedSegmentIndex == 1)
+    {
+        cell.giveImageView.image = [UIImage imageNamed:[[cell.trade objectForKey:@"give"] stringByAppendingString:@".png"]];
+        cell.getImageView.image = [UIImage imageNamed:[[cell.trade objectForKey:@"get"] stringByAppendingString:@".png"]];
+    }
+    else
+    {
+        cell.giveImageView.image = [UIImage imageNamed:[[cell.trade objectForKey:@"get"] stringByAppendingString:@".png"]];
+        cell.getImageView.image = [UIImage imageNamed:[[cell.trade objectForKey:@"give"] stringByAppendingString:@".png"]];
+    }
     cell.giveImageView.layer.cornerRadius = 35.0;
 
-    cell.getImageView.image = [UIImage imageNamed:[[cell.trade objectForKey:@"give"] stringByAppendingString:@".png"]];
     cell.getImageView.layer.cornerRadius = 35.0;
     
     return cell;
@@ -144,5 +194,27 @@
     return trades.count;
 }
 
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (tradeSegmentedControl.selectedSegmentIndex == 1) {
+        return YES;
+    }
+    else
+    {
+        return NO;
+    }
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete)
+    {
+        TradeWallCell *cell = (TradeWallCell*)[tradeTableView cellForRowAtIndexPath:indexPath];
+        PFObject *trade = cell.trade;
+        [trade deleteEventually];
+        [trades removeObjectAtIndex:indexPath.row];
+        [tradeTableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationLeft];
+        [userDefaults incrementKey:[NSString stringWithFormat:@"%@Count", [trade objectForKey:@"give"]]];
+        [trade saveInBackground];
+    }
+}
 
 @end

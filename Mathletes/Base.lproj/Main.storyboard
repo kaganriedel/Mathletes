@@ -187,7 +187,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="Duy-nR-h9k">
-                                                    <rect key="frame" x="2" y="2" width="68" height="68"/>
+                                                    <rect key="frame" x="2" y="2" width="67.5" height="67.5"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </imageView>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="x12" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="29n-LO-bUg">
@@ -326,7 +326,7 @@
             </objects>
             <point key="canvasLocation" x="2689" y="-771"/>
         </scene>
-        <!--Trade Wall View Controller - Trade Wall-->
+        <!--Trade Wall View Controller-->
         <scene sceneID="rdJ-eU-sxH">
             <objects>
                 <viewController id="izL-Kv-jKz" customClass="TradeWallViewController" sceneMemberID="viewController">
@@ -393,7 +393,19 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Trade Wall" id="vfm-XO-bUP">
+                    <navigationItem key="navigationItem" id="vfm-XO-bUP">
+                        <nil key="title"/>
+                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="rhW-im-I9m">
+                            <rect key="frame" x="83" y="8" width="155" height="29"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segments>
+                                <segment title="Trades"/>
+                                <segment title="My Trades"/>
+                            </segments>
+                            <connections>
+                                <action selector="segmentChanged:" destination="izL-Kv-jKz" eventType="valueChanged" id="Jhk-ZU-4PU"/>
+                            </connections>
+                        </segmentedControl>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="8hm-hS-WfQ">
                             <connections>
                                 <segue destination="Pfw-OS-5b7" kind="push" id="NIG-f0-czl"/>
@@ -401,6 +413,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="tradeSegmentedControl" destination="rhW-im-I9m" id="5fW-Ml-cWN"/>
                         <outlet property="tradeTableView" destination="SM1-Ga-Ybz" id="Ilk-8x-tJt"/>
                     </connections>
                 </viewController>
