@@ -42,7 +42,7 @@
         [userDefaults setBool:NO forKey:@"dailyMath x40!"];
         [userDefaults setBool:NO forKey:@"dailyMath x50!"];
     }
-    NSLog(@"dailyMath is: %i", [userDefaults integerForKey:@"dailyMath"]);
+    NSLog(@"dailyMath is: %li", (long)[userDefaults integerForKey:@"dailyMath"]);
 
     self.navigationController.navigationBar.backgroundColor = [UIColor whiteColor];
    

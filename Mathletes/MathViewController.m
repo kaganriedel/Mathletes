@@ -58,6 +58,8 @@
 {
     [super viewDidLoad];
     
+    feedbackView.alpha = 0.0;
+    
     [self cardDifficulty];
 
     if ([_operationType isEqualToString:@"+"])
@@ -88,9 +90,9 @@
              NSLog(@"%i %ld",problem.mathProblemValue, (long)problem.equationDifficulty);
          }
          
-         [self buildView];
      }];
-    
+    [self buildView];
+
     
 }
 
@@ -159,9 +161,6 @@
     
     stickerImageView.clipsToBounds = YES;
     stickerImageView.layer.cornerRadius = 30.0;
-
-    
-
     
 }
 
@@ -418,7 +417,7 @@
     
     problem.equationDifficulty = proficiencyChange;
     problem.haveAttemptedEquation = YES;
-    correctAnswerTimer = [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(correctAnswerTimerFired:) userInfo:nil repeats:NO];
+    correctAnswerTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(correctAnswerTimerFired:) userInfo:nil repeats:NO];
 }
 
 -(void)correctAnswerTimerFired:(NSTimer *)timer

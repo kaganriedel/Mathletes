@@ -41,7 +41,7 @@
          for (int i = 0; i < _gridArray.count; i++)
          {
              MathProblem *problem = _gridArray[i];
-             NSLog(@"%i %ld",problem.mathProblemValue, (long)problem.equationDifficulty);
+             NSLog(@"%li %ld",(long)problem.mathProblemValue, (long)problem.equationDifficulty);
          }
          
          [self buildView];
