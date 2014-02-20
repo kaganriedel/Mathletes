@@ -11,7 +11,9 @@
 
 @implementation MathProblem
 
+@dynamic mathUser;
 @dynamic displayName;
+@dynamic problemType;
 @dynamic mathProblemValue;
 @dynamic equationDifficulty;
 @dynamic haveAttemptedEquation;
@@ -21,13 +23,36 @@
     return @"MathProblem";
 }
 
--(id)initWithDifficulty:(NSInteger) difficulty forProblem:(NSInteger) problem
+-(id)initWithDifficulty:(NSInteger) difficulty forProblem:(NSInteger) problem ofProblemType:(NSInteger) type
 {
     self = [super init];
+    self.mathUser = [PFUser currentUser];
     self.equationDifficulty = difficulty;
     self.mathProblemValue = problem;
+    self.problemType = type;
     self.haveAttemptedEquation = NO;
     return self;
 }     
 
 @end
+
+/*
+@implementation AdditionProblem
+
++ (NSString *)parseClassName
+{
+    return @"AdditionProblem";
+}
+
+@end
+
+
+@implementation SubtractionProblem
+
++ (NSString *)parseClassName
+{
+    return @"SubtractionProblem";
+}
+
+@end
+*/
