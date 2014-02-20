@@ -65,7 +65,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="Mea-QJ-Xr3">
-                                                    <rect key="frame" x="-0.5" y="0.5" width="70" height="70"/>
+                                                    <rect key="frame" x="-0.5" y="0.5" width="69.5" height="69.5"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </imageView>
                                             </subviews>

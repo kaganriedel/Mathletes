@@ -58,9 +58,9 @@
 
     self.navigationController.navigationBar.backgroundColor = [UIColor whiteColor];
    
-    profileButton.layer.cornerRadius = 25;
+    profileButton.layer.cornerRadius = 50;
     profileButton.contentMode = UIViewContentModeScaleToFill;
-    profileImageView.layer.cornerRadius = 25;
+    profileImageView.layer.cornerRadius = 50;
     
 }
 
