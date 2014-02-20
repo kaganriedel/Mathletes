@@ -33,9 +33,10 @@
     user = [PFUser currentUser];
 }
 
--(void)viewDidAppear:(BOOL)animated
+
+-(void)viewWillAppear:(BOOL)animated
 {
-    [super viewDidAppear:animated];
+    [super viewWillAppear:animated];
     
     [self reloadTrades];
     
@@ -52,6 +53,8 @@
 {
     [self reloadTrades];
 }
+
+
 
 -(void)reloadTrades
 {
@@ -144,6 +147,7 @@
             else
             {
                 PFUser *tradeUser = [cell.trade objectForKey:@"user"];
+                //This doesn't work. can't change the user's objectForKey without being logged in
                 [tradeUser fetchIfNeededInBackgroundWithBlock:^(PFObject *object, NSError *error)
                 {
                     [object increaseKey:[NSString stringWithFormat:@"%@Count", [trade objectForKey:@"get"]]];
