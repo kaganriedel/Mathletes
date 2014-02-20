@@ -18,6 +18,7 @@
 
     __weak IBOutlet UIButton *profileButton;
     __weak IBOutlet UIImageView *profileImageView;
+    __weak IBOutlet UILabel *profileLabel;
 }
 
 @end
@@ -49,6 +50,7 @@
 
     self.navigationController.navigationBar.backgroundColor = [UIColor whiteColor];
    
+    profileButton.layer.cornerRadius = 25;
     profileImageView.layer.cornerRadius = 25;
     
 }
@@ -58,11 +60,11 @@
     self.navigationController.navigationBar.barTintColor = [UIColor whiteColor];
     if ([userDefaults objectForKey:@"profileImage"])
     {
-        profileImageView.image = [UIImage imageNamed:[userDefaults objectForKey:@"profileImage"]];
+        [profileButton setImage:[UIImage imageNamed:[userDefaults objectForKey:@"profileImage"]] forState:UIControlStateNormal];
     }
     else
     {
-    profileImageView.image = [UIImage imageNamed:@"boy.png"];
+    [profileButton setImage:[UIImage imageNamed:@"boy.png"] forState:UIControlStateNormal];
     }
 
     [self setTitle];
@@ -95,6 +97,7 @@
     NSString *username = [PFUser currentUser].username;
     NSString *cappedFirstChar = [[username substringToIndex:1] uppercaseString];
     NSString *cappedString = [username stringByReplacingCharactersInRange:NSMakeRange(0, 1) withString:cappedFirstChar];
+    profileLabel.text = cappedString;
     [profileButton setTitle:cappedString forState:UIControlStateNormal];
 }
 

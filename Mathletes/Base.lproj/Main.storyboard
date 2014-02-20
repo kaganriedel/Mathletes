@@ -243,7 +243,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="Duy-nR-h9k">
-                                                    <rect key="frame" x="1" y="1" width="68" height="68"/>
+                                                    <rect key="frame" x="1" y="1" width="67.5" height="67.5"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </imageView>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="x12" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="29n-LO-bUg">
@@ -667,6 +667,7 @@
                     <connections>
                         <outlet property="profileButton" destination="qE6-9w-tRR" id="w7Z-LO-YTf"/>
                         <outlet property="profileImageView" destination="Gd1-ga-abd" id="XHS-Gk-Br8"/>
+                        <outlet property="profileLabel" destination="pyd-Vb-2cw" id="Ngr-pa-UZI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XKV-2o-bak" userLabel="First Responder" sceneMemberID="firstResponder"/>
