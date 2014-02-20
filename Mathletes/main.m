@@ -39,3 +39,27 @@ int main(int argc, char * argv[])
 }
 
 @end
+
+@implementation PFObject (mathletes)
+
+-(void)increaseKey:(NSString *)key
+{
+    NSNumber *value = @([[self objectForKey:key] intValue] + 1);
+    
+    [self setObject:value forKey:key];
+    
+}
+
+- (void)decrementKey:(NSString *)key
+{
+    NSNumber *value = @([[self objectForKey:key] intValue] - 1);
+    if (value >= 0)
+    {
+        [self setObject:value forKey:key];
+    }
+}
+
+
+@end
+
+

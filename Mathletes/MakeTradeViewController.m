@@ -12,7 +12,7 @@
 
 @interface MakeTradeViewController () <UITableViewDelegate, UITableViewDataSource, UIAlertViewDelegate>
 {
-    NSUserDefaults *userDefaults;
+    PFUser *user;
     
     NSMutableArray *userStickers;
     NSArray *allStickers;
@@ -35,40 +35,40 @@
 {
     [super viewDidLoad];
 
-    userDefaults = [NSUserDefaults standardUserDefaults];
+    user = [PFUser currentUser];
     
     userStickers = [NSMutableArray new];
     
     //check to see which stickers the user has collected and display the ones they have
-    if ([userDefaults integerForKey:@"lionCount"] > 0)
+    if ([[user objectForKey:@"lionCount"] intValue] > 0)
     {
         [userStickers addObject:@"lion.png"];
     }
-    if ([userDefaults integerForKey:@"kittenCount"] > 0)
+    if ([[user objectForKey:@"kittenCount"] intValue] > 0)
     {
         [userStickers addObject:@"kitten.png"];
     }
-    if ([userDefaults integerForKey:@"starCount"] > 0)
+    if ([[user objectForKey:@"starCount"] intValue] > 0)
     {
         [userStickers addObject:@"star.png"];
     }
-    if ([userDefaults integerForKey:@"puppyCount"] > 0)
+    if ([[user objectForKey:@"puppyCount"] intValue] > 0)
     {
         [userStickers addObject:@"puppy.png"];
     }
-    if ([userDefaults integerForKey:@"tigerCount"] > 0)
+    if ([[user objectForKey:@"tigerCount"] intValue] > 0)
     {
         [userStickers addObject:@"tiger.png"];
     }
-    if ([userDefaults integerForKey:@"murrayCount"] > 0)
+    if ([[user objectForKey:@"murrayCount"] intValue] > 0)
     {
         [userStickers addObject:@"murray.png"];
     }
-    if ([userDefaults integerForKey:@"bearCount"] > 0)
+    if ([[user objectForKey:@"bearCount"] intValue] > 0)
     {
         [userStickers addObject:@"bear.png"];
     }
-    if ([userDefaults integerForKey:@"pizzaCount"] > 0)
+    if ([[user objectForKey:@"pizzaCount"] intValue] > 0)
     {
         [userStickers addObject:@"pizza.png"];
     }
@@ -102,7 +102,8 @@
         [trade saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
             if (succeeded)
             {
-                [userDefaults decrementKey:[NSString stringWithFormat:@"%@Count", giveCell.sticker]];
+                [user decrementKey:[NSString stringWithFormat:@"%@Count", giveCell.sticker]];
+                [user saveInBackground];
             }
         }];
         [self.navigationController popViewControllerAnimated:YES];

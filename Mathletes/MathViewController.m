@@ -32,6 +32,19 @@
     __weak IBOutlet UILabel *feedbackLabel;
     __weak IBOutlet UIImageView *feedbackImageView;
     __weak IBOutlet UIView *feedbackView;
+    __weak IBOutlet UILabel *oneLabel;
+    __weak IBOutlet UILabel *twoLabel;
+    __weak IBOutlet UILabel *threeLabel;
+    __weak IBOutlet UILabel *fourLabel;
+    __weak IBOutlet UILabel *fiveLabel;
+    __weak IBOutlet UILabel *sixLabel;
+    __weak IBOutlet UILabel *sevenLabel;
+    __weak IBOutlet UILabel *eightLabel;
+    __weak IBOutlet UILabel *nineLabel;
+    __weak IBOutlet UILabel *backLabel;
+    __weak IBOutlet UILabel *zeroLabel;
+    __weak IBOutlet UILabel *enterLabel;
+    __weak IBOutlet UILabel *nextLabel;
     
     NSMutableArray *mathProblems;
     NSInteger difficulty;
@@ -60,6 +73,28 @@
     
     NSInteger problemType;
 
+    for (UILabel* label in self.view.subviews)
+    {
+        if([label isKindOfClass:[UILabel class]])
+        {
+            label.font = [UIFont fontWithName:@"Miso-Bold" size:40];
+        }
+    }
+    oneLabel.font = [UIFont fontWithName:@"Miso-Bold" size:28];
+    twoLabel.font = [UIFont fontWithName:@"Miso-Bold" size:28];
+    threeLabel.font = [UIFont fontWithName:@"Miso-Bold" size:28];
+    fourLabel.font = [UIFont fontWithName:@"Miso-Bold" size:28];
+    fiveLabel.font = [UIFont fontWithName:@"Miso-Bold" size:28];
+    sixLabel.font = [UIFont fontWithName:@"Miso-Bold" size:28];
+    sevenLabel.font = [UIFont fontWithName:@"Miso-Bold" size:28];
+    eightLabel.font = [UIFont fontWithName:@"Miso-Bold" size:28];
+    nineLabel.font = [UIFont fontWithName:@"Miso-Bold" size:28];
+    zeroLabel.font = [UIFont fontWithName:@"Miso-Bold" size:28];
+    backLabel.font = [UIFont fontWithName:@"Miso-Bold" size:22];
+    enterLabel.font = [UIFont fontWithName:@"Miso-Bold" size:22];
+    nextLabel.font = [UIFont fontWithName:@"Miso-Bold" size:22];
+    feedbackLabel.font = [UIFont fontWithName:@"Miso-Bold" size:34];
+    inputLabel.font = [UIFont fontWithName:@"Miso-Bold" size:40];
 
     if ([_operationType isEqualToString:@"+"])
     {
@@ -96,6 +131,7 @@
              NSLog(@"%i %ld",problem.mathProblemValue, (long)problem.equationDifficulty);
              
          }
+
          [self newMathProblem];
          [self startTimer];
      }];
@@ -115,11 +151,9 @@
 
     
     goButton.layer.cornerRadius = 35.0;
-    goButton.layer.borderWidth = 1.5;
     goButton.layer.borderColor = [UIColor colorWithRed:184.0/255.0 green:184.0/255.0 blue:184.0/255.0 alpha:1].CGColor;
     
     newButton.layer.cornerRadius = 35.0;
-    newButton.layer.borderWidth = 1.5;
     newButton.layer.borderColor = [UIColor colorWithRed:184.0/255.0 green:184.0/255.0 blue:184.0/255.0 alpha:1].CGColor;
     
     backSpaceButton.layer.cornerRadius = 35.0;
@@ -226,11 +260,11 @@
         }
     }
     
-    for (int i = 0; i < _userArray.count; i++)
-    {
-        MathProblem *problem = _userArray[i];
-        NSLog(@"%li %ld",(long)problem.mathProblemValue, (long)problem.equationDifficulty);
-    }
+//    for (int i = 0; i < _userArray.count; i++)
+//    {
+//        MathProblem *problem = _userArray[i];
+//        NSLog(@"%li %ld",(long)problem.mathProblemValue, (long)problem.equationDifficulty);
+//    }
     
 }
 
@@ -254,6 +288,8 @@
 {
     newButton.alpha = 0.0;
     goButton.alpha = 1.0;
+    enterLabel.alpha = 1.0;
+    nextLabel.alpha = 0.0;
     feedbackLabel.text = nil;
     inputLabel.text = @"";
     feedbackView.alpha = 0.0;
@@ -398,7 +434,9 @@
 {
     inputLabel.text = @"";
     feedbackView.alpha = 1.0;
-    feedbackView.backgroundColor = [UIColor colorWithRed:151.0/255.0 green:244.0/255.0 blue:101.0/255.0 alpha:1.0];
+    enterLabel.alpha = 1.0;
+    nextLabel.alpha = 0.0;
+    feedbackView.backgroundColor = [UIColor colorWithRed:130.0/255.0 green:183.0/255.0 blue:53.0/255.0 alpha:1.0];
     if (countDown <= 6)
     {
         //set imageview to smiley face
@@ -440,9 +478,11 @@
 {
     goButton.alpha = 0.0;
     newButton.alpha = 1.0;
+    nextLabel.alpha = 1.0;
+    enterLabel.alpha = 0.0;
 
     feedbackView.alpha = 1.0;
-    feedbackView.backgroundColor = [UIColor redColor];
+    feedbackView.backgroundColor = [UIColor colorWithRed:222.0/255.0 green:54.0/255.0 blue:64.0/255.0 alpha:1];
     
     //feedbackImageView.image = [UIImage set imageview to frowny face
     
@@ -956,59 +996,74 @@
 {
     UIImage *notificationImage;
     
+
     int randomSticker = arc4random()%100;
-    
+    PFUser *user = [PFUser currentUser];
+
     if (randomSticker < 20)
     {
-        [userDefaults incrementKey:@"lionCount"];
+        [user increaseKey:@"lionCount"];
+        
         notificationImage = [UIImage imageNamed:@"lion.png"];
-        NSLog(@"1st count +1");
+        NSLog(@"lion count +1");
     }
     else if (randomSticker < 40)
     {
-        [userDefaults incrementKey:@"kittenCount"];
+        [user increaseKey:@"kittenCount"];
+        
         notificationImage = [UIImage imageNamed:@"kitten.png"];
-        NSLog(@"2nd count +1");
+
+        NSLog(@"kitten count +1");
     }
     else if (randomSticker < 60)
     {
-        [userDefaults incrementKey:@"starCount"];
+        [user increaseKey:@"starCount"];
         notificationImage = [UIImage imageNamed:@"star.png"];
-        NSLog(@"3rd count +1");
+
+        NSLog(@"star count +1");
     }
     else if (randomSticker < 70)
     {
-        [userDefaults incrementKey:@"puppyCount"];
+        [user increaseKey:@"puppyCount"];
         notificationImage = [UIImage imageNamed:@"puppy.png"];
-        NSLog(@"4th count +1");
+
+        NSLog(@"puppy count +1");
     }
     else if (randomSticker < 80)
     {
-        [userDefaults incrementKey:@"tigerCount"];
+        [user increaseKey:@"tigerCount"];
         notificationImage = [UIImage imageNamed:@"tiger.png"];
-        NSLog(@"5th count +1");
+
+        NSLog(@"tiger count +1");
     }
     else if (randomSticker < 90)
     {
-        [userDefaults incrementKey:@"murrayCount"];
+        [user increaseKey:@"murrayCount"];
         notificationImage = [UIImage imageNamed:@"murray.png"];
-        NSLog(@"6th count +1");
-    }else if (randomSticker < 95)
+
+        NSLog(@"murray count +1");
+    }
+    else if (randomSticker < 95)
     {
-        [userDefaults incrementKey:@"bearCount"];
-        notificationImage= [UIImage imageNamed:@"bear.png"];
-        NSLog(@"7th count +1");
+        [user increaseKey:@"bearCount"];
+       notificationImage = [UIImage imageNamed:@"bear.png"];
+
+        NSLog(@"bear count +1");
     }else if (randomSticker <= 100)
     {
-        [userDefaults incrementKey:@"pizzaCount"];
+        [user increaseKey:@"pizzaCount"];
         notificationImage = [UIImage imageNamed:@"pizza.png"];
-        NSLog(@"8th count +1");
+
+        NSLog(@"pizza count +1");
     }
     
     [CMNavBarNotificationView notifyWithText:@"You got a new sticker!"
                                       detail:nil
                                        image:notificationImage
-                                 andDuration:2.0];
+                                 andDuration:3.0];
+    
+    [user saveInBackground];
+
     
     [userDefaults synchronize];
 

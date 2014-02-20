@@ -18,6 +18,7 @@
 
     __weak IBOutlet UIButton *profileButton;
     __weak IBOutlet UIImageView *profileImageView;
+    __weak IBOutlet UILabel *profileLabel;
 }
 
 @end
@@ -35,18 +36,32 @@
     //if its been more than a day since the last reset of dailyMath, reset it
     if ([[NSDate date] timeIntervalSinceDate:[userDefaults objectForKey:@"dailyMathStartDate"]] >= 86400.0)
     {
+        
+        
         [userDefaults setInteger:0 forKey:@"dailyMath"];
         [userDefaults setBool:NO forKey:@"dailyMath!"];
         [userDefaults setBool:NO forKey:@"dailyMath x20!"];
         [userDefaults setBool:NO forKey:@"dailyMath x30!"];
         [userDefaults setBool:NO forKey:@"dailyMath x40!"];
         [userDefaults setBool:NO forKey:@"dailyMath x50!"];
+        [userDefaults synchronize];
     }
+    
+    for (UILabel* label in self.view.subviews) {
+        if([label isKindOfClass:[UILabel class]])
+        {
+            label.font = [UIFont fontWithName:@"Miso-Bold" size:40];
+        }
+    }
+    
     NSLog(@"dailyMath is: %li", (long)[userDefaults integerForKey:@"dailyMath"]);
 
     self.navigationController.navigationBar.backgroundColor = [UIColor whiteColor];
    
+    profileButton.layer.cornerRadius = 25;
+    profileButton.contentMode = UIViewContentModeScaleToFill;
     profileImageView.layer.cornerRadius = 25;
+    
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -54,12 +69,13 @@
     self.navigationController.navigationBar.barTintColor = [UIColor whiteColor];
     if ([userDefaults objectForKey:@"profileImage"])
     {
-        profileImageView.image = [UIImage imageNamed:[userDefaults objectForKey:@"profileImage"]];
+        [profileButton setImage:[UIImage imageNamed:[userDefaults objectForKey:@"profileImage"]] forState:UIControlStateNormal];
     }
     else
     {
-    profileImageView.image = [UIImage imageNamed:@"boy.png"];
+    [profileButton setImage:[UIImage imageNamed:@"boy.png"] forState:UIControlStateNormal];
     }
+
 
     [self setTitle];
 }
@@ -98,7 +114,7 @@
     NSString *username = [PFUser currentUser].username;
     NSString *cappedFirstChar = [[username substringToIndex:1] uppercaseString];
     NSString *cappedString = [username stringByReplacingCharactersInRange:NSMakeRange(0, 1) withString:cappedFirstChar];
-    [profileButton setTitle:cappedString forState:UIControlStateNormal];
+    profileLabel.text = cappedString;
 }
 
 -(void)logInViewController:(PFLogInViewController *)logInController didLogInUser:(PFUser *)user

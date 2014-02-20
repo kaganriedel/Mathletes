@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		27B54DD918AD44270068E68A /* boy@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 27B54DD818AD44270068E68A /* boy@2x.png */; };
+		27FD304818B6866700EE75A8 /* miso-light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 27FD304718B6866700EE75A8 /* miso-light.ttf */; };
+		27FD304918B6867200EE75A8 /* miso-bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 27FD304618B6864900EE75A8 /* miso-bold.ttf */; };
+		27FD304B18B6867A00EE75A8 /* miso-regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 27FD304A18B6867A00EE75A8 /* miso-regular.ttf */; };
 		6D010FB118B3075D0095B0E7 /* star@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D010FB018B3075D0095B0E7 /* star@2x.png */; };
 		6D17BD5318AC1CFE009A7416 /* AchievementHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D17BD5218AC1CFE009A7416 /* AchievementHeader.m */; };
 		6D18826218A943DF003DCA92 /* StickersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D18826118A943DF003DCA92 /* StickersViewController.m */; };
@@ -66,6 +69,9 @@
 		0FBAD299D6F34B0D8960E650 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		11D82320CD96410092541D1A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		27B54DD818AD44270068E68A /* boy@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "boy@2x.png"; sourceTree = "<group>"; };
+		27FD304618B6864900EE75A8 /* miso-bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "miso-bold.ttf"; sourceTree = "<group>"; };
+		27FD304718B6866700EE75A8 /* miso-light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "miso-light.ttf"; sourceTree = "<group>"; };
+		27FD304A18B6867A00EE75A8 /* miso-regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "miso-regular.ttf"; sourceTree = "<group>"; };
 		6D010FB018B3075D0095B0E7 /* star@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star@2x.png"; sourceTree = "<group>"; };
 		6D17BD5118AC1CFE009A7416 /* AchievementHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AchievementHeader.h; sourceTree = "<group>"; };
 		6D17BD5218AC1CFE009A7416 /* AchievementHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AchievementHeader.m; sourceTree = "<group>"; };
@@ -259,6 +265,9 @@
 		6D891EAA18A582EC0002B915 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				27FD304A18B6867A00EE75A8 /* miso-regular.ttf */,
+				27FD304718B6866700EE75A8 /* miso-light.ttf */,
+				27FD304618B6864900EE75A8 /* miso-bold.ttf */,
 				6D891EAB18A582EC0002B915 /* Mathletes-Info.plist */,
 				6D891EAC18A582EC0002B915 /* InfoPlist.strings */,
 				6D891EAF18A582EC0002B915 /* main.m */,
@@ -334,6 +343,9 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Kagan Riedel";
 				TargetAttributes = {
+					6D891E9F18A582EC0002B915 = {
+						DevelopmentTeam = D3X49FQNW5;
+					};
 					6D891EC018A582EC0002B915 = {
 						TestTargetID = 6D891E9F18A582EC0002B915;
 					};
@@ -366,12 +378,15 @@
 				27B54DD918AD44270068E68A /* boy@2x.png in Resources */,
 				6DA5778118B42F15004B10F7 /* campfire@2x.png in Resources */,
 				6DB5ACD318B2E5D00098A72D /* lion@2x.png in Resources */,
+				27FD304B18B6867A00EE75A8 /* miso-regular.ttf in Resources */,
 				6D891EBC18A582EC0002B915 /* Images.xcassets in Resources */,
 				6DB5ACCF18B2E5D00098A72D /* kitten@2x.png in Resources */,
 				6D010FB118B3075D0095B0E7 /* star@2x.png in Resources */,
+				27FD304918B6867200EE75A8 /* miso-bold.ttf in Resources */,
 				6DB5ACD018B2E5D00098A72D /* tiger@2x.png in Resources */,
 				6DB5ACD518B2E5D00098A72D /* pizza@2x.png in Resources */,
 				6DB5ACD218B2E5D00098A72D /* murray@2x.png in Resources */,
+				27FD304818B6866700EE75A8 /* miso-light.ttf in Resources */,
 				6DA5778318B42F21004B10F7 /* puppy@2x.png in Resources */,
 				6DB5ACD418B2E5D00098A72D /* bear@2x.png in Resources */,
 				6D891EAE18A582EC0002B915 /* InfoPlist.strings in Resources */,
@@ -574,6 +589,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Mathletes/Mathletes-Prefix.pch";
 				INFOPLIST_FILE = "Mathletes/Mathletes-Info.plist";
@@ -582,7 +599,7 @@
 					"/Users/kaganriedel/MM\\ 2014/Mathletes/Mathletes/TestFlightSDK2",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "AF478A5E-E77D-4215-BD54-A6BA6E35F3F4";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -593,6 +610,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Mathletes/Mathletes-Prefix.pch";
 				INFOPLIST_FILE = "Mathletes/Mathletes-Info.plist";
@@ -601,7 +620,7 @@
 					"/Users/kaganriedel/MM\\ 2014/Mathletes/Mathletes/TestFlightSDK2",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "AF478A5E-E77D-4215-BD54-A6BA6E35F3F4";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

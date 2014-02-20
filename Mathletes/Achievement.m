@@ -18,15 +18,8 @@
     self.message = message;
     
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    if ([userDefaults boolForKey:name])
-    {
-        self.isAchieved = YES;
-    }
-    else
-    {
-        self.isAchieved = NO;
-    }
-    
+    self.isAchieved = [userDefaults boolForKey:name];
+
     return self;
 }
 
