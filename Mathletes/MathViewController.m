@@ -999,7 +999,7 @@
     [CMNavBarNotificationView notifyWithText:@"You got a new sticker!"
                                       detail:nil
                                        image:notificationImage
-                                 andDuration:2.0];
+                                 andDuration:3.0];
     
     [userDefaults synchronize];
 
