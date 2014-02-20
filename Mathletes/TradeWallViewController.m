@@ -30,9 +30,7 @@
 {
     [super viewDidLoad];
     
-    
     user = [PFUser currentUser];
-    
 }
 
 -(void)viewDidAppear:(BOOL)animated
@@ -117,7 +115,7 @@
             NSIndexPath *selectedIndexPath = [tradeTableView indexPathForSelectedRow];
             TradeWallCell *cell = (TradeWallCell*)[tradeTableView cellForRowAtIndexPath:selectedIndexPath];
             PFObject *trade = cell.trade;
-            [trade deleteEventually];
+            [trade deleteInBackground];
             [trades removeObjectAtIndex:selectedIndexPath.row];
             [tradeTableView deleteRowsAtIndexPaths:@[selectedIndexPath] withRowAnimation:UITableViewRowAnimationLeft];
             [user increaseKey:[NSString stringWithFormat:@"%@Count", [trade objectForKey:@"give"]]];
@@ -145,15 +143,17 @@
             }
             else
             {
-                [trade deleteEventually];
+                PFUser *tradeUser = [cell.trade objectForKey:@"user"];
+                [tradeUser fetchIfNeededInBackgroundWithBlock:^(PFObject *object, NSError *error)
+                {
+                    [object increaseKey:[NSString stringWithFormat:@"%@Count", [trade objectForKey:@"get"]]];
+                }];
                 [trades removeObjectAtIndex:selectedIndexPath.row];
                 [tradeTableView deleteRowsAtIndexPaths:@[selectedIndexPath] withRowAnimation:UITableViewRowAnimationLeft];
                 [user increaseKey:[NSString stringWithFormat:@"%@Count", [trade objectForKey:@"give"]]];
                 [user decrementKey:[NSString stringWithFormat:@"%@Count", [trade objectForKey:@"get"]]];
                 [user saveInBackground];
-                [trade saveInBackground];
-                
-                //make the trade happen
+                [trade deleteInBackground];
             }
         }
     }
@@ -213,7 +213,7 @@
     {
         TradeWallCell *cell = (TradeWallCell*)[tradeTableView cellForRowAtIndexPath:indexPath];
         PFObject *trade = cell.trade;
-        [trade deleteEventually];
+        [trade deleteInBackground];
         [trades removeObjectAtIndex:indexPath.row];
         [tradeTableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationLeft];
         [user increaseKey:[NSString stringWithFormat:@"%@Count", [trade objectForKey:@"give"]]];
