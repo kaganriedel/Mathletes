@@ -11,5 +11,6 @@
 @interface ProfileViewController : UIViewController
 
 @property NSMutableArray *userArray;
+@property NSMutableArray *subtractionUserArray;
 
 @end
