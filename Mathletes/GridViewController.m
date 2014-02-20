@@ -79,7 +79,7 @@
             [self.view addSubview:gridLabel];
             [gridLabel setTextColor:[UIColor blackColor]];
             [gridLabel setTextAlignment:NSTextAlignmentCenter];
-            [gridLabel setFont: [UIFont fontWithName:@"Arial" size:13.0]];
+            [gridLabel setFont: [UIFont fontWithName:@"Miso-Bold" size:15.0]];
             
             //set values
             

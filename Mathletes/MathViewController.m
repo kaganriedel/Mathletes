@@ -354,6 +354,68 @@
         [var1Label setText:[NSString stringWithFormat:@"%i", _addend1]];
         [var2Label setText:[NSString stringWithFormat:@"%i", _addend2]];
     }
+    /*
+    else if ([_operationLabel.text isEqualToString:@"-"])
+    {
+        [self sortingArray];
+        
+        //original random value
+        _addend1 = arc4random()%18;
+        _addend2 = arc4random()%18;
+        
+        [self setNewKey];
+        
+        //setting pool of possible problems
+        keyAddend = 40;
+        
+        if (firstNonZeroKey > 35)
+        {
+            keyAddend = 30;
+            
+            if (firstNonZeroKey > 50)
+            {
+                keyAddend = 25;
+                
+                if (firstNonZeroKey > 80)
+                {
+                    keyAddend = 100 - firstNonZeroKey;
+                    
+                }
+            }
+        }
+        
+        
+        //rechoosing problem if proficiency is reached
+        if (userArrayKey < firstNonZeroKey || userArrayKey > (firstNonZeroKey + keyAddend))
+        {
+            //allowing for old problems when there is a pool < 20
+            if (firstNonZeroKey > 80)
+            {
+                int chanceOfOldProblem = arc4random()%4;
+                
+                if (chanceOfOldProblem == 0)
+                {
+                    _addend1 = arc4random()%8 + 4;
+                    _addend2 = arc4random()%4 + 4;
+                    
+                    [self setNewKey];
+                }
+                else
+                {
+                    [self newMathProblem];
+                }
+            }
+            else
+            {
+                [self newMathProblem];
+            }
+        }
+     
+        
+        [var1Label setText:[NSString stringWithFormat:@"%i", _addend1]];
+        [var2Label setText:[NSString stringWithFormat:@"%i", _addend2]];
+    }
+    */
     else
     {
         feedbackLabel.text = nil;
