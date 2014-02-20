@@ -15,9 +15,9 @@
     __weak IBOutlet UITableView *tradeTableView;
     __weak IBOutlet UISegmentedControl *tradeSegmentedControl;
 
-    NSUserDefaults *userDefaults;
     NSMutableArray *trades;
     NSTimer *timer;
+    PFUser *user;
 
 }
 
@@ -30,7 +30,8 @@
 {
     [super viewDidLoad];
     
-    userDefaults = [NSUserDefaults standardUserDefaults];
+    
+    user = [PFUser currentUser];
     
 }
 
@@ -78,6 +79,7 @@
         }
     }];
 }
+
 - (IBAction)segmentChanged:(UISegmentedControl *)segmentedControl
 {
     [self reloadTrades];
@@ -87,8 +89,8 @@
 {
     TradeWallCell *cell = (TradeWallCell*)[tableView cellForRowAtIndexPath:indexPath];
     
-    PFUser *user = [cell.trade objectForKey:@"user"];
-    if ([user.objectId isEqualToString:[PFUser currentUser].objectId])
+    PFUser *tradeUser = [cell.trade objectForKey:@"user"];
+    if ([tradeUser.objectId isEqualToString:[PFUser currentUser].objectId])
     {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Cancel Trade?" message:@"Do you want to cancel this trade?" delegate:self cancelButtonTitle:@"No Thanks" otherButtonTitles:@"Yes, Cancel It", nil];
         alert.tag = 0;
@@ -118,8 +120,9 @@
             [trade deleteEventually];
             [trades removeObjectAtIndex:selectedIndexPath.row];
             [tradeTableView deleteRowsAtIndexPaths:@[selectedIndexPath] withRowAnimation:UITableViewRowAnimationLeft];
-            [userDefaults incrementKey:[NSString stringWithFormat:@"%@Count", [trade objectForKey:@"give"]]];
+            [user increaseKey:[NSString stringWithFormat:@"%@Count", [trade objectForKey:@"give"]]];
             [trade saveInBackground];
+            [user saveInBackground];
         }
     }
     if (alertView.tag == 1) //accepting a trade
@@ -134,7 +137,7 @@
             NSIndexPath *selectedIndexPath = [tradeTableView indexPathForSelectedRow];
             TradeWallCell *cell = (TradeWallCell*)[tradeTableView cellForRowAtIndexPath:selectedIndexPath];
             PFObject *trade = cell.trade;
-            if ([userDefaults integerForKey:[NSString stringWithFormat:@"%@Count", [trade objectForKey:@"get"]]] <= 0)
+            if([[user objectForKey:[NSString stringWithFormat:@"%@Count", [trade objectForKey:@"get"]]] intValue] <= 0)
             {
                 UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Sorry!" message:[NSString stringWithFormat:@"Sorry! You don't have any %@ stickers to trade.", [trade objectForKey:@"get"]] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
                 [alert show];
@@ -145,8 +148,9 @@
                 [trade deleteEventually];
                 [trades removeObjectAtIndex:selectedIndexPath.row];
                 [tradeTableView deleteRowsAtIndexPaths:@[selectedIndexPath] withRowAnimation:UITableViewRowAnimationLeft];
-                [userDefaults incrementKey:[NSString stringWithFormat:@"%@Count", [trade objectForKey:@"give"]]];
-                [userDefaults decrementKey:[NSString stringWithFormat:@"%@Count", [trade objectForKey:@"get"]]];
+                [user increaseKey:[NSString stringWithFormat:@"%@Count", [trade objectForKey:@"give"]]];
+                [user decrementKey:[NSString stringWithFormat:@"%@Count", [trade objectForKey:@"get"]]];
+                [user saveInBackground];
                 [trade saveInBackground];
                 
                 //make the trade happen
@@ -162,8 +166,8 @@
     cell.trade = trades[indexPath.row];
     
     //the order of "give" and "get" are reversed here because what someone offers to "give/get" is the opposite of what the other person accepts to "give/get"
-    PFUser *user = [cell.trade objectForKey:@"user"];
-    if ([user.objectId isEqualToString:[PFUser currentUser].objectId])
+    PFUser *tradeUser = [cell.trade objectForKey:@"user"];
+    if ([tradeUser.objectId isEqualToString:user.objectId])
     {
         cell.myTradeLabel.alpha = 1.0;
     }
@@ -212,8 +216,9 @@
         [trade deleteEventually];
         [trades removeObjectAtIndex:indexPath.row];
         [tradeTableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationLeft];
-        [userDefaults incrementKey:[NSString stringWithFormat:@"%@Count", [trade objectForKey:@"give"]]];
+        [user increaseKey:[NSString stringWithFormat:@"%@Count", [trade objectForKey:@"give"]]];
         [trade saveInBackground];
+        [user saveInBackground];
     }
 }
 

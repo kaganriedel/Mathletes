@@ -81,13 +81,13 @@
      {
          _userArray = (NSMutableArray *)objects;
          
-         for (int i = 0; i < _userArray.count; i++)
-         {
-             MathProblem *problem = _userArray[i];
-             NSLog(@"%i %ld",problem.mathProblemValue, (long)problem.equationDifficulty);
-             
-             
-         }
+//         for (int i = 0; i < _userArray.count; i++)
+//         {
+//             MathProblem *problem = _userArray[i];
+//             NSLog(@"%i %ld",problem.mathProblemValue, (long)problem.equationDifficulty);
+//             
+//             
+//         }
          [self newMathProblem];
          [self startTimer];
      }];
@@ -218,11 +218,11 @@
         }
     }
     
-    for (int i = 0; i < _userArray.count; i++)
-    {
-        MathProblem *problem = _userArray[i];
-        NSLog(@"%li %ld",(long)problem.mathProblemValue, (long)problem.equationDifficulty);
-    }
+//    for (int i = 0; i < _userArray.count; i++)
+//    {
+//        MathProblem *problem = _userArray[i];
+//        NSLog(@"%li %ld",(long)problem.mathProblemValue, (long)problem.equationDifficulty);
+//    }
     
 }
 
@@ -947,59 +947,74 @@
 {
     UIImage *notificationImage;
     
+
     int randomSticker = arc4random()%100;
-    
+    PFUser *user = [PFUser currentUser];
+
     if (randomSticker < 20)
     {
-        [userDefaults incrementKey:@"lionCount"];
+        [user increaseKey:@"lionCount"];
+        
         notificationImage = [UIImage imageNamed:@"lion.png"];
-        NSLog(@"1st count +1");
+        NSLog(@"lion count +1");
     }
     else if (randomSticker < 40)
     {
-        [userDefaults incrementKey:@"kittenCount"];
+        [user increaseKey:@"kittenCount"];
+        
         notificationImage = [UIImage imageNamed:@"kitten.png"];
-        NSLog(@"2nd count +1");
+
+        NSLog(@"kitten count +1");
     }
     else if (randomSticker < 60)
     {
-        [userDefaults incrementKey:@"starCount"];
+        [user increaseKey:@"starCount"];
         notificationImage = [UIImage imageNamed:@"star.png"];
-        NSLog(@"3rd count +1");
+
+        NSLog(@"star count +1");
     }
     else if (randomSticker < 70)
     {
-        [userDefaults incrementKey:@"puppyCount"];
+        [user increaseKey:@"puppyCount"];
         notificationImage = [UIImage imageNamed:@"puppy.png"];
-        NSLog(@"4th count +1");
+
+        NSLog(@"puppy count +1");
     }
     else if (randomSticker < 80)
     {
-        [userDefaults incrementKey:@"tigerCount"];
+        [user increaseKey:@"tigerCount"];
         notificationImage = [UIImage imageNamed:@"tiger.png"];
-        NSLog(@"5th count +1");
+
+        NSLog(@"tiger count +1");
     }
     else if (randomSticker < 90)
     {
-        [userDefaults incrementKey:@"murrayCount"];
+        [user increaseKey:@"murrayCount"];
         notificationImage = [UIImage imageNamed:@"murray.png"];
-        NSLog(@"6th count +1");
-    }else if (randomSticker < 95)
+
+        NSLog(@"murray count +1");
+    }
+    else if (randomSticker < 95)
     {
-        [userDefaults incrementKey:@"bearCount"];
-        notificationImage= [UIImage imageNamed:@"bear.png"];
-        NSLog(@"7th count +1");
+        [user increaseKey:@"bearCount"];
+       notificationImage = [UIImage imageNamed:@"bear.png"];
+
+        NSLog(@"bear count +1");
     }else if (randomSticker <= 100)
     {
-        [userDefaults incrementKey:@"pizzaCount"];
+        [user increaseKey:@"pizzaCount"];
         notificationImage = [UIImage imageNamed:@"pizza.png"];
-        NSLog(@"8th count +1");
+
+        NSLog(@"pizza count +1");
     }
     
     [CMNavBarNotificationView notifyWithText:@"You got a new sticker!"
                                       detail:nil
                                        image:notificationImage
                                  andDuration:2.0];
+    
+    [user saveInBackground];
+
     
     [userDefaults synchronize];
 

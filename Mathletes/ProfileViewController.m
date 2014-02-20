@@ -35,18 +35,22 @@
     //if its been more than a day since the last reset of dailyMath, reset it
     if ([[NSDate date] timeIntervalSinceDate:[userDefaults objectForKey:@"dailyMathStartDate"]] >= 86400.0)
     {
+        
+        
         [userDefaults setInteger:0 forKey:@"dailyMath"];
         [userDefaults setBool:NO forKey:@"dailyMath!"];
         [userDefaults setBool:NO forKey:@"dailyMath x20!"];
         [userDefaults setBool:NO forKey:@"dailyMath x30!"];
         [userDefaults setBool:NO forKey:@"dailyMath x40!"];
         [userDefaults setBool:NO forKey:@"dailyMath x50!"];
+        [userDefaults synchronize];
     }
     NSLog(@"dailyMath is: %li", (long)[userDefaults integerForKey:@"dailyMath"]);
 
     self.navigationController.navigationBar.backgroundColor = [UIColor whiteColor];
    
     profileImageView.layer.cornerRadius = 25;
+    
 }
 
 -(void)viewWillAppear:(BOOL)animated

@@ -5,6 +5,7 @@
 //
 
 #import <Availability.h>
+#import "Parse/Parse.h"
 
 #ifndef __IPHONE_5_0
 #warning "This project uses features only available in iOS SDK 5.0 and later."
@@ -16,8 +17,13 @@
 
 //implementation is in main.m
 @interface NSUserDefaults (mathletes)
-- (int)incrementKey:(NSString *)key;
-- (int)decrementKey:(NSString *)key;
+-(int)incrementKey:(NSString *)key;
+-(int)decrementKey:(NSString *)key;
+@end
+
+@interface PFObject(mathletes)
+-(void)increaseKey:(NSString *)key;
+- (void)decrementKey:(NSString *)key;
 @end
 
 #endif

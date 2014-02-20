@@ -14,7 +14,6 @@
 @interface StickersViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
 
 {
-    NSUserDefaults *userDefaults;
     __weak IBOutlet UICollectionView *stickerCollectionView;
     NSArray *stickers;
     NSArray *userStickers;
@@ -34,23 +33,25 @@
     
     stickers = @[@"lion.png",@"kitten.png",@"star.png", @"puppy.png", @"tiger.png", @"murray.png", @"bear.png", @"pizza.png"];
     
-    userDefaults = [NSUserDefaults standardUserDefaults];
     
-    }
+}
 
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:YES];
     
-    userStickers = @[@([userDefaults integerForKey:@"lionCount"]),
-                     @([userDefaults integerForKey:@"kittenCount"]),
-                     @([userDefaults integerForKey:@"starCount"]),
-                     @([userDefaults integerForKey:@"puppyCount"]),
-                     @([userDefaults integerForKey:@"tigerCount"]),
-                     @([userDefaults integerForKey:@"murrayCount"]),
-                     @([userDefaults integerForKey:@"bearCount"]),
-                     @([userDefaults integerForKey:@"pizzaCount"]),];
-
+    PFUser *user = [PFUser currentUser];
+    
+    userStickers = @[[user objectForKey:@"lionCount"]?:@(0),
+                     [user objectForKey:@"kittenCount"]?:@(0),
+                     [user objectForKey:@"starCount"]?:@(0),
+                     [user objectForKey:@"puppyCount"]?:@(0),
+                     [user objectForKey:@"tigerCount"]?:@(0),
+                     [user objectForKey:@"murrayCount"]?:@(0),
+                     [user objectForKey:@"bearCount"]?:@(0),
+                     [user objectForKey:@"pizzaCount"]?:@(0)
+                     ];
+    
     
     [stickerCollectionView reloadData];
 }
