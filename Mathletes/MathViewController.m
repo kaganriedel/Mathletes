@@ -45,6 +45,7 @@
     __weak IBOutlet UILabel *zeroLabel;
     __weak IBOutlet UILabel *enterLabel;
     __weak IBOutlet UILabel *nextLabel;
+    __weak IBOutlet UILabel *operatorLabel;
     
     NSMutableArray *mathProblems;
     NSInteger difficulty;
@@ -100,21 +101,26 @@
     {
         self.navigationItem.title = @"Addition";
         problemType = 0;
+        operatorLabel.textColor = [UIColor colorWithRed:130.0/255.0 green:183.0/255.0 blue:53.0/255.0 alpha:1];
+        
     }
     else if ([_operationType isEqualToString:@"-"])
     {
         self.navigationItem.title = @"Subtraction";
         problemType = 1;
+        operatorLabel.textColor = [UIColor colorWithRed:222.0/255.0 green:54.0/255.0 blue:64.0/255.0 alpha:1];
     }
     else if ([_operationType isEqualToString:@"x"])
     {
         self.navigationItem.title = @"Multiplication";
         problemType = 2;
+        operatorLabel.textColor = [UIColor colorWithRed:221.0/255.0 green:168.0/255.0 blue:57.0/255.0 alpha:1];
     }
     else if ([_operationType isEqualToString:@"/"])
     {
         self.navigationItem.title = @"Division";
         problemType = 3;
+        operatorLabel.textColor = [UIColor colorWithRed:95.0/255.0 green:162.0/255.0 blue:219.0/255.0 alpha:1];
     }
     
     PFQuery *problemQuery = [PFQuery queryWithClassName:@"MathProblem"];

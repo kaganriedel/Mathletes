@@ -31,6 +31,7 @@
     [super viewDidLoad];
     
     user = [PFUser currentUser];
+    
 }
 
 -(void)viewDidAppear:(BOOL)animated
