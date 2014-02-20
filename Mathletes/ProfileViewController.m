@@ -45,6 +45,14 @@
         [userDefaults setBool:NO forKey:@"dailyMath x50!"];
         [userDefaults synchronize];
     }
+    
+    for (UILabel* label in self.view.subviews) {
+        if([label isKindOfClass:[UILabel class]])
+        {
+            label.font = [UIFont fontWithName:@"Miso-Bold" size:40];
+        }
+    }
+    
     NSLog(@"dailyMath is: %li", (long)[userDefaults integerForKey:@"dailyMath"]);
 
     self.navigationController.navigationBar.backgroundColor = [UIColor whiteColor];
