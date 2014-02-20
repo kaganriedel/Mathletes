@@ -70,6 +70,8 @@
 {
     [super viewDidLoad];
     [self buildView];
+    
+    NSInteger problemType;
 
     for (UILabel* label in self.view.subviews)
     {
@@ -97,32 +99,39 @@
     if ([_operationType isEqualToString:@"+"])
     {
         self.navigationItem.title = @"Addition";
+        problemType = 0;
     }
     else if ([_operationType isEqualToString:@"-"])
     {
         self.navigationItem.title = @"Subtraction";
+        problemType = 1;
     }
     else if ([_operationType isEqualToString:@"x"])
     {
         self.navigationItem.title = @"Multiplication";
+        problemType = 2;
     }
     else if ([_operationType isEqualToString:@"/"])
     {
         self.navigationItem.title = @"Division";
+        problemType = 3;
     }
     
-    PFQuery *query = [PFQuery queryWithClassName:@"MathProblem"];
-    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
+    PFQuery *problemQuery = [PFQuery queryWithClassName:@"MathProblem"];
+    [problemQuery whereKey:@"problemType" equalTo:@(problemType)];
+    [problemQuery whereKey:@"mathUser" equalTo:[PFUser currentUser]];
+    
+    [problemQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
      {
          _userArray = (NSMutableArray *)objects;
          
-//         for (int i = 0; i < _userArray.count; i++)
-//         {
-//             MathProblem *problem = _userArray[i];
-//             NSLog(@"%i %ld",problem.mathProblemValue, (long)problem.equationDifficulty);
-//             
-//             
-//         }
+         for (int i = 0; i < _userArray.count; i++)
+         {
+             MathProblem *problem = _userArray[i];
+             NSLog(@"%i %ld",problem.mathProblemValue, (long)problem.equationDifficulty);
+             
+         }
+
          [self newMathProblem];
          [self startTimer];
      }];
@@ -499,7 +508,7 @@
      }];
 }
 
-
+/*
 -(void)cardDifficulty
 {
     mathProblems = @[         [[MathProblem alloc]initWithDifficulty:2 forProblem:0],
@@ -604,6 +613,7 @@
                               [[MathProblem alloc]initWithDifficulty:8 forProblem:98]
                               ].mutableCopy;
 }
+*/
 
 -(void)updateAchievements
 {

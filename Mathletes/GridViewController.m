@@ -32,9 +32,12 @@
     [super viewDidLoad];
 
 //    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:124.0/255.0 green:194.0/255.0 blue:250.0/255.0 alpha:1.0];
-    
-    PFQuery *query = [PFQuery queryWithClassName:@"MathProblem"];
-    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
+
+    PFQuery *problemQuery = [PFQuery queryWithClassName:@"MathProblem"];
+    [problemQuery whereKey:@"problemType" equalTo:@0];
+    [problemQuery whereKey:@"mathUser" equalTo:[PFUser currentUser]];
+
+    [problemQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
      {
          _gridArray = (NSMutableArray *)objects;
          
