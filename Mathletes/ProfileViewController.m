@@ -51,6 +51,7 @@
     self.navigationController.navigationBar.backgroundColor = [UIColor whiteColor];
    
     profileButton.layer.cornerRadius = 25;
+    profileButton.contentMode = UIViewContentModeScaleToFill;
     profileImageView.layer.cornerRadius = 25;
     
 }
@@ -66,6 +67,7 @@
     {
     [profileButton setImage:[UIImage imageNamed:@"boy.png"] forState:UIControlStateNormal];
     }
+
 
     [self setTitle];
 }
@@ -98,7 +100,6 @@
     NSString *cappedFirstChar = [[username substringToIndex:1] uppercaseString];
     NSString *cappedString = [username stringByReplacingCharactersInRange:NSMakeRange(0, 1) withString:cappedFirstChar];
     profileLabel.text = cappedString;
-    [profileButton setTitle:cappedString forState:UIControlStateNormal];
 }
 
 -(void)logInViewController:(PFLogInViewController *)logInController didLogInUser:(PFUser *)user
