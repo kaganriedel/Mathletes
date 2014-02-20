@@ -33,6 +33,8 @@
     __weak IBOutlet UIImageView *feedbackImageView;
     __weak IBOutlet UIView *feedbackView;
     
+    
+    
     NSMutableArray *mathProblems;
     NSInteger difficulty;
     NSInteger userArrayKey;
@@ -58,6 +60,16 @@
     [super viewDidLoad];
     [self buildView];
 
+    for (UILabel* label in self.view.subviews)
+    {
+        if([label isKindOfClass:[UILabel class]])
+        {
+            label.font = [UIFont fontWithName:@"Miso-Bold" size:40];
+        }
+    }
+    
+    feedbackLabel.font = [UIFont fontWithName:@"Miso-Bold" size:32];
+    inputLabel.font = [UIFont fontWithName:@"Miso-Bold" size:32];
 
     if ([_operationType isEqualToString:@"+"])
     {
@@ -107,11 +119,9 @@
 
     
     goButton.layer.cornerRadius = 35.0;
-    goButton.layer.borderWidth = 1.5;
     goButton.layer.borderColor = [UIColor colorWithRed:184.0/255.0 green:184.0/255.0 blue:184.0/255.0 alpha:1].CGColor;
     
     newButton.layer.cornerRadius = 35.0;
-    newButton.layer.borderWidth = 1.5;
     newButton.layer.borderColor = [UIColor colorWithRed:184.0/255.0 green:184.0/255.0 blue:184.0/255.0 alpha:1].CGColor;
     
     backSpaceButton.layer.cornerRadius = 35.0;
