@@ -146,12 +146,11 @@
             }
             else
             {
-                PFUser *tradeUser = [cell.trade objectForKey:@"user"];
-                //This doesn't work. can't change the user's objectForKey without being logged in
-                [tradeUser fetchIfNeededInBackgroundWithBlock:^(PFObject *object, NSError *error)
-                {
-                    [object increaseKey:[NSString stringWithFormat:@"%@Count", [trade objectForKey:@"get"]]];
-                }];
+                PFObject *acceptedTrade = [PFObject objectWithClassName:@"AcceptedTrade"];
+                [acceptedTrade setObject:[cell.trade objectForKey:@"user"] forKey:@"user"];
+                [acceptedTrade setObject:[trade objectForKey:@"get"] forKey:@"get"];
+                [acceptedTrade saveInBackground];
+                
                 [trades removeObjectAtIndex:selectedIndexPath.row];
                 [tradeTableView deleteRowsAtIndexPaths:@[selectedIndexPath] withRowAnimation:UITableViewRowAnimationLeft];
                 [user increaseKey:[NSString stringWithFormat:@"%@Count", [trade objectForKey:@"give"]]];
