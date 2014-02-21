@@ -9,6 +9,7 @@
 #import "ProfileViewController.h"
 #import "Parse/Parse.h"
 #import "MathProblem.h"
+#import "CMNavBarNotificationView/CMNavBarNotificationView.h"
 
 
 @interface ProfileViewController () <PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate>
@@ -116,6 +117,11 @@
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         for (PFObject *acceptedTrade in objects) {
             [user increaseKey:[NSString stringWithFormat:@"%@Count",[acceptedTrade objectForKey:@"get"]]];
+            [CMNavBarNotificationView notifyWithText:@"Your trade was accepted!"
+                                              detail:[NSString stringWithFormat:@"You got a %@ sticker!", [acceptedTrade objectForKey:@"get"]]
+                                               image:[UIImage imageNamed:[NSString stringWithFormat:@"%@.png",[acceptedTrade objectForKey:@"get"]]]
+                                         andDuration:3.0];
+
         }
         [user saveInBackground];
     }];
