@@ -168,19 +168,12 @@
     TradeWallCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TradeCell"];
     
     cell.trade = trades[indexPath.row];
-//    cell.textLabel.font = [UIFont fontWithName:@"Miso-Bold" size:17.0f];
+    cell.giveLabel.font = [UIFont fontWithName:@"Miso-Bold" size:36.0f];
+    cell.getLabel.font = [UIFont fontWithName:@"Miso-Bold" size:36.0f];
     
     
     //the order of "give" and "get" are reversed here because what someone offers to "give/get" is the opposite of what the other person accepts to "give/get"
-    PFUser *tradeUser = [cell.trade objectForKey:@"user"];
-    if ([tradeUser.objectId isEqualToString:user.objectId])
-    {
-        cell.myTradeLabel.alpha = 1.0;
-    }
-    else
-    {
-        cell.myTradeLabel.alpha = 0.0;
-    }
+
     
     if (tradeSegmentedControl.selectedSegmentIndex == 1)
     {

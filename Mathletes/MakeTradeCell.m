@@ -15,7 +15,7 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self)
     {
-        //self.imageView.layer.cornerRadius = 40.0;
+        
     }
     return self;
 }
