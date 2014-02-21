@@ -109,6 +109,18 @@
     [super viewDidAppear:animated];
     
     [self checkForLoggedInUserAnimated:animated];
+    
+    PFUser *user = [PFUser currentUser];
+    PFQuery *query = [PFQuery queryWithClassName:@"AcceptedTrade"];
+    [query whereKey:@"user" equalTo:[PFUser currentUser]];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        for (PFObject *acceptedTrade in objects) {
+            [user increaseKey:[acceptedTrade objectForKey:@"get"]];
+        }
+        [user saveInBackground];
+    }];
+    
+    
 }
 
 -(void)signUpViewController:(PFSignUpViewController *)signUpController didSignUpUser:(PFUser *)user
