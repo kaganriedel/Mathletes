@@ -121,7 +121,7 @@
                                               detail:[NSString stringWithFormat:@"You got a %@ sticker!", [acceptedTrade objectForKey:@"get"]]
                                                image:[UIImage imageNamed:[NSString stringWithFormat:@"%@.png",[acceptedTrade objectForKey:@"get"]]]
                                          andDuration:3.0];
-
+            [acceptedTrade deleteInBackground];
         }
         [user saveInBackground];
     }];
