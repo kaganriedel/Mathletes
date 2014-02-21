@@ -702,57 +702,57 @@
     {
         int newTotalAdds = [userDefaults incrementKey:@"totalAdds"];
         NSLog(@"newTotalAdds is: %i", newTotalAdds);
-        if (newTotalAdds >= 1200)
-        {
-            [self checkForAchievement:@"Add It Up x1200!"];
-        }
-        else if (newTotalAdds >= 1100)
-        {
-            [self checkForAchievement:@"Add It Up x1100!"];
-        }
-        else if (newTotalAdds >= 1000)
-        {
-            [self checkForAchievement:@"Add It Up x1000!"];
-        }
-        else if (newTotalAdds >= 900)
-        {
-            [self checkForAchievement:@"Add It Up x900!"];
-        }
-        else if (newTotalAdds >= 800)
-        {
-            [self checkForAchievement:@"Add It Up x800!"];
-        }
-        else if (newTotalAdds >= 700)
-        {
-            [self checkForAchievement:@"Add It Up x700!"];
-        }
-        else if (newTotalAdds >= 600)
-        {
-            [self checkForAchievement:@"Add It Up x600!"];
-        }
-        else if (newTotalAdds >= 500)
-        {
-            [self checkForAchievement:@"Add It Up x500!"];
-        }
-        else if (newTotalAdds >= 400)
-        {
-            [self checkForAchievement:@"Add It Up x400!"];
-        }
-        else if (newTotalAdds >= 300)
+        if (newTotalAdds >= 300)
         {
             [self checkForAchievement:@"Add It Up x300!"];
+        }
+        else if (newTotalAdds >= 275)
+        {
+            [self checkForAchievement:@"Add It Up x275!"];
+        }
+        else if (newTotalAdds >= 250)
+        {
+            [self checkForAchievement:@"Add It Up x250!"];
+        }
+        else if (newTotalAdds >= 225)
+        {
+            [self checkForAchievement:@"Add It Up x225!"];
         }
         else if (newTotalAdds >= 200)
         {
             [self checkForAchievement:@"Add It Up x200!"];
         }
+        else if (newTotalAdds >= 180)
+        {
+            [self checkForAchievement:@"Add It Up x180!"];
+        }
+        else if (newTotalAdds >= 160)
+        {
+            [self checkForAchievement:@"Add It Up x160!"];
+        }
+        else if (newTotalAdds >= 140)
+        {
+            [self checkForAchievement:@"Add It Up x140!"];
+        }
+        else if (newTotalAdds >= 120)
+        {
+            [self checkForAchievement:@"Add It Up x120!"];
+        }
         else if (newTotalAdds >= 100)
         {
             [self checkForAchievement:@"Add It Up x100!"];
         }
-        else if (newTotalAdds >= 50)
+        else if (newTotalAdds >= 80)
         {
-            [self checkForAchievement:@"Add It Up x50!"];
+            [self checkForAchievement:@"Add It Up x80!"];
+        }
+        else if (newTotalAdds >= 60)
+        {
+            [self checkForAchievement:@"Add It Up x60!"];
+        }
+        else if (newTotalAdds >= 40)
+        {
+            [self checkForAchievement:@"Add It Up x40!"];
         }
         else if (newTotalAdds >= 20)
         {
@@ -767,65 +767,65 @@
         {
             int newTotalFastAdds = [userDefaults incrementKey:@"totalFastAdds"];
             NSLog(@"Total Fast Adds: %i",newTotalFastAdds);
-            if (newTotalFastAdds >= 700)
-            {
-                [self checkForAchievement:@"Adding At 700 Miles Per Hour!"];
-            }
-            else if (newTotalFastAdds >= 650)
-            {
-                [self checkForAchievement:@"Adding At 650 Miles Per Hour!"];
-            }
-            else if (newTotalFastAdds >= 600)
-            {
-                [self checkForAchievement:@"Adding At 600 Miles Per Hour!"];
-            }
-            else if (newTotalFastAdds >= 550)
-            {
-                [self checkForAchievement:@"Adding At 500 Miles Per Hour!"];
-            }
-            else if (newTotalFastAdds >= 500)
-            {
-                [self checkForAchievement:@"Adding At 500 Miles Per Hour!"];
-            }
-            else if (newTotalFastAdds >= 450)
-            {
-                [self checkForAchievement:@"Adding At 450 Miles Per Hour!"];
-            }
-            else if (newTotalFastAdds >= 400)
-            {
-                [self checkForAchievement:@"Adding At 400 Miles Per Hour!"];
-            }
-            else if (newTotalFastAdds >= 350)
-            {
-                [self checkForAchievement:@"Adding At 350 Miles Per Hour!"];
-            }
-            else if (newTotalFastAdds >= 300)
-            {
-                [self checkForAchievement:@"Adding At 300 Miles Per Hour!"];
-            }
-            else if (newTotalFastAdds >= 250)
+            if (newTotalFastAdds >= 250)
             {
                 [self checkForAchievement:@"Adding At 250 Miles Per Hour!"];
             }
-            else if (newTotalFastAdds >= 200)
+            else if (newTotalFastAdds >= 230)
             {
-                [self checkForAchievement:@"Adding At 200 Miles Per Hour!"];
+                [self checkForAchievement:@"Adding At 230 Miles Per Hour!"];
+            }
+            else if (newTotalFastAdds >= 210)
+            {
+                [self checkForAchievement:@"Adding At 210 Miles Per Hour!"];
+            }
+            else if (newTotalFastAdds >= 190)
+            {
+                [self checkForAchievement:@"Adding At 190 Miles Per Hour!"];
+            }
+            else if (newTotalFastAdds >= 170)
+            {
+                [self checkForAchievement:@"Adding At 170 Miles Per Hour!"];
             }
             else if (newTotalFastAdds >= 150)
             {
                 [self checkForAchievement:@"Adding At 150 Miles Per Hour!"];
             }
-            else if (newTotalFastAdds >= 100)
+            else if (newTotalFastAdds >= 135)
             {
-                [self checkForAchievement:@"Adding At 100 Miles Per Hour!"];
+                [self checkForAchievement:@"Adding At 135 Miles Per Hour!"];
             }
-            else if (newTotalFastAdds >= 50)
+            else if (newTotalFastAdds >= 120)
             {
-                [self checkForAchievement:@"Adding At 50 Miles Per Hour!"];
+                [self checkForAchievement:@"Adding At 120 Miles Per Hour!"];
             }
-            else if (newTotalFastAdds >= 25)
+            else if (newTotalFastAdds >= 105)
             {
-                [self checkForAchievement:@"Adding At 25 Miles Per Hour!"];
+                [self checkForAchievement:@"Adding At 105 Miles Per Hour!"];
+            }
+            else if (newTotalFastAdds >= 90)
+            {
+                [self checkForAchievement:@"Adding At 90 Miles Per Hour!"];
+            }
+            else if (newTotalFastAdds >= 75)
+            {
+                [self checkForAchievement:@"Adding At 75 Miles Per Hour!"];
+            }
+            else if (newTotalFastAdds >= 60)
+            {
+                [self checkForAchievement:@"Adding At 60 Miles Per Hour!"];
+            }
+            else if (newTotalFastAdds >= 45)
+            {
+                [self checkForAchievement:@"Adding At 45 Miles Per Hour!"];
+            }
+            else if (newTotalFastAdds >= 30)
+            {
+                [self checkForAchievement:@"Adding At 30 Miles Per Hour!"];
+            }
+            else if (newTotalFastAdds >= 15)
+            {
+                [self checkForAchievement:@"Adding At 15 Miles Per Hour!"];
             }           
         }
     }

@@ -14,16 +14,10 @@
 {
     __weak IBOutlet UITableView *tradeTableView;
     __weak IBOutlet UISegmentedControl *tradeSegmentedControl;
-   
-    
-   
-  
-    
 
     NSMutableArray *trades;
     NSTimer *timer;
     PFUser *user;
-
 }
 
 @end
