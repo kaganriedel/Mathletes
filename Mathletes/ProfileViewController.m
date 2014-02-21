@@ -115,7 +115,7 @@
     [query whereKey:@"user" equalTo:[PFUser currentUser]];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         for (PFObject *acceptedTrade in objects) {
-            [user increaseKey:[acceptedTrade objectForKey:@"get"]];
+            [user increaseKey:[NSString stringWithFormat:@"%@Count",[acceptedTrade objectForKey:@"get"]]];
         }
         [user saveInBackground];
     }];
