@@ -23,6 +23,8 @@
     
     __weak IBOutlet UITableView *giveTableView;
     __weak IBOutlet UITableView *getTableView;
+    __weak IBOutlet UILabel *giveLabel;
+    __weak IBOutlet UILabel *getLabel;
 }
 
 @end

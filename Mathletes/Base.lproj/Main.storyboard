@@ -268,7 +268,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="Duy-nR-h9k">
-                                                    <rect key="frame" x="1" y="-2" width="68" height="68.5"/>
+                                                    <rect key="frame" x="1" y="-2" width="67.5" height="68"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </imageView>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="x12" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="29n-LO-bUg">
@@ -400,7 +400,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="getLabel" destination="Q4g-r4-MSy" id="fYZ-b7-bRC"/>
                         <outlet property="getTableView" destination="E5T-dp-I5E" id="G3M-Vh-QdG"/>
+                        <outlet property="giveLabel" destination="KPe-xw-Rd9" id="aGW-tB-ONG"/>
                         <outlet property="giveTableView" destination="8D2-WK-luz" id="TaA-1F-CMz"/>
                     </connections>
                 </viewController>
@@ -517,7 +519,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Did you know?" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8MA-da-fMJ">
-                                <rect key="frame" x="20" y="274" width="280" height="202"/>
+                                <rect key="frame" x="20" y="268" width="280" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
