@@ -14,6 +14,11 @@
 {
     NSInteger key;
     NSInteger difficulty;
+    __weak IBOutlet UILabel *excellentLabel;
+    __weak IBOutlet UILabel *proficientLabel;
+    __weak IBOutlet UILabel *effecientLabel;
+    
+    
 }
 
 @property (weak, nonatomic) IBOutlet UITabBar *operandTabBar;
@@ -30,8 +35,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor darkGrayColor], NSForegroundColorAttributeName, [UIFont fontWithName:@"Miso-Bold" size:28], NSFontAttributeName, nil]];
 
-//    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:124.0/255.0 green:194.0/255.0 blue:250.0/255.0 alpha:1.0];
+    excellentLabel.font = [UIFont fontWithName:@"Miso-Bold" size:20];
+    proficientLabel.font = [UIFont fontWithName:@"Miso-Bold" size:20];
+    effecientLabel.font = [UIFont fontWithName:@"Miso-Bold" size:20];
 
     PFQuery *problemQuery = [PFQuery queryWithClassName:@"MathProblem"];
     [problemQuery whereKey:@"problemType" equalTo:@0];
@@ -77,7 +85,7 @@
         {
             UILabel *gridLabel = [[UILabel alloc] initWithFrame:CGRectMake(xDirection, yDirection, 30, 30)];
             [self.view addSubview:gridLabel];
-            [gridLabel setTextColor:[UIColor blackColor]];
+            [gridLabel setTextColor:[UIColor whiteColor]];
             [gridLabel setTextAlignment:NSTextAlignmentCenter];
             [gridLabel setFont: [UIFont fontWithName:@"Miso-Bold" size:15.0]];
             
@@ -115,16 +123,16 @@
             //background color
             if (difficulty == 0)
             {
-                gridLabel.backgroundColor = [UIColor greenColor];
+                gridLabel.backgroundColor = [UIColor colorWithRed:130.0/255.0 green:183.0/255.0 blue:53.0/255.0 alpha:1];
             }
             else if (attempted == YES)
             {
-                gridLabel.backgroundColor = [UIColor colorWithRed:(255.0/255.0) green:(239/255.0) blue:(0/255.0) alpha:1];
+                gridLabel.backgroundColor = [UIColor colorWithRed:(221.0/255.0) green:(168.0/255.0) blue:(57.0/255.0) alpha:0.9];
                 
             }
             else
             {
-                gridLabel.backgroundColor = [UIColor colorWithRed:(0/255.0) green:(156.0/255.0) blue:(227/255.0) alpha:1];
+                gridLabel.backgroundColor = [UIColor colorWithRed:(95.0/255.0) green:(162.0/255.0) blue:(219/255.0) alpha:1];
             }
             
             xDirection += 31;

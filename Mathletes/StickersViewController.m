@@ -28,10 +28,10 @@
 {
     [super viewDidLoad];
     
-//    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:250.0/255.0 green:228.0/255.0 blue:66.0/255.0 alpha:1.0];
     
     
-    stickers = @[@"lion.png",@"kitten.png",@"star.png", @"puppy.png", @"tiger.png", @"murray.png", @"bear.png", @"pizza.png"];
+    
+    stickers = @[@"lion.png",@"kitten.png",@"campfire.png", @"puppy.png", @"tiger.png", @"murray.png", @"bear.png", @"pizza.png"];
     
     
 }
@@ -44,7 +44,7 @@
     
     userStickers = @[[user objectForKey:@"lionCount"]?:@(0),
                      [user objectForKey:@"kittenCount"]?:@(0),
-                     [user objectForKey:@"starCount"]?:@(0),
+                     [user objectForKey:@"campfireCount"]?:@(0),
                      [user objectForKey:@"puppyCount"]?:@(0),
                      [user objectForKey:@"tigerCount"]?:@(0),
                      [user objectForKey:@"murrayCount"]?:@(0),
@@ -78,8 +78,9 @@
 {
     StickerCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"StickerCell" forIndexPath:indexPath];
     cell.imageView.image = [UIImage imageNamed:stickers[indexPath.row]];
-    cell.imageView.layer.cornerRadius = 35.0;
+    cell.imageView.layer.cornerRadius = 34.0;
     cell.stickerImageName = stickers[indexPath.row];
+    cell.countLabel.font = [UIFont fontWithName:@"Miso-Bold" size:14.0f];
     
     cell.count = userStickers[indexPath.row];
     if (cell.count.integerValue == 0)

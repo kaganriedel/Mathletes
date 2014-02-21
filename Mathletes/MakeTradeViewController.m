@@ -36,6 +36,13 @@
     [super viewDidLoad];
 
     user = [PFUser currentUser];
+    for (UILabel* label in self.view.subviews) {
+        if([label isKindOfClass:[UILabel class]])
+        {
+            label.font = [UIFont fontWithName:@"Miso-Bold" size:40];
+        }
+    }
+
     
     userStickers = [NSMutableArray new];
     
@@ -48,9 +55,9 @@
     {
         [userStickers addObject:@"kitten.png"];
     }
-    if ([[user objectForKey:@"starCount"] intValue] > 0)
+    if ([[user objectForKey:@"campfireCount"] intValue] > 0)
     {
-        [userStickers addObject:@"star.png"];
+        [userStickers addObject:@"campfire.png"];
     }
     if ([[user objectForKey:@"puppyCount"] intValue] > 0)
     {
@@ -73,7 +80,7 @@
         [userStickers addObject:@"pizza.png"];
     }
     
-    allStickers = @[@"lion.png", @"kitten.png", @"star.png", @"puppy.png", @"tiger.png", @"murray.png", @"bear.png", @"pizza.png"];
+    allStickers = @[@"lion.png", @"kitten.png", @"campfire.png", @"puppy.png", @"tiger.png", @"murray.png", @"bear.png", @"pizza.png"];
 
 }
 

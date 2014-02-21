@@ -14,7 +14,7 @@
     __weak IBOutlet UILabel *countLabel;
     __weak IBOutlet UILabel *detailLabel;
     __weak IBOutlet UILabel *rarityLabel;
-    
+    __weak IBOutlet UILabel *stickerCountLabel;
 }
 
 @end
@@ -27,9 +27,14 @@
 {
     [super viewDidLoad];
     
+    stickerCountLabel.font = [UIFont fontWithName:@"Miso-Bold" size:30];
+    countLabel.font = [UIFont fontWithName:@"Miso-Bold" size:30];
+    rarityLabel.font = [UIFont fontWithName:@"Miso-Bold" size:36];
+    detailLabel.font = [UIFont fontWithName:@"Miso-Bold" size:28];
+    
     stickerImageView.image = [UIImage imageNamed:_stickerImageName];
     stickerImageView.layer.cornerRadius = 80.0;
-    countLabel.text = [NSString stringWithFormat:@"x%@", _count];
+    countLabel.text = [NSString stringWithFormat:@"%@", _count];
     
     NSString *stickerName = [_stickerImageName stringByReplacingOccurrencesOfString:@".png" withString:@""];
     
@@ -39,13 +44,13 @@
     
     if ([stickerName isEqualToString:@"lion"])
     {
-        rarityLabel.text = @"This sticker is hard to find!";
-        detailLabel.text = @"Lions are found in Africa. They are badass and can run really fast MPH. They're really really cool.";
+        rarityLabel.text = @"COMMON";
+        detailLabel.text = @"Lions are found in Africa. They lounge around being kings of all they see.";
     }
     else if ([stickerName isEqualToString:@"puppy"])
     {
-        rarityLabel.text = @"This sticker is easy to find!";
-        detailLabel.text = @"Puppies are totes adorbs. They cuddle at a rate of 50 cuddles per hour and can slobber all over your face faster than a humming bird flaps its wings!";
+        rarityLabel.text = @"RARE";
+        detailLabel.text = @"Puppies are adorable. They cuddle, jump and play! Then they pee on your carpet.";
     }
 //    else if ([stickerName isEqualToString:@"puppy"])
 //    {

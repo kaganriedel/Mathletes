@@ -19,6 +19,13 @@
     __weak IBOutlet UIButton *profileButton;
     __weak IBOutlet UIImageView *profileImageView;
     __weak IBOutlet UILabel *profileLabel;
+    __weak IBOutlet UIButton *mathButton;
+    __weak IBOutlet UIButton *progressButton;
+    __weak IBOutlet UIButton *stickersButton;
+    __weak IBOutlet UIButton *achievementsButton;
+    
+    
+    
 }
 
 @end
@@ -29,6 +36,23 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+   
+    
+    //set title and font of nav bar
+    [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor darkGrayColor], NSForegroundColorAttributeName, [UIFont fontWithName:@"Miso-Bold" size:28], NSFontAttributeName, nil]];
+    
+    //set color of bar button item
+    [self.navigationController.navigationBar setTintColor:[UIColor darkGrayColor]];
+    
+    //set back button color
+    [[UIBarButtonItem appearanceWhenContainedIn:[UINavigationBar class], nil] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor darkGrayColor], NSForegroundColorAttributeName,nil] forState:UIControlStateNormal];
+    
+
+    
+    mathButton.titleLabel.font = [UIFont fontWithName:@"Miso-Bold" size:48];
+    progressButton.titleLabel.font = [UIFont fontWithName:@"Miso-Bold" size:48];
+    stickersButton.titleLabel.font = [UIFont fontWithName:@"Miso-Bold" size:48];
+    achievementsButton.titleLabel.font = [UIFont fontWithName:@"Miso-Bold" size:48];
     
     userDefaults = [NSUserDefaults standardUserDefaults];
     
@@ -50,7 +74,7 @@
     for (UILabel* label in self.view.subviews) {
         if([label isKindOfClass:[UILabel class]])
         {
-            label.font = [UIFont fontWithName:@"Miso-Bold" size:40];
+            label.font = [UIFont fontWithName:@"Miso-Bold" size:48];
         }
     }
     
@@ -66,6 +90,7 @@
 
 -(void)viewWillAppear:(BOOL)animated
 {
+    
     self.navigationController.navigationBar.barTintColor = [UIColor whiteColor];
     if ([userDefaults objectForKey:@"profileImage"])
     {
@@ -88,6 +113,8 @@
 
 -(void)signUpViewController:(PFSignUpViewController *)signUpController didSignUpUser:(PFUser *)user
 {
+//    self.view.backgroundColor = [UIColor colorWithPatternImage:
+//                                 [UIImage imageNamed:@"math_login_screen_brand.png"]];
     _userArray = [self cardDifficulty];
     _subtractionUserArray = [self subtractionDifficulty];
     
@@ -120,6 +147,7 @@
 -(void)logInViewController:(PFLogInViewController *)logInController didLogInUser:(PFUser *)user
 {
     [logInController dismissViewControllerAnimated:YES completion:nil];
+   
     
 }
 

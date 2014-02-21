@@ -41,35 +41,35 @@
                      
                      @[[[Achievement alloc] initWithName:@"Add It Up!" Description:@"Complete 1 addition problem" Message:@"You completed your first addition problem!"],
                        [[Achievement alloc] initWithName:@"Add It Up x20!" Description:@"Complete 20 addition problems" Message:@"You completed 20 addition problems!"],
-                       [[Achievement alloc] initWithName:@"Add It Up x50!" Description:@"Complete 50 addition problems" Message:@"You completed 50 addition problems!"],
+                       [[Achievement alloc] initWithName:@"Add It Up x40!" Description:@"Complete 40 addition problems" Message:@"You completed 40 addition problems!"],
+                       [[Achievement alloc] initWithName:@"Add It Up x60!" Description:@"Complete 60 addition problems" Message:@"You completed 60 addition problems!"],
+                       [[Achievement alloc] initWithName:@"Add It Up x80!" Description:@"Complete 80 addition problems" Message:@"You completed 80 addition problems!"],
                        [[Achievement alloc] initWithName:@"Add It Up x100!" Description:@"Complete 100 addition problems" Message:@"You completed 100 addition problems!"],
+                       [[Achievement alloc] initWithName:@"Add It Up x120!" Description:@"Complete 120 addition problems" Message:@"You completed 120 addition problems!"],
+                       [[Achievement alloc] initWithName:@"Add It Up x140!" Description:@"Complete 140 addition problems" Message:@"You completed 140 addition problems!"],
+                       [[Achievement alloc] initWithName:@"Add It Up x160!" Description:@"Complete 160 addition problems" Message:@"You completed 160 addition problems!"],
+                       [[Achievement alloc] initWithName:@"Add It Up x180!" Description:@"Complete 180 addition problems" Message:@"You completed 180 addition problems!"],
                        [[Achievement alloc] initWithName:@"Add It Up x200!" Description:@"Complete 200 addition problems" Message:@"You completed 200 addition problems!"],
-                       [[Achievement alloc] initWithName:@"Add It Up x300!" Description:@"Complete 300 addition problems" Message:@"You completed 300 addition problems!"],
-                       [[Achievement alloc] initWithName:@"Add It Up x400!" Description:@"Complete 400 addition problems" Message:@"You completed 400 addition problems!"],
-                       [[Achievement alloc] initWithName:@"Add It Up x500!" Description:@"Complete 500 addition problems" Message:@"You completed 500 addition problems!"],
-                       [[Achievement alloc] initWithName:@"Add It Up x600!" Description:@"Complete 600 addition problems" Message:@"You completed 600 addition problems!"],
-                       [[Achievement alloc] initWithName:@"Add It Up x700!" Description:@"Complete 700 addition problems" Message:@"You completed 700 addition problems!"],
-                       [[Achievement alloc] initWithName:@"Add It Up x800!" Description:@"Complete 800 addition problems" Message:@"You completed 800 addition problems!"],
-                       [[Achievement alloc] initWithName:@"Add It Up x900!" Description:@"Complete 900 addition problems" Message:@"You completed 900 addition problems!"],
-                       [[Achievement alloc] initWithName:@"Add It Up x1000!" Description:@"Complete 1000 addition problems" Message:@"You completed 1000 addition problems!"],
-                       [[Achievement alloc] initWithName:@"Add It Up x1100!" Description:@"Complete 1100 addition problems" Message:@"You completed 1100 addition problems!"],
-                       [[Achievement alloc] initWithName:@"Add It Up x1200!" Description:@"Complete 1200 addition problems" Message:@"You completed 1200 addition problems!"]],
+                       [[Achievement alloc] initWithName:@"Add It Up x225!" Description:@"Complete 225 addition problems" Message:@"You completed 225 addition problems!"],
+                       [[Achievement alloc] initWithName:@"Add It Up x250!" Description:@"Complete 250 addition problems" Message:@"You completed 250 addition problems!"],
+                       [[Achievement alloc] initWithName:@"Add It Up x275!" Description:@"Complete 275 addition problems" Message:@"You completed 275 addition problems!"],
+                       [[Achievement alloc] initWithName:@"Add It Up x300!" Description:@"Complete 300 addition problems" Message:@"You completed 300 addition problems!"]],
                      
-                     @[[[Achievement alloc] initWithName:@"Adding At 25 Miles Per Hour!" Description:@"Complete 25 addition problems in less than 6 seconds each" Message:@"You completed 25 addition problems in less than 6 seconds each!"],
-                       [[Achievement alloc] initWithName:@"Adding At 50 Miles Per Hour!" Description:@"Complete 50 addition problems in less than 6 seconds each" Message:@"You completed 50 addition problems in less than 6 seconds each!"],
-                       [[Achievement alloc] initWithName:@"Adding At 100 Miles Per Hour!" Description:@"Complete 100 addition problems in less than 6 seconds each" Message:@"You completed 100 addition problems in less than 6 seconds each!"],
+                     @[[[Achievement alloc] initWithName:@"Adding At 15 Miles Per Hour!" Description:@"Complete 15 addition problems in less than 6 seconds each" Message:@"You completed 15 addition problems in less than 6 seconds each!"],
+                       [[Achievement alloc] initWithName:@"Adding At 30 Miles Per Hour!" Description:@"Complete 30 addition problems in less than 6 seconds each" Message:@"You completed 30 addition problems in less than 6 seconds each!"],
+                       [[Achievement alloc] initWithName:@"Adding At 45 Miles Per Hour!" Description:@"Complete 45 addition problems in less than 6 seconds each" Message:@"You completed 45 addition problems in less than 6 seconds each!"],
+                       [[Achievement alloc] initWithName:@"Adding At 60 Miles Per Hour!" Description:@"Complete 60 addition problems in less than 6 seconds each" Message:@"You completed 60 addition problems in less than 6 seconds each!"],
+                       [[Achievement alloc] initWithName:@"Adding At 75 Miles Per Hour!" Description:@"Complete 75 addition problems in less than 6 seconds each" Message:@"You completed 75 addition problems in less than 6 seconds each!"],
+                       [[Achievement alloc] initWithName:@"Adding At 90 Miles Per Hour!" Description:@"Complete 90 addition problems in less than 6 seconds each" Message:@"You completed 90 addition problems in less than 6 seconds each!"],
+                       [[Achievement alloc] initWithName:@"Adding At 105 Miles Per Hour!" Description:@"Complete 105 addition problems in less than 6 seconds each" Message:@"You completed 105 addition problems in less than 6 seconds each!"],
+                       [[Achievement alloc] initWithName:@"Adding At 120 Miles Per Hour!" Description:@"Complete 120 addition problems in less than 6 seconds each" Message:@"You completed 120 addition problems in less than 6 seconds each!"],
+                       [[Achievement alloc] initWithName:@"Adding At 135 Miles Per Hour!" Description:@"Complete 135 addition problems in less than 6 seconds each" Message:@"You completed 135 addition problems in less than 6 seconds each!"],
                        [[Achievement alloc] initWithName:@"Adding At 150 Miles Per Hour!" Description:@"Complete 150 addition problems in less than 6 seconds each" Message:@"You completed 150 addition problems in less than 6 seconds each!"],
-                       [[Achievement alloc] initWithName:@"Adding At 200 Miles Per Hour!" Description:@"Complete 200 addition problems in less than 6 seconds each" Message:@"You completed 200 addition problems in less than 6 seconds each!"],
-                       [[Achievement alloc] initWithName:@"Adding At 250 Miles Per Hour!" Description:@"Complete 250 addition problems in less than 6 seconds each" Message:@"You completed 250 addition problems in less than 6 seconds each!"],
-                       [[Achievement alloc] initWithName:@"Adding At 300 Miles Per Hour!" Description:@"Complete 300 addition problems in less than 6 seconds each" Message:@"You completed 300 addition problems in less than 6 seconds each!"],
-                       [[Achievement alloc] initWithName:@"Adding At 350 Miles Per Hour!" Description:@"Complete 350 addition problems in less than 6 seconds each" Message:@"You completed 350 addition problems in less than 6 seconds each!"],
-                       [[Achievement alloc] initWithName:@"Adding At 400 Miles Per Hour!" Description:@"Complete 400 addition problems in less than 6 seconds each" Message:@"You completed 400 addition problems in less than 6 seconds each!"],
-                       [[Achievement alloc] initWithName:@"Adding At 450 Miles Per Hour!" Description:@"Complete 450 addition problems in less than 6 seconds each" Message:@"You completed 450 addition problems in less than 6 seconds each!"],
-                       [[Achievement alloc] initWithName:@"Adding At 500 Miles Per Hour!" Description:@"Complete 500 addition problems in less than 6 seconds each" Message:@"You completed 500 addition problems in less than 6 seconds each!"],
-                       [[Achievement alloc] initWithName:@"Adding At 550 Miles Per Hour!" Description:@"Complete 550 addition problems in less than 6 seconds each" Message:@"You completed 550 addition problems in less than 6 seconds each!"],
-                       [[Achievement alloc] initWithName:@"Adding At 600 Miles Per Hour!" Description:@"Complete 600 addition problems in less than 6 seconds each" Message:@"You completed 600 addition problems in less than 6 seconds each!"],
-                       [[Achievement alloc] initWithName:@"Adding At 650 Miles Per Hour!" Description:@"Complete 650 addition problems in less than 6 seconds each" Message:@"You completed 650 addition problems in less than 6 seconds each!"],
-                       [[Achievement alloc] initWithName:@"Adding At 700 Miles Per Hour!" Description:@"Complete 700 addition problems in less than 6 seconds each" Message:@"You completed 700 addition problems in less than 6 seconds each!"]],
+                       [[Achievement alloc] initWithName:@"Adding At 170 Miles Per Hour!" Description:@"Complete 170 addition problems in less than 6 seconds each" Message:@"You completed 170 addition problems in less than 6 seconds each!"],
+                       [[Achievement alloc] initWithName:@"Adding At 190 Miles Per Hour!" Description:@"Complete 190 addition problems in less than 6 seconds each" Message:@"You completed 190 addition problems in less than 6 seconds each!"],
+                       [[Achievement alloc] initWithName:@"Adding At 210 Miles Per Hour!" Description:@"Complete 210 addition problems in less than 6 seconds each" Message:@"You completed 210 addition problems in less than 6 seconds each!"],
+                       [[Achievement alloc] initWithName:@"Adding At 230 Miles Per Hour!" Description:@"Complete 230 addition problems in less than 6 seconds each" Message:@"You completed 230 addition problems in less than 6 seconds each!"],
+                       [[Achievement alloc] initWithName:@"Adding At 250 Miles Per Hour!" Description:@"Complete 250 addition problems in less than 6 seconds each" Message:@"You completed 250 addition problems in less than 6 seconds each!"]],
                      
                      @[[[Achievement alloc] initWithName:@"Take It Away!" Description:@"Complete 1 subtraction problem" Message:@"You completed your first subtraction problem!"],
                        [[Achievement alloc] initWithName:@"Take It Away x20!" Description:@"Complete 20 subtraction problems" Message:@"You completed 20 subtraction problems!"],
@@ -179,21 +179,33 @@
     {
         case 0:
             achievementHeader.titleLabel.text = @"Daily";
+            achievementHeader.titleLabel.font = [UIFont fontWithName:@"Miso-Bold" size:24];
+            achievementHeader.backgroundColor = [UIColor colorWithRed:130.0/255.0 green:183.0/255.0 blue:53.0/255.0 alpha:1];
             break;
         case 1:
             achievementHeader.titleLabel.text = @"Addition";
+             achievementHeader.titleLabel.font = [UIFont fontWithName:@"Miso-Bold" size:24];
+            achievementHeader.backgroundColor = [UIColor colorWithRed:130.0/255.0 green:183.0/255.0 blue:53.0/255.0 alpha:1];
             break;
         case 2:
             achievementHeader.titleLabel.text = @"Speedy Addition";
+             achievementHeader.titleLabel.font = [UIFont fontWithName:@"Miso-Bold" size:24];
+            achievementHeader.backgroundColor = [UIColor colorWithRed:130.0/255.0 green:183.0/255.0 blue:53.0/255.0 alpha:1];
             break;
         case 3:
             achievementHeader.titleLabel.text = @"Subtraction";
+             achievementHeader.titleLabel.font = [UIFont fontWithName:@"Miso-Bold" size:24];
+            achievementHeader.backgroundColor = [UIColor colorWithRed:222.0/255.0 green:54.0/255.0 blue:64.0/255.0 alpha:1];
             break;
         case 4:
             achievementHeader.titleLabel.text = @"Speedy Subtraction";
+             achievementHeader.titleLabel.font = [UIFont fontWithName:@"Miso-Bold" size:24];
+            achievementHeader.backgroundColor = [UIColor colorWithRed:222.0/255.0 green:54.0/255.0 blue:64.0/255.0 alpha:1];
             break;
         case 5:
             achievementHeader.titleLabel.text = @"Total Math Problems";
+             achievementHeader.titleLabel.font = [UIFont fontWithName:@"Miso-Bold" size:24];
+           achievementHeader.backgroundColor = [UIColor colorWithRed:222.0/255.0 green:54.0/255.0 blue:64.0/255.0 alpha:1];
             break;
             
         default:

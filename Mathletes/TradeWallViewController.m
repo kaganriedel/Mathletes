@@ -18,7 +18,6 @@
     NSMutableArray *trades;
     NSTimer *timer;
     PFUser *user;
-
 }
 
 @end
@@ -29,13 +28,15 @@
 -(void)viewDidLoad
 {
     [super viewDidLoad];
-    
+
     user = [PFUser currentUser];
+    
 }
 
--(void)viewDidAppear:(BOOL)animated
+
+-(void)viewWillAppear:(BOOL)animated
 {
-    [super viewDidAppear:animated];
+    [super viewWillAppear:animated];
     
     [self reloadTrades];
     
@@ -52,6 +53,8 @@
 {
     [self reloadTrades];
 }
+
+
 
 -(void)reloadTrades
 {
@@ -144,6 +147,7 @@
             else
             {
                 PFUser *tradeUser = [cell.trade objectForKey:@"user"];
+                //This doesn't work. can't change the user's objectForKey without being logged in
                 [tradeUser fetchIfNeededInBackgroundWithBlock:^(PFObject *object, NSError *error)
                 {
                     [object increaseKey:[NSString stringWithFormat:@"%@Count", [trade objectForKey:@"get"]]];
@@ -164,6 +168,8 @@
     TradeWallCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TradeCell"];
     
     cell.trade = trades[indexPath.row];
+//    cell.textLabel.font = [UIFont fontWithName:@"Miso-Bold" size:17.0f];
+    
     
     //the order of "give" and "get" are reversed here because what someone offers to "give/get" is the opposite of what the other person accepts to "give/get"
     PFUser *tradeUser = [cell.trade objectForKey:@"user"];
