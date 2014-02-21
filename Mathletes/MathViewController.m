@@ -90,6 +90,25 @@
     if ([_operationType isEqualToString:@"+"])
     {
         self.navigationItem.title = @"Addition";
+        
+        PFQuery *problemQuery = [PFQuery queryWithClassName:@"MathProblem"];
+        [problemQuery whereKey:@"problemType" equalTo:@0];
+        [problemQuery whereKey:@"mathUser" equalTo:[PFUser currentUser]];
+        
+        [problemQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
+         {
+             _userArray = (NSMutableArray *)objects;
+             
+             for (int i = 0; i < _userArray.count; i++)
+             {
+                 MathProblem *problem = _userArray[i];
+                 NSLog(@"%i %ld",problem.mathProblemValue, (long)problem.equationDifficulty);
+                 
+             }
+             
+             [self newMathProblem];
+             [self startTimer];
+         }];
         problemType = 0;
         operatorLabel.textColor = [UIColor colorWithRed:130.0/255.0 green:183.0/255.0 blue:53.0/255.0 alpha:1];
         
@@ -103,36 +122,15 @@
     else if ([_operationType isEqualToString:@"x"])
     {
         self.navigationItem.title = @"Multiplication";
-        problemType = 2;
+        //problemType = 2;
         operatorLabel.textColor = [UIColor colorWithRed:221.0/255.0 green:168.0/255.0 blue:57.0/255.0 alpha:1];
     }
     else if ([_operationType isEqualToString:@"/"])
     {
         self.navigationItem.title = @"Division";
-        problemType = 3;
+        //problemType = 3;
         operatorLabel.textColor = [UIColor colorWithRed:95.0/255.0 green:162.0/255.0 blue:219.0/255.0 alpha:1];
     }
-    
-    PFQuery *problemQuery = [PFQuery queryWithClassName:@"MathProblem"];
-    [problemQuery whereKey:@"problemType" equalTo:@(problemType)];
-    [problemQuery whereKey:@"mathUser" equalTo:[PFUser currentUser]];
-    
-    [problemQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
-     {
-         _userArray = (NSMutableArray *)objects;
-         
-         for (int i = 0; i < _userArray.count; i++)
-         {
-             MathProblem *problem = _userArray[i];
-             NSLog(@"%i %ld",problem.mathProblemValue, (long)problem.equationDifficulty);
-             
-         }
-
-         [self newMathProblem];
-         [self startTimer];
-     }];
-    
-
     
 }
 
@@ -348,18 +346,24 @@
         [var1Label setText:[NSString stringWithFormat:@"%i", _addend1]];
         [var2Label setText:[NSString stringWithFormat:@"%i", _addend2]];
     }
-    /*
+    
     else if ([_operationLabel.text isEqualToString:@"-"])
     {
         [self sortingArray];
         
         //original random value
-        _addend1 = arc4random()%18;
-        _addend2 = arc4random()%18;
+        _addend1 = arc4random()%19;
+        _addend2 = arc4random()%10;
         
-        [self setNewKey];
+        if (_addend1 < _addend2)
+        {
+            int *tempInt = &(_addend2);
+            _addend2 = _addend1;
+            _addend1 = *tempInt;
+        }
         
         //setting pool of possible problems
+    
         keyAddend = 40;
         
         if (firstNonZeroKey > 35)
@@ -378,9 +382,21 @@
             }
         }
         
+        int newProblemIndex = arc4random()%keyAddend + firstNonZeroKey;
+        
+        //_userArray[newProblemIndex];
+        
+        [_userArray enumerateObjectsUsingBlock:^(MathProblem *problem, NSUInteger idx, BOOL *stop)
+         {
+             if (newProblemIndex == problem.mathProblemValue)
+             {
+                 difficulty = problem.equationDifficulty;
+                 userArrayKey = idx;
+             }
+         }];
         
         //rechoosing problem if proficiency is reached
-        if (userArrayKey < firstNonZeroKey || userArrayKey > (firstNonZeroKey + keyAddend))
+        if (userArrayKey >= firstNonZeroKey && userArrayKey < (firstNonZeroKey + keyAddend))
         {
             //allowing for old problems when there is a pool < 20
             if (firstNonZeroKey > 80)
@@ -389,8 +405,8 @@
                 
                 if (chanceOfOldProblem == 0)
                 {
-                    _addend1 = arc4random()%8 + 4;
-                    _addend2 = arc4random()%4 + 4;
+                    _addend1 = arc4random()%4 + 8;
+                    _addend2 = arc4random()%4 + 8;
                     
                     [self setNewKey];
                 }
@@ -409,7 +425,7 @@
         [var1Label setText:[NSString stringWithFormat:@"%i", _addend1]];
         [var2Label setText:[NSString stringWithFormat:@"%i", _addend2]];
     }
-    */
+    
     else
     {
         feedbackLabel.text = nil;
