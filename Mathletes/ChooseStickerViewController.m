@@ -79,7 +79,7 @@
     ChooseStickerCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"ChooseStickerCell" forIndexPath:indexPath];
     cell.imageView.image = [UIImage imageNamed:userStickers[indexPath.row]];
     cell.imageName = userStickers[indexPath.row];
-    cell.imageView.layer.cornerRadius = 35.0;
+    cell.imageView.layer.cornerRadius = 34.0;
 
     
     return cell;
