@@ -63,7 +63,6 @@
 
 -(void)buildView
 {
-    self.title = _additionTabBarItem.title;
     [_operandTabBar setSelectedItem:_operandTabBar.items[0]];
     _operand = @"+";
     [self createGrid];
@@ -145,7 +144,6 @@
 
 -(void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item
 {
-    self.title = item.title;
     if (item == _additionTabBarItem)
     {
         _operand = @"+";
