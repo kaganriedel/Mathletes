@@ -36,6 +36,13 @@
     [super viewDidLoad];
 
     user = [PFUser currentUser];
+    for (UILabel* label in self.view.subviews) {
+        if([label isKindOfClass:[UILabel class]])
+        {
+            label.font = [UIFont fontWithName:@"Miso-Bold" size:40];
+        }
+    }
+
     
     userStickers = [NSMutableArray new];
     

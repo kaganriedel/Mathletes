@@ -11,10 +11,11 @@
 
 @interface ChooseOperationsViewController ()
 {
-    __weak IBOutlet UILabel *additionLabel;
-    __weak IBOutlet UILabel *subtractionLabel;
-    __weak IBOutlet UILabel *multiplicationLabel;
-    __weak IBOutlet UILabel *divisionLabel;
+    
+    __weak IBOutlet UIButton *additionButton;
+    __weak IBOutlet UIButton *subtractionButton;
+    __weak IBOutlet UIButton *multiplicationButton;
+    __weak IBOutlet UIButton *divisionButton;
 }
 
 
@@ -29,14 +30,11 @@
     [super viewDidLoad];
 
     self.navigationController.navigationBar.backgroundColor = [UIColor colorWithRed:86.0/255.0 green:204.0/255.0 blue:88.0/255.0 alpha:1.0];
+    additionButton.titleLabel.font = [UIFont fontWithName:@"Miso-Bold" size:48];
+    subtractionButton.titleLabel.font = [UIFont fontWithName:@"Miso-Bold" size:48];
+    multiplicationButton.titleLabel.font = [UIFont fontWithName:@"Miso-Bold" size:48];
+    divisionButton.titleLabel.font = [UIFont fontWithName:@"Miso-Bold" size:48];
     
-    for (UILabel* label in self.view.subviews)
-    {
-        if([label isKindOfClass:[UILabel class]])
-        {
-            label.font = [UIFont fontWithName:@"Miso-Bold" size:48];
-        }
-    }
 
 }
 

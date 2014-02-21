@@ -14,7 +14,7 @@
     __weak IBOutlet UILabel *countLabel;
     __weak IBOutlet UILabel *detailLabel;
     __weak IBOutlet UILabel *rarityLabel;
-    
+    __weak IBOutlet UILabel *stickerCountLabel;
 }
 
 @end
@@ -27,9 +27,14 @@
 {
     [super viewDidLoad];
     
+    stickerCountLabel.font = [UIFont fontWithName:@"Miso-Bold" size:30];
+    countLabel.font = [UIFont fontWithName:@"Miso-Bold" size:30];
+    rarityLabel.font = [UIFont fontWithName:@"Miso-Bold" size:36];
+    detailLabel.font = [UIFont fontWithName:@"Miso-Bold" size:28];
+    
     stickerImageView.image = [UIImage imageNamed:_stickerImageName];
     stickerImageView.layer.cornerRadius = 80.0;
-    countLabel.text = [NSString stringWithFormat:@"x%@", _count];
+    countLabel.text = [NSString stringWithFormat:@"%@", _count];
     
     NSString *stickerName = [_stickerImageName stringByReplacingOccurrencesOfString:@".png" withString:@""];
     

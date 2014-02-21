@@ -32,20 +32,9 @@
     __weak IBOutlet UILabel *feedbackLabel;
     __weak IBOutlet UIImageView *feedbackImageView;
     __weak IBOutlet UIView *feedbackView;
-    __weak IBOutlet UILabel *oneLabel;
-    __weak IBOutlet UILabel *twoLabel;
-    __weak IBOutlet UILabel *threeLabel;
-    __weak IBOutlet UILabel *fourLabel;
-    __weak IBOutlet UILabel *fiveLabel;
-    __weak IBOutlet UILabel *sixLabel;
-    __weak IBOutlet UILabel *sevenLabel;
-    __weak IBOutlet UILabel *eightLabel;
-    __weak IBOutlet UILabel *nineLabel;
-    __weak IBOutlet UILabel *backLabel;
-    __weak IBOutlet UILabel *zeroLabel;
-    __weak IBOutlet UILabel *enterLabel;
-    __weak IBOutlet UILabel *nextLabel;
     __weak IBOutlet UILabel *operatorLabel;
+    __weak IBOutlet UIImageView *responseImageView;
+    
     
     NSMutableArray *mathProblems;
     NSInteger difficulty;
@@ -70,30 +59,31 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
     [self buildView];
     
     NSInteger problemType;
 
-    for (UILabel* label in self.view.subviews)
-    {
+    for (UILabel* label in self.view.subviews) {
         if([label isKindOfClass:[UILabel class]])
         {
             label.font = [UIFont fontWithName:@"Miso-Bold" size:40];
         }
     }
-    oneLabel.font = [UIFont fontWithName:@"Miso-Bold" size:28];
-    twoLabel.font = [UIFont fontWithName:@"Miso-Bold" size:28];
-    threeLabel.font = [UIFont fontWithName:@"Miso-Bold" size:28];
-    fourLabel.font = [UIFont fontWithName:@"Miso-Bold" size:28];
-    fiveLabel.font = [UIFont fontWithName:@"Miso-Bold" size:28];
-    sixLabel.font = [UIFont fontWithName:@"Miso-Bold" size:28];
-    sevenLabel.font = [UIFont fontWithName:@"Miso-Bold" size:28];
-    eightLabel.font = [UIFont fontWithName:@"Miso-Bold" size:28];
-    nineLabel.font = [UIFont fontWithName:@"Miso-Bold" size:28];
-    zeroLabel.font = [UIFont fontWithName:@"Miso-Bold" size:28];
-    backLabel.font = [UIFont fontWithName:@"Miso-Bold" size:22];
-    enterLabel.font = [UIFont fontWithName:@"Miso-Bold" size:22];
-    nextLabel.font = [UIFont fontWithName:@"Miso-Bold" size:22];
+    
+    oneButton.titleLabel.font = [UIFont fontWithName:@"Miso-Bold" size:28];
+    twoButton.titleLabel.font = [UIFont fontWithName:@"Miso-Bold" size:28];
+    threeButton.titleLabel.font = [UIFont fontWithName:@"Miso-Bold" size:28];
+    fourButton.titleLabel.font = [UIFont fontWithName:@"Miso-Bold" size:28];
+    fiveButton.titleLabel.font = [UIFont fontWithName:@"Miso-Bold" size:28];
+    sixButton.titleLabel.font = [UIFont fontWithName:@"Miso-Bold" size:28];
+    sevenButton.titleLabel.font = [UIFont fontWithName:@"Miso-Bold" size:28];
+    eightButton.titleLabel.font = [UIFont fontWithName:@"Miso-Bold" size:28];
+    nineButton.titleLabel.font = [UIFont fontWithName:@"Miso-Bold" size:28];
+    zeroButton.titleLabel.font = [UIFont fontWithName:@"Miso-Bold" size:28];
+    goButton.titleLabel.font = [UIFont fontWithName:@"Miso-Bold" size:28];
+    newButton.titleLabel.font = [UIFont fontWithName:@"Miso-Bold" size:28];
+   
     feedbackLabel.font = [UIFont fontWithName:@"Miso-Bold" size:34];
     inputLabel.font = [UIFont fontWithName:@"Miso-Bold" size:40];
 
@@ -294,8 +284,6 @@
 {
     newButton.alpha = 0.0;
     goButton.alpha = 1.0;
-    enterLabel.alpha = 1.0;
-    nextLabel.alpha = 0.0;
     feedbackLabel.text = nil;
     inputLabel.text = @"";
     feedbackView.alpha = 0.0;
@@ -502,8 +490,7 @@
 {
     inputLabel.text = @"";
     feedbackView.alpha = 1.0;
-    enterLabel.alpha = 1.0;
-    nextLabel.alpha = 0.0;
+    responseImageView.image = [UIImage imageNamed:@"ic_correct.png"];
     feedbackView.backgroundColor = [UIColor colorWithRed:130.0/255.0 green:183.0/255.0 blue:53.0/255.0 alpha:1.0];
     if (countDown <= 6)
     {
@@ -546,8 +533,7 @@
 {
     goButton.alpha = 0.0;
     newButton.alpha = 1.0;
-    nextLabel.alpha = 1.0;
-    enterLabel.alpha = 0.0;
+    responseImageView.image = [UIImage imageNamed:@"ic_wrong_face.png"];
 
     feedbackView.alpha = 1.0;
     feedbackView.backgroundColor = [UIColor colorWithRed:222.0/255.0 green:54.0/255.0 blue:64.0/255.0 alpha:1];
@@ -1129,7 +1115,7 @@
                                       detail:nil
                                        image:notificationImage
                                  andDuration:3.0];
-    
+   
     [user saveInBackground];
 
     
@@ -1143,6 +1129,8 @@
 - (IBAction)onOneButtonPressed:(id)sender
 {
     inputLabel.text = [inputLabel.text stringByAppendingString:@"1"];
+    
+    
 }
 
 - (IBAction)onTwoButtonPressed:(id)sender
