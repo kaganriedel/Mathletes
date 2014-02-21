@@ -40,25 +40,6 @@
     excellentLabel.font = [UIFont fontWithName:@"Miso-Bold" size:20];
     proficientLabel.font = [UIFont fontWithName:@"Miso-Bold" size:20];
     effecientLabel.font = [UIFont fontWithName:@"Miso-Bold" size:20];
-
-    PFQuery *problemQuery = [PFQuery queryWithClassName:@"MathProblem"];
-    [problemQuery whereKey:@"problemType" equalTo:@0];
-    [problemQuery whereKey:@"mathUser" equalTo:[PFUser currentUser]];
-
-    [problemQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
-     {
-         _gridArray = (NSMutableArray *)objects;
-         
-         for (int i = 0; i < _gridArray.count; i++)
-         {
-             MathProblem *problem = _gridArray[i];
-             NSLog(@"%li %ld",(long)problem.mathProblemValue, (long)problem.equationDifficulty);
-         }
-         
-         [self buildView];
-     }];
-    
-    
 }
 
 -(void)buildView
@@ -66,6 +47,24 @@
     self.title = _additionTabBarItem.title;
     [_operandTabBar setSelectedItem:_operandTabBar.items[0]];
     _operand = @"+";
+    
+    PFQuery *problemQuery = [PFQuery queryWithClassName:@"MathProblem"];
+    [problemQuery whereKey:@"problemType" equalTo:@0];
+    [problemQuery whereKey:@"mathUser" equalTo:[PFUser currentUser]];
+    
+    [problemQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
+     {
+         _gridArray = (NSMutableArray *)objects;
+         
+         for (int i = 0; i < _gridArray.count; i++)
+         {
+             MathProblem *problem = _gridArray[i];
+             NSLog(@"%i %i %ld",problem.firstValue, problem.secondValue,(long)problem.equationDifficulty);
+         }
+         
+         [self buildView];
+     }];
+    
     [self createGrid];
 }
 
@@ -93,21 +92,37 @@
             
             if ([_operand isEqual:@"-"])
             {
+                
                 for (int k = subtractionValue; k < 10; k++)
                 {
                     [gridLabel setText:[NSString stringWithFormat:@"%d%@%d",i+subtractionValue+subChange,_operand, j]];
+                    
+                    NSString *gridValues = [NSString stringWithFormat: @"%d%d",i+subtractionValue+subChange, j];
+                    
+                    [_gridArray enumerateObjectsUsingBlock:^(MathProblem *problem, NSUInteger idx, BOOL *stop)
+                     {
+                         NSString *valuesString = [NSString stringWithFormat: @"%i%i", problem.firstValue, problem.secondValue];
+                         
+                         if ([valuesString isEqualToString:gridValues])
+                         {
+                             difficulty = problem.equationDifficulty;
+                             key = idx;
+                         }
+                     }];
                 }
             }
             else if ([_operand isEqual:@"+"])
             {
+                
                 [gridLabel setText:[NSString stringWithFormat:@"%d%@%d",i,_operand, j]];
                 
-                NSString *newkey = [NSString stringWithFormat:@"%d%d",i, j];
-                NSInteger numkey = newkey.intValue;
+                NSString *gridValues = [NSString stringWithFormat: @"%d%d",i, j];
                 
                 [_gridArray enumerateObjectsUsingBlock:^(MathProblem *problem, NSUInteger idx, BOOL *stop)
                  {
-                     if (numkey == problem.mathProblemValue)
+                     NSString *valuesString = [NSString stringWithFormat: @"%i%i", problem.firstValue, problem.secondValue];
+                     
+                     if ([valuesString isEqualToString:gridValues])
                      {
                          difficulty = problem.equationDifficulty;
                          key = idx;
@@ -149,10 +164,46 @@
     if (item == _additionTabBarItem)
     {
         _operand = @"+";
+        
+        PFQuery *problemQuery = [PFQuery queryWithClassName:@"MathProblem"];
+        [problemQuery whereKey:@"problemType" equalTo:@0];
+        [problemQuery whereKey:@"mathUser" equalTo:[PFUser currentUser]];
+        
+        [problemQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
+         {
+             _gridArray = (NSMutableArray *)objects;
+             
+             for (int i = 0; i < _gridArray.count; i++)
+             {
+                 MathProblem *problem = _gridArray[i];
+                 NSLog(@"%i %i %ld",problem.firstValue, problem.secondValue,(long)problem.equationDifficulty);
+             }
+             
+             [self buildView];
+         }];
+        
     }
     else if (item == _subtractionTabBarItem)
     {
         _operand = @"-";
+        
+        PFQuery *problemQuery = [PFQuery queryWithClassName:@"MathProblem"];
+        [problemQuery whereKey:@"problemType" equalTo:@1];
+        [problemQuery whereKey:@"mathUser" equalTo:[PFUser currentUser]];
+        
+        [problemQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
+         {
+             _gridArray = (NSMutableArray *)objects;
+             
+             for (int i = 0; i < _gridArray.count; i++)
+             {
+                 MathProblem *problem = _gridArray[i];
+                 NSLog(@"%i %i %ld",problem.firstValue, problem.secondValue,(long)problem.equationDifficulty);
+             }
+             
+             [self buildView];
+         }];
+        
     }
     
     [self createGrid];
