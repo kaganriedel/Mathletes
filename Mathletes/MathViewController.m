@@ -1070,10 +1070,10 @@
     }
     else if (randomSticker < 60)
     {
-        [user increaseKey:@"starCount"];
-        notificationImage = [UIImage imageNamed:@"star.png"];
+        [user increaseKey:@"campfireCount"];
+        notificationImage = [UIImage imageNamed:@"campfire.png"];
 
-        NSLog(@"star count +1");
+        NSLog(@"campfire count +1");
     }
     else if (randomSticker < 70)
     {

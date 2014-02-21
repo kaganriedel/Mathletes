@@ -31,7 +31,7 @@
     
     
     
-    stickers = @[@"lion.png",@"kitten.png",@"star.png", @"puppy.png", @"tiger.png", @"murray.png", @"bear.png", @"pizza.png"];
+    stickers = @[@"lion.png",@"kitten.png",@"campfire.png", @"puppy.png", @"tiger.png", @"murray.png", @"bear.png", @"pizza.png"];
     
     
 }
@@ -44,7 +44,7 @@
     
     userStickers = @[[user objectForKey:@"lionCount"]?:@(0),
                      [user objectForKey:@"kittenCount"]?:@(0),
-                     [user objectForKey:@"starCount"]?:@(0),
+                     [user objectForKey:@"campfireCount"]?:@(0),
                      [user objectForKey:@"puppyCount"]?:@(0),
                      [user objectForKey:@"tigerCount"]?:@(0),
                      [user objectForKey:@"murrayCount"]?:@(0),
