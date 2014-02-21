@@ -12,7 +12,8 @@
 @interface TradeWallCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *giveImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *getImageView;
-@property (weak, nonatomic) IBOutlet UILabel *myTradeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *giveLabel;
+@property (weak, nonatomic) IBOutlet UILabel *getLabel;
 @property PFObject *trade;
 
 @end

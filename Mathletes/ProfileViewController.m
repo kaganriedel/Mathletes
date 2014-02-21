@@ -9,6 +9,7 @@
 #import "ProfileViewController.h"
 #import "Parse/Parse.h"
 #import "MathProblem.h"
+#import "CMNavBarNotificationView/CMNavBarNotificationView.h"
 
 
 @interface ProfileViewController () <PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate>
@@ -39,7 +40,7 @@
    
     
     //set title and font of nav bar
-    [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor darkGrayColor], NSForegroundColorAttributeName, [UIFont fontWithName:@"Miso-Bold" size:28], NSFontAttributeName, nil]];
+    [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor darkGrayColor], NSForegroundColorAttributeName, [UIFont fontWithName:@"Miso-Bold" size:26], NSFontAttributeName, nil]];
     
     //set color of bar button item
     [self.navigationController.navigationBar setTintColor:[UIColor darkGrayColor]];
@@ -109,6 +110,23 @@
     [super viewDidAppear:animated];
     
     [self checkForLoggedInUserAnimated:animated];
+    
+    PFUser *user = [PFUser currentUser];
+    PFQuery *query = [PFQuery queryWithClassName:@"AcceptedTrade"];
+    [query whereKey:@"user" equalTo:[PFUser currentUser]];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        for (PFObject *acceptedTrade in objects) {
+            [user increaseKey:[NSString stringWithFormat:@"%@Count",[acceptedTrade objectForKey:@"get"]]];
+            [CMNavBarNotificationView notifyWithText:@"Your trade was accepted!"
+                                              detail:[NSString stringWithFormat:@"You got a %@ sticker!", [acceptedTrade objectForKey:@"get"]]
+                                               image:[UIImage imageNamed:[NSString stringWithFormat:@"%@.png",[acceptedTrade objectForKey:@"get"]]]
+                                         andDuration:3.0];
+            [acceptedTrade deleteInBackground];
+        }
+        [user saveInBackground];
+    }];
+    
+    
 }
 
 -(void)signUpViewController:(PFSignUpViewController *)signUpController didSignUpUser:(PFUser *)user

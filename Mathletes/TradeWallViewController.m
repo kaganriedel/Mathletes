@@ -146,12 +146,11 @@
             }
             else
             {
-                PFUser *tradeUser = [cell.trade objectForKey:@"user"];
-                //This doesn't work. can't change the user's objectForKey without being logged in
-                [tradeUser fetchIfNeededInBackgroundWithBlock:^(PFObject *object, NSError *error)
-                {
-                    [object increaseKey:[NSString stringWithFormat:@"%@Count", [trade objectForKey:@"get"]]];
-                }];
+                PFObject *acceptedTrade = [PFObject objectWithClassName:@"AcceptedTrade"];
+                [acceptedTrade setObject:[cell.trade objectForKey:@"user"] forKey:@"user"];
+                [acceptedTrade setObject:[trade objectForKey:@"get"] forKey:@"get"];
+                [acceptedTrade saveInBackground];
+                
                 [trades removeObjectAtIndex:selectedIndexPath.row];
                 [tradeTableView deleteRowsAtIndexPaths:@[selectedIndexPath] withRowAnimation:UITableViewRowAnimationLeft];
                 [user increaseKey:[NSString stringWithFormat:@"%@Count", [trade objectForKey:@"give"]]];
@@ -168,19 +167,12 @@
     TradeWallCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TradeCell"];
     
     cell.trade = trades[indexPath.row];
-//    cell.textLabel.font = [UIFont fontWithName:@"Miso-Bold" size:17.0f];
+    cell.giveLabel.font = [UIFont fontWithName:@"Miso-Bold" size:36.0f];
+    cell.getLabel.font = [UIFont fontWithName:@"Miso-Bold" size:36.0f];
     
     
     //the order of "give" and "get" are reversed here because what someone offers to "give/get" is the opposite of what the other person accepts to "give/get"
-    PFUser *tradeUser = [cell.trade objectForKey:@"user"];
-    if ([tradeUser.objectId isEqualToString:user.objectId])
-    {
-        cell.myTradeLabel.alpha = 1.0;
-    }
-    else
-    {
-        cell.myTradeLabel.alpha = 0.0;
-    }
+
     
     if (tradeSegmentedControl.selectedSegmentIndex == 1)
     {
