@@ -11,11 +11,12 @@
 
 @implementation MathProblem
 
-@dynamic mathUser;
 @dynamic displayName;
-@dynamic problemType;
-@dynamic mathProblemValue;
+@dynamic mathUser;
 @dynamic equationDifficulty;
+@dynamic problemType;
+@dynamic firstValue;
+@dynamic secondValue;
 @dynamic haveAttemptedEquation;
 
 + (NSString *)parseClassName
@@ -23,16 +24,22 @@
     return @"MathProblem";
 }
 
--(id)initWithDifficulty:(NSInteger) difficulty forProblem:(NSInteger) problem ofProblemType:(NSInteger) type
+-(id)initWithDifficulty:(NSInteger) difficulty ofProblemType:(NSInteger) type forFirstValue:(NSInteger) firstProblem forSecondValue:(NSInteger) secondProblem
 {
     self = [super init];
-    self.mathUser = [PFUser currentUser];
-    self.equationDifficulty = difficulty;
-    self.mathProblemValue = problem;
-    self.problemType = type;
-    self.haveAttemptedEquation = NO;
+    
+    if (self) {
+        // Initialize
+        self.mathUser = [PFUser currentUser];
+        self.equationDifficulty = difficulty;
+        self.problemType = type;
+        self.firstValue = firstProblem;
+        self.secondValue = secondProblem;
+        self.haveAttemptedEquation = NO;
+    }
+    
     return self;
-}     
+}
 
 @end
 

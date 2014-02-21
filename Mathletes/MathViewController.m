@@ -99,24 +99,29 @@
          {
              _userArray = (NSMutableArray *)objects;
              
-             for (int i = 0; i < _userArray.count; i++)
-             {
-                 MathProblem *problem = _userArray[i];
-                 NSLog(@"%i %ld",problem.mathProblemValue, (long)problem.equationDifficulty);
-                 
-             }
-             
              [self newMathProblem];
              [self startTimer];
          }];
-        problemType = 0;
+       
         operatorLabel.textColor = [UIColor colorWithRed:130.0/255.0 green:183.0/255.0 blue:53.0/255.0 alpha:1];
         
     }
     else if ([_operationType isEqualToString:@"-"])
     {
         self.navigationItem.title = @"Subtraction";
-        problemType = 1;
+        
+        PFQuery *problemQuery = [PFQuery queryWithClassName:@"MathProblem"];
+        [problemQuery whereKey:@"problemType" equalTo:@1];
+        [problemQuery whereKey:@"mathUser" equalTo:[PFUser currentUser]];
+        
+        [problemQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
+         {
+             _userArray = (NSMutableArray *)objects;
+             
+             [self newMathProblem];
+             [self startTimer];
+         }];
+       
         operatorLabel.textColor = [UIColor colorWithRed:222.0/255.0 green:54.0/255.0 blue:64.0/255.0 alpha:1];
     }
     else if ([_operationType isEqualToString:@"x"])
@@ -254,14 +259,15 @@
         }
     }
     
-//    for (int i = 0; i < _userArray.count; i++)
-//    {
-//        MathProblem *problem = _userArray[i];
-//        NSLog(@"%li %ld",(long)problem.mathProblemValue, (long)problem.equationDifficulty);
-//    }
+    for (int i = 0; i < _userArray.count; i++)
+    {
+        MathProblem *problem = _userArray[i];
+        NSLog(@"%i %i %ld",(long)problem.firstValue, problem.secondValue, (long)problem.equationDifficulty);
+    }
     
 }
 
+/*
 -(void)setNewKey
 {
     newkey = [NSString stringWithFormat:@"%i%i",_addend1,_addend2];
@@ -277,7 +283,80 @@
          }
      }];
 }
+ */
 
+-(void)newMathProblem
+{
+    newButton.alpha = 0.0;
+    goButton.alpha = 1.0;
+    feedbackLabel.text = nil;
+    inputLabel.text = @"";
+    feedbackView.alpha = 0.0;
+    
+    [self sortingArray];
+    
+    if (firstNonZeroKey <= 99)
+    {
+        //setting pool of possible problems
+        keyAddend = 40;
+        
+        if (firstNonZeroKey > 25)
+        {
+            keyAddend = 30;
+            
+            if (firstNonZeroKey > 50)
+            {
+                keyAddend = 25;
+                
+                if (firstNonZeroKey >= 80)
+                {
+                    keyAddend = 100 - firstNonZeroKey;
+                    
+                }
+            }
+        }
+        
+        userArrayKey = arc4random()%keyAddend + firstNonZeroKey;
+        
+        
+        //allowing for old problems when there is a pool <= 20
+        if (firstNonZeroKey > 80)
+        {
+            int chanceOfOldProblem = arc4random()%4;
+            
+            if (chanceOfOldProblem == 0)
+            {
+                userArrayKey = arc4random()%30 + (firstNonZeroKey - 30);
+            }
+        }
+        
+    }
+    
+    else
+    {
+        int completedProblemsChance = arc4random()%10;
+        
+        if (completedProblemsChance == 0)
+        {
+            userArrayKey = arc4random()%50;
+        }
+        else if (completedProblemsChance > 0 && completedProblemsChance < 5)
+        {
+            userArrayKey = arc4random()%25 + 50;
+        }
+        else
+        {
+            userArrayKey = arc4random()%25 + 75;
+        }
+    }
+    
+    MathProblem *mp = _userArray[userArrayKey];
+    var1Label.text = [NSString stringWithFormat:@"%i",mp.firstValue];
+    var2Label.text = [NSString stringWithFormat:@"%i",mp.secondValue];
+}
+
+
+/*
 -(void)newMathProblem
 {
     newButton.alpha = 0.0;
@@ -459,7 +538,7 @@
 
     }
 }
-
+*/
 
 /*
 -(void)newMathProblem

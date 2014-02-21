@@ -15,22 +15,12 @@
 
 @property (retain)NSString *displayName;
 @property PFUser *mathUser;
-@property NSInteger problemType;
-@property NSInteger mathProblemValue;
 @property NSInteger equationDifficulty;
+@property NSInteger problemType;
+@property NSInteger firstValue;
+@property NSInteger secondValue;
 @property BOOL haveAttemptedEquation;
 
--(id)initWithDifficulty:(NSInteger) difficulty forProblem:(NSInteger) problem ofProblemType:(NSInteger) type;
+-(id)initWithDifficulty:(NSInteger) difficulty ofProblemType:(NSInteger) type forFirstValue:(NSInteger) firstProblem forSecondValue:(NSInteger) secondProblem;
 
 @end
-
-
-/*
-@interface AdditionProblem : MathProblem
-@end
-
-
-
-@interface SubtractionProblem : MathProblem
-@end
-*/
