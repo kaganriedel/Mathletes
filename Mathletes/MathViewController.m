@@ -862,29 +862,29 @@
         {
             [self checkForAchievement:@"Take It Away x600!"];
         }
-        else if (newTotalSubs >= 500)
+        else if (newTotalSubs >= 140)
         {
-            [self checkForAchievement:@"Take It Away x500!"];
+            [self checkForAchievement:@"Take It Away x140!"];
         }
-        else if (newTotalSubs >= 400)
+        else if (newTotalSubs >= 120)
         {
-            [self checkForAchievement:@"Take It Away x400!"];
-        }
-        else if (newTotalSubs >= 300)
-        {
-            [self checkForAchievement:@"Take It Away x300!"];
-        }
-        else if (newTotalSubs >= 200)
-        {
-            [self checkForAchievement:@"Take It Away x200!"];
+            [self checkForAchievement:@"Take It Away x120!"];
         }
         else if (newTotalSubs >= 100)
         {
             [self checkForAchievement:@"Take It Away x100!"];
         }
-        else if (newTotalSubs >= 50)
+        else if (newTotalSubs >= 80)
         {
-            [self checkForAchievement:@"Take It Away x50!"];
+            [self checkForAchievement:@"Take It Away x80!"];
+        }
+        else if (newTotalSubs >= 60)
+        {
+            [self checkForAchievement:@"Take It Away x60!"];
+        }
+        else if (newTotalSubs >= 40)
+        {
+            [self checkForAchievement:@"Take It Away x40!"];
         }
         else if (newTotalSubs >= 20)
         {
