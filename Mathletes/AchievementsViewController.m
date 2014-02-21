@@ -179,21 +179,33 @@
     {
         case 0:
             achievementHeader.titleLabel.text = @"Daily";
+            achievementHeader.titleLabel.font = [UIFont fontWithName:@"Miso-Bold" size:24];
+            achievementHeader.backgroundColor = [UIColor colorWithRed:130.0/255.0 green:183.0/255.0 blue:53.0/255.0 alpha:1];
             break;
         case 1:
             achievementHeader.titleLabel.text = @"Addition";
+             achievementHeader.titleLabel.font = [UIFont fontWithName:@"Miso-Bold" size:24];
+            achievementHeader.backgroundColor = [UIColor colorWithRed:130.0/255.0 green:183.0/255.0 blue:53.0/255.0 alpha:1];
             break;
         case 2:
             achievementHeader.titleLabel.text = @"Speedy Addition";
+             achievementHeader.titleLabel.font = [UIFont fontWithName:@"Miso-Bold" size:24];
+            achievementHeader.backgroundColor = [UIColor colorWithRed:130.0/255.0 green:183.0/255.0 blue:53.0/255.0 alpha:1];
             break;
         case 3:
             achievementHeader.titleLabel.text = @"Subtraction";
+             achievementHeader.titleLabel.font = [UIFont fontWithName:@"Miso-Bold" size:24];
+            achievementHeader.backgroundColor = [UIColor colorWithRed:222.0/255.0 green:54.0/255.0 blue:64.0/255.0 alpha:1];
             break;
         case 4:
             achievementHeader.titleLabel.text = @"Speedy Subtraction";
+             achievementHeader.titleLabel.font = [UIFont fontWithName:@"Miso-Bold" size:24];
+            achievementHeader.backgroundColor = [UIColor colorWithRed:222.0/255.0 green:54.0/255.0 blue:64.0/255.0 alpha:1];
             break;
         case 5:
             achievementHeader.titleLabel.text = @"Total Math Problems";
+             achievementHeader.titleLabel.font = [UIFont fontWithName:@"Miso-Bold" size:24];
+           achievementHeader.backgroundColor = [UIColor colorWithRed:222.0/255.0 green:54.0/255.0 blue:64.0/255.0 alpha:1];
             break;
             
         default:

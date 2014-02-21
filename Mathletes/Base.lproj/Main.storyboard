@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <scenes>
-        <!--Grid View Controller-->
+        <!--Grid View Controller - Proficiency Chart-->
         <scene sceneID="8Wo-oc-wiW">
             <objects>
                 <viewController id="Cqn-oy-XWQ" customClass="GridViewController" sceneMemberID="viewController">
@@ -17,20 +17,73 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <items>
-                                    <tabBarItem title="Addition" id="ILu-qp-rJn"/>
-                                    <tabBarItem title="Subtraction" id="302-6w-Z8u"/>
+                                    <tabBarItem title="" image="ic_addition_normal.png" id="ILu-qp-rJn">
+                                        <inset key="imageInsets" minX="0.0" minY="-6" maxX="0.0" maxY="0.0"/>
+                                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
+                                    </tabBarItem>
+                                    <tabBarItem title="" image="ic_subtract_normal.png" id="302-6w-Z8u">
+                                        <inset key="imageInsets" minX="-3" minY="-22" maxX="0.0" maxY="-2"/>
+                                    </tabBarItem>
                                 </items>
                                 <connections>
                                     <outlet property="delegate" destination="Cqn-oy-XWQ" id="UNu-6f-z47"/>
                                 </connections>
                             </tabBar>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="MBw-uh-L7G">
+                                <rect key="frame" x="17" y="426" width="21" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.58039218189999997" green="0.74901962280000001" blue="0.30196079609999998" alpha="1" colorSpace="deviceRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="AyD-i3-l9X">
+                                <rect key="frame" x="117" y="426" width="21" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.89019614459999996" green="0.70588237050000002" blue="0.32156863810000003" alpha="1" colorSpace="deviceRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="iZh-aP-mpY">
+                                <rect key="frame" x="219" y="426" width="21" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.45098042490000001" green="0.7019608021" blue="0.87843143940000001" alpha="1" colorSpace="deviceRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Excellent" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="NxG-FJ-vpy">
+                                <rect key="frame" x="40" y="426" width="70" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Proficient" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="obE-wv-q6A">
+                                <rect key="frame" x="140" y="426" width="73" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Effecient" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Dr4-Kt-jLl">
+                                <rect key="frame" x="242" y="426" width="67" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="b3I-l4-kPq"/>
+                    <navigationItem key="navigationItem" title="Proficiency Chart" id="b3I-l4-kPq"/>
                     <connections>
                         <outlet property="additionTabBarItem" destination="ILu-qp-rJn" id="OpJ-wR-SAz"/>
+                        <outlet property="effecientLabel" destination="Dr4-Kt-jLl" id="gWF-2x-V9D"/>
+                        <outlet property="excellentLabel" destination="NxG-FJ-vpy" id="4IQ-Zm-e08"/>
                         <outlet property="operandTabBar" destination="KBm-Hr-2nC" id="uN6-BM-dYH"/>
+                        <outlet property="proficientLabel" destination="obE-wv-q6A" id="qG6-pA-Ze1"/>
                         <outlet property="subtractionTabBarItem" destination="302-6w-Z8u" id="0eq-XE-Jlz"/>
                     </connections>
                 </viewController>
@@ -38,7 +91,7 @@
             </objects>
             <point key="canvasLocation" x="1691" y="-1092"/>
         </scene>
-        <!--Choose Sticker View Controller - Pick Your Favorite Sticker-->
+        <!--Choose Sticker View Controller - Favorites-->
         <scene sceneID="KbX-kN-MBq">
             <objects>
                 <viewController id="CcH-S0-D7r" customClass="ChooseStickerViewController" sceneMemberID="viewController">
@@ -65,7 +118,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="Mea-QJ-Xr3">
-                                                    <rect key="frame" x="-0.5" y="0.5" width="69.5" height="69.5"/>
+                                                    <rect key="frame" x="-0.5" y="0.5" width="68.5" height="68.5"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </imageView>
                                             </subviews>
@@ -84,13 +137,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Pick Your Favorite Sticker" id="aNp-KT-cug"/>
+                    <navigationItem key="navigationItem" title="Favorites" id="aNp-KT-cug"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CUz-ac-gJq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1691" y="-2500"/>
         </scene>
-        <!--Choose Operations View Controller - Mathletes-->
+        <!--Choose Operations View Controller - Math-->
         <scene sceneID="NnO-pp-laE">
             <objects>
                 <viewController id="WET-vJ-MRI" customClass="ChooseOperationsViewController" sceneMemberID="viewController">
@@ -98,51 +151,61 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Hiz-d1-8Ca">
-                                <rect key="frame" x="0.0" y="-8" width="320" height="127.5"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Hiz-d1-8Ca">
+                                <rect key="frame" x="0.0" y="-8" width="320" height="127"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="35"/>
-                                <state key="normal">
+                                <fontDescription key="fontDescription" type="system" pointSize="48"/>
+                                <inset key="contentEdgeInsets" minX="50" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="72" maxY="0.0"/>
+                                <state key="normal" backgroundImage="btn_addition_item_normal.png">
                                     <color key="titleColor" red="0.58039218189999997" green="0.74901962280000001" blue="0.30196079609999998" alpha="1" colorSpace="deviceRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <state key="highlighted" backgroundImage="btn_addition_item_pressed.png"/>
                                 <connections>
                                     <segue destination="vXZ-lx-hvc" kind="push" identifier="AdditionSegue" id="RQu-zo-Rks"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="gdR-U1-AuA">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="gdR-U1-AuA">
                                 <rect key="frame" x="2" y="121" width="315" height="127"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal">
+                                <fontDescription key="fontDescription" type="system" pointSize="48"/>
+                                <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="-23" maxY="0.0"/>
+                                <state key="normal" backgroundImage="btn_subtraction_item_normal.png">
+                                    <color key="titleColor" red="0.89411771299999998" green="0.30980393290000002" blue="0.32941177490000001" alpha="1" colorSpace="deviceRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <state key="highlighted" backgroundImage="btn_subtraction_item_pressed.png"/>
                                 <connections>
                                     <segue destination="vXZ-lx-hvc" kind="push" identifier="SubtractionSegue" id="rLt-zi-41P"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="AID-mL-G6k">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="AID-mL-G6k">
                                 <rect key="frame" x="0.0" y="377.5" width="320" height="127"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="35"/>
-                                <state key="normal">
+                                <fontDescription key="fontDescription" type="system" pointSize="48"/>
+                                <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="45" maxY="0.0"/>
+                                <state key="normal" backgroundImage="btn_division_item_normal.png">
                                     <color key="titleColor" red="0.45098042490000001" green="0.7019608021" blue="0.87843143940000001" alpha="1" colorSpace="deviceRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <state key="highlighted" backgroundImage="btn_division_item_pressed.png"/>
                                 <connections>
                                     <segue destination="vXZ-lx-hvc" kind="push" identifier="DivisionSegue" id="mwC-Kk-xjl"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="TyO-ii-oWk">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="TyO-ii-oWk">
                                 <rect key="frame" x="0.0" y="249.5" width="320" height="127"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="35"/>
-                                <state key="normal">
+                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="48"/>
+                                <inset key="titleEdgeInsets" minX="48" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" backgroundImage="btn_multiplcation_item_normal.png">
                                     <color key="titleColor" red="0.89019614459999996" green="0.70588237050000002" blue="0.32156863810000003" alpha="1" colorSpace="deviceRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <state key="highlighted" backgroundImage="btn_multiplcation_item_pressed.png"/>
                                 <connections>
                                     <segue destination="vXZ-lx-hvc" kind="push" identifier="MultiplicationSegue" id="x7j-R7-DFV"/>
                                 </connections>
@@ -162,67 +225,23 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="gbV-Oe-Zw0">
-                                <rect key="frame" x="28" y="31" width="50" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="nUc-8F-hhh">
-                                <rect key="frame" x="28" y="161" width="50" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="aMY-dw-ErX">
-                                <rect key="frame" x="28" y="288" width="50" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="Qvt-47-CCe">
-                                <rect key="frame" x="28" y="416" width="50" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Addition" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="idx-hY-paO">
-                                <rect key="frame" x="80" y="31" width="182" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="32"/>
-                                <color key="textColor" red="0.58039218189999997" green="0.74901962280000001" blue="0.30196079609999998" alpha="1" colorSpace="deviceRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Multiplication" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Uxb-gs-BeK">
-                                <rect key="frame" x="81" y="282" width="229" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="32"/>
-                                <color key="textColor" red="0.89019614459999996" green="0.70588237050000002" blue="0.32156863810000003" alpha="1" colorSpace="deviceRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Division" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3HX-k1-fpp">
-                                <rect key="frame" x="82" y="416" width="208" height="50.5"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="32"/>
-                                <color key="textColor" red="0.45098042490000001" green="0.7019608021" blue="0.87843143940000001" alpha="1" colorSpace="deviceRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subtraction" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ex6-tz-fTW">
-                                <rect key="frame" x="81" y="160" width="214" height="52"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="32"/>
-                                <color key="textColor" red="0.89411771299999998" green="0.30980393290000002" blue="0.32941177490000001" alpha="1" colorSpace="deviceRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
-                    <navigationItem key="navigationItem" title="Mathletes" id="Ioh-iI-V0n"/>
+                    <navigationItem key="navigationItem" title="Math" id="Ioh-iI-V0n"/>
                     <connections>
-                        <outlet property="additionLabel" destination="idx-hY-paO" id="TSN-Eb-Qkb"/>
-                        <outlet property="divisionLabel" destination="3HX-k1-fpp" id="7Sw-86-0pE"/>
-                        <outlet property="multiplicationLabel" destination="Uxb-gs-BeK" id="y2B-7V-OG3"/>
-                        <outlet property="subtractionLabel" destination="ex6-tz-fTW" id="5BB-xT-are"/>
+                        <outlet property="additionButton" destination="Hiz-d1-8Ca" id="2Ig-6V-3xa"/>
+                        <outlet property="divisionButton" destination="AID-mL-G6k" id="hZ8-8t-UCq"/>
+                        <outlet property="multiplicationButton" destination="TyO-ii-oWk" id="pYG-wy-eIh"/>
+                        <outlet property="subtractionButton" destination="gdR-U1-AuA" id="4Bz-84-C34"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xdd-LE-G2I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1691" y="-1810"/>
         </scene>
-        <!--Stickers View Controller - Sticker Collection-->
+        <!--Stickers View Controller - My Stickers-->
         <scene sceneID="aKB-lc-mMS">
             <objects>
                 <viewController id="GWv-83-SEa" customClass="StickersViewController" sceneMemberID="viewController">
@@ -242,20 +261,21 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell autoresizesSubviews="NO" opaque="NO" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="StickerCell" id="qH2-9H-mDV" customClass="StickerCell">
-                                        <rect key="frame" x="5" y="5" width="74" height="74"/>
+                                        <rect key="frame" x="5" y="5" width="73.75" height="73.75"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="74" height="74"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="73.75" height="73.75"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="Duy-nR-h9k">
-                                                    <rect key="frame" x="1" y="1" width="67" height="67"/>
+                                                    <rect key="frame" x="1" y="-3" width="67" height="68.5"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </imageView>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="x12" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="29n-LO-bUg">
-                                                    <rect key="frame" x="55" y="58" width="24" height="21"/>
+                                                    <rect key="frame" x="29" y="60" width="24" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -275,7 +295,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Sticker Collection" id="EbG-fL-AT8">
+                    <navigationItem key="navigationItem" title="My Stickers" id="EbG-fL-AT8">
                         <barButtonItem key="rightBarButtonItem" title="Trade" id="fWm-oO-hCz">
                             <connections>
                                 <segue destination="izL-Kv-jKz" kind="push" identifier="TradeSegue" id="Wty-hX-vbf"/>
@@ -492,26 +512,35 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="kr0-pX-LcE">
-                                <rect key="frame" x="20" y="20" width="160" height="160"/>
+                                <rect key="frame" x="80" y="14" width="160" height="160"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="x20" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="N8R-jq-2Jr">
-                                <rect key="frame" x="188" y="159" width="28" height="21"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" 20" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="N8R-jq-2Jr">
+                                <rect key="frame" x="239" y="225" width="24" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Did you know?" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8MA-da-fMJ">
-                                <rect key="frame" x="20" y="188" width="280" height="296"/>
+                                <rect key="frame" x="20" y="321" width="280" height="155"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This sticker is hard to find!" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1LB-X2-fbs">
-                                <rect key="frame" x="188" y="20" width="112" height="49"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RARE" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1LB-X2-fbs">
+                                <rect key="frame" x="38" y="211" width="89" height="49"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Count:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="egb-0C-Jo0">
+                                <rect key="frame" x="176" y="218.5" width="74" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -522,6 +551,7 @@
                         <outlet property="countLabel" destination="N8R-jq-2Jr" id="igU-QB-rSm"/>
                         <outlet property="detailLabel" destination="8MA-da-fMJ" id="TfC-h5-b67"/>
                         <outlet property="rarityLabel" destination="1LB-X2-fbs" id="DNJ-19-qO8"/>
+                        <outlet property="stickerCountLabel" destination="egb-0C-Jo0" id="bnV-94-vOG"/>
                         <outlet property="stickerImageView" destination="kr0-pX-LcE" id="tz6-hv-qcK"/>
                     </connections>
                 </viewController>
@@ -542,8 +572,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="35"/>
-                                <state key="normal">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <inset key="titleEdgeInsets" minX="-69" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="Math">
+                                    <color key="titleColor" red="0.58039218189999997" green="0.74901962280000001" blue="0.30196079609999998" alpha="1" colorSpace="deviceRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -555,21 +586,31 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="35"/>
-                                <state key="normal">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <inset key="contentEdgeInsets" minX="-23" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="Stickers">
+                                    <color key="titleColor" red="0.89019614459999996" green="0.70588237050000002" blue="0.32156863810000003" alpha="1" colorSpace="deviceRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <segue destination="GWv-83-SEa" kind="push" identifier="StickerSegue" id="vE7-mo-eNU"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="Ukv-2j-cX2">
+                                <rect key="frame" x="20" y="348.5" width="72" height="72"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="fGH-dU-Jqw">
+                                <rect key="frame" x="20" y="449" width="42" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="IsI-j8-AOo">
                                 <rect key="frame" x="0.0" y="262" width="320" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="35"/>
-                                <state key="normal">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <inset key="contentEdgeInsets" minX="-11" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="Progress">
+                                    <color key="titleColor" red="0.89411771299999998" green="0.30980393290000002" blue="0.32941177490000001" alpha="1" colorSpace="deviceRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -581,8 +622,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="35"/>
-                                <state key="normal">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <inset key="contentEdgeInsets" minX="46" minY="0.0" maxX="-12" maxY="0.0"/>
+                                <state key="normal" title="Achievements">
+                                    <color key="titleColor" red="0.45098042490000001" green="0.7019608021" blue="0.87843143940000001" alpha="1" colorSpace="deviceRGB"/>
                                 </state>
                                 <connections>
                                     <segue destination="2XE-Rq-gwh" kind="push" id="9PB-gk-7O5"/>
@@ -604,38 +646,10 @@
                                 <rect key="frame" x="105" y="14" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Math" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="a4y-Zl-hfq">
-                                <rect key="frame" x="85" y="203" width="126" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="32"/>
-                                <color key="textColor" red="0.58039218189999997" green="0.74901962280000001" blue="0.30196079609999998" alpha="1" colorSpace="deviceRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Progress" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="iAl-vs-Lc4">
-                                <rect key="frame" x="85" y="272" width="140" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="32"/>
-                                <color key="textColor" red="0.89411771299999998" green="0.30980393290000002" blue="0.32941177490000001" alpha="1" colorSpace="deviceRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stickers" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="yvn-Zq-rjz">
-                                <rect key="frame" x="85" y="363" width="126" height="42"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="32"/>
-                                <color key="textColor" red="0.89019614459999996" green="0.70588237050000002" blue="0.32156863810000003" alpha="1" colorSpace="deviceRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Achievements" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="YjL-nR-tl4">
-                                <rect key="frame" x="85" y="447" width="221" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="32"/>
-                                <color key="textColor" red="0.45098042490000001" green="0.7019608021" blue="0.87843143940000001" alpha="1" colorSpace="deviceRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tommy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="pyd-Vb-2cw">
                                 <rect key="frame" x="60" y="103" width="190" height="49"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="32"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="48"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -659,6 +673,18 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="JeG-oa-nDn">
+                                <rect key="frame" x="20" y="182.5" width="72" height="72"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="KyU-mv-wta">
+                                <rect key="frame" x="20" y="265.5" width="72" height="72"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="W6W-qp-PSf">
+                                <rect key="frame" x="20" y="430.5" width="72" height="72"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -671,9 +697,13 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="achievementsButton" destination="yN9-IB-NCW" id="Wwg-9l-17G"/>
+                        <outlet property="mathButton" destination="6Jb-Ml-uKY" id="7Jt-rd-hq1"/>
                         <outlet property="profileButton" destination="qE6-9w-tRR" id="w7Z-LO-YTf"/>
                         <outlet property="profileImageView" destination="Gd1-ga-abd" id="XHS-Gk-Br8"/>
                         <outlet property="profileLabel" destination="pyd-Vb-2cw" id="Ngr-pa-UZI"/>
+                        <outlet property="progressButton" destination="IsI-j8-AOo" id="G9K-1l-i7o"/>
+                        <outlet property="stickersButton" destination="kGc-1O-CmF" id="nrI-Yi-fWE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XKV-2o-bak" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -772,7 +802,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="mPZ-ID-guH">
-                                <rect key="frame" x="105" y="-6" width="75" height="70"/>
+                                <rect key="frame" x="105" y="-6" width="70" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="41"/>
                                 <color key="textColor" red="0.58039218189999997" green="0.74901962280000001" blue="0.30196079609999998" alpha="1" colorSpace="deviceRGB"/>
@@ -783,7 +813,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.89411771299999998" green="0.30980393290000002" blue="0.32941177490000001" alpha="1" colorSpace="deviceRGB"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="18"/>
-                                <state key="normal">
+                                <state key="normal" title="Next">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -796,7 +826,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.58039218189999997" green="0.74901962280000001" blue="0.30196079609999998" alpha="1" colorSpace="deviceRGB"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="18"/>
-                                <state key="normal">
+                                <state key="normal" title="Enter">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -804,145 +834,159 @@
                                     <action selector="onGoButtonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="xag-O6-vkh"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="M2m-4V-uNy">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="M2m-4V-uNy">
                                 <rect key="frame" x="35" y="160" width="70" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="25"/>
                                 <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal">
+                                <inset key="titleEdgeInsets" minX="0.0" minY="-1" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="1" backgroundImage="btn_keypad_bg_normal.png">
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <state key="highlighted" backgroundImage="btn_keypad_bg_pressed.png"/>
                                 <connections>
                                     <action selector="onOneButtonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="x32-zq-ziE"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Jj1-VK-HjE">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Jj1-VK-HjE">
                                 <rect key="frame" x="124" y="160" width="70" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="25"/>
                                 <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal">
+                                <state key="normal" title="2" backgroundImage="btn_keypad_bg_normal.png">
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <state key="highlighted" backgroundImage="btn_keypad_bg_pressed.png"/>
                                 <connections>
                                     <action selector="onTwoButtonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="iuf-mZ-wKE"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="j7a-Yc-rfF">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="j7a-Yc-rfF">
                                 <rect key="frame" x="215" y="160" width="70" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="25"/>
                                 <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal">
+                                <state key="normal" title="3" backgroundImage="btn_keypad_bg_normal.png">
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <state key="highlighted" backgroundImage="btn_keypad_bg_pressed.png"/>
                                 <connections>
                                     <action selector="onThreeButtonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Z9f-aZ-X8W"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Qks-Nt-qTC">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Qks-Nt-qTC">
                                 <rect key="frame" x="35" y="247" width="70" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="25"/>
                                 <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal">
+                                <state key="normal" title="4" backgroundImage="btn_keypad_bg_normal.png">
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <state key="highlighted" backgroundImage="btn_keypad_bg_pressed.png"/>
                                 <connections>
                                     <action selector="onFourButtonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="gys-ib-b3C"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="BFO-HO-ta2">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="BFO-HO-ta2">
                                 <rect key="frame" x="124" y="247" width="70" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="25"/>
                                 <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal">
+                                <state key="normal" title="5" backgroundImage="btn_keypad_bg_normal.png">
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <state key="highlighted" backgroundImage="btn_keypad_bg_pressed.png"/>
                                 <connections>
                                     <action selector="onFiveButtonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="qtZ-hB-NJQ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="XXn-QN-oll">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="XXn-QN-oll">
                                 <rect key="frame" x="215" y="247" width="70" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="25"/>
                                 <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal">
+                                <state key="normal" title="6" backgroundImage="btn_keypad_bg_normal.png">
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <state key="highlighted" backgroundImage="btn_keypad_bg_pressed.png"/>
                                 <connections>
                                     <action selector="onSixButtonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="tiz-Ne-oo6"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Bf5-xF-Ifn">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Bf5-xF-Ifn">
                                 <rect key="frame" x="35" y="335" width="70" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="25"/>
                                 <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal">
+                                <state key="normal" title="7" backgroundImage="btn_keypad_bg_normal.png">
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <state key="highlighted" backgroundImage="btn_keypad_bg_pressed.png"/>
                                 <connections>
                                     <action selector="onSevenButtonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="wsc-JV-Kuv"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="aBV-BD-Ta5">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="aBV-BD-Ta5">
                                 <rect key="frame" x="124" y="335" width="70" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="25"/>
                                 <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal">
+                                <state key="normal" title="8" backgroundImage="btn_keypad_bg_normal.png">
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <state key="highlighted" backgroundImage="btn_keypad_bg_pressed.png"/>
                                 <connections>
                                     <action selector="onEightButtonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="U5a-Q7-qzG"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="a2L-dV-r1j">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="a2L-dV-r1j">
                                 <rect key="frame" x="215" y="335" width="70" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="25"/>
                                 <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal">
+                                <state key="normal" title="9" backgroundImage="btn_keypad_bg_normal.png">
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <state key="highlighted" backgroundImage="btn_keypad_bg_pressed.png"/>
                                 <connections>
                                     <action selector="onNineButtonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="J6e-pK-3tG"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="EJG-7j-gE2">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="EJG-7j-gE2">
                                 <rect key="frame" x="124" y="422" width="70" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="25"/>
                                 <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal">
+                                <state key="normal" title="0" backgroundImage="btn_keypad_bg_normal.png">
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <state key="highlighted" backgroundImage="btn_keypad_bg_pressed.png"/>
                                 <connections>
                                     <action selector="onZeroButtonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="mEX-rI-n7S"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="xGf-wO-rV9">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="xGf-wO-rV9">
                                 <rect key="frame" x="35" y="422" width="70" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="25"/>
                                 <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal">
+                                <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="4"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="7"/>
+                                <state key="normal" title="&lt;" backgroundImage="btn_keypad_bg_normal.png">
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <state key="highlighted" backgroundImage="btn_keypad_bg_pressed.png"/>
                                 <connections>
                                     <action selector="onBackSpaceButtonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="uK9-Nx-Mly"/>
                                 </connections>
@@ -964,110 +1008,19 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Correct!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="foY-oh-UvO">
-                                        <rect key="frame" x="20" y="87" width="280" height="44"/>
+                                        <rect key="frame" x="20" y="89" width="280" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="20"/>
+                                        <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="34"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="VRY-v6-XcJ">
-                                        <rect key="frame" x="120" y="10" width="81" height="62"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_correct.png" id="VRY-v6-XcJ">
+                                        <rect key="frame" x="126" y="13" width="68" height="68"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.58039218189999997" green="0.74901962280000001" blue="0.30196079609999998" alpha="1" colorSpace="deviceRGB"/>
                             </view>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="W1A-dc-VW7">
-                                <rect key="frame" x="59" y="185" width="22" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="wo1-IU-F2k">
-                                <rect key="frame" x="148" y="185" width="22" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="qh3-hQ-gwt">
-                                <rect key="frame" x="239" y="184" width="22" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="yqw-6h-zSu">
-                                <rect key="frame" x="59" y="271" width="22" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0bS-dC-TDC">
-                                <rect key="frame" x="149" y="271" width="22" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gaA-eU-KIk">
-                                <rect key="frame" x="239" y="271" width="22" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="SBv-RL-UfQ">
-                                <rect key="frame" x="59" y="359" width="22" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="zgv-3H-xZV">
-                                <rect key="frame" x="149" y="359" width="22" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="eeP-Kt-uqE">
-                                <rect key="frame" x="239" y="359" width="22" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Y4t-Rh-Ify">
-                                <rect key="frame" x="65" y="446" width="11" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9gR-n6-CCB">
-                                <rect key="frame" x="148" y="446" width="22" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ENTER" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xAx-fh-kad">
-                                <rect key="frame" x="227" y="447" width="55" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NEXT" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="kyH-LX-1Iw">
-                                <rect key="frame" x="231" y="447" width="44" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -1079,39 +1032,28 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="backLabel" destination="Y4t-Rh-Ify" id="IKp-8y-0tT"/>
                         <outlet property="backSpaceButton" destination="xGf-wO-rV9" id="rpi-bE-6Cj"/>
                         <outlet property="eightButton" destination="aBV-BD-Ta5" id="x9f-cs-Gsq"/>
-                        <outlet property="eightLabel" destination="zgv-3H-xZV" id="dx3-Qh-rkm"/>
-                        <outlet property="enterLabel" destination="xAx-fh-kad" id="ex9-1F-Pst"/>
                         <outlet property="feedbackImageView" destination="VRY-v6-XcJ" id="M73-kB-cHS"/>
                         <outlet property="feedbackLabel" destination="foY-oh-UvO" id="JYb-hg-0vO"/>
                         <outlet property="feedbackView" destination="XpP-75-uYr" id="dC9-43-LIi"/>
                         <outlet property="fiveButton" destination="BFO-HO-ta2" id="4BI-hH-Las"/>
-                        <outlet property="fiveLabel" destination="0bS-dC-TDC" id="sCK-kU-Qgg"/>
                         <outlet property="fourButton" destination="Qks-Nt-qTC" id="k6k-eo-AFO"/>
-                        <outlet property="fourLabel" destination="yqw-6h-zSu" id="TQp-M1-PrM"/>
                         <outlet property="goButton" destination="4t2-yu-pDO" id="wbd-T2-bGU"/>
                         <outlet property="inputLabel" destination="kv7-6N-q7b" id="LKj-Ag-wjZ"/>
                         <outlet property="newButton" destination="75g-hP-4CW" id="N7Z-C9-JBk"/>
-                        <outlet property="nextLabel" destination="kyH-LX-1Iw" id="g4I-eV-Pg1"/>
                         <outlet property="nineButton" destination="a2L-dV-r1j" id="XUX-DZ-izO"/>
-                        <outlet property="nineLabel" destination="eeP-Kt-uqE" id="Ohp-NC-Rb9"/>
                         <outlet property="oneButton" destination="M2m-4V-uNy" id="eLQ-Ws-SvB"/>
-                        <outlet property="oneLabel" destination="W1A-dc-VW7" id="kU7-Sz-wKw"/>
                         <outlet property="operationLabel" destination="mPZ-ID-guH" id="Gb9-ca-rZ4"/>
+                        <outlet property="operatorLabel" destination="mPZ-ID-guH" id="cub-la-Ff2"/>
+                        <outlet property="responseImageView" destination="VRY-v6-XcJ" id="4GJ-gm-rf4"/>
                         <outlet property="sevenButton" destination="Bf5-xF-Ifn" id="3rJ-6h-cUg"/>
-                        <outlet property="sevenLabel" destination="SBv-RL-UfQ" id="r6v-uh-nKJ"/>
                         <outlet property="sixButton" destination="XXn-QN-oll" id="A3N-lh-KjK"/>
-                        <outlet property="sixLabel" destination="gaA-eU-KIk" id="Vm4-Kl-cRE"/>
                         <outlet property="threeButton" destination="j7a-Yc-rfF" id="Ls0-nI-yq3"/>
-                        <outlet property="threeLabel" destination="qh3-hQ-gwt" id="IfI-Oa-g2l"/>
                         <outlet property="twoButton" destination="Jj1-VK-HjE" id="gAc-8Y-hCb"/>
-                        <outlet property="twoLabel" destination="wo1-IU-F2k" id="jPD-HR-65u"/>
                         <outlet property="var1Label" destination="1ES-DV-m4B" id="KcW-IF-NTd"/>
                         <outlet property="var2Label" destination="mSx-Gs-MD8" id="iMd-AS-w2q"/>
                         <outlet property="zeroButton" destination="EJG-7j-gE2" id="apT-VY-dRF"/>
-                        <outlet property="zeroLabel" destination="9gR-n6-CCB" id="hjM-GH-KRV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
@@ -1137,6 +1079,21 @@
             <point key="canvasLocation" x="664" y="-771"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="btn_addition_item_normal.png" width="320" height="127"/>
+        <image name="btn_addition_item_pressed.png" width="320" height="127"/>
+        <image name="btn_division_item_normal.png" width="320" height="127"/>
+        <image name="btn_division_item_pressed.png" width="320" height="127"/>
+        <image name="btn_keypad_bg_normal.png" width="70" height="70"/>
+        <image name="btn_keypad_bg_pressed.png" width="70" height="70"/>
+        <image name="btn_multiplcation_item_normal.png" width="320" height="127"/>
+        <image name="btn_multiplcation_item_pressed.png" width="320" height="127"/>
+        <image name="btn_subtraction_item_normal.png" width="320" height="127"/>
+        <image name="btn_subtraction_item_pressed.png" width="320" height="127"/>
+        <image name="ic_addition_normal.png" width="70" height="70"/>
+        <image name="ic_correct.png" width="68" height="68"/>
+        <image name="ic_subtract_normal.png" width="70" height="70"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

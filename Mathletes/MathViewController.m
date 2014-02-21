@@ -32,19 +32,9 @@
     __weak IBOutlet UILabel *feedbackLabel;
     __weak IBOutlet UIImageView *feedbackImageView;
     __weak IBOutlet UIView *feedbackView;
-    __weak IBOutlet UILabel *oneLabel;
-    __weak IBOutlet UILabel *twoLabel;
-    __weak IBOutlet UILabel *threeLabel;
-    __weak IBOutlet UILabel *fourLabel;
-    __weak IBOutlet UILabel *fiveLabel;
-    __weak IBOutlet UILabel *sixLabel;
-    __weak IBOutlet UILabel *sevenLabel;
-    __weak IBOutlet UILabel *eightLabel;
-    __weak IBOutlet UILabel *nineLabel;
-    __weak IBOutlet UILabel *backLabel;
-    __weak IBOutlet UILabel *zeroLabel;
-    __weak IBOutlet UILabel *enterLabel;
-    __weak IBOutlet UILabel *nextLabel;
+    __weak IBOutlet UILabel *operatorLabel;
+    __weak IBOutlet UIImageView *responseImageView;
+    
     
     NSMutableArray *mathProblems;
     NSInteger difficulty;
@@ -69,30 +59,31 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
     [self buildView];
     
     NSInteger problemType;
 
-    for (UILabel* label in self.view.subviews)
-    {
+    for (UILabel* label in self.view.subviews) {
         if([label isKindOfClass:[UILabel class]])
         {
             label.font = [UIFont fontWithName:@"Miso-Bold" size:40];
         }
     }
-    oneLabel.font = [UIFont fontWithName:@"Miso-Bold" size:28];
-    twoLabel.font = [UIFont fontWithName:@"Miso-Bold" size:28];
-    threeLabel.font = [UIFont fontWithName:@"Miso-Bold" size:28];
-    fourLabel.font = [UIFont fontWithName:@"Miso-Bold" size:28];
-    fiveLabel.font = [UIFont fontWithName:@"Miso-Bold" size:28];
-    sixLabel.font = [UIFont fontWithName:@"Miso-Bold" size:28];
-    sevenLabel.font = [UIFont fontWithName:@"Miso-Bold" size:28];
-    eightLabel.font = [UIFont fontWithName:@"Miso-Bold" size:28];
-    nineLabel.font = [UIFont fontWithName:@"Miso-Bold" size:28];
-    zeroLabel.font = [UIFont fontWithName:@"Miso-Bold" size:28];
-    backLabel.font = [UIFont fontWithName:@"Miso-Bold" size:22];
-    enterLabel.font = [UIFont fontWithName:@"Miso-Bold" size:22];
-    nextLabel.font = [UIFont fontWithName:@"Miso-Bold" size:22];
+    
+    oneButton.titleLabel.font = [UIFont fontWithName:@"Miso-Bold" size:28];
+    twoButton.titleLabel.font = [UIFont fontWithName:@"Miso-Bold" size:28];
+    threeButton.titleLabel.font = [UIFont fontWithName:@"Miso-Bold" size:28];
+    fourButton.titleLabel.font = [UIFont fontWithName:@"Miso-Bold" size:28];
+    fiveButton.titleLabel.font = [UIFont fontWithName:@"Miso-Bold" size:28];
+    sixButton.titleLabel.font = [UIFont fontWithName:@"Miso-Bold" size:28];
+    sevenButton.titleLabel.font = [UIFont fontWithName:@"Miso-Bold" size:28];
+    eightButton.titleLabel.font = [UIFont fontWithName:@"Miso-Bold" size:28];
+    nineButton.titleLabel.font = [UIFont fontWithName:@"Miso-Bold" size:28];
+    zeroButton.titleLabel.font = [UIFont fontWithName:@"Miso-Bold" size:28];
+    goButton.titleLabel.font = [UIFont fontWithName:@"Miso-Bold" size:28];
+    newButton.titleLabel.font = [UIFont fontWithName:@"Miso-Bold" size:28];
+   
     feedbackLabel.font = [UIFont fontWithName:@"Miso-Bold" size:34];
     inputLabel.font = [UIFont fontWithName:@"Miso-Bold" size:40];
 
@@ -100,21 +91,26 @@
     {
         self.navigationItem.title = @"Addition";
         problemType = 0;
+        operatorLabel.textColor = [UIColor colorWithRed:130.0/255.0 green:183.0/255.0 blue:53.0/255.0 alpha:1];
+        
     }
     else if ([_operationType isEqualToString:@"-"])
     {
         self.navigationItem.title = @"Subtraction";
         problemType = 1;
+        operatorLabel.textColor = [UIColor colorWithRed:222.0/255.0 green:54.0/255.0 blue:64.0/255.0 alpha:1];
     }
     else if ([_operationType isEqualToString:@"x"])
     {
         self.navigationItem.title = @"Multiplication";
         problemType = 2;
+        operatorLabel.textColor = [UIColor colorWithRed:221.0/255.0 green:168.0/255.0 blue:57.0/255.0 alpha:1];
     }
     else if ([_operationType isEqualToString:@"/"])
     {
         self.navigationItem.title = @"Division";
         problemType = 3;
+        operatorLabel.textColor = [UIColor colorWithRed:95.0/255.0 green:162.0/255.0 blue:219.0/255.0 alpha:1];
     }
     
     PFQuery *problemQuery = [PFQuery queryWithClassName:@"MathProblem"];
@@ -288,8 +284,6 @@
 {
     newButton.alpha = 0.0;
     goButton.alpha = 1.0;
-    enterLabel.alpha = 1.0;
-    nextLabel.alpha = 0.0;
     feedbackLabel.text = nil;
     inputLabel.text = @"";
     feedbackView.alpha = 0.0;
@@ -354,6 +348,68 @@
         [var1Label setText:[NSString stringWithFormat:@"%i", _addend1]];
         [var2Label setText:[NSString stringWithFormat:@"%i", _addend2]];
     }
+    /*
+    else if ([_operationLabel.text isEqualToString:@"-"])
+    {
+        [self sortingArray];
+        
+        //original random value
+        _addend1 = arc4random()%18;
+        _addend2 = arc4random()%18;
+        
+        [self setNewKey];
+        
+        //setting pool of possible problems
+        keyAddend = 40;
+        
+        if (firstNonZeroKey > 35)
+        {
+            keyAddend = 30;
+            
+            if (firstNonZeroKey > 50)
+            {
+                keyAddend = 25;
+                
+                if (firstNonZeroKey > 80)
+                {
+                    keyAddend = 100 - firstNonZeroKey;
+                    
+                }
+            }
+        }
+        
+        
+        //rechoosing problem if proficiency is reached
+        if (userArrayKey < firstNonZeroKey || userArrayKey > (firstNonZeroKey + keyAddend))
+        {
+            //allowing for old problems when there is a pool < 20
+            if (firstNonZeroKey > 80)
+            {
+                int chanceOfOldProblem = arc4random()%4;
+                
+                if (chanceOfOldProblem == 0)
+                {
+                    _addend1 = arc4random()%8 + 4;
+                    _addend2 = arc4random()%4 + 4;
+                    
+                    [self setNewKey];
+                }
+                else
+                {
+                    [self newMathProblem];
+                }
+            }
+            else
+            {
+                [self newMathProblem];
+            }
+        }
+     
+        
+        [var1Label setText:[NSString stringWithFormat:@"%i", _addend1]];
+        [var2Label setText:[NSString stringWithFormat:@"%i", _addend2]];
+    }
+    */
     else
     {
         feedbackLabel.text = nil;
@@ -434,8 +490,7 @@
 {
     inputLabel.text = @"";
     feedbackView.alpha = 1.0;
-    enterLabel.alpha = 1.0;
-    nextLabel.alpha = 0.0;
+    responseImageView.image = [UIImage imageNamed:@"ic_correct.png"];
     feedbackView.backgroundColor = [UIColor colorWithRed:130.0/255.0 green:183.0/255.0 blue:53.0/255.0 alpha:1.0];
     if (countDown <= 6)
     {
@@ -478,8 +533,7 @@
 {
     goButton.alpha = 0.0;
     newButton.alpha = 1.0;
-    nextLabel.alpha = 1.0;
-    enterLabel.alpha = 0.0;
+    responseImageView.image = [UIImage imageNamed:@"ic_wrong_face.png"];
 
     feedbackView.alpha = 1.0;
     feedbackView.backgroundColor = [UIColor colorWithRed:222.0/255.0 green:54.0/255.0 blue:64.0/255.0 alpha:1];
@@ -1061,7 +1115,7 @@
                                       detail:nil
                                        image:notificationImage
                                  andDuration:3.0];
-    
+   
     [user saveInBackground];
 
     
@@ -1075,6 +1129,8 @@
 - (IBAction)onOneButtonPressed:(id)sender
 {
     inputLabel.text = [inputLabel.text stringByAppendingString:@"1"];
+    
+    
 }
 
 - (IBAction)onTwoButtonPressed:(id)sender
