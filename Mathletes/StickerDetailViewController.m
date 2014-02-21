@@ -44,13 +44,13 @@
     
     if ([stickerName isEqualToString:@"lion"])
     {
-        rarityLabel.text = @"This sticker is hard to find!";
-        detailLabel.text = @"Lions are found in Africa. They are badass and can run really fast MPH. They're really really cool.";
+        rarityLabel.text = @"COMMON";
+        detailLabel.text = @"Lions are found in Africa. They lounge around being kings of all they see.";
     }
     else if ([stickerName isEqualToString:@"puppy"])
     {
-        rarityLabel.text = @"This sticker is easy to find!";
-        detailLabel.text = @"Puppies are totes adorbs. They cuddle at a rate of 50 cuddles per hour and can slobber all over your face faster than a humming bird flaps its wings!";
+        rarityLabel.text = @"RARE";
+        detailLabel.text = @"Puppies are adorable. They cuddle, jump and play! Then they pee on your carpet.";
     }
 //    else if ([stickerName isEqualToString:@"puppy"])
 //    {

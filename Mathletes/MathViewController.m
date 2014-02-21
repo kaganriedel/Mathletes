@@ -538,7 +538,6 @@
     feedbackView.alpha = 1.0;
     feedbackView.backgroundColor = [UIColor colorWithRed:222.0/255.0 green:54.0/255.0 blue:64.0/255.0 alpha:1];
     
-    //feedbackImageView.image = [UIImage set imageview to frowny face
     
     [self addProficiencyForWrongAnswer];
 }
