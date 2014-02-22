@@ -127,10 +127,13 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="wTk-dm-ycL">
+                            <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="wTk-dm-ycL">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="dg3-ot-peg"/>
+                                </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="5" id="PHb-p2-Gzs">
                                     <size key="itemSize" width="73.75" height="73.75"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -164,6 +167,11 @@
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wTk-dm-ycL" firstAttribute="leading" secondItem="5GE-j6-d8q" secondAttribute="leading" id="PLg-XJ-7hx"/>
+                            <constraint firstAttribute="bottom" secondItem="wTk-dm-ycL" secondAttribute="bottom" id="Wvh-iC-tjj"/>
+                            <constraint firstItem="wTk-dm-ycL" firstAttribute="top" secondItem="5GE-j6-d8q" secondAttribute="top" id="ovE-EX-MKS"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Profile Sticker" id="aNp-KT-cug"/>
                 </viewController>
@@ -233,9 +241,6 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="highlighted" backgroundImage="btn_multiplcation_item_pressed.png"/>
-                                <connections>
-                                    <segue destination="vXZ-lx-hvc" kind="push" identifier="MultiplicationSegue" id="x7j-R7-DFV"/>
-                                </connections>
                             </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="j0r-yV-Uob">
                                 <rect key="frame" x="0.0" y="377" width="320" height="1"/>
@@ -253,9 +258,6 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="highlighted" backgroundImage="btn_division_item_pressed.png"/>
-                                <connections>
-                                    <segue destination="vXZ-lx-hvc" kind="push" identifier="DivisionSegue" id="mwC-Kk-xjl"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -285,10 +287,13 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="UZI-ms-znn">
+                            <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="UZI-ms-znn">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="sGi-hH-t4d"/>
+                                </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="5" id="5Ls-CK-K8Z">
                                     <size key="itemSize" width="73.75" height="76.75"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -330,6 +335,11 @@
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="UZI-ms-znn" firstAttribute="top" secondItem="XhQ-Pk-uTE" secondAttribute="top" id="0Th-wC-bfr"/>
+                            <constraint firstAttribute="bottom" secondItem="UZI-ms-znn" secondAttribute="bottom" id="Y69-Ch-ebQ"/>
+                            <constraint firstItem="UZI-ms-znn" firstAttribute="leading" secondItem="XhQ-Pk-uTE" secondAttribute="leading" id="bqp-uj-LzD"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="My Stickers" id="EbG-fL-AT8">
                         <barButtonItem key="rightBarButtonItem" title="Trade" id="fWm-oO-hCz">
@@ -359,10 +369,13 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="75" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="8D2-WK-luz">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="75" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="8D2-WK-luz">
                                 <rect key="frame" x="0.0" y="39" width="160" height="465"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="160" id="fC8-c8-ha1"/>
+                                </constraints>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="GiveCell" rowHeight="75" id="Ylh-Uz-gmk" customClass="MakeTradeCell">
                                         <rect key="frame" x="0.0" y="22" width="160" height="75"/>
@@ -387,10 +400,13 @@
                                     <outlet property="delegate" destination="Pfw-OS-5b7" id="MZt-f0-NEc"/>
                                 </connections>
                             </tableView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="75" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="E5T-dp-I5E">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="75" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="E5T-dp-I5E">
                                 <rect key="frame" x="160" y="39" width="160" height="465"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="160" id="kZP-wb-OAy"/>
+                                </constraints>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="GetCell" rowHeight="75" id="9Ka-BK-Hla" customClass="MakeTradeCell">
                                         <rect key="frame" x="0.0" y="22" width="160" height="75"/>
@@ -431,6 +447,14 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="E5T-dp-I5E" firstAttribute="top" secondItem="E2z-U3-qwR" secondAttribute="top" constant="39" id="9NR-8t-KKU"/>
+                            <constraint firstItem="8D2-WK-luz" firstAttribute="leading" secondItem="E2z-U3-qwR" secondAttribute="leading" id="DIL-5V-enj"/>
+                            <constraint firstAttribute="trailing" secondItem="E5T-dp-I5E" secondAttribute="trailing" id="QZl-dn-rsJ"/>
+                            <constraint firstAttribute="bottom" secondItem="E5T-dp-I5E" secondAttribute="bottom" id="ZY0-2s-buu"/>
+                            <constraint firstAttribute="bottom" secondItem="8D2-WK-luz" secondAttribute="bottom" id="enH-Oe-3gp"/>
+                            <constraint firstItem="8D2-WK-luz" firstAttribute="top" secondItem="E2z-U3-qwR" secondAttribute="top" constant="39" id="fe5-H2-Cfe"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Make A Trade" id="ui0-Iu-nAq">
                         <barButtonItem key="rightBarButtonItem" title="Item" systemItem="done" id="3iD-Pv-Est">
@@ -462,10 +486,13 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="75" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="SM1-Ga-Ybz">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="75" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="SM1-Ga-Ybz">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="5aQ-bj-kQ1"/>
+                                </constraints>
                                 <color key="separatorColor" red="0.40392160420000001" green="0.41960787770000002" blue="0.98431378599999997" alpha="1" colorSpace="deviceRGB"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="TradeCell" rowHeight="75" id="8G2-wr-Vey" customClass="TradeWallCell">
@@ -514,6 +541,11 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="SM1-Ga-Ybz" secondAttribute="bottom" id="APP-Yu-E7V"/>
+                            <constraint firstItem="SM1-Ga-Ybz" firstAttribute="top" secondItem="una-9E-SdD" secondAttribute="top" id="VDa-6i-eQH"/>
+                            <constraint firstItem="SM1-Ga-Ybz" firstAttribute="leading" secondItem="una-9E-SdD" secondAttribute="leading" id="VUC-3S-IFC"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="vfm-XO-bUP">
                         <nil key="title"/>
@@ -770,10 +802,13 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="HyP-A3-b3d">
+                            <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="HyP-A3-b3d">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="V1e-Kk-0WK"/>
+                                </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="5" id="yTK-ga-kMA">
                                     <size key="itemSize" width="58" height="58"/>
                                     <size key="headerReferenceSize" width="50" height="35"/>
@@ -824,6 +859,11 @@
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="HyP-A3-b3d" firstAttribute="leading" secondItem="7eG-LK-rgI" secondAttribute="leading" id="VAB-TS-dwc"/>
+                            <constraint firstAttribute="bottom" secondItem="HyP-A3-b3d" secondAttribute="bottom" id="aOR-2K-56N"/>
+                            <constraint firstItem="HyP-A3-b3d" firstAttribute="top" secondItem="7eG-LK-rgI" secondAttribute="top" id="tUs-2o-hLT"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Achievements" id="pUL-9q-Yvv"/>
                 </viewController>

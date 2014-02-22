@@ -86,7 +86,7 @@
     profileButton.layer.cornerRadius = 50;
     profileImageView.layer.cornerRadius = 50;
     
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Hey Testers!" message:@"If your app is crashing, log out and create a new user. Thanks for testing our app!" delegate:nil cancelButtonTitle:@"Got It!" otherButtonTitles: nil];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Hey Testers!" message:@"If your app is crashing or acting funny, log out and create a new user. We're changing the way users work constantly so old users don't work anymore. Thanks for testing our app!" delegate:nil cancelButtonTitle:@"On To The Math!" otherButtonTitles: nil];
     [alert show];
 }
 
@@ -126,8 +126,6 @@
         }
         [user saveInBackground];
     }];
-    
-    
 }
 
 -(void)signUpViewController:(PFSignUpViewController *)signUpController didSignUpUser:(PFUser *)user
