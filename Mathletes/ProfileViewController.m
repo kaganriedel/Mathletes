@@ -84,9 +84,10 @@
     self.navigationController.navigationBar.backgroundColor = [UIColor whiteColor];
    
     profileButton.layer.cornerRadius = 50;
-    profileButton.contentMode = UIViewContentModeScaleToFill;
     profileImageView.layer.cornerRadius = 50;
     
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Hey Testers!" message:@"If your app is crashing, log out and create a new user. Thanks for testing our app!" delegate:nil cancelButtonTitle:@"Got It!" otherButtonTitles: nil];
+    [alert show];
 }
 
 -(void)viewWillAppear:(BOOL)animated

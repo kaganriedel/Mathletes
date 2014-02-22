@@ -41,7 +41,6 @@
     proficientLabel.font = [UIFont fontWithName:@"Miso-Bold" size:20];
     effecientLabel.font = [UIFont fontWithName:@"Miso-Bold" size:20];
     
-    self.title = _additionTabBarItem.title;
     [_operandTabBar setSelectedItem:_operandTabBar.items[0]];
     _operand = @"+";
     

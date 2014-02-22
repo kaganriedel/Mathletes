@@ -1293,7 +1293,7 @@
             }
             else
             {
-                feedbackLabel.text = [NSString stringWithFormat: @"The correct answer is %i", var1Label.text.intValue * var2Label.text.intValue];
+                feedbackLabel.text = [NSString stringWithFormat: @"%@ x %@ = %i", var1Label.text, var2Label.text, var1Label.text.intValue * var2Label.text.intValue];
                 [self wrongAnswer];
             }
         }
@@ -1305,7 +1305,7 @@
             }
             else
             {
-                feedbackLabel.text = [NSString stringWithFormat: @"The correct answer is %i", var1Label.text.intValue / var2Label.text.intValue];
+                feedbackLabel.text = [NSString stringWithFormat: @"%@ / %@ = %i", var1Label.text, var2Label.text, var1Label.text.intValue / var2Label.text.intValue];
                 [self wrongAnswer];
             }
         }
@@ -1317,7 +1317,7 @@
             }
             else
             {
-                feedbackLabel.text = [NSString stringWithFormat: @"The correct answer is %i", var1Label.text.intValue + var2Label.text.intValue];
+                feedbackLabel.text = [NSString stringWithFormat: @"%@ + %@ = %i", var1Label.text, var2Label.text, var1Label.text.intValue + var2Label.text.intValue];
                 [self wrongAnswer];
             }
         }
@@ -1329,7 +1329,7 @@
             }
             else
             {
-                feedbackLabel.text = [NSString stringWithFormat: @"The correct answer is %i", var1Label.text.intValue - var2Label.text.intValue];
+                feedbackLabel.text = [NSString stringWithFormat: @"%@ - %@ = %i", var1Label.text, var2Label.text, var1Label.text.intValue - var2Label.text.intValue];
                 [self wrongAnswer];
             }
         }
