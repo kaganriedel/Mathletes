@@ -29,7 +29,7 @@
     
     stickerCountLabel.font = [UIFont fontWithName:@"Miso-Bold" size:30];
     countLabel.font = [UIFont fontWithName:@"Miso-Bold" size:30];
-    rarityLabel.font = [UIFont fontWithName:@"Miso-Bold" size:36];
+    rarityLabel.font = [UIFont fontWithName:@"Miso-Bold" size:30];
     detailLabel.font = [UIFont fontWithName:@"Miso-Bold" size:28];
     
     stickerImageView.image = [UIImage imageNamed:_stickerImageName];
@@ -51,16 +51,19 @@
     if ([stickerName isEqualToString:@"lion"])
     {
         rarityLabel.text = common;
+        rarityLabel.textColor = [UIColor myBlueColor];
         detailLabel.text = @"Lions are found in Africa. They lounge around being kings of all they see.";
     }
     else if ([stickerName isEqualToString:@"kitten"])
     {
         rarityLabel.text = common;
+        rarityLabel.textColor = [UIColor myBlueColor];
         detailLabel.text = @"Did you know?";
     }
     else if ([stickerName isEqualToString:@"campfire"])
     {
         rarityLabel.text = common;
+        rarityLabel.textColor = [UIColor myBlueColor];
         detailLabel.text = @"Did you know?";
     }
     
@@ -68,16 +71,19 @@
     else if ([stickerName isEqualToString:@"puppy"])
     {
         rarityLabel.text = uncommon;
+        rarityLabel.textColor = [UIColor myRedColor];
         detailLabel.text = @"Puppies are adorable. They cuddle, jump and play! Then they pee on your carpet.";
     }
     else if ([stickerName isEqualToString:@"tiger"])
     {
         rarityLabel.text = uncommon;
+        rarityLabel.textColor = [UIColor myRedColor];
         detailLabel.text = @"Did you know?";
     }
     else if ([stickerName isEqualToString:@"murray"])
     {
         rarityLabel.text = uncommon;
+        rarityLabel.textColor = [UIColor myRedColor];
         detailLabel.text = @"Did you know?";
     }
     
@@ -85,11 +91,13 @@
     else if ([stickerName isEqualToString:@"bear"])
     {
         rarityLabel.text = rare;
+        rarityLabel.textColor = [UIColor myYellowColor];
         detailLabel.text = @"Did you know?";
     }
     else if ([stickerName isEqualToString:@"pizza"])
     {
         rarityLabel.text = rare;
+        rarityLabel.textColor = [UIColor myYellowColor];
         detailLabel.text = @"Delicious delicious pizza.";
     }
     

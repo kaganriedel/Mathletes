@@ -59,7 +59,33 @@ int main(int argc, char * argv[])
     }
 }
 
-
 @end
 
+@implementation UIColor (mathletes)
+
++(UIColor*)myGreenColor
+{
+    UIColor *color = [UIColor colorWithRed:130.0/255.0 green:183.0/255.0 blue:53.0/255.0 alpha:1];
+    return color;
+}
+
++(UIColor*)myRedColor
+{
+    UIColor *color = [UIColor colorWithRed:222.0/255.0 green:54.0/255.0 blue:64.0/255.0 alpha:1];
+    return color;
+}
+
++(UIColor*)myYellowColor
+{
+    UIColor *color = [UIColor colorWithRed:(221.0/255.0) green:(168.0/255.0) blue:(57.0/255.0) alpha:0.9];
+    return color;
+}
+
++(UIColor*)myBlueColor
+{
+    UIColor *color = [UIColor colorWithRed:(95.0/255.0) green:(162.0/255.0) blue:(219/255.0) alpha:1];
+    return color;
+}
+
+@end
 

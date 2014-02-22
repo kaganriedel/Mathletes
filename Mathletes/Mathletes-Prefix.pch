@@ -26,4 +26,12 @@
 - (void)decrementKey:(NSString *)key;
 @end
 
+@interface UIColor (mathletes)
++(UIColor*)myGreenColor;
++(UIColor*)myRedColor;
++(UIColor*)myYellowColor;
++(UIColor*)myBlueColor;
+
+@end
+
 #endif
