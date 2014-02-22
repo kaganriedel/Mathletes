@@ -42,7 +42,16 @@
     effecientLabel.font = [UIFont fontWithName:@"Miso-Bold" size:20];
     
     [_operandTabBar setSelectedItem:_operandTabBar.items[0]];
+    
     _operand = @"+";
+    PFQuery *problemQuery = [PFQuery queryWithClassName:@"MathProblem"];
+    [problemQuery whereKey:@"problemType" equalTo:@0];
+    [problemQuery whereKey:@"mathUser" equalTo:[PFUser currentUser]];
+    [problemQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
+     {
+         _gridArray = (NSMutableArray *)objects;
+         [self createGrid];
+     }];
     
     [self createGrid];
 }
