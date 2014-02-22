@@ -41,10 +41,12 @@
     for (UILabel* label in self.view.subviews) {
         if([label isKindOfClass:[UILabel class]])
         {
-            label.font = [UIFont fontWithName:@"Miso-Bold" size:40];
+            label.font = [UIFont fontWithName:@"Miso-Bold" size:36.0f];
         }
     }
-
+    giveLabel.font = [UIFont fontWithName:@"Miso-Bold" size:36.0f];
+    getLabel.font = [UIFont fontWithName:@"Miso-Bold" size:36.0f];
+    
     
     userStickers = [NSMutableArray new];
     
