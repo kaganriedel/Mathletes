@@ -790,7 +790,7 @@
     }
     else if (newDailyMath >= 10)
     {
-        [self checkForAchievement:@"Daily Math!"];
+        [self checkForAchievement:@"Daily Math x10!"];
     }
     
     if ([_operationLabel.text isEqualToString:@"+"])
@@ -1138,77 +1138,84 @@
     if (![userDefaults boolForKey:key])
     {
         [userDefaults setBool:YES forKey:key];
-        [self giveSticker];
+        [self giveStickerForAchievement:key];
     }
 }
 
--(void)giveSticker
+-(void)giveStickerForAchievement:(NSString*)achievement
 {
     UIImage *notificationImage;
-    
+    NSString *stickerString;
 
     int randomSticker = arc4random()%100;
     PFUser *user = [PFUser currentUser];
 
     if (randomSticker < 20)
     {
-        [user increaseKey:@"lionCount"];
+        stickerString = @"lion";
+        [user increaseKey:[NSString stringWithFormat:@"%@Count", stickerString]];
+        notificationImage = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", stickerString]];
         
-        notificationImage = [UIImage imageNamed:@"lion.png"];
-        NSLog(@"lion count +1");
+        NSLog(@"%@ count +1", stickerString);
     }
     else if (randomSticker < 40)
     {
-        [user increaseKey:@"kittenCount"];
+        stickerString = @"kitten";
+        [user increaseKey:[NSString stringWithFormat:@"%@Count", stickerString]];
+        notificationImage = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", stickerString]];
         
-        notificationImage = [UIImage imageNamed:@"kitten.png"];
-
-        NSLog(@"kitten count +1");
+        NSLog(@"%@ count +1", stickerString);
     }
     else if (randomSticker < 60)
     {
-        [user increaseKey:@"campfireCount"];
-        notificationImage = [UIImage imageNamed:@"campfire.png"];
-
-        NSLog(@"campfire count +1");
+        stickerString = @"campfire";
+        [user increaseKey:[NSString stringWithFormat:@"%@Count", stickerString]];
+        notificationImage = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", stickerString]];
+        
+        NSLog(@"%@ count +1", stickerString);
     }
     else if (randomSticker < 70)
     {
-        [user increaseKey:@"puppyCount"];
-        notificationImage = [UIImage imageNamed:@"puppy.png"];
-
-        NSLog(@"puppy count +1");
+        stickerString = @"puppy";
+        [user increaseKey:[NSString stringWithFormat:@"%@Count", stickerString]];
+        notificationImage = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", stickerString]];
+        
+        NSLog(@"%@ count +1", stickerString);
     }
     else if (randomSticker < 80)
     {
-        [user increaseKey:@"tigerCount"];
-        notificationImage = [UIImage imageNamed:@"tiger.png"];
-
-        NSLog(@"tiger count +1");
+        stickerString = @"tiger";
+        [user increaseKey:[NSString stringWithFormat:@"%@Count", stickerString]];
+        notificationImage = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", stickerString]];
+        
+        NSLog(@"%@ count +1", stickerString);
     }
     else if (randomSticker < 90)
     {
-        [user increaseKey:@"murrayCount"];
-        notificationImage = [UIImage imageNamed:@"murray.png"];
-
-        NSLog(@"murray count +1");
+        stickerString = @"murray";
+        [user increaseKey:[NSString stringWithFormat:@"%@Count", stickerString]];
+        notificationImage = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", stickerString]];
+        
+        NSLog(@"%@ count +1", stickerString);
     }
     else if (randomSticker < 95)
     {
-        [user increaseKey:@"bearCount"];
-       notificationImage = [UIImage imageNamed:@"bear.png"];
-
-        NSLog(@"bear count +1");
+        stickerString = @"bear";
+        [user increaseKey:[NSString stringWithFormat:@"%@Count", stickerString]];
+        notificationImage = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", stickerString]];
+        
+        NSLog(@"%@ count +1", stickerString);
     }else if (randomSticker <= 100)
     {
-        [user increaseKey:@"pizzaCount"];
-        notificationImage = [UIImage imageNamed:@"pizza.png"];
+        stickerString = @"pizza";
+        [user increaseKey:[NSString stringWithFormat:@"%@Count", stickerString]];
+        notificationImage = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", stickerString]];
 
-        NSLog(@"pizza count +1");
+        NSLog(@"%@ count +1", stickerString);
     }
     
-    [CMNavBarNotificationView notifyWithText:@"You got a new sticker!"
-                                      detail:nil
+    [CMNavBarNotificationView notifyWithText:[NSString stringWithFormat:@"%@", achievement]
+                                      detail:[NSString stringWithFormat:@"You got a %@ sticker", stickerString]
                                        image:notificationImage
                                  andDuration:3.0];
    

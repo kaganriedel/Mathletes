@@ -33,7 +33,7 @@
 {
  
     achievements = @[
-                     @[[[Achievement alloc] initWithName:@"Daily Math!" Description:@"Complete 10 math problems today" Message:@"You completed 10 math problems today!"],
+                     @[[[Achievement alloc] initWithName:@"Daily Math x10!" Description:@"Complete 10 math problems today" Message:@"You completed 10 math problems today!"],
                        [[Achievement alloc] initWithName:@"Daily Math x20!" Description:@"Complete 20 math problems today" Message:@"You completed 20 math problems today!"],
                        [[Achievement alloc] initWithName:@"Daily Math x30!" Description:@"Complete 30 math problems today" Message:@"You completed 30 math problems today!"],
                        [[Achievement alloc] initWithName:@"Daily Math x40!" Description:@"Complete 40 math problems today" Message:@"You completed 40 math problems today!"],
