@@ -49,6 +49,7 @@
     NSTimer *correctAnswerTimer;
     
     NSUserDefaults *userDefaults;
+    PFUser *user;
 }
 
 
@@ -59,6 +60,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    user = [PFUser currentUser];
     
     [self buildView];
     
@@ -839,15 +841,15 @@
         }
         else if (newTotalAdds >= 80)
         {
-            [self checkForAchievement:@"Add It Up x80!" Minimum:1 Maximum:60];
+            [self checkForAchievement:@"Add It Up x80!" Minimum:1 Maximum:92];
         }
         else if (newTotalAdds >= 60)
         {
-            [self checkForAchievement:@"Add It Up x60!" Minimum:1 Maximum:60];
+            [self checkForAchievement:@"Add It Up x60!" Minimum:1 Maximum:92];
         }
         else if (newTotalAdds >= 40)
         {
-            [self checkForAchievement:@"Add It Up x40!" Minimum:1 Maximum:60];
+            [self checkForAchievement:@"Add It Up x40!" Minimum:1 Maximum:92];
         }
         else if (newTotalAdds >= 20)
         {
@@ -908,11 +910,11 @@
             }
             else if (newTotalFastAdds >= 60)
             {
-                [self checkForAchievement:@"Adding At 60 Miles Per Hour!" Minimum:1 Maximum:60];
+                [self checkForAchievement:@"Adding At 60 Miles Per Hour!" Minimum:1 Maximum:92];
             }
             else if (newTotalFastAdds >= 45)
             {
-                [self checkForAchievement:@"Adding At 45 Miles Per Hour!" Minimum:1 Maximum:60];
+                [self checkForAchievement:@"Adding At 45 Miles Per Hour!" Minimum:1 Maximum:92];
             }
             else if (newTotalFastAdds >= 30)
             {
@@ -971,15 +973,15 @@
         }
         else if (newTotalSubs >= 80)
         {
-            [self checkForAchievement:@"Take It Away x80!" Minimum:1 Maximum:60];
+            [self checkForAchievement:@"Take It Away x80!" Minimum:1 Maximum:92];
         }
         else if (newTotalSubs >= 60)
         {
-            [self checkForAchievement:@"Take It Away x60!" Minimum:1 Maximum:60];
+            [self checkForAchievement:@"Take It Away x60!" Minimum:1 Maximum:92];
         }
         else if (newTotalSubs >= 40)
         {
-            [self checkForAchievement:@"Take It Away x40!" Minimum:1 Maximum:60];
+            [self checkForAchievement:@"Take It Away x40!" Minimum:1 Maximum:92];
         }
         else if (newTotalSubs >= 20)
         {
@@ -1040,11 +1042,11 @@
             }
             else if (newTotalFastSubs >= 60)
             {
-                [self checkForAchievement:@"Subtracting At 60 \nMiles Per Hour!" Minimum:1 Maximum:60];
+                [self checkForAchievement:@"Subtracting At 60 \nMiles Per Hour!" Minimum:1 Maximum:92];
             }
             else if (newTotalFastSubs >= 45)
             {
-                [self checkForAchievement:@"Subtracting At 45 \nMiles Per Hour!" Minimum:1 Maximum:60];
+                [self checkForAchievement:@"Subtracting At 45 \nMiles Per Hour!" Minimum:1 Maximum:92];
             }
             else if (newTotalFastSubs >= 30)
             {
@@ -1066,7 +1068,7 @@
         [userDefaults incrementKey:@"totalDivides"];
     }
     
-    int totalMathProblems = [userDefaults integerForKey:@"totalAdds"] + [userDefaults integerForKey:@"totalSubs"];
+    int totalMathProblems = [userDefaults integerForKey:@"totalAdds"] + [userDefaults integerForKey:@"totalSubs"] + [userDefaults integerForKey:@"totalMults"] + [userDefaults integerForKey:@"totalDivides"];
     
     if (totalMathProblems >= 1500)
     {
@@ -1150,9 +1152,8 @@
 
     int randomSticker = arc4random()%(maximum + 1 - minimum) + minimum;
     NSLog(@"random sticker: %i", randomSticker);
-    PFUser *user = [PFUser currentUser];
 
-    if (randomSticker < 20)
+    if (randomSticker <= 20)
     {
         stickerString = @"lion";
         [user increaseKey:[NSString stringWithFormat:@"%@Count", stickerString]];
@@ -1160,7 +1161,7 @@
         
         NSLog(@"%@ count +1", stickerString);
     }
-    else if (randomSticker < 40)
+    else if (randomSticker <= 40)
     {
         stickerString = @"kitten";
         [user increaseKey:[NSString stringWithFormat:@"%@Count", stickerString]];
@@ -1168,7 +1169,7 @@
         
         NSLog(@"%@ count +1", stickerString);
     }
-    else if (randomSticker < 60)
+    else if (randomSticker <= 60)
     {
         stickerString = @"campfire";
         [user increaseKey:[NSString stringWithFormat:@"%@Count", stickerString]];
@@ -1176,7 +1177,7 @@
         
         NSLog(@"%@ count +1", stickerString);
     }
-    else if (randomSticker < 70)
+    else if (randomSticker <= 70)
     {
         stickerString = @"puppy";
         [user increaseKey:[NSString stringWithFormat:@"%@Count", stickerString]];
@@ -1184,7 +1185,7 @@
         
         NSLog(@"%@ count +1", stickerString);
     }
-    else if (randomSticker < 80)
+    else if (randomSticker <= 81)
     {
         stickerString = @"tiger";
         [user increaseKey:[NSString stringWithFormat:@"%@Count", stickerString]];
@@ -1192,7 +1193,7 @@
         
         NSLog(@"%@ count +1", stickerString);
     }
-    else if (randomSticker < 90)
+    else if (randomSticker <= 92)
     {
         stickerString = @"murray";
         [user increaseKey:[NSString stringWithFormat:@"%@Count", stickerString]];
@@ -1200,7 +1201,7 @@
         
         NSLog(@"%@ count +1", stickerString);
     }
-    else if (randomSticker < 95)
+    else if (randomSticker <= 96)
     {
         stickerString = @"bear";
         [user increaseKey:[NSString stringWithFormat:@"%@Count", stickerString]];
