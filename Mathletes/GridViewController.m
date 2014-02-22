@@ -41,32 +41,17 @@
     proficientLabel.font = [UIFont fontWithName:@"Miso-Bold" size:20];
     effecientLabel.font = [UIFont fontWithName:@"Miso-Bold" size:20];
     
-    [self buildView];
-}
-
--(void)buildView
-{
     self.title = _additionTabBarItem.title;
     [_operandTabBar setSelectedItem:_operandTabBar.items[0]];
     _operand = @"+";
     
-    PFQuery *problemQuery = [PFQuery queryWithClassName:@"MathProblem"];
-    [problemQuery whereKey:@"problemType" equalTo:@0];
-    [problemQuery whereKey:@"mathUser" equalTo:[PFUser currentUser]];
+    [self createGrid];
+}
+
+-(void)buildView
+{
     
-    [problemQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
-     {
-         _gridArray = (NSMutableArray *)objects;
-         
-         for (int i = 0; i < _gridArray.count; i++)
-         {
-             MathProblem *problem = _gridArray[i];
-             NSLog(@"%i %i %ld",problem.firstValue, problem.secondValue,(long)problem.equationDifficulty);
-         }
-         
-         [self createGrid];
-     }];
-    
+    [self createGrid];
 }
 
 -(void)createGrid
@@ -179,7 +164,7 @@
                  NSLog(@"%i %i %ld",problem.firstValue, problem.secondValue,(long)problem.equationDifficulty);
              }
              
-             [self buildView];
+             [self createGrid];
          }];
         
     }
@@ -201,12 +186,12 @@
                  NSLog(@"%i %i %ld",problem.firstValue, problem.secondValue,(long)problem.equationDifficulty);
              }
              
-             [self buildView];
+             [self createGrid];
+             
          }];
         
     }
-    
-    [self createGrid];
+
 }
 
 /*
