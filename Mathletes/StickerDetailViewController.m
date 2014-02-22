@@ -92,11 +92,6 @@
         rarityLabel.text = rare;
         detailLabel.text = @"Delicious delicious pizza.";
     }
-
-
-    
-    
-    
     
     [detailLabel sizeToFit];
     
