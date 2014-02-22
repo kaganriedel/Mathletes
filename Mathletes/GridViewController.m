@@ -40,6 +40,8 @@
     excellentLabel.font = [UIFont fontWithName:@"Miso-Bold" size:20];
     proficientLabel.font = [UIFont fontWithName:@"Miso-Bold" size:20];
     effecientLabel.font = [UIFont fontWithName:@"Miso-Bold" size:20];
+    
+    [self buildView];
 }
 
 -(void)buildView
@@ -62,19 +64,9 @@
              NSLog(@"%i %i %ld",problem.firstValue, problem.secondValue,(long)problem.equationDifficulty);
          }
          
-         [self buildView];
+         [self createGrid];
      }];
     
-
-    
-}
-
--(void)buildView
-{
-    [_operandTabBar setSelectedItem:_operandTabBar.items[0]];
-    _operand = @"+";
-
-    [self createGrid];
 }
 
 -(void)createGrid
