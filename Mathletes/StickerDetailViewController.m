@@ -42,21 +42,26 @@
     NSString *cappedString = [stickerName stringByReplacingCharactersInRange:NSMakeRange(0, 1) withString:cappedFirstChar];
     self.navigationItem.title = cappedString;
     
+    
+    NSString *common = @"COMMON";
+    NSString *uncommon = @"UNCOMMON";
+    NSString *rare = @"RARE";
+    
     if ([stickerName isEqualToString:@"lion"])
     {
-        rarityLabel.text = @"COMMON";
+        rarityLabel.text = common;
         detailLabel.text = @"Lions are found in Africa. They lounge around being kings of all they see.";
     }
     else if ([stickerName isEqualToString:@"puppy"])
     {
-        rarityLabel.text = @"RARE";
+        rarityLabel.text = uncommon;
         detailLabel.text = @"Puppies are adorable. They cuddle, jump and play! Then they pee on your carpet.";
     }
-//    else if ([stickerName isEqualToString:@"puppy"])
-//    {
-//        rarityLabel.text = @"This sticker is easy to find!";
-//        detailLabel.text = @"Puppies are totes adorbs. They cuddle at a rate of 50 cuddles per hour and can slobber all over your face faster than a humming bird flaps its wings!";
-//    }
+    else if ([stickerName isEqualToString:@"pizza"])
+    {
+        rarityLabel.text = rare;
+        detailLabel.text = @"Delicious delicious pizza.";
+    }
 
     
     
