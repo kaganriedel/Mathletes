@@ -64,7 +64,7 @@
         
         
         [userDefaults setInteger:0 forKey:@"dailyMath"];
-        [userDefaults setBool:NO forKey:@"dailyMath!"];
+        [userDefaults setBool:NO forKey:@"dailyMath x10!"];
         [userDefaults setBool:NO forKey:@"dailyMath x20!"];
         [userDefaults setBool:NO forKey:@"dailyMath x30!"];
         [userDefaults setBool:NO forKey:@"dailyMath x40!"];
@@ -86,7 +86,7 @@
     profileButton.layer.cornerRadius = 50;
     profileImageView.layer.cornerRadius = 50;
     
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Hey Testers!" message:@"If your app is crashing or acting funny, log out and create a new user. We're changing the way users work constantly so old users don't work anymore. Thanks for testing our app!" delegate:nil cancelButtonTitle:@"On To The Math!" otherButtonTitles: nil];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Hey Testers!" message:@"If your app is crashing or acting funny, log out and create a new user. We're changing the way users work constantly so sometimes old users don't work. Thanks for testing our app!" delegate:nil cancelButtonTitle:@"On To The Math!" otherButtonTitles: nil];
     [alert show];
 }
 

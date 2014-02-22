@@ -774,23 +774,23 @@
     NSLog(@"newDailyMath is: %i", newDailyMath);
     if (newDailyMath >= 50)
     {
-        [self checkForAchievement:@"Daily Math x50!"];
+        [self checkForAchievement:@"Daily Math x50!" Minimum:1 Maximum:100];
     }
     else if (newDailyMath >= 40)
     {
-        [self checkForAchievement:@"Daily Math x40!"];
+        [self checkForAchievement:@"Daily Math x40!" Minimum:1 Maximum:92];
     }
     else if (newDailyMath >= 30)
     {
-        [self checkForAchievement:@"Daily Math x30!"];
+        [self checkForAchievement:@"Daily Math x30!" Minimum:1 Maximum:92];
     }
     else if (newDailyMath >= 20)
     {
-        [self checkForAchievement:@"Daily Math x20!"];
+        [self checkForAchievement:@"Daily Math x20!" Minimum:1 Maximum:60];
     }
     else if (newDailyMath >= 10)
     {
-        [self checkForAchievement:@"Daily Math x10!"];
+        [self checkForAchievement:@"Daily Math x10!" Minimum:1 Maximum:60];
     }
     
     if ([_operationLabel.text isEqualToString:@"+"])
@@ -799,63 +799,63 @@
         NSLog(@"newTotalAdds is: %i", newTotalAdds);
         if (newTotalAdds >= 300)
         {
-            [self checkForAchievement:@"Add It Up x300!"];
+            [self checkForAchievement:@"Add It Up x300!" Minimum:61 Maximum:100];
         }
         else if (newTotalAdds >= 275)
         {
-            [self checkForAchievement:@"Add It Up x275!"];
+            [self checkForAchievement:@"Add It Up x275!" Minimum:61 Maximum:100];
         }
         else if (newTotalAdds >= 250)
         {
-            [self checkForAchievement:@"Add It Up x250!"];
+            [self checkForAchievement:@"Add It Up x250!" Minimum:61 Maximum:100];
         }
         else if (newTotalAdds >= 225)
         {
-            [self checkForAchievement:@"Add It Up x225!"];
+            [self checkForAchievement:@"Add It Up x225!" Minimum:61 Maximum:100];
         }
         else if (newTotalAdds >= 200)
         {
-            [self checkForAchievement:@"Add It Up x200!"];
+            [self checkForAchievement:@"Add It Up x200!" Minimum:1 Maximum:100];
         }
         else if (newTotalAdds >= 180)
         {
-            [self checkForAchievement:@"Add It Up x180!"];
+            [self checkForAchievement:@"Add It Up x180!" Minimum:1 Maximum:100];
         }
         else if (newTotalAdds >= 160)
         {
-            [self checkForAchievement:@"Add It Up x160!"];
+            [self checkForAchievement:@"Add It Up x160!" Minimum:1 Maximum:100];
         }
         else if (newTotalAdds >= 140)
         {
-            [self checkForAchievement:@"Add It Up x140!"];
+            [self checkForAchievement:@"Add It Up x140!" Minimum:1 Maximum:100];
         }
         else if (newTotalAdds >= 120)
         {
-            [self checkForAchievement:@"Add It Up x120!"];
+            [self checkForAchievement:@"Add It Up x120!" Minimum:1 Maximum:100];
         }
         else if (newTotalAdds >= 100)
         {
-            [self checkForAchievement:@"Add It Up x100!"];
+            [self checkForAchievement:@"Add It Up x100!" Minimum:1 Maximum:100];
         }
         else if (newTotalAdds >= 80)
         {
-            [self checkForAchievement:@"Add It Up x80!"];
+            [self checkForAchievement:@"Add It Up x80!" Minimum:1 Maximum:60];
         }
         else if (newTotalAdds >= 60)
         {
-            [self checkForAchievement:@"Add It Up x60!"];
+            [self checkForAchievement:@"Add It Up x60!" Minimum:1 Maximum:60];
         }
         else if (newTotalAdds >= 40)
         {
-            [self checkForAchievement:@"Add It Up x40!"];
+            [self checkForAchievement:@"Add It Up x40!" Minimum:1 Maximum:60];
         }
         else if (newTotalAdds >= 20)
         {
-            [self checkForAchievement:@"Add It Up x20!"];
+            [self checkForAchievement:@"Add It Up x20!" Minimum:1 Maximum:60];
         }
         else if (newTotalAdds >= 1)
         {
-            [self checkForAchievement:@"Add It Up!"];
+            [self checkForAchievement:@"Add It Up!" Minimum:1 Maximum:60];
         }
         
         if (countDown <= 6)
@@ -864,63 +864,63 @@
             NSLog(@"Total Fast Adds: %i",newTotalFastAdds);
             if (newTotalFastAdds >= 250)
             {
-                [self checkForAchievement:@"Adding At 250 Miles Per Hour!"];
+                [self checkForAchievement:@"Adding At 250 Miles Per Hour!" Minimum:61 Maximum:100];
             }
             else if (newTotalFastAdds >= 230)
             {
-                [self checkForAchievement:@"Adding At 230 Miles Per Hour!"];
+                [self checkForAchievement:@"Adding At 230 Miles Per Hour!" Minimum:61 Maximum:100];
             }
             else if (newTotalFastAdds >= 210)
             {
-                [self checkForAchievement:@"Adding At 210 Miles Per Hour!"];
+                [self checkForAchievement:@"Adding At 210 Miles Per Hour!" Minimum:61 Maximum:100];
             }
             else if (newTotalFastAdds >= 190)
             {
-                [self checkForAchievement:@"Adding At 190 Miles Per Hour!"];
+                [self checkForAchievement:@"Adding At 190 Miles Per Hour!" Minimum:61 Maximum:100];
             }
             else if (newTotalFastAdds >= 170)
             {
-                [self checkForAchievement:@"Adding At 170 Miles Per Hour!"];
+                [self checkForAchievement:@"Adding At 170 Miles Per Hour!" Minimum:61 Maximum:100];
             }
             else if (newTotalFastAdds >= 150)
             {
-                [self checkForAchievement:@"Adding At 150 Miles Per Hour!"];
+                [self checkForAchievement:@"Adding At 150 Miles Per Hour!" Minimum:1 Maximum:100];
             }
             else if (newTotalFastAdds >= 135)
             {
-                [self checkForAchievement:@"Adding At 135 Miles Per Hour!"];
+                [self checkForAchievement:@"Adding At 135 Miles Per Hour!" Minimum:1 Maximum:100];
             }
             else if (newTotalFastAdds >= 120)
             {
-                [self checkForAchievement:@"Adding At 120 Miles Per Hour!"];
+                [self checkForAchievement:@"Adding At 120 Miles Per Hour!" Minimum:1 Maximum:100];
             }
             else if (newTotalFastAdds >= 105)
             {
-                [self checkForAchievement:@"Adding At 105 Miles Per Hour!"];
+                [self checkForAchievement:@"Adding At 105 Miles Per Hour!" Minimum:1 Maximum:100];
             }
             else if (newTotalFastAdds >= 90)
             {
-                [self checkForAchievement:@"Adding At 90 Miles Per Hour!"];
+                [self checkForAchievement:@"Adding At 90 Miles Per Hour!" Minimum:1 Maximum:100];
             }
             else if (newTotalFastAdds >= 75)
             {
-                [self checkForAchievement:@"Adding At 75 Miles Per Hour!"];
+                [self checkForAchievement:@"Adding At 75 Miles Per Hour!" Minimum:1 Maximum:100];
             }
             else if (newTotalFastAdds >= 60)
             {
-                [self checkForAchievement:@"Adding At 60 Miles Per Hour!"];
+                [self checkForAchievement:@"Adding At 60 Miles Per Hour!" Minimum:1 Maximum:60];
             }
             else if (newTotalFastAdds >= 45)
             {
-                [self checkForAchievement:@"Adding At 45 Miles Per Hour!"];
+                [self checkForAchievement:@"Adding At 45 Miles Per Hour!" Minimum:1 Maximum:60];
             }
             else if (newTotalFastAdds >= 30)
             {
-                [self checkForAchievement:@"Adding At 30 Miles Per Hour!"];
+                [self checkForAchievement:@"Adding At 30 Miles Per Hour!" Minimum:1 Maximum:60];
             }
             else if (newTotalFastAdds >= 15)
             {
-                [self checkForAchievement:@"Adding At 15 Miles Per Hour!"];
+                [self checkForAchievement:@"Adding At 15 Miles Per Hour!" Minimum:1 Maximum:60];
             }           
         }
     }
@@ -931,63 +931,63 @@
         NSLog(@"newTotalSubs is: %i", newTotalSubs);
         if (newTotalSubs >= 300)
         {
-            [self checkForAchievement:@"Take It Away x300!"];
+            [self checkForAchievement:@"Take It Away x300!" Minimum:61 Maximum:100];
         }
         else if (newTotalSubs >= 275)
         {
-            [self checkForAchievement:@"Take It Away 275!"];
+            [self checkForAchievement:@"Take It Away 275!" Minimum:61 Maximum:100];
         }
         else if (newTotalSubs >= 250)
         {
-            [self checkForAchievement:@"Take It Away x250!"];
+            [self checkForAchievement:@"Take It Away x250!" Minimum:61 Maximum:100];
         }
         else if (newTotalSubs >= 225)
         {
-            [self checkForAchievement:@"Take It Away x225!"];
+            [self checkForAchievement:@"Take It Away x225!" Minimum:61 Maximum:100];
         }
         else if (newTotalSubs >= 200)
         {
-            [self checkForAchievement:@"Take It Away x200!"];
+            [self checkForAchievement:@"Take It Away x200!" Minimum:61 Maximum:100];
         }
         else if (newTotalSubs >= 180)
         {
-            [self checkForAchievement:@"Take It Away x180!"];
+            [self checkForAchievement:@"Take It Away x180!" Minimum:1 Maximum:100];
         }
         else if (newTotalSubs >= 160)
         {
-            [self checkForAchievement:@"Take It Away x160!"];
+            [self checkForAchievement:@"Take It Away x160!" Minimum:1 Maximum:100];
         }
         else if (newTotalSubs >= 140)
         {
-            [self checkForAchievement:@"Take It Away x140!"];
+            [self checkForAchievement:@"Take It Away x140!" Minimum:1 Maximum:100];
         }
         else if (newTotalSubs >= 120)
         {
-            [self checkForAchievement:@"Take It Away x120!"];
+            [self checkForAchievement:@"Take It Away x120!" Minimum:1 Maximum:100];
         }
         else if (newTotalSubs >= 100)
         {
-            [self checkForAchievement:@"Take It Away x100!"];
+            [self checkForAchievement:@"Take It Away x100!" Minimum:1 Maximum:100];
         }
         else if (newTotalSubs >= 80)
         {
-            [self checkForAchievement:@"Take It Away x80!"];
+            [self checkForAchievement:@"Take It Away x80!" Minimum:1 Maximum:60];
         }
         else if (newTotalSubs >= 60)
         {
-            [self checkForAchievement:@"Take It Away x60!"];
+            [self checkForAchievement:@"Take It Away x60!" Minimum:1 Maximum:60];
         }
         else if (newTotalSubs >= 40)
         {
-            [self checkForAchievement:@"Take It Away x40!"];
+            [self checkForAchievement:@"Take It Away x40!" Minimum:1 Maximum:60];
         }
         else if (newTotalSubs >= 20)
         {
-            [self checkForAchievement:@"Take It Away x20!"];
+            [self checkForAchievement:@"Take It Away x20!" Minimum:1 Maximum:60];
         }
         else if (newTotalSubs >= 1)
         {
-            [self checkForAchievement:@"Take It Away!"];
+            [self checkForAchievement:@"Take It Away!" Minimum:1 Maximum:60];
         }
 
         if (countDown <= 6)
@@ -996,63 +996,63 @@
             NSLog(@"Total Fast Subs: %i",newTotalFastSubs);
             if (newTotalFastSubs >= 250)
             {
-                [self checkForAchievement:@"Subtracting At 250 \nMiles Per Hour!"];
+                [self checkForAchievement:@"Subtracting At 250 \nMiles Per Hour!" Minimum:61 Maximum:100];
             }
             else if (newTotalFastSubs >= 230)
             {
-                [self checkForAchievement:@"Subtracting At 230 \nMiles Per Hour!"];
+                [self checkForAchievement:@"Subtracting At 230 \nMiles Per Hour!" Minimum:61 Maximum:100];
             }
             else if (newTotalFastSubs >= 210)
             {
-                [self checkForAchievement:@"Subtracting At 210 \nMiles Per Hour!"];
+                [self checkForAchievement:@"Subtracting At 210 \nMiles Per Hour!" Minimum:61 Maximum:100];
             }
             else if (newTotalFastSubs >= 190)
             {
-                [self checkForAchievement:@"Subtracting At 190 \nMiles Per Hour!"];
+                [self checkForAchievement:@"Subtracting At 190 \nMiles Per Hour!" Minimum:61 Maximum:100];
             }
             else if (newTotalFastSubs >= 170)
             {
-                [self checkForAchievement:@"Subtracting At 170 \nMiles Per Hour!"];
+                [self checkForAchievement:@"Subtracting At 170 \nMiles Per Hour!" Minimum:61 Maximum:100];
             }
             else if (newTotalFastSubs >= 150)
             {
-                [self checkForAchievement:@"Subtracting At 150 \nMiles Per Hour!"];
+                [self checkForAchievement:@"Subtracting At 150 \nMiles Per Hour!" Minimum:1 Maximum:100];
             }
             else if (newTotalFastSubs >= 135)
             {
-                [self checkForAchievement:@"Subtracting At 135 \nMiles Per Hour!"];
+                [self checkForAchievement:@"Subtracting At 135 \nMiles Per Hour!" Minimum:1 Maximum:100];
             }
             else if (newTotalFastSubs >= 120)
             {
-                [self checkForAchievement:@"Subtracting At 120 \nMiles Per Hour!"];
+                [self checkForAchievement:@"Subtracting At 120 \nMiles Per Hour!" Minimum:1 Maximum:100];
             }
             else if (newTotalFastSubs >= 105)
             {
-                [self checkForAchievement:@"Subtracting At 105 \nMiles Per Hour!"];
+                [self checkForAchievement:@"Subtracting At 105 \nMiles Per Hour!" Minimum:1 Maximum:100];
             }
             else if (newTotalFastSubs >= 90)
             {
-                [self checkForAchievement:@"Subtracting At 90 \nMiles Per Hour!"];
+                [self checkForAchievement:@"Subtracting At 90 \nMiles Per Hour!" Minimum:1 Maximum:100];
             }
             else if (newTotalFastSubs >= 75)
             {
-                [self checkForAchievement:@"Subtracting At 75 \nMiles Per Hour!"];
+                [self checkForAchievement:@"Subtracting At 75 \nMiles Per Hour!" Minimum:1 Maximum:100];
             }
             else if (newTotalFastSubs >= 60)
             {
-                [self checkForAchievement:@"Subtracting At 60 \nMiles Per Hour!"];
+                [self checkForAchievement:@"Subtracting At 60 \nMiles Per Hour!" Minimum:1 Maximum:60];
             }
             else if (newTotalFastSubs >= 45)
             {
-                [self checkForAchievement:@"Subtracting At 45 \nMiles Per Hour!"];
+                [self checkForAchievement:@"Subtracting At 45 \nMiles Per Hour!" Minimum:1 Maximum:60];
             }
             else if (newTotalFastSubs >= 30)
             {
-                [self checkForAchievement:@"Subtracting At 30 \nMiles Per Hour!"];
+                [self checkForAchievement:@"Subtracting At 30 \nMiles Per Hour!" Minimum:1 Maximum:60];
             }
             else if (newTotalFastSubs >= 15)
             {
-                [self checkForAchievement:@"Subtracting At 15 \nMiles Per Hour!"];
+                [self checkForAchievement:@"Subtracting At 15 \nMiles Per Hour!" Minimum:1 Maximum:60];
             }
         }
     }
@@ -1070,84 +1070,86 @@
     
     if (totalMathProblems >= 1500)
     {
-        [self checkForAchievement:@"Keep It Up x1500!"];
+        [self checkForAchievement:@"Keep It Up x1500!" Minimum:93 Maximum:100];
     }
     else if (totalMathProblems >= 1400)
     {
-        [self checkForAchievement:@"Keep It Up x1400!"];
+        [self checkForAchievement:@"Keep It Up x1400!" Minimum:93 Maximum:100];
     }
     else if (totalMathProblems >= 1300)
     {
-        [self checkForAchievement:@"Keep It Up x1300!"];
+        [self checkForAchievement:@"Keep It Up x1300!" Minimum:93 Maximum:100];
     }
     else if (totalMathProblems >= 1200)
     {
-        [self checkForAchievement:@"Keep It Up x1200!"];
+        [self checkForAchievement:@"Keep It Up x1200!" Minimum:93 Maximum:100];
     }
     else if (totalMathProblems >= 1100)
     {
-        [self checkForAchievement:@"Keep It Up x1100!"];
+        [self checkForAchievement:@"Keep It Up x1100!" Minimum:93 Maximum:100];
     }
     else if (totalMathProblems >= 1000)
     {
-        [self checkForAchievement:@"Keep It Up x1000!"];
+        [self checkForAchievement:@"Keep It Up x1000!" Minimum:93 Maximum:100];
     }
     else if (totalMathProblems >= 900)
     {
-        [self checkForAchievement:@"Keep It Up x900!"];
+        [self checkForAchievement:@"Keep It Up x900!" Minimum:61 Maximum:100];
     }
     else if (totalMathProblems >= 800)
     {
-        [self checkForAchievement:@"Keep It Up x800!"];
+        [self checkForAchievement:@"Keep It Up x800!" Minimum:61 Maximum:100];
     }
     else if (totalMathProblems >= 700)
     {
-        [self checkForAchievement:@"Keep It Up x700!"];
+        [self checkForAchievement:@"Keep It Up x700!" Minimum:61 Maximum:100];
     }
     else if (totalMathProblems >= 600)
     {
-        [self checkForAchievement:@"Keep It Up x600!"];
+        [self checkForAchievement:@"Keep It Up x600!" Minimum:61 Maximum:100];
     }
     else if (totalMathProblems >= 500)
     {
-        [self checkForAchievement:@"Keep It Up x500!"];
+        [self checkForAchievement:@"Keep It Up x500!" Minimum:61 Maximum:100];
     }
     else if (totalMathProblems >= 400)
     {
-        [self checkForAchievement:@"Keep It Up x400!"];
+        [self checkForAchievement:@"Keep It Up x400!" Minimum:61 Maximum:100];
     }
     else if (totalMathProblems >= 300)
     {
-        [self checkForAchievement:@"Keep It Up x300!"];
+        [self checkForAchievement:@"Keep It Up x300!" Minimum:61 Maximum:100];
     }
     else if (totalMathProblems >= 200)
     {
-        [self checkForAchievement:@"Keep It Up x200!"];
+        [self checkForAchievement:@"Keep It Up x200!" Minimum:61 Maximum:100];
     }
     else if (totalMathProblems >= 100)
     {
-        [self checkForAchievement:@"Keep It Up x100!"];
+        [self checkForAchievement:@"Keep It Up x100!" Minimum:61 Maximum:100];
     }
    
 
     [userDefaults synchronize];
 }
 
--(void)checkForAchievement:(NSString *)key
+//minimum and maximum are used to determine how rare of a sticker to give for that particular achievement
+-(void)checkForAchievement:(NSString *)key Minimum:(int)minimum Maximum:(int)maximum
 {
     if (![userDefaults boolForKey:key])
     {
         [userDefaults setBool:YES forKey:key];
-        [self giveStickerForAchievement:key];
+        [self giveStickerForAchievement:[key stringByReplacingOccurrencesOfString:@"\n" withString:@""] Minimum:(int)minimum Maximum:(int)maximum];
     }
 }
 
--(void)giveStickerForAchievement:(NSString*)achievement
+-(void)giveStickerForAchievement:(NSString*)achievement Minimum:(int)minimum Maximum:(int)maximum
 {
     UIImage *notificationImage;
     NSString *stickerString;
 
-    int randomSticker = arc4random()%100;
+    int randomSticker = arc4random()%(maximum + 1 - minimum) + minimum;
+    NSLog(@"random sticker: %i", randomSticker);
     PFUser *user = [PFUser currentUser];
 
     if (randomSticker < 20)
@@ -1215,7 +1217,7 @@
     }
     
     [CMNavBarNotificationView notifyWithText:[NSString stringWithFormat:@"%@", achievement]
-                                      detail:[NSString stringWithFormat:@"You got a %@ sticker", stickerString]
+                                      detail:[NSString stringWithFormat:@"You got a %@ sticker!", stickerString]
                                        image:notificationImage
                                  andDuration:3.0];
    
