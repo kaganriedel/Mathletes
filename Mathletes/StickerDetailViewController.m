@@ -47,21 +47,52 @@
     NSString *uncommon = @"UNCOMMON";
     NSString *rare = @"RARE";
     
+    //Common stickers
     if ([stickerName isEqualToString:@"lion"])
     {
         rarityLabel.text = common;
         detailLabel.text = @"Lions are found in Africa. They lounge around being kings of all they see.";
     }
+    else if ([stickerName isEqualToString:@"kitten"])
+    {
+        rarityLabel.text = common;
+        detailLabel.text = @"Did you know?";
+    }
+    else if ([stickerName isEqualToString:@"campfire"])
+    {
+        rarityLabel.text = common;
+        detailLabel.text = @"Did you know?";
+    }
+    
+    //Uncommon stickers
     else if ([stickerName isEqualToString:@"puppy"])
     {
         rarityLabel.text = uncommon;
         detailLabel.text = @"Puppies are adorable. They cuddle, jump and play! Then they pee on your carpet.";
+    }
+    else if ([stickerName isEqualToString:@"tiger"])
+    {
+        rarityLabel.text = uncommon;
+        detailLabel.text = @"Did you know?";
+    }
+    else if ([stickerName isEqualToString:@"murray"])
+    {
+        rarityLabel.text = uncommon;
+        detailLabel.text = @"Did you know?";
+    }
+    
+    //Rare stickers
+    else if ([stickerName isEqualToString:@"bear"])
+    {
+        rarityLabel.text = rare;
+        detailLabel.text = @"Did you know?";
     }
     else if ([stickerName isEqualToString:@"pizza"])
     {
         rarityLabel.text = rare;
         detailLabel.text = @"Delicious delicious pizza.";
     }
+
 
     
     
