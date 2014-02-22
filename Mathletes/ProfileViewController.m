@@ -112,20 +112,6 @@
     
     [self checkForLoggedInUserAnimated:animated];
     
-    PFUser *user = [PFUser currentUser];
-    PFQuery *query = [PFQuery queryWithClassName:@"AcceptedTrade"];
-    [query whereKey:@"user" equalTo:[PFUser currentUser]];
-    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        for (PFObject *acceptedTrade in objects) {
-            [user increaseKey:[NSString stringWithFormat:@"%@Count",[acceptedTrade objectForKey:@"get"]]];
-            [CMNavBarNotificationView notifyWithText:@"Your trade was accepted!"
-                                              detail:[NSString stringWithFormat:@"You got a %@ sticker!", [acceptedTrade objectForKey:@"get"]]
-                                               image:[UIImage imageNamed:[NSString stringWithFormat:@"%@.png",[acceptedTrade objectForKey:@"get"]]]
-                                         andDuration:3.0];
-            [acceptedTrade deleteInBackground];
-        }
-        [user saveInBackground];
-    }];
 }
 
 -(void)signUpViewController:(PFSignUpViewController *)signUpController didSignUpUser:(PFUser *)user
@@ -153,6 +139,13 @@
     //receive their first sticker and set it to their profile pic
 }
 
+-(void)logInViewController:(PFLogInViewController *)logInController didLogInUser:(PFUser *)user
+{
+    [logInController dismissViewControllerAnimated:YES completion:nil];
+    
+
+}
+
 -(void)setTitle
 {
     NSString *username = [PFUser currentUser].username;
@@ -161,12 +154,7 @@
     profileLabel.text = cappedString;
 }
 
--(void)logInViewController:(PFLogInViewController *)logInController didLogInUser:(PFUser *)user
-{
-    [logInController dismissViewControllerAnimated:YES completion:nil];
-   
-    
-}
+
 
 - (IBAction)onLogOut:(id)sender
 {
@@ -188,6 +176,25 @@
         login.delegate = self;
         login.signUpController.delegate = self;
         [self presentViewController:login animated:animated completion:nil];
+    }
+    else
+    {
+        
+        PFUser *user = [PFUser currentUser];
+        PFQuery *query = [PFQuery queryWithClassName:@"AcceptedTrade"];
+        [query whereKey:@"user" equalTo:[PFUser currentUser]];
+        [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+            for (PFObject *acceptedTrade in objects) {
+                [user increaseKey:[NSString stringWithFormat:@"%@Count",[acceptedTrade objectForKey:@"get"]]];
+                [CMNavBarNotificationView notifyWithText:@"Your trade was accepted!"
+                                                  detail:[NSString stringWithFormat:@"You got a %@ sticker!", [acceptedTrade objectForKey:@"get"]]
+                                                   image:[UIImage imageNamed:[NSString stringWithFormat:@"%@.png",[acceptedTrade objectForKey:@"get"]]]
+                                             andDuration:3.0];
+                [acceptedTrade deleteInBackground];
+            }
+            [user saveInBackground];
+        }];
+
     }
 }
 
