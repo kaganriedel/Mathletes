@@ -15,6 +15,7 @@
 @interface ProfileViewController () <PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate>
 {
     NSUserDefaults *userDefaults;
+    PFUser *user;
     NSMutableArray *MathProblems;
 
     __weak IBOutlet UIButton *profileButton;
@@ -38,6 +39,8 @@
 {
     [super viewDidLoad];
    
+    userDefaults = [NSUserDefaults standardUserDefaults];
+    user = [PFUser currentUser];
     
     //set title and font of nav bar
     [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor darkGrayColor], NSForegroundColorAttributeName, [UIFont fontWithName:@"Miso-Bold" size:26], NSFontAttributeName, nil]];
@@ -55,21 +58,26 @@
     stickersButton.titleLabel.font = [UIFont fontWithName:@"Miso-Bold" size:48];
     achievementsButton.titleLabel.font = [UIFont fontWithName:@"Miso-Bold" size:48];
     
-    userDefaults = [NSUserDefaults standardUserDefaults];
     
-    NSLog(@"time since dailyMathStartDate: %f", [[NSDate date] timeIntervalSinceDate:[userDefaults objectForKey:@"dailyMathStartDate"]]);
+    NSLog(@"time since dailyMathStartDate: %f", [[NSDate date] timeIntervalSinceDate:[user objectForKey:@"dailyMathStartDate"]]);
     //if its been more than a day since the last reset of dailyMath, reset it
-    if ([[NSDate date] timeIntervalSinceDate:[userDefaults objectForKey:@"dailyMathStartDate"]] >= 86400.0)
+    if ([[NSDate date] timeIntervalSinceDate:[user objectForKey:@"dailyMathStartDate"]] >= 86400.0)
     {
+        [user setObject:0 forKey:@"dailyMath"];
+        [user setObject:@NO forKey:@"dailyMath x10!"];
+        [user setObject:@NO forKey:@"dailyMath x20!"];
+        [user setObject:@NO forKey:@"dailyMath x30!"];
+        [user setObject:@NO forKey:@"dailyMath x40!"];
+        [user setObject:@NO forKey:@"dailyMath x50!"];
+        [user saveInBackground];
         
-        
-        [userDefaults setInteger:0 forKey:@"dailyMath"];
-        [userDefaults setBool:NO forKey:@"dailyMath x10!"];
-        [userDefaults setBool:NO forKey:@"dailyMath x20!"];
-        [userDefaults setBool:NO forKey:@"dailyMath x30!"];
-        [userDefaults setBool:NO forKey:@"dailyMath x40!"];
-        [userDefaults setBool:NO forKey:@"dailyMath x50!"];
-        [userDefaults synchronize];
+//        [userDefaults setInteger:0 forKey:@"dailyMath"];
+//        [userDefaults setBool:NO forKey:@"dailyMath x10!"];
+//        [userDefaults setBool:NO forKey:@"dailyMath x20!"];
+//        [userDefaults setBool:NO forKey:@"dailyMath x30!"];
+//        [userDefaults setBool:NO forKey:@"dailyMath x40!"];
+//        [userDefaults setBool:NO forKey:@"dailyMath x50!"];
+//        [userDefaults synchronize];
     }
     
     for (UILabel* label in self.view.subviews) {
@@ -79,7 +87,7 @@
         }
     }
     
-    NSLog(@"dailyMath is: %li", (long)[userDefaults integerForKey:@"dailyMath"]);
+    NSLog(@"dailyMath is: %i", [[user objectForKey:@"dailyMath"] intValue]);
 
     self.navigationController.navigationBar.backgroundColor = [UIColor whiteColor];
    
@@ -94,9 +102,9 @@
 {
     
     self.navigationController.navigationBar.barTintColor = [UIColor whiteColor];
-    if ([userDefaults objectForKey:@"profileImage"])
+    if ([user objectForKey:@"profileImage"])
     {
-        [profileButton setImage:[UIImage imageNamed:[userDefaults objectForKey:@"profileImage"]] forState:UIControlStateNormal];
+        [profileButton setImage:[UIImage imageNamed:[user objectForKey:@"profileImage"]] forState:UIControlStateNormal];
     }
     else
     {
@@ -116,8 +124,6 @@
 
 -(void)signUpViewController:(PFSignUpViewController *)signUpController didSignUpUser:(PFUser *)user
 {
-//    self.view.backgroundColor = [UIColor colorWithPatternImage:
-//                                 [UIImage imageNamed:@"math_login_screen_brand.png"]];
     _userArray = [self cardDifficulty];
     _subtractionUserArray = [self subtractionDifficulty];
     
@@ -180,7 +186,6 @@
     else
     {
         
-        PFUser *user = [PFUser currentUser];
         PFQuery *query = [PFQuery queryWithClassName:@"AcceptedTrade"];
         [query whereKey:@"user" equalTo:[PFUser currentUser]];
         [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {

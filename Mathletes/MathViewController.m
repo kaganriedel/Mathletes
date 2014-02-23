@@ -767,12 +767,12 @@
 
 -(void)updateAchievements
 {
-    if ([userDefaults integerForKey:@"dailyMath"] == 0)
+    if ([[user objectForKey:@"dailyMath"] intValue] == 0)
     {
-        [userDefaults setObject:[NSDate date] forKey:@"dailyMathStartDate"];
+        [user setObject:[NSDate date] forKey:@"dailyMathStartDate"];
     }
     
-    int newDailyMath = [userDefaults incrementKey:@"dailyMath"];
+    int newDailyMath = [user increaseKey:@"dailyMath"];
     NSLog(@"newDailyMath is: %i", newDailyMath);
     if (newDailyMath >= 50)
     {
@@ -797,7 +797,7 @@
     
     if ([_operationLabel.text isEqualToString:@"+"])
     {
-        int newTotalAdds = [userDefaults incrementKey:@"totalAdds"];
+        int newTotalAdds = [user increaseKey:@"totalAdds"];
         NSLog(@"newTotalAdds is: %i", newTotalAdds);
         if (newTotalAdds >= 300)
         {
@@ -862,7 +862,7 @@
         
         if (countDown <= 6)
         {
-            int newTotalFastAdds = [userDefaults incrementKey:@"totalFastAdds"];
+            int newTotalFastAdds = [user increaseKey:@"totalFastAdds"];
             NSLog(@"Total Fast Adds: %i",newTotalFastAdds);
             if (newTotalFastAdds >= 250)
             {
@@ -929,7 +929,7 @@
     
     else if ([_operationLabel.text isEqualToString:@"-"])
     {
-        int newTotalSubs = [userDefaults incrementKey:@"totalSubs"];
+        int newTotalSubs = [user increaseKey:@"totalSubs"];
         NSLog(@"newTotalSubs is: %i", newTotalSubs);
         if (newTotalSubs >= 300)
         {
@@ -994,7 +994,7 @@
 
         if (countDown <= 6)
         {
-            int newTotalFastSubs = [userDefaults incrementKey:@"totalFastSubs"];
+            int newTotalFastSubs = [user increaseKey:@"totalFastSubs"];
             NSLog(@"Total Fast Subs: %i",newTotalFastSubs);
             if (newTotalFastSubs >= 250)
             {
@@ -1061,14 +1061,14 @@
     
     else if ([_operationLabel.text isEqualToString:@"x"])
     {
-        [userDefaults incrementKey:@"totalMults"];
+        [user increaseKey:@"totalMults"];
     }
     else if ([_operationLabel.text isEqualToString:@"/"])
     {
-        [userDefaults incrementKey:@"totalDivides"];
+        [user increaseKey:@"totalDivides"];
     }
     
-    int totalMathProblems = [userDefaults integerForKey:@"totalAdds"] + [userDefaults integerForKey:@"totalSubs"] + [userDefaults integerForKey:@"totalMults"] + [userDefaults integerForKey:@"totalDivides"];
+    int totalMathProblems = [[user objectForKey:@"totalAdds"] intValue] + [[user objectForKey:@"totalSubs"] intValue] + [[user objectForKey:@"totalMults"] intValue] + [[user objectForKey:@"totalDivides"] intValue];
     
     if (totalMathProblems >= 1500)
     {

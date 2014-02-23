@@ -22,8 +22,8 @@
 @end
 
 @interface PFObject(mathletes)
--(void)increaseKey:(NSString *)key;
-- (void)decrementKey:(NSString *)key;
+-(int)increaseKey:(NSString *)key;
+-(int)decrementKey:(NSString *)key;
 @end
 
 @interface UIColor (mathletes)

@@ -11,7 +11,7 @@
 
 @interface ChooseStickerViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
 {
-    NSUserDefaults *userDefaults;
+    PFUser *user;
     
     NSMutableArray *userStickers;
 }
@@ -26,12 +26,11 @@
 {
     [super viewDidLoad];
     
-    userDefaults = [NSUserDefaults standardUserDefaults];
+    user = [PFUser currentUser];
     
     userStickers = [NSMutableArray new];
 
     //check to see which stickers the user has collected and display the ones they have
-    PFUser *user = [PFUser currentUser];
     if ([[user objectForKey:@"lionCount"] intValue] > 0)
     {
         [userStickers addObject:@"lion.png"];
@@ -69,8 +68,8 @@
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     ChooseStickerCell *cell = (ChooseStickerCell*)[collectionView cellForItemAtIndexPath:indexPath];
-    [userDefaults setObject:cell.imageName forKey:@"profileImage"];
-    [userDefaults synchronize];
+    [user setObject:cell.imageName forKey:@"profileImage"];
+    [user saveInBackground];
     [self.navigationController popViewControllerAnimated:YES];
 }
 
