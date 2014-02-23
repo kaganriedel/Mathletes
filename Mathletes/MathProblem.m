@@ -43,23 +43,3 @@
 
 @end
 
-/*
-@implementation AdditionProblem
-
-+ (NSString *)parseClassName
-{
-    return @"AdditionProblem";
-}
-
-@end
-
-
-@implementation SubtractionProblem
-
-+ (NSString *)parseClassName
-{
-    return @"SubtractionProblem";
-}
-
-@end
-*/

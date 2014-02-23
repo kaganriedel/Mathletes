@@ -12,5 +12,6 @@
 
 @property NSMutableArray *userArray;
 @property NSMutableArray *subtractionUserArray;
+@property NSMutableArray *multplicationUserArray;
 
 @end
