@@ -64,20 +64,15 @@
     if ([[NSDate date] timeIntervalSinceDate:[user objectForKey:@"dailyMathStartDate"]] >= 86400.0)
     {
         [user setObject:0 forKey:@"dailyMath"];
-        [user setObject:@NO forKey:@"dailyMath x10!"];
-        [user setObject:@NO forKey:@"dailyMath x20!"];
-        [user setObject:@NO forKey:@"dailyMath x30!"];
-        [user setObject:@NO forKey:@"dailyMath x40!"];
-        [user setObject:@NO forKey:@"dailyMath x50!"];
-        [user saveInBackground];
         
-//        [userDefaults setInteger:0 forKey:@"dailyMath"];
-//        [userDefaults setBool:NO forKey:@"dailyMath x10!"];
-//        [userDefaults setBool:NO forKey:@"dailyMath x20!"];
-//        [userDefaults setBool:NO forKey:@"dailyMath x30!"];
-//        [userDefaults setBool:NO forKey:@"dailyMath x40!"];
-//        [userDefaults setBool:NO forKey:@"dailyMath x50!"];
-//        [userDefaults synchronize];
+        [userDefaults setBool:NO forKey:@"dailyMath x10!"];
+        [userDefaults setBool:NO forKey:@"dailyMath x20!"];
+        [userDefaults setBool:NO forKey:@"dailyMath x30!"];
+        [userDefaults setBool:NO forKey:@"dailyMath x40!"];
+        [userDefaults setBool:NO forKey:@"dailyMath x50!"];
+        
+        [user saveInBackground];
+        [userDefaults synchronize];
     }
     
     for (UILabel* label in self.view.subviews) {
@@ -101,16 +96,7 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     
-    self.navigationController.navigationBar.barTintColor = [UIColor whiteColor];
-    if ([user objectForKey:@"profileImage"])
-    {
-        [profileButton setImage:[UIImage imageNamed:[user objectForKey:@"profileImage"]] forState:UIControlStateNormal];
-    }
-    else
-    {
-    [profileButton setImage:[UIImage imageNamed:@"boy.png"] forState:UIControlStateNormal];
-    }
-
+    [self setProfileImage];
 
     [self setTitle];
 }
@@ -145,11 +131,23 @@
     //receive their first sticker and set it to their profile pic
 }
 
--(void)logInViewController:(PFLogInViewController *)logInController didLogInUser:(PFUser *)user
+-(void)logInViewController:(PFLogInViewController *)logInController didLogInUser:(PFUser *)loggedInUser
 {
     [logInController dismissViewControllerAnimated:YES completion:nil];
-    
+    user = loggedInUser;
+    [self setProfileImage];
+}
 
+-(void)setProfileImage
+{
+    if ([user objectForKey:@"profileImage"])
+    {
+        [profileButton setImage:[UIImage imageNamed:[user objectForKey:@"profileImage"]] forState:UIControlStateNormal];
+    }
+    else
+    {
+        [profileButton setImage:[UIImage imageNamed:@"boy.png"] forState:UIControlStateNormal];
+    }
 }
 
 -(void)setTitle
