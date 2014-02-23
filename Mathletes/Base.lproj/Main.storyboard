@@ -149,7 +149,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mea-QJ-Xr3">
-                                                    <rect key="frame" x="2.5" y="0.5" width="67.5" height="67.5"/>
+                                                    <rect key="frame" x="2.5" y="0.5" width="67" height="67"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </imageView>
                                             </subviews>
@@ -241,6 +241,9 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="highlighted" backgroundImage="btn_multiplcation_item_pressed.png"/>
+                                <connections>
+                                    <segue destination="vXZ-lx-hvc" kind="push" identifier="MultiplicationSegue" id="Vfm-Oi-ryU"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="j0r-yV-Uob">
                                 <rect key="frame" x="0.0" y="377" width="320" height="1"/>
@@ -309,7 +312,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Duy-nR-h9k">
-                                                    <rect key="frame" x="1" y="-2" width="66.5" height="67"/>
+                                                    <rect key="frame" x="1" y="-2" width="66" height="66.5"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </imageView>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="x12" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="29n-LO-bUg">
@@ -847,7 +850,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
-                                    <color key="backgroundColor" red="1" green="0.70104356751824815" blue="0.12146441605839416" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                     <connections>
                                         <outlet property="titleLabel" destination="I6q-t1-Dkw" id="bjT-Pj-Nef"/>
                                     </connections>
@@ -1230,6 +1233,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="rLt-zi-41P"/>
+        <segue reference="Vfm-Oi-ryU"/>
     </inferredMetricsTieBreakers>
 </document>
