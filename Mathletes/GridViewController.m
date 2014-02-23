@@ -167,16 +167,16 @@
             //background color
             if (difficulty == 0)
             {
-                gridLabel.backgroundColor = [UIColor colorWithRed:130.0/255.0 green:183.0/255.0 blue:53.0/255.0 alpha:1];
+                gridLabel.backgroundColor = [UIColor myGreenColor];
             }
             else if (attempted == YES)
             {
-                gridLabel.backgroundColor = [UIColor colorWithRed:(221.0/255.0) green:(168.0/255.0) blue:(57.0/255.0) alpha:0.9];
+                gridLabel.backgroundColor = [UIColor myYellowColor];
                 
             }
             else
             {
-                gridLabel.backgroundColor = [UIColor colorWithRed:(95.0/255.0) green:(162.0/255.0) blue:(219/255.0) alpha:1];
+                gridLabel.backgroundColor = [UIColor myBlueColor];
             }
             
             xDirection += 31;
