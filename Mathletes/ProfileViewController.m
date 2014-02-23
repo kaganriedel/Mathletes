@@ -112,6 +112,7 @@
 {
     _userArray = [self cardDifficulty];
     _subtractionUserArray = [self subtractionDifficulty];
+    _multplicationUserArray = [self multiplicationDifficulty];
     
     [_userArray enumerateObjectsUsingBlock:^(MathProblem *obj, NSUInteger idx, BOOL *stop)
      {
@@ -119,6 +120,11 @@
      }];
     
     [_subtractionUserArray enumerateObjectsUsingBlock:^(MathProblem *obj, NSUInteger idx, BOOL *stop)
+     {
+         [obj saveInBackground];
+     }];
+    
+    [_multplicationUserArray enumerateObjectsUsingBlock:^(MathProblem *obj, NSUInteger idx, BOOL *stop)
      {
          [obj saveInBackground];
      }];
@@ -747,9 +753,112 @@
                               [[MathProblem alloc]initWithDifficulty:8 ofProblemType:1 forFirstValue:17 forSecondValue:9],
                               [[MathProblem alloc]initWithDifficulty:8 ofProblemType:1 forFirstValue:17 forSecondValue:8]
                               ].mutableCopy;
-    
 }
 
+-(NSMutableArray *)multiplicationDifficulty
+{
+    return @[         [[MathProblem alloc]initWithDifficulty:2 ofProblemType:2 forFirstValue:0 forSecondValue:0],
+                      [[MathProblem alloc]initWithDifficulty:2 ofProblemType:2 forFirstValue:0 forSecondValue:1],
+                      [[MathProblem alloc]initWithDifficulty:2 ofProblemType:2 forFirstValue:1 forSecondValue:0],
+                      [[MathProblem alloc]initWithDifficulty:2 ofProblemType:2 forFirstValue:1 forSecondValue:1],
+                      [[MathProblem alloc]initWithDifficulty:2 ofProblemType:2 forFirstValue:0 forSecondValue:2],
+                      [[MathProblem alloc]initWithDifficulty:2 ofProblemType:2 forFirstValue:2 forSecondValue:0],
+                      [[MathProblem alloc]initWithDifficulty:2 ofProblemType:2 forFirstValue:2 forSecondValue:1],
+                      [[MathProblem alloc]initWithDifficulty:2 ofProblemType:2 forFirstValue:1 forSecondValue:2],
+                      [[MathProblem alloc]initWithDifficulty:2 ofProblemType:2 forFirstValue:0 forSecondValue:3],
+                      [[MathProblem alloc]initWithDifficulty:2 ofProblemType:2 forFirstValue:3 forSecondValue:0],
+                      [[MathProblem alloc]initWithDifficulty:2 ofProblemType:2 forFirstValue:3 forSecondValue:1],
+                      [[MathProblem alloc]initWithDifficulty:2 ofProblemType:2 forFirstValue:1 forSecondValue:3],
+                      [[MathProblem alloc]initWithDifficulty:2 ofProblemType:2 forFirstValue:0 forSecondValue:4],
+                      [[MathProblem alloc]initWithDifficulty:2 ofProblemType:2 forFirstValue:4 forSecondValue:0],
+                      [[MathProblem alloc]initWithDifficulty:2 ofProblemType:2 forFirstValue:4 forSecondValue:1],
+                      [[MathProblem alloc]initWithDifficulty:2 ofProblemType:2 forFirstValue:1 forSecondValue:4],
+                      [[MathProblem alloc]initWithDifficulty:2 ofProblemType:2 forFirstValue:0 forSecondValue:5],
+                      [[MathProblem alloc]initWithDifficulty:2 ofProblemType:2 forFirstValue:5 forSecondValue:0],
+                      [[MathProblem alloc]initWithDifficulty:2 ofProblemType:2 forFirstValue:5 forSecondValue:1],
+                      [[MathProblem alloc]initWithDifficulty:2 ofProblemType:2 forFirstValue:1 forSecondValue:5],
+                      [[MathProblem alloc]initWithDifficulty:2 ofProblemType:2 forFirstValue:2 forSecondValue:2],
+                      [[MathProblem alloc]initWithDifficulty:2 ofProblemType:2 forFirstValue:2 forSecondValue:3],
+                      [[MathProblem alloc]initWithDifficulty:2 ofProblemType:2 forFirstValue:3 forSecondValue:2],
+                      [[MathProblem alloc]initWithDifficulty:2 ofProblemType:2 forFirstValue:0 forSecondValue:6],
+                      [[MathProblem alloc]initWithDifficulty:2 ofProblemType:2 forFirstValue:6 forSecondValue:0],
+                      [[MathProblem alloc]initWithDifficulty:2 ofProblemType:2 forFirstValue:6 forSecondValue:1],
+                      [[MathProblem alloc]initWithDifficulty:2 ofProblemType:2 forFirstValue:1 forSecondValue:6],
+                      [[MathProblem alloc]initWithDifficulty:2 ofProblemType:2 forFirstValue:0 forSecondValue:7],
+                      [[MathProblem alloc]initWithDifficulty:2 ofProblemType:2 forFirstValue:7 forSecondValue:0],
+                      [[MathProblem alloc]initWithDifficulty:2 ofProblemType:2 forFirstValue:7 forSecondValue:1],
+                      [[MathProblem alloc]initWithDifficulty:2 ofProblemType:2 forFirstValue:1 forSecondValue:7],
+                      [[MathProblem alloc]initWithDifficulty:2 ofProblemType:2 forFirstValue:0 forSecondValue:8],
+                      [[MathProblem alloc]initWithDifficulty:2 ofProblemType:2 forFirstValue:8 forSecondValue:0],
+                      [[MathProblem alloc]initWithDifficulty:2 ofProblemType:2 forFirstValue:8 forSecondValue:1],
+                      [[MathProblem alloc]initWithDifficulty:2 ofProblemType:2 forFirstValue:1 forSecondValue:8],
+                      [[MathProblem alloc]initWithDifficulty:2 ofProblemType:2 forFirstValue:0 forSecondValue:9],
+                      [[MathProblem alloc]initWithDifficulty:2 ofProblemType:2 forFirstValue:9 forSecondValue:0],
+                      [[MathProblem alloc]initWithDifficulty:2 ofProblemType:2 forFirstValue:9 forSecondValue:1],
+                      [[MathProblem alloc]initWithDifficulty:2 ofProblemType:2 forFirstValue:1 forSecondValue:9],
+                      [[MathProblem alloc]initWithDifficulty:2 ofProblemType:2 forFirstValue:3 forSecondValue:3],
+                      [[MathProblem alloc]initWithDifficulty:2 ofProblemType:2 forFirstValue:2 forSecondValue:4],
+                      [[MathProblem alloc]initWithDifficulty:2 ofProblemType:2 forFirstValue:4 forSecondValue:2],
+                      [[MathProblem alloc]initWithDifficulty:2 ofProblemType:2 forFirstValue:2 forSecondValue:5],
+                      [[MathProblem alloc]initWithDifficulty:2 ofProblemType:2 forFirstValue:5 forSecondValue:2],
+                      [[MathProblem alloc]initWithDifficulty:2 ofProblemType:2 forFirstValue:2 forSecondValue:6],
+                      [[MathProblem alloc]initWithDifficulty:2 ofProblemType:2 forFirstValue:6 forSecondValue:2],
+                      [[MathProblem alloc]initWithDifficulty:4 ofProblemType:2 forFirstValue:2 forSecondValue:7],
+                      [[MathProblem alloc]initWithDifficulty:4 ofProblemType:2 forFirstValue:7 forSecondValue:2],
+                      [[MathProblem alloc]initWithDifficulty:4 ofProblemType:2 forFirstValue:2 forSecondValue:8],
+                      [[MathProblem alloc]initWithDifficulty:4 ofProblemType:2 forFirstValue:8 forSecondValue:2],
+                      [[MathProblem alloc]initWithDifficulty:4 ofProblemType:2 forFirstValue:2 forSecondValue:9],
+                      [[MathProblem alloc]initWithDifficulty:4 ofProblemType:2 forFirstValue:9 forSecondValue:2],
+                      [[MathProblem alloc]initWithDifficulty:2 ofProblemType:2 forFirstValue:3 forSecondValue:4],
+                      [[MathProblem alloc]initWithDifficulty:2 ofProblemType:2 forFirstValue:4 forSecondValue:3],
+                      [[MathProblem alloc]initWithDifficulty:4 ofProblemType:2 forFirstValue:3 forSecondValue:5],
+                      [[MathProblem alloc]initWithDifficulty:4 ofProblemType:2 forFirstValue:5 forSecondValue:3],
+                      [[MathProblem alloc]initWithDifficulty:4 ofProblemType:2 forFirstValue:3 forSecondValue:6],
+                      [[MathProblem alloc]initWithDifficulty:4 ofProblemType:2 forFirstValue:6 forSecondValue:3],
+                      [[MathProblem alloc]initWithDifficulty:4 ofProblemType:2 forFirstValue:3 forSecondValue:7],
+                      [[MathProblem alloc]initWithDifficulty:4 ofProblemType:2 forFirstValue:7 forSecondValue:3],
+                      [[MathProblem alloc]initWithDifficulty:6 ofProblemType:2 forFirstValue:3 forSecondValue:8],
+                      [[MathProblem alloc]initWithDifficulty:6 ofProblemType:2 forFirstValue:8 forSecondValue:3],
+                      [[MathProblem alloc]initWithDifficulty:6 ofProblemType:2 forFirstValue:3 forSecondValue:9],
+                      [[MathProblem alloc]initWithDifficulty:6 ofProblemType:2 forFirstValue:9 forSecondValue:3],
+                      [[MathProblem alloc]initWithDifficulty:4 ofProblemType:2 forFirstValue:4 forSecondValue:4],
+                      [[MathProblem alloc]initWithDifficulty:4 ofProblemType:2 forFirstValue:5 forSecondValue:4],
+                      [[MathProblem alloc]initWithDifficulty:4 ofProblemType:2 forFirstValue:4 forSecondValue:5],
+                      [[MathProblem alloc]initWithDifficulty:4 ofProblemType:2 forFirstValue:5 forSecondValue:5],
+                      [[MathProblem alloc]initWithDifficulty:4 ofProblemType:2 forFirstValue:4 forSecondValue:6],
+                      [[MathProblem alloc]initWithDifficulty:4 ofProblemType:2 forFirstValue:6 forSecondValue:4],
+                      [[MathProblem alloc]initWithDifficulty:6 ofProblemType:2 forFirstValue:4 forSecondValue:7],
+                      [[MathProblem alloc]initWithDifficulty:6 ofProblemType:2 forFirstValue:7 forSecondValue:4],
+                      [[MathProblem alloc]initWithDifficulty:6 ofProblemType:2 forFirstValue:4 forSecondValue:8],
+                      [[MathProblem alloc]initWithDifficulty:6 ofProblemType:2 forFirstValue:8 forSecondValue:4],
+                      [[MathProblem alloc]initWithDifficulty:6 ofProblemType:2 forFirstValue:4 forSecondValue:9],
+                      [[MathProblem alloc]initWithDifficulty:6 ofProblemType:2 forFirstValue:9 forSecondValue:4],
+                      [[MathProblem alloc]initWithDifficulty:6 ofProblemType:2 forFirstValue:5 forSecondValue:6],
+                      [[MathProblem alloc]initWithDifficulty:6 ofProblemType:2 forFirstValue:6 forSecondValue:5],
+                      [[MathProblem alloc]initWithDifficulty:6 ofProblemType:2 forFirstValue:6 forSecondValue:6],
+                      [[MathProblem alloc]initWithDifficulty:6 ofProblemType:2 forFirstValue:5 forSecondValue:7],
+                      [[MathProblem alloc]initWithDifficulty:6 ofProblemType:2 forFirstValue:7 forSecondValue:5],
+                      [[MathProblem alloc]initWithDifficulty:8 ofProblemType:2 forFirstValue:5 forSecondValue:8],
+                      [[MathProblem alloc]initWithDifficulty:8 ofProblemType:2 forFirstValue:8 forSecondValue:5],
+                      [[MathProblem alloc]initWithDifficulty:8 ofProblemType:2 forFirstValue:5 forSecondValue:9],
+                      [[MathProblem alloc]initWithDifficulty:8 ofProblemType:2 forFirstValue:9 forSecondValue:5],
+                      [[MathProblem alloc]initWithDifficulty:8 ofProblemType:2 forFirstValue:6 forSecondValue:7],
+                      [[MathProblem alloc]initWithDifficulty:8 ofProblemType:2 forFirstValue:7 forSecondValue:6],
+                      [[MathProblem alloc]initWithDifficulty:8 ofProblemType:2 forFirstValue:6 forSecondValue:8],
+                      [[MathProblem alloc]initWithDifficulty:8 ofProblemType:2 forFirstValue:8 forSecondValue:6],
+                      [[MathProblem alloc]initWithDifficulty:8 ofProblemType:2 forFirstValue:6 forSecondValue:9],
+                      [[MathProblem alloc]initWithDifficulty:8 ofProblemType:2 forFirstValue:9 forSecondValue:6],
+                      [[MathProblem alloc]initWithDifficulty:8 ofProblemType:2 forFirstValue:7 forSecondValue:7],
+                      [[MathProblem alloc]initWithDifficulty:8 ofProblemType:2 forFirstValue:8 forSecondValue:8],
+                      [[MathProblem alloc]initWithDifficulty:8 ofProblemType:2 forFirstValue:9 forSecondValue:9],
+                      [[MathProblem alloc]initWithDifficulty:8 ofProblemType:2 forFirstValue:7 forSecondValue:8],
+                      [[MathProblem alloc]initWithDifficulty:8 ofProblemType:2 forFirstValue:7 forSecondValue:9],
+                      [[MathProblem alloc]initWithDifficulty:8 ofProblemType:2 forFirstValue:8 forSecondValue:7],
+                      [[MathProblem alloc]initWithDifficulty:8 ofProblemType:2 forFirstValue:8 forSecondValue:9],
+                      [[MathProblem alloc]initWithDifficulty:8 ofProblemType:2 forFirstValue:9 forSecondValue:7],
+                      [[MathProblem alloc]initWithDifficulty:8 ofProblemType:2 forFirstValue:9 forSecondValue:8]
+                      ].mutableCopy;
+}
 
 
 @end
