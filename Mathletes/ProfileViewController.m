@@ -113,6 +113,7 @@
     _userArray = [self cardDifficulty];
     _subtractionUserArray = [self subtractionDifficulty];
     _multplicationUserArray = [self multiplicationDifficulty];
+    _divisionUserArray = [self divisionDifficulty];
     
     [_userArray enumerateObjectsUsingBlock:^(MathProblem *obj, NSUInteger idx, BOOL *stop)
      {
