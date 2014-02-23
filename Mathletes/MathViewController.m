@@ -1061,11 +1061,265 @@
     
     else if ([_operationLabel.text isEqualToString:@"x"])
     {
-        [user increaseKey:@"totalMults"];
+        int newTotalMults = [user increaseKey:@"totalMults"];
+        NSLog(@"Total Mults: %i",newTotalMults);
+
+        if (newTotalMults >= 300)
+        {
+            [self checkForAchievement:@"Multiplicity x300!" Minimum:61 Maximum:100];
+        }
+        else if (newTotalMults >= 275)
+        {
+            [self checkForAchievement:@"Multiplicity 275!" Minimum:61 Maximum:100];
+        }
+        else if (newTotalMults >= 250)
+        {
+            [self checkForAchievement:@"Multiplicity x250!" Minimum:61 Maximum:100];
+        }
+        else if (newTotalMults >= 225)
+        {
+            [self checkForAchievement:@"Multiplicity x225!" Minimum:61 Maximum:100];
+        }
+        else if (newTotalMults >= 200)
+        {
+            [self checkForAchievement:@"Multiplicity x200!" Minimum:61 Maximum:100];
+        }
+        else if (newTotalMults >= 180)
+        {
+            [self checkForAchievement:@"Multiplicity x180!" Minimum:1 Maximum:100];
+        }
+        else if (newTotalMults >= 160)
+        {
+            [self checkForAchievement:@"Multiplicity x160!" Minimum:1 Maximum:100];
+        }
+        else if (newTotalMults >= 140)
+        {
+            [self checkForAchievement:@"Multiplicity x140!" Minimum:1 Maximum:100];
+        }
+        else if (newTotalMults >= 120)
+        {
+            [self checkForAchievement:@"Multiplicity x120!" Minimum:1 Maximum:100];
+        }
+        else if (newTotalMults >= 100)
+        {
+            [self checkForAchievement:@"Multiplicity x100!" Minimum:1 Maximum:100];
+        }
+        else if (newTotalMults >= 80)
+        {
+            [self checkForAchievement:@"Multiplicity x80!" Minimum:1 Maximum:92];
+        }
+        else if (newTotalMults >= 60)
+        {
+            [self checkForAchievement:@"Multiplicity x60!" Minimum:1 Maximum:92];
+        }
+        else if (newTotalMults >= 40)
+        {
+            [self checkForAchievement:@"Multiplicity x40!" Minimum:1 Maximum:92];
+        }
+        else if (newTotalMults >= 20)
+        {
+            [self checkForAchievement:@"Multiplicity x20!" Minimum:1 Maximum:60];
+        }
+        else if (newTotalMults >= 1)
+        {
+            [self checkForAchievement:@"Multiplicity!" Minimum:1 Maximum:60];
+        }
+        if (countDown <= 6)
+        {
+            int newTotalFastMults = [user increaseKey:@"totalFastMults"];
+            NSLog(@"Total Fast Mults: %i",newTotalFastMults);
+            if (newTotalFastMults >= 250)
+            {
+                [self checkForAchievement:@"Multiplying At 250 \nMiles Per Hour!" Minimum:61 Maximum:100];
+            }
+            else if (newTotalFastMults >= 230)
+            {
+                [self checkForAchievement:@"Multiplying At 230 \nMiles Per Hour!" Minimum:61 Maximum:100];
+            }
+            else if (newTotalFastMults >= 210)
+            {
+                [self checkForAchievement:@"Multiplying At 210 \nMiles Per Hour!" Minimum:61 Maximum:100];
+            }
+            else if (newTotalFastMults >= 190)
+            {
+                [self checkForAchievement:@"Multiplying At 190 \nMiles Per Hour!" Minimum:61 Maximum:100];
+            }
+            else if (newTotalFastMults >= 170)
+            {
+                [self checkForAchievement:@"Multiplying At 170 \nMiles Per Hour!" Minimum:61 Maximum:100];
+            }
+            else if (newTotalFastMults >= 150)
+            {
+                [self checkForAchievement:@"Multiplying At 150 \nMiles Per Hour!" Minimum:1 Maximum:100];
+            }
+            else if (newTotalFastMults >= 135)
+            {
+                [self checkForAchievement:@"Multiplying At 135 \nMiles Per Hour!" Minimum:1 Maximum:100];
+            }
+            else if (newTotalFastMults >= 120)
+            {
+                [self checkForAchievement:@"Multiplying At 120 \nMiles Per Hour!" Minimum:1 Maximum:100];
+            }
+            else if (newTotalFastMults >= 105)
+            {
+                [self checkForAchievement:@"Multiplying At 105 \nMiles Per Hour!" Minimum:1 Maximum:100];
+            }
+            else if (newTotalFastMults >= 90)
+            {
+                [self checkForAchievement:@"Multiplying At 90 \nMiles Per Hour!" Minimum:1 Maximum:100];
+            }
+            else if (newTotalFastMults >= 75)
+            {
+                [self checkForAchievement:@"Multiplying At 75 \nMiles Per Hour!" Minimum:1 Maximum:100];
+            }
+            else if (newTotalFastMults >= 60)
+            {
+                [self checkForAchievement:@"Multiplying At 60 \nMiles Per Hour!" Minimum:1 Maximum:92];
+            }
+            else if (newTotalFastMults >= 45)
+            {
+                [self checkForAchievement:@"Multiplying At 45 \nMiles Per Hour!" Minimum:1 Maximum:92];
+            }
+            else if (newTotalFastMults >= 30)
+            {
+                [self checkForAchievement:@"Multiplying At 30 \nMiles Per Hour!" Minimum:1 Maximum:60];
+            }
+            else if (newTotalFastMults >= 15)
+            {
+                [self checkForAchievement:@"Multiplying At 15 \nMiles Per Hour!" Minimum:1 Maximum:60];
+            }
+        }
     }
     else if ([_operationLabel.text isEqualToString:@"/"])
     {
-        [user increaseKey:@"totalDivides"];
+        int newTotalDivides = [user increaseKey:@"totalDivides"];
+        NSLog(@"Total Divides: %i",newTotalDivides);
+        
+        if (newTotalDivides >= 300)
+        {
+            [self checkForAchievement:@"Divide And Conquer x300!" Minimum:61 Maximum:100];
+        }
+        else if (newTotalDivides >= 275)
+        {
+            [self checkForAchievement:@"Divide And Conquer 275!" Minimum:61 Maximum:100];
+        }
+        else if (newTotalDivides >= 250)
+        {
+            [self checkForAchievement:@"Divide And Conquer x250!" Minimum:61 Maximum:100];
+        }
+        else if (newTotalDivides >= 225)
+        {
+            [self checkForAchievement:@"Divide And Conquer x225!" Minimum:61 Maximum:100];
+        }
+        else if (newTotalDivides >= 200)
+        {
+            [self checkForAchievement:@"Divide And Conquer x200!" Minimum:61 Maximum:100];
+        }
+        else if (newTotalDivides >= 180)
+        {
+            [self checkForAchievement:@"Divide And Conquer x180!" Minimum:1 Maximum:100];
+        }
+        else if (newTotalDivides >= 160)
+        {
+            [self checkForAchievement:@"Divide And Conquer x160!" Minimum:1 Maximum:100];
+        }
+        else if (newTotalDivides >= 140)
+        {
+            [self checkForAchievement:@"Divide And Conquer x140!" Minimum:1 Maximum:100];
+        }
+        else if (newTotalDivides >= 120)
+        {
+            [self checkForAchievement:@"Divide And Conquer x120!" Minimum:1 Maximum:100];
+        }
+        else if (newTotalDivides >= 100)
+        {
+            [self checkForAchievement:@"Divide And Conquer x100!" Minimum:1 Maximum:100];
+        }
+        else if (newTotalDivides >= 80)
+        {
+            [self checkForAchievement:@"Divide And Conquer x80!" Minimum:1 Maximum:92];
+        }
+        else if (newTotalDivides >= 60)
+        {
+            [self checkForAchievement:@"Divide And Conquer x60!" Minimum:1 Maximum:92];
+        }
+        else if (newTotalDivides >= 40)
+        {
+            [self checkForAchievement:@"Divide And Conquer x40!" Minimum:1 Maximum:92];
+        }
+        else if (newTotalDivides >= 20)
+        {
+            [self checkForAchievement:@"Divide And Conquer x20!" Minimum:1 Maximum:60];
+        }
+        else if (newTotalDivides >= 1)
+        {
+            [self checkForAchievement:@"Divide And Conquer!" Minimum:1 Maximum:60];
+        }
+        if (countDown <= 6)
+        {
+            int newTotalFastDivides = [user increaseKey:@"totalFastDivides"];
+            NSLog(@"Total Fast Mults: %i",newTotalFastDivides);
+            if (newTotalFastDivides >= 250)
+            {
+                [self checkForAchievement:@"Dividing At 250 \nMiles Per Hour!" Minimum:61 Maximum:100];
+            }
+            else if (newTotalFastDivides >= 230)
+            {
+                [self checkForAchievement:@"Dividing At 230 \nMiles Per Hour!" Minimum:61 Maximum:100];
+            }
+            else if (newTotalFastDivides >= 210)
+            {
+                [self checkForAchievement:@"Dividing At 210 \nMiles Per Hour!" Minimum:61 Maximum:100];
+            }
+            else if (newTotalFastDivides >= 190)
+            {
+                [self checkForAchievement:@"Dividing At 190 \nMiles Per Hour!" Minimum:61 Maximum:100];
+            }
+            else if (newTotalFastDivides >= 170)
+            {
+                [self checkForAchievement:@"Dividing At 170 \nMiles Per Hour!" Minimum:61 Maximum:100];
+            }
+            else if (newTotalFastDivides >= 150)
+            {
+                [self checkForAchievement:@"Dividing At 150 \nMiles Per Hour!" Minimum:1 Maximum:100];
+            }
+            else if (newTotalFastDivides >= 135)
+            {
+                [self checkForAchievement:@"Dividing At 135 \nMiles Per Hour!" Minimum:1 Maximum:100];
+            }
+            else if (newTotalFastDivides >= 120)
+            {
+                [self checkForAchievement:@"Dividing At 120 \nMiles Per Hour!" Minimum:1 Maximum:100];
+            }
+            else if (newTotalFastDivides >= 105)
+            {
+                [self checkForAchievement:@"Dividing At 105 \nMiles Per Hour!" Minimum:1 Maximum:100];
+            }
+            else if (newTotalFastDivides >= 90)
+            {
+                [self checkForAchievement:@"Dividing At 90 \nMiles Per Hour!" Minimum:1 Maximum:100];
+            }
+            else if (newTotalFastDivides >= 75)
+            {
+                [self checkForAchievement:@"Dividing At 75 \nMiles Per Hour!" Minimum:1 Maximum:100];
+            }
+            else if (newTotalFastDivides >= 60)
+            {
+                [self checkForAchievement:@"Dividing At 60 \nMiles Per Hour!" Minimum:1 Maximum:92];
+            }
+            else if (newTotalFastDivides >= 45)
+            {
+                [self checkForAchievement:@"Dividing At 45 \nMiles Per Hour!" Minimum:1 Maximum:92];
+            }
+            else if (newTotalFastDivides >= 30)
+            {
+                [self checkForAchievement:@"Dividing At 30 \nMiles Per Hour!" Minimum:1 Maximum:60];
+            }
+            else if (newTotalFastDivides >= 15)
+            {
+                [self checkForAchievement:@"Dividing At 15 \nMiles Per Hour!" Minimum:1 Maximum:60];
+            }
+        }
     }
     
     int totalMathProblems = [[user objectForKey:@"totalAdds"] intValue] + [[user objectForKey:@"totalSubs"] intValue] + [[user objectForKey:@"totalMults"] intValue] + [[user objectForKey:@"totalDivides"] intValue];
