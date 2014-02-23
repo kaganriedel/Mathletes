@@ -136,6 +136,7 @@
     [logInController dismissViewControllerAnimated:YES completion:nil];
     user = loggedInUser;
     [self setProfileImage];
+    [self checkAchievementsForLoggedInUser];
 }
 
 -(void)setProfileImage
@@ -199,6 +200,343 @@
         }];
 
     }
+}
+
+-(void)checkAchievementsForLoggedInUser
+{
+    int dailyMath = [[user objectForKey:@"dailyMath"] intValue];
+    if (dailyMath >= 50)
+    {
+        [userDefaults setBool:YES forKey:@"Daily Math x50!"];
+    }
+    if (dailyMath >= 40)
+    {
+        [userDefaults setBool:YES forKey:@"Daily Math x40!"];
+    }
+    if (dailyMath >= 30)
+    {
+        [userDefaults setBool:YES forKey:@"Daily Math x30!"];
+    }
+    if (dailyMath >= 20)
+    {
+        [userDefaults setBool:YES forKey:@"Daily Math x20!"];
+    }
+    if (dailyMath >= 10)
+    {
+        [userDefaults setBool:YES forKey:@"Daily Math x10!"];
+    }
+    
+    int totalAdds = [[user objectForKey:@"totalAdds"] intValue];
+    if (totalAdds >= 300)
+    {
+        [userDefaults setBool:YES forKey:@"Add It Up x300!"];
+    }
+    if (totalAdds >= 275)
+    {
+        [userDefaults setBool:YES forKey:@"Add It Up x275!"];
+    }
+    if (totalAdds >= 250)
+    {
+        [userDefaults setBool:YES forKey:@"Add It Up x250!"];
+    }
+    if (totalAdds >= 225)
+    {
+        [userDefaults setBool:YES forKey:@"Add It Up x225!"];
+    }
+    if (totalAdds >= 200)
+    {
+        [userDefaults setBool:YES forKey:@"Add It Up x200!"];
+    }
+    if (totalAdds >= 180)
+    {
+        [userDefaults setBool:YES forKey:@"Add It Up x180!"];
+    }
+    if (totalAdds >= 160)
+    {
+        [userDefaults setBool:YES forKey:@"Add It Up x160!"];
+    }
+    if (totalAdds >= 140)
+    {
+        [userDefaults setBool:YES forKey:@"Add It Up x140!"];
+    }
+    if (totalAdds >= 120)
+    {
+        [userDefaults setBool:YES forKey:@"Add It Up x120!"];
+    }
+    if (totalAdds >= 100)
+    {
+        [userDefaults setBool:YES forKey:@"Add It Up x100!"];
+    }
+    if (totalAdds >= 80)
+    {
+        [userDefaults setBool:YES forKey:@"Add It Up x80!"];
+    }
+    if (totalAdds >= 60)
+    {
+        [userDefaults setBool:YES forKey:@"Add It Up x60!"];
+    }
+    if (totalAdds >= 40)
+    {
+        [userDefaults setBool:YES forKey:@"Add It Up x40!"];
+    }
+    if (totalAdds >= 20)
+    {
+        [userDefaults setBool:YES forKey:@"Add It Up x20!"];
+    }
+    if (totalAdds >= 1)
+    {
+        [userDefaults setBool:YES forKey:@"Add It Up!"];
+    }
+    
+    int totalFastAdds = [[user objectForKey:@"totalFastAdds"] intValue];
+    if (totalFastAdds >= 250)
+    {
+        [userDefaults setBool:YES forKey:@"Adding at 250 Miles Per Hour!"];
+    }
+    if (totalFastAdds >= 230)
+    {
+        [userDefaults setBool:YES forKey:@"Adding at 230 Miles Per Hour!"];
+    }
+    if (totalFastAdds >= 210)
+    {
+        [userDefaults setBool:YES forKey:@"Adding at 210 Miles Per Hour!"];
+    }
+    if (totalFastAdds >= 190)
+    {
+        [userDefaults setBool:YES forKey:@"Adding at 190 Miles Per Hour!"];
+    }
+    if (totalFastAdds >= 170)
+    {
+        [userDefaults setBool:YES forKey:@"Adding at 170 Miles Per Hour!"];
+    }
+    if (totalFastAdds >= 150)
+    {
+        [userDefaults setBool:YES forKey:@"Adding at 150 Miles Per Hour!"];
+    }
+    if (totalFastAdds >= 135)
+    {
+        [userDefaults setBool:YES forKey:@"Adding at 135 Miles Per Hour!"];
+    }
+    if (totalFastAdds >= 120)
+    {
+        [userDefaults setBool:YES forKey:@"Adding at 120 Miles Per Hour!"];
+    }
+    if (totalFastAdds >= 105)
+    {
+        [userDefaults setBool:YES forKey:@"Adding at 105 Miles Per Hour!"];
+    }
+    if (totalFastAdds >= 90)
+    {
+        [userDefaults setBool:YES forKey:@"Adding at 90 Miles Per Hour!"];
+    }
+    if (totalFastAdds >= 75)
+    {
+        [userDefaults setBool:YES forKey:@"Adding at 75 Miles Per Hour!"];
+    }
+    if (totalFastAdds >= 60)
+    {
+        [userDefaults setBool:YES forKey:@"Adding at 60 Miles Per Hour!"];
+    }
+    if (totalFastAdds >= 45)
+    {
+        [userDefaults setBool:YES forKey:@"Adding at 45 Miles Per Hour!"];
+    }
+    if (totalFastAdds >= 30)
+    {
+        [userDefaults setBool:YES forKey:@"Adding at 30 Miles Per Hour!"];
+    }
+    if (totalFastAdds >= 15)
+    {
+        [userDefaults setBool:YES forKey:@"Adding At 15 Miles Per Hour!"];
+    }
+    
+    int totalSubs = [[user objectForKey:@"totalSubs"] intValue];
+    if (totalSubs >= 300)
+    {
+        [userDefaults setBool:YES forKey:@"Take It Away x300!"];
+    }
+    if (totalSubs >= 275)
+    {
+        [userDefaults setBool:YES forKey:@"Take It Away x275!"];
+    }
+    if (totalSubs >= 250)
+    {
+        [userDefaults setBool:YES forKey:@"Take It Away x250!"];
+    }
+    if (totalSubs >= 225)
+    {
+        [userDefaults setBool:YES forKey:@"Take It Away x225!"];
+    }
+    if (totalSubs >= 200)
+    {
+        [userDefaults setBool:YES forKey:@"Take It Away x200!"];
+    }
+    if (totalSubs >= 180)
+    {
+        [userDefaults setBool:YES forKey:@"Take It Away x180!"];
+    }
+    if (totalSubs >= 160)
+    {
+        [userDefaults setBool:YES forKey:@"Take It Away x160!"];
+    }
+    if (totalSubs >= 140)
+    {
+        [userDefaults setBool:YES forKey:@"Take It Away x140!"];
+    }
+    if (totalSubs >= 120)
+    {
+        [userDefaults setBool:YES forKey:@"Take It Away x120!"];
+    }
+    if (totalSubs >= 100)
+    {
+        [userDefaults setBool:YES forKey:@"Take It Away x100!"];
+    }
+    if (totalSubs >= 80)
+    {
+        [userDefaults setBool:YES forKey:@"Take It Away x80!"];
+    }
+    if (totalSubs >= 60)
+    {
+        [userDefaults setBool:YES forKey:@"Take It Away x60!"];
+    }
+    if (totalSubs >= 40)
+    {
+        [userDefaults setBool:YES forKey:@"Take It Away x40!"];
+    }
+    if (totalSubs >= 20)
+    {
+        [userDefaults setBool:YES forKey:@"Take It Away x20!"];
+    }
+    if (totalSubs >= 1)
+    {
+        [userDefaults setBool:YES forKey:@"Take It Away!"];
+    }
+    
+    int totalFastSubs = [[user objectForKey:@"totalFastSubs"] intValue];
+    if (totalFastSubs >= 250)
+    {
+        [userDefaults setBool:YES forKey:@"Subtracting At 250 \nMiles Per Hour!"];
+    }
+    if (totalFastSubs >= 230)
+    {
+        [userDefaults setBool:YES forKey:@"Subtracting At 230 \nMiles Per Hour!"];
+    }
+    if (totalFastSubs >= 210)
+    {
+        [userDefaults setBool:YES forKey:@"Subtracting At 210 \nMiles Per Hour!"];
+    }
+    if (totalFastSubs >= 190)
+    {
+        [userDefaults setBool:YES forKey:@"Subtracting At 190 \nMiles Per Hour!"];
+    }
+    if (totalFastSubs >= 170)
+    {
+        [userDefaults setBool:YES forKey:@"Subtracting At 170 \nMiles Per Hour!"];
+    }
+    if (totalFastSubs >= 150)
+    {
+        [userDefaults setBool:YES forKey:@"Subtracting At 150 \nMiles Per Hour!"];
+    }
+    if (totalFastSubs >= 135)
+    {
+        [userDefaults setBool:YES forKey:@"Subtracting At 135 \nMiles Per Hour!"];
+    }
+    if (totalFastSubs >= 120)
+    {
+        [userDefaults setBool:YES forKey:@"Subtracting At 120 \nMiles Per Hour!"];
+    }
+    if (totalFastSubs >= 105)
+    {
+        [userDefaults setBool:YES forKey:@"Subtracting At 105 \nMiles Per Hour!"];
+    }
+    if (totalFastSubs >= 90)
+    {
+        [userDefaults setBool:YES forKey:@"Subtracting At 90 \nMiles Per Hour!"];
+    }
+    if (totalFastSubs >= 75)
+    {
+        [userDefaults setBool:YES forKey:@"Subtracting At 75 \nMiles Per Hour!"];
+    }
+    if (totalFastSubs >= 60)
+    {
+        [userDefaults setBool:YES forKey:@"Subtracting At 60 \nMiles Per Hour!"];
+    }
+    if (totalFastSubs >= 45)
+    {
+        [userDefaults setBool:YES forKey:@"Subtracting At 45 \nMiles Per Hour!"];
+    }
+    if (totalFastSubs >= 30)
+    {
+        [userDefaults setBool:YES forKey:@"Subtracting At 30 \nMiles Per Hour!"];
+    }
+    if (totalFastSubs >= 15)
+    {
+        [userDefaults setBool:YES forKey:@"Subtracting At 15 \nMiles Per Hour!"];
+    }
+    
+    int totalMathProblems = [[user objectForKey:@"totalAdds"] intValue] + [[user objectForKey:@"totalSubs"] intValue] + [[user objectForKey:@"totalMults"] intValue] + [[user objectForKey:@"totalDivides"] intValue];
+    if (totalMathProblems >= 1500)
+    {
+        [userDefaults setBool:YES forKey:@"Keep It Up x1500!"];
+    }
+    if (totalMathProblems >= 1400)
+    {
+        [userDefaults setBool:YES forKey:@"Keep It Up x1400!"];
+    }
+    if (totalMathProblems >= 1300)
+    {
+        [userDefaults setBool:YES forKey:@"Keep It Up x1300!"];
+    }
+    if (totalMathProblems >= 1200)
+    {
+        [userDefaults setBool:YES forKey:@"Keep It Up x1200!"];
+    }
+    if (totalMathProblems >= 1100)
+    {
+        [userDefaults setBool:YES forKey:@"Keep It Up x1100!"];
+    }
+    if (totalMathProblems >= 1000)
+    {
+        [userDefaults setBool:YES forKey:@"Keep It Up x1000!"];
+    }
+    if (totalMathProblems >= 900)
+    {
+        [userDefaults setBool:YES forKey:@"Keep It Up x900!"];
+    }
+    if (totalMathProblems >= 800)
+    {
+        [userDefaults setBool:YES forKey:@"Keep It Up x800!"];
+    }
+    if (totalMathProblems >= 700)
+    {
+        [userDefaults setBool:YES forKey:@"Keep It Up x700!"];
+    }
+    if (totalMathProblems >= 600)
+    {
+        [userDefaults setBool:YES forKey:@"Keep It Up x600!"];
+    }
+    if (totalMathProblems >= 500)
+    {
+        [userDefaults setBool:YES forKey:@"Keep It Up x500!"];
+    }
+    if (totalMathProblems >= 400)
+    {
+        [userDefaults setBool:YES forKey:@"Keep It Up x400!"];
+    }
+    if (totalMathProblems >= 300)
+    {
+        [userDefaults setBool:YES forKey:@"Keep It Up x300!"];
+    }
+    if (totalMathProblems >= 200)
+    {
+        [userDefaults setBool:YES forKey:@"Keep It Up x200!"];
+    }
+    if (totalMathProblems >= 100)
+    {
+        [userDefaults setBool:YES forKey:@"Keep It Up x100!"];
+    }
+
+    [userDefaults synchronize];
 }
 
 -(NSMutableArray *)cardDifficulty
