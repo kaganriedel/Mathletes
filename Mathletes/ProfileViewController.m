@@ -291,59 +291,59 @@
     int totalFastAdds = [[user objectForKey:@"totalFastAdds"] intValue];
     if (totalFastAdds >= 250)
     {
-        [userDefaults setBool:YES forKey:@"Adding at 250 Miles Per Hour!"];
+        [userDefaults setBool:YES forKey:@"Adding At 250 Miles Per Hour!"];
     }
     if (totalFastAdds >= 230)
     {
-        [userDefaults setBool:YES forKey:@"Adding at 230 Miles Per Hour!"];
+        [userDefaults setBool:YES forKey:@"Adding At 230 Miles Per Hour!"];
     }
     if (totalFastAdds >= 210)
     {
-        [userDefaults setBool:YES forKey:@"Adding at 210 Miles Per Hour!"];
+        [userDefaults setBool:YES forKey:@"Adding At 210 Miles Per Hour!"];
     }
     if (totalFastAdds >= 190)
     {
-        [userDefaults setBool:YES forKey:@"Adding at 190 Miles Per Hour!"];
+        [userDefaults setBool:YES forKey:@"Adding At 190 Miles Per Hour!"];
     }
     if (totalFastAdds >= 170)
     {
-        [userDefaults setBool:YES forKey:@"Adding at 170 Miles Per Hour!"];
+        [userDefaults setBool:YES forKey:@"Adding At 170 Miles Per Hour!"];
     }
     if (totalFastAdds >= 150)
     {
-        [userDefaults setBool:YES forKey:@"Adding at 150 Miles Per Hour!"];
+        [userDefaults setBool:YES forKey:@"Adding At 150 Miles Per Hour!"];
     }
     if (totalFastAdds >= 135)
     {
-        [userDefaults setBool:YES forKey:@"Adding at 135 Miles Per Hour!"];
+        [userDefaults setBool:YES forKey:@"Adding At 135 Miles Per Hour!"];
     }
     if (totalFastAdds >= 120)
     {
-        [userDefaults setBool:YES forKey:@"Adding at 120 Miles Per Hour!"];
+        [userDefaults setBool:YES forKey:@"Adding At 120 Miles Per Hour!"];
     }
     if (totalFastAdds >= 105)
     {
-        [userDefaults setBool:YES forKey:@"Adding at 105 Miles Per Hour!"];
+        [userDefaults setBool:YES forKey:@"Adding At 105 Miles Per Hour!"];
     }
     if (totalFastAdds >= 90)
     {
-        [userDefaults setBool:YES forKey:@"Adding at 90 Miles Per Hour!"];
+        [userDefaults setBool:YES forKey:@"Adding At 90 Miles Per Hour!"];
     }
     if (totalFastAdds >= 75)
     {
-        [userDefaults setBool:YES forKey:@"Adding at 75 Miles Per Hour!"];
+        [userDefaults setBool:YES forKey:@"Adding At 75 Miles Per Hour!"];
     }
     if (totalFastAdds >= 60)
     {
-        [userDefaults setBool:YES forKey:@"Adding at 60 Miles Per Hour!"];
+        [userDefaults setBool:YES forKey:@"Adding At 60 Miles Per Hour!"];
     }
     if (totalFastAdds >= 45)
     {
-        [userDefaults setBool:YES forKey:@"Adding at 45 Miles Per Hour!"];
+        [userDefaults setBool:YES forKey:@"Adding At 45 Miles Per Hour!"];
     }
     if (totalFastAdds >= 30)
     {
-        [userDefaults setBool:YES forKey:@"Adding at 30 Miles Per Hour!"];
+        [userDefaults setBool:YES forKey:@"Adding At 30 Miles Per Hour!"];
     }
     if (totalFastAdds >= 15)
     {
