@@ -57,6 +57,9 @@
 		27FD30CE18B6DC6100EE75A8 /* btn_addition_item_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 27FD30BE18B6DC6100EE75A8 /* btn_addition_item_normal@2x.png */; };
 		27FD30CF18B6DC6100EE75A8 /* btn_addition_item_pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 27FD30BF18B6DC6100EE75A8 /* btn_addition_item_pressed.png */; };
 		27FD30D018B6DC6100EE75A8 /* btn_addition_item_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 27FD30C018B6DC6100EE75A8 /* btn_addition_item_normal.png */; };
+		27FD30D918BA9DE500EE75A8 /* math_addition.png in Resources */ = {isa = PBXBuildFile; fileRef = 27FD30D818BA9DE500EE75A8 /* math_addition.png */; };
+		27FD30DB18BA9E9900EE75A8 /* math_placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 27FD30DA18BA9E9900EE75A8 /* math_placeholder.png */; };
+		27FD30DD18BA9EA900EE75A8 /* math_subtraction.png in Resources */ = {isa = PBXBuildFile; fileRef = 27FD30DC18BA9EA900EE75A8 /* math_subtraction.png */; };
 		6D010FB118B3075D0095B0E7 /* star@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D010FB018B3075D0095B0E7 /* star@2x.png */; };
 		6D17BD5318AC1CFE009A7416 /* AchievementHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D17BD5218AC1CFE009A7416 /* AchievementHeader.m */; };
 		6D18826218A943DF003DCA92 /* StickersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D18826118A943DF003DCA92 /* StickersViewController.m */; };
@@ -163,6 +166,9 @@
 		27FD30BE18B6DC6100EE75A8 /* btn_addition_item_normal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_addition_item_normal@2x.png"; sourceTree = "<group>"; };
 		27FD30BF18B6DC6100EE75A8 /* btn_addition_item_pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_addition_item_pressed.png; sourceTree = "<group>"; };
 		27FD30C018B6DC6100EE75A8 /* btn_addition_item_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_addition_item_normal.png; sourceTree = "<group>"; };
+		27FD30D818BA9DE500EE75A8 /* math_addition.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = math_addition.png; sourceTree = "<group>"; };
+		27FD30DA18BA9E9900EE75A8 /* math_placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = math_placeholder.png; sourceTree = "<group>"; };
+		27FD30DC18BA9EA900EE75A8 /* math_subtraction.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = math_subtraction.png; sourceTree = "<group>"; };
 		6D010FB018B3075D0095B0E7 /* star@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star@2x.png"; sourceTree = "<group>"; };
 		6D17BD5118AC1CFE009A7416 /* AchievementHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AchievementHeader.h; sourceTree = "<group>"; };
 		6D17BD5218AC1CFE009A7416 /* AchievementHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AchievementHeader.m; sourceTree = "<group>"; };
@@ -297,7 +303,10 @@
 				27FD307518B6CD6B00EE75A8 /* ic_subtract_normal.png */,
 				27FD307618B6CD6B00EE75A8 /* ic_multiply_normal.png */,
 				27FD307718B6CD6B00EE75A8 /* ic_addition_normal.png */,
+				27FD30DA18BA9E9900EE75A8 /* math_placeholder.png */,
+				27FD30DC18BA9EA900EE75A8 /* math_subtraction.png */,
 				27FD305718B6CB9200EE75A8 /* btn_keypad_bg_pressed@2x.png */,
+				27FD30D818BA9DE500EE75A8 /* math_addition.png */,
 				27FD305818B6CB9200EE75A8 /* btn_keypad_bg_pressed.png */,
 				27FD305918B6CB9200EE75A8 /* btn_keypad_bg_normal@2x.png */,
 				27FD305A18B6CB9200EE75A8 /* btn_keypad_bg_normal.png */,
@@ -537,11 +546,13 @@
 				6D010FB118B3075D0095B0E7 /* star@2x.png in Resources */,
 				27FD304918B6867200EE75A8 /* miso-bold.ttf in Resources */,
 				27FD30CF18B6DC6100EE75A8 /* btn_addition_item_pressed.png in Resources */,
+				27FD30D918BA9DE500EE75A8 /* math_addition.png in Resources */,
 				27FD305618B6C86700EE75A8 /* Main.storyboard in Resources */,
 				6DB5ACD018B2E5D00098A72D /* tiger@2x.png in Resources */,
 				27FD308C18B6CD6B00EE75A8 /* ic_division_normal@2x.png in Resources */,
 				27FD30D018B6DC6100EE75A8 /* btn_addition_item_normal.png in Resources */,
 				27FD30C918B6DC6100EE75A8 /* btn_subtraction_item_pressed@2x.png in Resources */,
+				27FD30DB18BA9E9900EE75A8 /* math_placeholder.png in Resources */,
 				27FD308618B6CD6B00EE75A8 /* ic_correct.png in Resources */,
 				27FD30C818B6DC6100EE75A8 /* btn_multiplcation_item_normal.png in Resources */,
 				27FD308718B6CD6B00EE75A8 /* ic_wrong_face@2x.png in Resources */,
@@ -570,6 +581,7 @@
 				27FD307918B6CD6B00EE75A8 /* math_login_screen_brand.png in Resources */,
 				6DB5ACD418B2E5D00098A72D /* bear@2x.png in Resources */,
 				6D891EAE18A582EC0002B915 /* InfoPlist.strings in Resources */,
+				27FD30DD18BA9EA900EE75A8 /* math_subtraction.png in Resources */,
 				27FD307F18B6CD6B00EE75A8 /* ic_subtract_pressed@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -769,8 +781,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: kagan riedel (K67R3SLFMD)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: kagan riedel (K67R3SLFMD)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Mathletes/Mathletes-Prefix.pch";
 				INFOPLIST_FILE = "Mathletes/Mathletes-Info.plist";
@@ -779,7 +791,7 @@
 					"/Users/kaganriedel/MM\\ 2014/Mathletes/Mathletes/TestFlightSDK2",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "A49FEC21-373D-44E1-B7E9-049B2287CC5E";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -790,8 +802,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: kagan riedel (K67R3SLFMD)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: kagan riedel (K67R3SLFMD)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Mathletes/Mathletes-Prefix.pch";
 				INFOPLIST_FILE = "Mathletes/Mathletes-Info.plist";
@@ -800,7 +812,7 @@
 					"/Users/kaganriedel/MM\\ 2014/Mathletes/Mathletes/TestFlightSDK2",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "A49FEC21-373D-44E1-B7E9-049B2287CC5E";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
