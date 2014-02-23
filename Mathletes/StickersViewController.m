@@ -10,6 +10,7 @@
 #import "StickerCell.h"
 #import "StickerDetailViewController.h"
 #import "Parse/Parse.h"
+#import "CSAnimationView.h"
 
 @interface StickersViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
 
@@ -17,7 +18,12 @@
     __weak IBOutlet UICollectionView *stickerCollectionView;
     NSArray *stickers;
     NSArray *userStickers;
-    UIView *stickerDetailView;
+    CSAnimationView *stickerDetailView;
+    UILabel *stickerTitleLabel;
+    UILabel *stickerCountLabel;
+    UILabel *stickerRarityLabel;
+    UILabel *stickerDetailLabel;
+    UIImageView *stickerImageView;
 }
 
 @end
@@ -29,8 +35,49 @@
 {
     [super viewDidLoad];
     
+
+    stickerDetailView = [[CSAnimationView alloc] initWithFrame:CGRectMake(10, 10, 300, self.view.frame.size.height - 20)];
+    stickerDetailView.alpha = 0.0;
+    stickerDetailView.delay = 0.1;
+    stickerDetailView.duration = 0.5;
+    stickerDetailView.backgroundColor = [UIColor lightGrayColor];
+    stickerDetailView.layer.cornerRadius = 10.0;
+    stickerDetailView.layer.masksToBounds = YES;
     
+    stickerTitleLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 5, 260, 30)];
+    stickerTitleLabel.font = [UIFont fontWithName:@"Miso-Bold" size:30];
+    stickerTitleLabel.textColor = [UIColor darkGrayColor];
+    stickerTitleLabel.textAlignment = NSTextAlignmentCenter;
     
+    stickerCountLabel = [[UILabel alloc] initWithFrame:CGRectMake(150, 210, 120, 30)];
+    stickerCountLabel.font = [UIFont fontWithName:@"Miso-Bold" size:30];
+    stickerCountLabel.textColor = [UIColor darkGrayColor];
+    stickerCountLabel.textAlignment = NSTextAlignmentRight;
+
+    stickerRarityLabel = [[UILabel alloc] initWithFrame:CGRectMake(30, 210, 120, 30)];
+    stickerRarityLabel.font = [UIFont fontWithName:@"Miso-Bold" size:30];
+    
+    stickerDetailLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 250, 280, stickerDetailView.frame.size.height - 250)];
+    stickerDetailLabel.font = [UIFont fontWithName:@"Miso-Bold" size:28];
+    stickerDetailLabel.textColor = [UIColor darkGrayColor];
+    stickerDetailLabel.lineBreakMode = NSLineBreakByWordWrapping;
+    stickerDetailLabel.numberOfLines = 0;
+    
+    stickerImageView = [[UIImageView alloc]initWithFrame:CGRectMake(60, 40, 160, 160)];
+    stickerImageView.layer.cornerRadius = 80.0;
+    stickerImageView.layer.masksToBounds = YES;
+    
+    UITapGestureRecognizer* tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTap:)];
+    tapGestureRecognizer.numberOfTapsRequired = 1;
+    tapGestureRecognizer.numberOfTouchesRequired = 1;
+    [stickerDetailView addGestureRecognizer: tapGestureRecognizer];
+    
+    [stickerDetailView addSubview:stickerCountLabel];
+    [stickerDetailView addSubview:stickerRarityLabel];
+    [stickerDetailView addSubview:stickerDetailLabel];
+    [stickerDetailView addSubview:stickerImageView];
+    [stickerDetailView addSubview:stickerTitleLabel];
+    [self.view addSubview:stickerDetailView];
     
     stickers = @[@"lion.png",@"kitten.png",@"campfire.png", @"puppy.png", @"tiger.png", @"murray.png", @"bear.png", @"pizza.png"];
     
@@ -40,6 +87,49 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:YES];
+
+    stickerDetailView = [[CSAnimationView alloc] initWithFrame:CGRectMake(10, 10, 300, self.view.frame.size.height - 20)];
+    stickerDetailView.alpha = 0.0;
+    stickerDetailView.delay = 0.1;
+    stickerDetailView.duration = 0.5;
+    stickerDetailView.backgroundColor = [UIColor lightGrayColor];
+    stickerDetailView.layer.cornerRadius = 10.0;
+    stickerDetailView.layer.masksToBounds = YES;
+    
+    stickerTitleLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 5, 260, 30)];
+    stickerTitleLabel.font = [UIFont fontWithName:@"Miso-Bold" size:30];
+    stickerTitleLabel.textColor = [UIColor darkGrayColor];
+    stickerTitleLabel.textAlignment = NSTextAlignmentCenter;
+    
+    stickerCountLabel = [[UILabel alloc] initWithFrame:CGRectMake(150, 210, 120, 30)];
+    stickerCountLabel.font = [UIFont fontWithName:@"Miso-Bold" size:30];
+    stickerCountLabel.textColor = [UIColor darkGrayColor];
+    stickerCountLabel.textAlignment = NSTextAlignmentRight;
+    
+    stickerRarityLabel = [[UILabel alloc] initWithFrame:CGRectMake(30, 210, 120, 30)];
+    stickerRarityLabel.font = [UIFont fontWithName:@"Miso-Bold" size:30];
+    
+    stickerDetailLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 250, 280, stickerDetailView.frame.size.height - 250)];
+    stickerDetailLabel.font = [UIFont fontWithName:@"Miso-Bold" size:28];
+    stickerDetailLabel.textColor = [UIColor darkGrayColor];
+    stickerDetailLabel.lineBreakMode = NSLineBreakByWordWrapping;
+    stickerDetailLabel.numberOfLines = 0;
+    
+    stickerImageView = [[UIImageView alloc]initWithFrame:CGRectMake(60, 40, 160, 160)];
+    stickerImageView.layer.cornerRadius = 80.0;
+    stickerImageView.layer.masksToBounds = YES;
+    
+    UITapGestureRecognizer* tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTap:)];
+    tapGestureRecognizer.numberOfTapsRequired = 1;
+    tapGestureRecognizer.numberOfTouchesRequired = 1;
+    [stickerDetailView addGestureRecognizer: tapGestureRecognizer];
+    
+    [stickerDetailView addSubview:stickerCountLabel];
+    [stickerDetailView addSubview:stickerRarityLabel];
+    [stickerDetailView addSubview:stickerDetailLabel];
+    [stickerDetailView addSubview:stickerImageView];
+    [stickerDetailView addSubview:stickerTitleLabel];
+    [self.view addSubview:stickerDetailView];
     
     PFUser *user = [PFUser currentUser];
     
@@ -69,46 +159,16 @@
     NSString *stickerImageName = cell.stickerImageName;
     NSNumber *count = cell.count;
     
-    stickerDetailView = [[UIView alloc] initWithFrame:CGRectMake(10, 10, 300, self.view.frame.size.height -20)];
-    stickerDetailView.backgroundColor = [UIColor lightGrayColor];
-    stickerDetailView.layer.cornerRadius = 10.0;
-    stickerDetailView.layer.masksToBounds = YES;
+    stickerDetailView.type = CSAnimationTypeZoomOut;
     
-    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 5, 260, 30)];
-    titleLabel.font = [UIFont fontWithName:@"Miso-Bold" size:30];
-    titleLabel.textColor = [UIColor darkGrayColor];
-    titleLabel.textAlignment = NSTextAlignmentCenter;
     NSString *stickerName = [stickerImageName stringByReplacingOccurrencesOfString:@".png" withString:@""];
     NSString *cappedFirstChar = [[stickerName substringToIndex:1] uppercaseString];
     NSString *cappedString = [stickerName stringByReplacingCharactersInRange:NSMakeRange(0, 1) withString:cappedFirstChar];
-    titleLabel.text = cappedString;
+    stickerTitleLabel.text = cappedString;
     
-    UILabel *countLabel = [[UILabel alloc] initWithFrame:CGRectMake(150, 210, 120, 30)];
-    countLabel.font = [UIFont fontWithName:@"Miso-Bold" size:30];
-    countLabel.textColor = [UIColor darkGrayColor];
-    countLabel.text = [NSString stringWithFormat:@"Count: %@", count];
-    countLabel.textAlignment = NSTextAlignmentRight;
+    stickerCountLabel.text = [NSString stringWithFormat:@"Count: %@", count];
     
-    UILabel *rarityLabel = [[UILabel alloc] initWithFrame:CGRectMake(30, 210, 120, 30)];
-    rarityLabel.font = [UIFont fontWithName:@"Miso-Bold" size:30];
-    
-    UILabel *detailLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 250, 280, stickerDetailView.frame.size.height - 250)];
-    detailLabel.font = [UIFont fontWithName:@"Miso-Bold" size:28];
-    detailLabel.textColor = [UIColor darkGrayColor];
-    detailLabel.lineBreakMode = NSLineBreakByWordWrapping;
-    detailLabel.numberOfLines = 0;
-    
-    UIImageView *stickerImageView = [[UIImageView alloc]initWithFrame:CGRectMake(60, 40, 160, 160)];
-    stickerImageView.layer.cornerRadius = 80.0;
-    stickerImageView.layer.masksToBounds = YES;
     stickerImageView.image = [UIImage imageNamed: stickerImageName];
-    
-    UITapGestureRecognizer* tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTap:)];
-    tapGestureRecognizer.numberOfTapsRequired = 1;
-    tapGestureRecognizer.numberOfTouchesRequired = 1;
-    [stickerDetailView addGestureRecognizer: tapGestureRecognizer];
-
-    
     
     NSString *common = @"COMMON";
     NSString *uncommon = @"UNCOMMON";
@@ -117,70 +177,68 @@
     //Common stickers
     if ([stickerName isEqualToString:@"lion"])
     {
-        rarityLabel.text = common;
-        rarityLabel.textColor = [UIColor myBlueColor];
-        detailLabel.text = @"Lions are found in Africa. They lounge around being kings of all they see.";
+        stickerRarityLabel.text = common;
+        stickerRarityLabel.textColor = [UIColor myBlueColor];
+        stickerDetailLabel.text = @"Lions are found in Africa. They lounge around being kings of all they see.";
     }
     else if ([stickerName isEqualToString:@"kitten"])
     {
-        rarityLabel.text = common;
-        rarityLabel.textColor = [UIColor myBlueColor];
-        detailLabel.text = @"Did you know?";
+        stickerRarityLabel.text = common;
+        stickerRarityLabel.textColor = [UIColor myBlueColor];
+        stickerDetailLabel.text = @"Did you know?";
     }
     else if ([stickerName isEqualToString:@"campfire"])
     {
-        rarityLabel.text = common;
-        rarityLabel.textColor = [UIColor myBlueColor];
-        detailLabel.text = @"Did you know?";
+        stickerRarityLabel.text = common;
+        stickerRarityLabel.textColor = [UIColor myBlueColor];
+        stickerDetailLabel.text = @"Did you know?";
     }
     
     //Uncommon stickers
     else if ([stickerName isEqualToString:@"puppy"])
     {
-        rarityLabel.text = uncommon;
-        rarityLabel.textColor = [UIColor myRedColor];
-        detailLabel.text = @"Puppies are adorable. They cuddle, jump and play! Then they pee on your carpet.";
+        stickerRarityLabel.text = uncommon;
+        stickerRarityLabel.textColor = [UIColor myRedColor];
+        stickerDetailLabel.text = @"Puppies are adorable. They cuddle, jump and play! Then they pee on your carpet.";
     }
     else if ([stickerName isEqualToString:@"tiger"])
     {
-        rarityLabel.text = uncommon;
-        rarityLabel.textColor = [UIColor myRedColor];
-        detailLabel.text = @"Did you know?";
+        stickerRarityLabel.text = uncommon;
+        stickerRarityLabel.textColor = [UIColor myRedColor];
+        stickerDetailLabel.text = @"Did you know?";
     }
     else if ([stickerName isEqualToString:@"murray"])
     {
-        rarityLabel.text = uncommon;
-        rarityLabel.textColor = [UIColor myRedColor];
-        detailLabel.text = @"Did you know? Bill Murray knows.";
+        stickerRarityLabel.text = uncommon;
+        stickerRarityLabel.textColor = [UIColor myRedColor];
+        stickerDetailLabel.text = @"Did you know? Bill Murray knows.";
     }
     
     //Rare stickers
     else if ([stickerName isEqualToString:@"bear"])
     {
-        rarityLabel.text = rare;
-        rarityLabel.textColor = [UIColor myYellowColor];
-        detailLabel.text = @"Did you know?";
+        stickerRarityLabel.text = rare;
+        stickerRarityLabel.textColor = [UIColor myYellowColor];
+        stickerDetailLabel.text = @"Did you know?";
     }
     else if ([stickerName isEqualToString:@"pizza"])
     {
-        rarityLabel.text = rare;
-        rarityLabel.textColor = [UIColor myYellowColor];
-        detailLabel.text = @"Delicious delicious pizza.";
+        stickerRarityLabel.text = rare;
+        stickerRarityLabel.textColor = [UIColor myYellowColor];
+        stickerDetailLabel.text = @"Delicious delicious pizza.";
     }
-    
-    [detailLabel sizeToFit];
+    stickerDetailLabel.frame = CGRectMake(10, 250, 280, stickerDetailView.frame.size.height - 250);
+    [stickerDetailLabel sizeToFit];
 
-    [stickerDetailView addSubview:countLabel];
-    [stickerDetailView addSubview:rarityLabel];
-    [stickerDetailView addSubview:detailLabel];
-    [stickerDetailView addSubview:stickerImageView];
-    [stickerDetailView addSubview:titleLabel];
-    [self.view addSubview:stickerDetailView];
+    
+    
+    [stickerDetailView startCanvasAnimation];
 }
 
 -(IBAction)handleSingleTap:(id)sender
 {
-    [stickerDetailView removeFromSuperview];
+    stickerDetailView.type = CSAnimationTypeZoomIn;
+    [stickerDetailView startCanvasAnimation];
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
