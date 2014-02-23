@@ -128,9 +128,21 @@
     }
     else if ([_operationType isEqualToString:@"x"])
     {
-        self.navigationItem.title = @"Multiplication";
-        //problemType = 2;
-        operatorLabel.textColor = [UIColor colorWithRed:221.0/255.0 green:168.0/255.0 blue:57.0/255.0 alpha:1];
+        self.navigationItem.title = @"Subtraction";
+        
+        PFQuery *problemQuery = [PFQuery queryWithClassName:@"MathProblem"];
+        [problemQuery whereKey:@"problemType" equalTo:@2];
+        [problemQuery whereKey:@"mathUser" equalTo:[PFUser currentUser]];
+        
+        [problemQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
+         {
+             _userArray = (NSMutableArray *)objects;
+             
+             [self newMathProblem];
+             [self startTimer];
+         }];
+        
+        operatorLabel.textColor = [UIColor colorWithRed:222.0/255.0 green:54.0/255.0 blue:64.0/255.0 alpha:1];
     }
     else if ([_operationType isEqualToString:@"/"])
     {

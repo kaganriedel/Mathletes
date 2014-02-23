@@ -30,7 +30,10 @@
                                     </tabBarItem>
                                     <tabBarItem title="" image="ic_subtract_normal.png" id="302-6w-Z8u">
                                         <inset key="imageInsets" minX="-3" minY="-22" maxX="0.0" maxY="-2"/>
+                                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
                                     </tabBarItem>
+                                    <tabBarItem title="Item" id="e17-nD-CHy"/>
+                                    <tabBarItem title="Item" id="3j9-zm-mXk"/>
                                 </items>
                                 <connections>
                                     <outlet property="delegate" destination="Cqn-oy-XWQ" id="UNu-6f-z47"/>
@@ -104,8 +107,10 @@
                     <navigationItem key="navigationItem" title="My Progress" id="b3I-l4-kPq"/>
                     <connections>
                         <outlet property="additionTabBarItem" destination="ILu-qp-rJn" id="OpJ-wR-SAz"/>
+                        <outlet property="divisionTabBarItem" destination="3j9-zm-mXk" id="lht-a0-q4V"/>
                         <outlet property="effecientLabel" destination="Dr4-Kt-jLl" id="gWF-2x-V9D"/>
                         <outlet property="excellentLabel" destination="NxG-FJ-vpy" id="4IQ-Zm-e08"/>
+                        <outlet property="multiplicationTabBarItem" destination="e17-nD-CHy" id="TMW-sS-2cZ"/>
                         <outlet property="operandTabBar" destination="KBm-Hr-2nC" id="uN6-BM-dYH"/>
                         <outlet property="proficientLabel" destination="obE-wv-q6A" id="qG6-pA-Ze1"/>
                         <outlet property="subtractionTabBarItem" destination="302-6w-Z8u" id="0eq-XE-Jlz"/>
@@ -142,14 +147,14 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ChooseStickerCell" id="KdF-3a-gig" customClass="ChooseStickerCell">
-                                        <rect key="frame" x="5" y="5" width="73.75" height="73.75"/>
+                                        <rect key="frame" x="5" y="5" width="74" height="74"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="74" height="74"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mea-QJ-Xr3">
-                                                    <rect key="frame" x="2.5" y="0.5" width="67" height="67"/>
+                                                    <rect key="frame" x="2" y="0.0" width="67" height="67"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </imageView>
                                             </subviews>
@@ -305,14 +310,14 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell autoresizesSubviews="NO" opaque="NO" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="StickerCell" id="qH2-9H-mDV" customClass="StickerCell">
-                                        <rect key="frame" x="5" y="5" width="73.75" height="76.75"/>
+                                        <rect key="frame" x="5" y="5" width="74" height="77"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="74" height="77"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Duy-nR-h9k">
-                                                    <rect key="frame" x="1" y="-2" width="66" height="66.5"/>
+                                                    <rect key="frame" x="0.0" y="-3" width="66" height="66"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </imageView>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="x12" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="29n-LO-bUg">
@@ -665,7 +670,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kGc-1O-CmF">
-                                <rect key="frame" x="0.0" y="344.5" width="320" height="80"/>
+                                <rect key="frame" x="0.0" y="345" width="320" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="35"/>
@@ -679,7 +684,7 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ukv-2j-cX2">
-                                <rect key="frame" x="20" y="348.5" width="72" height="72"/>
+                                <rect key="frame" x="20" y="349" width="72" height="72"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fGH-dU-Jqw">
@@ -701,7 +706,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yN9-IB-NCW">
-                                <rect key="frame" x="0.0" y="426.5" width="320" height="80"/>
+                                <rect key="frame" x="0.0" y="427" width="320" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="35"/>
@@ -757,15 +762,15 @@
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JeG-oa-nDn">
-                                <rect key="frame" x="20" y="182.5" width="72" height="72"/>
+                                <rect key="frame" x="20" y="183" width="72" height="72"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KyU-mv-wta">
-                                <rect key="frame" x="20" y="265.5" width="72" height="72"/>
+                                <rect key="frame" x="20" y="266" width="72" height="72"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="W6W-qp-PSf">
-                                <rect key="frame" x="20" y="430.5" width="72" height="72"/>
+                                <rect key="frame" x="20" y="431" width="72" height="72"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
@@ -1233,6 +1238,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="Vfm-Oi-ryU"/>
+        <segue reference="rLt-zi-41P"/>
     </inferredMetricsTieBreakers>
 </document>
