@@ -13,5 +13,6 @@
 @property NSMutableArray *userArray;
 @property NSMutableArray *subtractionUserArray;
 @property NSMutableArray *multplicationUserArray;
+@property NSMutableArray *divisionUserArray;
 
 @end
