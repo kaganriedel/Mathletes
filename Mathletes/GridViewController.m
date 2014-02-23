@@ -71,20 +71,31 @@
     
     int yDirection = 10;
     int subChange = 0;
+    int divisionChange = 1;
+    int jStart = 0, jEnd = 10, iStart = 0, iEnd = 10;
+    float fontSize = 15.0;
+    if ([_operand  isEqual: @"/"])
+    {
+        jStart = 1;
+        jEnd = 11;
+        iStart = 1;
+        iEnd = 11;
+        fontSize = 12.0;
+    }
     
     //i is horizontal, j is vertical, x&yDirection is spacing
-    for (int j = 0; j < 10; j++)
+    for (int j = jStart; j < jEnd; j++)
     {
         int xDirection = 5;
         int subtractionValue = 0;
         
-        for (int i = 0; i < 10; i++)
+        for (int i = iStart; i < (iEnd); i++)
         {
             UILabel *gridLabel = [[UILabel alloc] initWithFrame:CGRectMake(xDirection, yDirection, 30, 30)];
             [self.view addSubview:gridLabel];
             [gridLabel setTextColor:[UIColor whiteColor]];
             [gridLabel setTextAlignment:NSTextAlignmentCenter];
-            [gridLabel setFont: [UIFont fontWithName:@"Miso-Bold" size:15.0]];
+            [gridLabel setFont: [UIFont fontWithName:@"Miso-Bold" size:fontSize]];
             
             //set values
             
@@ -131,11 +142,9 @@
             else if ([_operand isEqual:@"/"])
             {
                 
-                for (int k = subtractionValue; k < 10; k++)
-                {
-                    [gridLabel setText:[NSString stringWithFormat:@"%d%@%d",i+subtractionValue+subChange,_operand, j]];
+                    [gridLabel setText:[NSString stringWithFormat:@"%d%@%d",i*divisionChange,_operand, j]];
                     
-                    NSString *gridValues = [NSString stringWithFormat: @"%d%d",i+subtractionValue+subChange, j];
+                    NSString *gridValues = [NSString stringWithFormat: @"%d%d",i*divisionChange, j];
                     
                     [_gridArray enumerateObjectsUsingBlock:^(MathProblem *problem, NSUInteger idx, BOOL *stop)
                      {
@@ -147,7 +156,8 @@
                              key = idx;
                          }
                      }];
-                }
+
+                //divisionChange += 1;
             }
             
             MathProblem *mp = _gridArray[key];
@@ -170,10 +180,10 @@
             }
             
             xDirection += 31;
-            
         }
         subChange++;
         yDirection += 31;
+        divisionChange += 1;
     }
 }
 
