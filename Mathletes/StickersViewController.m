@@ -17,6 +17,7 @@
     __weak IBOutlet UICollectionView *stickerCollectionView;
     NSArray *stickers;
     NSArray *userStickers;
+    UIView *stickerDetailView;
 }
 
 @end
@@ -56,9 +57,130 @@
     [stickerCollectionView reloadData];
 }
 
+-(void)viewDidDisappear:(BOOL)animated
+{
+    [super viewDidDisappear:animated];
+    [stickerDetailView removeFromSuperview];
+}
+
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self performSegueWithIdentifier:@"StickerSegue" sender:indexPath];
+    StickerCell *cell = (StickerCell*)[stickerCollectionView cellForItemAtIndexPath:indexPath];
+    NSString *stickerImageName = cell.stickerImageName;
+    NSNumber *count = cell.count;
+    
+    stickerDetailView = [[UIView alloc] initWithFrame:CGRectMake(10, 10, 300, self.view.frame.size.height -20)];
+    stickerDetailView.backgroundColor = [UIColor lightGrayColor];
+    stickerDetailView.layer.cornerRadius = 10.0;
+    stickerDetailView.layer.masksToBounds = YES;
+    
+    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 5, 260, 30)];
+    titleLabel.font = [UIFont fontWithName:@"Miso-Bold" size:30];
+    titleLabel.textColor = [UIColor darkGrayColor];
+    titleLabel.textAlignment = NSTextAlignmentCenter;
+    NSString *stickerName = [stickerImageName stringByReplacingOccurrencesOfString:@".png" withString:@""];
+    NSString *cappedFirstChar = [[stickerName substringToIndex:1] uppercaseString];
+    NSString *cappedString = [stickerName stringByReplacingCharactersInRange:NSMakeRange(0, 1) withString:cappedFirstChar];
+    titleLabel.text = cappedString;
+    
+    UILabel *countLabel = [[UILabel alloc] initWithFrame:CGRectMake(150, 210, 120, 30)];
+    countLabel.font = [UIFont fontWithName:@"Miso-Bold" size:30];
+    countLabel.textColor = [UIColor darkGrayColor];
+    countLabel.text = [NSString stringWithFormat:@"Count: %@", count];
+    countLabel.textAlignment = NSTextAlignmentRight;
+    
+    UILabel *rarityLabel = [[UILabel alloc] initWithFrame:CGRectMake(30, 210, 120, 30)];
+    rarityLabel.font = [UIFont fontWithName:@"Miso-Bold" size:30];
+    
+    UILabel *detailLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 250, 280, stickerDetailView.frame.size.height - 250)];
+    detailLabel.font = [UIFont fontWithName:@"Miso-Bold" size:28];
+    detailLabel.textColor = [UIColor darkGrayColor];
+    detailLabel.lineBreakMode = NSLineBreakByWordWrapping;
+    detailLabel.numberOfLines = 0;
+    
+    UIImageView *stickerImageView = [[UIImageView alloc]initWithFrame:CGRectMake(60, 40, 160, 160)];
+    stickerImageView.layer.cornerRadius = 80.0;
+    stickerImageView.layer.masksToBounds = YES;
+    stickerImageView.image = [UIImage imageNamed: stickerImageName];
+    
+    UITapGestureRecognizer* tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTap:)];
+    tapGestureRecognizer.numberOfTapsRequired = 1;
+    tapGestureRecognizer.numberOfTouchesRequired = 1;
+    [stickerDetailView addGestureRecognizer: tapGestureRecognizer];
+
+    
+    
+    NSString *common = @"COMMON";
+    NSString *uncommon = @"UNCOMMON";
+    NSString *rare = @"RARE";
+    
+    //Common stickers
+    if ([stickerName isEqualToString:@"lion"])
+    {
+        rarityLabel.text = common;
+        rarityLabel.textColor = [UIColor myBlueColor];
+        detailLabel.text = @"Lions are found in Africa. They lounge around being kings of all they see.";
+    }
+    else if ([stickerName isEqualToString:@"kitten"])
+    {
+        rarityLabel.text = common;
+        rarityLabel.textColor = [UIColor myBlueColor];
+        detailLabel.text = @"Did you know?";
+    }
+    else if ([stickerName isEqualToString:@"campfire"])
+    {
+        rarityLabel.text = common;
+        rarityLabel.textColor = [UIColor myBlueColor];
+        detailLabel.text = @"Did you know?";
+    }
+    
+    //Uncommon stickers
+    else if ([stickerName isEqualToString:@"puppy"])
+    {
+        rarityLabel.text = uncommon;
+        rarityLabel.textColor = [UIColor myRedColor];
+        detailLabel.text = @"Puppies are adorable. They cuddle, jump and play! Then they pee on your carpet.";
+    }
+    else if ([stickerName isEqualToString:@"tiger"])
+    {
+        rarityLabel.text = uncommon;
+        rarityLabel.textColor = [UIColor myRedColor];
+        detailLabel.text = @"Did you know?";
+    }
+    else if ([stickerName isEqualToString:@"murray"])
+    {
+        rarityLabel.text = uncommon;
+        rarityLabel.textColor = [UIColor myRedColor];
+        detailLabel.text = @"Did you know? Bill Murray knows.";
+    }
+    
+    //Rare stickers
+    else if ([stickerName isEqualToString:@"bear"])
+    {
+        rarityLabel.text = rare;
+        rarityLabel.textColor = [UIColor myYellowColor];
+        detailLabel.text = @"Did you know?";
+    }
+    else if ([stickerName isEqualToString:@"pizza"])
+    {
+        rarityLabel.text = rare;
+        rarityLabel.textColor = [UIColor myYellowColor];
+        detailLabel.text = @"Delicious delicious pizza.";
+    }
+    
+    [detailLabel sizeToFit];
+
+    [stickerDetailView addSubview:countLabel];
+    [stickerDetailView addSubview:rarityLabel];
+    [stickerDetailView addSubview:detailLabel];
+    [stickerDetailView addSubview:stickerImageView];
+    [stickerDetailView addSubview:titleLabel];
+    [self.view addSubview:stickerDetailView];
+}
+
+-(IBAction)handleSingleTap:(id)sender
+{
+    [stickerDetailView removeFromSuperview];
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
