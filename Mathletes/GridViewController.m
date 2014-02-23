@@ -128,6 +128,27 @@
                  }];
                 
             }
+            else if ([_operand isEqual:@"/"])
+            {
+                
+                for (int k = subtractionValue; k < 10; k++)
+                {
+                    [gridLabel setText:[NSString stringWithFormat:@"%d%@%d",i+subtractionValue+subChange,_operand, j]];
+                    
+                    NSString *gridValues = [NSString stringWithFormat: @"%d%d",i+subtractionValue+subChange, j];
+                    
+                    [_gridArray enumerateObjectsUsingBlock:^(MathProblem *problem, NSUInteger idx, BOOL *stop)
+                     {
+                         NSString *valuesString = [NSString stringWithFormat: @"%i%i", problem.firstValue, problem.secondValue];
+                         
+                         if ([valuesString isEqualToString:gridValues])
+                         {
+                             difficulty = problem.equationDifficulty;
+                             key = idx;
+                         }
+                     }];
+                }
+            }
             
             MathProblem *mp = _gridArray[key];
             difficulty = mp.equationDifficulty;
@@ -209,6 +230,28 @@
         
         PFQuery *problemQuery = [PFQuery queryWithClassName:@"MathProblem"];
         [problemQuery whereKey:@"problemType" equalTo:@2];
+        [problemQuery whereKey:@"mathUser" equalTo:[PFUser currentUser]];
+        
+        [problemQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
+         {
+             _gridArray = (NSMutableArray *)objects;
+             
+             for (int i = 0; i < _gridArray.count; i++)
+             {
+                 MathProblem *problem = _gridArray[i];
+                 NSLog(@"%i %i %ld",problem.firstValue, problem.secondValue,(long)problem.equationDifficulty);
+             }
+             
+             [self createGrid];
+             
+         }];
+    }
+    else if (item == _divisionTabBarItem)
+    {
+        _operand = @"/";
+        
+        PFQuery *problemQuery = [PFQuery queryWithClassName:@"MathProblem"];
+        [problemQuery whereKey:@"problemType" equalTo:@3];
         [problemQuery whereKey:@"mathUser" equalTo:[PFUser currentUser]];
         
         [problemQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)

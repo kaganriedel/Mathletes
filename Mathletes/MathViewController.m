@@ -147,7 +147,18 @@
     else if ([_operationType isEqualToString:@"/"])
     {
         self.navigationItem.title = @"Division";
-        //problemType = 3;
+        
+        PFQuery *problemQuery = [PFQuery queryWithClassName:@"MathProblem"];
+        [problemQuery whereKey:@"problemType" equalTo:@3];
+        [problemQuery whereKey:@"mathUser" equalTo:[PFUser currentUser]];
+        
+        [problemQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
+         {
+             _userArray = (NSMutableArray *)objects;
+             
+             [self newMathProblem];
+             [self startTimer];
+         }];
         operatorLabel.textColor = [UIColor colorWithRed:95.0/255.0 green:162.0/255.0 blue:219.0/255.0 alpha:1];
     }
     
