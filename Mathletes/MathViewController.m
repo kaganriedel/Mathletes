@@ -43,6 +43,11 @@
     int keyAddend;
     NSInteger numkey;
     NSString *newkey;
+    NSInteger problemType;
+    MathProblem *currentMathProblem;
+    NSString *operand;
+    NSInteger correctAnswer;
+    BOOL timeIsUp;
     
     int countDown;
     NSTimer *countDownTimer;
@@ -63,8 +68,6 @@
     user = [PFUser currentUser];
     
     [self buildView];
-    
-    NSInteger problemType;
 
     for (UILabel* label in self.view.subviews) {
         if([label isKindOfClass:[UILabel class]])
@@ -89,21 +92,12 @@
     feedbackLabel.font = [UIFont fontWithName:@"Miso-Bold" size:34];
     inputLabel.font = [UIFont fontWithName:@"Miso-Bold" size:40];
 
+    timeIsUp = NO;
     if ([_operationType isEqualToString:@"+"])
     {
         self.navigationItem.title = @"Addition";
-        
-        PFQuery *problemQuery = [PFQuery queryWithClassName:@"MathProblem"];
-        [problemQuery whereKey:@"problemType" equalTo:@0];
-        [problemQuery whereKey:@"mathUser" equalTo:[PFUser currentUser]];
-        
-        [problemQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
-         {
-             _userArray = (NSMutableArray *)objects;
-             
-             [self newMathProblem];
-             [self startTimer];
-         }];
+        problemType = 0;
+        [self queryForProblemType];
        
         operatorLabel.textColor = [UIColor colorWithRed:130.0/255.0 green:183.0/255.0 blue:53.0/255.0 alpha:1];
         
@@ -111,57 +105,43 @@
     else if ([_operationType isEqualToString:@"-"])
     {
         self.navigationItem.title = @"Subtraction";
-        
-        PFQuery *problemQuery = [PFQuery queryWithClassName:@"MathProblem"];
-        [problemQuery whereKey:@"problemType" equalTo:@1];
-        [problemQuery whereKey:@"mathUser" equalTo:[PFUser currentUser]];
-        
-        [problemQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
-         {
-             _userArray = (NSMutableArray *)objects;
-             
-             [self newMathProblem];
-             [self startTimer];
-         }];
+        problemType = 1;
+        [self queryForProblemType];
        
         operatorLabel.textColor = [UIColor colorWithRed:222.0/255.0 green:54.0/255.0 blue:64.0/255.0 alpha:1];
     }
     else if ([_operationType isEqualToString:@"x"])
     {
         self.navigationItem.title = @"Multiplication";
-        
-        PFQuery *problemQuery = [PFQuery queryWithClassName:@"MathProblem"];
-        [problemQuery whereKey:@"problemType" equalTo:@2];
-        [problemQuery whereKey:@"mathUser" equalTo:[PFUser currentUser]];
-        
-        [problemQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
-         {
-             _userArray = (NSMutableArray *)objects;
-             
-             [self newMathProblem];
-             [self startTimer];
-         }];
+        problemType = 2;
+        [self queryForProblemType];
         
         operatorLabel.textColor = [UIColor colorWithRed:222.0/255.0 green:54.0/255.0 blue:64.0/255.0 alpha:1];
     }
     else if ([_operationType isEqualToString:@"/"])
     {
         self.navigationItem.title = @"Division";
+        problemType = 3;
+        [self queryForProblemType];
         
-        PFQuery *problemQuery = [PFQuery queryWithClassName:@"MathProblem"];
-        [problemQuery whereKey:@"problemType" equalTo:@3];
-        [problemQuery whereKey:@"mathUser" equalTo:[PFUser currentUser]];
-        
-        [problemQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
-         {
-             _userArray = (NSMutableArray *)objects;
-             
-             [self newMathProblem];
-             [self startTimer];
-         }];
         operatorLabel.textColor = [UIColor colorWithRed:95.0/255.0 green:162.0/255.0 blue:219.0/255.0 alpha:1];
     }
     
+}
+
+-(void)queryForProblemType
+{
+    PFQuery *problemQuery = [PFQuery queryWithClassName:@"MathProblem"];
+    [problemQuery whereKey:@"problemType" equalTo:[NSNumber numberWithInt:problemType]];
+    [problemQuery whereKey:@"mathUser" equalTo:[PFUser currentUser]];
+    
+    [problemQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
+     {
+         _userArray = (NSMutableArray *)objects;
+         
+         [self newMathProblem];
+         [self startTimer];
+     }];
 }
 
 - (void)buildView
@@ -254,8 +234,31 @@
     if (countDown == 10)
     {
         [countDownTimer invalidate];
+        timeIsUp = YES;
         feedbackLabel.text = @"Sorry! Time is up!";
-        [self wrongAnswer];
+        
+        if ([_operationLabel.text isEqualToString:@"x"])
+        {
+            operand = @"x";
+            correctAnswer = var1Label.text.intValue * var2Label.text.intValue;
+        }
+        else if ([_operationLabel.text isEqualToString:@"/"])
+        {
+            operand = @"/";
+            correctAnswer = var1Label.text.intValue / var2Label.text.intValue;
+        }
+        else if ([_operationLabel.text isEqualToString:@"+"])
+        {
+            operand = @"+";
+            correctAnswer = var1Label.text.intValue + var2Label.text.intValue;
+        }
+        else if ([_operationLabel.text isEqualToString:@"-"])
+        {
+            operand = @"-";
+            correctAnswer = var1Label.text.intValue - var2Label.text.intValue;
+        }
+
+        [self printForWrongAnswer];
     }
 }
 
@@ -357,9 +360,9 @@
         }
     }
     
-    MathProblem *mp = _userArray[userArrayKey];
-    var1Label.text = [NSString stringWithFormat:@"%i",mp.firstValue];
-    var2Label.text = [NSString stringWithFormat:@"%i",mp.secondValue];
+    currentMathProblem = _userArray[userArrayKey];
+    var1Label.text = [NSString stringWithFormat:@"%i",currentMathProblem.firstValue];
+    var2Label.text = [NSString stringWithFormat:@"%i",currentMathProblem.secondValue];
 }
 
 - (IBAction)onNewButtonPressed:(id)sender
@@ -387,20 +390,16 @@
     feedbackLabel.text = @"Correct!";
     [self updateAchievements];
     
-    MathProblem *problem = _userArray[userArrayKey];
-    NSInteger proficiencyChange = problem.equationDifficulty;
+    NSInteger proficiencyChange = currentMathProblem.equationDifficulty;
     
-    if (problem.equationDifficulty > 0 && countDown <= 6)
+    if (currentMathProblem.equationDifficulty > 0 && countDown <= 6)
     {
         proficiencyChange -= 1;
     }
     
-    problem.equationDifficulty = proficiencyChange;
-    problem.haveAttemptedEquation = YES;
-    [_userArray enumerateObjectsUsingBlock:^(MathProblem *obj, NSUInteger idx, BOOL *stop)
-     {
-         [obj saveInBackground];
-     }];
+    currentMathProblem.equationDifficulty = proficiencyChange;
+    currentMathProblem.haveAttemptedEquation = YES;
+    [currentMathProblem saveInBackground];
     
     correctAnswerTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(correctAnswerTimerFired:) userInfo:nil repeats:NO];
 }
@@ -419,7 +418,7 @@
 
     feedbackView.alpha = 1.0;
     feedbackView.backgroundColor = [UIColor colorWithRed:222.0/255.0 green:54.0/255.0 blue:64.0/255.0 alpha:1];
-    
+    timeIsUp = NO;
     
     [self addProficiencyForWrongAnswer];
 }
@@ -1227,54 +1226,73 @@
 
         if ([_operationLabel.text isEqualToString:@"x"])
         {
+            operand = @"x";
+            
             if (inputLabel.text.intValue == var1Label.text.intValue * var2Label.text.intValue)
             {
                 [self correctAnswer];
             }
             else
             {
-                feedbackLabel.text = [NSString stringWithFormat: @"%@ x %@ = %i", var1Label.text, var2Label.text, var1Label.text.intValue * var2Label.text.intValue];
-                [self wrongAnswer];
+                correctAnswer = var1Label.text.intValue * var2Label.text.intValue;
+                [self printForWrongAnswer];
             }
         }
         else if ([_operationLabel.text isEqualToString:@"/"])
         {
+            operand = @"/";
             if (inputLabel.text.intValue == var1Label.text.intValue / var2Label.text.intValue)
             {
                 [self correctAnswer];
             }
             else
             {
-                feedbackLabel.text = [NSString stringWithFormat: @"%@ / %@ = %i", var1Label.text, var2Label.text, var1Label.text.intValue / var2Label.text.intValue];
-                [self wrongAnswer];
+                correctAnswer = var1Label.text.intValue / var2Label.text.intValue;
+                [self printForWrongAnswer];
             }
         }
         else if ([_operationLabel.text isEqualToString:@"+"])
         {
+            operand = @"+";
             if (inputLabel.text.intValue == var1Label.text.intValue + var2Label.text.intValue)
             {
                 [self correctAnswer];
             }
             else
             {
-                feedbackLabel.text = [NSString stringWithFormat: @"%@ + %@ = %i", var1Label.text, var2Label.text, var1Label.text.intValue + var2Label.text.intValue];
-                [self wrongAnswer];
+                correctAnswer = var1Label.text.intValue + var2Label.text.intValue;
+                [self printForWrongAnswer];
             }
         }
         else if ([_operationLabel.text isEqualToString:@"-"])
         {
+            operand = @"-";
             if (inputLabel.text.intValue == var1Label.text.intValue - var2Label.text.intValue)
             {
                 [self correctAnswer];
             }
             else
             {
-                feedbackLabel.text = [NSString stringWithFormat: @"%@ - %@ = %i", var1Label.text, var2Label.text, var1Label.text.intValue - var2Label.text.intValue];
-                [self wrongAnswer];
+                correctAnswer = var1Label.text.intValue - var2Label.text.intValue;
+                [self printForWrongAnswer];
             }
         }
     }
 }
 
+
+-(void)printForWrongAnswer
+{
+    if (timeIsUp == YES)
+    {
+        feedbackLabel.text = [NSString stringWithFormat: @"Time is up!  %@ %@ %@ = %i", var1Label.text, operand, var2Label.text, correctAnswer];
+    }
+    else
+    {
+        feedbackLabel.text = [NSString stringWithFormat: @"%@ %@ %@ = %i", var1Label.text, operand, var2Label.text, correctAnswer];
+    }
+    
+    [self wrongAnswer];
+}
 
 @end

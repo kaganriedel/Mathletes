@@ -13,7 +13,6 @@
 
 @property (strong, nonatomic) IBOutlet UILabel *operationLabel;
 @property NSString *operationType;
-
 @property int addend1, addend2;
 @property int cardValue;
 @property NSMutableArray *userArray;
