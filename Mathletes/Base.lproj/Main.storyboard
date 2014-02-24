@@ -145,7 +145,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ChooseStickerCell" id="KdF-3a-gig" customClass="ChooseStickerCell">
-                                        <rect key="frame" x="5" y="5" width="74" height="74"/>
+                                        <rect key="frame" x="5" y="5" width="73.75" height="73.75"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="74" height="74"/>
@@ -194,10 +194,13 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hiz-d1-8Ca">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hiz-d1-8Ca" userLabel="Addition Button">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="126"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="4rD-Qi-ejF"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="48"/>
                                 <inset key="contentEdgeInsets" minX="50" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="72" maxY="0.0"/>
@@ -209,14 +212,21 @@
                                     <segue destination="vXZ-lx-hvc" kind="push" identifier="AdditionSegue" id="RQu-zo-Rks"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qwK-Fd-dxO">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qwK-Fd-dxO" userLabel="1st View">
                                 <rect key="frame" x="0.0" y="126" width="320" height="1"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="2MU-w3-mfW"/>
+                                    <constraint firstAttribute="height" constant="1" id="4td-XW-cje"/>
+                                </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gdR-U1-AuA">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gdR-U1-AuA" userLabel="Subtraction Button">
                                 <rect key="frame" x="0.0" y="126" width="320" height="126"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="J90-bH-wow"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="48"/>
                                 <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="-23" maxY="0.0"/>
                                 <state key="normal" backgroundImage="btn_subtraction_item_normal.png">
@@ -228,15 +238,22 @@
                                     <segue destination="vXZ-lx-hvc" kind="push" identifier="SubtractionSegue" id="rLt-zi-41P"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UOJ-rd-wjL">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UOJ-rd-wjL" userLabel="2nd View">
                                 <rect key="frame" x="0.0" y="251" width="320" height="1"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="OQG-SH-3WB"/>
+                                    <constraint firstAttribute="height" constant="1" id="iVW-jb-jaV"/>
+                                </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TyO-ii-oWk">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TyO-ii-oWk" userLabel="Multiplication Button">
                                 <rect key="frame" x="0.0" y="252" width="320" height="126"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="Df9-1w-i0u"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="48"/>
                                 <inset key="titleEdgeInsets" minX="48" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" backgroundImage="btn_multiplcation_item_normal.png">
@@ -248,15 +265,22 @@
                                     <segue destination="vXZ-lx-hvc" kind="push" identifier="MultiplicationSegue" id="Vfm-Oi-ryU"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="j0r-yV-Uob">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j0r-yV-Uob" userLabel="3rd View">
                                 <rect key="frame" x="0.0" y="377" width="320" height="1"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="c4f-2w-AHr"/>
+                                    <constraint firstAttribute="width" constant="320" id="eSU-HK-cZ9"/>
+                                </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AID-mL-G6k">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AID-mL-G6k" userLabel="Division Button">
                                 <rect key="frame" x="0.0" y="378" width="320" height="126"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="sWg-2r-FBQ"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="48"/>
                                 <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="45" maxY="0.0"/>
                                 <state key="normal" backgroundImage="btn_division_item_normal.png">
@@ -270,6 +294,26 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="TyO-ii-oWk" firstAttribute="leading" secondItem="F1D-IN-vo7" secondAttribute="leading" id="10W-Nb-wRt"/>
+                            <constraint firstItem="AID-mL-G6k" firstAttribute="leading" secondItem="F1D-IN-vo7" secondAttribute="leading" id="6gd-Na-WUx"/>
+                            <constraint firstItem="gdR-U1-AuA" firstAttribute="leading" secondItem="F1D-IN-vo7" secondAttribute="leading" id="Bxo-fl-1Sv"/>
+                            <constraint firstAttribute="bottom" secondItem="AID-mL-G6k" secondAttribute="bottom" id="C7o-Ts-LZv"/>
+                            <constraint firstItem="Hiz-d1-8Ca" firstAttribute="height" secondItem="TyO-ii-oWk" secondAttribute="height" id="G4P-nQ-uYg"/>
+                            <constraint firstItem="TyO-ii-oWk" firstAttribute="top" secondItem="gdR-U1-AuA" secondAttribute="bottom" id="ICk-3A-jIR"/>
+                            <constraint firstItem="UOJ-rd-wjL" firstAttribute="top" secondItem="gdR-U1-AuA" secondAttribute="bottom" constant="-1" id="IVb-mC-SHs"/>
+                            <constraint firstItem="qwK-Fd-dxO" firstAttribute="leading" secondItem="F1D-IN-vo7" secondAttribute="leading" id="JGT-23-Akn"/>
+                            <constraint firstItem="Hiz-d1-8Ca" firstAttribute="height" secondItem="AID-mL-G6k" secondAttribute="height" id="Jk6-Zd-dQt"/>
+                            <constraint firstItem="Hiz-d1-8Ca" firstAttribute="leading" secondItem="F1D-IN-vo7" secondAttribute="leading" id="MTd-di-Z1s"/>
+                            <constraint firstItem="j0r-yV-Uob" firstAttribute="leading" secondItem="F1D-IN-vo7" secondAttribute="leading" id="Mbd-7J-ncd"/>
+                            <constraint firstItem="gdR-U1-AuA" firstAttribute="top" secondItem="Hiz-d1-8Ca" secondAttribute="bottom" id="OMe-Jg-dqF"/>
+                            <constraint firstItem="Hiz-d1-8Ca" firstAttribute="height" secondItem="gdR-U1-AuA" secondAttribute="height" id="S1N-0z-yLC"/>
+                            <constraint firstItem="AID-mL-G6k" firstAttribute="top" secondItem="TyO-ii-oWk" secondAttribute="bottom" id="SQ1-vd-Dbb"/>
+                            <constraint firstItem="UOJ-rd-wjL" firstAttribute="leading" secondItem="F1D-IN-vo7" secondAttribute="leading" id="YN3-dR-9so"/>
+                            <constraint firstItem="j0r-yV-Uob" firstAttribute="top" secondItem="TyO-ii-oWk" secondAttribute="bottom" constant="-1" id="gY9-3W-Pm3"/>
+                            <constraint firstItem="Hiz-d1-8Ca" firstAttribute="top" secondItem="F1D-IN-vo7" secondAttribute="top" id="nuG-aK-wx7"/>
+                            <constraint firstItem="qwK-Fd-dxO" firstAttribute="top" secondItem="Hiz-d1-8Ca" secondAttribute="bottom" id="qjx-Rz-91v"/>
+                        </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" title="Math" id="Ioh-iI-V0n"/>
@@ -311,7 +355,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell autoresizesSubviews="NO" opaque="NO" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="StickerCell" id="qH2-9H-mDV" customClass="StickerCell">
-                                        <rect key="frame" x="5" y="5" width="74" height="80"/>
+                                        <rect key="frame" x="5" y="5" width="73.75" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="74" height="80"/>
