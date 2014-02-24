@@ -36,48 +36,6 @@
     [super viewDidLoad];
     
 
-    stickerDetailView = [[CSAnimationView alloc] initWithFrame:CGRectMake(10, 10, 300, self.view.frame.size.height - 20)];
-    stickerDetailView.alpha = 0.0;
-    stickerDetailView.delay = 0.1;
-    stickerDetailView.duration = 0.5;
-    stickerDetailView.backgroundColor = [UIColor lightGrayColor];
-    stickerDetailView.layer.cornerRadius = 10.0;
-    stickerDetailView.layer.masksToBounds = YES;
-    
-    stickerTitleLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 5, 260, 30)];
-    stickerTitleLabel.font = [UIFont fontWithName:@"Miso-Bold" size:30];
-    stickerTitleLabel.textColor = [UIColor darkGrayColor];
-    stickerTitleLabel.textAlignment = NSTextAlignmentCenter;
-    
-    stickerCountLabel = [[UILabel alloc] initWithFrame:CGRectMake(150, 210, 120, 30)];
-    stickerCountLabel.font = [UIFont fontWithName:@"Miso-Bold" size:30];
-    stickerCountLabel.textColor = [UIColor darkGrayColor];
-    stickerCountLabel.textAlignment = NSTextAlignmentRight;
-
-    stickerRarityLabel = [[UILabel alloc] initWithFrame:CGRectMake(30, 210, 120, 30)];
-    stickerRarityLabel.font = [UIFont fontWithName:@"Miso-Bold" size:30];
-    
-    stickerDetailLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 250, 280, stickerDetailView.frame.size.height - 250)];
-    stickerDetailLabel.font = [UIFont fontWithName:@"Miso-Bold" size:28];
-    stickerDetailLabel.textColor = [UIColor darkGrayColor];
-    stickerDetailLabel.lineBreakMode = NSLineBreakByWordWrapping;
-    stickerDetailLabel.numberOfLines = 0;
-    
-    stickerImageView = [[UIImageView alloc]initWithFrame:CGRectMake(60, 40, 160, 160)];
-    stickerImageView.layer.cornerRadius = 80.0;
-    stickerImageView.layer.masksToBounds = YES;
-    
-    UITapGestureRecognizer* tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTap:)];
-    tapGestureRecognizer.numberOfTapsRequired = 1;
-    tapGestureRecognizer.numberOfTouchesRequired = 1;
-    [stickerDetailView addGestureRecognizer: tapGestureRecognizer];
-    
-    [stickerDetailView addSubview:stickerCountLabel];
-    [stickerDetailView addSubview:stickerRarityLabel];
-    [stickerDetailView addSubview:stickerDetailLabel];
-    [stickerDetailView addSubview:stickerImageView];
-    [stickerDetailView addSubview:stickerTitleLabel];
-    [self.view addSubview:stickerDetailView];
     
     stickers = @[@"lion.png",@"kitten.png",@"campfire.png", @"puppy.png", @"tiger.png", @"murray.png", @"bear.png", @"pizza.png"];
     
@@ -92,7 +50,9 @@
     stickerDetailView.alpha = 0.0;
     stickerDetailView.delay = 0.1;
     stickerDetailView.duration = 0.5;
-    stickerDetailView.backgroundColor = [UIColor colorWithRed:235.0/255.0 green:238.0/255.0 blue:366.0/255.0 alpha:1.0];
+    stickerDetailView.backgroundColor = [UIColor whiteColor];
+    stickerDetailView.layer.borderColor = [UIColor darkGrayColor].CGColor;
+    stickerDetailView.layer.borderWidth = 2.0;
     stickerDetailView.layer.cornerRadius = 10.0;
     stickerDetailView.layer.masksToBounds = YES;
     
