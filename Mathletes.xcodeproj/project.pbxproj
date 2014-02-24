@@ -169,6 +169,7 @@
 		27FD30DA18BA9E9900EE75A8 /* math_placeholder@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "math_placeholder@2x.png"; sourceTree = "<group>"; };
 		27FD30DC18BA9EA900EE75A8 /* math_subtraction@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "math_subtraction@2x.png"; sourceTree = "<group>"; };
 		6D010FB018B3075D0095B0E7 /* star@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star@2x.png"; sourceTree = "<group>"; };
+		6D0F673218BBC9460098011A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		6D17BD5118AC1CFE009A7416 /* AchievementHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AchievementHeader.h; sourceTree = "<group>"; };
 		6D17BD5218AC1CFE009A7416 /* AchievementHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AchievementHeader.m; sourceTree = "<group>"; };
 		6D18826018A943DF003DCA92 /* StickersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StickersViewController.h; sourceTree = "<group>"; };
@@ -344,6 +345,7 @@
 		6D891EA218A582EC0002B915 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6D0F673218BBC9460098011A /* QuartzCore.framework */,
 				6DA5778E18B43425004B10F7 /* libz.dylib */,
 				6D891EA318A582EC0002B915 /* Foundation.framework */,
 				6D891EA518A582EC0002B915 /* CoreGraphics.framework */,

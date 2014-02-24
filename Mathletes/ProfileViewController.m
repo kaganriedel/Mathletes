@@ -12,6 +12,7 @@
 #import "CMNavBarNotificationView/CMNavBarNotificationView.h"
 #import "CSAnimationView.h"
 
+
 @interface ProfileViewController () <PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate>
 {
     NSUserDefaults *userDefaults;
@@ -26,8 +27,9 @@
     __weak IBOutlet UIButton *stickersButton;
     __weak IBOutlet UIButton *achievementsButton;
     
-    int loadCounter;
-    UIView *loadView;
+    float loadCounter;
+    CSAnimationView *loadView;
+    UILabel *percentLabel;
     
 }
 
@@ -96,10 +98,13 @@
 
 -(void)viewWillAppear:(BOOL)animated
 {
+    [super viewWillAppear:animated];
     
     [self setProfileImage];
 
     [self setTitle];
+    
+    
 }
 -(void) viewDidAppear:(BOOL)animated
 {
@@ -112,9 +117,27 @@
 -(void)signUpViewController:(PFSignUpViewController *)signUpController didSignUpUser:(PFUser *)user
 {
     loadCounter = 0;
-    loadView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
-    loadView.backgroundColor = [UIColor blackColor];
+    loadView = [[CSAnimationView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+    loadView.backgroundColor = [UIColor lightGrayColor];
     [self.view addSubview:loadView];
+    
+    UILabel *loadLabel = [[UILabel alloc] initWithFrame:CGRectMake(50, 310, 220, 80)];
+    loadLabel.text = @"Your user will be ready to go in a moment!";
+    loadLabel.textAlignment = NSTextAlignmentCenter;
+    loadLabel.font = [UIFont fontWithName:@"Miso-Bold" size:30];
+    loadLabel.numberOfLines = 2;
+    loadLabel.lineBreakMode = NSLineBreakByWordWrapping;
+    loadLabel.textColor = [UIColor darkGrayColor];
+    [loadView addSubview:loadLabel];
+    
+    percentLabel = [[UILabel alloc] initWithFrame:CGRectMake(140, 270, 60, 50)];
+    percentLabel.textAlignment = NSTextAlignmentCenter;
+    percentLabel.textColor = [UIColor darkGrayColor];
+    percentLabel.font = [UIFont fontWithName:@"Miso-Bold" size:30];
+    
+    [loadView addSubview:percentLabel];
+    
+    
     
     _userArray = [self cardDifficulty];
     _subtractionUserArray = [self subtractionDifficulty];
@@ -127,7 +150,7 @@
              if (succeeded)
              {
                  loadCounter ++;
-                 NSLog(@"load counter: %i", loadCounter);
+                 NSLog(@"load counter: %f", loadCounter);
                  [self checkIfLoadIsFinished];
              }
              if (error)
@@ -143,7 +166,7 @@
              if (succeeded)
              {
                  loadCounter ++;
-                 NSLog(@"load counter: %i", loadCounter);
+                 NSLog(@"load counter: %f", loadCounter);
                  [self checkIfLoadIsFinished];
              }
              if (error)
@@ -159,7 +182,7 @@
              if (succeeded)
              {
                  loadCounter ++;
-                 NSLog(@"load counter: %i", loadCounter);
+                 NSLog(@"load counter: %f", loadCounter);
                  [self checkIfLoadIsFinished];
              }
              if (error)
@@ -174,7 +197,7 @@
             if (succeeded)
             {
                 loadCounter ++;
-                NSLog(@"load counter: %i", loadCounter);
+                NSLog(@"load counter: %f", loadCounter);
                 [self checkIfLoadIsFinished];
             }
             if (error)
@@ -194,6 +217,8 @@
 
 -(void)checkIfLoadIsFinished
 {
+    percentLabel.text = [NSString stringWithFormat:@"%i%%", @((loadCounter/400)*100).intValue];
+
     if (loadCounter >= 400)
     {
         [loadView removeFromSuperview];
