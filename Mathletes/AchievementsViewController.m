@@ -205,14 +205,14 @@
     
     cell.achievement = achievements[indexPath.section][indexPath.row];
     
-    cell.imageView.image = [UIImage imageNamed:@"star.png"];
     if (cell.achievement.isAchieved == YES)
     {
-        cell.imageView.alpha = 1.0;
+        //eventually use a switch statement here to determine which image to use
+                cell.imageView.image = [UIImage imageNamed:@"math_addition.png"];
     }
     else
     {
-        cell.imageView.alpha = 0.5;
+        cell.imageView.image = [UIImage imageNamed:@"math_placeholder.png"];
     }
     
     return cell;

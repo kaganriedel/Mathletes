@@ -89,7 +89,6 @@
 		6D891EDA18A5B3CB0002B915 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D891ED918A5B3CB0002B915 /* ProfileViewController.m */; };
 		6D891EDF18A5BF6B0002B915 /* ChooseOperationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D891EDE18A5BF6B0002B915 /* ChooseOperationsViewController.m */; };
 		6D99FF7318B16D5400CE0EFF /* TradeWallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D99FF7218B16D5400CE0EFF /* TradeWallViewController.m */; };
-		6D99FF7618B16D6400CE0EFF /* StickerDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D99FF7518B16D6400CE0EFF /* StickerDetailViewController.m */; };
 		6DA5778118B42F15004B10F7 /* campfire@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DA5778018B42F15004B10F7 /* campfire@2x.png */; };
 		6DA5778318B42F21004B10F7 /* puppy@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DA5778218B42F21004B10F7 /* puppy@2x.png */; };
 		6DA5778F18B43425004B10F7 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DA5778E18B43425004B10F7 /* libz.dylib */; };
@@ -216,8 +215,6 @@
 		6D891EDE18A5BF6B0002B915 /* ChooseOperationsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseOperationsViewController.m; sourceTree = "<group>"; };
 		6D99FF7118B16D5400CE0EFF /* TradeWallViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TradeWallViewController.h; sourceTree = "<group>"; };
 		6D99FF7218B16D5400CE0EFF /* TradeWallViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TradeWallViewController.m; sourceTree = "<group>"; };
-		6D99FF7418B16D6400CE0EFF /* StickerDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StickerDetailViewController.h; sourceTree = "<group>"; };
-		6D99FF7518B16D6400CE0EFF /* StickerDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StickerDetailViewController.m; sourceTree = "<group>"; };
 		6DA5778018B42F15004B10F7 /* campfire@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "campfire@2x.png"; sourceTree = "<group>"; };
 		6DA5778218B42F21004B10F7 /* puppy@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "puppy@2x.png"; sourceTree = "<group>"; };
 		6DA5778E18B43425004B10F7 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
@@ -389,8 +386,6 @@
 				6D383D3A18B27587007F2116 /* MakeTradeViewController.m */,
 				6D383D3C18B27C2D007F2116 /* MakeTradeCell.h */,
 				6D383D3D18B27C2D007F2116 /* MakeTradeCell.m */,
-				6D99FF7418B16D6400CE0EFF /* StickerDetailViewController.h */,
-				6D99FF7518B16D6400CE0EFF /* StickerDetailViewController.m */,
 				6D1BE7D618A9C2750079102A /* AchievementsViewController.h */,
 				6D1BE7D718A9C2750079102A /* AchievementsViewController.m */,
 				6D1BE7D918A9C2FB0079102A /* AchievementCell.h */,
@@ -642,7 +637,6 @@
 				6D1BE7D818A9C2750079102A /* AchievementsViewController.m in Sources */,
 				6D18827618A99D54003DCA92 /* Achievement.m in Sources */,
 				6D18826218A943DF003DCA92 /* StickersViewController.m in Sources */,
-				6D99FF7618B16D6400CE0EFF /* StickerDetailViewController.m in Sources */,
 				6D17BD5318AC1CFE009A7416 /* AchievementHeader.m in Sources */,
 				6D891EB418A582EC0002B915 /* AppDelegate.m in Sources */,
 				6D383D3818B26D83007F2116 /* TradeWallCell.m in Sources */,

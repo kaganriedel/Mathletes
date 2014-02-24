@@ -8,7 +8,6 @@
 
 #import "StickersViewController.h"
 #import "StickerCell.h"
-#import "StickerDetailViewController.h"
 #import "Parse/Parse.h"
 #import "CSAnimationView.h"
 
@@ -93,14 +92,14 @@
     
     PFUser *user = [PFUser currentUser];
     
-    userStickers = @[[user objectForKey:@"lionCount"]?:@(0),
-                     [user objectForKey:@"kittenCount"]?:@(0),
-                     [user objectForKey:@"campfireCount"]?:@(0),
-                     [user objectForKey:@"puppyCount"]?:@(0),
-                     [user objectForKey:@"tigerCount"]?:@(0),
-                     [user objectForKey:@"murrayCount"]?:@(0),
-                     [user objectForKey:@"bearCount"]?:@(0),
-                     [user objectForKey:@"pizzaCount"]?:@(0)
+    userStickers = @[[user objectForKey:@"lionCount"] ?: @(0),
+                     [user objectForKey:@"kittenCount"] ?: @(0),
+                     [user objectForKey:@"campfireCount"] ?: @(0),
+                     [user objectForKey:@"puppyCount"] ?: @(0),
+                     [user objectForKey:@"tigerCount"] ?: @(0),
+                     [user objectForKey:@"murrayCount"] ?: @(0),
+                     [user objectForKey:@"bearCount"] ?: @(0),
+                     [user objectForKey:@"pizzaCount"] ?: @(0)
                      ];
     
     
@@ -201,24 +200,12 @@
     [stickerDetailView startCanvasAnimation];
 }
 
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    if ([segue.identifier isEqualToString:@"StickerSegue"])
-    {
-        NSIndexPath *indexPath = sender;
-        StickerCell *cell = (StickerCell*)[stickerCollectionView cellForItemAtIndexPath:indexPath];
-        
-        StickerDetailViewController *vc = segue.destinationViewController;
-        vc.stickerImageName = cell.stickerImageName;
-        vc.count = cell.count;
-    }
-}
 
 -(StickerCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     StickerCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"StickerCell" forIndexPath:indexPath];
     cell.imageView.image = [UIImage imageNamed:stickers[indexPath.row]];
-    cell.imageView.layer.cornerRadius = 34.0;
+    cell.imageView.layer.cornerRadius = 32.0;
     cell.stickerImageName = stickers[indexPath.row];
     cell.countLabel.font = [UIFont fontWithName:@"Miso-Bold" size:14.0f];
     
