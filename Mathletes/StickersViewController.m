@@ -205,7 +205,7 @@
 {
     StickerCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"StickerCell" forIndexPath:indexPath];
     cell.imageView.image = [UIImage imageNamed:stickers[indexPath.row]];
-    cell.imageView.layer.cornerRadius = 32.0;
+    cell.imageView.layer.cornerRadius = 35.0;
     cell.stickerImageName = stickers[indexPath.row];
     cell.countLabel.font = [UIFont fontWithName:@"Miso-Bold" size:14.0f];
     
