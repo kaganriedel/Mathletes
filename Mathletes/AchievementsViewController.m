@@ -259,62 +259,92 @@
         case 0:
             totalForHeader = [[user objectForKey:@"dailyMath"] intValue];
             achievementHeader.titleLabel.text = [NSString stringWithFormat:@"Daily Math - %i", totalForHeader];
-            achievementHeader.titleLabel.font = [UIFont fontWithName:@"Miso-Bold" size:24];
-            achievementHeader.backgroundColor = [UIColor darkGrayColor];
+            achievementHeader.titleLabel.font = [UIFont fontWithName:@"Miso-Bold" size:20];
+            achievementHeader.backgroundColor = [UIColor whiteColor];
+            achievementHeader.titleLabel.textColor = [UIColor darkGrayColor];
+            achievementHeader.layer.borderWidth = 1.0;
+            achievementHeader.layer.borderColor = [UIColor darkGrayColor].CGColor;
             break;
         case 1:
             totalForHeader = [[user objectForKey:@"totalAdds"] intValue];
             achievementHeader.titleLabel.text = [NSString stringWithFormat:@"Addition - %i", totalForHeader];
-             achievementHeader.titleLabel.font = [UIFont fontWithName:@"Miso-Bold" size:24];
-            achievementHeader.backgroundColor = [UIColor myGreenColor];
+             achievementHeader.titleLabel.font = [UIFont fontWithName:@"Miso-Bold" size:20];
+            achievementHeader.backgroundColor = [UIColor whiteColor];
+            achievementHeader.titleLabel.textColor = [UIColor myGreenColor];
+            achievementHeader.layer.borderWidth = 1.0;
+            achievementHeader.layer.borderColor = [UIColor darkGrayColor].CGColor;
             break;
         case 2:
             totalForHeader = [[user objectForKey:@"totalFastAdds"] intValue];
             achievementHeader.titleLabel.text = [NSString stringWithFormat:@"Speedy Addition - %i", totalForHeader];
-             achievementHeader.titleLabel.font = [UIFont fontWithName:@"Miso-Bold" size:24];
-            achievementHeader.backgroundColor = [UIColor myGreenColor];
+             achievementHeader.titleLabel.font = [UIFont fontWithName:@"Miso-Bold" size:20];
+            achievementHeader.backgroundColor = [UIColor whiteColor];
+            achievementHeader.titleLabel.textColor = [UIColor myGreenColor];
+            achievementHeader.layer.borderWidth = 1.0;
+            achievementHeader.layer.borderColor = [UIColor darkGrayColor].CGColor;
             break;
         case 3:
             totalForHeader = [[user  objectForKey:@"totalSubs"] intValue];
             achievementHeader.titleLabel.text = [NSString stringWithFormat:@"Subtraction - %i", totalForHeader];
-             achievementHeader.titleLabel.font = [UIFont fontWithName:@"Miso-Bold" size:24];
-            achievementHeader.backgroundColor = [UIColor myRedColor];
+             achievementHeader.titleLabel.font = [UIFont fontWithName:@"Miso-Bold" size:20];
+            achievementHeader.backgroundColor = [UIColor whiteColor];
+            achievementHeader.titleLabel.textColor = [UIColor myRedColor];
+            achievementHeader.layer.borderWidth = 1.0;
+            achievementHeader.layer.borderColor = [UIColor darkGrayColor].CGColor;
             break;
         case 4:
             totalForHeader = [[user objectForKey:@"totalFastSubs"] intValue];
             achievementHeader.titleLabel.text = [NSString stringWithFormat:@"Speedy Subtraction - %i", totalForHeader];
-             achievementHeader.titleLabel.font = [UIFont fontWithName:@"Miso-Bold" size:24];
-            achievementHeader.backgroundColor = [UIColor myRedColor];
+             achievementHeader.titleLabel.font = [UIFont fontWithName:@"Miso-Bold" size:20];
+            achievementHeader.backgroundColor = [UIColor whiteColor];
+            achievementHeader.titleLabel.textColor = [UIColor myRedColor];
+            achievementHeader.layer.borderWidth = 1.0;
+            achievementHeader.layer.borderColor = [UIColor darkGrayColor].CGColor;
             break;
         case 5:
             totalForHeader = [[user objectForKey:@"totalMults"] intValue];
             achievementHeader.titleLabel.text = [NSString stringWithFormat:@"Multiplication - %i", totalForHeader];
-             achievementHeader.titleLabel.font = [UIFont fontWithName:@"Miso-Bold" size:24];
-           achievementHeader.backgroundColor = [UIColor myYellowColor];
+             achievementHeader.titleLabel.font = [UIFont fontWithName:@"Miso-Bold" size:20];
+            achievementHeader.backgroundColor = [UIColor whiteColor];
+            achievementHeader.titleLabel.textColor = [UIColor myYellowColor];
+            achievementHeader.layer.borderWidth = 1.0;
+            achievementHeader.layer.borderColor = [UIColor darkGrayColor].CGColor;
             break;
         case 6:
             totalForHeader = [[user objectForKey:@"totalFastMults"] intValue];
             achievementHeader.titleLabel.text = [NSString stringWithFormat:@"Speedy Multiplication - %i", totalForHeader];
-            achievementHeader.titleLabel.font = [UIFont fontWithName:@"Miso-Bold" size:24];
-            achievementHeader.backgroundColor = [UIColor myYellowColor];
+            achievementHeader.titleLabel.font = [UIFont fontWithName:@"Miso-Bold" size:20];
+            achievementHeader.backgroundColor = [UIColor whiteColor];
+            achievementHeader.titleLabel.textColor = [UIColor myYellowColor];
+            achievementHeader.layer.borderWidth = 1.0;
+            achievementHeader.layer.borderColor = [UIColor darkGrayColor].CGColor;
             break;
         case 7:
             totalForHeader = [[user objectForKey:@"totalDivides"] intValue];
             achievementHeader.titleLabel.text = [NSString stringWithFormat:@"Division - %i", totalForHeader];
-            achievementHeader.titleLabel.font = [UIFont fontWithName:@"Miso-Bold" size:24];
-            achievementHeader.backgroundColor = [UIColor myBlueColor];
+            achievementHeader.titleLabel.font = [UIFont fontWithName:@"Miso-Bold" size:20];
+            achievementHeader.backgroundColor = [UIColor whiteColor];
+            achievementHeader.titleLabel.textColor = [UIColor myBlueColor];
+            achievementHeader.layer.borderWidth = 1.0;
+            achievementHeader.layer.borderColor = [UIColor darkGrayColor].CGColor;
             break;
         case 8:
             totalForHeader = [[user objectForKey:@"totalFastDivides"] intValue];
             achievementHeader.titleLabel.text = [NSString stringWithFormat:@"Speedy Division - %i", totalForHeader];
-            achievementHeader.titleLabel.font = [UIFont fontWithName:@"Miso-Bold" size:24];
-            achievementHeader.backgroundColor = [UIColor myBlueColor];
+            achievementHeader.titleLabel.font = [UIFont fontWithName:@"Miso-Bold" size:20];
+            achievementHeader.backgroundColor = [UIColor whiteColor];
+            achievementHeader.titleLabel.textColor = [UIColor myBlueColor];
+            achievementHeader.layer.borderWidth = 1.0;
+            achievementHeader.layer.borderColor = [UIColor darkGrayColor].CGColor;
             break;
         case 9:
             totalForHeader = [[user objectForKey:@"totalAdds"] intValue] + [[user objectForKey:@"totalSubs"] intValue] + [[user objectForKey:@"totalMults"] intValue] + [[user objectForKey:@"totalDivides"] intValue];
             achievementHeader.titleLabel.text = [NSString stringWithFormat:@"Total Math Problems - %i", totalForHeader];
-            achievementHeader.titleLabel.font = [UIFont fontWithName:@"Miso-Bold" size:24];
-            achievementHeader.backgroundColor = [UIColor darkGrayColor];
+            achievementHeader.titleLabel.font = [UIFont fontWithName:@"Miso-Bold" size:20];
+            achievementHeader.backgroundColor = [UIColor whiteColor];
+            achievementHeader.titleLabel.textColor = [UIColor darkGrayColor];
+            achievementHeader.layer.borderWidth = 1.0;
+            achievementHeader.layer.borderColor = [UIColor darkGrayColor].CGColor;
             break;
             
         default:

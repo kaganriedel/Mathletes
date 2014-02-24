@@ -51,7 +51,7 @@
     stickerDetailView.duration = 0.5;
     stickerDetailView.backgroundColor = [UIColor whiteColor];
     stickerDetailView.layer.borderColor = [UIColor darkGrayColor].CGColor;
-    stickerDetailView.layer.borderWidth = 2.0;
+    stickerDetailView.layer.borderWidth = 8.0;
     stickerDetailView.layer.cornerRadius = 10.0;
     stickerDetailView.layer.masksToBounds = YES;
     
