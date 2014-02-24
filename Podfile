@@ -3,3 +3,4 @@ pod "Parse"
 pod 'TestFlightSDK'
 pod 'CMNavBarNotificationView'
 pod "Canvas"
+pod 'CXAlertView'

@@ -12,7 +12,7 @@
 #import "CMNavBarNotificationView/CMNavBarNotificationView.h"
 #import "CSAnimationView.h"
 
-@interface ProfileViewController () <PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate>
+@interface ProfileViewController () <PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate, UIAlertViewDelegate>
 {
     NSUserDefaults *userDefaults;
     PFUser *user;
