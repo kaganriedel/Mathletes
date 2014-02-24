@@ -52,7 +52,7 @@
     {
         rarityLabel.text = common;
         rarityLabel.textColor = [UIColor myBlueColor];
-        detailLabel.text = @"Lions are found in Africa. They lounge around being kings of all they see.";
+        detailLabel.text = @"A puppy spends about 14 hours of every day sleeping. Every year in the United States, more than 5 million puppies are born!";
     }
     else if ([stickerName isEqualToString:@"kitten"])
     {
