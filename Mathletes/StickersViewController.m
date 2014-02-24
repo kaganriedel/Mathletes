@@ -92,7 +92,7 @@
     stickerDetailView.alpha = 0.0;
     stickerDetailView.delay = 0.1;
     stickerDetailView.duration = 0.5;
-    stickerDetailView.backgroundColor = [UIColor lightGrayColor];
+    stickerDetailView.backgroundColor = [UIColor colorWithRed:235.0/255.0 green:238.0/255.0 blue:366.0/255.0 alpha:1.0];
     stickerDetailView.layer.cornerRadius = 10.0;
     stickerDetailView.layer.masksToBounds = YES;
     
