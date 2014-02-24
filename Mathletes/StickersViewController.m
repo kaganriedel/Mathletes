@@ -60,19 +60,19 @@
     stickerTitleLabel.textColor = [UIColor darkGrayColor];
     stickerTitleLabel.textAlignment = NSTextAlignmentCenter;
     
-    stickerCountLabel = [[UILabel alloc] initWithFrame:CGRectMake(150, 210, 120, 30)];
+    stickerCountLabel = [[UILabel alloc] initWithFrame:CGRectMake(150, 205, 120, 30)];
     stickerCountLabel.font = [UIFont fontWithName:@"Miso-Bold" size:30];
     stickerCountLabel.textColor = [UIColor darkGrayColor];
     stickerCountLabel.textAlignment = NSTextAlignmentRight;
     
-    stickerRarityLabel = [[UILabel alloc] initWithFrame:CGRectMake(30, 210, 120, 30)];
+    stickerRarityLabel = [[UILabel alloc] initWithFrame:CGRectMake(30, 205, 120, 30)];
     stickerRarityLabel.font = [UIFont fontWithName:@"Miso-Bold" size:30];
     
-    stickerDetailLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 250, 280, stickerDetailView.frame.size.height - 250)];
+    stickerDetailLabel = [UILabel new];
     stickerDetailLabel.font = [UIFont fontWithName:@"Miso-Bold" size:28];
     stickerDetailLabel.textColor = [UIColor darkGrayColor];
     stickerDetailLabel.lineBreakMode = NSLineBreakByWordWrapping;
-    stickerDetailLabel.numberOfLines = 0;
+    stickerDetailLabel.numberOfLines = 5;
     
     stickerImageView = [[UIImageView alloc]initWithFrame:CGRectMake(60, 40, 160, 160)];
     stickerImageView.layer.cornerRadius = 80.0;
@@ -186,7 +186,7 @@
         stickerRarityLabel.textColor = [UIColor myYellowColor];
         stickerDetailLabel.text = @"Delicious delicious pizza.";
     }
-    stickerDetailLabel.frame = CGRectMake(10, 250, 280, stickerDetailView.frame.size.height - 250);
+    stickerDetailLabel.frame = CGRectMake(10, 235, 280, stickerDetailView.frame.size.height - 235);
     [stickerDetailLabel sizeToFit];
 
     

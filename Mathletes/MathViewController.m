@@ -128,7 +128,7 @@
     }
     else if ([_operationType isEqualToString:@"x"])
     {
-        self.navigationItem.title = @"Subtraction";
+        self.navigationItem.title = @"Multiplication";
         
         PFQuery *problemQuery = [PFQuery queryWithClassName:@"MathProblem"];
         [problemQuery whereKey:@"problemType" equalTo:@2];
