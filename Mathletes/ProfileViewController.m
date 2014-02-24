@@ -10,7 +10,7 @@
 #import "Parse/Parse.h"
 #import "MathProblem.h"
 #import "CMNavBarNotificationView/CMNavBarNotificationView.h"
-
+#import "CSAnimationView.h"
 
 @interface ProfileViewController () <PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate>
 {
@@ -26,7 +26,8 @@
     __weak IBOutlet UIButton *stickersButton;
     __weak IBOutlet UIButton *achievementsButton;
     
-    
+    int loadCounter;
+    UIView *loadView;
     
 }
 
@@ -110,6 +111,11 @@
 
 -(void)signUpViewController:(PFSignUpViewController *)signUpController didSignUpUser:(PFUser *)user
 {
+    loadCounter = 0;
+    loadView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+    loadView.backgroundColor = [UIColor blackColor];
+    [self.view addSubview:loadView];
+    
     _userArray = [self cardDifficulty];
     _subtractionUserArray = [self subtractionDifficulty];
     _multplicationUserArray = [self multiplicationDifficulty];
@@ -117,21 +123,65 @@
     
     [_userArray enumerateObjectsUsingBlock:^(MathProblem *obj, NSUInteger idx, BOOL *stop)
      {
-         [obj saveInBackground];
+         [obj saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+             if (succeeded)
+             {
+                 loadCounter ++;
+                 NSLog(@"load counter: %i", loadCounter);
+                 [self checkIfLoadIsFinished];
+             }
+             if (error)
+             {
+                 NSLog(@"Error: %@", error);
+             }
+         }];
      }];
     
     [_subtractionUserArray enumerateObjectsUsingBlock:^(MathProblem *obj, NSUInteger idx, BOOL *stop)
      {
-         [obj saveInBackground];
+         [obj saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+             if (succeeded)
+             {
+                 loadCounter ++;
+                 NSLog(@"load counter: %i", loadCounter);
+                 [self checkIfLoadIsFinished];
+             }
+             if (error)
+             {
+                 NSLog(@"Error: %@", error);
+             }
+         }];
      }];
     
     [_multplicationUserArray enumerateObjectsUsingBlock:^(MathProblem *obj, NSUInteger idx, BOOL *stop)
      {
-         [obj saveInBackground];
+         [obj saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+             if (succeeded)
+             {
+                 loadCounter ++;
+                 NSLog(@"load counter: %i", loadCounter);
+                 [self checkIfLoadIsFinished];
+             }
+             if (error)
+             {
+                 NSLog(@"Error: %@", error);
+             }
+         }];
      }];
     [_divisionUserArray enumerateObjectsUsingBlock:^(MathProblem *obj, NSUInteger idx, BOOL *stop)
     {
-        [obj saveInBackground];
+        [obj saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+            if (succeeded)
+            {
+                loadCounter ++;
+                NSLog(@"load counter: %i", loadCounter);
+                [self checkIfLoadIsFinished];
+            }
+            if (error)
+            {
+                NSLog(@"Error: %@", error);
+            }
+        }];
     }];
     
     [signUpController dismissViewControllerAnimated:YES completion:^
@@ -140,6 +190,14 @@
     }];
     
     //receive their first sticker and set it to their profile pic
+}
+
+-(void)checkIfLoadIsFinished
+{
+    if (loadCounter >= 400)
+    {
+        [loadView removeFromSuperview];
+    }
 }
 
 -(void)logInViewController:(PFLogInViewController *)logInController didLogInUser:(PFUser *)loggedInUser
