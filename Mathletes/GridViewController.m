@@ -56,14 +56,32 @@
          _gridArray = (NSMutableArray *)objects;
          [self createGrid];
      }];
-    
-    [self createGrid];
+    [self createPlaceHolderGrid];
 }
 
--(void)buildView
+-(void)createPlaceHolderGrid
 {
-    
-    [self createGrid];
+    int yDirection = 10;
+    int divisionChange = 1;
+
+    for (int j = 0; j < 10; j++)
+    {
+        int xDirection = 5;
+
+        for (int i = 0; i < 10; i++)
+        {
+            UILabel *gridLabel = [[UILabel alloc] initWithFrame:CGRectMake(xDirection, yDirection, 30, 30)];
+            gridLabel.backgroundColor = [UIColor myBlueColor];
+            gridLabel.text = [NSString stringWithFormat:@"%i+%i", i, j];
+            [gridLabel setTextColor:[UIColor whiteColor]];
+            [gridLabel setTextAlignment:NSTextAlignmentCenter];
+            [gridLabel setFont: [UIFont fontWithName:@"Miso-Bold" size:15.0]];
+            xDirection += 31;
+            [self.view addSubview:gridLabel];
+        }
+        yDirection += 31;
+        divisionChange += 1;
+    }
 }
 
 -(void)createGrid

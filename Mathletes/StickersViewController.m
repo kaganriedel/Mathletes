@@ -144,13 +144,13 @@
     {
         stickerRarityLabel.text = common;
         stickerRarityLabel.textColor = [UIColor myBlueColor];
-        stickerDetailLabel.text = @"Did you know?";
+        stickerDetailLabel.text = @"Meow?";
     }
     else if ([stickerName isEqualToString:@"campfire"])
     {
         stickerRarityLabel.text = common;
         stickerRarityLabel.textColor = [UIColor myBlueColor];
-        stickerDetailLabel.text = @"Did you know?";
+        stickerDetailLabel.text = @"Hot hot hot!";
     }
     
     //Uncommon stickers
@@ -164,7 +164,7 @@
     {
         stickerRarityLabel.text = uncommon;
         stickerRarityLabel.textColor = [UIColor myRedColor];
-        stickerDetailLabel.text = @"Did you know?";
+        stickerDetailLabel.text = @"Rawr.";
     }
     else if ([stickerName isEqualToString:@"murray"])
     {
