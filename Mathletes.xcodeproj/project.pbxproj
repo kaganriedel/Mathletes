@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		27A444F818BB8E0F000C1335 /* MyLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27A444F718BB8E0F000C1335 /* MyLoginViewController.m */; };
 		27B54DD918AD44270068E68A /* boy@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 27B54DD818AD44270068E68A /* boy@2x.png */; };
 		27FD304818B6866700EE75A8 /* miso-light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 27FD304718B6866700EE75A8 /* miso-light.ttf */; };
 		27FD304918B6867200EE75A8 /* miso-bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 27FD304618B6864900EE75A8 /* miso-bold.ttf */; };
@@ -115,6 +116,8 @@
 /* Begin PBXFileReference section */
 		0FBAD299D6F34B0D8960E650 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		11D82320CD96410092541D1A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		27A444F618BB8E0F000C1335 /* MyLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyLoginViewController.h; sourceTree = "<group>"; };
+		27A444F718BB8E0F000C1335 /* MyLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyLoginViewController.m; sourceTree = "<group>"; };
 		27B54DD818AD44270068E68A /* boy@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "boy@2x.png"; sourceTree = "<group>"; };
 		27FD304618B6864900EE75A8 /* miso-bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "miso-bold.ttf"; sourceTree = "<group>"; };
 		27FD304718B6866700EE75A8 /* miso-light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "miso-light.ttf"; sourceTree = "<group>"; };
@@ -362,6 +365,8 @@
 				6D891EB318A582EC0002B915 /* AppDelegate.m */,
 				6D891ED818A5B3CB0002B915 /* ProfileViewController.h */,
 				6D891ED918A5B3CB0002B915 /* ProfileViewController.m */,
+				27A444F618BB8E0F000C1335 /* MyLoginViewController.h */,
+				27A444F718BB8E0F000C1335 /* MyLoginViewController.m */,
 				6D5C8C3518B13F5E00E63D1A /* ChooseStickerViewController.h */,
 				6D5C8C3618B13F5E00E63D1A /* ChooseStickerViewController.m */,
 				6D5C8C3818B1417900E63D1A /* ChooseStickerCell.h */,
@@ -629,6 +634,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27A444F818BB8E0F000C1335 /* MyLoginViewController.m in Sources */,
 				6D891EBA18A582EC0002B915 /* MathViewController.m in Sources */,
 				C987E0DF18A9AC70007CEC36 /* GridViewController.m in Sources */,
 				C950F2E618AA906A00AC33C6 /* MathProblem.m in Sources */,
