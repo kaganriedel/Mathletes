@@ -108,8 +108,9 @@
     [self checkForLoggedInUserAnimated:animated];
 }
 
--(void)signUpViewController:(PFSignUpViewController *)signUpController didSignUpUser:(PFUser *)user
+-(void)signUpViewController:(PFSignUpViewController *)signUpController didSignUpUser:(PFUser *)signedUpUser
 {
+    user = signedUpUser;
     [self loadMathProblems];
     [signUpController dismissViewControllerAnimated:YES completion:^
     {

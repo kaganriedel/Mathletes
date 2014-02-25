@@ -72,6 +72,7 @@
     [user setObject:cell.imageName forKey:@"profileImage"];
     [user saveInBackground];
     [self.navigationController popViewControllerAnimated:YES];
+ 
 }
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
