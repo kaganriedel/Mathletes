@@ -39,6 +39,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    
     [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor darkGrayColor], NSForegroundColorAttributeName, [UIFont fontWithName:@"Miso-Bold" size:28], NSFontAttributeName, nil]];
 
     excellentLabel.font = [UIFont fontWithName:@"Miso-Bold" size:20];

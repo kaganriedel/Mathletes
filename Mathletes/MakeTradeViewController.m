@@ -88,6 +88,8 @@
 
 }
 
+
+
 - (IBAction)onDoneButtonPressed:(id)sender
 {
     if (getTableCheckedIndexPath && giveTableCheckedIndexPath)
@@ -117,7 +119,8 @@
                 [user saveInBackground];
             }
         }];
-        [self.navigationController popViewControllerAnimated:YES];
+//        [self.navigationController popViewControllerAnimated:YES];
+        [self performSegueWithIdentifier:@"unwindToTradeWall" sender:self];
     }
 }
 
