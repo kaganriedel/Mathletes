@@ -218,7 +218,7 @@
 {
     percentLabel.text = [NSString stringWithFormat:@"%i%%", @((loadCounter/400)*100).intValue];
 
-    if (loadCounter >= 400)
+    if (loadCounter >= 399)
     {
         [loadView removeFromSuperview];
     }
