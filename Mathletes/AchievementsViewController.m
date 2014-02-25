@@ -214,8 +214,45 @@
     
     if (cell.achievement.isAchieved == YES)
     {
-        //eventually use a switch statement here to determine which image to use
+        switch (indexPath.section) {
+            case 0:
                 cell.imageView.image = [UIImage imageNamed:@"math_addition.png"];
+                break;
+            case 1:
+                cell.imageView.image = [UIImage imageNamed:@"math_addition.png"];
+                break;
+            case 2:
+                cell.imageView.image = [UIImage imageNamed:@"math_addition.png"];
+                break;
+            case 3:
+                cell.imageView.image = [UIImage imageNamed:@"math_subtraction.png"];
+                break;
+            case 4:
+                cell.imageView.image = [UIImage imageNamed:@"math_subtraction.png"];
+                break;
+            case 5:
+                cell.imageView.image = [UIImage imageNamed:@"math_imagemultiply.png"];
+                break;
+            case 6:
+                cell.imageView.image = [UIImage imageNamed:@"math_imagemultiply.png"];
+                break;
+            case 7:
+                cell.imageView.image = [UIImage imageNamed:@"math_imagedivision.png"];
+                break;
+            case 8:
+                cell.imageView.image = [UIImage imageNamed:@"math_imagedivision.png"];
+                break;
+            case 9:
+                cell.imageView.image = [UIImage imageNamed:@"math_addition.png"];
+                break;
+            case 10:
+                cell.imageView.image = [UIImage imageNamed:@"math_addition.png"];
+                break;
+                
+            default:
+                break;
+        }
+        
     }
     else
     {
