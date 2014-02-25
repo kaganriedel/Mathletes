@@ -24,7 +24,6 @@
                                     <constraint firstAttribute="width" constant="320" id="qVO-Vs-Vw8"/>
                                 </constraints>
                                 <items>
-<<<<<<< HEAD
                                     <tabBarItem title="" image="ic_tabbaraddition_normal.png" id="ILu-qp-rJn">
                                         <inset key="imageInsets" minX="0.0" minY="-6" maxX="0.0" maxY="0.0"/>
                                     </tabBarItem>
