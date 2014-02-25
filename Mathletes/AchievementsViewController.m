@@ -197,11 +197,11 @@
                      [[Achievement alloc] initWithName:@"Keep It Up x1500!" Description:@"Complete 1500 total math problems" Message:@"You completed 1500 total problems!"]],
                      
                      //Completed all
-                     @[[[Achievement alloc] initWithName:@"Add It All Up!" Description:@"Excellence in all addition problems" Message:@"Congratulations! You're excellent at addition!"],
-                       [[Achievement alloc] initWithName:@"Take It All Away!" Description:@"Excellence in all subtraction problems" Message:@"Congratulations! You're excellent at subtraction!"],
-                       [[Achievement alloc] initWithName:@"Multiplication Magician!" Description:@"Excellence in all multiplication problems" Message:@"Congratulations! You're excellent at multiplication!"],
-                       [[Achievement alloc] initWithName:@"Conquer Division!" Description:@"Excellence in all division problems" Message:@"Congratulations! You're excellent at division!"],
-                       [[Achievement alloc] initWithName:@"Math Master!" Description:@"Excellence in all types of math" Message:@"Amazing! You're a Math Master!"]]
+                     @[[[Achievement alloc] initWithName:@"Add It All Up!" Description:@"Excellence in all addition problems" Message:@"Congratulations! You are excellent at addition!"],
+                       [[Achievement alloc] initWithName:@"Take It All Away!" Description:@"Excellence in all subtraction problems" Message:@"Congratulations! You are excellent at subtraction!"],
+                       [[Achievement alloc] initWithName:@"Multiplication Magician!" Description:@"Excellence in all multiplication problems" Message:@"Congratulations! You are excellent at multiplication!"],
+                       [[Achievement alloc] initWithName:@"Conquer Division!" Description:@"Excellence in all division problems" Message:@"Congratulations! You are excellent at division!"],
+                       [[Achievement alloc] initWithName:@"Math Master!" Description:@"Excellence in all types of math" Message:@"Amazing! You are a Math Master!"]]
                      ];
     
 }
