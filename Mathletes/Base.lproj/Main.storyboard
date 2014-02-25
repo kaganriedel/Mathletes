@@ -153,7 +153,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mea-QJ-Xr3">
-                                                    <rect key="frame" x="5" y="5" width="63.5" height="63.5"/>
+                                                    <rect key="frame" x="3" y="3" width="68" height="68"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </imageView>
                                             </subviews>
@@ -728,7 +728,7 @@
                                     <constraint firstAttribute="width" constant="320" id="3mg-eO-iHc"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="35"/>
-                                <state key="normal" backgroundImage="btn_achvmntitem_normal.png">
+                                <state key="normal">
                                     <color key="titleColor" red="0.45098042490000001" green="0.7019608021" blue="0.87843143940000001" alpha="1" colorSpace="deviceRGB"/>
                                 </state>
                                 <connections>
@@ -1255,7 +1255,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="btn_achvmntitem_normal.png" width="320" height="127"/>
         <image name="btn_additionitem_normal.png" width="320" height="127"/>
         <image name="btn_additionitem_pressed.png" width="320" height="127"/>
         <image name="btn_division_item_normal.png" width="320" height="127"/>

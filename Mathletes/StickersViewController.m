@@ -185,6 +185,58 @@
         stickerRarityLabel.text = rare;
         stickerDetailLabel.text = @"Delicious delicious pizza.";
     }
+    
+    //to be decided
+    else if ([stickerName isEqualToString:@"puppy"])
+    {
+        stickerRarityLabel.text = rare;
+        stickerDetailLabel.text = @"A puppy spends about 14 hours sleeping per day. Every year, more than 5 million puppies are born!";
+    }
+    else if ([stickerName isEqualToString:@"kitten"])
+    {
+        stickerRarityLabel.text = rare;
+        stickerDetailLabel.text = @"There are over 500 million domestic cats in the world. On average cats live for 12 to 15 years!";
+    }
+    else if ([stickerName isEqualToString:@"fish"])
+    {
+        stickerRarityLabel.text = rare;
+        stickerDetailLabel.text = @"There are over 30,000 known species of fish. The fastest fish can swim at speeds of up to 68 mph!";
+    }
+    else if ([stickerName isEqualToString:@"pizza"])
+    {
+        stickerRarityLabel.text = rare;
+        stickerDetailLabel.text = @"Delicious delicious pizza.";
+    }
+    else if ([stickerName isEqualToString:@"pizza"])
+    {
+        stickerRarityLabel.text = rare;
+        stickerDetailLabel.text = @"Delicious delicious pizza.";
+    }
+    else if ([stickerName isEqualToString:@"pizza"])
+    {
+        stickerRarityLabel.text = rare;
+        stickerDetailLabel.text = @"Delicious delicious pizza.";
+    }
+    else if ([stickerName isEqualToString:@"pizza"])
+    {
+        stickerRarityLabel.text = rare;
+        stickerDetailLabel.text = @"Delicious delicious pizza.";
+    }
+    else if ([stickerName isEqualToString:@"pizza"])
+    {
+        stickerRarityLabel.text = rare;
+        stickerDetailLabel.text = @"Delicious delicious pizza.";
+    }
+    else if ([stickerName isEqualToString:@"pizza"])
+    {
+        stickerRarityLabel.text = rare;
+        stickerDetailLabel.text = @"Delicious delicious pizza.";
+    }
+    else if ([stickerName isEqualToString:@"pizza"])
+    {
+        stickerRarityLabel.text = rare;
+        stickerDetailLabel.text = @"Delicious delicious pizza.";
+    }
     stickerDetailLabel.frame = CGRectMake(15, 260, 270, stickerDetailView.frame.size.height - 235);
     [stickerDetailLabel sizeToFit];
 
