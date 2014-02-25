@@ -45,9 +45,9 @@
 {
     [super viewWillAppear:YES];
 
-    stickerDetailView = [[CSAnimationView alloc] initWithFrame:CGRectMake(10, 10, 300, self.view.frame.size.height - 20)];
+    stickerDetailView = [[CSAnimationView alloc] initWithFrame:CGRectMake(10, 30, 300, self.view.frame.size.height + 24)];
     stickerDetailView.alpha = 0.0;
-    stickerDetailView.delay = 0.1;
+    stickerDetailView.delay = 0.0;
     stickerDetailView.duration = 0.5;
     stickerDetailView.backgroundColor = [UIColor whiteColor];
     stickerDetailView.layer.borderColor = [UIColor darkGrayColor].CGColor;
@@ -55,34 +55,39 @@
     stickerDetailView.layer.cornerRadius = 10.0;
     stickerDetailView.layer.masksToBounds = YES;
     
-    stickerTitleLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 5, 260, 30)];
-    stickerTitleLabel.font = [UIFont fontWithName:@"Miso-Bold" size:30];
+    stickerImageView = [[UIImageView alloc]initWithFrame:CGRectMake(70, 10, 160, 160)];
+    stickerImageView.layer.cornerRadius = 80.0;
+    stickerImageView.layer.masksToBounds = YES;
+    
+    stickerTitleLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 170, 260, 40)];
+    stickerTitleLabel.font = [UIFont fontWithName:@"Miso-Bold" size:36];
     stickerTitleLabel.textColor = [UIColor darkGrayColor];
     stickerTitleLabel.textAlignment = NSTextAlignmentCenter;
     
-    stickerCountLabel = [[UILabel alloc] initWithFrame:CGRectMake(150, 205, 120, 30)];
-    stickerCountLabel.font = [UIFont fontWithName:@"Miso-Bold" size:30];
+    UIView *underline = [[UIView alloc] initWithFrame:CGRectMake(15, 215, 270, 1)];
+    underline.backgroundColor = [UIColor lightGrayColor];
+    
+    stickerCountLabel = [[UILabel alloc] initWithFrame:CGRectMake(165, 225, 120, 30)];
+    stickerCountLabel.font = [UIFont fontWithName:@"Miso-Bold" size:24];
     stickerCountLabel.textColor = [UIColor darkGrayColor];
     stickerCountLabel.textAlignment = NSTextAlignmentRight;
     
-    stickerRarityLabel = [[UILabel alloc] initWithFrame:CGRectMake(30, 205, 120, 30)];
-    stickerRarityLabel.font = [UIFont fontWithName:@"Miso-Bold" size:30];
+    stickerRarityLabel = [[UILabel alloc] initWithFrame:CGRectMake(15, 225, 120, 30)];
+    stickerRarityLabel.font = [UIFont fontWithName:@"Miso-Bold" size:24];
     
     stickerDetailLabel = [UILabel new];
     stickerDetailLabel.font = [UIFont fontWithName:@"Miso-Bold" size:28];
     stickerDetailLabel.textColor = [UIColor darkGrayColor];
     stickerDetailLabel.lineBreakMode = NSLineBreakByWordWrapping;
-    stickerDetailLabel.numberOfLines = 5;
+    stickerDetailLabel.numberOfLines = 4;
     
-    stickerImageView = [[UIImageView alloc]initWithFrame:CGRectMake(60, 40, 160, 160)];
-    stickerImageView.layer.cornerRadius = 80.0;
-    stickerImageView.layer.masksToBounds = YES;
+    
     
     UITapGestureRecognizer* tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTap:)];
     tapGestureRecognizer.numberOfTapsRequired = 1;
     tapGestureRecognizer.numberOfTouchesRequired = 1;
     [stickerDetailView addGestureRecognizer: tapGestureRecognizer];
-    
+    [stickerDetailView addSubview:underline];
     [stickerDetailView addSubview:stickerCountLabel];
     [stickerDetailView addSubview:stickerRarityLabel];
     [stickerDetailView addSubview:stickerDetailLabel];
@@ -114,6 +119,11 @@
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
+
+        [self.navigationController setNavigationBarHidden:YES animated:YES];
+        stickerCollectionView.backgroundColor = [UIColor darkGrayColor];
+
+    
     StickerCell *cell = (StickerCell*)[stickerCollectionView cellForItemAtIndexPath:indexPath];
     NSString *stickerImageName = cell.stickerImageName;
     NSNumber *count = cell.count;
@@ -178,7 +188,7 @@
     {
         stickerRarityLabel.text = rare;
         stickerRarityLabel.textColor = [UIColor myYellowColor];
-        stickerDetailLabel.text = @"Did you know?";
+        stickerDetailLabel.text = @"There are over 30,000 known species of fish. The fastest fish can swim at speeds of up to 68 mph!";
     }
     else if ([stickerName isEqualToString:@"pizza"])
     {
@@ -186,7 +196,7 @@
         stickerRarityLabel.textColor = [UIColor myYellowColor];
         stickerDetailLabel.text = @"Delicious delicious pizza.";
     }
-    stickerDetailLabel.frame = CGRectMake(10, 235, 280, stickerDetailView.frame.size.height - 235);
+    stickerDetailLabel.frame = CGRectMake(15, 260, 270, stickerDetailView.frame.size.height - 235);
     [stickerDetailLabel sizeToFit];
 
     
@@ -196,6 +206,9 @@
 
 -(IBAction)handleSingleTap:(id)sender
 {
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
+    stickerCollectionView.backgroundColor = [UIColor whiteColor];
+    
     stickerDetailView.type = CSAnimationTypeZoomIn;
     [stickerDetailView startCanvasAnimation];
 }
