@@ -15,6 +15,9 @@
 		27A4450418BCD673000C1335 /* ic_tabbarmultiply_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 27A4450018BCD673000C1335 /* ic_tabbarmultiply_normal.png */; };
 		27A4450518BCD673000C1335 /* ic_tabbarsubtract_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 27A4450118BCD673000C1335 /* ic_tabbarsubtract_normal.png */; };
 		27A4450618BCD673000C1335 /* ic_tabbaraddition_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 27A4450218BCD673000C1335 /* ic_tabbaraddition_normal.png */; };
+		27A4450A18BCE177000C1335 /* mobilmath-splash320-480.png in Resources */ = {isa = PBXBuildFile; fileRef = 27A4450718BCE177000C1335 /* mobilmath-splash320-480.png */; };
+		27A4450B18BCE177000C1335 /* mobilmath-splash640-960.png in Resources */ = {isa = PBXBuildFile; fileRef = 27A4450818BCE177000C1335 /* mobilmath-splash640-960.png */; };
+		27A4450C18BCE177000C1335 /* mobilmath-splash640-1136.png in Resources */ = {isa = PBXBuildFile; fileRef = 27A4450918BCE177000C1335 /* mobilmath-splash640-1136.png */; };
 		27B54DD918AD44270068E68A /* boy@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 27B54DD818AD44270068E68A /* boy@2x.png */; };
 		27FD304818B6866700EE75A8 /* miso-light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 27FD304718B6866700EE75A8 /* miso-light.ttf */; };
 		27FD304918B6867200EE75A8 /* miso-bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 27FD304618B6864900EE75A8 /* miso-bold.ttf */; };
@@ -129,6 +132,9 @@
 		27A4450018BCD673000C1335 /* ic_tabbarmultiply_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_tabbarmultiply_normal.png; sourceTree = "<group>"; };
 		27A4450118BCD673000C1335 /* ic_tabbarsubtract_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_tabbarsubtract_normal.png; sourceTree = "<group>"; };
 		27A4450218BCD673000C1335 /* ic_tabbaraddition_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_tabbaraddition_normal.png; sourceTree = "<group>"; };
+		27A4450718BCE177000C1335 /* mobilmath-splash320-480.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mobilmath-splash320-480.png"; sourceTree = "<group>"; };
+		27A4450818BCE177000C1335 /* mobilmath-splash640-960.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mobilmath-splash640-960.png"; sourceTree = "<group>"; };
+		27A4450918BCE177000C1335 /* mobilmath-splash640-1136.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mobilmath-splash640-1136.png"; sourceTree = "<group>"; };
 		27B54DD818AD44270068E68A /* boy@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "boy@2x.png"; sourceTree = "<group>"; };
 		27FD304618B6864900EE75A8 /* miso-bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "miso-bold.ttf"; sourceTree = "<group>"; };
 		27FD304718B6866700EE75A8 /* miso-light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "miso-light.ttf"; sourceTree = "<group>"; };
@@ -271,6 +277,9 @@
 		6D1BE7D518A9BBCE0079102A /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				27A4450718BCE177000C1335 /* mobilmath-splash320-480.png */,
+				27A4450818BCE177000C1335 /* mobilmath-splash640-960.png */,
+				27A4450918BCE177000C1335 /* mobilmath-splash640-1136.png */,
 				27FD30B118B6DC6100EE75A8 /* btn_division_item_pressed@2x.png */,
 				27A444FF18BCD673000C1335 /* ic_tabbardivision_normal.png */,
 				27A4450018BCD673000C1335 /* ic_tabbarmultiply_normal.png */,
@@ -542,6 +551,7 @@
 				6DA5778118B42F15004B10F7 /* campfire@2x.png in Resources */,
 				27FD307818B6CD6B00EE75A8 /* math_login_screen_brand@2x.png in Resources */,
 				27FD308818B6CD6B00EE75A8 /* ic_wrong_face.png in Resources */,
+				27A4450B18BCE177000C1335 /* mobilmath-splash640-960.png in Resources */,
 				27FD308D18B6CD6B00EE75A8 /* ic_division_normal.png in Resources */,
 				27A444FA18BCD33C000C1335 /* app_icon120-120.png in Resources */,
 				27FD308318B6CD6B00EE75A8 /* ic_addition_pressed@2x.png in Resources */,
@@ -580,12 +590,14 @@
 				27FD30C418B6DC6100EE75A8 /* btn_division_item_normal.png in Resources */,
 				27FD309018B6CD6B00EE75A8 /* ic_addition_normal.png in Resources */,
 				27FD30CD18B6DC6100EE75A8 /* btn_addition_item_pressed@2x.png in Resources */,
+				27A4450C18BCE177000C1335 /* mobilmath-splash640-1136.png in Resources */,
 				27FD305E18B6CB9200EE75A8 /* btn_keypad_bg_normal.png in Resources */,
 				27FD305D18B6CB9200EE75A8 /* btn_keypad_bg_normal@2x.png in Resources */,
 				27FD308018B6CD6B00EE75A8 /* ic_subtract_pressed.png in Resources */,
 				27FD30CB18B6DC6100EE75A8 /* btn_subtraction_item_normal@2x.png in Resources */,
 				27FD307D18B6CD6B00EE75A8 /* ic_division_pressed@2x.png in Resources */,
 				27FD308918B6CD6B00EE75A8 /* ic_addition_normal@2x.png in Resources */,
+				27A4450A18BCE177000C1335 /* mobilmath-splash320-480.png in Resources */,
 				27FD307E18B6CD6B00EE75A8 /* ic_division_pressed.png in Resources */,
 				27FD308418B6CD6B00EE75A8 /* ic_addition_pressed.png in Resources */,
 				6DB5ACD218B2E5D00098A72D /* murray@2x.png in Resources */,
