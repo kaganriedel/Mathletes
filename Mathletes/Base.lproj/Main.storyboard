@@ -146,7 +146,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ChooseStickerCell" id="KdF-3a-gig" customClass="ChooseStickerCell">
-                                        <rect key="frame" x="5" y="5" width="74" height="74"/>
+                                        <rect key="frame" x="5" y="5" width="73.75" height="73.75"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="74" height="74"/>
@@ -357,7 +357,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell autoresizesSubviews="NO" opaque="NO" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="StickerCell" id="qH2-9H-mDV" customClass="StickerCell">
-                                        <rect key="frame" x="5" y="5" width="74" height="80"/>
+                                        <rect key="frame" x="5" y="5" width="73.75" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="74" height="80"/>
@@ -523,9 +523,11 @@
                         <outlet property="getTableView" destination="E5T-dp-I5E" id="G3M-Vh-QdG"/>
                         <outlet property="giveLabel" destination="KPe-xw-Rd9" id="aGW-tB-ONG"/>
                         <outlet property="giveTableView" destination="8D2-WK-luz" id="TaA-1F-CMz"/>
+                        <segue destination="xHt-m2-fK9" kind="unwind" identifier="unwindToTradeWall" unwindAction="unwindFromMakeTradeViewController:" id="rzb-hs-67L"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yby-5i-lJJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="xHt-m2-fK9" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2703" y="-771"/>
         </scene>

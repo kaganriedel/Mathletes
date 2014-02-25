@@ -88,7 +88,11 @@
 
 - (IBAction)unwindFromMakeTradeViewController:(UIStoryboardSegue *)unwindSegue
 {
-    
+    if ([unwindSegue.identifier isEqualToString:@"unwindToTradeWall"])
+    {
+        tradeSegmentedControl.selectedSegmentIndex = 1;
+        [self reloadTrades];
+    }
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
