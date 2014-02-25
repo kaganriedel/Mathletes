@@ -202,20 +202,20 @@
         stickerRarityLabel.text = rare;
         stickerDetailLabel.text = @"There are over 30,000 known species of fish. The fastest fish can swim at speeds of up to 68 mph!";
     }
-    else if ([stickerName isEqualToString:@"pizza"])
+    else if ([stickerName isEqualToString:@"giraffe"])
     {
         stickerRarityLabel.text = rare;
-        stickerDetailLabel.text = @"Delicious delicious pizza.";
+        stickerDetailLabel.text = @"They are known as the tallest mammals on Earth. Their legs alone are taller than most people at 6 feet!";
     }
-    else if ([stickerName isEqualToString:@"pizza"])
+    else if ([stickerName isEqualToString:@"monkey"])
     {
         stickerRarityLabel.text = rare;
-        stickerDetailLabel.text = @"Delicious delicious pizza.";
+        stickerDetailLabel.text = @"Monkeys love to eat bananas. They can weigh up to 100 pounds and their tails can be as long as 3 feet!";
     }
-    else if ([stickerName isEqualToString:@"pizza"])
+    else if ([stickerName isEqualToString:@"icecream"])
     {
         stickerRarityLabel.text = rare;
-        stickerDetailLabel.text = @"Delicious delicious pizza.";
+        stickerDetailLabel.text = @"The ice cream cone was invented at the 1904 World Fair in St. Louis. Americans eat on average 20 quarts a year!";
     }
     else if ([stickerName isEqualToString:@"pizza"])
     {
