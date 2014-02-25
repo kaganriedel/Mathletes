@@ -883,6 +883,27 @@
     {
         [userDefaults setBool:YES forKey:@"Keep It Up x100!"];
     }
+    
+    //excellence achievements
+    NSString *achievementKey = @"Add It All Up!";
+    NSNumber *boolNumber = [user objectForKey: achievementKey];
+    [userDefaults setBool: boolNumber.boolValue forKey:achievementKey];
+    
+    achievementKey = @"Take It All Away!";
+    boolNumber = [user objectForKey: achievementKey];
+    [userDefaults setBool: boolNumber.boolValue forKey:achievementKey];
+    
+    achievementKey = @"Multiplication Magician!";
+    boolNumber = [user objectForKey: achievementKey];
+    [userDefaults setBool: boolNumber.boolValue forKey:achievementKey];
+    
+    achievementKey = @"Conquer Division!";
+    boolNumber = [user objectForKey: achievementKey];
+    [userDefaults setBool: boolNumber.boolValue forKey:achievementKey];
+    
+    achievementKey = @"Math Master!";
+    boolNumber = [user objectForKey: achievementKey];
+    [userDefaults setBool: boolNumber.boolValue forKey:achievementKey];
 
     [userDefaults synchronize];
 }
