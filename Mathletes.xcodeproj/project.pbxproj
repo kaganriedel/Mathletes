@@ -511,7 +511,7 @@
 				ORGANIZATIONNAME = "Sonam Mehta";
 				TargetAttributes = {
 					6D891E9F18A582EC0002B915 = {
-						DevelopmentTeam = D3X49FQNW5;
+						DevelopmentTeam = K67R3SLFMD;
 					};
 					6D891EC018A582EC0002B915 = {
 						TestTargetID = 6D891E9F18A582EC0002B915;

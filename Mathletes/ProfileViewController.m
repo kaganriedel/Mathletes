@@ -143,68 +143,30 @@
     _multplicationUserArray = [self multiplicationDifficulty];
     _divisionUserArray = [self divisionDifficulty];
     
-    [_userArray enumerateObjectsUsingBlock:^(MathProblem *obj, NSUInteger idx, BOOL *stop)
-     {
-         [obj saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-             if (succeeded)
-             {
-                 loadCounter ++;
-                 NSLog(@"load counter: %f", loadCounter);
-                 [self checkIfLoadIsFinished];
-             }
-             if (error)
-             {
-                 NSLog(@"Error: %@", error);
-             }
-         }];
-     }];
-    
-    [_subtractionUserArray enumerateObjectsUsingBlock:^(MathProblem *obj, NSUInteger idx, BOOL *stop)
-     {
-         [obj saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-             if (succeeded)
-             {
-                 loadCounter ++;
-                 NSLog(@"load counter: %f", loadCounter);
-                 [self checkIfLoadIsFinished];
-             }
-             if (error)
-             {
-                 NSLog(@"Error: %@", error);
-             }
-         }];
-     }];
-    
-    [_multplicationUserArray enumerateObjectsUsingBlock:^(MathProblem *obj, NSUInteger idx, BOOL *stop)
-     {
-         [obj saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-             if (succeeded)
-             {
-                 loadCounter ++;
-                 NSLog(@"load counter: %f", loadCounter);
-                 [self checkIfLoadIsFinished];
-             }
-             if (error)
-             {
-                 NSLog(@"Error: %@", error);
-             }
-         }];
-     }];
-    [_divisionUserArray enumerateObjectsUsingBlock:^(MathProblem *obj, NSUInteger idx, BOOL *stop)
+    [PFObject saveAllInBackground:_userArray block:^(BOOL succeeded, NSError *error)
     {
-        [obj saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-            if (succeeded)
-            {
-                loadCounter ++;
-                NSLog(@"load counter: %f", loadCounter);
-                [self checkIfLoadIsFinished];
-            }
-            if (error)
-            {
-                NSLog(@"Error: %@", error);
-            }
-        }];
+        NSLog(@"Celebrate!");
+        loadCounter ++;
+        [self checkIfLoadIsFinished];
     }];
+    [PFObject saveAllInBackground:_subtractionUserArray block:^(BOOL succeeded, NSError *error)
+     {
+         NSLog(@"Celebrate 2!");
+         loadCounter ++;
+         [self checkIfLoadIsFinished];
+     }];
+    [PFObject saveAllInBackground:_multplicationUserArray block:^(BOOL succeeded, NSError *error)
+     {
+         NSLog(@"Celebrate 3!");
+         loadCounter ++;
+         [self checkIfLoadIsFinished];
+     }];
+    [PFObject saveAllInBackground:_divisionUserArray block:^(BOOL succeeded, NSError *error)
+     {
+         NSLog(@"Celebrate 4!");
+         loadCounter ++;
+         [self checkIfLoadIsFinished];
+     }];
     
     [signUpController dismissViewControllerAnimated:YES completion:^
     {
@@ -216,9 +178,9 @@
 
 -(void)checkIfLoadIsFinished
 {
-    percentLabel.text = [NSString stringWithFormat:@"%i%%", @((loadCounter/400)*100).intValue];
+    percentLabel.text = [NSString stringWithFormat:@"%i%%", @((loadCounter/4)*100).intValue];
 
-    if (loadCounter >= 399)
+    if (loadCounter >= 4)
     {
         [loadView removeFromSuperview];
     }
