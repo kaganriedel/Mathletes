@@ -26,10 +26,7 @@
     __weak IBOutlet UIButton *stickersButton;
     __weak IBOutlet UIButton *achievementsButton;
     
-    float loadCounter;
     CSAnimationView *loadView;
-    UILabel *percentLabel;
-    
 }
 
 @end
@@ -94,8 +91,6 @@
    
     profileButton.layer.cornerRadius = 50;
     
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Hey Testers!" message:@"If your app is crashing or acting funny, log out and create a new user. We're changing the way users work constantly so sometimes old users don't work. Thanks for testing our app!" delegate:nil cancelButtonTitle:@"On To The Math!" otherButtonTitles: nil];
-    [alert show];
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -115,7 +110,32 @@
 
 -(void)signUpViewController:(PFSignUpViewController *)signUpController didSignUpUser:(PFUser *)user
 {
-    loadCounter = 0;
+    [self loadMathProblems];
+    [signUpController dismissViewControllerAnimated:YES completion:^
+    {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }];
+    
+    //receive their first sticker and set it to their profile pic
+}
+
+-(void)checkForMathProblems
+{
+    PFQuery *query = [PFQuery queryWithClassName:@"MathProblem"];
+    [query whereKey:@"mathUser" equalTo:user];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error)
+        {
+            if (objects.count == 0)
+            {
+                [self loadMathProblems];
+            }
+        }
+    }];
+}
+
+-(void)loadMathProblems
+{
     loadView = [[CSAnimationView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
     loadView.backgroundColor = [UIColor lightGrayColor];
     [self.view addSubview:loadView];
@@ -129,61 +149,40 @@
     loadLabel.textColor = [UIColor darkGrayColor];
     [loadView addSubview:loadLabel];
     
-    percentLabel = [[UILabel alloc] initWithFrame:CGRectMake(140, 270, 60, 50)];
-    percentLabel.textAlignment = NSTextAlignmentCenter;
-    percentLabel.textColor = [UIColor darkGrayColor];
-    percentLabel.font = [UIFont fontWithName:@"Miso-Bold" size:30];
+   
     
-    [loadView addSubview:percentLabel];
-    
-    
+    UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    spinner.center = CGPointMake(160, 300);
+    [spinner startAnimating];
+    [loadView addSubview:spinner];
     
     _userArray = [self cardDifficulty];
     _subtractionUserArray = [self subtractionDifficulty];
     _multplicationUserArray = [self multiplicationDifficulty];
     _divisionUserArray = [self divisionDifficulty];
     
-    [PFObject saveAllInBackground:_userArray block:^(BOOL succeeded, NSError *error)
-    {
-        NSLog(@"Celebrate!");
-        loadCounter ++;
-        [self checkIfLoadIsFinished];
-    }];
-    [PFObject saveAllInBackground:_subtractionUserArray block:^(BOOL succeeded, NSError *error)
-     {
-         NSLog(@"Celebrate 2!");
-         loadCounter ++;
-         [self checkIfLoadIsFinished];
-     }];
-    [PFObject saveAllInBackground:_multplicationUserArray block:^(BOOL succeeded, NSError *error)
-     {
-         NSLog(@"Celebrate 3!");
-         loadCounter ++;
-         [self checkIfLoadIsFinished];
-     }];
-    [PFObject saveAllInBackground:_divisionUserArray block:^(BOOL succeeded, NSError *error)
-     {
-         NSLog(@"Celebrate 4!");
-         loadCounter ++;
-         [self checkIfLoadIsFinished];
-     }];
+    NSMutableArray *allMathProblems = [NSMutableArray new];
+    [allMathProblems addObjectsFromArray:_userArray];
+    [allMathProblems addObjectsFromArray:_subtractionUserArray];
+    [allMathProblems addObjectsFromArray:_multplicationUserArray];
+    [allMathProblems addObjectsFromArray:_divisionUserArray];
     
-    [signUpController dismissViewControllerAnimated:YES completion:^
+    [PFObject saveAllInBackground:allMathProblems block:^(BOOL succeeded, NSError *error)
     {
-        [self dismissViewControllerAnimated:YES completion:nil];
+        if (succeeded)
+        {
+            [loadView removeFromSuperview];
+        }
+        else
+        {
+            [[[UIAlertView alloc] initWithTitle:@"Oops! Try logging in again" message:error.localizedFailureReason delegate:self cancelButtonTitle:@"Log Out" otherButtonTitles:nil] show];
+        }
     }];
-    
-    //receive their first sticker and set it to their profile pic
 }
 
--(void)checkIfLoadIsFinished
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    percentLabel.text = [NSString stringWithFormat:@"%i%%", @((loadCounter/4)*100).intValue];
-
-    if (loadCounter >= 4)
-    {
-        [loadView removeFromSuperview];
-    }
+    [PFUser logOut];
 }
 
 -(void)logInViewController:(PFLogInViewController *)logInController didLogInUser:(PFUser *)loggedInUser
@@ -192,6 +191,7 @@
     user = loggedInUser;
     [self setProfileImage];
     [self checkAchievementsForLoggedInUser];
+    [self checkForMathProblems];
 }
 
 -(void)setProfileImage
