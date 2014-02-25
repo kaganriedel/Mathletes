@@ -29,6 +29,7 @@
     user = [PFUser currentUser];
     
     userStickers = [NSMutableArray new];
+    
 
     //check to see which stickers the user has collected and display the ones they have
     if ([[user objectForKey:@"lionCount"] intValue] > 0)

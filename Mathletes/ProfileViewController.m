@@ -12,6 +12,7 @@
 #import "CMNavBarNotificationView/CMNavBarNotificationView.h"
 #import "CSAnimationView.h"
 
+
 @interface ProfileViewController () <PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate, UIAlertViewDelegate>
 {
     NSUserDefaults *userDefaults;
@@ -19,15 +20,15 @@
     NSMutableArray *MathProblems;
 
     __weak IBOutlet UIButton *profileButton;
-    __weak IBOutlet UIImageView *profileImageView;
     __weak IBOutlet UILabel *profileLabel;
     __weak IBOutlet UIButton *mathButton;
     __weak IBOutlet UIButton *progressButton;
     __weak IBOutlet UIButton *stickersButton;
     __weak IBOutlet UIButton *achievementsButton;
     
-    int loadCounter;
-    UIView *loadView;
+    float loadCounter;
+    CSAnimationView *loadView;
+    UILabel *percentLabel;
     
 }
 
@@ -58,13 +59,17 @@
     progressButton.titleLabel.font = [UIFont fontWithName:@"Miso-Bold" size:48];
     stickersButton.titleLabel.font = [UIFont fontWithName:@"Miso-Bold" size:48];
     achievementsButton.titleLabel.font = [UIFont fontWithName:@"Miso-Bold" size:48];
+    mathButton.imageView.contentMode = UIViewContentModeScaleAspectFill;
+    progressButton.imageView.contentMode = UIViewContentModeScaleAspectFill;
+    stickersButton.imageView.contentMode = UIViewContentModeScaleAspectFill;
+    achievementsButton.imageView.contentMode = UIViewContentModeScaleAspectFill;
     
     
     NSLog(@"time since dailyMathStartDate: %f", [[NSDate date] timeIntervalSinceDate:[user objectForKey:@"dailyMathStartDate"]]);
     //if its been more than a day since the last reset of dailyMath, reset it
     if ([[NSDate date] timeIntervalSinceDate:[user objectForKey:@"dailyMathStartDate"]] >= 86400.0)
     {
-        [user setObject:0 forKey:@"dailyMath"];
+        [user setObject:@0 forKey:@"dailyMath"];
         
         [userDefaults setBool:NO forKey:@"dailyMath x10!"];
         [userDefaults setBool:NO forKey:@"dailyMath x20!"];
@@ -88,7 +93,6 @@
     self.navigationController.navigationBar.backgroundColor = [UIColor whiteColor];
    
     profileButton.layer.cornerRadius = 50;
-    profileImageView.layer.cornerRadius = 50;
     
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Hey Testers!" message:@"If your app is crashing or acting funny, log out and create a new user. We're changing the way users work constantly so sometimes old users don't work. Thanks for testing our app!" delegate:nil cancelButtonTitle:@"On To The Math!" otherButtonTitles: nil];
     [alert show];
@@ -96,6 +100,7 @@
 
 -(void)viewWillAppear:(BOOL)animated
 {
+    [super viewWillAppear:animated];
     
     [self setProfileImage];
 
@@ -106,15 +111,32 @@
     [super viewDidAppear:animated];
     
     [self checkForLoggedInUserAnimated:animated];
-    
 }
 
 -(void)signUpViewController:(PFSignUpViewController *)signUpController didSignUpUser:(PFUser *)user
 {
     loadCounter = 0;
-    loadView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
-    loadView.backgroundColor = [UIColor blackColor];
+    loadView = [[CSAnimationView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+    loadView.backgroundColor = [UIColor lightGrayColor];
     [self.view addSubview:loadView];
+    
+    UILabel *loadLabel = [[UILabel alloc] initWithFrame:CGRectMake(50, 310, 220, 80)];
+    loadLabel.text = @"Your user will be ready to go in a moment!";
+    loadLabel.textAlignment = NSTextAlignmentCenter;
+    loadLabel.font = [UIFont fontWithName:@"Miso-Bold" size:30];
+    loadLabel.numberOfLines = 2;
+    loadLabel.lineBreakMode = NSLineBreakByWordWrapping;
+    loadLabel.textColor = [UIColor darkGrayColor];
+    [loadView addSubview:loadLabel];
+    
+    percentLabel = [[UILabel alloc] initWithFrame:CGRectMake(140, 270, 60, 50)];
+    percentLabel.textAlignment = NSTextAlignmentCenter;
+    percentLabel.textColor = [UIColor darkGrayColor];
+    percentLabel.font = [UIFont fontWithName:@"Miso-Bold" size:30];
+    
+    [loadView addSubview:percentLabel];
+    
+    
     
     _userArray = [self cardDifficulty];
     _subtractionUserArray = [self subtractionDifficulty];
@@ -127,7 +149,7 @@
              if (succeeded)
              {
                  loadCounter ++;
-                 NSLog(@"load counter: %i", loadCounter);
+                 NSLog(@"load counter: %f", loadCounter);
                  [self checkIfLoadIsFinished];
              }
              if (error)
@@ -143,7 +165,7 @@
              if (succeeded)
              {
                  loadCounter ++;
-                 NSLog(@"load counter: %i", loadCounter);
+                 NSLog(@"load counter: %f", loadCounter);
                  [self checkIfLoadIsFinished];
              }
              if (error)
@@ -159,7 +181,7 @@
              if (succeeded)
              {
                  loadCounter ++;
-                 NSLog(@"load counter: %i", loadCounter);
+                 NSLog(@"load counter: %f", loadCounter);
                  [self checkIfLoadIsFinished];
              }
              if (error)
@@ -174,7 +196,7 @@
             if (succeeded)
             {
                 loadCounter ++;
-                NSLog(@"load counter: %i", loadCounter);
+                NSLog(@"load counter: %f", loadCounter);
                 [self checkIfLoadIsFinished];
             }
             if (error)
@@ -194,7 +216,9 @@
 
 -(void)checkIfLoadIsFinished
 {
-    if (loadCounter >= 400)
+    percentLabel.text = [NSString stringWithFormat:@"%i%%", @((loadCounter/400)*100).intValue];
+
+    if (loadCounter >= 399)
     {
         [loadView removeFromSuperview];
     }
@@ -859,6 +883,27 @@
     {
         [userDefaults setBool:YES forKey:@"Keep It Up x100!"];
     }
+    
+    //excellence achievements
+    NSString *achievementKey = @"Add It All Up!";
+    NSNumber *boolNumber = [user objectForKey: achievementKey];
+    [userDefaults setBool: boolNumber.boolValue forKey:achievementKey];
+    
+    achievementKey = @"Take It All Away!";
+    boolNumber = [user objectForKey: achievementKey];
+    [userDefaults setBool: boolNumber.boolValue forKey:achievementKey];
+    
+    achievementKey = @"Multiplication Magician!";
+    boolNumber = [user objectForKey: achievementKey];
+    [userDefaults setBool: boolNumber.boolValue forKey:achievementKey];
+    
+    achievementKey = @"Conquer Division!";
+    boolNumber = [user objectForKey: achievementKey];
+    [userDefaults setBool: boolNumber.boolValue forKey:achievementKey];
+    
+    achievementKey = @"Math Master!";
+    boolNumber = [user objectForKey: achievementKey];
+    [userDefaults setBool: boolNumber.boolValue forKey:achievementKey];
 
     [userDefaults synchronize];
 }

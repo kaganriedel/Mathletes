@@ -86,6 +86,11 @@
     [self reloadTrades];
 }
 
+- (IBAction)unwindFromMakeTradeViewController:(UIStoryboardSegue *)unwindSegue
+{
+    
+}
+
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     TradeWallCell *cell = (TradeWallCell*)[tableView cellForRowAtIndexPath:indexPath];

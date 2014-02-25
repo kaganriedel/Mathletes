@@ -60,7 +60,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
     user = [PFUser currentUser];
+    
     
     [self buildView];
     
@@ -235,7 +237,7 @@
     [countDownTimer invalidate];
 }
 
-- (IBAction)onBackButtonPressed:(id)sender
+- (IBAction)onDoneButtonPressed:(id)sender
 {
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
