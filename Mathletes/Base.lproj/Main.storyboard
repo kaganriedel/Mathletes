@@ -25,10 +25,9 @@
                                 </constraints>
                                 <items>
                                     <tabBarItem title="" image="ic_tabbaraddition_normal.png" id="ILu-qp-rJn">
-                                        <inset key="imageInsets" minX="0.0" minY="-6" maxX="0.0" maxY="0.0"/>
+                                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
                                     </tabBarItem>
                                     <tabBarItem title="" image="ic_tabbarsubtract_normal.png" id="302-6w-Z8u">
-                                        <inset key="imageInsets" minX="-3" minY="-22" maxX="0.0" maxY="-2"/>
                                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
                                     </tabBarItem>
                                     <tabBarItem title="" image="ic_tabbarmultiply_normal.png" id="e17-nD-CHy"/>
@@ -43,7 +42,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MBw-uh-L7G">
-                                        <rect key="frame" x="17" y="6" width="21" height="21"/>
+                                        <rect key="frame" x="20" y="11" width="12" height="12"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.58039218189999997" green="0.74901962280000001" blue="0.30196079609999998" alpha="1" colorSpace="deviceRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -58,7 +57,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AyD-i3-l9X">
-                                        <rect key="frame" x="122" y="6" width="21" height="21"/>
+                                        <rect key="frame" x="125" y="11" width="12" height="12"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.89019614459999996" green="0.70588237050000002" blue="0.32156863810000003" alpha="1" colorSpace="deviceRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -73,7 +72,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iZh-aP-mpY">
-                                        <rect key="frame" x="239" y="6" width="21" height="21"/>
+                                        <rect key="frame" x="242" y="11" width="12" height="12"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.45098042490000001" green="0.7019608021" blue="0.87843143940000001" alpha="1" colorSpace="deviceRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -146,14 +145,14 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ChooseStickerCell" id="KdF-3a-gig" customClass="ChooseStickerCell">
-                                        <rect key="frame" x="5" y="5" width="73.75" height="73.75"/>
+                                        <rect key="frame" x="5" y="5" width="74" height="74"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="74" height="74"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mea-QJ-Xr3">
-                                                    <rect key="frame" x="5" y="5" width="63.5" height="63.5"/>
+                                                    <rect key="frame" x="3" y="3" width="67.5" height="67.5"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </imageView>
                                             </subviews>
@@ -357,14 +356,14 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell autoresizesSubviews="NO" opaque="NO" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="StickerCell" id="qH2-9H-mDV" customClass="StickerCell">
-                                        <rect key="frame" x="5" y="5" width="73.75" height="80"/>
+                                        <rect key="frame" x="5" y="5" width="74" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="74" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Duy-nR-h9k">
-                                                    <rect key="frame" x="2" y="0.0" width="68" height="70"/>
+                                                    <rect key="frame" x="2" y="0.0" width="67.5" height="70"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </imageView>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="x12" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="29n-LO-bUg">
@@ -728,7 +727,7 @@
                                     <constraint firstAttribute="width" constant="320" id="3mg-eO-iHc"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="35"/>
-                                <state key="normal" backgroundImage="btn_achvmntitem_normal.png">
+                                <state key="normal" title="Achievements">
                                     <color key="titleColor" red="0.45098042490000001" green="0.7019608021" blue="0.87843143940000001" alpha="1" colorSpace="deviceRGB"/>
                                 </state>
                                 <connections>
@@ -1255,7 +1254,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="btn_achvmntitem_normal.png" width="320" height="127"/>
         <image name="btn_additionitem_normal.png" width="320" height="127"/>
         <image name="btn_additionitem_pressed.png" width="320" height="127"/>
         <image name="btn_division_item_normal.png" width="320" height="127"/>
@@ -1267,10 +1265,10 @@
         <image name="btn_subtraction_item_normal.png" width="320" height="127"/>
         <image name="btn_subtraction_item_pressed.png" width="320" height="127"/>
         <image name="ic_correct.png" width="68" height="68"/>
-        <image name="ic_tabbaraddition_normal.png" width="50" height="50"/>
-        <image name="ic_tabbardivision_normal.png" width="50" height="50"/>
-        <image name="ic_tabbarmultiply_normal.png" width="50" height="50"/>
-        <image name="ic_tabbarsubtract_normal.png" width="50" height="50"/>
+        <image name="ic_tabbaraddition_normal.png" width="25" height="25"/>
+        <image name="ic_tabbardivision_normal.png" width="25" height="25"/>
+        <image name="ic_tabbarmultiply_normal.png" width="25" height="25"/>
+        <image name="ic_tabbarsubtract_normal.png" width="25" height="25"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

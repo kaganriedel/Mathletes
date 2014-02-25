@@ -137,24 +137,39 @@
 -(void)loadMathProblems
 {
     loadView = [[CSAnimationView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
-    loadView.backgroundColor = [UIColor lightGrayColor];
     [self.view addSubview:loadView];
     
-    UILabel *loadLabel = [[UILabel alloc] initWithFrame:CGRectMake(50, 310, 220, 80)];
+    UILabel *loadLabel = [UILabel new];
     loadLabel.text = @"Your user will be ready to go in a moment!";
     loadLabel.textAlignment = NSTextAlignmentCenter;
     loadLabel.font = [UIFont fontWithName:@"Miso-Bold" size:30];
     loadLabel.numberOfLines = 2;
     loadLabel.lineBreakMode = NSLineBreakByWordWrapping;
-    loadLabel.textColor = [UIColor darkGrayColor];
+    loadLabel.textColor = [UIColor whiteColor];
     [loadView addSubview:loadLabel];
+
+    UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    [spinner startAnimating];
+    [loadView addSubview:spinner];
+
+    if (self.view.frame.size.height > 500)
+    {
+        loadView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"mobilemath-splash_big"]];
+        loadLabel.frame = CGRectMake(50, 375, 220, 80);
+        spinner.center = CGPointMake(160, 75);
+    }
+    else
+    {
+        loadView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"mobilemath-splash_small"]];
+        loadLabel.frame = CGRectMake(50, 330, 240, 80);
+        spinner.center = CGPointMake(160, 45);
+    }
+    
+    
     
    
     
-    UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
-    spinner.center = CGPointMake(160, 300);
-    [spinner startAnimating];
-    [loadView addSubview:spinner];
+   
     
     _userArray = [self cardDifficulty];
     _subtractionUserArray = [self subtractionDifficulty];

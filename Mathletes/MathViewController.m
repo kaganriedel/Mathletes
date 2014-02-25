@@ -470,18 +470,15 @@
 {
     inputLabel.text = @"";
     feedbackView.alpha = 1.0;
-    responseImageView.image = [UIImage imageNamed:@"ic_correct.png"];
     feedbackView.backgroundColor = [UIColor colorWithRed:130.0/255.0 green:183.0/255.0 blue:53.0/255.0 alpha:1.0];
     if (countDown <= 6)
     {
-        //set imageview to smiley face
+        responseImageView.image = [UIImage imageNamed:@"ic_correctface"];
     }
     else
     {
-        //feedbackImageView.image = [UIImage set imageview to check mark
+        responseImageView.image = [UIImage imageNamed:@"ic_correct.png"];
     }
-    
-    
     feedbackLabel.text = @"Correct!";
     
     NSInteger proficiencyChange = currentMathProblem.equationDifficulty;
