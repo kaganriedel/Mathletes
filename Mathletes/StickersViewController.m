@@ -51,7 +51,7 @@
     stickerDetailView.duration = 0.5;
     stickerDetailView.backgroundColor = [UIColor whiteColor];
     stickerDetailView.layer.borderColor = [UIColor darkGrayColor].CGColor;
-    stickerDetailView.layer.borderWidth = 8.0;
+    stickerDetailView.layer.borderWidth = 0.0;
     stickerDetailView.layer.cornerRadius = 10.0;
     stickerDetailView.layer.masksToBounds = YES;
     
@@ -147,19 +147,16 @@
     if ([stickerName isEqualToString:@"lion"])
     {
         stickerRarityLabel.text = common;
-        stickerRarityLabel.textColor = [UIColor myBlueColor];
         stickerDetailLabel.text = @"Lions are found in Africa. They lounge around being kings of all they see.";
     }
     else if ([stickerName isEqualToString:@"kitten"])
     {
         stickerRarityLabel.text = common;
-        stickerRarityLabel.textColor = [UIColor myBlueColor];
         stickerDetailLabel.text = @"Meow?";
     }
     else if ([stickerName isEqualToString:@"campfire"])
     {
         stickerRarityLabel.text = common;
-        stickerRarityLabel.textColor = [UIColor myBlueColor];
         stickerDetailLabel.text = @"Hot hot hot!";
     }
     
@@ -167,19 +164,16 @@
     else if ([stickerName isEqualToString:@"puppy"])
     {
         stickerRarityLabel.text = uncommon;
-        stickerRarityLabel.textColor = [UIColor myRedColor];
         stickerDetailLabel.text = @"Puppies are adorable. They cuddle, jump and play! Then they pee on your carpet.";
     }
     else if ([stickerName isEqualToString:@"tiger"])
     {
         stickerRarityLabel.text = uncommon;
-        stickerRarityLabel.textColor = [UIColor myRedColor];
         stickerDetailLabel.text = @"Rawr.";
     }
     else if ([stickerName isEqualToString:@"murray"])
     {
         stickerRarityLabel.text = uncommon;
-        stickerRarityLabel.textColor = [UIColor myRedColor];
         stickerDetailLabel.text = @"Did you know? Bill Murray knows.";
     }
     
@@ -187,18 +181,29 @@
     else if ([stickerName isEqualToString:@"bear"])
     {
         stickerRarityLabel.text = rare;
-        stickerRarityLabel.textColor = [UIColor myYellowColor];
         stickerDetailLabel.text = @"Did you know?";
     }
     else if ([stickerName isEqualToString:@"pizza"])
     {
         stickerRarityLabel.text = rare;
-        stickerRarityLabel.textColor = [UIColor myYellowColor];
         stickerDetailLabel.text = @"Delicious delicious pizza.";
     }
     stickerDetailLabel.frame = CGRectMake(15, 260, 270, stickerDetailView.frame.size.height - 235);
     [stickerDetailLabel sizeToFit];
 
+    if ([stickerRarityLabel.text isEqualToString:common])
+    {
+        stickerRarityLabel.textColor = [UIColor myBlueColor];
+    }
+    else if ([stickerRarityLabel.text isEqualToString:uncommon])
+    {
+        stickerRarityLabel.textColor = [UIColor myRedColor];
+    }
+    else if ([stickerRarityLabel.text isEqualToString:rare])
+    {
+        stickerRarityLabel.textColor = [UIColor myYellowColor];
+
+    }
     
     
     [stickerDetailView startCanvasAnimation];
