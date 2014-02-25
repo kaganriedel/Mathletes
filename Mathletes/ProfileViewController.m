@@ -20,7 +20,6 @@
     NSMutableArray *MathProblems;
 
     __weak IBOutlet UIButton *profileButton;
-    __weak IBOutlet UIImageView *profileImageView;
     __weak IBOutlet UILabel *profileLabel;
     __weak IBOutlet UIButton *mathButton;
     __weak IBOutlet UIButton *progressButton;
@@ -60,6 +59,10 @@
     progressButton.titleLabel.font = [UIFont fontWithName:@"Miso-Bold" size:48];
     stickersButton.titleLabel.font = [UIFont fontWithName:@"Miso-Bold" size:48];
     achievementsButton.titleLabel.font = [UIFont fontWithName:@"Miso-Bold" size:48];
+    mathButton.imageView.contentMode = UIViewContentModeScaleAspectFill;
+    progressButton.imageView.contentMode = UIViewContentModeScaleAspectFill;
+    stickersButton.imageView.contentMode = UIViewContentModeScaleAspectFill;
+    achievementsButton.imageView.contentMode = UIViewContentModeScaleAspectFill;
     
     
     NSLog(@"time since dailyMathStartDate: %f", [[NSDate date] timeIntervalSinceDate:[user objectForKey:@"dailyMathStartDate"]]);
@@ -90,7 +93,6 @@
     self.navigationController.navigationBar.backgroundColor = [UIColor whiteColor];
    
     profileButton.layer.cornerRadius = 50;
-    profileImageView.layer.cornerRadius = 50;
     
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Hey Testers!" message:@"If your app is crashing or acting funny, log out and create a new user. We're changing the way users work constantly so sometimes old users don't work. Thanks for testing our app!" delegate:nil cancelButtonTitle:@"On To The Math!" otherButtonTitles: nil];
     [alert show];

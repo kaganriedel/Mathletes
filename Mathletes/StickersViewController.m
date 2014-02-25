@@ -188,7 +188,7 @@
     {
         stickerRarityLabel.text = rare;
         stickerRarityLabel.textColor = [UIColor myYellowColor];
-        stickerDetailLabel.text = @"There are over 30,000 known species of fish. The fastest fish can swim at speeds of up to 68 mph!";
+        stickerDetailLabel.text = @"Did you know?";
     }
     else if ([stickerName isEqualToString:@"pizza"])
     {
