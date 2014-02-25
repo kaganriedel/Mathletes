@@ -301,13 +301,13 @@
         }
     }
     
-    
+    /*
     for (int i = 0; i < _userArray.count; i++)
     {
         MathProblem *problem = _userArray[i];
         NSLog(@"%i %i %ld",(long)problem.firstValue, problem.secondValue, (long)problem.equationDifficulty);
     }
-    
+    */
     
 }
 
@@ -320,7 +320,6 @@
     feedbackView.alpha = 0.0;
     
     [self sortingArray];
-    //numberOfProficentProblems = firstNonZeroKey + 1;
     
     if (firstNonZeroKey < 100)
     {
@@ -370,6 +369,7 @@
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Congratulations!" message:@"You have done excellent work on this problem set! Keep practicing to earn more stickers and achievements!" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
             [alert show];
             completedAllProblems = YES;
+            [user setObject:@YES forKey:@"completedDivisionProblems"];
         }
         
         
@@ -401,8 +401,8 @@
 
 - (IBAction)onNewButtonPressed:(id)sender
 {
-    [self newMathProblem];
     [self startTimer];
+    [self newMathProblem];
 }
 
 -(void)correctAnswer
@@ -459,21 +459,16 @@
 
 -(void)addProficiencyForWrongAnswer
 {
-    MathProblem *problem = _userArray[userArrayKey];
-    NSInteger proficiencyChange = problem.equationDifficulty;
+    NSInteger proficiencyChange = currentMathProblem.equationDifficulty;
     
-    if (problem.equationDifficulty < 10 && completedAllProblems == NO)
+    if (currentMathProblem.equationDifficulty < 10 && completedAllProblems == NO)
     {
         proficiencyChange += 1;
     }
     
-    problem.equationDifficulty = proficiencyChange;
-    problem.haveAttemptedEquation = YES;
-    
-    [_userArray enumerateObjectsUsingBlock:^(MathProblem *obj, NSUInteger idx, BOOL *stop)
-     {
-         [obj saveInBackground];
-     }];
+    currentMathProblem.equationDifficulty = proficiencyChange;
+    currentMathProblem.haveAttemptedEquation = YES;
+    [currentMathProblem saveInBackground];
 }
 
 -(void)updateAchievements
