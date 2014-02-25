@@ -48,6 +48,7 @@
     NSString *operand;
     NSInteger correctAnswer;
     BOOL timeIsUp;
+    BOOL completedAllProblems;
     
     int countDown;
     NSTimer *countDownTimer;
@@ -91,8 +92,10 @@
    
     feedbackLabel.font = [UIFont fontWithName:@"Miso-Bold" size:34];
     inputLabel.font = [UIFont fontWithName:@"Miso-Bold" size:40];
-
+    
+    completedAllProblems = NO;
     timeIsUp = NO;
+    
     if ([_operationType isEqualToString:@"+"])
     {
         self.navigationItem.title = @"Addition";
@@ -129,9 +132,16 @@
     
 }
 
+// TESTING ONLY IF YOU WANT TO
+//- (void)viewDidAppear:(BOOL)animated
+//{
+//    [NSTimer scheduledTimerWithTimeInterval:1.9 target:self selector:@selector(correctAnswer) userInfo:nil repeats:YES];
+//}
+
 -(void)queryForProblemType
 {
     PFQuery *problemQuery = [PFQuery queryWithClassName:@"MathProblem"];
+    //problemQuery.cachePolicy = kPFCachePolicyCacheThenNetwork;
     [problemQuery whereKey:@"problemType" equalTo:[NSNumber numberWithInt:problemType]];
     [problemQuery whereKey:@"mathUser" equalTo:[PFUser currentUser]];
     
@@ -139,9 +149,10 @@
      {
          _userArray = (NSMutableArray *)objects;
          
-         [self newMathProblem];
          [self startTimer];
+         [self newMathProblem];
      }];
+    
 }
 
 - (void)buildView
@@ -275,6 +286,7 @@
     NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"equationDifficulty" ascending:YES];
     _userArray = [sortingArray sortedArrayUsingDescriptors:[NSArray arrayWithObject:sortDescriptor]];
     
+    firstNonZeroKey = 100;
     
     for (int i = 0; i < _userArray.count; i++)
     {
@@ -287,11 +299,13 @@
         }
     }
     
+    
     for (int i = 0; i < _userArray.count; i++)
     {
         MathProblem *problem = _userArray[i];
         NSLog(@"%i %i %ld",(long)problem.firstValue, problem.secondValue, (long)problem.equationDifficulty);
     }
+    
     
 }
 
@@ -304,8 +318,9 @@
     feedbackView.alpha = 0.0;
     
     [self sortingArray];
+    //numberOfProficentProblems = firstNonZeroKey + 1;
     
-    if (firstNonZeroKey <= 99)
+    if (firstNonZeroKey < 100)
     {
         //setting pool of possible problems
         keyAddend = 40;
@@ -318,11 +333,9 @@
             {
                 keyAddend = 25;
                 
-                if (firstNonZeroKey >= 80)
-                {
+                if (firstNonZeroKey >= 75)
                     keyAddend = 100 - firstNonZeroKey;
-                    
-                }
+                
             }
         }
         
@@ -332,18 +345,32 @@
         //allowing for old problems when there is a pool <= 20
         if (firstNonZeroKey > 80)
         {
-            int chanceOfOldProblem = arc4random()%4;
+            int oldQuestionRandomness = 4;
+            
+            if (firstNonZeroKey > 95)
+            {
+                oldQuestionRandomness = 2;
+            }
+            int chanceOfOldProblem = arc4random()%oldQuestionRandomness;
             
             if (chanceOfOldProblem == 0)
             {
                 userArrayKey = arc4random()%30 + (firstNonZeroKey - 30);
             }
         }
-        
     }
     
     else
     {
+        if (completedAllProblems == NO)
+        {
+            [countDownTimer invalidate];
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Congratulations!" message:@"You have done excellent work on this problem set! Keep practicing to earn more stickers and achievements!" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+            [alert show];
+            completedAllProblems = YES;
+        }
+        
+        
         int completedProblemsChance = arc4random()%10;
         
         if (completedProblemsChance == 0)
@@ -363,6 +390,11 @@
     currentMathProblem = _userArray[userArrayKey];
     var1Label.text = [NSString stringWithFormat:@"%i",currentMathProblem.firstValue];
     var2Label.text = [NSString stringWithFormat:@"%i",currentMathProblem.secondValue];
+}
+
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    [self startTimer];
 }
 
 - (IBAction)onNewButtonPressed:(id)sender
@@ -392,7 +424,7 @@
     
     NSInteger proficiencyChange = currentMathProblem.equationDifficulty;
     
-    if (currentMathProblem.equationDifficulty > 0 && countDown <= 6)
+    if (currentMathProblem.equationDifficulty > 0 && countDown <= 6 && completedAllProblems == NO)
     {
         proficiencyChange -= 1;
     }
@@ -406,8 +438,8 @@
 
 -(void)correctAnswerTimerFired:(NSTimer *)timer
 {
-    [self newMathProblem];
     [self startTimer];
+    [self newMathProblem];
 }
 
 -(void)wrongAnswer
@@ -428,7 +460,7 @@
     MathProblem *problem = _userArray[userArrayKey];
     NSInteger proficiencyChange = problem.equationDifficulty;
     
-    if (problem.equationDifficulty < 10)
+    if (problem.equationDifficulty < 10 && completedAllProblems == NO)
     {
         proficiencyChange += 1;
     }

@@ -64,7 +64,7 @@
     //if its been more than a day since the last reset of dailyMath, reset it
     if ([[NSDate date] timeIntervalSinceDate:[user objectForKey:@"dailyMathStartDate"]] >= 86400.0)
     {
-        [user setObject:0 forKey:@"dailyMath"];
+        [user setObject:@0 forKey:@"dailyMath"];
         
         [userDefaults setBool:NO forKey:@"dailyMath x10!"];
         [userDefaults setBool:NO forKey:@"dailyMath x20!"];

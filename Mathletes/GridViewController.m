@@ -57,6 +57,7 @@
 -(void)queryForProblemType
 {
     PFQuery *problemQuery = [PFQuery queryWithClassName:@"MathProblem"];
+    problemQuery.cachePolicy = kPFCachePolicyCacheThenNetwork;
     [problemQuery whereKey:@"problemType" equalTo:[NSNumber numberWithInt:problemType]];
     [problemQuery whereKey:@"mathUser" equalTo:[PFUser currentUser]];
     [problemQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
