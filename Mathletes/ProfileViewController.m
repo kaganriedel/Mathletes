@@ -105,21 +105,12 @@
     [self setProfileImage];
 
     [self setTitle];
-    
-    
 }
 -(void) viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
     
     [self checkForLoggedInUserAnimated:animated];
-    
-    mathButton.imageView.contentMode = UIViewContentModeScaleAspectFill;
-    progressButton.imageView.contentMode = UIViewContentModeScaleAspectFill;
-    stickersButton.imageView.contentMode = UIViewContentModeScaleAspectFill;
-    achievementsButton.imageView.contentMode = UIViewContentModeScaleAspectFill;
-
-    
 }
 
 -(void)signUpViewController:(PFSignUpViewController *)signUpController didSignUpUser:(PFUser *)user
