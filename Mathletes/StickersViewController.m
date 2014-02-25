@@ -34,11 +34,8 @@
 {
     [super viewDidLoad];
     
-
     
     stickers = @[@"lion.png",@"kitten.png",@"campfire.png", @"puppy.png", @"tiger.png", @"murray.png", @"bear.png", @"pizza.png"];
-    
-    
 }
 
 -(void)viewWillAppear:(BOOL)animated

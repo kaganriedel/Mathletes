@@ -29,7 +29,7 @@
 {
     [super viewDidLoad];
 
-    self.navigationController.navigationBar.backgroundColor = [UIColor colorWithRed:86.0/255.0 green:204.0/255.0 blue:88.0/255.0 alpha:1.0];
+
     additionButton.titleLabel.font = [UIFont fontWithName:@"Miso-Bold" size:48];
     additionButton.imageView.contentMode = UIViewContentModeScaleAspectFill;
     subtractionButton.titleLabel.font = [UIFont fontWithName:@"Miso-Bold" size:48];

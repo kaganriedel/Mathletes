@@ -145,14 +145,14 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ChooseStickerCell" id="KdF-3a-gig" customClass="ChooseStickerCell">
-                                        <rect key="frame" x="5" y="5" width="74" height="74"/>
+                                        <rect key="frame" x="5" y="5" width="73.75" height="73.75"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="74" height="74"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="73.75" height="73.75"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mea-QJ-Xr3">
-                                                    <rect key="frame" x="5" y="4" width="63.5" height="63.5"/>
+                                                    <rect key="frame" x="5" y="4" width="63" height="63"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </imageView>
                                             </subviews>
@@ -315,7 +315,9 @@
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
-                    <navigationItem key="navigationItem" title="Math" id="Ioh-iI-V0n"/>
+                    <navigationItem key="navigationItem" title="Math" id="Ioh-iI-V0n">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="8CC-4f-zKD"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="additionButton" destination="Hiz-d1-8Ca" id="2Ig-6V-3xa"/>
                         <outlet property="divisionButton" destination="AID-mL-G6k" id="hZ8-8t-UCq"/>
@@ -354,14 +356,14 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell autoresizesSubviews="NO" opaque="NO" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="StickerCell" id="qH2-9H-mDV" customClass="StickerCell">
-                                        <rect key="frame" x="5" y="5" width="74" height="80"/>
+                                        <rect key="frame" x="5" y="5" width="73.75" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="74" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Duy-nR-h9k">
-                                                    <rect key="frame" x="2" y="0.0" width="67.5" height="70"/>
+                                                    <rect key="frame" x="2" y="0.0" width="67" height="70"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </imageView>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="x12" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="29n-LO-bUg">
@@ -394,6 +396,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="My Stickers" id="EbG-fL-AT8">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="kSY-hj-aya"/>
                         <barButtonItem key="rightBarButtonItem" title="Trade" id="fWm-oO-hCz">
                             <connections>
                                 <segue destination="izL-Kv-jKz" kind="push" identifier="TradeSegue" id="Wty-hX-vbf"/>
@@ -600,6 +603,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="vfm-XO-bUP">
                         <nil key="title"/>
+                        <barButtonItem key="backBarButtonItem" title="Back" id="dT5-lW-nam"/>
                         <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="rhW-im-I9m">
                             <rect key="frame" x="83" y="8" width="155" height="29"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -796,6 +800,7 @@
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" title="Mathletes" id="201-MH-2Ii">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="zx5-u5-aXR"/>
                         <barButtonItem key="rightBarButtonItem" title="Log Out" id="3u6-YW-nIv">
                             <connections>
                                 <action selector="onLogOut:" destination="Fd9-n0-ClC" id="hWK-An-H4l"/>
@@ -1191,9 +1196,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Math!" id="dIV-aK-zKn">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="CDT-Bt-pov"/>
                         <barButtonItem key="rightBarButtonItem" title="Done" id="ZQS-Kt-HfO">
                             <connections>
-                                <action selector="onBackButtonPressed:" destination="vXZ-lx-hvc" id="3or-fr-nOK"/>
+                                <action selector="onDoneButtonPressed:" destination="vXZ-lx-hvc" id="bdd-bv-67u"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
