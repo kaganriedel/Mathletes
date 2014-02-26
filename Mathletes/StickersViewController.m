@@ -217,26 +217,47 @@
         stickerRarityLabel.text = rare;
         stickerDetailLabel.text = @"The ice cream cone was invented at the 1904 World Fair in St. Louis. Americans eat on average 20 quarts a year!";
     }
-    else if ([stickerName isEqualToString:@"pizza"])
+    else if ([stickerName isEqualToString:@"apple"])
     {
         stickerRarityLabel.text = rare;
-        stickerDetailLabel.text = @"Delicious delicious pizza.";
+        stickerDetailLabel.text = @"There are more than 2,500 varieties of apples grown in the America. It takes nearly 36 apples to make 1 gallon of apple cider!";
     }
-    else if ([stickerName isEqualToString:@"pizza"])
+    else if ([stickerName isEqualToString:@"watermelon"])
     {
         stickerRarityLabel.text = rare;
-        stickerDetailLabel.text = @"Delicious delicious pizza.";
+        stickerDetailLabel.text = @"The average in watermelon has 350 seeds and is 92% water Some watermelons can weigh up to 90lbs!";
     }
-    else if ([stickerName isEqualToString:@"pizza"])
+    else if ([stickerName isEqualToString:@"cherry"])
     {
         stickerRarityLabel.text = rare;
-        stickerDetailLabel.text = @"Delicious delicious pizza.";
+        stickerDetailLabel.text = @"About 175 million pounds of cherries are processed each year. An average cherry tree holds enough cherries to make 28 cherry pies.";
     }
-    else if ([stickerName isEqualToString:@"pizza"])
+    else if ([stickerName isEqualToString:@"palm tree"])
     {
         stickerRarityLabel.text = rare;
-        stickerDetailLabel.text = @"Delicious delicious pizza.";
+        stickerDetailLabel.text = @"There are nearly 3,000 different species of Palm trees in the world. The tallest palm is almost 230 feet!";
     }
+    else if ([stickerName isEqualToString:@"pine tree"])
+    {
+        stickerRarityLabel.text = rare;
+        stickerDetailLabel.text = @"The oldest known pine tree at 4,840 years old. Pine trees can reach over 60 feet in height!";
+    }
+    else if ([stickerName isEqualToString:@"mountain"])
+    {
+        stickerRarityLabel.text = rare;
+        stickerDetailLabel.text = @"Over 90 of the tallest mountains are actually located in the Himalayas. About one fifth of the world is covered in mountains!";
+    }
+    else if ([stickerName isEqualToString:@"flower"])
+    {
+        stickerRarityLabel.text = rare;
+        stickerDetailLabel.text = @"There are 103 different varieties of flowers in the America .The oldest flower is 125 million years old and resembles a water lily!";
+    }
+    else if ([stickerName isEqualToString:@"campfire"])
+    {
+        stickerRarityLabel.text = rare;
+        stickerDetailLabel.text = @"Campfire can get as hot as 2000 degrees. The hottest spot in the flame is blue!";
+    }
+
     stickerDetailLabel.frame = CGRectMake(15, 260, 270, stickerDetailView.frame.size.height - 235);
     [stickerDetailLabel sizeToFit];
 
