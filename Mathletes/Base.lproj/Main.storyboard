@@ -145,7 +145,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ChooseStickerCell" id="KdF-3a-gig" customClass="ChooseStickerCell">
-                                        <rect key="frame" x="5" y="5" width="73.75" height="73.75"/>
+                                        <rect key="frame" x="5" y="5" width="74" height="74"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="74" height="74"/>
@@ -356,7 +356,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell autoresizesSubviews="NO" opaque="NO" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="StickerCell" id="qH2-9H-mDV" customClass="StickerCell">
-                                        <rect key="frame" x="5" y="5" width="73.75" height="80"/>
+                                        <rect key="frame" x="5" y="5" width="74" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="74" height="80"/>
@@ -727,7 +727,7 @@
                                     <constraint firstAttribute="width" constant="320" id="3mg-eO-iHc"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="35"/>
-                                <state key="normal">
+                                <state key="normal" title="Achievements">
                                     <color key="titleColor" red="0.45098042490000001" green="0.7019608021" blue="0.87843143940000001" alpha="1" colorSpace="deviceRGB"/>
                                 </state>
                                 <connections>
@@ -1265,10 +1265,10 @@
         <image name="btn_subtraction_item_normal.png" width="320" height="127"/>
         <image name="btn_subtraction_item_pressed.png" width="320" height="127"/>
         <image name="ic_correct.png" width="68" height="68"/>
-        <image name="ic_tabbaraddition_normal.png" width="50" height="50"/>
+        <image name="ic_tabbaraddition_normal.png" width="25" height="25"/>
         <image name="ic_tabbardivision_normal.png" width="25" height="25"/>
-        <image name="ic_tabbarmultiply_normal.png" width="50" height="50"/>
-        <image name="ic_tabbarsubtract_normal.png" width="50" height="50"/>
+        <image name="ic_tabbarmultiply_normal.png" width="25" height="25"/>
+        <image name="ic_tabbarsubtract_normal.png" width="25" height="25"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

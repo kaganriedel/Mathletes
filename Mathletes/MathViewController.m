@@ -48,7 +48,7 @@
     NSString *operand;
     NSInteger correctAnswer;
     BOOL timeIsUp;
-    BOOL completedAllProblems;
+    BOOL completedProblems;
     
     int countDown;
     NSTimer *countDownTimer;
@@ -68,7 +68,7 @@
     [super viewDidLoad];
     
     user = [PFUser currentUser];
-    
+    userDefaults = [NSUserDefaults standardUserDefaults];
     
     [self buildView];
 
@@ -95,7 +95,7 @@
     feedbackLabel.font = [UIFont fontWithName:@"Miso-Bold" size:34];
     inputLabel.font = [UIFont fontWithName:@"Miso-Bold" size:40];
     
-    completedAllProblems = NO;
+    completedProblems = NO;
     timeIsUp = NO;
     
     if ([_operationType isEqualToString:@"+"])
@@ -103,7 +103,11 @@
         self.navigationItem.title = @"Addition";
         problemType = 0;
         [self queryForProblemType];
-       
+        if ([user objectForKey:@"completedAdditionProblems"])
+        {
+            completedProblems = YES;
+        }
+        
         operatorLabel.textColor = [UIColor colorWithRed:130.0/255.0 green:183.0/255.0 blue:53.0/255.0 alpha:1];
         
     }
@@ -112,6 +116,10 @@
         self.navigationItem.title = @"Subtraction";
         problemType = 1;
         [self queryForProblemType];
+        if ([user objectForKey:@"completedSubtractionProblems"])
+        {
+            completedProblems = YES;
+        }
        
         operatorLabel.textColor = [UIColor colorWithRed:222.0/255.0 green:54.0/255.0 blue:64.0/255.0 alpha:1];
     }
@@ -120,6 +128,10 @@
         self.navigationItem.title = @"Multiplication";
         problemType = 2;
         [self queryForProblemType];
+        if ([user objectForKey:@"completedMultiplicationProblems"])
+        {
+            completedProblems = YES;
+        }
         
         operatorLabel.textColor = [UIColor colorWithRed:222.0/255.0 green:54.0/255.0 blue:64.0/255.0 alpha:1];
     }
@@ -128,6 +140,10 @@
         self.navigationItem.title = @"Division";
         problemType = 3;
         [self queryForProblemType];
+        if ([user objectForKey:@"completedDivisionProblems"])
+        {
+            completedProblems = YES;
+        }
         
         operatorLabel.textColor = [UIColor colorWithRed:95.0/255.0 green:162.0/255.0 blue:219.0/255.0 alpha:1];
     }
@@ -159,7 +175,6 @@
 
 - (void)buildView
 {
-    userDefaults = [NSUserDefaults standardUserDefaults];
 
     _operationLabel.text = _operationType;
     newButton.alpha = 0.0;
@@ -301,14 +316,6 @@
         }
     }
     
-    /*
-    for (int i = 0; i < _userArray.count; i++)
-    {
-        MathProblem *problem = _userArray[i];
-        NSLog(@"%i %i %ld",(long)problem.firstValue, problem.secondValue, (long)problem.equationDifficulty);
-    }
-    */
-    
 }
 
 -(void)newMathProblem
@@ -320,8 +327,8 @@
     feedbackView.alpha = 0.0;
     
     [self sortingArray];
-    
-    if (firstNonZeroKey < 100)
+        
+    if (firstNonZeroKey < 100 )
     {
         //setting pool of possible problems
         keyAddend = 40;
@@ -363,15 +370,7 @@
     
     else
     {
-        if (completedAllProblems == NO)
-        {
-            [countDownTimer invalidate];
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Congratulations!" message:@"You have done excellent work on this problem set! Keep practicing to earn more stickers and achievements!" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
-            [alert show];
-            completedAllProblems = YES;
-            [user setObject:@YES forKey:@"completedDivisionProblems"];
-        }
-        
+        [self completedProblemsCheck];
         
         int completedProblemsChance = arc4random()%10;
         
@@ -392,6 +391,68 @@
     currentMathProblem = _userArray[userArrayKey];
     var1Label.text = [NSString stringWithFormat:@"%i",currentMathProblem.firstValue];
     var2Label.text = [NSString stringWithFormat:@"%i",currentMathProblem.secondValue];
+}
+
+-(void)completedProblemsCheck
+{
+    if ([_operationType isEqualToString:@"+"])
+    {
+        if (completedProblems == NO)
+        {
+            [countDownTimer invalidate];
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Congratulations!" message:@"You are excellent at addition! Keep practicing to earn more stickers and achievements!" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+            [alert show];
+            [user setObject:@YES forKey:@"completedAdditionProblems"];
+            [userDefaults setBool:YES forKey:@"Add It All Up!"];
+            completedProblems = YES;
+        }
+    }
+    else if ([_operationType isEqualToString:@"-"])
+    {
+        if (completedProblems == NO)
+        {
+            [countDownTimer invalidate];
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Congratulations!" message:@"You are excellent at Subtraction! Keep practicing to earn more stickers and achievements!" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+            [alert show];
+            [user setObject:@YES forKey:@"completedSubtractionProblems"];
+            [userDefaults setBool:YES forKey:@"Take It All Away!"];
+            completedProblems = YES;
+        }
+    }
+    else if ([_operationType isEqualToString:@"x"])
+    {
+        if (completedProblems == NO)
+        {
+            [countDownTimer invalidate];
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Congratulations!" message:@"You are excellent at Multiplication! Keep practicing to earn more stickers and achievements!" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+            [alert show];
+            [user setObject:@YES forKey:@"Multiplication Magician!"];
+            [userDefaults setBool:YES forKey:@"Add It All Up!"];
+            completedProblems = YES;
+        }
+    }
+    else if ([_operationType isEqualToString:@"/"])
+    {
+        if (completedProblems == NO)
+        {
+            [countDownTimer invalidate];
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Congratulations!" message:@"You are excellent at Division! Keep practicing to earn more stickers and achievements!" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+            [alert show];
+            [user setObject:@YES forKey:@"completedDivisionProblems"];
+            [userDefaults setBool:YES forKey:@"Conquer Division!"];
+            completedProblems = YES;
+        }
+    }
+    
+    if ([_operationType isEqualToString:@"+"] && [_operationType isEqualToString:@"-"] && [_operationType isEqualToString:@"x"] && [_operationType isEqualToString:@"/"])
+    {
+        [countDownTimer invalidate];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Congratulations!" message:@"You are a Math Master! Keep practicing to earn more stickers and achievements!" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+        [alert show];
+        [userDefaults setBool:YES forKey:@"Math Master!"];
+    }
+    
+    [userDefaults synchronize];
 }
 
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
@@ -419,14 +480,15 @@
         responseImageView.image = [UIImage imageNamed:@"ic_correct.png"];
     }
     feedbackLabel.text = @"Correct!";
-    [self updateAchievements];
     
     NSInteger proficiencyChange = currentMathProblem.equationDifficulty;
     
-    if (currentMathProblem.equationDifficulty > 0 && countDown <= 6 && completedAllProblems == NO)
+    if (currentMathProblem.equationDifficulty > 0 && countDown <= 6 && completedProblems == NO)
     {
         proficiencyChange -= 1;
     }
+    
+    [self updateAchievements];
     
     currentMathProblem.equationDifficulty = proficiencyChange;
     currentMathProblem.haveAttemptedEquation = YES;
@@ -458,7 +520,7 @@
 {
     NSInteger proficiencyChange = currentMathProblem.equationDifficulty;
     
-    if (currentMathProblem.equationDifficulty < 10 && completedAllProblems == NO)
+    if (currentMathProblem.equationDifficulty < 10 && completedProblems == NO)
     {
         proficiencyChange += 1;
     }

@@ -52,8 +52,8 @@
     _operand = @"+";
     problemType = 0;
     
-    [self queryForProblemType];
     [self createPlaceHolderGrid];
+    [self queryForProblemType];
 }
 
 -(void)queryForProblemType
