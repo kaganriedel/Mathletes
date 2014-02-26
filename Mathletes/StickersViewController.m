@@ -15,14 +15,15 @@
 
 {
     __weak IBOutlet UICollectionView *stickerCollectionView;
-    NSArray *stickers;
-    NSArray *userStickers;
+    NSArray *stickerArray;
     CSAnimationView *stickerDetailView;
     UILabel *stickerTitleLabel;
     UILabel *stickerCountLabel;
     UILabel *stickerRarityLabel;
     UILabel *stickerDetailLabel;
     UIImageView *stickerImageView;
+    
+    PFUser *user;
 }
 
 @end
@@ -34,8 +35,8 @@
 {
     [super viewDidLoad];
     
-    
-    stickers = @[@"lion.png",@"kitten.png",@"campfire.png", @"puppy.png", @"tiger.png", @"murray.png", @"bear.png", @"pizza.png"];
+    user = [PFUser currentUser];
+    stickerArray = [NSArray stickerArray];
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -73,7 +74,7 @@
     stickerRarityLabel.font = [UIFont fontWithName:@"Miso-Bold" size:24];
     
     stickerDetailLabel = [UILabel new];
-    stickerDetailLabel.font = [UIFont fontWithName:@"Miso-Bold" size:28];
+    stickerDetailLabel.font = [UIFont fontWithName:@"Miso-Bold" size:24];
     stickerDetailLabel.textColor = [UIColor darkGrayColor];
     stickerDetailLabel.lineBreakMode = NSLineBreakByWordWrapping;
     stickerDetailLabel.numberOfLines = 4;
@@ -91,18 +92,6 @@
     [stickerDetailView addSubview:stickerImageView];
     [stickerDetailView addSubview:stickerTitleLabel];
     [self.view addSubview:stickerDetailView];
-    
-    PFUser *user = [PFUser currentUser];
-    
-    userStickers = @[[user objectForKey:@"lionCount"] ?: @(0),
-                     [user objectForKey:@"kittenCount"] ?: @(0),
-                     [user objectForKey:@"campfireCount"] ?: @(0),
-                     [user objectForKey:@"puppyCount"] ?: @(0),
-                     [user objectForKey:@"tigerCount"] ?: @(0),
-                     [user objectForKey:@"murrayCount"] ?: @(0),
-                     [user objectForKey:@"bearCount"] ?: @(0),
-                     [user objectForKey:@"pizzaCount"] ?: @(0)
-                     ];
     
     
     [stickerCollectionView reloadData];
@@ -128,9 +117,8 @@
     stickerDetailView.type = CSAnimationTypeZoomOut;
     
     NSString *stickerName = [stickerImageName stringByReplacingOccurrencesOfString:@".png" withString:@""];
-    NSString *cappedFirstChar = [[stickerName substringToIndex:1] uppercaseString];
-    NSString *cappedString = [stickerName stringByReplacingCharactersInRange:NSMakeRange(0, 1) withString:cappedFirstChar];
-    stickerTitleLabel.text = cappedString;
+    NSString *titleString = [stickerName stringByReplacingOccurrencesOfString:@"_" withString:@" "];
+    stickerTitleLabel.text = titleString;
     
     stickerCountLabel.text = [NSString stringWithFormat:@"Count: %@", count];
     
@@ -141,123 +129,72 @@
     NSString *rare = @"RARE";
     
     //Common stickers
-    if ([stickerName isEqualToString:@"lion"])
+    if ([stickerName isEqualToString:@"Mountain"])
     {
         stickerRarityLabel.text = common;
-        stickerDetailLabel.text = @"Lions are found in Africa. They lounge around being kings of all they see.";
+        stickerDetailLabel.text = @"The tallest mountain is Mount Everest at over 29,000 feet! Did you know about one fifth of the world is covered in mountains?";
     }
-    else if ([stickerName isEqualToString:@"kitten"])
+    else if ([stickerName isEqualToString:@"Apple"])
     {
         stickerRarityLabel.text = common;
-        stickerDetailLabel.text = @"Meow?";
+        stickerDetailLabel.text = @"There are more than 2,500 varieties of apples grown in America. It takes nearly 36 apples to make 1 gallon of apple cider!";
     }
-    else if ([stickerName isEqualToString:@"campfire"])
+    else if ([stickerName isEqualToString:@"Monkey"])
     {
         stickerRarityLabel.text = common;
-        stickerDetailLabel.text = @"Hot hot hot!";
+        stickerDetailLabel.text = @"The smallest monkey weighs only 1/4 of a pound and the heaviest can weigh up to 80 pounds. Their tails can be as long as 3 feet!";
+    }
+    else if ([stickerName isEqualToString:@"Puppy"])
+    {
+        stickerRarityLabel.text = common;
+        stickerDetailLabel.text = @"A puppy spends about 14 hours sleeping per day. Every year, more than 5 million puppies are born!";
+    }
+    else if ([stickerName isEqualToString:@"Cookies"])
+    {
+        stickerRarityLabel.text = common;
+        stickerDetailLabel.text = @"Cookies were first invented more than 2,000 years ago. The average American eats 35,000 cookies in their lifetime!";
+    }
+    else if ([stickerName isEqualToString:@"Palm_Tree"])
+    {
+        stickerRarityLabel.text = common;
+        stickerDetailLabel.text = @"There are nearly 3,000 different species of Palm trees in the world. The tallest palm tree is almost 230 feet!";
+    }
+    else if ([stickerName isEqualToString:@"Rocket_Ship"])
+    {
+        stickerRarityLabel.text = common;
+        stickerDetailLabel.text = @"Rockets travel at 17,500 miles per hour to lift off and they burn more than 500,000 gallons of fuel. Blast off!";
     }
     
     //Uncommon stickers
-    else if ([stickerName isEqualToString:@"puppy"])
+    else if ([stickerName isEqualToString:@"Flower"])
     {
         stickerRarityLabel.text = uncommon;
-        stickerDetailLabel.text = @"Puppies are adorable. They cuddle, jump and play! Then they pee on your carpet.";
+        stickerDetailLabel.text = @"There are 103 different varieties of flowers in America. The oldest flower discovered lived 125 million years ago!";
     }
-    else if ([stickerName isEqualToString:@"tiger"])
+    else if ([stickerName isEqualToString:@"Ice_Cream"])
     {
         stickerRarityLabel.text = uncommon;
-        stickerDetailLabel.text = @"Rawr.";
+        stickerDetailLabel.text = @"The ice cream cone was invented at the 1904 World Fair in St. Louis. Americans eat an average of 20 quarts a year!";
     }
-    else if ([stickerName isEqualToString:@"murray"])
+    else if ([stickerName isEqualToString:@"Campfire"])
     {
         stickerRarityLabel.text = uncommon;
-        stickerDetailLabel.text = @"Did you know? Bill Murray knows.";
+        stickerDetailLabel.text = @"Campfire can get as hot as 2,000 degrees. Did you know hottest spot in the flame is blue?";
     }
     
     //Rare stickers
-    else if ([stickerName isEqualToString:@"bear"])
+    else if ([stickerName isEqualToString:@"Murray"])
     {
         stickerRarityLabel.text = rare;
-        stickerDetailLabel.text = @"Did you know?";
+        stickerDetailLabel.text = @"Did you know? Bill Murray knows.";
     }
-    else if ([stickerName isEqualToString:@"pizza"])
+    else if ([stickerName isEqualToString:@"Watermelon"])
     {
         stickerRarityLabel.text = rare;
-        stickerDetailLabel.text = @"Delicious delicious pizza.";
+        stickerDetailLabel.text = @"The average watermelon has 350 seeds and is 92% water. Some watermelons can weigh up to 90 pounds!";
     }
     
-    //to be decided
-    else if ([stickerName isEqualToString:@"puppy"])
-    {
-        stickerRarityLabel.text = rare;
-        stickerDetailLabel.text = @"A puppy spends about 14 hours sleeping per day. Every year, more than 5 million puppies are born!";
-    }
-    else if ([stickerName isEqualToString:@"kitten"])
-    {
-        stickerRarityLabel.text = rare;
-        stickerDetailLabel.text = @"There are over 500 million domestic cats in the world. On average cats live for 12 to 15 years!";
-    }
-    else if ([stickerName isEqualToString:@"fish"])
-    {
-        stickerRarityLabel.text = rare;
-        stickerDetailLabel.text = @"There are over 30,000 known species of fish. The fastest fish can swim at speeds of up to 68 mph!";
-    }
-    else if ([stickerName isEqualToString:@"giraffe"])
-    {
-        stickerRarityLabel.text = rare;
-        stickerDetailLabel.text = @"They are known as the tallest mammals on Earth. Their legs alone are taller than most people at 6 feet!";
-    }
-    else if ([stickerName isEqualToString:@"monkey"])
-    {
-        stickerRarityLabel.text = rare;
-        stickerDetailLabel.text = @"Monkeys love to eat bananas. They can weigh up to 100 pounds and their tails can be as long as 3 feet!";
-    }
-    else if ([stickerName isEqualToString:@"icecream"])
-    {
-        stickerRarityLabel.text = rare;
-        stickerDetailLabel.text = @"The ice cream cone was invented at the 1904 World Fair in St. Louis. Americans eat on average 20 quarts a year!";
-    }
-    else if ([stickerName isEqualToString:@"apple"])
-    {
-        stickerRarityLabel.text = rare;
-        stickerDetailLabel.text = @"There are more than 2,500 varieties of apples grown in the America. It takes nearly 36 apples to make 1 gallon of apple cider!";
-    }
-    else if ([stickerName isEqualToString:@"watermelon"])
-    {
-        stickerRarityLabel.text = rare;
-        stickerDetailLabel.text = @"The average in watermelon has 350 seeds and is 92% water Some watermelons can weigh up to 90lbs!";
-    }
-    else if ([stickerName isEqualToString:@"cherry"])
-    {
-        stickerRarityLabel.text = rare;
-        stickerDetailLabel.text = @"About 175 million pounds of cherries are processed each year. An average cherry tree holds enough cherries to make 28 cherry pies.";
-    }
-    else if ([stickerName isEqualToString:@"palm tree"])
-    {
-        stickerRarityLabel.text = rare;
-        stickerDetailLabel.text = @"There are nearly 3,000 different species of Palm trees in the world. The tallest palm is almost 230 feet!";
-    }
-    else if ([stickerName isEqualToString:@"pine tree"])
-    {
-        stickerRarityLabel.text = rare;
-        stickerDetailLabel.text = @"The oldest known pine tree at 4,840 years old. Pine trees can reach over 60 feet in height!";
-    }
-    else if ([stickerName isEqualToString:@"mountain"])
-    {
-        stickerRarityLabel.text = rare;
-        stickerDetailLabel.text = @"Over 90 of the tallest mountains are actually located in the Himalayas. About one fifth of the world is covered in mountains!";
-    }
-    else if ([stickerName isEqualToString:@"flower"])
-    {
-        stickerRarityLabel.text = rare;
-        stickerDetailLabel.text = @"There are 103 different varieties of flowers in the America .The oldest flower is 125 million years old and resembles a water lily!";
-    }
-    else if ([stickerName isEqualToString:@"campfire"])
-    {
-        stickerRarityLabel.text = rare;
-        stickerDetailLabel.text = @"Campfire can get as hot as 2000 degrees. The hottest spot in the flame is blue!";
-    }
-
+    
     stickerDetailLabel.frame = CGRectMake(15, 260, 270, stickerDetailView.frame.size.height - 235);
     [stickerDetailLabel sizeToFit];
 
@@ -292,12 +229,12 @@
 -(StickerCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     StickerCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"StickerCell" forIndexPath:indexPath];
-    cell.imageView.image = [UIImage imageNamed:stickers[indexPath.row]];
+    cell.imageView.image = [UIImage imageNamed:stickerArray[indexPath.row]];
     cell.imageView.layer.cornerRadius = 35.0;
-    cell.stickerImageName = stickers[indexPath.row];
+    cell.stickerImageName = stickerArray[indexPath.row];
     cell.countLabel.font = [UIFont fontWithName:@"Miso-Bold" size:14.0f];
     
-    cell.count = userStickers[indexPath.row];
+    cell.count = [user objectForKey:[NSString stringWithFormat:@"%@Count", stickerArray[indexPath.row]]] ?: @(0);
     if (cell.count.integerValue == 0)
     {
         cell.imageView.alpha = 0.2;
@@ -314,7 +251,7 @@
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return stickers.count;
+    return stickerArray.count;
 }
 
 @end

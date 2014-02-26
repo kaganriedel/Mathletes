@@ -439,8 +439,8 @@
 				27FD304618B6864900EE75A8 /* miso-bold.ttf */,
 				6D891EAB18A582EC0002B915 /* Mathletes-Info.plist */,
 				6D891EAC18A582EC0002B915 /* InfoPlist.strings */,
-				6D891EAF18A582EC0002B915 /* main.m */,
 				6D891EB118A582EC0002B915 /* Mathletes-Prefix.pch */,
+				6D891EAF18A582EC0002B915 /* main.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";

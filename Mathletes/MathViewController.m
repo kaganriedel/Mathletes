@@ -398,6 +398,7 @@
             [user setObject:@YES forKey:@"completedAdditionProblems"];
             [userDefaults setBool:YES forKey:@"Add It All Up!"];
             completedProblems = YES;
+            [self giveStickerForAchievement:@"Add It All Up!" Minimum:93 Maximum:100];
         }
     }
     else if ([_operationType isEqualToString:@"-"])
@@ -410,6 +411,7 @@
             [user setObject:@YES forKey:@"completedSubtractionProblems"];
             [userDefaults setBool:YES forKey:@"Take It All Away!"];
             completedProblems = YES;
+            [self giveStickerForAchievement:@"Take It All Away!" Minimum:93 Maximum:100];
         }
     }
     else if ([_operationType isEqualToString:@"x"])
@@ -422,6 +424,7 @@
             [user setObject:@YES forKey:@"completedMultiplicationProblems"];
             [userDefaults setBool:YES forKey:@"Multiplication Magician!"];
             completedProblems = YES;
+            [self giveStickerForAchievement:@"Multiplication Magician!" Minimum:93 Maximum:100];
         }
     }
     else if ([_operationType isEqualToString:@"/"])
@@ -434,6 +437,7 @@
             [user setObject:@YES forKey:@"completedDivisionProblems"];
             [userDefaults setBool:YES forKey:@"Conquer Division!"];
             completedProblems = YES;
+            [self giveStickerForAchievement:@"Conquer Division!" Minimum:93 Maximum:100];
         }
     }
     
@@ -444,10 +448,9 @@
         [alert show];
         [user setObject:@YES forKey:@"completedAllProblems"];
         [userDefaults setBool:YES forKey:@"Math Master!"];
+        [self giveStickerForAchievement:@"Math Master!" Minimum:93 Maximum:100];
     }
-    
-    //use completedAllProblems for the final achievement name! (thanks! kagan)
-    
+
     [userDefaults synchronize];
 }
 
@@ -1168,84 +1171,86 @@
     int randomSticker = arc4random()%(maximum + 1 - minimum) + minimum;
     NSLog(@"random sticker: %i", randomSticker);
 
+    NSArray *stickerArray = [NSArray stickerArray];
     //common
     if (randomSticker <= 8)
     {
-        stickerString = @"Mountain";
+        stickerString = stickerArray[0];
         [user increaseKey:[NSString stringWithFormat:@"%@Count", stickerString]];
         notificationImage = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", stickerString]];
     }
     else if (randomSticker <= 16)
     {
-        stickerString = @"Apple";
+        stickerString = stickerArray[1];
         [user increaseKey:[NSString stringWithFormat:@"%@Count", stickerString]];
         notificationImage = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", stickerString]];
     }
     else if (randomSticker <= 24)
     {
-        stickerString = @"Monkey";
+        stickerString = stickerArray[2];
         [user increaseKey:[NSString stringWithFormat:@"%@Count", stickerString]];
         notificationImage = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", stickerString]];
     }
     else if (randomSticker <= 36)
     {
-        stickerString = @"Puppy";
+        stickerString = stickerArray[3];
         [user increaseKey:[NSString stringWithFormat:@"%@Count", stickerString]];
         notificationImage = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", stickerString]];
     }
     else if (randomSticker <= 42)
     {
-        stickerString = @"Cookies";
+        stickerString = stickerArray[4];
         [user increaseKey:[NSString stringWithFormat:@"%@Count", stickerString]];
         notificationImage = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", stickerString]];
     }
     else if (randomSticker <= 51)
     {
-        stickerString = @"Palm_Tree";
+        stickerString = stickerArray[5];
         [user increaseKey:[NSString stringWithFormat:@"%@Count", stickerString]];
         notificationImage = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", stickerString]];
     }
     else if (randomSticker <= 60)
     {
-        stickerString = @"Rocket_Ship";
+        stickerString = stickerArray[6];
         [user increaseKey:[NSString stringWithFormat:@"%@Count", stickerString]];
         notificationImage = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", stickerString]];
     }
     //uncommon
     else if (randomSticker <= 70)
     {
-        stickerString = @"Flower";
+        stickerString = stickerArray[7];
         [user increaseKey:[NSString stringWithFormat:@"%@Count", stickerString]];
         notificationImage = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", stickerString]];
     }
     else if (randomSticker <= 81)
     {
-        stickerString = @"Ice_Cream";
+        stickerString = stickerArray[8];
         [user increaseKey:[NSString stringWithFormat:@"%@Count", stickerString]];
         notificationImage = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", stickerString]];
     }
     else if (randomSticker <= 92)
     {
-        stickerString = @"Campfire";
+        stickerString = stickerArray[9];
         [user increaseKey:[NSString stringWithFormat:@"%@Count", stickerString]];
         notificationImage = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", stickerString]];
     }
     //rare
     else if (randomSticker <= 96)
     {
-        stickerString = @"Murray";
+        stickerString = stickerArray[10];
         [user increaseKey:[NSString stringWithFormat:@"%@Count", stickerString]];
         notificationImage = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", stickerString]];
     }
     else if (randomSticker <= 100)
     {
-        stickerString = @"Watermelon";
+        stickerString = stickerArray[11];
         [user increaseKey:[NSString stringWithFormat:@"%@Count", stickerString]];
         notificationImage = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", stickerString]];
     }
     
+    NSString *removedUnderscoresString = [stickerString stringByReplacingOccurrencesOfString:@"_" withString:@" "];
     [CMNavBarNotificationView notifyWithText:[NSString stringWithFormat:@"%@", achievement]
-                                      detail:[NSString stringWithFormat:@"You got a %@ sticker!", stickerString]
+                                      detail:[NSString stringWithFormat:@"You got a %@ sticker!", removedUnderscoresString]
                                        image:notificationImage
                                  andDuration:3.0];
    
