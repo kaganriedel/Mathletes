@@ -426,8 +426,8 @@
             [countDownTimer invalidate];
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Congratulations!" message:@"You are excellent at Multiplication! Keep practicing to earn more stickers and achievements!" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
             [alert show];
-            [user setObject:@YES forKey:@"Multiplication Magician!"];
-            [userDefaults setBool:YES forKey:@"Add It All Up!"];
+            [user setObject:@YES forKey:@"completedMultiplicationProblems"];
+            [userDefaults setBool:YES forKey:@"Multiplication Magician!"];
             completedProblems = YES;
         }
     }
@@ -444,13 +444,16 @@
         }
     }
     
-    if ([_operationType isEqualToString:@"+"] && [_operationType isEqualToString:@"-"] && [_operationType isEqualToString:@"x"] && [_operationType isEqualToString:@"/"])
+    if ([userDefaults boolForKey:@"Add It All Up!"] && [userDefaults boolForKey:@"Take It All Away!"] && [userDefaults boolForKey:@"Multiplication Magician!"] && [userDefaults boolForKey:@"Conquer Division!"])
     {
         [countDownTimer invalidate];
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Congratulations!" message:@"You are a Math Master! Keep practicing to earn more stickers and achievements!" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
         [alert show];
+        [user setObject:@YES forKey:@"completedAllProblems"];
         [userDefaults setBool:YES forKey:@"Math Master!"];
     }
+    
+    //use completedAllProblems for the final achievement name! (thanks! kagan)
     
     [userDefaults synchronize];
 }
