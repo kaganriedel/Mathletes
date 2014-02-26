@@ -15,9 +15,10 @@
 {
     __weak IBOutlet UILabel *var1Label;
     __weak IBOutlet UILabel *var2Label;
+    __weak IBOutlet UILabel *inputLabel;
+    __weak IBOutlet UILabel *feedbackLabel;
     __weak IBOutlet UIButton *goButton;
     __weak IBOutlet UIButton *newButton;
-    __weak IBOutlet UILabel *inputLabel;
     __weak IBOutlet UIButton *oneButton;
     __weak IBOutlet UIButton *twoButton;
     __weak IBOutlet UIButton *threeButton;
@@ -29,30 +30,28 @@
     __weak IBOutlet UIButton *nineButton;
     __weak IBOutlet UIButton *zeroButton;
     __weak IBOutlet UIButton *backSpaceButton;
-    __weak IBOutlet UILabel *feedbackLabel;
-    __weak IBOutlet UIImageView *feedbackImageView;
     __weak IBOutlet UIView *feedbackView;
-    __weak IBOutlet UILabel *operatorLabel;
+    __weak IBOutlet UIImageView *feedbackImageView;
+    __weak IBOutlet UIImageView *operatorImageView;
     __weak IBOutlet UIImageView *responseImageView;
-    
     
     NSMutableArray *mathProblems;
     NSInteger difficulty;
     NSInteger userArrayKey;
     NSInteger firstNonZeroKey;
-    int keyAddend;
-    NSInteger numkey;
-    NSString *newkey;
     NSInteger problemType;
-    MathProblem *currentMathProblem;
-    NSString *operand;
+    NSInteger numkey;
     NSInteger correctAnswer;
-    BOOL timeIsUp;
-    BOOL completedProblems;
-    
-    int countDown;
+    NSString *newkey;
+    NSString *operand;
     NSTimer *countDownTimer;
     NSTimer *correctAnswerTimer;
+    MathProblem *currentMathProblem;
+    
+    int keyAddend;
+    int countDown;
+    BOOL timeIsUp;
+    BOOL completedProblems;
     
     NSUserDefaults *userDefaults;
     PFUser *user;
@@ -101,53 +100,47 @@
     if ([_operationType isEqualToString:@"+"])
     {
         self.navigationItem.title = @"Addition";
+        operatorImageView.image = [UIImage imageNamed:@"ic_tabbaraddition_normal.png"];
         problemType = 0;
         [self queryForProblemType];
         if ([user objectForKey:@"completedAdditionProblems"])
         {
             completedProblems = YES;
         }
-        
-        operatorLabel.textColor = [UIColor colorWithRed:130.0/255.0 green:183.0/255.0 blue:53.0/255.0 alpha:1];
-        
     }
     else if ([_operationType isEqualToString:@"-"])
     {
         self.navigationItem.title = @"Subtraction";
+        operatorImageView.image = [UIImage imageNamed:@"ic_tabbarsubtract_normal.png"];
         problemType = 1;
         [self queryForProblemType];
         if ([user objectForKey:@"completedSubtractionProblems"])
         {
             completedProblems = YES;
         }
-       
-        operatorLabel.textColor = [UIColor colorWithRed:222.0/255.0 green:54.0/255.0 blue:64.0/255.0 alpha:1];
     }
     else if ([_operationType isEqualToString:@"x"])
     {
         self.navigationItem.title = @"Multiplication";
+        operatorImageView.image = [UIImage imageNamed:@"ic_tabbarmultiply_normal.png"];
         problemType = 2;
         [self queryForProblemType];
         if ([user objectForKey:@"completedMultiplicationProblems"])
         {
             completedProblems = YES;
         }
-        
-        operatorLabel.textColor = [UIColor colorWithRed:222.0/255.0 green:54.0/255.0 blue:64.0/255.0 alpha:1];
     }
     else if ([_operationType isEqualToString:@"/"])
     {
         self.navigationItem.title = @"Division";
+        operatorImageView.image = [UIImage imageNamed:@"ic_tabbardivision_normal.png"];
         problemType = 3;
         [self queryForProblemType];
         if ([user objectForKey:@"completedDivisionProblems"])
         {
             completedProblems = YES;
         }
-        
-        operatorLabel.textColor = [UIColor colorWithRed:95.0/255.0 green:162.0/255.0 blue:219.0/255.0 alpha:1];
     }
-    
 }
 
 // TESTING ONLY IF YOU WANT TO

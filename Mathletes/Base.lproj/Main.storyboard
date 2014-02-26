@@ -24,14 +24,14 @@
                                     <constraint firstAttribute="width" constant="320" id="qVO-Vs-Vw8"/>
                                 </constraints>
                                 <items>
-                                    <tabBarItem title="" image="ic_tabbaraddition_normal.png" id="ILu-qp-rJn">
+                                    <tabBarItem title="" image="tab_addition.png" id="ILu-qp-rJn">
                                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
                                     </tabBarItem>
-                                    <tabBarItem title="" image="ic_tabbarsubtract_normal.png" id="302-6w-Z8u">
+                                    <tabBarItem title="" image="tab_subtract.png" id="302-6w-Z8u">
                                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
                                     </tabBarItem>
-                                    <tabBarItem title="" image="ic_tabbarmultiply_normal.png" id="e17-nD-CHy"/>
-                                    <tabBarItem title="" image="ic_tabbardivision_normal.png" id="3j9-zm-mXk"/>
+                                    <tabBarItem title="" image="tab_multiply.png" id="e17-nD-CHy"/>
+                                    <tabBarItem title="" image="tab_division.png" id="3j9-zm-mXk"/>
                                 </items>
                                 <connections>
                                     <outlet property="delegate" destination="Cqn-oy-XWQ" id="UNu-6f-z47"/>
@@ -152,7 +152,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mea-QJ-Xr3">
-                                                    <rect key="frame" x="3" y="3" width="67.5" height="67.5"/>
+                                                    <rect key="frame" x="3" y="3" width="66.5" height="66.5"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </imageView>
                                             </subviews>
@@ -363,7 +363,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Duy-nR-h9k">
-                                                    <rect key="frame" x="2" y="0.0" width="67.5" height="70"/>
+                                                    <rect key="frame" x="2" y="0.0" width="66.5" height="70"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </imageView>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="x12" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="29n-LO-bUg">
@@ -926,6 +926,10 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ic_tabbaraddition_normal.png" translatesAutoresizingMaskIntoConstraints="NO" id="0Xi-aX-zS8">
+                                <rect key="frame" x="93" y="12" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <view contentMode="scaleToFill" verticalCompressionResistancePriority="103" translatesAutoresizingMaskIntoConstraints="NO" id="QWd-Er-5Dv">
                                 <rect key="frame" x="0.0" y="201" width="320" height="303"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1134,7 +1138,7 @@
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="+" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mPZ-ID-guH">
+                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="+" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mPZ-ID-guH">
                                 <rect key="frame" x="95" y="5" width="70" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="41"/>
@@ -1219,7 +1223,7 @@
                         <outlet property="nineButton" destination="a2L-dV-r1j" id="XUX-DZ-izO"/>
                         <outlet property="oneButton" destination="M2m-4V-uNy" id="eLQ-Ws-SvB"/>
                         <outlet property="operationLabel" destination="mPZ-ID-guH" id="Gb9-ca-rZ4"/>
-                        <outlet property="operatorLabel" destination="mPZ-ID-guH" id="cub-la-Ff2"/>
+                        <outlet property="operatorImageView" destination="0Xi-aX-zS8" id="FhH-le-5vQ"/>
                         <outlet property="responseImageView" destination="VRY-v6-XcJ" id="4GJ-gm-rf4"/>
                         <outlet property="sevenButton" destination="Bf5-xF-Ifn" id="3rJ-6h-cUg"/>
                         <outlet property="sixButton" destination="XXn-QN-oll" id="A3N-lh-KjK"/>
@@ -1266,9 +1270,10 @@
         <image name="btn_subtraction_item_pressed.png" width="320" height="127"/>
         <image name="ic_correct.png" width="68" height="68"/>
         <image name="ic_tabbaraddition_normal.png" width="25" height="25"/>
-        <image name="ic_tabbardivision_normal.png" width="25" height="25"/>
-        <image name="ic_tabbarmultiply_normal.png" width="25" height="25"/>
-        <image name="ic_tabbarsubtract_normal.png" width="25" height="25"/>
+        <image name="tab_addition.png" width="35" height="35"/>
+        <image name="tab_division.png" width="35" height="35"/>
+        <image name="tab_multiply.png" width="35" height="35"/>
+        <image name="tab_subtract.png" width="35" height="35"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
