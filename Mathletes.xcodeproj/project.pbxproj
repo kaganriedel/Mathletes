@@ -135,6 +135,7 @@
 		6DA5778318B42F21004B10F7 /* Puppy.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DA5778218B42F21004B10F7 /* Puppy.png */; };
 		6DA5778F18B43425004B10F7 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DA5778E18B43425004B10F7 /* libz.dylib */; };
 		6DB5ACD218B2E5D00098A72D /* Murray@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DB5ACCB18B2E5D00098A72D /* Murray@2x.png */; };
+		C93753C818BE576A004FB826 /* MySignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C93753C718BE576A004FB826 /* MySignInViewController.m */; };
 		C950F2E618AA906A00AC33C6 /* MathProblem.m in Sources */ = {isa = PBXBuildFile; fileRef = C950F2E518AA906A00AC33C6 /* MathProblem.m */; };
 		C987E0DF18A9AC70007CEC36 /* GridViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C987E0DE18A9AC70007CEC36 /* GridViewController.m */; };
 /* End PBXBuildFile section */
@@ -300,6 +301,8 @@
 		6DA5778218B42F21004B10F7 /* Puppy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Puppy.png; sourceTree = "<group>"; };
 		6DA5778E18B43425004B10F7 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		6DB5ACCB18B2E5D00098A72D /* Murray@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Murray@2x.png"; sourceTree = "<group>"; };
+		C93753C618BE576A004FB826 /* MySignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MySignInViewController.h; sourceTree = "<group>"; };
+		C93753C718BE576A004FB826 /* MySignInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MySignInViewController.m; sourceTree = "<group>"; };
 		C950F2E418AA906A00AC33C6 /* MathProblem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MathProblem.h; sourceTree = "<group>"; };
 		C950F2E518AA906A00AC33C6 /* MathProblem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MathProblem.m; sourceTree = "<group>"; };
 		C987E0DD18A9AC70007CEC36 /* GridViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GridViewController.h; sourceTree = "<group>"; };
@@ -392,6 +395,8 @@
 				6D891ED918A5B3CB0002B915 /* ProfileViewController.m */,
 				27A444F618BB8E0F000C1335 /* MyLoginViewController.h */,
 				27A444F718BB8E0F000C1335 /* MyLoginViewController.m */,
+				C93753C618BE576A004FB826 /* MySignInViewController.h */,
+				C93753C718BE576A004FB826 /* MySignInViewController.m */,
 				6D5C8C3518B13F5E00E63D1A /* ChooseStickerViewController.h */,
 				6D5C8C3618B13F5E00E63D1A /* ChooseStickerViewController.m */,
 				6D5C8C3818B1417900E63D1A /* ChooseStickerCell.h */,
@@ -867,6 +872,7 @@
 				6D383D3B18B27587007F2116 /* MakeTradeViewController.m in Sources */,
 				6D891EDF18A5BF6B0002B915 /* ChooseOperationsViewController.m in Sources */,
 				6D891EDA18A5B3CB0002B915 /* ProfileViewController.m in Sources */,
+				C93753C818BE576A004FB826 /* MySignInViewController.m in Sources */,
 				6D1BE7DB18A9C2FB0079102A /* AchievementCell.m in Sources */,
 				6D18826518A94458003DCA92 /* StickerCell.m in Sources */,
 				6D891EB018A582EC0002B915 /* main.m in Sources */,
