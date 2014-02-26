@@ -864,24 +864,24 @@
     
     //excellence achievements
     NSString *achievementKey = @"Add It All Up!";
-    NSNumber *boolNumber = [user objectForKey: achievementKey];
-    [userDefaults setBool: boolNumber.boolValue forKey:achievementKey];
+    NSNumber *boolNumber = [user objectForKey: @"completedAdditionProblems"];
+    [userDefaults setBool: boolNumber.boolValue forKey:@"Add It All Up!"];
     
     achievementKey = @"Take It All Away!";
-    boolNumber = [user objectForKey: achievementKey];
-    [userDefaults setBool: boolNumber.boolValue forKey:achievementKey];
+    boolNumber = [user objectForKey: @"completedSubtractionProblems"];
+    [userDefaults setBool: boolNumber.boolValue forKey:@"Take It All Away!"];
     
     achievementKey = @"Multiplication Magician!";
-    boolNumber = [user objectForKey: achievementKey];
-    [userDefaults setBool: boolNumber.boolValue forKey:achievementKey];
+    boolNumber = [user objectForKey: @"completedMultiplicationProblems"];
+    [userDefaults setBool: boolNumber.boolValue forKey:@"Multiplication Magician!"];
     
     achievementKey = @"Conquer Division!";
-    boolNumber = [user objectForKey: achievementKey];
-    [userDefaults setBool: boolNumber.boolValue forKey:achievementKey];
+    boolNumber = [user objectForKey: @"completedDivisionProblems"];
+    [userDefaults setBool: boolNumber.boolValue forKey:@"Conquer Division!"];
     
     achievementKey = @"Math Master!";
-    boolNumber = [user objectForKey: achievementKey];
-    [userDefaults setBool: boolNumber.boolValue forKey:achievementKey];
+    boolNumber = [user objectForKey: @"completedAllProblems"];
+    [userDefaults setBool: boolNumber.boolValue forKey:@"Math Master!"];
 
     [userDefaults synchronize];
 }
