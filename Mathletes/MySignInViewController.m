@@ -35,8 +35,6 @@
             [self.signUpView.signUpButton setBackgroundImage:img forState:UIControlStateNormal];
             self.signUpView.signUpButton.clipsToBounds = YES;
             self.signUpView.signUpButton.layer.cornerRadius = 5.0;
-            button.layer.borderWidth = 1.0f;
-            button.layer.borderColor = [[UIColor lightGrayColor]CGColor];
         }
     }
     
@@ -53,6 +51,9 @@
             textField.layer.masksToBounds = YES;
         }
     }
+    
+    self.signUpView.signUpButton.layer.borderWidth = 1.0f;
+    self.signUpView.signUpButton.layer.borderColor = [[UIColor lightGrayColor]CGColor];
     
     [self.signUpView setBackgroundColor:[UIColor whiteColor]];
     
