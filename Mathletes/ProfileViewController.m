@@ -11,6 +11,8 @@
 #import "MathProblem.h"
 #import "CMNavBarNotificationView/CMNavBarNotificationView.h"
 #import "CSAnimationView.h"
+#import "MyLoginViewController.h"
+#import "MySignInViewController.h"
 
 
 @interface ProfileViewController () <PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate, UIAlertViewDelegate>
@@ -166,12 +168,6 @@
         spinner.center = CGPointMake(160, 45);
     }
     
-    
-    
-   
-    
-   
-    
     _userArray = [self cardDifficulty];
     _subtractionUserArray = [self subtractionDifficulty];
     _multplicationUserArray = [self multiplicationDifficulty];
@@ -196,20 +192,6 @@
     }];
 }
 
--(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
-{
-    [PFUser logOut];
-}
-
--(void)logInViewController:(PFLogInViewController *)logInController didLogInUser:(PFUser *)loggedInUser
-{
-    [logInController dismissViewControllerAnimated:YES completion:nil];
-    user = loggedInUser;
-    [self setProfileImage];
-    [self checkAchievementsForLoggedInUser];
-    [self checkForMathProblems];
-}
-
 -(void)setProfileImage
 {
     if ([user objectForKey:@"profileImage"])
@@ -230,7 +212,19 @@
     profileLabel.text = cappedString;
 }
 
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    [PFUser logOut];
+}
 
+-(void)logInViewController:(PFLogInViewController *)logInController didLogInUser:(PFUser *)loggedInUser
+{
+    [logInController dismissViewControllerAnimated:YES completion:nil];
+    user = loggedInUser;
+    [self setProfileImage];
+    [self checkAchievementsForLoggedInUser];
+    [self checkForMathProblems];
+}
 
 - (IBAction)onLogOut:(id)sender
 {
@@ -242,16 +236,27 @@
     [self checkForLoggedInUserAnimated:YES];
 }
 
-
-
 -(void)checkForLoggedInUserAnimated:(BOOL)animated
 {
     if (![PFUser currentUser])
     {
+        MyLoginViewController *loginViewController = [MyLoginViewController new];
+        loginViewController.delegate = self;
+        
+        MySignInViewController *signUpViewController = [MySignInViewController new];
+        signUpViewController.delegate = self;
+        loginViewController.signUpController = signUpViewController;
+        //loginViewController.signUpController = self;
+        
+        [self presentViewController:loginViewController animated:YES completion:NULL];
+        [self presentViewController:signUpViewController animated:YES completion:NULL];
+        
+        /*
         PFLogInViewController *login = [PFLogInViewController new];
         login.delegate = self;
         login.signUpController.delegate = self;
         [self presentViewController:login animated:animated completion:nil];
+         */
     }
     else
     {

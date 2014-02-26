@@ -7,6 +7,7 @@
 //
 
 #import "MyLoginViewController.h"
+#import "UIImage+ImageWithColor.h"
 
 @interface MyLoginViewController () <PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate>
 
@@ -14,39 +15,68 @@
 
 @implementation MyLoginViewController
 
+- (id)init
+{
+    self = [super init];
+    self.fields = PFLogInFieldsUsernameAndPassword | PFLogInFieldsLogInButton | PFLogInFieldsSignUpButton;
+    return self;
+}
 
-//- (void)viewDidLoad
-//{
-//        [super viewDidLoad];
-//        
-//        [self.logInView setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"main_background.png"]]];
-//        [self.logInView setLogo:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logo.png"]]];
-//        
-//        // Set buttons appearance
-//        [self.logInView.dismissButton setImage:[UIImage imageNamed:@"exit.png"] forState:UIControlStateNormal];
-//        [self.logInView.dismissButton setImage:[UIImage imageNamed:@"exit_down.png"] forState:UIControlStateHighlighted];
-//        
-//        [self.logInView.signUpButton setBackgroundImage:[UIImage imageNamed:@"signup.png"] forState:UIControlStateNormal];
-//        [self.logInView.signUpButton setBackgroundImage:[UIImage imageNamed:@"signup_down.png"] forState:UIControlStateHighlighted];
-//        [self.logInView.signUpButton setTitle:@"" forState:UIControlStateNormal];
-//        [self.logInView.signUpButton setTitle:@"" forState:UIControlStateHighlighted];
-//        
-//        // Add login field background
-//        fieldsBackground = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"background.png"]];
-//        [self.logInView insertSubview:fieldsBackground atIndex:1];
-//        
-//        // Remove text shadow
-//        CALayer *layer = self.logInView.usernameField.layer;
-//        layer.shadowOpacity = 0.0;
-//        layer = self.logInView.passwordField.layer;
-//        layer.shadowOpacity = 0.0;
-//        
-//        // Set field text color
-//        [self.logInView.usernameField setTextColor:[UIColor colorWithRed:135.0f/255.0f green:118.0f/255.0f blue:92.0f/255.0f alpha:1.0]];
-//        [self.logInView.passwordField setTextColor:[UIColor colorWithRed:135.0f/255.0f green:118.0f/255.0f blue:92.0f/255.0f alpha:1.0]];
-//        
-//}
-
-
+-(void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    for (UIButton *button in self.view.subviews)
+    {
+        if ([button isKindOfClass:[UIButton class]])
+        {
+            button.titleLabel.font = [UIFont fontWithName:@"Miso-Bold" size:24];
+            button.layer.shadowOpacity = 1.0f;
+            button.layer.borderWidth = 1.0f;
+            button.layer.borderColor = [[UIColor lightGrayColor]CGColor];
+            //button.reversesTitleShadowWhenHighlighted = YES;
+        }
+    }
+    
+    for (UITextField *textField in self.view.subviews)
+    {
+        if ([textField isKindOfClass:[UITextField class]])
+        {
+            textField.font = [UIFont fontWithName:@"Miso-Bold" size:20];
+            textField.textColor = [UIColor darkGrayColor];
+            textField.layer.cornerRadius = 5.0;
+            textField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:textField.placeholder attributes:@{NSFontAttributeName: [UIFont fontWithName:@"Miso-Light" size:20]}];
+            textField.layer.borderColor = [[UIColor lightGrayColor]CGColor];
+            textField.layer.borderWidth = 1.0f;
+            textField.layer.masksToBounds = YES;
+        }
+    }
+    
+    for (UILabel *label in self.view.subviews)
+    {
+        if ([label isKindOfClass:[UILabel class]])
+        {
+            label.font = [UIFont fontWithName:@"Miso-Bold" size:16];
+            label.textColor = [UIColor darkGrayColor];
+        }
+    }
+    
+    [self.logInView setBackgroundColor:[UIColor whiteColor]];
+    UIImage *img = [UIImage imageWithColor:[UIColor myGreenColor]];
+    [self.logInView.signUpButton setBackgroundImage:img forState:UIControlStateNormal];
+    self.logInView.signUpButton.clipsToBounds = YES;
+    self.logInView.signUpButton.layer.cornerRadius = 5.0;
+    
+    img = [UIImage imageWithColor:[UIColor myBlueColor]];
+    [self.logInView.logInButton setBackgroundImage:img forState:UIControlStateNormal];
+    self.logInView.logInButton.clipsToBounds = YES;
+    self.logInView.logInButton.layer.cornerRadius = 5.0;
+    
+    [self.logInView setLogo:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"math_login_screen_brand"]]];
+    
+    //[self.logInView.logInButton setFrame:CGRectMake(35.0f, 385.0f, 250.0f, 40.0f)];
+    //[self.logInView.signUpButton setFrame:CGRectMake(35.0f, 385.0f, 250.0f, 40.0f)];
+    
+}
 
 @end
