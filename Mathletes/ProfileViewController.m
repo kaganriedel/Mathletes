@@ -228,6 +228,8 @@
     NSString *cappedFirstChar = [[username substringToIndex:1] uppercaseString];
     NSString *cappedString = [username stringByReplacingCharactersInRange:NSMakeRange(0, 1) withString:cappedFirstChar];
     profileLabel.text = cappedString;
+    profileLabel.adjustsFontSizeToFitWidth = YES;
+    profileLabel.minimumScaleFactor = 0.8;
 }
 
 

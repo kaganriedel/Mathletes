@@ -34,6 +34,7 @@
     __weak IBOutlet UIImageView *feedbackImageView;
     __weak IBOutlet UIImageView *operatorImageView;
     __weak IBOutlet UIImageView *responseImageView;
+    __weak IBOutlet UIView *mathProblemView;
     
     NSMutableArray *mathProblems;
     NSInteger difficulty;
@@ -71,7 +72,7 @@
     
     [self buildView];
 
-    for (UILabel* label in self.view.subviews) {
+    for (UILabel* label in mathProblemView.subviews) {
         if([label isKindOfClass:[UILabel class]])
         {
             label.font = [UIFont fontWithName:@"Miso-Bold" size:40];
