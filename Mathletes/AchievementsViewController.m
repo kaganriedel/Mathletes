@@ -216,7 +216,7 @@
     {
         switch (indexPath.section) {
             case 0:
-                cell.imageView.image = [UIImage imageNamed:@"math_imagemultiply.png"];
+                cell.imageView.image = [UIImage imageNamed:@"math_image_all.png"];
                 break;
             case 1:
                 cell.imageView.image = [UIImage imageNamed:@"math_addition.png"];
@@ -243,10 +243,10 @@
                 cell.imageView.image = [UIImage imageNamed:@"math_imagedivision.png"];
                 break;
             case 9:
-                cell.imageView.image = [UIImage imageNamed:@"math_imagemultiply.png"];
+                cell.imageView.image = [UIImage imageNamed:@"math_image_all.png"];
                 break;
             case 10:
-                cell.imageView.image = [UIImage imageNamed:@"math_imagemultiply.png"];
+                cell.imageView.image = [UIImage imageNamed:@"math_image_all.png"];
                 break;
                 
             default:

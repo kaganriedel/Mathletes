@@ -63,6 +63,9 @@
     stickersButton.imageView.contentMode = UIViewContentModeScaleAspectFill;
     achievementsButton.imageView.contentMode = UIViewContentModeScaleAspectFill;
     
+    profileButton.exclusiveTouch = stickersButton.exclusiveTouch = achievementsButton.exclusiveTouch = mathButton.exclusiveTouch = progressButton.exclusiveTouch = YES;
+    
+    
     
     NSLog(@"time since dailyMathStartDate: %f", [[NSDate date] timeIntervalSinceDate:[user objectForKey:@"dailyMathStartDate"]]);
     //if its been more than a day since the last reset of dailyMath, reset it
@@ -215,7 +218,7 @@
     }
     else
     {
-        [profileButton setImage:[UIImage imageNamed:@"boy.png"] forState:UIControlStateNormal];
+        [profileButton setImage:[UIImage imageNamed:@"math_image_all.png"] forState:UIControlStateNormal];
     }
 }
 

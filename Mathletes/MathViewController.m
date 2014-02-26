@@ -66,6 +66,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+//    oneButton.exclusiveTouch = twoButton.exclusiveTouch = threeButton.exclusiveTouch = fourButton.exclusiveTouch
     
     user = [PFUser currentUser];
     userDefaults = [NSUserDefaults standardUserDefaults];
