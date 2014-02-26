@@ -100,7 +100,7 @@
     if ([_operationType isEqualToString:@"+"])
     {
         self.navigationItem.title = @"Addition";
-        operatorImageView.image = [UIImage imageNamed:@"ic_tabbaraddition_normal.png"];
+        operatorImageView.image = [UIImage imageNamed:@"ic_addition_normal.png"];
         problemType = 0;
         [self queryForProblemType];
         if ([user objectForKey:@"completedAdditionProblems"])
@@ -111,7 +111,7 @@
     else if ([_operationType isEqualToString:@"-"])
     {
         self.navigationItem.title = @"Subtraction";
-        operatorImageView.image = [UIImage imageNamed:@"ic_tabbarsubtract_normal.png"];
+        operatorImageView.image = [UIImage imageNamed:@"ic_subtract_normal.png"];
         problemType = 1;
         [self queryForProblemType];
         if ([user objectForKey:@"completedSubtractionProblems"])
@@ -122,7 +122,7 @@
     else if ([_operationType isEqualToString:@"x"])
     {
         self.navigationItem.title = @"Multiplication";
-        operatorImageView.image = [UIImage imageNamed:@"ic_tabbarmultiply_normal.png"];
+        operatorImageView.image = [UIImage imageNamed:@"ic_multiply_normal.png"];
         problemType = 2;
         [self queryForProblemType];
         if ([user objectForKey:@"completedMultiplicationProblems"])
@@ -133,7 +133,7 @@
     else if ([_operationType isEqualToString:@"/"])
     {
         self.navigationItem.title = @"Division";
-        operatorImageView.image = [UIImage imageNamed:@"ic_tabbardivision_normal.png"];
+        operatorImageView.image = [UIImage imageNamed:@"ic_division_normal.png"];
         problemType = 3;
         [self queryForProblemType];
         if ([user objectForKey:@"completedDivisionProblems"])
@@ -1168,68 +1168,80 @@
     int randomSticker = arc4random()%(maximum + 1 - minimum) + minimum;
     NSLog(@"random sticker: %i", randomSticker);
 
-    if (randomSticker <= 20)
+    //common
+    if (randomSticker <= 8)
     {
-        stickerString = @"lion";
+        stickerString = @"Mountain";
         [user increaseKey:[NSString stringWithFormat:@"%@Count", stickerString]];
         notificationImage = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", stickerString]];
-        
-        NSLog(@"%@ count +1", stickerString);
     }
-    else if (randomSticker <= 40)
+    else if (randomSticker <= 16)
     {
-        stickerString = @"kitten";
+        stickerString = @"Apple";
         [user increaseKey:[NSString stringWithFormat:@"%@Count", stickerString]];
         notificationImage = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", stickerString]];
-        
-        NSLog(@"%@ count +1", stickerString);
+    }
+    else if (randomSticker <= 24)
+    {
+        stickerString = @"Monkey";
+        [user increaseKey:[NSString stringWithFormat:@"%@Count", stickerString]];
+        notificationImage = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", stickerString]];
+    }
+    else if (randomSticker <= 36)
+    {
+        stickerString = @"Puppy";
+        [user increaseKey:[NSString stringWithFormat:@"%@Count", stickerString]];
+        notificationImage = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", stickerString]];
+    }
+    else if (randomSticker <= 42)
+    {
+        stickerString = @"Cookies";
+        [user increaseKey:[NSString stringWithFormat:@"%@Count", stickerString]];
+        notificationImage = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", stickerString]];
+    }
+    else if (randomSticker <= 51)
+    {
+        stickerString = @"Palm_Tree";
+        [user increaseKey:[NSString stringWithFormat:@"%@Count", stickerString]];
+        notificationImage = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", stickerString]];
     }
     else if (randomSticker <= 60)
     {
-        stickerString = @"campfire";
+        stickerString = @"Rocket_Ship";
         [user increaseKey:[NSString stringWithFormat:@"%@Count", stickerString]];
         notificationImage = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", stickerString]];
-        
-        NSLog(@"%@ count +1", stickerString);
     }
+    //uncommon
     else if (randomSticker <= 70)
     {
-        stickerString = @"puppy";
+        stickerString = @"Flower";
         [user increaseKey:[NSString stringWithFormat:@"%@Count", stickerString]];
         notificationImage = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", stickerString]];
-        
-        NSLog(@"%@ count +1", stickerString);
     }
     else if (randomSticker <= 81)
     {
-        stickerString = @"tiger";
+        stickerString = @"Ice_Cream";
         [user increaseKey:[NSString stringWithFormat:@"%@Count", stickerString]];
         notificationImage = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", stickerString]];
-        
-        NSLog(@"%@ count +1", stickerString);
     }
     else if (randomSticker <= 92)
     {
-        stickerString = @"murray";
+        stickerString = @"Campfire";
         [user increaseKey:[NSString stringWithFormat:@"%@Count", stickerString]];
         notificationImage = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", stickerString]];
-        
-        NSLog(@"%@ count +1", stickerString);
     }
+    //rare
     else if (randomSticker <= 96)
     {
-        stickerString = @"bear";
+        stickerString = @"Murray";
         [user increaseKey:[NSString stringWithFormat:@"%@Count", stickerString]];
         notificationImage = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", stickerString]];
-        
-        NSLog(@"%@ count +1", stickerString);
-    }else if (randomSticker <= 100)
+    }
+    else if (randomSticker <= 100)
     {
-        stickerString = @"pizza";
+        stickerString = @"Watermelon";
         [user increaseKey:[NSString stringWithFormat:@"%@Count", stickerString]];
         notificationImage = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", stickerString]];
-
-        NSLog(@"%@ count +1", stickerString);
     }
     
     [CMNavBarNotificationView notifyWithText:[NSString stringWithFormat:@"%@", achievement]

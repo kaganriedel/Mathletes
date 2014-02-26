@@ -32,38 +32,67 @@
     
 
     //check to see which stickers the user has collected and display the ones they have
-    if ([[user objectForKey:@"lionCount"] intValue] > 0)
+    NSString *key = @"Mountain";
+    if ([[user objectForKey: [NSString stringWithFormat:@"%@Count", key]] intValue] > 0)
     {
-        [userStickers addObject:@"lion.png"];
+        [userStickers addObject:[NSString stringWithFormat:@"%@.png", key]];
     }
-    if ([[user objectForKey:@"kittenCount"] intValue] > 0)
+    key = @"Apple";
+    if ([[user objectForKey: [NSString stringWithFormat:@"%@Count", key]] intValue] > 0)
     {
-        [userStickers addObject:@"kitten.png"];
+        [userStickers addObject:[NSString stringWithFormat:@"%@.png", key]];
     }
-    if ([[user objectForKey:@"campfireCount"] intValue] > 0)
+    key = @"Monkey";
+    if ([[user objectForKey: [NSString stringWithFormat:@"%@Count", key]] intValue] > 0)
     {
-        [userStickers addObject:@"campfire.png"];
+        [userStickers addObject:[NSString stringWithFormat:@"%@.png", key]];
     }
-    if ([[user objectForKey:@"puppyCount"] intValue] > 0)
+    key = @"Puppy";
+    if ([[user objectForKey: [NSString stringWithFormat:@"%@Count", key]] intValue] > 0)
     {
-        [userStickers addObject:@"puppy.png"];
+        [userStickers addObject:[NSString stringWithFormat:@"%@.png", key]];
     }
-    if ([[user objectForKey:@"tigerCount"] intValue] > 0)
+    key = @"Cookies";
+    if ([[user objectForKey: [NSString stringWithFormat:@"%@Count", key]] intValue] > 0)
     {
-        [userStickers addObject:@"tiger.png"];
+        [userStickers addObject:[NSString stringWithFormat:@"%@.png", key]];
     }
-    if ([[user objectForKey:@"murrayCount"] intValue] > 0)
+    key = @"Palm_Tree";
+    if ([[user objectForKey: [NSString stringWithFormat:@"%@Count", key]] intValue] > 0)
     {
-        [userStickers addObject:@"murray.png"];
+        [userStickers addObject:[NSString stringWithFormat:@"%@.png", key]];
     }
-    if ([[user objectForKey:@"bearCount"] intValue] > 0)
+    key = @"Rocket_Ship";
+    if ([[user objectForKey: [NSString stringWithFormat:@"%@Count", key]] intValue] > 0)
     {
-        [userStickers addObject:@"bear.png"];
+        [userStickers addObject:[NSString stringWithFormat:@"%@.png", key]];
     }
-    if ([[user objectForKey:@"pizzaCount"] intValue] > 0)
+    key = @"Flower";
+    if ([[user objectForKey: [NSString stringWithFormat:@"%@Count", key]] intValue] > 0)
     {
-        [userStickers addObject:@"pizza.png"];
+        [userStickers addObject:[NSString stringWithFormat:@"%@.png", key]];
     }
+    key = @"Ice_Cream";
+    if ([[user objectForKey: [NSString stringWithFormat:@"%@Count", key]] intValue] > 0)
+    {
+        [userStickers addObject:[NSString stringWithFormat:@"%@.png", key]];
+    }
+    key = @"Campfire";
+    if ([[user objectForKey: [NSString stringWithFormat:@"%@Count", key]] intValue] > 0)
+    {
+        [userStickers addObject:[NSString stringWithFormat:@"%@.png", key]];
+    }
+    key = @"Murray";
+    if ([[user objectForKey: [NSString stringWithFormat:@"%@Count", key]] intValue] > 0)
+    {
+        [userStickers addObject:[NSString stringWithFormat:@"%@.png", key]];
+    }
+    key = @"Watermelon";
+    if ([[user objectForKey: [NSString stringWithFormat:@"%@Count", key]] intValue] > 0)
+    {
+        [userStickers addObject:[NSString stringWithFormat:@"%@.png", key]];
+    }
+
 }
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
