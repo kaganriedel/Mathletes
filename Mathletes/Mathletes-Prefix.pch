@@ -31,7 +31,10 @@
 +(UIColor*)myRedColor;
 +(UIColor*)myYellowColor;
 +(UIColor*)myBlueColor;
+@end
 
+@interface NSArray (stickerarray)
++(NSArray*)stickerArray;
 @end
 
 #endif

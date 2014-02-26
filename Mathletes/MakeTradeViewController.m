@@ -15,8 +15,7 @@
     PFUser *user;
     
     NSMutableArray *userStickers;
-    NSArray *allStickers;
-    
+    NSArray *stickerArray;
     NSIndexPath *giveTableCheckedIndexPath;
     NSIndexPath *getTableCheckedIndexPath;
 
@@ -49,43 +48,69 @@
     
     
     userStickers = [NSMutableArray new];
-    
-    //check to see which stickers the user has collected and display the ones they have
-    if ([[user objectForKey:@"lionCount"] intValue] > 0)
-    {
-        [userStickers addObject:@"lion.png"];
-    }
-    if ([[user objectForKey:@"kittenCount"] intValue] > 0)
-    {
-        [userStickers addObject:@"kitten.png"];
-    }
-    if ([[user objectForKey:@"campfireCount"] intValue] > 0)
-    {
-        [userStickers addObject:@"campfire.png"];
-    }
-    if ([[user objectForKey:@"puppyCount"] intValue] > 0)
-    {
-        [userStickers addObject:@"puppy.png"];
-    }
-    if ([[user objectForKey:@"tigerCount"] intValue] > 0)
-    {
-        [userStickers addObject:@"tiger.png"];
-    }
-    if ([[user objectForKey:@"murrayCount"] intValue] > 0)
-    {
-        [userStickers addObject:@"murray.png"];
-    }
-    if ([[user objectForKey:@"bearCount"] intValue] > 0)
-    {
-        [userStickers addObject:@"bear.png"];
-    }
-    if ([[user objectForKey:@"pizzaCount"] intValue] > 0)
-    {
-        [userStickers addObject:@"pizza.png"];
-    }
-    
-    allStickers = @[@"lion.png", @"kitten.png", @"campfire.png", @"puppy.png", @"tiger.png", @"murray.png", @"bear.png", @"pizza.png"];
+    stickerArray = [NSArray stickerArray];
 
+    //check to see which stickers the user has collected and display the ones they have
+    NSString *key = stickerArray[0];
+    if ([[user objectForKey: [NSString stringWithFormat:@"%@Count", key]] intValue] > 0)
+    {
+        [userStickers addObject:[NSString stringWithFormat:@"%@.png", key]];
+    }
+    key = stickerArray[1];
+    if ([[user objectForKey: [NSString stringWithFormat:@"%@Count", key]] intValue] > 0)
+    {
+        [userStickers addObject:[NSString stringWithFormat:@"%@.png", key]];
+    }
+    key = stickerArray[2];
+    if ([[user objectForKey: [NSString stringWithFormat:@"%@Count", key]] intValue] > 0)
+    {
+        [userStickers addObject:[NSString stringWithFormat:@"%@.png", key]];
+    }
+    key = stickerArray[3];
+    if ([[user objectForKey: [NSString stringWithFormat:@"%@Count", key]] intValue] > 0)
+    {
+        [userStickers addObject:[NSString stringWithFormat:@"%@.png", key]];
+    }
+    key = stickerArray[4];
+    if ([[user objectForKey: [NSString stringWithFormat:@"%@Count", key]] intValue] > 0)
+    {
+        [userStickers addObject:[NSString stringWithFormat:@"%@.png", key]];
+    }
+    key = stickerArray[5];
+    if ([[user objectForKey: [NSString stringWithFormat:@"%@Count", key]] intValue] > 0)
+    {
+        [userStickers addObject:[NSString stringWithFormat:@"%@.png", key]];
+    }
+    key = stickerArray[6];
+    if ([[user objectForKey: [NSString stringWithFormat:@"%@Count", key]] intValue] > 0)
+    {
+        [userStickers addObject:[NSString stringWithFormat:@"%@.png", key]];
+    }
+    key = stickerArray[7];
+    if ([[user objectForKey: [NSString stringWithFormat:@"%@Count", key]] intValue] > 0)
+    {
+        [userStickers addObject:[NSString stringWithFormat:@"%@.png", key]];
+    }
+    key = stickerArray[8];
+    if ([[user objectForKey: [NSString stringWithFormat:@"%@Count", key]] intValue] > 0)
+    {
+        [userStickers addObject:[NSString stringWithFormat:@"%@.png", key]];
+    }
+    key = stickerArray[9];
+    if ([[user objectForKey: [NSString stringWithFormat:@"%@Count", key]] intValue] > 0)
+    {
+        [userStickers addObject:[NSString stringWithFormat:@"%@.png", key]];
+    }
+    key = stickerArray[10];
+    if ([[user objectForKey: [NSString stringWithFormat:@"%@Count", key]] intValue] > 0)
+    {
+        [userStickers addObject:[NSString stringWithFormat:@"%@.png", key]];
+    }
+    key = stickerArray[11];
+    if ([[user objectForKey: [NSString stringWithFormat:@"%@Count", key]] intValue] > 0)
+    {
+        [userStickers addObject:[NSString stringWithFormat:@"%@.png", key]];
+    }
 }
 
 
@@ -180,10 +205,10 @@
     else if (tableView == getTableView)
     {
         MakeTradeCell *cell = [tableView dequeueReusableCellWithIdentifier:@"GetCell"];
-        cell.stickerImageView.image = [UIImage imageNamed:allStickers[indexPath.row]];
+        cell.stickerImageView.image = [UIImage imageNamed:stickerArray[indexPath.row]];
         cell.stickerImageView.clipsToBounds = YES;
         cell.stickerImageView.layer.cornerRadius = 35.0;
-        NSString *imageString = allStickers[indexPath.row];
+        NSString *imageString = stickerArray[indexPath.row];
         cell.sticker = [imageString stringByReplacingOccurrencesOfString:@".png" withString:@""];
         
         return cell;
@@ -201,7 +226,7 @@
     }
     else
     {
-        return allStickers.count;
+        return stickerArray.count;
     }
 }
 

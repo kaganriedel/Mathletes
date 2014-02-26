@@ -93,3 +93,12 @@ int main(int argc, char * argv[])
 
 @end
 
+@implementation NSArray (stickerarray)
+
++(NSArray*)stickerArray
+{
+    NSArray *stickerArray = @[@"Mountain", @"Apple", @"Monkey", @"Puppy", @"Cookies", @"Palm_Tree", @"Rocket_Ship", @"Flower", @"Ice_Cream", @"Campfire", @"Murray", @"Watermelon"];
+    return stickerArray;
+}
+
+@end
