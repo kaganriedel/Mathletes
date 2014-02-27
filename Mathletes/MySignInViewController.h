@@ -2,8 +2,8 @@
 //  MySignInViewController.h
 //  Mathletes
 //
-//  Created by Matthew Voracek on 2/26/14.
-//  Copyright (c) 2014 Sonam Mehta. All rights reserved.
+//  Created by MobileMath.co on 2/7/14.
+//  Copyright (c) 2014 MobileMath.co. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
