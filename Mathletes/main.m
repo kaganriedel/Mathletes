@@ -97,7 +97,7 @@ int main(int argc, char * argv[])
 
 +(NSArray*)stickerArray
 {
-    NSArray *stickerArray = @[@"Rocket_Ship", @"Mountain", @"Galaxy", @"Kitten", @"Fish", @"Cookies", @"Monkey", @"Earth", @"Palm_Tree", @"Puppy", @"Apple", @"Train", @"Race_Car", @"Comet", @"Flower", @"School_Bus", @"Campfire", @"Giraffe", @"Ice_Cream", @"Helicopter", @"Watermelon", @"Panda"];
+    NSArray *stickerArray = @[@"Rocket_Ship", @"Mountain", @"Galaxy", @"Kitten", @"Fish", @"Cookies", @"Monkey", @"Earth", @"Palm_Tree", @"Puppy", @"Apple", @"Train", @"Sports_Car", @"Comet", @"Campfire", @"School_Bus", @"Pirate_Ship", @"Tent", @"Flower", @"Giraffe", @"Ice_Cream", @"Helicopter", @"Watermelon", @"Panda"];
     return stickerArray;
 }
 

@@ -31,69 +31,15 @@
     userStickers = [NSMutableArray new];
     NSArray *stickerArray = [NSArray stickerArray];
     
-
     //check to see which stickers the user has collected and display the ones they have
-    NSString *key = stickerArray[0];
-    if ([[user objectForKey: [NSString stringWithFormat:@"%@Count", key]] intValue] > 0)
+    for (NSString *key in stickerArray)
     {
-        [userStickers addObject:[NSString stringWithFormat:@"%@.png", key]];
+        if ([[user objectForKey: [NSString stringWithFormat:@"%@Count", key]] intValue] > 0)
+        {
+            [userStickers addObject:[NSString stringWithFormat:@"%@.png", key]];
+        }
     }
-    key = stickerArray[1];
-    if ([[user objectForKey: [NSString stringWithFormat:@"%@Count", key]] intValue] > 0)
-    {
-        [userStickers addObject:[NSString stringWithFormat:@"%@.png", key]];
-    }
-    key = stickerArray[2];
-    if ([[user objectForKey: [NSString stringWithFormat:@"%@Count", key]] intValue] > 0)
-    {
-        [userStickers addObject:[NSString stringWithFormat:@"%@.png", key]];
-    }
-    key = stickerArray[3];
-    if ([[user objectForKey: [NSString stringWithFormat:@"%@Count", key]] intValue] > 0)
-    {
-        [userStickers addObject:[NSString stringWithFormat:@"%@.png", key]];
-    }
-    key = stickerArray[4];
-    if ([[user objectForKey: [NSString stringWithFormat:@"%@Count", key]] intValue] > 0)
-    {
-        [userStickers addObject:[NSString stringWithFormat:@"%@.png", key]];
-    }
-    key = stickerArray[5];
-    if ([[user objectForKey: [NSString stringWithFormat:@"%@Count", key]] intValue] > 0)
-    {
-        [userStickers addObject:[NSString stringWithFormat:@"%@.png", key]];
-    }
-    key = stickerArray[6];
-    if ([[user objectForKey: [NSString stringWithFormat:@"%@Count", key]] intValue] > 0)
-    {
-        [userStickers addObject:[NSString stringWithFormat:@"%@.png", key]];
-    }
-    key = stickerArray[7];
-    if ([[user objectForKey: [NSString stringWithFormat:@"%@Count", key]] intValue] > 0)
-    {
-        [userStickers addObject:[NSString stringWithFormat:@"%@.png", key]];
-    }
-    key = stickerArray[8];
-    if ([[user objectForKey: [NSString stringWithFormat:@"%@Count", key]] intValue] > 0)
-    {
-        [userStickers addObject:[NSString stringWithFormat:@"%@.png", key]];
-    }
-    key = stickerArray[9];
-    if ([[user objectForKey: [NSString stringWithFormat:@"%@Count", key]] intValue] > 0)
-    {
-        [userStickers addObject:[NSString stringWithFormat:@"%@.png", key]];
-    }
-    key = stickerArray[10];
-    if ([[user objectForKey: [NSString stringWithFormat:@"%@Count", key]] intValue] > 0)
-    {
-        [userStickers addObject:[NSString stringWithFormat:@"%@.png", key]];
-    }
-    key = stickerArray[11];
-    if ([[user objectForKey: [NSString stringWithFormat:@"%@Count", key]] intValue] > 0)
-    {
-        [userStickers addObject:[NSString stringWithFormat:@"%@.png", key]];
-    }
-
+    
 }
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath

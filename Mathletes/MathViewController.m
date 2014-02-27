@@ -509,7 +509,7 @@
     
     NSInteger proficiencyChange = currentMathProblem.equationDifficulty;
     
-    if (currentMathProblem.equationDifficulty > 0 && countDown <= 6 && completedProblems == NO)
+    if (currentMathProblem.equationDifficulty > 0 && countDown <= 60 && completedProblems == NO)
     {
         proficiencyChange -= 1;
     }
@@ -571,11 +571,11 @@
     }
     else if (newDailyMath >= 40)
     {
-        [self checkForAchievement:@"Daily Math x40!" Minimum:1 Maximum:92];
+        [self checkForAchievement:@"Daily Math x40!" Minimum:1 Maximum:94];
     }
     else if (newDailyMath >= 30)
     {
-        [self checkForAchievement:@"Daily Math x30!" Minimum:1 Maximum:92];
+        [self checkForAchievement:@"Daily Math x30!" Minimum:1 Maximum:94];
     }
     else if (newDailyMath >= 20)
     {
@@ -632,15 +632,15 @@
         }
         else if (newTotalAdds >= 80)
         {
-            [self checkForAchievement:@"Add It Up x80!" Minimum:1 Maximum:92];
+            [self checkForAchievement:@"Add It Up x80!" Minimum:1 Maximum:94];
         }
         else if (newTotalAdds >= 60)
         {
-            [self checkForAchievement:@"Add It Up x60!" Minimum:1 Maximum:92];
+            [self checkForAchievement:@"Add It Up x60!" Minimum:1 Maximum:94];
         }
         else if (newTotalAdds >= 40)
         {
-            [self checkForAchievement:@"Add It Up x40!" Minimum:1 Maximum:92];
+            [self checkForAchievement:@"Add It Up x40!" Minimum:1 Maximum:94];
         }
         else if (newTotalAdds >= 20)
         {
@@ -651,7 +651,7 @@
             [self checkForAchievement:@"Add It Up!" Minimum:1 Maximum:60];
         }
         
-        if (countDown <= 6)
+        if (countDown <= 60)
         {
             int newTotalFastAdds = [user increaseKey:@"totalFastAdds"];
             NSLog(@"Total Fast Adds: %i",newTotalFastAdds);
@@ -701,11 +701,11 @@
             }
             else if (newTotalFastAdds >= 60)
             {
-                [self checkForAchievement:@"Adding At 60 Miles Per Hour!" Minimum:1 Maximum:92];
+                [self checkForAchievement:@"Adding At 60 Miles Per Hour!" Minimum:1 Maximum:94];
             }
             else if (newTotalFastAdds >= 45)
             {
-                [self checkForAchievement:@"Adding At 45 Miles Per Hour!" Minimum:1 Maximum:92];
+                [self checkForAchievement:@"Adding At 45 Miles Per Hour!" Minimum:1 Maximum:94];
             }
             else if (newTotalFastAdds >= 30)
             {
@@ -764,15 +764,15 @@
         }
         else if (newTotalSubs >= 80)
         {
-            [self checkForAchievement:@"Take It Away x80!" Minimum:1 Maximum:92];
+            [self checkForAchievement:@"Take It Away x80!" Minimum:1 Maximum:94];
         }
         else if (newTotalSubs >= 60)
         {
-            [self checkForAchievement:@"Take It Away x60!" Minimum:1 Maximum:92];
+            [self checkForAchievement:@"Take It Away x60!" Minimum:1 Maximum:94];
         }
         else if (newTotalSubs >= 40)
         {
-            [self checkForAchievement:@"Take It Away x40!" Minimum:1 Maximum:92];
+            [self checkForAchievement:@"Take It Away x40!" Minimum:1 Maximum:94];
         }
         else if (newTotalSubs >= 20)
         {
@@ -783,7 +783,7 @@
             [self checkForAchievement:@"Take It Away!" Minimum:1 Maximum:60];
         }
 
-        if (countDown <= 6)
+        if (countDown <= 60)
         {
             int newTotalFastSubs = [user increaseKey:@"totalFastSubs"];
             NSLog(@"Total Fast Subs: %i",newTotalFastSubs);
@@ -833,11 +833,11 @@
             }
             else if (newTotalFastSubs >= 60)
             {
-                [self checkForAchievement:@"Subtracting At 60 \nMiles Per Hour!" Minimum:1 Maximum:92];
+                [self checkForAchievement:@"Subtracting At 60 \nMiles Per Hour!" Minimum:1 Maximum:94];
             }
             else if (newTotalFastSubs >= 45)
             {
-                [self checkForAchievement:@"Subtracting At 45 \nMiles Per Hour!" Minimum:1 Maximum:92];
+                [self checkForAchievement:@"Subtracting At 45 \nMiles Per Hour!" Minimum:1 Maximum:94];
             }
             else if (newTotalFastSubs >= 30)
             {
@@ -897,15 +897,15 @@
         }
         else if (newTotalMults >= 80)
         {
-            [self checkForAchievement:@"Multiplicity x80!" Minimum:1 Maximum:92];
+            [self checkForAchievement:@"Multiplicity x80!" Minimum:1 Maximum:94];
         }
         else if (newTotalMults >= 60)
         {
-            [self checkForAchievement:@"Multiplicity x60!" Minimum:1 Maximum:92];
+            [self checkForAchievement:@"Multiplicity x60!" Minimum:1 Maximum:94];
         }
         else if (newTotalMults >= 40)
         {
-            [self checkForAchievement:@"Multiplicity x40!" Minimum:1 Maximum:92];
+            [self checkForAchievement:@"Multiplicity x40!" Minimum:1 Maximum:94];
         }
         else if (newTotalMults >= 20)
         {
@@ -915,7 +915,7 @@
         {
             [self checkForAchievement:@"Multiplicity!" Minimum:1 Maximum:60];
         }
-        if (countDown <= 6)
+        if (countDown <= 60)
         {
             int newTotalFastMults = [user increaseKey:@"totalFastMults"];
             NSLog(@"Total Fast Mults: %i",newTotalFastMults);
@@ -965,11 +965,11 @@
             }
             else if (newTotalFastMults >= 60)
             {
-                [self checkForAchievement:@"Multiplying At 60 \nMiles Per Hour!" Minimum:1 Maximum:92];
+                [self checkForAchievement:@"Multiplying At 60 \nMiles Per Hour!" Minimum:1 Maximum:94];
             }
             else if (newTotalFastMults >= 45)
             {
-                [self checkForAchievement:@"Multiplying At 45 \nMiles Per Hour!" Minimum:1 Maximum:92];
+                [self checkForAchievement:@"Multiplying At 45 \nMiles Per Hour!" Minimum:1 Maximum:94];
             }
             else if (newTotalFastMults >= 30)
             {
@@ -1028,15 +1028,15 @@
         }
         else if (newTotalDivides >= 80)
         {
-            [self checkForAchievement:@"Divide And Conquer x80!" Minimum:1 Maximum:92];
+            [self checkForAchievement:@"Divide And Conquer x80!" Minimum:1 Maximum:94];
         }
         else if (newTotalDivides >= 60)
         {
-            [self checkForAchievement:@"Divide And Conquer x60!" Minimum:1 Maximum:92];
+            [self checkForAchievement:@"Divide And Conquer x60!" Minimum:1 Maximum:94];
         }
         else if (newTotalDivides >= 40)
         {
-            [self checkForAchievement:@"Divide And Conquer x40!" Minimum:1 Maximum:92];
+            [self checkForAchievement:@"Divide And Conquer x40!" Minimum:1 Maximum:94];
         }
         else if (newTotalDivides >= 20)
         {
@@ -1046,7 +1046,7 @@
         {
             [self checkForAchievement:@"Divide And Conquer!" Minimum:1 Maximum:60];
         }
-        if (countDown <= 6)
+        if (countDown <= 60)
         {
             int newTotalFastDivides = [user increaseKey:@"totalFastDivides"];
             NSLog(@"Total Fast Mults: %i",newTotalFastDivides);
@@ -1096,11 +1096,11 @@
             }
             else if (newTotalFastDivides >= 60)
             {
-                [self checkForAchievement:@"Dividing At 60 \nMiles Per Hour!" Minimum:1 Maximum:92];
+                [self checkForAchievement:@"Dividing At 60 \nMiles Per Hour!" Minimum:1 Maximum:94];
             }
             else if (newTotalFastDivides >= 45)
             {
-                [self checkForAchievement:@"Dividing At 45 \nMiles Per Hour!" Minimum:1 Maximum:92];
+                [self checkForAchievement:@"Dividing At 45 \nMiles Per Hour!" Minimum:1 Maximum:94];
             }
             else if (newTotalFastDivides >= 30)
             {
@@ -1315,19 +1315,19 @@
         [user increaseKey:[NSString stringWithFormat:@"%@Count", stickerString]];
         notificationImage = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", stickerString]];
     }
-    else if (randomSticker <= 92)
+    else if (randomSticker <= 91)
     {
         stickerString = stickerArray[19];
         [user increaseKey:[NSString stringWithFormat:@"%@Count", stickerString]];
         notificationImage = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", stickerString]];
     }
-    //rare
     else if (randomSticker <= 94)
     {
         stickerString = stickerArray[20];
         [user increaseKey:[NSString stringWithFormat:@"%@Count", stickerString]];
         notificationImage = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", stickerString]];
     }
+    //rare
     else if (randomSticker <= 96)
     {
         stickerString = stickerArray[21];

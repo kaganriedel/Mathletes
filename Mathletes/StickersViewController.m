@@ -226,6 +226,16 @@
         stickerRarityLabel.text = uncommon;
         stickerDetailLabel.text = @"School buses can carry up to 60 kids to school! Did you know school busses are yellow because it is safer and easier to see them?";
     }
+    else if ([stickerName isEqualToString:@"Pirate_Ship"])
+    {
+        stickerRarityLabel.text = uncommon;
+        stickerDetailLabel.text = @"Pirate ship facts";
+    }
+    else if ([stickerName isEqualToString:@"Tent"])
+    {
+        stickerRarityLabel.text = uncommon;
+        stickerDetailLabel.text = @"Tent facts";
+    }
     
     //Rare stickers
     else if ([stickerName isEqualToString:@"Watermelon"])
@@ -246,12 +256,8 @@
     
     //to be decided
 
-    else if ([stickerName isEqualToString:@"Pirate_Ship"])
-    {
-        stickerRarityLabel.text = uncommon;
-        stickerDetailLabel.text = @"Pirate ship";
-    }
-    
+
+
 
    
     else if ([stickerName isEqualToString:@"Cherry"])

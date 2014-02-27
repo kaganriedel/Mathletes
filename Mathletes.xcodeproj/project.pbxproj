@@ -98,7 +98,6 @@
 		6D0119A718BEC05D00D3AC4B /* mobile_math_signup_brand_small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D0119A518BEC05D00D3AC4B /* mobile_math_signup_brand_small@2x.png */; };
 		6D0119A918BF05D900D3AC4B /* ic_checkmark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D0119A818BF05D900D3AC4B /* ic_checkmark@2x.png */; };
 		6D0119AB18BF08A400D3AC4B /* ic_checkmark.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D0119AA18BF08A400D3AC4B /* ic_checkmark.png */; };
-		6D0119B918BF10CB00D3AC4B /* Campfire.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D0119AC18BF10CB00D3AC4B /* Campfire.png */; };
 		6D0119BA18BF10CB00D3AC4B /* Comet.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D0119AD18BF10CB00D3AC4B /* Comet.png */; };
 		6D0119BB18BF10CB00D3AC4B /* Earth.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D0119AE18BF10CB00D3AC4B /* Earth.png */; };
 		6D0119BC18BF10CB00D3AC4B /* Fish.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D0119AF18BF10CB00D3AC4B /* Fish.png */; };
@@ -111,6 +110,9 @@
 		6D0119C318BF10CB00D3AC4B /* Sports_Car.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D0119B618BF10CB00D3AC4B /* Sports_Car.png */; };
 		6D0119C418BF10CB00D3AC4B /* School_Bus.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D0119B718BF10CB00D3AC4B /* School_Bus.png */; };
 		6D0119C518BF10CB00D3AC4B /* Train.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D0119B818BF10CB00D3AC4B /* Train.png */; };
+		6D0119C718BF267D00D3AC4B /* Campfire.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D0119C618BF267D00D3AC4B /* Campfire.png */; };
+		6D0119C918BF268F00D3AC4B /* Tent.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D0119C818BF268F00D3AC4B /* Tent.png */; };
+		6D0119CB18BF26A100D3AC4B /* Pirate_Ship.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D0119CA18BF26A100D3AC4B /* Pirate_Ship.png */; };
 		6D17BD5318AC1CFE009A7416 /* AchievementHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D17BD5218AC1CFE009A7416 /* AchievementHeader.m */; };
 		6D18826218A943DF003DCA92 /* StickersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D18826118A943DF003DCA92 /* StickersViewController.m */; };
 		6D18826518A94458003DCA92 /* StickerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D18826418A94458003DCA92 /* StickerCell.m */; };
@@ -263,7 +265,6 @@
 		6D0119A518BEC05D00D3AC4B /* mobile_math_signup_brand_small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mobile_math_signup_brand_small@2x.png"; sourceTree = "<group>"; };
 		6D0119A818BF05D900D3AC4B /* ic_checkmark@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_checkmark@2x.png"; sourceTree = "<group>"; };
 		6D0119AA18BF08A400D3AC4B /* ic_checkmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_checkmark.png; sourceTree = "<group>"; };
-		6D0119AC18BF10CB00D3AC4B /* Campfire.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Campfire.png; sourceTree = "<group>"; };
 		6D0119AD18BF10CB00D3AC4B /* Comet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Comet.png; sourceTree = "<group>"; };
 		6D0119AE18BF10CB00D3AC4B /* Earth.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Earth.png; sourceTree = "<group>"; };
 		6D0119AF18BF10CB00D3AC4B /* Fish.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Fish.png; sourceTree = "<group>"; };
@@ -276,6 +277,9 @@
 		6D0119B618BF10CB00D3AC4B /* Sports_Car.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Sports_Car.png; sourceTree = "<group>"; };
 		6D0119B718BF10CB00D3AC4B /* School_Bus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = School_Bus.png; sourceTree = "<group>"; };
 		6D0119B818BF10CB00D3AC4B /* Train.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Train.png; sourceTree = "<group>"; };
+		6D0119C618BF267D00D3AC4B /* Campfire.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Campfire.png; sourceTree = "<group>"; };
+		6D0119C818BF268F00D3AC4B /* Tent.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tent.png; sourceTree = "<group>"; };
+		6D0119CA18BF26A100D3AC4B /* Pirate_Ship.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Pirate_Ship.png; sourceTree = "<group>"; };
 		6D0F673218BBC9460098011A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		6D17BD5118AC1CFE009A7416 /* AchievementHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AchievementHeader.h; sourceTree = "<group>"; };
 		6D17BD5218AC1CFE009A7416 /* AchievementHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AchievementHeader.m; sourceTree = "<group>"; };
@@ -521,9 +525,11 @@
 				6D0119B818BF10CB00D3AC4B /* Train.png */,
 				6D0119B618BF10CB00D3AC4B /* Sports_Car.png */,
 				6D0119AD18BF10CB00D3AC4B /* Comet.png */,
-				6D92060418BDB15F00CCD4FA /* Flower.png */,
+				6D0119C618BF267D00D3AC4B /* Campfire.png */,
 				6D0119B718BF10CB00D3AC4B /* School_Bus.png */,
-				6D0119AC18BF10CB00D3AC4B /* Campfire.png */,
+				6D0119CA18BF26A100D3AC4B /* Pirate_Ship.png */,
+				6D0119C818BF268F00D3AC4B /* Tent.png */,
+				6D92060418BDB15F00CCD4FA /* Flower.png */,
 				6D0119B118BF10CB00D3AC4B /* Giraffe.png */,
 				6D92060518BDB15F00CCD4FA /* Ice_Cream.png */,
 				6D0119B218BF10CB00D3AC4B /* Helicopter.png */,
@@ -785,7 +791,9 @@
 				6D0119BD18BF10CB00D3AC4B /* Galaxy.png in Resources */,
 				27A4455918BD7B57000C1335 /* btn_progress_item_normal.png in Resources */,
 				27A4455818BD7B57000C1335 /* btn_math_item_pressed@2x.png in Resources */,
+				6D0119C918BF268F00D3AC4B /* Tent.png in Resources */,
 				27A444FA18BCD33C000C1335 /* app_icon120-120.png in Resources */,
+				6D0119C718BF267D00D3AC4B /* Campfire.png in Resources */,
 				27A4453818BD25FA000C1335 /* math_imagedivision.png in Resources */,
 				27FD308318B6CD6B00EE75A8 /* ic_addition_pressed@2x.png in Resources */,
 				6D01199F18BEB3CF00D3AC4B /* app_icon-1024x1024.png in Resources */,
@@ -805,7 +813,6 @@
 				27FD308A18B6CD6B00EE75A8 /* ic_multiply_normal@2x.png in Resources */,
 				27A4450518BCD673000C1335 /* ic_tabbarsubtract_normal@2x.png in Resources */,
 				27FD304B18B6867A00EE75A8 /* miso-regular.ttf in Resources */,
-				6D0119B918BF10CB00D3AC4B /* Campfire.png in Resources */,
 				6D891EBC18A582EC0002B915 /* Images.xcassets in Resources */,
 				27A4455A18BD7B57000C1335 /* btn_progress_item_normal@2x.png in Resources */,
 				27FD30CA18B6DC6100EE75A8 /* btn_subtraction_item_pressed.png in Resources */,
@@ -874,6 +881,7 @@
 				6D0119A718BEC05D00D3AC4B /* mobile_math_signup_brand_small@2x.png in Resources */,
 				27FD30DD18BA9EA900EE75A8 /* math_subtraction@2x.png in Resources */,
 				6D0119BE18BF10CB00D3AC4B /* Giraffe.png in Resources */,
+				6D0119CB18BF26A100D3AC4B /* Pirate_Ship.png in Resources */,
 				27FD307F18B6CD6B00EE75A8 /* ic_subtract_pressed@2x.png in Resources */,
 				27A4455118BD7B57000C1335 /* btn_achvmnt_item_normal.png in Resources */,
 				27A4453018BD2256000C1335 /* ic_correctface.png in Resources */,
