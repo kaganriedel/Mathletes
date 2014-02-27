@@ -1250,9 +1250,16 @@
         notificationImage = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", stickerString]];
     }
     
+    NSString *firstCharacterString = [stickerString substringToIndex:1];
+    NSString *aOrAnString = @"a";
+    if ([firstCharacterString isEqualToString:@"A"] || [firstCharacterString isEqualToString:@"E"] || [firstCharacterString isEqualToString:@"I"] || [firstCharacterString isEqualToString:@"O"] || [firstCharacterString isEqualToString:@"U"])
+    {
+        aOrAnString = @"an";
+    }
     NSString *removedUnderscoresString = [stickerString stringByReplacingOccurrencesOfString:@"_" withString:@" "];
+    
     [CMNavBarNotificationView notifyWithText:[NSString stringWithFormat:@"%@", achievement]
-                                      detail:[NSString stringWithFormat:@"You got a %@ sticker!", removedUnderscoresString]
+                                      detail:[NSString stringWithFormat:@"You got %@ %@ sticker!", aOrAnString, removedUnderscoresString]
                                        image:notificationImage
                                  andDuration:3.0];
    
@@ -1260,10 +1267,7 @@
 
     
     [userDefaults synchronize];
-
 }
-
-
 
 
 - (IBAction)onOneButtonPressed:(id)sender

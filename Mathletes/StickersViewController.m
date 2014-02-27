@@ -179,7 +179,7 @@
     else if ([stickerName isEqualToString:@"Campfire"])
     {
         stickerRarityLabel.text = uncommon;
-        stickerDetailLabel.text = @"Campfire can get as hot as 2,000 degrees. Did you know hottest spot in the flame is blue?";
+        stickerDetailLabel.text = @"Campfires can get as hot as 2,000 degrees! Did you know the hottest spot in the flame is blue?";
     }
     
     //Rare stickers
