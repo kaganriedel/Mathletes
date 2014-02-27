@@ -56,70 +56,44 @@
     _operand = @"+";
     problemType = 0;
     
-    //[self createPlaceHolderGrid];
-    //[self queryForProblemType];
+
     [self queryForAllGridArrays];
-    //[self createGrid];
 }
 
 -(void)queryForAllGridArrays
 {
     PFQuery *additionQuery = [PFQuery queryWithClassName:@"MathProblem"];
-    //additionQuery.cachePolicy = kPFCachePolicyCacheElseNetwork;
     [additionQuery whereKey:@"problemType" equalTo:@0];
     [additionQuery whereKey:@"mathUser" equalTo:[PFUser currentUser]];
     [additionQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
      {
          additionGridArray = objects;
-         NSLog(@" Add %i", objects.count);
          [self createGrid];
      }];
     PFQuery *subtractionQuery = [PFQuery queryWithClassName:@"MathProblem"];
-    //subtractionQuery.cachePolicy = kPFCachePolicyCacheElseNetwork;
     [subtractionQuery whereKey:@"problemType" equalTo:@1];
     [subtractionQuery whereKey:@"mathUser" equalTo:[PFUser currentUser]];
     [subtractionQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
      {
          subtractionGridArray = objects;
-         NSLog(@"Subtract %i", objects.count);
-         //[self createGrid];
      }];
     PFQuery *multiplicationQuery = [PFQuery queryWithClassName:@"MathProblem"];
-    //multiplicationQuery.cachePolicy = kPFCachePolicyCacheElseNetwork;
     [multiplicationQuery whereKey:@"problemType" equalTo:@2];
     [multiplicationQuery whereKey:@"mathUser" equalTo:[PFUser currentUser]];
     [multiplicationQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
      {
          multiplicationGridArray = objects;
-         NSLog(@"Multiplication %i", objects.count);
-         //[self createGrid];
      }];
     PFQuery *divisionQuery = [PFQuery queryWithClassName:@"MathProblem"];
-    //divisionQuery.cachePolicy = kPFCachePolicyCacheElseNetwork;
     [divisionQuery whereKey:@"problemType" equalTo:@3];
     [divisionQuery whereKey:@"mathUser" equalTo:[PFUser currentUser]];
     [divisionQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
      {
          divisionGridArray = objects;
-         NSLog(@"Division %i", objects.count);
-         //[self createGrid];
      }];
 }
 
-/*
--(void)queryForProblemType
-{
-    PFQuery *problemQuery = [PFQuery queryWithClassName:@"MathProblem"];
-    problemQuery.cachePolicy = kPFCachePolicyCacheThenNetwork;
-    [problemQuery whereKey:@"problemType" equalTo:[NSNumber numberWithInt:problemType]];
-    [problemQuery whereKey:@"mathUser" equalTo:[PFUser currentUser]];
-    [problemQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
-     {
-         _gridArray = (NSMutableArray *)objects;
-         [self createGrid];
-     }];
-}
-*/
+
 
 -(void)createPlaceHolderGrid
 {
@@ -297,28 +271,24 @@
     {
         _operand = @"+";
         problemType = 0;
-        //[self queryForProblemType];
         [self createGrid];
     }
     else if (item == _subtractionTabBarItem)
     {
         _operand = @"-";
         problemType = 1;
-        //[self queryForProblemType];
         [self createGrid];
     }
     else if (item == _multiplicationTabBarItem)
     {
         _operand = @"x";
         problemType = 2;
-        //[self queryForProblemType];
         [self createGrid];
     }
     else if (item == _divisionTabBarItem)
     {
         _operand = @"/";
         problemType = 3;
-        //[self queryForProblemType];
         [self createGrid];
     }
 

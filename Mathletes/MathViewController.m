@@ -269,7 +269,6 @@
 {
     countDown ++;
     [progressView setProgress:countDown/120.0f];
-    NSLog(@"%i", countDown);
 
     if (countDown == 60)
     {
@@ -328,7 +327,6 @@
         if (mp2.equationDifficulty > 0)
         {
             firstNonZeroKey = i;
-            NSLog(@"%li", (long)firstNonZeroKey);
             break;
         }
     }
