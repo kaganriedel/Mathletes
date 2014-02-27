@@ -95,6 +95,8 @@
 		6D01199F18BEB3CF00D3AC4B /* app_icon-1024x1024.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D01199E18BEB3CF00D3AC4B /* app_icon-1024x1024.png */; };
 		6D0119A218BEB40400D3AC4B /* mobilemath_logo-100-100.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D0119A018BEB40400D3AC4B /* mobilemath_logo-100-100.png */; };
 		6D0119A318BEB40400D3AC4B /* mobilemath_logo-100-100@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D0119A118BEB40400D3AC4B /* mobilemath_logo-100-100@2x.png */; };
+		6D0119A618BEC05D00D3AC4B /* mobile_math_signup_brand_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D0119A418BEC05D00D3AC4B /* mobile_math_signup_brand_small.png */; };
+		6D0119A718BEC05D00D3AC4B /* mobile_math_signup_brand_small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D0119A518BEC05D00D3AC4B /* mobile_math_signup_brand_small@2x.png */; };
 		6D17BD5318AC1CFE009A7416 /* AchievementHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D17BD5218AC1CFE009A7416 /* AchievementHeader.m */; };
 		6D18826218A943DF003DCA92 /* StickersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D18826118A943DF003DCA92 /* StickersViewController.m */; };
 		6D18826518A94458003DCA92 /* StickerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D18826418A94458003DCA92 /* StickerCell.m */; };
@@ -247,6 +249,8 @@
 		6D01199E18BEB3CF00D3AC4B /* app_icon-1024x1024.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app_icon-1024x1024.png"; sourceTree = "<group>"; };
 		6D0119A018BEB40400D3AC4B /* mobilemath_logo-100-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mobilemath_logo-100-100.png"; sourceTree = "<group>"; };
 		6D0119A118BEB40400D3AC4B /* mobilemath_logo-100-100@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mobilemath_logo-100-100@2x.png"; sourceTree = "<group>"; };
+		6D0119A418BEC05D00D3AC4B /* mobile_math_signup_brand_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mobile_math_signup_brand_small.png; sourceTree = "<group>"; };
+		6D0119A518BEC05D00D3AC4B /* mobile_math_signup_brand_small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mobile_math_signup_brand_small@2x.png"; sourceTree = "<group>"; };
 		6D0F673218BBC9460098011A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		6D17BD5118AC1CFE009A7416 /* AchievementHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AchievementHeader.h; sourceTree = "<group>"; };
 		6D17BD5218AC1CFE009A7416 /* AchievementHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AchievementHeader.m; sourceTree = "<group>"; };
@@ -567,6 +571,8 @@
 		6DB92AD118BD965D00F33C77 /* Branding */ = {
 			isa = PBXGroup;
 			children = (
+				6D0119A418BEC05D00D3AC4B /* mobile_math_signup_brand_small.png */,
+				6D0119A518BEC05D00D3AC4B /* mobile_math_signup_brand_small@2x.png */,
 				2764F72E18BEACC800A20806 /* mobile_math_signup_brand@2x.png */,
 				2764F72F18BEACC800A20806 /* mobile_math_signup_brand.png */,
 				2764F72818BEAC2000A20806 /* mobilemath-splash_big@2x.png */,
@@ -786,6 +792,7 @@
 				6D92061118BDB15F00CCD4FA /* Palm_Tree.png in Resources */,
 				27FD30C918B6DC6100EE75A8 /* btn_subtraction_item_pressed@2x.png in Resources */,
 				27FD30DB18BA9E9900EE75A8 /* math_placeholder@2x.png in Resources */,
+				6D0119A618BEC05D00D3AC4B /* mobile_math_signup_brand_small.png in Resources */,
 				6D9205FF18BD9CC800CCD4FA /* tab_division@2x.png in Resources */,
 				27A4450618BCD673000C1335 /* ic_tabbaraddition_normal@2x.png in Resources */,
 				27FD308618B6CD6B00EE75A8 /* ic_correct.png in Resources */,
@@ -822,6 +829,7 @@
 				6DA5778318B42F21004B10F7 /* Puppy.png in Resources */,
 				27FD305B18B6CB9200EE75A8 /* btn_keypad_bg_pressed@2x.png in Resources */,
 				6D891EAE18A582EC0002B915 /* InfoPlist.strings in Resources */,
+				6D0119A718BEC05D00D3AC4B /* mobile_math_signup_brand_small@2x.png in Resources */,
 				27FD30DD18BA9EA900EE75A8 /* math_subtraction@2x.png in Resources */,
 				27FD307F18B6CD6B00EE75A8 /* ic_subtract_pressed@2x.png in Resources */,
 				27A4455118BD7B57000C1335 /* btn_achvmnt_item_normal.png in Resources */,
@@ -1025,8 +1033,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: kagan riedel (K67R3SLFMD)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: kagan riedel (K67R3SLFMD)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Mathletes/Mathletes-Prefix.pch";
 				INFOPLIST_FILE = "Mathletes/Mathletes-Info.plist";
@@ -1035,7 +1043,7 @@
 					"/Users/kaganriedel/MM\\ 2014/Mathletes/Mathletes/TestFlightSDK2",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "A49FEC21-373D-44E1-B7E9-049B2287CC5E";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1046,8 +1054,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: kagan riedel (K67R3SLFMD)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: kagan riedel (K67R3SLFMD)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Mathletes/Mathletes-Prefix.pch";
 				INFOPLIST_FILE = "Mathletes/Mathletes-Info.plist";
@@ -1056,7 +1064,7 @@
 					"/Users/kaganriedel/MM\\ 2014/Mathletes/Mathletes/TestFlightSDK2",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "A49FEC21-373D-44E1-B7E9-049B2287CC5E";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

@@ -20,28 +20,14 @@
 {
     [MathProblem registerSubclass];
     
-    [Parse setApplicationId:@"vb9F56CN5rn2vlHTkSdLaK9FUxq8FPm4il591nrD"
-                  clientKey:@"AsI9RBBeUBTBu6P62bowMXM0pXptMEj4OEukYKOq"];
+    [Parse setApplicationId:@"DYwmHqDRPFMmAn5gaulHImcWfKlVckSNeG5mogFK"
+                  clientKey:@"QXRSv8KEyy5XfdQX5OkpAXmkHfDtZu4thZPTBfNB"];
 
     [TestFlight takeOff:@"7641949c-3744-4c69-ae2b-4261835e67e9"];
-    
-    [application registerForRemoteNotificationTypes: UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeSound];
-    
+
     return YES;
 }
 
-- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)newDeviceToken
-{
-    // Store the deviceToken in the current installation and save it to Parse.
-    PFInstallation *currentInstallation = [PFInstallation currentInstallation];
-    [currentInstallation setDeviceTokenFromData:newDeviceToken];
-    [currentInstallation saveInBackground];
-}
-
-- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
-{
-    [PFPush handlePush:userInfo];
-}
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {

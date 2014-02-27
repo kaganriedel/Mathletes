@@ -72,10 +72,16 @@
     self.logInView.logInButton.clipsToBounds = YES;
     self.logInView.logInButton.layer.cornerRadius = 5.0;
     
-    [self.logInView setLogo:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"mobile_math_signup_brand"]]];
+    if (self.view.frame.size.height > 500)
+    {
+        [self.logInView setLogo:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"mobile_math_signup_brand"]]];
+    }
+    else
+    {
+        [self.logInView setLogo:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"mobile_math_signup_brand_small"]]];
+
+    }
     
-    //[self.logInView.logInButton setFrame:CGRectMake(35.0f, 385.0f, 250.0f, 40.0f)];
-    //[self.logInView.signUpButton setFrame:CGRectMake(35.0f, 385.0f, 250.0f, 40.0f)];
     
 }
 
