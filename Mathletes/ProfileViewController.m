@@ -175,15 +175,15 @@
 
     if (self.view.frame.size.height > 500)
     {
-        loadView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"mobilemath-splash_big"]];
+        loadView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"mobilemath-splash_big.png"]];
         loadLabel.frame = CGRectMake(50, 375, 220, 80);
-        spinner.center = CGPointMake(160, 75);
+        spinner.center = CGPointMake(160, 340);
     }
     else
     {
-        loadView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"mobilemath-splash_small"]];
+        loadView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"mobilemath-splash_small.png"]];
         loadLabel.frame = CGRectMake(50, 330, 240, 80);
-        spinner.center = CGPointMake(160, 45);
+        spinner.center = CGPointMake(160, 310);
     }
     
     _userArray = [self cardDifficulty];
@@ -218,7 +218,7 @@
     }
     else
     {
-        [profileButton setImage:[UIImage imageNamed:@"math_image_all.png"] forState:UIControlStateNormal];
+        [profileButton setImage:[UIImage imageNamed:@"mobilemath_logo-100-100.png"] forState:UIControlStateNormal];
     }
 }
 
