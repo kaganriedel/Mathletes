@@ -229,12 +229,12 @@
     else if ([stickerName isEqualToString:@"Pirate_Ship"])
     {
         stickerRarityLabel.text = uncommon;
-        stickerDetailLabel.text = @"Pirate ship facts";
+        stickerDetailLabel.text = @"Pirates started sailing the seas more than 600 years ago! Did you know the name of the pirate flag is the “Jolly Roger”? Arrr!";
     }
     else if ([stickerName isEqualToString:@"Tent"])
     {
         stickerRarityLabel.text = uncommon;
-        stickerDetailLabel.text = @"Tent facts";
+        stickerDetailLabel.text = @"Originally tents were made of animal skins. Since the 1970s they’ve been made of synthetic materials like nylon and polyester!";
     }
     
     //Rare stickers
@@ -251,7 +251,7 @@
     else if ([stickerName isEqualToString:@"Panda"])
     {
         stickerRarityLabel.text = rare;
-        stickerDetailLabel.text = @"Panda facts";
+        stickerDetailLabel.text = @"Pandas weigh around 250 pounds and live up to 30 years! Did you know pandas eat as much as 45 pounds of bamboo a day?";
     }
     
     //to be decided

@@ -728,7 +728,7 @@
         }
         else if (newTotalSubs >= 275)
         {
-            [self checkForAchievement:@"Take It Away 275!" Minimum:61 Maximum:100];
+            [self checkForAchievement:@"Take It Away x275!" Minimum:61 Maximum:100];
         }
         else if (newTotalSubs >= 250)
         {
@@ -861,7 +861,7 @@
         }
         else if (newTotalMults >= 275)
         {
-            [self checkForAchievement:@"Multiplicity 275!" Minimum:61 Maximum:100];
+            [self checkForAchievement:@"Multiplicity x275!" Minimum:61 Maximum:100];
         }
         else if (newTotalMults >= 250)
         {
@@ -992,7 +992,7 @@
         }
         else if (newTotalDivides >= 275)
         {
-            [self checkForAchievement:@"Divide And Conquer 275!" Minimum:61 Maximum:100];
+            [self checkForAchievement:@"Divide And Conquer x275!" Minimum:61 Maximum:100];
         }
         else if (newTotalDivides >= 250)
         {
