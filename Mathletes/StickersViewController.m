@@ -164,6 +164,31 @@
         stickerRarityLabel.text = common;
         stickerDetailLabel.text = @"Rockets travel at 17,500 miles per hour to lift off and they burn more than 500,000 gallons of fuel. Blast off!";
     }
+    else if ([stickerName isEqualToString:@"Kitten"])
+    {
+        stickerRarityLabel.text = common;
+        stickerDetailLabel.text = @"Did you know cats can jump five times their height? On average cats sleep 16 hours a day. Cat nap!";
+    }
+    else if ([stickerName isEqualToString:@"Fish"])
+    {
+        stickerRarityLabel.text = common;
+        stickerDetailLabel.text = @"There are over 30,000 known types of fish. The fastest fish can swim at speeds of up to 68 mph!";
+    }
+    else if ([stickerName isEqualToString:@"Earth"])
+    {
+        stickerRarityLabel.text = common;
+        stickerDetailLabel.text = @"About 70% of the Earth is covered in water! Did you know the Earth is about 4.54 billion years old?";
+    }
+    else if ([stickerName isEqualToString:@"Galaxy"])
+    {
+        stickerRarityLabel.text = common;
+        stickerDetailLabel.text = @"A galaxy is a group of millions or billions of stars. The Earth is part of the galaxy called the Milky Way!";
+    }
+    else if ([stickerName isEqualToString:@"Train"])
+    {
+        stickerRarityLabel.text = common;
+        stickerDetailLabel.text = @"Trains can carry big, heavy loads across long distances. The heaviest train in the world was heavier than 27,000 elephants!";
+    }
     
     //Uncommon stickers
     else if ([stickerName isEqualToString:@"Flower"])
@@ -181,36 +206,54 @@
         stickerRarityLabel.text = uncommon;
         stickerDetailLabel.text = @"Campfires can get as hot as 2,000 degrees! Did you know the hottest spot in the flame is blue?";
     }
+    else if ([stickerName isEqualToString:@"Giraffe"])
+    {
+        stickerRarityLabel.text = uncommon;
+        stickerDetailLabel.text = @"Giraffes are the tallest mammals on Earth. Their legs alone are taller than most people at 6 feet tall!";
+    }
+    else if ([stickerName isEqualToString:@"Comet"])
+    {
+        stickerRarityLabel.text = uncommon;
+        stickerDetailLabel.text = @"Comets are sometimes called dirty snowballs because they are made of ice and water along with dust, rocks and gases!";
+    }
+    else if ([stickerName isEqualToString:@"Sports_Car"])
+    {
+        stickerRarityLabel.text = uncommon;
+        stickerDetailLabel.text = @"The first car was invented in 1886 and could only go 10 miles per hour. Now, the fastest car can go 270 miles per hour!";
+    }
+    else if ([stickerName isEqualToString:@"School_Bus"])
+    {
+        stickerRarityLabel.text = uncommon;
+        stickerDetailLabel.text = @"School buses can carry up to 60 kids to school! Did you know school busses are yellow because it is safer and easier to see them?";
+    }
     
     //Rare stickers
-    else if ([stickerName isEqualToString:@"Murray"])
-    {
-        stickerRarityLabel.text = rare;
-        stickerDetailLabel.text = @"Did you know? Bill Murray knows.";
-    }
     else if ([stickerName isEqualToString:@"Watermelon"])
     {
         stickerRarityLabel.text = rare;
         stickerDetailLabel.text = @"The average watermelon has 350 seeds and is 92% water. Some watermelons can weigh up to 90 pounds!";
     }
-    
+    else if ([stickerName isEqualToString:@"Helicopter"])
+    {
+        stickerRarityLabel.text = rare;
+        stickerDetailLabel.text = @"Helicopters can fly in all directions and their blades can spin 500 times per minute!";
+    }
+    else if ([stickerName isEqualToString:@"Panda"])
+    {
+        stickerRarityLabel.text = rare;
+        stickerDetailLabel.text = @"Panda facts";
+    }
     
     //to be decided
-    else if ([stickerName isEqualToString:@"Kitten"])
+
+    else if ([stickerName isEqualToString:@"Pirate_Ship"])
     {
-        stickerRarityLabel.text = common;
-        stickerDetailLabel.text = @"Did you know cats can jump five times their height? On average cats sleep 16 hours a day. Cat nap!";
+        stickerRarityLabel.text = uncommon;
+        stickerDetailLabel.text = @"Pirate ship";
     }
-    else if ([stickerName isEqualToString:@"Fish"])
-    {
-        stickerRarityLabel.text = common;
-        stickerDetailLabel.text = @"There are over 30,000 known types of fish. The fastest fish can swim at speeds of up to 68 mph!";
-    }
-    else if ([stickerName isEqualToString:@"Giraffe"])
-    {
-        stickerRarityLabel.text = common;
-        stickerDetailLabel.text = @"Giraffes are the tallest mammals on Earth. Their legs alone are taller than most people at 6 feet tall!";
-    }
+    
+
+   
     else if ([stickerName isEqualToString:@"Cherry"])
     {
         stickerRarityLabel.text = common;
@@ -225,41 +268,6 @@
     {
         stickerRarityLabel.text = common;
         stickerDetailLabel.text = @"No sound can be heard on the Moon, and the sky is always black there. Did you know the moon is about 27% the size of the Earth?";
-    }
-    else if ([stickerName isEqualToString:@"Earth"])
-    {
-        stickerRarityLabel.text = common;
-        stickerDetailLabel.text = @"About 70% of the Earth is covered in water! Did you know the Earth is about 4.54 billion years old?";
-    }
-    else if ([stickerName isEqualToString:@"Galaxy"])
-    {
-        stickerRarityLabel.text = common;
-        stickerDetailLabel.text = @"A galaxy is a group of millions or billions of stars. The Earth is part of the galaxy called the Milky Way!";
-    }
-    else if ([stickerName isEqualToString:@"Comet"])
-    {
-        stickerRarityLabel.text = common;
-        stickerDetailLabel.text = @"Comets are sometimes called dirty snowballs because they are made of ice and water along with dust, rocks and gases!";
-    }
-    else if ([stickerName isEqualToString:@"Sports_Car"])
-    {
-        stickerRarityLabel.text = common;
-        stickerDetailLabel.text = @"The first car was invented in 1886 and could only go 10 miles per hour. Now, the fastest car can go 270 miles per hour!";
-    }
-    else if ([stickerName isEqualToString:@"Train"])
-    {
-        stickerRarityLabel.text = common;
-        stickerDetailLabel.text = @"Trains can carry big, heavy loads across long distances. The heaviest train in the world was heavier than 27,000 elephants!";
-    }
-    else if ([stickerName isEqualToString:@"School_Bus"])
-    {
-        stickerRarityLabel.text = common;
-        stickerDetailLabel.text = @"School buses can carry up to 60 kids to school! Did you know school busses are yellow because it is safer and easier to see them?";
-    }
-    else if ([stickerName isEqualToString:@"Helicopter"])
-    {
-        stickerRarityLabel.text = common;
-        stickerDetailLabel.text = @"Helicopters can fly in all directions and their blades can spin 500 times per minute!";
     }
     else if ([stickerName isEqualToString:@"Motorcycle"])
     {

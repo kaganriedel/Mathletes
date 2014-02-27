@@ -102,6 +102,7 @@
     inputLabel.font = [UIFont fontWithName:@"Miso-Bold" size:40];
     
     progressImageView = [[UIImageView alloc] initWithFrame:CGRectMake(275, 10, 35, 35)];
+    progressImageView.image = [UIImage imageNamed:@"ic_correctface"];
     progressImageView.backgroundColor = [UIColor myGreenColor];
     progressImageView.clipsToBounds = YES;
     progressImageView.layer.cornerRadius = 17.5;
@@ -272,7 +273,7 @@
 
     if (countDown == 60)
     {
-        progressImageView.image = [UIImage imageNamed:@"ic_correct"];
+        progressImageView.image = [UIImage imageNamed:@"ic_checkmark"];
     }
     if (countDown == 120)
     {
@@ -498,12 +499,13 @@
     if (countDown <= 60)
     {
         responseImageView.image = [UIImage imageNamed:@"ic_correctface"];
+        feedbackLabel.text = @"Great!";
     }
     else
     {
         responseImageView.image = [UIImage imageNamed:@"ic_correct.png"];
+        feedbackLabel.text = @"Correct!";
     }
-    feedbackLabel.text = @"Correct!";
     
     NSInteger proficiencyChange = currentMathProblem.equationDifficulty;
     
@@ -1198,77 +1200,149 @@
 
     NSArray *stickerArray = [NSArray stickerArray];
     //common
-    if (randomSticker <= 8)
+    if (randomSticker <= 5)
     {
         stickerString = stickerArray[0];
         [user increaseKey:[NSString stringWithFormat:@"%@Count", stickerString]];
         notificationImage = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", stickerString]];
     }
-    else if (randomSticker <= 16)
+    else if (randomSticker <= 10)
     {
         stickerString = stickerArray[1];
         [user increaseKey:[NSString stringWithFormat:@"%@Count", stickerString]];
         notificationImage = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", stickerString]];
     }
-    else if (randomSticker <= 24)
+    else if (randomSticker <= 15)
     {
         stickerString = stickerArray[2];
         [user increaseKey:[NSString stringWithFormat:@"%@Count", stickerString]];
         notificationImage = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", stickerString]];
     }
-    else if (randomSticker <= 36)
+    else if (randomSticker <= 20)
     {
         stickerString = stickerArray[3];
         [user increaseKey:[NSString stringWithFormat:@"%@Count", stickerString]];
         notificationImage = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", stickerString]];
     }
-    else if (randomSticker <= 42)
+    else if (randomSticker <= 25)
     {
         stickerString = stickerArray[4];
         [user increaseKey:[NSString stringWithFormat:@"%@Count", stickerString]];
         notificationImage = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", stickerString]];
     }
-    else if (randomSticker <= 51)
+    else if (randomSticker <= 30)
     {
         stickerString = stickerArray[5];
         [user increaseKey:[NSString stringWithFormat:@"%@Count", stickerString]];
         notificationImage = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", stickerString]];
     }
-    else if (randomSticker <= 60)
+    else if (randomSticker <= 35)
     {
         stickerString = stickerArray[6];
         [user increaseKey:[NSString stringWithFormat:@"%@Count", stickerString]];
         notificationImage = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", stickerString]];
     }
-    //uncommon
-    else if (randomSticker <= 70)
+    else if (randomSticker <= 40)
     {
         stickerString = stickerArray[7];
         [user increaseKey:[NSString stringWithFormat:@"%@Count", stickerString]];
         notificationImage = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", stickerString]];
     }
-    else if (randomSticker <= 81)
+    else if (randomSticker <= 45)
     {
         stickerString = stickerArray[8];
         [user increaseKey:[NSString stringWithFormat:@"%@Count", stickerString]];
         notificationImage = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", stickerString]];
     }
-    else if (randomSticker <= 92)
+    else if (randomSticker <= 50)
     {
         stickerString = stickerArray[9];
         [user increaseKey:[NSString stringWithFormat:@"%@Count", stickerString]];
         notificationImage = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", stickerString]];
     }
-    //rare
-    else if (randomSticker <= 96)
+    else if (randomSticker <= 55)
     {
         stickerString = stickerArray[10];
         [user increaseKey:[NSString stringWithFormat:@"%@Count", stickerString]];
         notificationImage = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", stickerString]];
     }
-    else if (randomSticker <= 100)
+    else if (randomSticker <= 60)
     {
         stickerString = stickerArray[11];
+        [user increaseKey:[NSString stringWithFormat:@"%@Count", stickerString]];
+        notificationImage = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", stickerString]];
+    }
+    //uncommon
+    else if (randomSticker <= 64)
+    {
+        stickerString = stickerArray[12];
+        [user increaseKey:[NSString stringWithFormat:@"%@Count", stickerString]];
+        notificationImage = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", stickerString]];
+    }
+    else if (randomSticker <=68)
+    {
+        stickerString = stickerArray[13];
+        [user increaseKey:[NSString stringWithFormat:@"%@Count", stickerString]];
+        notificationImage = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", stickerString]];
+    }
+    else if (randomSticker <= 72)
+    {
+        stickerString = stickerArray[14];
+        [user increaseKey:[NSString stringWithFormat:@"%@Count", stickerString]];
+        notificationImage = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", stickerString]];
+    }
+    else if (randomSticker <= 76)
+    {
+        stickerString = stickerArray[15];
+        [user increaseKey:[NSString stringWithFormat:@"%@Count", stickerString]];
+        notificationImage = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", stickerString]];
+    }
+    else if (randomSticker <= 80)
+    {
+        stickerString = stickerArray[16];
+        [user increaseKey:[NSString stringWithFormat:@"%@Count", stickerString]];
+        notificationImage = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", stickerString]];
+    }
+    else if (randomSticker <= 84)
+    {
+        stickerString = stickerArray[17];
+        [user increaseKey:[NSString stringWithFormat:@"%@Count", stickerString]];
+        notificationImage = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", stickerString]];
+    }
+    else if (randomSticker <= 88)
+    {
+        stickerString = stickerArray[18];
+        [user increaseKey:[NSString stringWithFormat:@"%@Count", stickerString]];
+        notificationImage = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", stickerString]];
+    }
+    else if (randomSticker <= 92)
+    {
+        stickerString = stickerArray[19];
+        [user increaseKey:[NSString stringWithFormat:@"%@Count", stickerString]];
+        notificationImage = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", stickerString]];
+    }
+    //rare
+    else if (randomSticker <= 94)
+    {
+        stickerString = stickerArray[20];
+        [user increaseKey:[NSString stringWithFormat:@"%@Count", stickerString]];
+        notificationImage = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", stickerString]];
+    }
+    else if (randomSticker <= 96)
+    {
+        stickerString = stickerArray[21];
+        [user increaseKey:[NSString stringWithFormat:@"%@Count", stickerString]];
+        notificationImage = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", stickerString]];
+    }
+    else if (randomSticker <= 98)
+    {
+        stickerString = stickerArray[22];
+        [user increaseKey:[NSString stringWithFormat:@"%@Count", stickerString]];
+        notificationImage = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", stickerString]];
+    }
+    else if (randomSticker <= 100)
+    {
+        stickerString = stickerArray[23];
         [user increaseKey:[NSString stringWithFormat:@"%@Count", stickerString]];
         notificationImage = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", stickerString]];
     }
