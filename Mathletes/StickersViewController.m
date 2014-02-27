@@ -157,7 +157,7 @@
     else if ([stickerName isEqualToString:@"Palm_Tree"])
     {
         stickerRarityLabel.text = common;
-        stickerDetailLabel.text = @"There are nearly 3,000 different species of Palm trees in the world. The tallest palm tree is almost 230 feet!";
+        stickerDetailLabel.text = @"There are nearly 3,000 different species of palm trees in the world. The tallest palm tree is almost 230 feet!";
     }
     else if ([stickerName isEqualToString:@"Rocket_Ship"])
     {
@@ -192,6 +192,79 @@
     {
         stickerRarityLabel.text = rare;
         stickerDetailLabel.text = @"The average watermelon has 350 seeds and is 92% water. Some watermelons can weigh up to 90 pounds!";
+    }
+    
+    
+    //to be decided
+    else if ([stickerName isEqualToString:@"Kitten"])
+    {
+        stickerRarityLabel.text = common;
+        stickerDetailLabel.text = @"Did you know cats can jump five times their height? On average cats sleep 16 hours a day. Cat nap!";
+    }
+    else if ([stickerName isEqualToString:@"Fish"])
+    {
+        stickerRarityLabel.text = common;
+        stickerDetailLabel.text = @"There are over 30,000 known types of fish. The fastest fish can swim at speeds of up to 68 mph!";
+    }
+    else if ([stickerName isEqualToString:@"Giraffe"])
+    {
+        stickerRarityLabel.text = common;
+        stickerDetailLabel.text = @"Giraffes are the tallest mammals on Earth. Their legs alone are taller than most people at 6 feet tall!";
+    }
+    else if ([stickerName isEqualToString:@"Cherry"])
+    {
+        stickerRarityLabel.text = common;
+        stickerDetailLabel.text = @"About 300 million pounds of cherries are produced each year! Did you know an average cherry tree holds enough cherries to make 28 cherry pies?";
+    }
+    else if ([stickerName isEqualToString:@"Pine_Tree"])
+    {
+        stickerRarityLabel.text = common;
+        stickerDetailLabel.text = @"Some types of pine trees can reach over 250 feet in height. The oldest living pine tree is 4,840 years old!";
+    }
+    else if ([stickerName isEqualToString:@"Moon"])
+    {
+        stickerRarityLabel.text = common;
+        stickerDetailLabel.text = @"No sound can be heard on the Moon, and the sky is always black there. Did you know the moon is about 27% the size of the Earth?";
+    }
+    else if ([stickerName isEqualToString:@"Earth"])
+    {
+        stickerRarityLabel.text = common;
+        stickerDetailLabel.text = @"About 70% of the Earth is covered in water! Did you know the Earth is about 4.54 billion years old?";
+    }
+    else if ([stickerName isEqualToString:@"Galaxy"])
+    {
+        stickerRarityLabel.text = common;
+        stickerDetailLabel.text = @"A galaxy is a group of millions or billions of stars. The Earth is part of the galaxy called the Milky Way!";
+    }
+    else if ([stickerName isEqualToString:@"Comet"])
+    {
+        stickerRarityLabel.text = common;
+        stickerDetailLabel.text = @"Comets are sometimes called dirty snowballs because they are made of ice and water along with dust, rocks and gases!";
+    }
+    else if ([stickerName isEqualToString:@"Sports_Car"])
+    {
+        stickerRarityLabel.text = common;
+        stickerDetailLabel.text = @"The first car was invented in 1886 and could only go 10 miles per hour. Now, the fastest car can go 270 miles per hour!";
+    }
+    else if ([stickerName isEqualToString:@"Train"])
+    {
+        stickerRarityLabel.text = common;
+        stickerDetailLabel.text = @"Trains can carry big, heavy loads across long distances. The heaviest train in the world was heavier than 27,000 elephants!";
+    }
+    else if ([stickerName isEqualToString:@"School_Bus"])
+    {
+        stickerRarityLabel.text = common;
+        stickerDetailLabel.text = @"School buses can carry up to 60 kids to school! Did you know school busses are yellow because it is safer and easier to see them?";
+    }
+    else if ([stickerName isEqualToString:@"Helicopter"])
+    {
+        stickerRarityLabel.text = common;
+        stickerDetailLabel.text = @"Helicopters can fly in all directions and their blades can spin 500 times per minute!";
+    }
+    else if ([stickerName isEqualToString:@"Motorcycle"])
+    {
+        stickerRarityLabel.text = common;
+        stickerDetailLabel.text = @"Did you know up to 8 motorcycles can fit in a parking space for one car? The fastest motorcycle can go 250 miles per hour!";
     }
     
     

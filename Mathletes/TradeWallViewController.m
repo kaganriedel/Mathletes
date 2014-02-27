@@ -108,7 +108,9 @@
     }
     else
     {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Trade" message:[NSString stringWithFormat:@"Do you want to accept this trade?\nGive 1 %@ sticker.\nGet 1 %@ sticker.", [cell.trade objectForKey:@"get"], [cell.trade objectForKey:@"give"]] delegate:self cancelButtonTitle:@"No Thanks" otherButtonTitles:@"Accept Trade", nil];
+        NSString *getUnderscoreRemovedString = [[cell.trade objectForKey:@"get"] stringByReplacingOccurrencesOfString:@"_" withString:@" "];
+        NSString *giveUnderscoreRemovedString = [[cell.trade objectForKey:@"give"] stringByReplacingOccurrencesOfString:@"_" withString:@" "];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Trade" message:[NSString stringWithFormat:@"Do you want to accept this trade?\nGive 1 %@ sticker.\nGet 1 %@ sticker.", getUnderscoreRemovedString, giveUnderscoreRemovedString] delegate:self cancelButtonTitle:@"No Thanks" otherButtonTitles:@"Accept Trade", nil];
         alert.tag = 1;
         [alert show];
     }
@@ -149,7 +151,8 @@
             PFObject *trade = cell.trade;
             if([[user objectForKey:[NSString stringWithFormat:@"%@Count", [trade objectForKey:@"get"]]] intValue] <= 0)
             {
-                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Sorry!" message:[NSString stringWithFormat:@"Sorry! You don't have any %@ stickers to trade.", [trade objectForKey:@"get"]] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+                NSString *underscoreRemovedString = [[trade objectForKey:@"get"] stringByReplacingOccurrencesOfString:@"_" withString:@" "];
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Sorry!" message:[NSString stringWithFormat:@"Sorry! You don't have any %@ stickers to trade.", underscoreRemovedString] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
                 [alert show];
                 [tradeTableView deselectRowAtIndexPath:[tradeTableView indexPathForSelectedRow] animated:YES];
             }

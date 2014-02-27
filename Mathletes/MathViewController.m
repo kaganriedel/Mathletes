@@ -9,6 +9,7 @@
 #import "MathViewController.h"
 #import "MathProblem.h"
 #import "CMNavBarNotificationView/CMNavBarNotificationView.h"
+#import "BKECircularProgressView.h"
 
 
 @interface MathViewController () <UIAlertViewDelegate>
@@ -35,6 +36,8 @@
     __weak IBOutlet UIImageView *operatorImageView;
     __weak IBOutlet UIImageView *responseImageView;
     __weak IBOutlet UIView *mathProblemView;
+    UIImageView *progressImageView;
+    BKECircularProgressView *progressView;
     
     NSMutableArray *mathProblems;
     NSInteger difficulty;
@@ -66,6 +69,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
     oneButton.exclusiveTouch = twoButton.exclusiveTouch = threeButton.exclusiveTouch = fourButton.exclusiveTouch = fiveButton.exclusiveTouch = sixButton.exclusiveTouch = sevenButton.exclusiveTouch = eightButton.exclusiveTouch = nineButton.exclusiveTouch = zeroButton.exclusiveTouch = goButton.exclusiveTouch = newButton.exclusiveTouch = backSpaceButton.exclusiveTouch = YES;
     
     user = [PFUser currentUser];
@@ -73,7 +77,8 @@
     
     [self buildView];
 
-    for (UILabel* label in mathProblemView.subviews) {
+    for (UILabel* label in mathProblemView.subviews)
+    {
         if([label isKindOfClass:[UILabel class]])
         {
             label.font = [UIFont fontWithName:@"Miso-Bold" size:40];
@@ -95,6 +100,20 @@
    
     feedbackLabel.font = [UIFont fontWithName:@"Miso-Bold" size:34];
     inputLabel.font = [UIFont fontWithName:@"Miso-Bold" size:40];
+    
+    progressImageView = [[UIImageView alloc] initWithFrame:CGRectMake(275, 10, 35, 35)];
+    progressImageView.backgroundColor = [UIColor myGreenColor];
+    progressImageView.clipsToBounds = YES;
+    progressImageView.layer.cornerRadius = 17.5;
+    [self.view insertSubview:progressImageView atIndex:0];
+
+    
+    progressView = [[BKECircularProgressView alloc] initWithFrame:CGRectMake(275, 10, 35, 35)];
+    [progressView setProgressTintColor:[UIColor myBlueColor]];
+    [progressView setBackgroundTintColor:[UIColor whiteColor]];
+    [progressView setLineWidth:2.0f];
+    [progressView setProgress:0.0f];
+    [self.view insertSubview:progressView atIndex:1];
     
     completedProblems = NO;
     timeIsUp = NO;
@@ -160,22 +179,18 @@
     
     [problemQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
      {
-         _userArray = (NSMutableArray *)objects;
+         _userArray = objects;
          
          [self startTimer];
          [self newMathProblem];
      }];
-    
 }
 
 - (void)buildView
 {
-
     _operationLabel.text = _operationType;
     newButton.alpha = 0.0;
     feedbackView.alpha = 0.0;
-    
-
     
     goButton.layer.cornerRadius = 35.0;
     goButton.layer.borderColor = [UIColor colorWithRed:184.0/255.0 green:184.0/255.0 blue:184.0/255.0 alpha:1].CGColor;
@@ -246,17 +261,23 @@
 -(void)startTimer
 {
     countDown = 0;
-    countDownTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(timerFired:) userInfo:nil repeats:YES];
+    countDownTimer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(timerFired:) userInfo:nil repeats:YES];
 }
 
 -(void)timerFired:(NSTimer *)timer
 {
     countDown ++;
+    [progressView setProgress:countDown/120.0f];
     NSLog(@"%i", countDown);
 
-    if (countDown == 10)
+    if (countDown == 60)
+    {
+        progressImageView.image = [UIImage imageNamed:@"ic_correct"];
+    }
+    if (countDown == 120)
     {
         [countDownTimer invalidate];
+        [progressView setProgress:0.0f];
         timeIsUp = YES;
         feedbackLabel.text = @"Sorry! Time is up!";
         
@@ -315,6 +336,8 @@
 
 -(void)newMathProblem
 {
+    [progressView setProgress:0.0f];
+    progressImageView.image = [UIImage imageNamed:@"ic_correctface"];
     newButton.alpha = 0.0;
     goButton.alpha = 1.0;
     feedbackLabel.text = nil;
@@ -472,7 +495,7 @@
     inputLabel.text = @"";
     feedbackView.alpha = 1.0;
     feedbackView.backgroundColor = [UIColor colorWithRed:130.0/255.0 green:183.0/255.0 blue:53.0/255.0 alpha:1.0];
-    if (countDown <= 6)
+    if (countDown <= 60)
     {
         responseImageView.image = [UIImage imageNamed:@"ic_correctface"];
     }
