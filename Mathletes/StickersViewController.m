@@ -320,6 +320,8 @@
     cell.imageView.layer.cornerRadius = 35.0;
     cell.stickerImageName = stickerArray[indexPath.row];
     cell.countLabel.font = [UIFont fontWithName:@"Miso-Bold" size:14.0f];
+    cell.layer.shouldRasterize = YES;
+    cell.layer.rasterizationScale = [UIScreen mainScreen].scale;
     
     cell.count = [user objectForKey:[NSString stringWithFormat:@"%@Count", stickerArray[indexPath.row]]] ?: @(0);
     if (cell.count.integerValue == 0)

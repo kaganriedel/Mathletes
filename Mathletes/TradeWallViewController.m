@@ -1,6 +1,6 @@
 //
 //  TradeWallViewController.m
-//  Mathletes
+//  ;
 //
 //  Created by Kagan Riedel on 2/16/14.
 //  Copyright (c) 2014 Kagan Riedel. All rights reserved.
@@ -31,6 +31,7 @@
 
     user = [PFUser currentUser];
     
+    tradeTableView.separatorColor = [UIColor lightGrayColor];    
 }
 
 
