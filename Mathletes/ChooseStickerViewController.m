@@ -57,7 +57,8 @@
     cell.imageView.image = [UIImage imageNamed:userStickers[indexPath.row]];
     cell.imageName = userStickers[indexPath.row];
     cell.imageView.layer.cornerRadius = 34.0;
-
+    cell.layer.shouldRasterize = YES;
+    cell.layer.rasterizationScale = [UIScreen mainScreen].scale;
     
     return cell;
 }

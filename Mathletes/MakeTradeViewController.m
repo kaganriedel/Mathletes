@@ -91,7 +91,6 @@
                 [user saveInBackground];
             }
         }];
-//        [self.navigationController popViewControllerAnimated:YES];
         [self performSegueWithIdentifier:@"unwindToTradeWall" sender:self];
     }
 }

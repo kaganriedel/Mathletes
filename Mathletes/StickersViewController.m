@@ -255,11 +255,6 @@
     }
     
     //to be decided
-
-
-
-
-   
     else if ([stickerName isEqualToString:@"Cherry"])
     {
         stickerRarityLabel.text = common;
