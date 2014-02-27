@@ -266,21 +266,12 @@
         MySignInViewController *signUpViewController = [MySignInViewController new];
         signUpViewController.delegate = self;
         loginViewController.signUpController = signUpViewController;
-        //loginViewController.signUpController = self;
         
         [self presentViewController:loginViewController animated:YES completion:NULL];
         [self presentViewController:signUpViewController animated:YES completion:NULL];
-        
-        /*
-        PFLogInViewController *login = [PFLogInViewController new];
-        login.delegate = self;
-        login.signUpController.delegate = self;
-        [self presentViewController:login animated:animated completion:nil];
-         */
     }
     else
     {
-        
         PFQuery *query = [PFQuery queryWithClassName:@"AcceptedTrade"];
         [query whereKey:@"user" equalTo:[PFUser currentUser]];
         [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
@@ -294,7 +285,6 @@
             }
             [user saveInBackground];
         }];
-
     }
 }
 
@@ -822,7 +812,6 @@
     {
         [userDefaults setBool:YES forKey:@"Dividing At 15 \nMiles Per Hour!"];
     }
-
     
     //total math problems
     int totalMathProblems = [[user objectForKey:@"totalAdds"] intValue] + [[user objectForKey:@"totalSubs"] intValue] + [[user objectForKey:@"totalMults"] intValue] + [[user objectForKey:@"totalDivides"] intValue];
