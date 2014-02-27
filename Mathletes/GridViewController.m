@@ -164,7 +164,7 @@
                     
                     [subtractionGridArray enumerateObjectsUsingBlock:^(MathProblem *problem, NSUInteger idx, BOOL *stop)
                      {
-                         NSString *valuesString = [NSString stringWithFormat: @"%i%i", problem.firstValue, problem.secondValue];
+                         NSString *valuesString = [NSString stringWithFormat: @"%li%i", (long)problem.firstValue, problem.secondValue];
                          
                          if ([valuesString isEqualToString:gridValues])
                          {
@@ -185,7 +185,7 @@
                 
                 [additionGridArray enumerateObjectsUsingBlock:^(MathProblem *problem, NSUInteger idx, BOOL *stop)
                  {
-                     NSString *valuesString = [NSString stringWithFormat: @"%i%i", problem.firstValue, problem.secondValue];
+                     NSString *valuesString = [NSString stringWithFormat: @"%li%i", (long)problem.firstValue, problem.secondValue];
                      
                      if ([valuesString isEqualToString:gridValues])
                      {
@@ -206,7 +206,7 @@
                     
                     [divisionGridArray enumerateObjectsUsingBlock:^(MathProblem *problem, NSUInteger idx, BOOL *stop)
                      {
-                         NSString *valuesString = [NSString stringWithFormat: @"%i%i", problem.firstValue, problem.secondValue];
+                         NSString *valuesString = [NSString stringWithFormat: @"%li%i", (long)problem.firstValue, problem.secondValue];
                          
                          if ([valuesString isEqualToString:gridValues])
                          {
@@ -226,7 +226,7 @@
                 
                 [multiplicationGridArray enumerateObjectsUsingBlock:^(MathProblem *problem, NSUInteger idx, BOOL *stop)
                  {
-                     NSString *valuesString = [NSString stringWithFormat: @"%i%i", problem.firstValue, problem.secondValue];
+                     NSString *valuesString = [NSString stringWithFormat: @"%li%i", (long)problem.firstValue, problem.secondValue];
                      
                      if ([valuesString isEqualToString:gridValues])
                      {

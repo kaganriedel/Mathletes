@@ -406,8 +406,8 @@
     }
     
     currentMathProblem = _userArray[userArrayKey];
-    var1Label.text = [NSString stringWithFormat:@"%i",currentMathProblem.firstValue];
-    var2Label.text = [NSString stringWithFormat:@"%i",currentMathProblem.secondValue];
+    var1Label.text = [NSString stringWithFormat:@"%li",(long)currentMathProblem.firstValue];
+    var2Label.text = [NSString stringWithFormat:@"%li",(long)currentMathProblem.secondValue];
 }
 
 -(void)completedProblemsCheck
@@ -1487,11 +1487,11 @@
 {
     if (timeIsUp == YES)
     {
-        feedbackLabel.text = [NSString stringWithFormat: @"Time is up!  %@ %@ %@ = %i", var1Label.text, operand, var2Label.text, correctAnswer];
+        feedbackLabel.text = [NSString stringWithFormat: @"Time is up!  %@ %@ %@ = %li", var1Label.text, operand, var2Label.text, (long)correctAnswer];
     }
     else
     {
-        feedbackLabel.text = [NSString stringWithFormat: @"%@ %@ %@ = %i", var1Label.text, operand, var2Label.text, correctAnswer];
+        feedbackLabel.text = [NSString stringWithFormat: @"%@ %@ %@ = %li", var1Label.text, operand, var2Label.text, (long)correctAnswer];
     }
     
     [self wrongAnswer];
