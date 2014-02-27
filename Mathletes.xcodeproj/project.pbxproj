@@ -9,9 +9,9 @@
 /* Begin PBXBuildFile section */
 		2764F72618BEAAB000A20806 /* math_image_all@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2764F72418BEAAB000A20806 /* math_image_all@2x.png */; };
 		2764F72718BEAAB000A20806 /* math_image_all.png in Resources */ = {isa = PBXBuildFile; fileRef = 2764F72518BEAAB000A20806 /* math_image_all.png */; };
-		2764F72B18BEAC2000A20806 /* mobilmath-splash_big.png in Resources */ = {isa = PBXBuildFile; fileRef = 2764F72818BEAC2000A20806 /* mobilmath-splash_big.png */; };
-		2764F72C18BEAC2000A20806 /* mobilmath-splash_small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2764F72918BEAC2000A20806 /* mobilmath-splash_small@2x.png */; };
-		2764F72D18BEAC2000A20806 /* mobilmath-splash_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 2764F72A18BEAC2000A20806 /* mobilmath-splash_small.png */; };
+		2764F72B18BEAC2000A20806 /* mobilemath-splash_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2764F72818BEAC2000A20806 /* mobilemath-splash_big@2x.png */; };
+		2764F72C18BEAC2000A20806 /* mobilemath-splash_small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2764F72918BEAC2000A20806 /* mobilemath-splash_small@2x.png */; };
+		2764F72D18BEAC2000A20806 /* mobilemath-splash_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 2764F72A18BEAC2000A20806 /* mobilemath-splash_small.png */; };
 		2764F73018BEACC800A20806 /* mobile_math_signup_brand@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2764F72E18BEACC800A20806 /* mobile_math_signup_brand@2x.png */; };
 		2764F73118BEACC800A20806 /* mobile_math_signup_brand.png in Resources */ = {isa = PBXBuildFile; fileRef = 2764F72F18BEACC800A20806 /* mobile_math_signup_brand.png */; };
 		27A444F818BB8E0F000C1335 /* MyLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27A444F718BB8E0F000C1335 /* MyLoginViewController.m */; };
@@ -92,6 +92,9 @@
 		27FD30D918BA9DE500EE75A8 /* math_addition@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 27FD30D818BA9DE500EE75A8 /* math_addition@2x.png */; };
 		27FD30DB18BA9E9900EE75A8 /* math_placeholder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 27FD30DA18BA9E9900EE75A8 /* math_placeholder@2x.png */; };
 		27FD30DD18BA9EA900EE75A8 /* math_subtraction@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 27FD30DC18BA9EA900EE75A8 /* math_subtraction@2x.png */; };
+		6D01199F18BEB3CF00D3AC4B /* app_icon-1024x1024.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D01199E18BEB3CF00D3AC4B /* app_icon-1024x1024.png */; };
+		6D0119A218BEB40400D3AC4B /* mobilemath_logo-100-100.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D0119A018BEB40400D3AC4B /* mobilemath_logo-100-100.png */; };
+		6D0119A318BEB40400D3AC4B /* mobilemath_logo-100-100@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D0119A118BEB40400D3AC4B /* mobilemath_logo-100-100@2x.png */; };
 		6D17BD5318AC1CFE009A7416 /* AchievementHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D17BD5218AC1CFE009A7416 /* AchievementHeader.m */; };
 		6D18826218A943DF003DCA92 /* StickersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D18826118A943DF003DCA92 /* StickersViewController.m */; };
 		6D18826518A94458003DCA92 /* StickerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D18826418A94458003DCA92 /* StickerCell.m */; };
@@ -157,9 +160,9 @@
 		11D82320CD96410092541D1A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		2764F72418BEAAB000A20806 /* math_image_all@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "math_image_all@2x.png"; sourceTree = "<group>"; };
 		2764F72518BEAAB000A20806 /* math_image_all.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = math_image_all.png; sourceTree = "<group>"; };
-		2764F72818BEAC2000A20806 /* mobilmath-splash_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mobilmath-splash_big.png"; sourceTree = "<group>"; };
-		2764F72918BEAC2000A20806 /* mobilmath-splash_small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mobilmath-splash_small@2x.png"; sourceTree = "<group>"; };
-		2764F72A18BEAC2000A20806 /* mobilmath-splash_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mobilmath-splash_small.png"; sourceTree = "<group>"; };
+		2764F72818BEAC2000A20806 /* mobilemath-splash_big@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mobilemath-splash_big@2x.png"; sourceTree = "<group>"; };
+		2764F72918BEAC2000A20806 /* mobilemath-splash_small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mobilemath-splash_small@2x.png"; sourceTree = "<group>"; };
+		2764F72A18BEAC2000A20806 /* mobilemath-splash_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mobilemath-splash_small.png"; sourceTree = "<group>"; };
 		2764F72E18BEACC800A20806 /* mobile_math_signup_brand@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mobile_math_signup_brand@2x.png"; sourceTree = "<group>"; };
 		2764F72F18BEACC800A20806 /* mobile_math_signup_brand.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mobile_math_signup_brand.png; sourceTree = "<group>"; };
 		27A444F618BB8E0F000C1335 /* MyLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyLoginViewController.h; sourceTree = "<group>"; };
@@ -241,6 +244,9 @@
 		27FD30D818BA9DE500EE75A8 /* math_addition@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "math_addition@2x.png"; sourceTree = "<group>"; };
 		27FD30DA18BA9E9900EE75A8 /* math_placeholder@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "math_placeholder@2x.png"; sourceTree = "<group>"; };
 		27FD30DC18BA9EA900EE75A8 /* math_subtraction@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "math_subtraction@2x.png"; sourceTree = "<group>"; };
+		6D01199E18BEB3CF00D3AC4B /* app_icon-1024x1024.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app_icon-1024x1024.png"; sourceTree = "<group>"; };
+		6D0119A018BEB40400D3AC4B /* mobilemath_logo-100-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mobilemath_logo-100-100.png"; sourceTree = "<group>"; };
+		6D0119A118BEB40400D3AC4B /* mobilemath_logo-100-100@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mobilemath_logo-100-100@2x.png"; sourceTree = "<group>"; };
 		6D0F673218BBC9460098011A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		6D17BD5118AC1CFE009A7416 /* AchievementHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AchievementHeader.h; sourceTree = "<group>"; };
 		6D17BD5218AC1CFE009A7416 /* AchievementHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AchievementHeader.m; sourceTree = "<group>"; };
@@ -536,6 +542,7 @@
 				27A444FD18BCD432000C1335 /* appicon.png */,
 				27A444FB18BCD3F2000C1335 /* app_icon80-80.png */,
 				27A444F918BCD33C000C1335 /* app_icon120-120.png */,
+				6D01199E18BEB3CF00D3AC4B /* app_icon-1024x1024.png */,
 			);
 			name = "App Icons";
 			sourceTree = "<group>";
@@ -562,11 +569,9 @@
 			children = (
 				2764F72E18BEACC800A20806 /* mobile_math_signup_brand@2x.png */,
 				2764F72F18BEACC800A20806 /* mobile_math_signup_brand.png */,
-				2764F72818BEAC2000A20806 /* mobilmath-splash_big.png */,
-				2764F72918BEAC2000A20806 /* mobilmath-splash_small@2x.png */,
-				2764F72A18BEAC2000A20806 /* mobilmath-splash_small.png */,
-				2764F72418BEAAB000A20806 /* math_image_all@2x.png */,
-				2764F72518BEAAB000A20806 /* math_image_all.png */,
+				2764F72818BEAC2000A20806 /* mobilemath-splash_big@2x.png */,
+				2764F72918BEAC2000A20806 /* mobilemath-splash_small@2x.png */,
+				2764F72A18BEAC2000A20806 /* mobilemath-splash_small.png */,
 			);
 			name = Branding;
 			sourceTree = "<group>";
@@ -597,6 +602,10 @@
 		6DB92AD318BD96F300F33C77 /* Achievement Icons */ = {
 			isa = PBXGroup;
 			children = (
+				6D0119A018BEB40400D3AC4B /* mobilemath_logo-100-100.png */,
+				6D0119A118BEB40400D3AC4B /* mobilemath_logo-100-100@2x.png */,
+				2764F72418BEAAB000A20806 /* math_image_all@2x.png */,
+				2764F72518BEAAB000A20806 /* math_image_all.png */,
 				27A4453118BD25FA000C1335 /* math_imagemultiply@2x.png */,
 				27A4453218BD25FA000C1335 /* math_imagemultiply.png */,
 				27A4453318BD25FA000C1335 /* math_imagedivision@2x.png */,
@@ -713,7 +722,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				27FD30C218B6DC6100EE75A8 /* btn_division_item_pressed.png in Resources */,
-				2764F72C18BEAC2000A20806 /* mobilmath-splash_small@2x.png in Resources */,
+				2764F72C18BEAC2000A20806 /* mobilemath-splash_small@2x.png in Resources */,
 				27A4453F18BD2685000C1335 /* btn_additionitem_normal@2x.png in Resources */,
 				27A4455C18BD7B57000C1335 /* btn_progress_item_pressed@2x.png in Resources */,
 				27B54DD918AD44270068E68A /* boy@2x.png in Resources */,
@@ -725,6 +734,7 @@
 				27FD30C718B6DC6100EE75A8 /* btn_multiplcation_item_pressed.png in Resources */,
 				27FD308E18B6CD6B00EE75A8 /* ic_subtract_normal.png in Resources */,
 				27A4453D18BD2685000C1335 /* btn_additionitem_pressed@2x.png in Resources */,
+				6D0119A318BEB40400D3AC4B /* mobilemath_logo-100-100@2x.png in Resources */,
 				27A4455418BD7B57000C1335 /* btn_achvmnt_item_pressed@2x.png in Resources */,
 				6D92060E18BDB15F00CCD4FA /* Ice_Cream.png in Resources */,
 				6DA5778118B42F15004B10F7 /* Campfire.png in Resources */,
@@ -737,6 +747,7 @@
 				27A444FA18BCD33C000C1335 /* app_icon120-120.png in Resources */,
 				27A4453818BD25FA000C1335 /* math_imagedivision.png in Resources */,
 				27FD308318B6CD6B00EE75A8 /* ic_addition_pressed@2x.png in Resources */,
+				6D01199F18BEB3CF00D3AC4B /* app_icon-1024x1024.png in Resources */,
 				27FD30CC18B6DC6100EE75A8 /* btn_subtraction_item_normal.png in Resources */,
 				27FD30C618B6DC6100EE75A8 /* btn_multiplcation_item_normal@2x.png in Resources */,
 				6D92060D18BDB15F00CCD4FA /* Flower.png in Resources */,
@@ -744,7 +755,7 @@
 				27FD30C318B6DC6100EE75A8 /* btn_division_item_normal@2x.png in Resources */,
 				27A4455618BD7B57000C1335 /* btn_math_item_normal@2x.png in Resources */,
 				27FD308218B6CD6B00EE75A8 /* ic_multiply_pressed.png in Resources */,
-				2764F72D18BEAC2000A20806 /* mobilmath-splash_small.png in Resources */,
+				2764F72D18BEAC2000A20806 /* mobilemath-splash_small.png in Resources */,
 				6D92060B18BDB15F00CCD4FA /* Apple.png in Resources */,
 				2764F73118BEACC800A20806 /* mobile_math_signup_brand.png in Resources */,
 				6D92060C18BDB15F00CCD4FA /* Cookies.png in Resources */,
@@ -779,6 +790,7 @@
 				27A4450618BCD673000C1335 /* ic_tabbaraddition_normal@2x.png in Resources */,
 				27FD308618B6CD6B00EE75A8 /* ic_correct.png in Resources */,
 				6D92061018BDB15F00CCD4FA /* Mountain.png in Resources */,
+				6D0119A218BEB40400D3AC4B /* mobilemath_logo-100-100.png in Resources */,
 				27A4453518BD25FA000C1335 /* math_imagemultiply@2x.png in Resources */,
 				27A4455F18BD7B57000C1335 /* btn_stickers_item_pressed.png in Resources */,
 				27A4455E18BD7B57000C1335 /* btn_stickers_item_normal@2x.png in Resources */,
@@ -789,7 +801,7 @@
 				27FD30C418B6DC6100EE75A8 /* btn_division_item_normal.png in Resources */,
 				27FD309018B6CD6B00EE75A8 /* ic_addition_normal.png in Resources */,
 				27A4456018BD7B57000C1335 /* btn_stickers_item_pressed@2x.png in Resources */,
-				2764F72B18BEAC2000A20806 /* mobilmath-splash_big.png in Resources */,
+				2764F72B18BEAC2000A20806 /* mobilemath-splash_big@2x.png in Resources */,
 				27FD305E18B6CB9200EE75A8 /* btn_keypad_bg_normal.png in Resources */,
 				27FD305D18B6CB9200EE75A8 /* btn_keypad_bg_normal@2x.png in Resources */,
 				27FD308018B6CD6B00EE75A8 /* ic_subtract_pressed.png in Resources */,

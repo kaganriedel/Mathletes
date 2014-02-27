@@ -57,7 +57,7 @@
     
     [self.signUpView setBackgroundColor:[UIColor whiteColor]];
     
-    [self.signUpView setLogo:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"math_login_screen_brand"]]];
+    [self.signUpView setLogo:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"mobile_math_signup_brand"]]];
     
 }
 
