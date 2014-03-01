@@ -107,8 +107,8 @@ int main(int argc, char * argv[])
 
 +(NSString*)aOrAnBeforeString:(NSString*)string
 {
-    NSString *firstLetter = [[string substringToIndex:1] capitalizedString];
-    if ([firstLetter isEqualToString:@"A"] || [firstLetter isEqualToString:@"E"] || [firstLetter isEqualToString:@"I"] || [firstLetter isEqualToString:@"O"] || [firstLetter isEqualToString:@"U"])
+    NSString *firstLetter = [[string substringToIndex:1] lowercaseString];
+    if (([firstLetter isEqualToString:@"a"] || [firstLetter isEqualToString:@"e"] || [firstLetter isEqualToString:@"i"] || [firstLetter isEqualToString:@"o"] || [firstLetter isEqualToString:@"u"] || [[string lowercaseString] isEqualToString:@"honest"] || [[string lowercaseString] isEqualToString:@"honor"]) && ![[string lowercaseString] isEqualToString:@"unicorn"] && ![[string lowercaseString] isEqualToString:@"one"] && ![[string lowercaseString] isEqualToString:@"united"] && ![[string lowercaseString] isEqualToString:@"used"] && ![[string lowercaseString] isEqualToString:@"european"] && ![[string lowercaseString] isEqualToString:@"union"] && ![[string lowercaseString] isEqualToString:@"use"])
     {
         string = [NSString stringWithFormat:@"an %@", string];
     }
