@@ -73,11 +73,11 @@
     {
         [user setObject:@0 forKey:@"dailyMath"];
         
-        [userDefaults setBool:NO forKey:@"dailyMath x10!"];
-        [userDefaults setBool:NO forKey:@"dailyMath x20!"];
-        [userDefaults setBool:NO forKey:@"dailyMath x30!"];
-        [userDefaults setBool:NO forKey:@"dailyMath x40!"];
-        [userDefaults setBool:NO forKey:@"dailyMath x50!"];
+        [userDefaults setBool:NO forKey:@"Daily Math x10!"];
+        [userDefaults setBool:NO forKey:@"Daily Math x20!"];
+        [userDefaults setBool:NO forKey:@"Daily Math x30!"];
+        [userDefaults setBool:NO forKey:@"Daily Math x40!"];
+        [userDefaults setBool:NO forKey:@"Daily Math x50!"];
         
         [user saveInBackground];
         [userDefaults synchronize];
@@ -276,9 +276,10 @@
         [query whereKey:@"user" equalTo:[PFUser currentUser]];
         [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
             for (PFObject *acceptedTrade in objects) {
+                NSString *removedUnderscoresString = [[acceptedTrade objectForKey:@"get"] stringByReplacingOccurrencesOfString:@"_" withString:@" "];
                 [user increaseKey:[NSString stringWithFormat:@"%@Count",[acceptedTrade objectForKey:@"get"]]];
                 [CMNavBarNotificationView notifyWithText:@"Your trade was accepted!"
-                                                  detail:[NSString stringWithFormat:@"You got a %@ sticker!", [acceptedTrade objectForKey:@"get"]]
+                                                  detail:[NSString stringWithFormat:@"You got %@ sticker!", [NSString aOrAnBeforeString:removedUnderscoresString]]
                                                    image:[UIImage imageNamed:[NSString stringWithFormat:@"%@.png",[acceptedTrade objectForKey:@"get"]]]
                                              andDuration:3.0];
                 [acceptedTrade deleteInBackground];

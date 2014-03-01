@@ -1024,7 +1024,8 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: kagan riedel (R79GM526T2)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: kagan riedel (R79GM526T2)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -1042,6 +1043,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "E08154A2-4EC8-4DEA-9ED3-EEA8BD0AD40E";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -1063,7 +1065,8 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: kagan riedel (R79GM526T2)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: kagan riedel (R79GM526T2)";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1074,6 +1077,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PROVISIONING_PROFILE = "E08154A2-4EC8-4DEA-9ED3-EEA8BD0AD40E";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1095,7 +1099,7 @@
 					"/Users/kaganriedel/MM\\ 2014/Mathletes/Mathletes/TestFlightSDK2",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "E08154A2-4EC8-4DEA-9ED3-EEA8BD0AD40E";
+				PROVISIONING_PROFILE = "808708AF-DB35-4A4F-B050-222892D21E57";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1106,8 +1110,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: kagan riedel (R79GM526T2)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: kagan riedel (R79GM526T2)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: kagan riedel (K67R3SLFMD)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: kagan riedel (K67R3SLFMD)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Mathletes/Mathletes-Prefix.pch";
 				INFOPLIST_FILE = "Mathletes/Mathletes-Info.plist";
@@ -1116,7 +1120,7 @@
 					"/Users/kaganriedel/MM\\ 2014/Mathletes/Mathletes/TestFlightSDK2",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "E08154A2-4EC8-4DEA-9ED3-EEA8BD0AD40E";
+				PROVISIONING_PROFILE = "808708AF-DB35-4A4F-B050-222892D21E57";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

@@ -37,4 +37,8 @@
 +(NSArray*)stickerArray;
 @end
 
+@interface NSString (aOrAnString)
++(NSString*)aOrAnBeforeString:(NSString*)string;
+@end
+
 #endif

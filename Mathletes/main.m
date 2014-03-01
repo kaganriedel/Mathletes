@@ -102,3 +102,22 @@ int main(int argc, char * argv[])
 }
 
 @end
+
+@implementation NSString (aOrAnString)
+
++(NSString*)aOrAnBeforeString:(NSString*)string
+{
+    NSString *firstLetter = [[string substringToIndex:1] capitalizedString];
+    if ([firstLetter isEqualToString:@"A"] || [firstLetter isEqualToString:@"E"] || [firstLetter isEqualToString:@"I"] || [firstLetter isEqualToString:@"O"] || [firstLetter isEqualToString:@"U"])
+    {
+        string = [NSString stringWithFormat:@"an %@", string];
+    }
+    else
+    {
+        string = [NSString stringWithFormat:@"a %@", string];
+
+    }
+    return string;
+}
+
+@end
