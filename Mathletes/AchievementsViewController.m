@@ -58,7 +58,12 @@
                        [[Achievement alloc] initWithName:@"Add It Up x225!" Description:@"Complete 225 addition problems" Message:@"You completed 225 addition problems!"],
                        [[Achievement alloc] initWithName:@"Add It Up x250!" Description:@"Complete 250 addition problems" Message:@"You completed 250 addition problems!"],
                        [[Achievement alloc] initWithName:@"Add It Up x275!" Description:@"Complete 275 addition problems" Message:@"You completed 275 addition problems!"],
-                       [[Achievement alloc] initWithName:@"Add It Up x300!" Description:@"Complete 300 addition problems" Message:@"You completed 300 addition problems!"]],
+                       [[Achievement alloc] initWithName:@"Add It Up x300!" Description:@"Complete 300 addition problems" Message:@"You completed 300 addition problems!"],
+                       [[Achievement alloc] initWithName:@"Add It Up x330!" Description:@"Complete 330 addition problems" Message:@"You completed 330 addition problems!"],
+                       [[Achievement alloc] initWithName:@"Add It Up x360!" Description:@"Complete 360 addition problems" Message:@"You completed 360 addition problems!"],
+                       [[Achievement alloc] initWithName:@"Add It Up x390!" Description:@"Complete 390 addition problems" Message:@"You completed 390 addition problems!"],
+                       [[Achievement alloc] initWithName:@"Add It Up x420!" Description:@"Complete 420 addition problems" Message:@"You completed 420 addition problems!"],
+                       [[Achievement alloc] initWithName:@"Add It Up x450!" Description:@"Complete 450 addition problems" Message:@"You completed 450 addition problems!"]],
                      
                      //Fast addition
                      @[[[Achievement alloc] initWithName:@"Adding At 15 Miles Per Hour!" Description:@"Complete 15 addition problems in less than 6 seconds each" Message:@"You completed 15 addition problems in less than 6 seconds each!"],
@@ -75,7 +80,12 @@
                        [[Achievement alloc] initWithName:@"Adding At 190 Miles Per Hour!" Description:@"Complete 190 addition problems in less than 6 seconds each" Message:@"You completed 190 addition problems in less than 6 seconds each!"],
                        [[Achievement alloc] initWithName:@"Adding At 210 Miles Per Hour!" Description:@"Complete 210 addition problems in less than 6 seconds each" Message:@"You completed 210 addition problems in less than 6 seconds each!"],
                        [[Achievement alloc] initWithName:@"Adding At 230 Miles Per Hour!" Description:@"Complete 230 addition problems in less than 6 seconds each" Message:@"You completed 230 addition problems in less than 6 seconds each!"],
-                       [[Achievement alloc] initWithName:@"Adding At 250 Miles Per Hour!" Description:@"Complete 250 addition problems in less than 6 seconds each" Message:@"You completed 250 addition problems in less than 6 seconds each!"]],
+                       [[Achievement alloc] initWithName:@"Adding At 250 Miles Per Hour!" Description:@"Complete 250 addition problems in less than 6 seconds each" Message:@"You completed 250 addition problems in less than 6 seconds each!"],
+                       [[Achievement alloc] initWithName:@"Adding At 300 Miles Per Hour!" Description:@"Complete 300 addition problems in less than 6 seconds each" Message:@"You completed 300 addition problems in less than 6 seconds each!"],
+                       [[Achievement alloc] initWithName:@"Adding At 350 Miles Per Hour!" Description:@"Complete 350 addition problems in less than 6 seconds each" Message:@"You completed 350 addition problems in less than 6 seconds each!"],
+                       [[Achievement alloc] initWithName:@"Adding At 400 Miles Per Hour!" Description:@"Complete 400 addition problems in less than 6 seconds each" Message:@"You completed 400 addition problems in less than 6 seconds each!"],
+                       [[Achievement alloc] initWithName:@"Adding At 450 Miles Per Hour!" Description:@"Complete 450 addition problems in less than 6 seconds each" Message:@"You completed 450 addition problems in less than 6 seconds each!"],
+                       [[Achievement alloc] initWithName:@"Adding At 500 Miles Per Hour!" Description:@"Complete 500 addition problems in less than 6 seconds each" Message:@"You completed 500 addition problems in less than 6 seconds each!"]],
                      
                      //Subtraction
                      @[[[Achievement alloc] initWithName:@"Take It Away!" Description:@"Complete 1 subtraction problem" Message:@"You completed your first subtraction problem!"],
@@ -92,7 +102,12 @@
                        [[Achievement alloc] initWithName:@"Take It Away x225!" Description:@"Complete 225 subtraction problems" Message:@"You completed 225 subtraction problems!"],
                        [[Achievement alloc] initWithName:@"Take It Away x250!" Description:@"Complete 250 subtraction problems" Message:@"You completed 250 subtraction problems!"],
                        [[Achievement alloc] initWithName:@"Take It Away x275!" Description:@"Complete 275 subtraction problems" Message:@"You completed 275 subtraction problems!"],
-                       [[Achievement alloc] initWithName:@"Take It Away x300!" Description:@"Complete 300 subtraction problems" Message:@"You completed 300 subtraction problems!"]],
+                       [[Achievement alloc] initWithName:@"Take It Away x300!" Description:@"Complete 300 subtraction problems" Message:@"You completed 300 subtraction problems!"],
+                       [[Achievement alloc] initWithName:@"Take It Away x330!" Description:@"Complete 330 subtraction problems" Message:@"You completed 330 subtraction problems!"],
+                       [[Achievement alloc] initWithName:@"Take It Away x360!" Description:@"Complete 360 subtraction problems" Message:@"You completed 360 subtraction problems!"],
+                       [[Achievement alloc] initWithName:@"Take It Away x390!" Description:@"Complete 390 subtraction problems" Message:@"You completed 390 subtraction problems!"],
+                       [[Achievement alloc] initWithName:@"Take It Away x420!" Description:@"Complete 420 subtraction problems" Message:@"You completed 420 subtraction problems!"],
+                       [[Achievement alloc] initWithName:@"Take It Away x450!" Description:@"Complete 450 subtraction problems" Message:@"You completed 450 subtraction problems!"]],
                      
                      //Fast subtraction
                      @[[[Achievement alloc] initWithName:@"Subtracting At 15 \nMiles Per Hour!" Description:@"Complete 15 subtraction problems in less than 6 seconds each" Message:@"You completed 15 subtraction problems in less than 6 seconds each!"],
@@ -109,7 +124,12 @@
                        [[Achievement alloc] initWithName:@"Subtracting At 190 \nMiles Per Hour!" Description:@"Complete 190 subtraction problems in less than 6 seconds each" Message:@"You completed 190 subtraction problems in less than 6 seconds each!"],
                        [[Achievement alloc] initWithName:@"Subtracting At 210 \nMiles Per Hour!" Description:@"Complete 210 subtraction problems in less than 6 seconds each" Message:@"You completed 210 subtraction problems in less than 6 seconds each!"],
                        [[Achievement alloc] initWithName:@"Subtracting At 230 \nMiles Per Hour!" Description:@"Complete 230 subtraction problems in less than 6 seconds each" Message:@"You completed 230 subtraction problems in less than 6 seconds each!"],
-                       [[Achievement alloc] initWithName:@"Subtracting At 250 \nMiles Per Hour!" Description:@"Complete 250 subtraction problems in less than 6 seconds each" Message:@"You completed 250 subtraction problems in less than 6 seconds each!"]],
+                       [[Achievement alloc] initWithName:@"Subtracting At 250 \nMiles Per Hour!" Description:@"Complete 250 subtraction problems in less than 6 seconds each" Message:@"You completed 250 subtraction problems in less than 6 seconds each!"],
+                       [[Achievement alloc] initWithName:@"Subtracting At 300 \nMiles Per Hour!" Description:@"Complete 300 subtraction problems in less than 6 seconds each" Message:@"You completed 300 subtraction problems in less than 6 seconds each!"],
+                       [[Achievement alloc] initWithName:@"Subtracting At 350 \nMiles Per Hour!" Description:@"Complete 350 subtraction problems in less than 6 seconds each" Message:@"You completed 350 subtraction problems in less than 6 seconds each!"],
+                       [[Achievement alloc] initWithName:@"Subtracting At 400 \nMiles Per Hour!" Description:@"Complete 400 subtraction problems in less than 6 seconds each" Message:@"You completed 400 subtraction problems in less than 6 seconds each!"],
+                       [[Achievement alloc] initWithName:@"Subtracting At 450 \nMiles Per Hour!" Description:@"Complete 450 subtraction problems in less than 6 seconds each" Message:@"You completed 450 subtraction problems in less than 6 seconds each!"],
+                       [[Achievement alloc] initWithName:@"Subtracting At 500 \nMiles Per Hour!" Description:@"Complete 500 subtraction problems in less than 6 seconds each" Message:@"You completed 500 subtraction problems in less than 6 seconds each!"]],
                      
                      //Multiplication
                      @[[[Achievement alloc] initWithName:@"Multiplicity!" Description:@"Complete 1 multiplication problem" Message:@"You completed your first multiplication problem!"],
@@ -126,7 +146,12 @@
                        [[Achievement alloc] initWithName:@"Multiplicity x225!" Description:@"Complete 225 multiplication problems" Message:@"You completed 225 multiplication problems!"],
                        [[Achievement alloc] initWithName:@"Multiplicity x250!" Description:@"Complete 250 multiplication problems" Message:@"You completed 250 multiplication problems!"],
                        [[Achievement alloc] initWithName:@"Multiplicity x275!" Description:@"Complete 275 multiplication problems" Message:@"You completed 275 multiplication problems!"],
-                       [[Achievement alloc] initWithName:@"Multiplicity x300!" Description:@"Complete 300 multiplication problems" Message:@"You completed 300 multiplication problems!"]],
+                       [[Achievement alloc] initWithName:@"Multiplicity x300!" Description:@"Complete 300 multiplication problems" Message:@"You completed 300 multiplication problems!"],
+                       [[Achievement alloc] initWithName:@"Multiplicity x330!" Description:@"Complete 330 multiplication problems" Message:@"You completed 330 multiplication problems!"],
+                       [[Achievement alloc] initWithName:@"Multiplicity x360!" Description:@"Complete 360 multiplication problems" Message:@"You completed 360 multiplication problems!"],
+                       [[Achievement alloc] initWithName:@"Multiplicity x390!" Description:@"Complete 390 multiplication problems" Message:@"You completed 390 multiplication problems!"],
+                       [[Achievement alloc] initWithName:@"Multiplicity x420!" Description:@"Complete 420 multiplication problems" Message:@"You completed 420 multiplication problems!"],
+                       [[Achievement alloc] initWithName:@"Multiplicity x450!" Description:@"Complete 450 multiplication problems" Message:@"You completed 450 multiplication problems!"]],
                      
                      //Fast multiplication
                      @[[[Achievement alloc] initWithName:@"Multiplying At 15 \nMiles Per Hour!" Description:@"Complete 15 multiplication problems in less than 6 seconds each" Message:@"You completed 15 multiplication problems in less than 6 seconds each!"],
@@ -143,7 +168,12 @@
                        [[Achievement alloc] initWithName:@"Multiplying At 190 \nMiles Per Hour!" Description:@"Complete 190 multiplication problems in less than 6 seconds each" Message:@"You completed 190 multiplication problems in less than 6 seconds each!"],
                        [[Achievement alloc] initWithName:@"Multiplying At 210 \nMiles Per Hour!" Description:@"Complete 210 multiplication problems in less than 6 seconds each" Message:@"You completed 210 multiplication problems in less than 6 seconds each!"],
                        [[Achievement alloc] initWithName:@"Multiplying At 230 \nMiles Per Hour!" Description:@"Complete 230 multiplication problems in less than 6 seconds each" Message:@"You completed 230 multiplication problems in less than 6 seconds each!"],
-                       [[Achievement alloc] initWithName:@"Multiplying At 250 \nMiles Per Hour!" Description:@"Complete 250 multiplication problems in less than 6 seconds each" Message:@"You completed 250 multiplication problems in less than 6 seconds each!"]],
+                       [[Achievement alloc] initWithName:@"Multiplying At 250 \nMiles Per Hour!" Description:@"Complete 250 multiplication problems in less than 6 seconds each" Message:@"You completed 250 multiplication problems in less than 6 seconds each!"],
+                       [[Achievement alloc] initWithName:@"Multiplying At 300 \nMiles Per Hour!" Description:@"Complete 300 multiplication problems in less than 6 seconds each" Message:@"You completed 300 multiplication problems in less than 6 seconds each!"],
+                       [[Achievement alloc] initWithName:@"Multiplying At 350 \nMiles Per Hour!" Description:@"Complete 350 multiplication problems in less than 6 seconds each" Message:@"You completed 350 multiplication problems in less than 6 seconds each!"],
+                       [[Achievement alloc] initWithName:@"Multiplying At 400 \nMiles Per Hour!" Description:@"Complete 400 multiplication problems in less than 6 seconds each" Message:@"You completed 400 multiplication problems in less than 6 seconds each!"],
+                       [[Achievement alloc] initWithName:@"Multiplying At 450 \nMiles Per Hour!" Description:@"Complete 450 multiplication problems in less than 6 seconds each" Message:@"You completed 450 multiplication problems in less than 6 seconds each!"],
+                       [[Achievement alloc] initWithName:@"Multiplying At 500 \nMiles Per Hour!" Description:@"Complete 500 multiplication problems in less than 6 seconds each" Message:@"You completed 500 multiplication problems in less than 6 seconds each!"]],
                      
                      //Division
                      @[[[Achievement alloc] initWithName:@"Divide And Conquer!" Description:@"Complete 1 division problem" Message:@"You completed your first division problem!"],
@@ -160,7 +190,12 @@
                        [[Achievement alloc] initWithName:@"Divide And Conquer x225!" Description:@"Complete 225 division problems" Message:@"You completed 225 division problems!"],
                        [[Achievement alloc] initWithName:@"Divide And Conquer x250!" Description:@"Complete 250 division problems" Message:@"You completed 250 division problems!"],
                        [[Achievement alloc] initWithName:@"Divide And Conquer x275!" Description:@"Complete 275 division problems" Message:@"You completed 275 division problems!"],
-                       [[Achievement alloc] initWithName:@"Divide And Conquer x300!" Description:@"Complete 300 division problems" Message:@"You completed 300 division problems!"]],
+                       [[Achievement alloc] initWithName:@"Divide And Conquer x300!" Description:@"Complete 300 division problems" Message:@"You completed 300 division problems!"],
+                       [[Achievement alloc] initWithName:@"Divide And Conquer x330!" Description:@"Complete 330 division problems" Message:@"You completed 330 division problems!"],
+                       [[Achievement alloc] initWithName:@"Divide And Conquer x360!" Description:@"Complete 360 division problems" Message:@"You completed 360 division problems!"],
+                       [[Achievement alloc] initWithName:@"Divide And Conquer x390!" Description:@"Complete 390 division problems" Message:@"You completed 390 division problems!"],
+                       [[Achievement alloc] initWithName:@"Divide And Conquer x420!" Description:@"Complete 420 division problems" Message:@"You completed 420 division problems!"],
+                       [[Achievement alloc] initWithName:@"Divide And Conquer x450!" Description:@"Complete 450 division problems" Message:@"You completed 450 division problems!"]],
                      
                      //Fast division
                      @[[[Achievement alloc] initWithName:@"Dividing At 15 \nMiles Per Hour!" Description:@"Complete 15 division problems in less than 6 seconds each" Message:@"You completed 15 division problems in less than 6 seconds each!"],
@@ -177,7 +212,12 @@
                        [[Achievement alloc] initWithName:@"Dividing At 190 \nMiles Per Hour!" Description:@"Complete 190 division problems in less than 6 seconds each" Message:@"You completed 190 division problems in less than 6 seconds each!"],
                        [[Achievement alloc] initWithName:@"Dividing At 210 \nMiles Per Hour!" Description:@"Complete 210 division problems in less than 6 seconds each" Message:@"You completed 210 division problems in less than 6 seconds each!"],
                        [[Achievement alloc] initWithName:@"Dividing At 230 \nMiles Per Hour!" Description:@"Complete 230 division problems in less than 6 seconds each" Message:@"You completed 230 division problems in less than 6 seconds each!"],
-                       [[Achievement alloc] initWithName:@"Dividing At 250 \nMiles Per Hour!" Description:@"Complete 250 division problems in less than 6 seconds each" Message:@"You completed 250 division problems in less than 6 seconds each!"]],
+                       [[Achievement alloc] initWithName:@"Dividing At 250 \nMiles Per Hour!" Description:@"Complete 250 division problems in less than 6 seconds each" Message:@"You completed 250 division problems in less than 6 seconds each!"],
+                       [[Achievement alloc] initWithName:@"Dividing At 300 \nMiles Per Hour!" Description:@"Complete 300 division problems in less than 6 seconds each" Message:@"You completed 300 division problems in less than 6 seconds each!"],
+                       [[Achievement alloc] initWithName:@"Dividing At 350 \nMiles Per Hour!" Description:@"Complete 350 division problems in less than 6 seconds each" Message:@"You completed 350 division problems in less than 6 seconds each!"],
+                       [[Achievement alloc] initWithName:@"Dividing At 400 \nMiles Per Hour!" Description:@"Complete 400 division problems in less than 6 seconds each" Message:@"You completed 400 division problems in less than 6 seconds each!"],
+                       [[Achievement alloc] initWithName:@"Dividing At 450 \nMiles Per Hour!" Description:@"Complete 450 division problems in less than 6 seconds each" Message:@"You completed 450 division problems in less than 6 seconds each!"],
+                       [[Achievement alloc] initWithName:@"Dividing At 500 \nMiles Per Hour!" Description:@"Complete 500 division problems in less than 6 seconds each" Message:@"You completed 500 division problems in less than 6 seconds each!"]],
                      
                      //Total math
                      @[[[Achievement alloc] initWithName:@"Keep It Up x100!" Description:@"Complete 100 total math problems" Message:@"You completed 100 total problems!"],
@@ -194,7 +234,12 @@
                        [[Achievement alloc] initWithName:@"Keep It Up x1200!" Description:@"Complete 1200 total math problems" Message:@"You completed 1200 total problems!"],
                        [[Achievement alloc] initWithName:@"Keep It Up x1300!" Description:@"Complete 1300 total math problems" Message:@"You completed 1300 total problems!"],
                        [[Achievement alloc] initWithName:@"Keep It Up x1400!" Description:@"Complete 1400 total math problems" Message:@"You completed 1400 total problems!"],
-                     [[Achievement alloc] initWithName:@"Keep It Up x1500!" Description:@"Complete 1500 total math problems" Message:@"You completed 1500 total problems!"]],
+                     [[Achievement alloc] initWithName:@"Keep It Up x1500!" Description:@"Complete 1500 total math problems" Message:@"You completed 1500 total problems!"],
+                       [[Achievement alloc] initWithName:@"Keep It Up x1600!" Description:@"Complete 1600 total math problems" Message:@"You completed 1600 total problems!"],
+                       [[Achievement alloc] initWithName:@"Keep It Up x1700!" Description:@"Complete 1700 total math problems" Message:@"You completed 1700 total problems!"],
+                       [[Achievement alloc] initWithName:@"Keep It Up x1800!" Description:@"Complete 1800 total math problems" Message:@"You completed 1800 total problems!"],
+                       [[Achievement alloc] initWithName:@"Keep It Up x1900!" Description:@"Complete 1900 total math problems" Message:@"You completed 1900 total problems!"],
+                       [[Achievement alloc] initWithName:@"Keep It Up x2000!" Description:@"Complete 2000 total math problems" Message:@"You completed 2000 total problems!"]],
                      
                      //Completed all
                      @[[[Achievement alloc] initWithName:@"Add It All Up!" Description:@"Excellence in all addition problems" Message:@"Congratulations! You are excellent at addition!"],
@@ -215,9 +260,6 @@
     if (cell.achievement.isAchieved == YES)
     {
         switch (indexPath.section) {
-            case 0:
-                cell.imageView.image = [UIImage imageNamed:@"math_image_all.png"];
-                break;
             case 1:
                 cell.imageView.image = [UIImage imageNamed:@"math_addition.png"];
                 break;
@@ -242,17 +284,10 @@
             case 8:
                 cell.imageView.image = [UIImage imageNamed:@"math_imagedivision.png"];
                 break;
-            case 9:
-                cell.imageView.image = [UIImage imageNamed:@"math_image_all.png"];
-                break;
-            case 10:
-                cell.imageView.image = [UIImage imageNamed:@"math_image_all.png"];
-                break;
-                
             default:
+                cell.imageView.image = [UIImage imageNamed:@"math_image_all.png"];
                 break;
         }
-        
     }
     else
     {

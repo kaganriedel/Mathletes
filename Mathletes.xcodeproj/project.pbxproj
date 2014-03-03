@@ -1099,7 +1099,7 @@
 					"/Users/kaganriedel/MM\\ 2014/Mathletes/Mathletes/TestFlightSDK2",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "808708AF-DB35-4A4F-B050-222892D21E57";
+				PROVISIONING_PROFILE = "E08154A2-4EC8-4DEA-9ED3-EEA8BD0AD40E";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1120,7 +1120,7 @@
 					"/Users/kaganriedel/MM\\ 2014/Mathletes/Mathletes/TestFlightSDK2",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "808708AF-DB35-4A4F-B050-222892D21E57";
+				PROVISIONING_PROFILE = "E08154A2-4EC8-4DEA-9ED3-EEA8BD0AD40E";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
