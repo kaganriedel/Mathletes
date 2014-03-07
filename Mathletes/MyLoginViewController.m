@@ -31,10 +31,10 @@
         if ([button isKindOfClass:[UIButton class]])
         {
             button.titleLabel.font = [UIFont fontWithName:@"Miso-Bold" size:24];
-            button.layer.shadowOpacity = 1.0f;
+            button.clipsToBounds = YES;
+            button.layer.cornerRadius = 5.0;
             button.layer.borderWidth = 1.0f;
             button.layer.borderColor = [[UIColor lightGrayColor]CGColor];
-            //button.reversesTitleShadowWhenHighlighted = YES;
         }
     }
     
@@ -64,13 +64,11 @@
     [self.logInView setBackgroundColor:[UIColor whiteColor]];
     UIImage *img = [UIImage imageWithColor:[UIColor myGreenColor]];
     [self.logInView.signUpButton setBackgroundImage:img forState:UIControlStateNormal];
-    self.logInView.signUpButton.clipsToBounds = YES;
-    self.logInView.signUpButton.layer.cornerRadius = 5.0;
+
     
     img = [UIImage imageWithColor:[UIColor myBlueColor]];
     [self.logInView.logInButton setBackgroundImage:img forState:UIControlStateNormal];
-    self.logInView.logInButton.clipsToBounds = YES;
-    self.logInView.logInButton.layer.cornerRadius = 5.0;
+
     
     if (self.view.frame.size.height > 500)
     {
