@@ -12,7 +12,7 @@
 #import "CMNavBarNotificationView/CMNavBarNotificationView.h"
 #import "CSAnimationView.h"
 #import "MyLoginViewController.h"
-#import "MySignInViewController.h"
+#import "MySignUpViewController.h"
 
 
 @interface ProfileViewController () <PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate, UIAlertViewDelegate>
@@ -263,7 +263,7 @@
         MyLoginViewController *loginViewController = [MyLoginViewController new];
         loginViewController.delegate = self;
         
-        MySignInViewController *signUpViewController = [MySignInViewController new];
+        MySignUpViewController *signUpViewController = [MySignUpViewController new];
         signUpViewController.delegate = self;
         loginViewController.signUpController = signUpViewController;
         

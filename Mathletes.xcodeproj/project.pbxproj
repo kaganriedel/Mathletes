@@ -155,7 +155,7 @@
 		6D92061318BDB15F00CCD4FA /* Watermelon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D92060A18BDB15F00CCD4FA /* Watermelon.png */; };
 		6D99FF7318B16D5400CE0EFF /* TradeWallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D99FF7218B16D5400CE0EFF /* TradeWallViewController.m */; };
 		6DA5778F18B43425004B10F7 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DA5778E18B43425004B10F7 /* libz.dylib */; };
-		C93753C818BE576A004FB826 /* MySignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C93753C718BE576A004FB826 /* MySignInViewController.m */; };
+		C93753C818BE576A004FB826 /* MySignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C93753C718BE576A004FB826 /* MySignUpViewController.m */; };
 		C950F2E618AA906A00AC33C6 /* MathProblem.m in Sources */ = {isa = PBXBuildFile; fileRef = C950F2E518AA906A00AC33C6 /* MathProblem.m */; };
 		C987E0DF18A9AC70007CEC36 /* GridViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C987E0DE18A9AC70007CEC36 /* GridViewController.m */; };
 /* End PBXBuildFile section */
@@ -341,8 +341,8 @@
 		6D99FF7118B16D5400CE0EFF /* TradeWallViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TradeWallViewController.h; sourceTree = "<group>"; };
 		6D99FF7218B16D5400CE0EFF /* TradeWallViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TradeWallViewController.m; sourceTree = "<group>"; };
 		6DA5778E18B43425004B10F7 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
-		C93753C618BE576A004FB826 /* MySignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MySignInViewController.h; sourceTree = "<group>"; };
-		C93753C718BE576A004FB826 /* MySignInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MySignInViewController.m; sourceTree = "<group>"; };
+		C93753C618BE576A004FB826 /* MySignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MySignUpViewController.h; sourceTree = "<group>"; };
+		C93753C718BE576A004FB826 /* MySignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MySignUpViewController.m; sourceTree = "<group>"; };
 		C950F2E418AA906A00AC33C6 /* MathProblem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MathProblem.h; sourceTree = "<group>"; };
 		C950F2E518AA906A00AC33C6 /* MathProblem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MathProblem.m; sourceTree = "<group>"; };
 		C987E0DD18A9AC70007CEC36 /* GridViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GridViewController.h; sourceTree = "<group>"; };
@@ -435,8 +435,8 @@
 				6D891ED918A5B3CB0002B915 /* ProfileViewController.m */,
 				27A444F618BB8E0F000C1335 /* MyLoginViewController.h */,
 				27A444F718BB8E0F000C1335 /* MyLoginViewController.m */,
-				C93753C618BE576A004FB826 /* MySignInViewController.h */,
-				C93753C718BE576A004FB826 /* MySignInViewController.m */,
+				C93753C618BE576A004FB826 /* MySignUpViewController.h */,
+				C93753C718BE576A004FB826 /* MySignUpViewController.m */,
 				6D5C8C3518B13F5E00E63D1A /* ChooseStickerViewController.h */,
 				6D5C8C3618B13F5E00E63D1A /* ChooseStickerViewController.m */,
 				6D5C8C3818B1417900E63D1A /* ChooseStickerCell.h */,
@@ -952,7 +952,7 @@
 				6D383D3B18B27587007F2116 /* MakeTradeViewController.m in Sources */,
 				6D891EDF18A5BF6B0002B915 /* ChooseOperationsViewController.m in Sources */,
 				6D891EDA18A5B3CB0002B915 /* ProfileViewController.m in Sources */,
-				C93753C818BE576A004FB826 /* MySignInViewController.m in Sources */,
+				C93753C818BE576A004FB826 /* MySignUpViewController.m in Sources */,
 				6D1BE7DB18A9C2FB0079102A /* AchievementCell.m in Sources */,
 				6D18826518A94458003DCA92 /* StickerCell.m in Sources */,
 				6D891EB018A582EC0002B915 /* main.m in Sources */,
@@ -1089,8 +1089,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: kagan riedel (R79GM526T2)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: kagan riedel (R79GM526T2)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: kagan riedel (K67R3SLFMD)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: kagan riedel (K67R3SLFMD)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Mathletes/Mathletes-Prefix.pch";
 				INFOPLIST_FILE = "Mathletes/Mathletes-Info.plist";
@@ -1099,7 +1099,7 @@
 					"/Users/kaganriedel/MM\\ 2014/Mathletes/Mathletes/TestFlightSDK2",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "E08154A2-4EC8-4DEA-9ED3-EEA8BD0AD40E";
+				PROVISIONING_PROFILE = "A49FEC21-373D-44E1-B7E9-049B2287CC5E";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1120,7 +1120,7 @@
 					"/Users/kaganriedel/MM\\ 2014/Mathletes/Mathletes/TestFlightSDK2",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "E08154A2-4EC8-4DEA-9ED3-EEA8BD0AD40E";
+				PROVISIONING_PROFILE = "A49FEC21-373D-44E1-B7E9-049B2287CC5E";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
