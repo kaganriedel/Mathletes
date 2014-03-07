@@ -21,6 +21,7 @@
     PFUser *user;
     
     NSMutableArray *userStickers;
+    NSMutableArray *userStickerCounts;
     NSArray *stickerArray;
     NSIndexPath *giveTableCheckedIndexPath;
     NSIndexPath *getTableCheckedIndexPath;
@@ -29,6 +30,8 @@
 
     NSInteger selectedRow;
     NSString *selectedButton;
+    NSNumber *giveCount;
+    NSNumber *getCount;
 }
 
 @end
@@ -44,14 +47,17 @@
     user = [PFUser currentUser];
     
     giveCountButton.titleLabel.font = [UIFont fontWithName:@"Miso-Bold" size:36.0f];
-    [giveCountButton setTitleColor:[UIColor myRedColor] forState:UIControlStateNormal];
+    [giveCountButton setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
 
     getCountButton.titleLabel.font = [UIFont fontWithName:@"Miso-Bold" size:36.0f];
-    [getCountButton setTitleColor:[UIColor myBlueColor] forState:UIControlStateNormal];
+    [getCountButton setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
     
     tradeActionSheetPicker = [[ActionSheetCustomPicker alloc] initWithTitle:@"How many?" delegate:self showCancelButton:YES origin:self.view];
-
+    giveCount = @1;
+    getCount = @1;
+    
     userStickers = [NSMutableArray new];
+    userStickerCounts = [NSMutableArray new];
     stickerArray = [NSArray stickerArray];
     numbers = @[@1, @2, @3, @4, @5, @6, @7, @8, @9, @10];
     
@@ -61,6 +67,7 @@
         if ([[user objectForKey: [NSString stringWithFormat:@"%@Count", key]] intValue] > 0)
         {
             [userStickers addObject:[NSString stringWithFormat:@"%@.png", key]];
+            [userStickerCounts addObject:[user objectForKey:[NSString stringWithFormat:@"%@Count", key]]];
         }
     }
 }
@@ -83,12 +90,20 @@
 {
     if (getTableCheckedIndexPath && giveTableCheckedIndexPath)
     {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Complete Trade" message:@"Are you sure you want to make this trade?" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Yes", nil];
-        [alert show];
+        if (giveCount > userStickerCounts[giveTableCheckedIndexPath.row])
+        {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Oops!" message:@"You don't have enough stickers to make this trade." delegate:nil cancelButtonTitle:@"OK!" otherButtonTitles: nil];
+            [alert show];
+        }
+        else
+        {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Complete Trade" message:@"Are you sure you want to make this trade?" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Yes", nil];
+            [alert show];
+        }
     }
     else
     {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Oops!" message:@"Make sure to pick 1 sticker to trade and 1 sticker to get." delegate:nil cancelButtonTitle:@"OK!" otherButtonTitles: nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Oops!" message:@"Make sure to pick a sticker to trade and a sticker to get." delegate:nil cancelButtonTitle:@"OK!" otherButtonTitles: nil];
         [alert show];
     }
 }
@@ -99,12 +114,15 @@
     {
         MakeTradeCell *giveCell = (MakeTradeCell*)[giveTableView cellForRowAtIndexPath:giveTableCheckedIndexPath];
         MakeTradeCell *getCell = (MakeTradeCell*)[getTableView cellForRowAtIndexPath:getTableCheckedIndexPath];
-        NSDictionary *dictionary = @{@"give": giveCell.sticker, @"get": getCell.sticker, @"user": [PFUser currentUser]};
+        NSDictionary *dictionary = @{@"give": giveCell.sticker, @"giveCount": giveCount, @"get": getCell.sticker, @"getCount": getCount, @"user": [PFUser currentUser]};
         PFObject *trade = [PFObject objectWithClassName:@"Trade" dictionary:dictionary];
         [trade saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
             if (succeeded)
             {
-                [user decrementKey:[NSString stringWithFormat:@"%@Count", giveCell.sticker]];
+                for (int x = 0; x < giveCount.intValue; x++)
+                {
+                    [user decrementKey:[NSString stringWithFormat:@"%@Count", giveCell.sticker]];
+                }
                 [user saveInBackground];
             }
         }];
@@ -163,7 +181,9 @@
         cell.stickerImageView.layer.cornerRadius = 35.0;
         NSString *imageString = userStickers[indexPath.row];
         cell.sticker = [imageString stringByReplacingOccurrencesOfString:@".png" withString:@""];
-        
+        cell.countLabel.text = [NSString stringWithFormat:@"x%@", userStickerCounts[indexPath.row]];
+        cell.countLabel.font = [UIFont fontWithName:@"Miso-Bold" size:14.0f];
+
         return cell;
     }
     else if (tableView == getTableView)
@@ -221,10 +241,12 @@
     if ([selectedButton isEqualToString:@"give"])
     {
         [giveCountButton setTitle:[NSString stringWithFormat:@"GIVE %@",[numbers[selectedRow] description]] forState:UIControlStateNormal];
+        giveCount = numbers[selectedRow];
     }
     else if ([selectedButton isEqualToString:@"get"])
     {
         [getCountButton setTitle:[NSString stringWithFormat:@"GET %@",[numbers[selectedRow] description]] forState:UIControlStateNormal];
+        getCount = numbers[selectedRow];
     }
 }
 @end

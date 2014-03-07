@@ -181,9 +181,9 @@
     
     cell.trade = trades[indexPath.row];
     cell.giveLabel.font = [UIFont fontWithName:@"Miso-Bold" size:34.0f];
-    cell.giveLabel.textColor = [UIColor myRedColor];
+    cell.giveLabel.textColor = [UIColor darkGrayColor];
     cell.getLabel.font = [UIFont fontWithName:@"Miso-Bold" size:34.0f];
-    cell.getLabel.textColor = [UIColor myBlueColor];
+    cell.getLabel.textColor = [UIColor darkGrayColor];
     
     
     //the order of "give" and "get" are reversed here because what someone offers to "give/get" is the opposite of what the other person accepts to "give/get"
@@ -192,12 +192,16 @@
     if (tradeSegmentedControl.selectedSegmentIndex == 1)
     {
         cell.giveImageView.image = [UIImage imageNamed:[[cell.trade objectForKey:@"give"] stringByAppendingString:@".png"]];
+        cell.giveLabel.text = [NSString stringWithFormat:@"GIVE %@", [cell.trade objectForKey:@"giveCount"] ?: @1];
         cell.getImageView.image = [UIImage imageNamed:[[cell.trade objectForKey:@"get"] stringByAppendingString:@".png"]];
+        cell.getLabel.text = [NSString stringWithFormat:@"GET %@", [cell.trade objectForKey:@"getCount"] ?: @1];
     }
     else
     {
         cell.giveImageView.image = [UIImage imageNamed:[[cell.trade objectForKey:@"get"] stringByAppendingString:@".png"]];
+        cell.getLabel.text = [NSString stringWithFormat:@"GET %@", [cell.trade objectForKey:@"getCount"] ?: @1];
         cell.getImageView.image = [UIImage imageNamed:[[cell.trade objectForKey:@"give"] stringByAppendingString:@".png"]];
+        cell.giveLabel.text = [NSString stringWithFormat:@"GIVE %@", [cell.trade objectForKey:@"giveCount"] ?: @1];
     }
     cell.giveImageView.layer.cornerRadius = 35.0;
 
