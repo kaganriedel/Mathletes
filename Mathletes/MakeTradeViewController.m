@@ -91,7 +91,9 @@
 {
     if (getTableCheckedIndexPath && giveTableCheckedIndexPath)
     {
-        if (giveCount > userStickerCounts[giveTableCheckedIndexPath.row])
+        NSNumber *count = userStickerCounts[giveTableCheckedIndexPath.row];
+        NSLog(@"giveCount: %@, userStickerCount: %@", giveCount, count);
+        if (giveCount.intValue > count.intValue)
         {
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Oops!" message:@"You don't have enough stickers to make this trade." delegate:nil cancelButtonTitle:@"OK!" otherButtonTitles: nil];
             [alert show];
