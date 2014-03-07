@@ -68,6 +68,7 @@
         {
             [userStickers addObject:[NSString stringWithFormat:@"%@.png", key]];
             [userStickerCounts addObject:[user objectForKey:[NSString stringWithFormat:@"%@Count", key]]];
+            NSLog(@"count: %@",[user objectForKey:[NSString stringWithFormat:@"%@Count", key]]);
         }
     }
 }
@@ -183,7 +184,14 @@
         cell.sticker = [imageString stringByReplacingOccurrencesOfString:@".png" withString:@""];
         cell.countLabel.text = [NSString stringWithFormat:@"x%@", userStickerCounts[indexPath.row]];
         cell.countLabel.font = [UIFont fontWithName:@"Miso-Bold" size:14.0f];
-
+        if (indexPath.row == giveTableCheckedIndexPath.row && giveTableCheckedIndexPath)
+        {
+            cell.accessoryType = UITableViewCellAccessoryCheckmark;
+        }
+        else
+        {
+            cell.accessoryType = UITableViewCellAccessoryNone;
+        }
         return cell;
     }
     else if (tableView == getTableView)
@@ -194,7 +202,14 @@
         cell.stickerImageView.layer.cornerRadius = 35.0;
         NSString *imageString = stickerArray[indexPath.row];
         cell.sticker = [imageString stringByReplacingOccurrencesOfString:@".png" withString:@""];
-        
+        if (indexPath.row == getTableCheckedIndexPath.row && getTableCheckedIndexPath)
+        {
+            cell.accessoryType = UITableViewCellAccessoryCheckmark;
+        }
+        else
+        {
+            cell.accessoryType = UITableViewCellAccessoryNone;
+        }
         return cell;
     }
     
