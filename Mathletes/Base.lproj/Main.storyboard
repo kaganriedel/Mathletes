@@ -411,7 +411,7 @@
             </objects>
             <point key="canvasLocation" x="1691" y="-393"/>
         </scene>
-        <!--Make Trade View Controller - Make A Trade-->
+        <!--Make Trade View Controller - New Trade-->
         <scene sceneID="5ei-EU-t2l">
             <objects>
                 <viewController id="Pfw-OS-5b7" customClass="MakeTradeViewController" sceneMemberID="viewController">
@@ -485,20 +485,30 @@
                                     <outlet property="delegate" destination="Pfw-OS-5b7" id="CRh-NO-ncs"/>
                                 </connections>
                             </tableView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="GET" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q4g-r4-MSy">
-                                <rect key="frame" x="160" y="0.0" width="160" height="36"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pxQ-BD-lXn">
+                                <rect key="frame" x="29" y="0.0" width="103" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="25"/>
-                                <color key="textColor" red="0.45098042490000001" green="0.7019608021" blue="0.87843143940000001" alpha="1" colorSpace="deviceRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="GIVE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KPe-xw-Rd9">
-                                <rect key="frame" x="0.0" y="0.0" width="160" height="36"/>
+                                <state key="normal" title="GIVE 10">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onCountButtonPressed:" destination="Pfw-OS-5b7" eventType="touchUpInside" id="Fs4-qC-M20"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hrS-VZ-WJ1">
+                                <rect key="frame" x="189" y="0.0" width="102" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="25"/>
-                                <color key="textColor" red="0.89411771299999998" green="0.30980393290000002" blue="0.32941177490000001" alpha="1" colorSpace="deviceRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <state key="normal" title="GET 10">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onCountButtonPressed:" destination="Pfw-OS-5b7" eventType="touchUpInside" id="bFM-tj-JLd"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -510,7 +520,7 @@
                             <constraint firstItem="8D2-WK-luz" firstAttribute="top" secondItem="E2z-U3-qwR" secondAttribute="top" constant="39" id="fe5-H2-Cfe"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Make A Trade" id="ui0-Iu-nAq">
+                    <navigationItem key="navigationItem" title="New Trade" id="ui0-Iu-nAq">
                         <barButtonItem key="rightBarButtonItem" title="Item" systemItem="done" id="3iD-Pv-Est">
                             <connections>
                                 <action selector="onDoneButtonPressed:" destination="Pfw-OS-5b7" id="uOk-Sp-Kj8"/>
@@ -518,9 +528,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="getLabel" destination="Q4g-r4-MSy" id="fYZ-b7-bRC"/>
+                        <outlet property="getCountButton" destination="hrS-VZ-WJ1" id="itt-En-dIF"/>
                         <outlet property="getTableView" destination="E5T-dp-I5E" id="G3M-Vh-QdG"/>
-                        <outlet property="giveLabel" destination="KPe-xw-Rd9" id="aGW-tB-ONG"/>
+                        <outlet property="giveCountButton" destination="pxQ-BD-lXn" id="fcU-Ed-DwV"/>
                         <outlet property="giveTableView" destination="8D2-WK-luz" id="TaA-1F-CMz"/>
                         <segue destination="xHt-m2-fK9" kind="unwind" identifier="unwindToTradeWall" unwindAction="unwindFromMakeTradeViewController:" id="rzb-hs-67L"/>
                     </connections>
@@ -559,25 +569,23 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="l93-mz-M1P">
-                                                    <rect key="frame" x="70" y="2" width="70" height="70"/>
+                                                    <rect key="frame" x="93" y="2" width="70" height="70"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </imageView>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Il-Tr-rDh">
-                                                    <rect key="frame" x="216" y="2" width="70" height="70"/>
+                                                    <rect key="frame" x="248" y="2" width="70" height="70"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </imageView>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="GET" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DaJ-Dg-I0P">
-                                                    <rect key="frame" x="167" y="22" width="47" height="36"/>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="GET 10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DaJ-Dg-I0P">
+                                                    <rect key="frame" x="159" y="22" width="93" height="36"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="25"/>
-                                                    <color key="textColor" red="0.45098042490000001" green="0.7019608021" blue="0.87843143940000001" alpha="1" colorSpace="deviceRGB"/>
+                                                    <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="23"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="GIVE" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WuD-VI-0X3">
-                                                    <rect key="frame" x="12" y="22" width="60" height="36"/>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="GIVE 10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WuD-VI-0X3">
+                                                    <rect key="frame" x="1" y="22" width="95" height="36"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="25"/>
-                                                    <color key="textColor" red="0.89411771299999998" green="0.30980393290000002" blue="0.32941177490000001" alpha="1" colorSpace="deviceRGB"/>
+                                                    <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="23"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>

@@ -9,21 +9,26 @@
 #import "MakeTradeViewController.h"
 #import "MakeTradeCell.h"
 #import "Parse/Parse.h"
+#import "ActionSheetPicker.h"
 
-@interface MakeTradeViewController () <UITableViewDelegate, UITableViewDataSource, UIAlertViewDelegate>
+@interface MakeTradeViewController () <UITableViewDelegate, UITableViewDataSource, UIAlertViewDelegate, ActionSheetCustomPickerDelegate>
 {
+    __weak IBOutlet UITableView *giveTableView;
+    __weak IBOutlet UITableView *getTableView;
+    __weak IBOutlet UIButton *giveCountButton;
+    __weak IBOutlet UIButton *getCountButton;
+    
     PFUser *user;
     
     NSMutableArray *userStickers;
     NSArray *stickerArray;
     NSIndexPath *giveTableCheckedIndexPath;
     NSIndexPath *getTableCheckedIndexPath;
+    NSArray *numbers;
+    ActionSheetCustomPicker *tradeActionSheetPicker;
 
-    
-    __weak IBOutlet UITableView *giveTableView;
-    __weak IBOutlet UITableView *getTableView;
-    __weak IBOutlet UILabel *giveLabel;
-    __weak IBOutlet UILabel *getLabel;
+    NSInteger selectedRow;
+    NSString *selectedButton;
 }
 
 @end
@@ -37,19 +42,19 @@
     [super viewDidLoad];
     
     user = [PFUser currentUser];
-    for (UILabel* label in self.view.subviews) {
-        if([label isKindOfClass:[UILabel class]])
-        {
-            label.font = [UIFont fontWithName:@"Miso-Bold" size:36.0f];
-        }
-    }
-    giveLabel.font = [UIFont fontWithName:@"Miso-Bold" size:36.0f];
-    getLabel.font = [UIFont fontWithName:@"Miso-Bold" size:36.0f];
     
+    giveCountButton.titleLabel.font = [UIFont fontWithName:@"Miso-Bold" size:36.0f];
+    [giveCountButton setTitleColor:[UIColor myRedColor] forState:UIControlStateNormal];
+
+    getCountButton.titleLabel.font = [UIFont fontWithName:@"Miso-Bold" size:36.0f];
+    [getCountButton setTitleColor:[UIColor myBlueColor] forState:UIControlStateNormal];
     
+    tradeActionSheetPicker = [[ActionSheetCustomPicker alloc] initWithTitle:@"How many?" delegate:self showCancelButton:YES origin:self.view];
+
     userStickers = [NSMutableArray new];
     stickerArray = [NSArray stickerArray];
-
+    numbers = @[@1, @2, @3, @4, @5, @6, @7, @8, @9, @10];
+    
     //check to see which stickers the user has collected and display the ones they have
     for (NSString *key in stickerArray)
     {
@@ -60,7 +65,19 @@
     }
 }
 
-
+- (IBAction)onCountButtonPressed:(UIButton *)sender
+{
+    if (sender.tag == 0)
+    {
+        selectedButton = @"give";
+    }
+    else if (sender.tag == 1)
+    {
+        selectedButton = @"get";
+    }
+    selectedRow = 0;
+    [tradeActionSheetPicker showActionSheetPicker];
+}
 
 - (IBAction)onDoneButtonPressed:(id)sender
 {
@@ -95,6 +112,7 @@
     }
 }
 
+#pragma mark UITableView delegate
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (tableView == giveTableView)
@@ -176,5 +194,37 @@
     }
 }
 
+#pragma mark ActionSheetPicker delegate
 
+-(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
+{
+    return 1;
+}
+
+-(NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
+{
+    return numbers.count;
+}
+
+-(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
+{
+    return [numbers[row] description];
+}
+
+-(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
+{
+    selectedRow = row;
+}
+
+-(void)actionSheetPickerDidSucceed:(AbstractActionSheetPicker *)actionSheetPicker origin:(id)origin
+{
+    if ([selectedButton isEqualToString:@"give"])
+    {
+        [giveCountButton setTitle:[NSString stringWithFormat:@"GIVE %@",[numbers[selectedRow] description]] forState:UIControlStateNormal];
+    }
+    else if ([selectedButton isEqualToString:@"get"])
+    {
+        [getCountButton setTitle:[NSString stringWithFormat:@"GET %@",[numbers[selectedRow] description]] forState:UIControlStateNormal];
+    }
+}
 @end
