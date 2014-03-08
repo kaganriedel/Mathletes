@@ -53,6 +53,7 @@
     [getCountButton setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
     
     tradeActionSheetPicker = [[ActionSheetCustomPicker alloc] initWithTitle:@"How many?" delegate:self showCancelButton:YES origin:self.view];
+    
     giveCount = @1;
     getCount = @1;
     
