@@ -277,9 +277,18 @@
         [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
             for (PFObject *acceptedTrade in objects) {
                 NSString *removedUnderscoresString = [[acceptedTrade objectForKey:@"get"] stringByReplacingOccurrencesOfString:@"_" withString:@" "];
-                [user increaseKey:[NSString stringWithFormat:@"%@Count",[acceptedTrade objectForKey:@"get"]]];
+                NSNumber *getCount = [acceptedTrade objectForKey:@"getCount"] ?: @1;
+                for (int x = 0; x < getCount.intValue; x++)
+                {
+                    [user increaseKey:[NSString stringWithFormat:@"%@Count",[acceptedTrade objectForKey:@"get"]]];
+                }
+                NSString *getPluralString = @"";
+                if (getCount.intValue > 1)
+                {
+                    getPluralString = @"s";
+                }
                 [CMNavBarNotificationView notifyWithText:@"Your trade was accepted!"
-                                                  detail:[NSString stringWithFormat:@"You got %@ sticker!", [NSString aOrAnBeforeString:removedUnderscoresString]]
+                                                  detail:[NSString stringWithFormat:@"You got %@ %@ sticker%@!", getCount, removedUnderscoresString, getPluralString]
                                                    image:[UIImage imageNamed:[NSString stringWithFormat:@"%@.png",[acceptedTrade objectForKey:@"get"]]]
                                              andDuration:3.0];
                 [acceptedTrade deleteInBackground];
