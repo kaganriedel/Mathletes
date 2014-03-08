@@ -165,10 +165,11 @@
             NSIndexPath *selectedIndexPath = [tradeTableView indexPathForSelectedRow];
             TradeWallCell *cell = (TradeWallCell*)[tradeTableView cellForRowAtIndexPath:selectedIndexPath];
             PFObject *trade = cell.trade;
-            if([[user objectForKey:[NSString stringWithFormat:@"%@Count", [trade objectForKey:@"get"]]] intValue] <= 0)
+            NSNumber *getCount = [trade objectForKey:@"getCount"] ?: @1;
+            if([[user objectForKey:[NSString stringWithFormat:@"%@Count", [trade objectForKey:@"get"]]] intValue] < getCount.intValue)
             {
                 NSString *underscoreRemovedString = [[trade objectForKey:@"get"] stringByReplacingOccurrencesOfString:@"_" withString:@" "];
-                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Sorry!" message:[NSString stringWithFormat:@"Sorry! You don't have any %@ stickers to trade.", underscoreRemovedString] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Sorry!" message:[NSString stringWithFormat:@"Sorry! You don't have enough %@ stickers to trade.", underscoreRemovedString] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
                 [alert show];
                 [tradeTableView deselectRowAtIndexPath:[tradeTableView indexPathForSelectedRow] animated:YES];
             }
@@ -177,12 +178,21 @@
                 PFObject *acceptedTrade = [PFObject objectWithClassName:@"AcceptedTrade"];
                 [acceptedTrade setObject:[cell.trade objectForKey:@"user"] forKey:@"user"];
                 [acceptedTrade setObject:[trade objectForKey:@"get"] forKey:@"get"];
+                [acceptedTrade setObject:getCount forKey:@"getCount"];
                 [acceptedTrade saveInBackground];
                 
                 [trades removeObjectAtIndex:selectedIndexPath.row];
                 [tradeTableView deleteRowsAtIndexPaths:@[selectedIndexPath] withRowAnimation:UITableViewRowAnimationLeft];
-                [user increaseKey:[NSString stringWithFormat:@"%@Count", [trade objectForKey:@"give"]]];
-                [user decrementKey:[NSString stringWithFormat:@"%@Count", [trade objectForKey:@"get"]]];
+
+                NSNumber *giveCount = [trade objectForKey:@"giveCount"] ?: @1;
+                for (int x = 0; x < giveCount.intValue; x++)
+                {
+                    [user increaseKey:[NSString stringWithFormat:@"%@Count", [trade objectForKey:@"give"]]];
+                }
+                for (int x = 0; x < getCount.intValue; x++)
+                {
+                    [user decrementKey:[NSString stringWithFormat:@"%@Count", [trade objectForKey:@"get"]]];
+                }
                 [user saveInBackground];
                 [trade deleteInBackground];
             }
