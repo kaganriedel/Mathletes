@@ -156,24 +156,20 @@
             if ([_operand isEqual:@"-"])
             {
                 
-                for (int k = subtractionValue; k < 10; k++)
-                {
-                    [gridLabel setText:[NSString stringWithFormat:@"%d%@%d",i+subtractionValue+subChange,_operand, j]];
-                    
-                    NSString *gridValues = [NSString stringWithFormat: @"%d%d",i+subtractionValue+subChange, j];
-                    
-                    [subtractionGridArray enumerateObjectsUsingBlock:^(MathProblem *problem, NSUInteger idx, BOOL *stop)
-                     {
-                         NSString *valuesString = [NSString stringWithFormat: @"%li%i", (long)problem.firstValue, problem.secondValue];
-                         
-                         if ([valuesString isEqualToString:gridValues])
-                         {
-                             difficulty = problem.equationDifficulty;
-                             key = idx;
-                         }
-                     }];
-                }
+                [gridLabel setText:[NSString stringWithFormat:@"%d%@%d",i+subtractionValue+subChange,_operand, j]];
                 
+                NSString *gridValues = [NSString stringWithFormat: @"%d%d",i+subtractionValue+subChange, j];
+                
+                [subtractionGridArray enumerateObjectsUsingBlock:^(MathProblem *problem, NSUInteger idx, BOOL *stop)
+                 {
+                     NSString *valuesString = [NSString stringWithFormat: @"%li%i", (long)problem.firstValue, problem.secondValue];
+                     
+                     if ([valuesString isEqualToString:gridValues])
+                     {
+                         difficulty = problem.equationDifficulty;
+                         key = idx;
+                     }
+                 }];
                 mp = subtractionGridArray[key];
             }
             else if ([_operand isEqual:@"+"])

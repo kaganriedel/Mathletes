@@ -731,11 +731,11 @@
 		6D891E9818A582EC0002B915 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Sonam Mehta";
 				TargetAttributes = {
 					6D891E9F18A582EC0002B915 = {
-						DevelopmentTeam = D3X49FQNW5;
+						DevelopmentTeam = K67R3SLFMD;
 					};
 					6D891EC018A582EC0002B915 = {
 						TestTargetID = 6D891E9F18A582EC0002B915;
@@ -1011,7 +1011,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -1043,7 +1042,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "E08154A2-4EC8-4DEA-9ED3-EEA8BD0AD40E";
+				PROVISIONING_PROFILE = "808708AF-DB35-4A4F-B050-222892D21E57";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -1052,7 +1051,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -1065,8 +1063,8 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: kagan riedel (R79GM526T2)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: kagan riedel (R79GM526T2)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: kagan riedel (K67R3SLFMD)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: kagan riedel (K67R3SLFMD)";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1077,7 +1075,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				PROVISIONING_PROFILE = "E08154A2-4EC8-4DEA-9ED3-EEA8BD0AD40E";
+				PROVISIONING_PROFILE = "808708AF-DB35-4A4F-B050-222892D21E57";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1089,7 +1087,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: kagan riedel (R79GM526T2)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: kagan riedel (R79GM526T2)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Mathletes/Mathletes-Prefix.pch";
@@ -1099,7 +1097,7 @@
 					"/Users/kaganriedel/MM\\ 2014/Mathletes/Mathletes/TestFlightSDK2",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "E08154A2-4EC8-4DEA-9ED3-EEA8BD0AD40E";
+				PROVISIONING_PROFILE = "808708AF-DB35-4A4F-B050-222892D21E57";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1111,7 +1109,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: kagan riedel (K67R3SLFMD)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: kagan riedel (R79GM526T2)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: kagan riedel (K67R3SLFMD)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Mathletes/Mathletes-Prefix.pch";
 				INFOPLIST_FILE = "Mathletes/Mathletes-Info.plist";
@@ -1120,7 +1118,7 @@
 					"/Users/kaganriedel/MM\\ 2014/Mathletes/Mathletes/TestFlightSDK2",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "E08154A2-4EC8-4DEA-9ED3-EEA8BD0AD40E";
+				PROVISIONING_PROFILE = "808708AF-DB35-4A4F-B050-222892D21E57";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -1128,7 +1126,6 @@
 		6D891ED618A582EC0002B915 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Mathletes.app/Mathletes";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -1151,7 +1148,6 @@
 		6D891ED718A582EC0002B915 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Mathletes.app/Mathletes";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",

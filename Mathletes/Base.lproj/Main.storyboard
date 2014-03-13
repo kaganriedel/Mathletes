@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="tlh-hW-vgV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="tlh-hW-vgV">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
         <!--Grid View Controller - My Progress-->
@@ -529,7 +529,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="New Trade" id="ui0-Iu-nAq">
-                        <barButtonItem key="rightBarButtonItem" title="Item" systemItem="done" id="3iD-Pv-Est">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="3iD-Pv-Est">
                             <connections>
                                 <action selector="onDoneButtonPressed:" destination="Pfw-OS-5b7" id="uOk-Sp-Kj8"/>
                             </connections>
