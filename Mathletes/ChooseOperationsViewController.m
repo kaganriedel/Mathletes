@@ -32,7 +32,6 @@
     additionButton.exclusiveTouch = subtractionButton.exclusiveTouch = multiplicationButton.exclusiveTouch = divisionButton.exclusiveTouch = YES;
     
     
-    
     additionButton.titleLabel.font = [UIFont fontWithName:@"Miso-Bold" size:48];
     additionButton.imageView.contentMode = UIViewContentModeScaleAspectFill;
     subtractionButton.titleLabel.font = [UIFont fontWithName:@"Miso-Bold" size:48];
