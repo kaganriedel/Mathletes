@@ -303,22 +303,22 @@
 		6D5C8C3618B13F5E00E63D1A /* ChooseStickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseStickerViewController.m; sourceTree = "<group>"; };
 		6D5C8C3818B1417900E63D1A /* ChooseStickerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseStickerCell.h; sourceTree = "<group>"; };
 		6D5C8C3918B1417900E63D1A /* ChooseStickerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseStickerCell.m; sourceTree = "<group>"; };
-		6D891EA018A582EC0002B915 /* Mathletes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mathletes.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D891EA018A582EC0002B915 /* MobileMath.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobileMath.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D891EA318A582EC0002B915 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6D891EA518A582EC0002B915 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		6D891EA718A582EC0002B915 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		6D891EAB18A582EC0002B915 /* Mathletes-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Mathletes-Info.plist"; sourceTree = "<group>"; };
+		6D891EAB18A582EC0002B915 /* MobileMath-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MobileMath-Info.plist"; sourceTree = "<group>"; };
 		6D891EAD18A582EC0002B915 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6D891EAF18A582EC0002B915 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		6D891EB118A582EC0002B915 /* Mathletes-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Mathletes-Prefix.pch"; sourceTree = "<group>"; };
+		6D891EB118A582EC0002B915 /* MobileMath-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MobileMath-Prefix.pch"; sourceTree = "<group>"; };
 		6D891EB218A582EC0002B915 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6D891EB318A582EC0002B915 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		6D891EB818A582EC0002B915 /* MathViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MathViewController.h; sourceTree = "<group>"; };
 		6D891EB918A582EC0002B915 /* MathViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MathViewController.m; sourceTree = "<group>"; };
 		6D891EBB18A582EC0002B915 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		6D891EC118A582EC0002B915 /* MathletesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MathletesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D891EC118A582EC0002B915 /* MobileMathTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MobileMathTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D891EC218A582EC0002B915 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		6D891ECA18A582EC0002B915 /* MathletesTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MathletesTests-Info.plist"; sourceTree = "<group>"; };
+		6D891ECA18A582EC0002B915 /* MobileMathTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MobileMathTests-Info.plist"; sourceTree = "<group>"; };
 		6D891ECC18A582EC0002B915 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6D891ECE18A582EC0002B915 /* MathletesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MathletesTests.m; sourceTree = "<group>"; };
 		6D891ED818A5B3CB0002B915 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
@@ -405,8 +405,8 @@
 		6D891EA118A582EC0002B915 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6D891EA018A582EC0002B915 /* Mathletes.app */,
-				6D891EC118A582EC0002B915 /* MathletesTests.xctest */,
+				6D891EA018A582EC0002B915 /* MobileMath.app */,
+				6D891EC118A582EC0002B915 /* MobileMathTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -482,9 +482,9 @@
 				27FD304A18B6867A00EE75A8 /* miso-regular.ttf */,
 				27FD304718B6866700EE75A8 /* miso-light.ttf */,
 				27FD304618B6864900EE75A8 /* miso-bold.ttf */,
-				6D891EAB18A582EC0002B915 /* Mathletes-Info.plist */,
+				6D891EAB18A582EC0002B915 /* MobileMath-Info.plist */,
 				6D891EAC18A582EC0002B915 /* InfoPlist.strings */,
-				6D891EB118A582EC0002B915 /* Mathletes-Prefix.pch */,
+				6D891EB118A582EC0002B915 /* MobileMath-Prefix.pch */,
 				6D891EAF18A582EC0002B915 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -502,7 +502,7 @@
 		6D891EC918A582EC0002B915 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				6D891ECA18A582EC0002B915 /* MathletesTests-Info.plist */,
+				6D891ECA18A582EC0002B915 /* MobileMathTests-Info.plist */,
 				6D891ECB18A582EC0002B915 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
@@ -688,9 +688,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		6D891E9F18A582EC0002B915 /* Mathletes */ = {
+		6D891E9F18A582EC0002B915 /* MobileMath */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6D891ED218A582EC0002B915 /* Build configuration list for PBXNativeTarget "Mathletes" */;
+			buildConfigurationList = 6D891ED218A582EC0002B915 /* Build configuration list for PBXNativeTarget "MobileMath" */;
 			buildPhases = (
 				1595FEC60BC346138DC7B6EA /* Check Pods Manifest.lock */,
 				6D891E9C18A582EC0002B915 /* Sources */,
@@ -702,14 +702,14 @@
 			);
 			dependencies = (
 			);
-			name = Mathletes;
+			name = MobileMath;
 			productName = Mathletes;
-			productReference = 6D891EA018A582EC0002B915 /* Mathletes.app */;
+			productReference = 6D891EA018A582EC0002B915 /* MobileMath.app */;
 			productType = "com.apple.product-type.application";
 		};
-		6D891EC018A582EC0002B915 /* MathletesTests */ = {
+		6D891EC018A582EC0002B915 /* MobileMathTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6D891ED518A582EC0002B915 /* Build configuration list for PBXNativeTarget "MathletesTests" */;
+			buildConfigurationList = 6D891ED518A582EC0002B915 /* Build configuration list for PBXNativeTarget "MobileMathTests" */;
 			buildPhases = (
 				6D891EBD18A582EC0002B915 /* Sources */,
 				6D891EBE18A582EC0002B915 /* Frameworks */,
@@ -720,9 +720,9 @@
 			dependencies = (
 				6D891EC718A582EC0002B915 /* PBXTargetDependency */,
 			);
-			name = MathletesTests;
+			name = MobileMathTests;
 			productName = MathletesTests;
-			productReference = 6D891EC118A582EC0002B915 /* MathletesTests.xctest */;
+			productReference = 6D891EC118A582EC0002B915 /* MobileMathTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -732,7 +732,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0510;
-				ORGANIZATIONNAME = "Sonam Mehta";
+				ORGANIZATIONNAME = "";
 				TargetAttributes = {
 					6D891E9F18A582EC0002B915 = {
 						DevelopmentTeam = K67R3SLFMD;
@@ -742,7 +742,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 6D891E9B18A582EC0002B915 /* Build configuration list for PBXProject "Mathletes" */;
+			buildConfigurationList = 6D891E9B18A582EC0002B915 /* Build configuration list for PBXProject "MobileMath" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -755,8 +755,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				6D891E9F18A582EC0002B915 /* Mathletes */,
-				6D891EC018A582EC0002B915 /* MathletesTests */,
+				6D891E9F18A582EC0002B915 /* MobileMath */,
+				6D891EC018A582EC0002B915 /* MobileMathTests */,
 			);
 		};
 /* End PBXProject section */
@@ -974,7 +974,7 @@
 /* Begin PBXTargetDependency section */
 		6D891EC718A582EC0002B915 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 6D891E9F18A582EC0002B915 /* Mathletes */;
+			target = 6D891E9F18A582EC0002B915 /* MobileMath */;
 			targetProxy = 6D891EC618A582EC0002B915 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -1090,13 +1090,13 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: kagan riedel (R79GM526T2)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Mathletes/Mathletes-Prefix.pch";
-				INFOPLIST_FILE = "Mathletes/Mathletes-Info.plist";
+				GCC_PREFIX_HEADER = "Mathletes/MobileMath-Prefix.pch";
+				INFOPLIST_FILE = "Mathletes/MobileMath-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/kaganriedel/MM\\ 2014/Mathletes/Mathletes/TestFlightSDK2",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = MobileMath;
 				PROVISIONING_PROFILE = "808708AF-DB35-4A4F-B050-222892D21E57";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1111,13 +1111,13 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution: kagan riedel (K67R3SLFMD)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: kagan riedel (K67R3SLFMD)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Mathletes/Mathletes-Prefix.pch";
-				INFOPLIST_FILE = "Mathletes/Mathletes-Info.plist";
+				GCC_PREFIX_HEADER = "Mathletes/MobileMath-Prefix.pch";
+				INFOPLIST_FILE = "Mathletes/MobileMath-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/kaganriedel/MM\\ 2014/Mathletes/Mathletes/TestFlightSDK2",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = MobileMath;
 				PROVISIONING_PROFILE = "808708AF-DB35-4A4F-B050-222892D21E57";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1138,8 +1138,8 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "MathletesTests/MathletesTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "MathletesTests/MobileMathTests-Info.plist";
+				PRODUCT_NAME = MobileMathTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -1156,8 +1156,8 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Mathletes/Mathletes-Prefix.pch";
-				INFOPLIST_FILE = "MathletesTests/MathletesTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "MathletesTests/MobileMathTests-Info.plist";
+				PRODUCT_NAME = MobileMathTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -1166,7 +1166,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		6D891E9B18A582EC0002B915 /* Build configuration list for PBXProject "Mathletes" */ = {
+		6D891E9B18A582EC0002B915 /* Build configuration list for PBXProject "MobileMath" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6D891ED018A582EC0002B915 /* Debug */,
@@ -1175,7 +1175,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6D891ED218A582EC0002B915 /* Build configuration list for PBXNativeTarget "Mathletes" */ = {
+		6D891ED218A582EC0002B915 /* Build configuration list for PBXNativeTarget "MobileMath" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6D891ED318A582EC0002B915 /* Debug */,
@@ -1184,7 +1184,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6D891ED518A582EC0002B915 /* Build configuration list for PBXNativeTarget "MathletesTests" */ = {
+		6D891ED518A582EC0002B915 /* Build configuration list for PBXNativeTarget "MobileMathTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6D891ED618A582EC0002B915 /* Debug */,
