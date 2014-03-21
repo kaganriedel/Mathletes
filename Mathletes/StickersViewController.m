@@ -16,7 +16,7 @@
 {
     __weak IBOutlet UICollectionView *stickerCollectionView;
     NSArray *stickerArray;
-    CSAnimationView *stickerDetailView;
+    CSAnimationView *stickerAnimationView;
     UILabel *stickerTitleLabel;
     UILabel *stickerCountLabel;
     UILabel *stickerRarityLabel;
@@ -43,15 +43,17 @@
 {
     [super viewWillAppear:YES];
 
-    stickerDetailView = [[CSAnimationView alloc] initWithFrame:CGRectMake(10, 30, 300, self.view.frame.size.height + 24)];
-    stickerDetailView.alpha = 0.0;
-    stickerDetailView.delay = 0.0;
-    stickerDetailView.duration = 0.5;
+    stickerAnimationView = [[CSAnimationView alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    stickerAnimationView.alpha = 0.0;
+    stickerAnimationView.delay = 0.0;
+    stickerAnimationView.duration = 0.5;
+    stickerAnimationView.backgroundColor = [UIColor darkGrayColor];
+    
+    UIView *stickerDetailView = [[UIView alloc] initWithFrame:CGRectMake(10, 30, 300, self.view.frame.size.height + 24)];
     stickerDetailView.backgroundColor = [UIColor whiteColor];
-    stickerDetailView.layer.borderColor = [UIColor darkGrayColor].CGColor;
-    stickerDetailView.layer.borderWidth = 0.0;
     stickerDetailView.layer.cornerRadius = 10.0;
     stickerDetailView.layer.masksToBounds = YES;
+    [stickerAnimationView addSubview:stickerDetailView];
     
     stickerImageView = [[UIImageView alloc]initWithFrame:CGRectMake(70, 10, 160, 160)];
     stickerImageView.layer.cornerRadius = 80.0;
@@ -79,8 +81,6 @@
     stickerDetailLabel.lineBreakMode = NSLineBreakByWordWrapping;
     stickerDetailLabel.numberOfLines = 4;
     
-    
-    
     UITapGestureRecognizer* tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTap:)];
     tapGestureRecognizer.numberOfTapsRequired = 1;
     tapGestureRecognizer.numberOfTouchesRequired = 1;
@@ -91,8 +91,7 @@
     [stickerDetailView addSubview:stickerDetailLabel];
     [stickerDetailView addSubview:stickerImageView];
     [stickerDetailView addSubview:stickerTitleLabel];
-    [self.view addSubview:stickerDetailView];
-    
+    [self.view addSubview:stickerAnimationView];
     
     [stickerCollectionView reloadData];
 }
@@ -100,21 +99,19 @@
 -(void)viewDidDisappear:(BOOL)animated
 {
     [super viewDidDisappear:animated];
-    [stickerDetailView removeFromSuperview];
+    [stickerAnimationView removeFromSuperview];
 }
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
 
-        [self.navigationController setNavigationBarHidden:YES animated:YES];
-        stickerCollectionView.backgroundColor = [UIColor darkGrayColor];
-
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
     
     StickerCell *cell = (StickerCell*)[stickerCollectionView cellForItemAtIndexPath:indexPath];
     NSString *stickerImageName = cell.stickerImageName;
     NSNumber *count = cell.count;
     
-    stickerDetailView.type = CSAnimationTypeZoomOut;
+    stickerAnimationView.type = CSAnimationTypeZoomOut;
     
     NSString *stickerName = [stickerImageName stringByReplacingOccurrencesOfString:@".png" withString:@""];
     NSString *titleString = [stickerName stringByReplacingOccurrencesOfString:@"_" withString:@" "];
@@ -277,7 +274,7 @@
     }
     
     
-    stickerDetailLabel.frame = CGRectMake(15, 260, 270, stickerDetailView.frame.size.height - 235);
+    stickerDetailLabel.frame = CGRectMake(15, 260, 270, stickerAnimationView.frame.size.height - 235);
     [stickerDetailLabel sizeToFit];
 
     if ([stickerRarityLabel.text isEqualToString:common])
@@ -294,8 +291,8 @@
 
     }
     
-    
-    [stickerDetailView startCanvasAnimation];
+
+    [stickerAnimationView startCanvasAnimation];
 }
 
 -(IBAction)handleSingleTap:(id)sender
@@ -303,8 +300,8 @@
     [self.navigationController setNavigationBarHidden:NO animated:YES];
     stickerCollectionView.backgroundColor = [UIColor whiteColor];
     
-    stickerDetailView.type = CSAnimationTypeZoomIn;
-    [stickerDetailView startCanvasAnimation];
+    stickerAnimationView.type = CSAnimationTypeZoomIn;
+    [stickerAnimationView startCanvasAnimation];
 }
 
 
