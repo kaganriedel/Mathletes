@@ -113,32 +113,41 @@
     [self checkForLoggedInUserAnimated:animated];
 }
 
+-(BOOL)signUpViewController:(PFSignUpViewController *)signUpController shouldBeginSignUp:(NSDictionary *)info
+{
+    NSString *username = info[@"username"];
+    NSString *email = info[@"email"];
+    if (username.length > 15)
+    {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Username Too Long" message:@"Try a name that is not more than 15 characters." delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+        [alert show];
+        return NO;
+    }
+    else if (username.length == 0)
+    {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Oops!" message:@"Please enter a username." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+        [alert show];
+        return NO;
+    }
+    else if (email.length == 0)
+    {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Oops!" message:@"Please enter an email address." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+        [alert show];
+        return NO;
+    }
+    return YES;
+}
+
 -(void)signUpViewController:(PFSignUpViewController *)signUpController didSignUpUser:(PFUser *)signedUpUser
 {
     user = signedUpUser;
     [self loadMathProblems];
     [signUpController dismissViewControllerAnimated:YES completion:^
-    {
-        [self dismissViewControllerAnimated:YES completion:nil];
-    }];
-    
-    //receive their first sticker and set it to their profile pic
+     {
+         [self dismissViewControllerAnimated:YES completion:nil];
+     }];
 }
 
-- (BOOL)signUpViewController:(PFSignUpViewController *)signUpController
-           shouldBeginSignUp:(NSDictionary *)info
-{
-    NSString *username = info[@"username"];
-    
-    if (username.length > 15)
-    {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Username Too Long" message:@"Try a name that is not more than 15 characters." delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
-        [alert show];
-        
-    }
-    
-    return (BOOL)(username.length <= 15);
-}
 
 -(void)checkForMathProblems
 {
@@ -268,7 +277,6 @@
         loginViewController.signUpController = signUpViewController;
         
         [self presentViewController:loginViewController animated:YES completion:NULL];
-        [self presentViewController:signUpViewController animated:YES completion:NULL];
     }
     else
     {

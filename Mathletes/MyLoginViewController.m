@@ -9,7 +9,7 @@
 #import "MyLoginViewController.h"
 #import "UIImage+ImageWithColor.h"
 
-@interface MyLoginViewController () <PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate>
+@interface MyLoginViewController ()
 
 @end
 
@@ -21,6 +21,7 @@
     self.fields = PFLogInFieldsUsernameAndPassword | PFLogInFieldsLogInButton | PFLogInFieldsSignUpButton | PFLogInFieldsPasswordForgotten;
     return self;
 }
+
 
 -(void)viewDidLoad
 {

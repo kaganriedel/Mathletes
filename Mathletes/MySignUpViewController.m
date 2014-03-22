@@ -9,7 +9,7 @@
 #import "MySignUpViewController.h"
 #import "UIImage+ImageWithColor.h"
 
-@interface MySignUpViewController () <PFSignUpViewControllerDelegate>
+@interface MySignUpViewController ()
 
 @end
 
@@ -18,8 +18,6 @@
 -(void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    self.delegate = self;
     
     for (UIButton *button in self.view.subviews)
     {
@@ -54,24 +52,6 @@
     
     [self.signUpView setLogo:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"mobile_math_signup_brand"]]];
     
-}
-
--(BOOL)signUpViewController:(PFSignUpViewController *)signUpController shouldBeginSignUp:(NSDictionary *)info
-{
-    
-    if (self.signUpView.usernameField.text.length == 0)
-    {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Oops!" message:@"Please enter a username." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
-        [alert show];
-        return NO;
-    }
-    else if (self.signUpView.emailField.text.length == 0)
-    {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Oops!" message:@"Please enter an email address." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
-        [alert show];
-        return NO;
-    }
-    return YES;
 }
 
 @end
