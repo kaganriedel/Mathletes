@@ -1368,8 +1368,7 @@
     UIImage *notificationImage;
     NSString *stickerString;
 
-//    int randomSticker = arc4random()%(maximum + 1 - minimum) + minimum;
-    int randomSticker = 100;
+    int randomSticker = arc4random()%(maximum + 1 - minimum) + minimum;
 
     NSLog(@"random sticker: %i", randomSticker);
 
