@@ -47,10 +47,14 @@
     user = [PFUser currentUser];
     
     giveCountButton.titleLabel.font = [UIFont fontWithName:@"Miso-Bold" size:36.0f];
-    [giveCountButton setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
+    [giveCountButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    giveCountButton.backgroundColor = [UIColor myBlueColor];
+    giveCountButton.layer.cornerRadius = 10.0;
 
     getCountButton.titleLabel.font = [UIFont fontWithName:@"Miso-Bold" size:36.0f];
-    [getCountButton setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
+    [getCountButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    getCountButton.backgroundColor = [UIColor myBlueColor];
+    getCountButton.layer.cornerRadius = 10.0;
     
     tradeActionSheetPicker = [[ActionSheetCustomPicker alloc] initWithTitle:@"How many?" delegate:self showCancelButton:YES origin:self.view];
     
@@ -243,6 +247,7 @@
 {
     return numbers.count;
 }
+
 
 -(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
 {

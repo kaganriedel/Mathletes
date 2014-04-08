@@ -424,7 +424,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="88" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="8D2-WK-luz">
-                                <rect key="frame" x="0.0" y="39" width="160" height="465"/>
+                                <rect key="frame" x="0.0" y="44" width="160" height="460"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -463,7 +463,7 @@
                                 </connections>
                             </tableView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="88" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="E5T-dp-I5E">
-                                <rect key="frame" x="160" y="39" width="160" height="465"/>
+                                <rect key="frame" x="160" y="44" width="160" height="460"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -494,7 +494,7 @@
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pxQ-BD-lXn">
-                                <rect key="frame" x="29" y="0.0" width="103" height="36"/>
+                                <rect key="frame" x="29" y="5" width="103" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="25"/>
                                 <state key="normal" title="GIVE 1">
@@ -506,7 +506,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hrS-VZ-WJ1">
-                                <rect key="frame" x="189" y="0.0" width="102" height="36"/>
+                                <rect key="frame" x="189" y="5" width="102" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="25"/>
                                 <state key="normal" title="GET 1">
@@ -520,12 +520,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="E5T-dp-I5E" firstAttribute="top" secondItem="E2z-U3-qwR" secondAttribute="top" constant="39" id="9NR-8t-KKU"/>
+                            <constraint firstItem="E5T-dp-I5E" firstAttribute="top" secondItem="E2z-U3-qwR" secondAttribute="top" constant="44" id="9NR-8t-KKU"/>
                             <constraint firstItem="8D2-WK-luz" firstAttribute="leading" secondItem="E2z-U3-qwR" secondAttribute="leading" id="DIL-5V-enj"/>
                             <constraint firstAttribute="trailing" secondItem="E5T-dp-I5E" secondAttribute="trailing" id="QZl-dn-rsJ"/>
                             <constraint firstAttribute="bottom" secondItem="E5T-dp-I5E" secondAttribute="bottom" id="ZY0-2s-buu"/>
                             <constraint firstAttribute="bottom" secondItem="8D2-WK-luz" secondAttribute="bottom" id="enH-Oe-3gp"/>
-                            <constraint firstItem="8D2-WK-luz" firstAttribute="top" secondItem="E2z-U3-qwR" secondAttribute="top" constant="39" id="fe5-H2-Cfe"/>
+                            <constraint firstItem="8D2-WK-luz" firstAttribute="top" secondItem="E2z-U3-qwR" secondAttribute="top" constant="44" id="fe5-H2-Cfe"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="New Trade" id="ui0-Iu-nAq">
