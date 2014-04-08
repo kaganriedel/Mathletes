@@ -155,6 +155,9 @@
 		6D92061318BDB15F00CCD4FA /* Watermelon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D92060A18BDB15F00CCD4FA /* Watermelon.png */; };
 		6D99FF7318B16D5400CE0EFF /* TradeWallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D99FF7218B16D5400CE0EFF /* TradeWallViewController.m */; };
 		6DA5778F18B43425004B10F7 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DA5778E18B43425004B10F7 /* libz.dylib */; };
+		6DBAE04318F493E400BF9CA2 /* Castle.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DBAE04018F493E400BF9CA2 /* Castle.png */; };
+		6DBAE04418F493E400BF9CA2 /* Saturn.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DBAE04118F493E400BF9CA2 /* Saturn.png */; };
+		6DBAE04518F493E400BF9CA2 /* Tiger.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DBAE04218F493E400BF9CA2 /* Tiger.png */; };
 		C93753C818BE576A004FB826 /* MySignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C93753C718BE576A004FB826 /* MySignUpViewController.m */; };
 		C950F2E618AA906A00AC33C6 /* MathProblem.m in Sources */ = {isa = PBXBuildFile; fileRef = C950F2E518AA906A00AC33C6 /* MathProblem.m */; };
 		C987E0DF18A9AC70007CEC36 /* GridViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C987E0DE18A9AC70007CEC36 /* GridViewController.m */; };
@@ -341,6 +344,9 @@
 		6D99FF7118B16D5400CE0EFF /* TradeWallViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TradeWallViewController.h; sourceTree = "<group>"; };
 		6D99FF7218B16D5400CE0EFF /* TradeWallViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TradeWallViewController.m; sourceTree = "<group>"; };
 		6DA5778E18B43425004B10F7 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		6DBAE04018F493E400BF9CA2 /* Castle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Castle.png; sourceTree = "<group>"; };
+		6DBAE04118F493E400BF9CA2 /* Saturn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Saturn.png; sourceTree = "<group>"; };
+		6DBAE04218F493E400BF9CA2 /* Tiger.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tiger.png; sourceTree = "<group>"; };
 		C93753C618BE576A004FB826 /* MySignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MySignUpViewController.h; sourceTree = "<group>"; };
 		C93753C718BE576A004FB826 /* MySignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MySignUpViewController.m; sourceTree = "<group>"; };
 		C950F2E418AA906A00AC33C6 /* MathProblem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MathProblem.h; sourceTree = "<group>"; };
@@ -535,6 +541,9 @@
 				6D0119B218BF10CB00D3AC4B /* Helicopter.png */,
 				6D92060A18BDB15F00CCD4FA /* Watermelon.png */,
 				6D0119B418BF10CB00D3AC4B /* Panda.png */,
+				6DBAE04018F493E400BF9CA2 /* Castle.png */,
+				6DBAE04118F493E400BF9CA2 /* Saturn.png */,
+				6DBAE04218F493E400BF9CA2 /* Tiger.png */,
 			);
 			name = Stickers;
 			sourceTree = "<group>";
@@ -847,10 +856,12 @@
 				27A4453518BD25FA000C1335 /* math_imagemultiply@2x.png in Resources */,
 				27A4455F18BD7B57000C1335 /* btn_stickers_item_pressed.png in Resources */,
 				6D0119C118BF10CB00D3AC4B /* Panda.png in Resources */,
+				6DBAE04518F493E400BF9CA2 /* Tiger.png in Resources */,
 				27A4455E18BD7B57000C1335 /* btn_stickers_item_normal@2x.png in Resources */,
 				27FD30C818B6DC6100EE75A8 /* btn_multiplcation_item_normal.png in Resources */,
 				27A4453618BD25FA000C1335 /* math_imagemultiply.png in Resources */,
 				6D0119A918BF05D900D3AC4B /* ic_checkmark@2x.png in Resources */,
+				6DBAE04318F493E400BF9CA2 /* Castle.png in Resources */,
 				6D0119C218BF10CB00D3AC4B /* Puppy.png in Resources */,
 				27FD308718B6CD6B00EE75A8 /* ic_wrong_face@2x.png in Resources */,
 				27A444FE18BCD432000C1335 /* appicon.png in Resources */,
@@ -875,6 +886,7 @@
 				27FD304818B6866700EE75A8 /* miso-light.ttf in Resources */,
 				27A4450418BCD673000C1335 /* ic_tabbarmultiply_normal@2x.png in Resources */,
 				6D92061318BDB15F00CCD4FA /* Watermelon.png in Resources */,
+				6DBAE04418F493E400BF9CA2 /* Saturn.png in Resources */,
 				6D0119AB18BF08A400D3AC4B /* ic_checkmark.png in Resources */,
 				27FD305B18B6CB9200EE75A8 /* btn_keypad_bg_pressed@2x.png in Resources */,
 				6D891EAE18A582EC0002B915 /* InfoPlist.strings in Resources */,

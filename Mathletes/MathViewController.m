@@ -1368,7 +1368,9 @@
     UIImage *notificationImage;
     NSString *stickerString;
 
-    int randomSticker = arc4random()%(maximum + 1 - minimum) + minimum;
+//    int randomSticker = arc4random()%(maximum + 1 - minimum) + minimum;
+    int randomSticker = 100;
+
     NSLog(@"random sticker: %i", randomSticker);
 
     NSArray *stickerArray = [NSArray stickerArray];
@@ -1501,21 +1503,39 @@
         notificationImage = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", stickerString]];
     }
     //rare
-    else if (randomSticker <= 96)
+    else if (randomSticker <= 95)
     {
         stickerString = stickerArray[21];
         [user increaseKey:[NSString stringWithFormat:@"%@Count", stickerString]];
         notificationImage = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", stickerString]];
     }
-    else if (randomSticker <= 98)
+    else if (randomSticker <= 96)
     {
         stickerString = stickerArray[22];
         [user increaseKey:[NSString stringWithFormat:@"%@Count", stickerString]];
         notificationImage = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", stickerString]];
     }
-    else if (randomSticker <= 100)
+    else if (randomSticker <= 97)
     {
         stickerString = stickerArray[23];
+        [user increaseKey:[NSString stringWithFormat:@"%@Count", stickerString]];
+        notificationImage = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", stickerString]];
+    }
+    else if (randomSticker <= 98)
+    {
+        stickerString = stickerArray[24];
+        [user increaseKey:[NSString stringWithFormat:@"%@Count", stickerString]];
+        notificationImage = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", stickerString]];
+    }
+    else if (randomSticker <= 99)
+    {
+        stickerString = stickerArray[25];
+        [user increaseKey:[NSString stringWithFormat:@"%@Count", stickerString]];
+        notificationImage = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", stickerString]];
+    }
+    else if (randomSticker <= 100)
+    {
+        stickerString = stickerArray[26];
         [user increaseKey:[NSString stringWithFormat:@"%@Count", stickerString]];
         notificationImage = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", stickerString]];
     }

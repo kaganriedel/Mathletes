@@ -250,17 +250,27 @@
         stickerRarityLabel.text = rare;
         stickerDetailLabel.text = @"Pandas weigh around 250 pounds and live up to 30 years! Did you know pandas eat as much as 45 pounds of bamboo a day?";
     }
+    else if ([stickerName isEqualToString:@"Saturn"])
+    {
+        stickerRarityLabel.text = rare;
+        stickerDetailLabel.text = @"Saturn is the sixth planet from the sun and the second largest planet in the solar system. You could fit 760 Earths into Saturn!";
+    }
+    else if ([stickerName isEqualToString:@"Tiger"])
+    {
+        stickerRarityLabel.text = rare;
+        stickerDetailLabel.text = @"Tigers are the biggest of all the cats and can weigh over 600 pounds! Did you know they can easily jump more than 15 feet?";
+    }
+    else if ([stickerName isEqualToString:@"Castle"])
+    {
+        stickerRarityLabel.text = rare;
+        stickerDetailLabel.text = @"The oldest castle still lived in today is over 900 years old. The Queen of England lives there!";
+    }
     
     //to be decided
     else if ([stickerName isEqualToString:@"Cherry"])
     {
         stickerRarityLabel.text = common;
         stickerDetailLabel.text = @"About 300 million pounds of cherries are produced each year! Did you know an average cherry tree holds enough cherries to make 28 cherry pies?";
-    }
-    else if ([stickerName isEqualToString:@"Pine_Tree"])
-    {
-        stickerRarityLabel.text = common;
-        stickerDetailLabel.text = @"Some types of pine trees can reach over 250 feet in height. The oldest living pine tree is 4,840 years old!";
     }
     else if ([stickerName isEqualToString:@"Moon"])
     {
@@ -271,6 +281,11 @@
     {
         stickerRarityLabel.text = common;
         stickerDetailLabel.text = @"Did you know up to 8 motorcycles can fit in a parking space for one car? The fastest motorcycle can go 250 miles per hour!";
+    }
+    else if ([stickerName isEqualToString:@"Dragon"])
+    {
+        stickerRarityLabel.text = rare;
+        stickerDetailLabel.text = @"Dragons are legendary creatures with huge wings and a bad temper. Keep your distance or they might eat you!";
     }
     
     
